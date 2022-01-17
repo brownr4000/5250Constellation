@@ -77,7 +77,8 @@
 
             <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Dataset}"
-                SelectionMode="Single" >
+                SelectionMode="Single"
+                SelectionChanged="CollectionView_OnItemSelected">
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

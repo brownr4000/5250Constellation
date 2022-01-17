@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -43,6 +44,27 @@ namespace Game.Views
         public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             ItemModel data = args.SelectedItem as ItemModel;
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new ItemReadPage(new GenericViewModel<ItemModel>(data)));
+
+            // Manually deselect item.
+            ItemsListView.SelectedItem = null;
+        }
+
+        /// <summary>
+        /// The CollectionView_OnItemSelected method selects the row from the CollectionView layout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void CollectionView_OnItemSelected(object sender, SelectionChangedEventArgs args)
+        {
+            ItemModel data = args.CurrentSelection.FirstOrDefault() as ItemModel;
+
             if (data == null)
             {
                 return;
