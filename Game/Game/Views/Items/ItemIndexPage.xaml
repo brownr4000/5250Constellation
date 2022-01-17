@@ -15,7 +15,8 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"
+                   FontAttributes="Bold"/>
 
             <!--<ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
@@ -86,24 +87,34 @@
                             
                             <Image Grid.RowSpan="2"
                                 Source="{Binding ImageURI}"
-                                Aspect="AspectFill"
-                                HeightRequest="60"
-                                WidthRequest="60" />
-                            
-                            <Label Grid.Column="1"
-                                Text="{Binding Name}"
-                                FontAttributes="Bold" />
-                            
-                            <Label Grid.Row="1"
-                                Grid.Column="1"
-                                Text="{Binding Location}"
-                                VerticalOptions="End" />
-                            
+                                Aspect="AspectFit"
+                                WidthRequest="80"
+                                BackgroundColor="YellowGreen"/>
+
+                            <StackLayout Grid.Column="1"
+                                Margin="20">
+                                
+                                <Label
+                                    Text="{Binding Name}"
+                                    FontAttributes="Bold" 
+                                    BackgroundColor="Cyan"/>
+
+                                <Label
+                                    Grid.Row="1"
+                                    Text="{Binding Location}"
+                                    VerticalOptions="End" 
+                                    BackgroundColor="PeachPuff"/>
+
+                                <Label Grid.Row="2"
+                                    Text="{Binding Description}"
+                                    BackgroundColor="AliceBlue"/>
+
+                            </StackLayout>
+
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
 
         </StackLayout>
     </ContentPage.Content>
