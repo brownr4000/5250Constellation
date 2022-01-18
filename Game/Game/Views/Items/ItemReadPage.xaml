@@ -34,11 +34,13 @@
                             HorizontalOptions="CenterAndExpand"
                             IsClippedToBounds="True"
                             WidthRequest="500">
+                            
                             <Label 
                                 Text="{Binding Data.Name}"
-                                FontSize="Header"
+                                FontSize="Title"
                                 HorizontalOptions="CenterAndExpand"
-                                BackgroundColor="Blue"/>
+                                BackgroundColor="LightSeaGreen"/>
+                            
                         </Frame>
 
                         <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
