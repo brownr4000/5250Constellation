@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
+using Game.GameRules;
 
 namespace Game.Views
 {
@@ -31,6 +32,11 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             this.ViewModel.Title = "Update " + data.Title;
+
+            // Load the values for the Level into the Picker
+            for (var i = 1; i <= LevelTableHelper.MaxLevel;i++) {
+                ItemLevelPicker.Items.Add(i.ToString());
+            }
 
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = data.Data.Location.ToString();
@@ -92,6 +98,17 @@ namespace Game.Views
         public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             DamageValue.Text = String.Format("{0}", e.NewValue);
+        }
+
+        /// <summary>
+        /// Item Level selected from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void Level_Changed(object sender, EventArgs args)
+        {
+            // Change the Level
+            ViewModel.Data.Level = ItemLevelPicker.SelectedIndex + 1;
         }
     }
 }
