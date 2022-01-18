@@ -1,9 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
 using Game.Models;
 using Game.ViewModels;
 using System.Linq;
@@ -34,26 +32,6 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = ViewModel;
-        }
-
-        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            ItemModel data = args.SelectedItem as ItemModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Open the Read Page
-            await Navigation.PushAsync(new ItemReadPage(new GenericViewModel<ItemModel>(data)));
-
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
         }
 
         /// <summary>
