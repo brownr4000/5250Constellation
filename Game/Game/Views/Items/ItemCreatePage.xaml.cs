@@ -46,9 +46,11 @@ namespace Game.Views
             // If the image in the data box is empty, use the default one..
             //New item default image while saving
             ViewModel.Data.ImageURI = Services.ItemService.DefaultNewItemImageURI;
-
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+            if(!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible)
+            {
+                MessagingCenter.Send(this, "Create", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }           
         }
 
         /// <summary>
@@ -90,5 +92,32 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// On text change event for Name
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            NameErrorMessage.IsVisible = false;
+            if(String.IsNullOrEmpty(NameValue.Text))
+            {
+                NameErrorMessage.IsVisible = true;
+            }
+        }
+        
+        /// <summary>
+        /// On text change event for Brief Description
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Desc_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DescErrorMessage.IsVisible = false;
+            if (String.IsNullOrEmpty(DescValue.Text))
+            {
+                DescErrorMessage.IsVisible = true;
+            }
+        }
     }
 }

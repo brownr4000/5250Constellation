@@ -30,11 +30,11 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-
-                <Label Grid.Row="0" Grid.Column="0" Text="Name"/>
-                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Data.Name}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
+                
+                <Label Grid.Row="0" Grid.Column="0" Text="Name" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="NameValue" TextChanged="Name_TextChanged" Text="{Binding Data.Name}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
                 <Label Grid.Row="1" Grid.Column="0" Text="Brief Description"/>
-                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Data.Description}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Data.Description}" x:Name="DescValue" TextChanged="Desc_TextChanged" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
 
                 <Label Grid.Row="2" Grid.Column="0" Text="Location"/>
                 <Picker Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" x:Name="LocationPicker"                                             
@@ -61,7 +61,10 @@
                 <Label Grid.Row="7" Grid.Column="0" x:Name="DamageLabel" Text="Damage"/>
                 <Entry Text="{Binding Data.Damage}" x:Name="DamageValue" Grid.Row="7" Grid.Column="1" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center"/>
             </Grid>
-
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Please Enter the Item Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
+                <Label Text="Please Enter the Item Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
+            </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Cancel" Clicked="Cancel_Clicked"/>
                 <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Create" Clicked="Save_Clicked"/>
