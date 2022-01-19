@@ -28,16 +28,12 @@ namespace Game.Views
         public ItemCreatePage()
         {
             InitializeComponent();
-
             this.ViewModel.Data = new ItemModel();
-
             BindingContext = this.ViewModel;
-
             this.ViewModel.Title = "Create";
-
-            //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
+            ShowHideDamage(Double.Parse(RangeValue.Text));
         }
 
         /// <summary>
@@ -48,10 +44,8 @@ namespace Game.Views
         public async void Save_Clicked(object sender, EventArgs e)
         {
             // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
-            {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-            }
+            //New item default image while saving
+            ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             _ = await Navigation.PopModalAsync();
@@ -65,6 +59,36 @@ namespace Game.Views
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
             _ = await Navigation.PopModalAsync();
-        }        
+        }
+
+        /// <summary>
+        /// On text change event for Range
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RangeValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            double rangeValueinDouble = RangeValue.Text != "" ? double.Parse(RangeValue.Text) : 0;
+            ShowHideDamage(rangeValueinDouble);
+        }
+
+        /// <summary>
+        /// Show or hide Damage based on Range
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void ShowHideDamage(double value)
+        {
+            DamageValue.IsVisible = true;
+            DamageLabel.IsVisible = true;
+
+            if (value < 1)
+            {
+                DamageValue.IsVisible = false;
+                DamageLabel.IsVisible = false;
+                return;
+            }
+        }
+
     }
 }

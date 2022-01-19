@@ -17,14 +17,13 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        
+
         <StackLayout Padding="20" Spacing="20" HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
 
             <Image HeightRequest="50" Source="{Binding Data.ImageURI}"/>
-            <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
+            <Grid RowSpacing="1"
+                  ColumnSpacing="2"
+                  VerticalOptions="Center" WidthRequest="600">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
@@ -36,28 +35,32 @@
                 <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Data.Name}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
                 <Label Grid.Row="1" Grid.Column="0" Text="Brief Description"/>
                 <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Data.Description}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
-                <Label Grid.Row="2" Grid.Column="0" Text="Value"/>
-                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Data.Value}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center"/>
-                <Label Grid.Row="3" Grid.Column="0" Text="Location"/>
-                <Picker Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" x:Name="LocationPicker"                                             
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Location"/>
+                <Picker Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" x:Name="LocationPicker"                                             
                         BackgroundColor="LimeGreen" 
                         ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}"/>
-                <Label Grid.Row="4" Grid.Column="0" Text="Attributes"/>
-                <Picker Grid.Row="4" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
+                <Label Grid.Row="3" Grid.Column="0" Text="Attributes"/>
+                <Picker Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         BackgroundColor="LimeGreen" x:Name="AttributePicker"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Value"/>
+                <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Data.Value}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center"/>
+                
                 <Label Grid.Row="5" Grid.Column="0" Text="Range"/>
-                <Entry Grid.Row="5" Grid.Column="1" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" Text="{Binding Data.Range}"/>
-                <Label Grid.Row="6" Grid.Column="0" Text="Damage"/>
-                <Entry Grid.Row="6" Grid.Column="1" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" Text="{Binding Data.Damage}"/>
+                <Entry TextChanged="RangeValue_TextChanged" Text="{Binding Data.Range}" x:Name="RangeValue" Grid.Row="5" Grid.Column="1" HorizontalTextAlignment="Center" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250"/>
+                
+                <Label Grid.Row="6" Grid.Column="0" x:Name="DamageLabel" Text="Damage"/>
+                <Entry Text="{Binding Data.Damage}" x:Name="DamageValue" Grid.Row="6" Grid.Column="1" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center"/>
             </Grid>
-            
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Cancel" Clicked="Cancel_Clicked"/>
                 <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Create" Clicked="Save_Clicked"/>
             </StackLayout>
         </StackLayout>
-         
+
     </ContentPage.Content>
 </ContentPage>
