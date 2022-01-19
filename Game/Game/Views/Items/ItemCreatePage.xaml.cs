@@ -43,8 +43,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            // If the image in the data box is empty, use the default one..           
-            ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
+            // If the image in the data box is empty, use the default one..
+            //New item default image while saving
+            ViewModel.Data.ImageURI = Services.ItemService.DefaultNewItemImageURI;
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
             _ = await Navigation.PopModalAsync();
