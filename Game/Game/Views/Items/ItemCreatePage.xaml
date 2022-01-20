@@ -52,7 +52,7 @@
                 <Label Grid.Row="5" Grid.Column="0" Text="Image"/>
                 <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                     <Image Source="Shield1.png"/>
-                    <Entry Text="{Binding Data.NewItemImageURI}" BackgroundColor="LimeGreen" WidthRequest="430" />
+                    <Entry Text="{Binding Data.NewItemImageURI}" BackgroundColor="LimeGreen" WidthRequest="425" />
                 </StackLayout>
 
                 <Label Grid.Row="6" Grid.Column="0" Text="Range"/>
