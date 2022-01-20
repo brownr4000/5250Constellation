@@ -114,7 +114,10 @@
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
 
-                            <Grid>
+                            <Grid
+                                HorizontalOptions="Center"
+                                WidthRequest="200">
+                                
                                 <Label
                                     Grid.Column="0"
                                     HorizontalOptions="Start"
@@ -123,31 +126,54 @@
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="End"
+                                    HorizontalOptions="EndAndExpand"
                                     Text="{Binding Data.Description}"
                                     FontAttributes="Italic"
                                     Style="{StaticResource ValueStyle}"/>
                             </Grid>
 
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                            <Grid
+                                HorizontalOptions="Center"
+                                WidthRequest="200">
+                                
+                                <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Location : " 
+                                    Style="{StaticResource LabelStyle}"/>
+                                
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="{Binding Data.Location}" 
+                                    Style="{StaticResource ValueStyle}"/>
+                                
+                            </Grid>
 
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                            <Label 
-                                Text="Location : " 
-                                Style="{StaticResource LabelStyle}"/>
-                            <Label 
-                                Text="{Binding Data.Location}" 
-                                Style="{StaticResource ValueStyle}"/>
-                        </StackLayout>
+                            <Grid
+                                HorizontalOptions="Center"
+                                WidthRequest="200">
+                                
+                                <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Attribute : " 
+                                    Style="{StaticResource LabelStyle}"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                            <Label 
-                                Text="Attribute : " 
-                                Style="{StaticResource LabelStyle}"/>
-                            <Label 
-                                Text="{Binding Data.Attribute}" 
-                                Style="{StaticResource ValueStyle}"/>
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="{Binding Data.Attribute}" 
+                                    Style="{StaticResource ValueStyle}"/>
+                                
+                            </Grid>
+
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
