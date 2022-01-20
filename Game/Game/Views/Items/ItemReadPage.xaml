@@ -19,18 +19,14 @@
                    BackgroundColor="YellowGreen"/>
 
         <ContentView>
-            <Frame
-                BorderColor="Black"
-                BackgroundColor="DimGray"
-                WidthRequest="500">
+            
+            <StackLayout>
 
-                <StackLayout>
-
-                    <StackLayout 
-                        Padding="20" Spacing="20"
-                        HorizontalOptions="Center" 
-                        Orientation="Vertical" 
-                        VerticalOptions="Center">
+                <StackLayout 
+                    Padding="20" Spacing="20"
+                    HorizontalOptions="Center" 
+                    Orientation="Vertical" 
+                    VerticalOptions="Center">
 
                         <Label 
                             Text="{Binding Data.Name}"
@@ -72,7 +68,7 @@
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Grid
                                 HorizontalOptions="Center"
-                                WidthRequest="250">
+                                WidthRequest="240">
 
                                 <Label
                                     Grid.Column="0"
@@ -93,7 +89,7 @@
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Grid
                                 HorizontalOptions="Center"
-                                WidthRequest="200">
+                                WidthRequest="240">
 
                                 <Label
                                     Grid.Column="0"
@@ -115,7 +111,8 @@
 
                             <Grid
                                 HorizontalOptions="Center"
-                                WidthRequest="200">
+                                WidthRequest="240"
+                                HeightRequest="30">
 
                                 <Label
                                     Grid.Column="0"
@@ -125,9 +122,15 @@
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
+                                    HorizontalOptions="Center"
                                     Text="{Binding Data.Range}" 
-                                    Style="{StaticResource ValueStyle}"/>
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="False"/>
+
+                                <ProgressBar Progress="{Binding Data.Range}" 
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"
+                                    />
 
                             </Grid>
 
@@ -136,7 +139,8 @@
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Grid
                                 HorizontalOptions="Center"
-                                WidthRequest="200">
+                                WidthRequest="240"
+                                HeightRequest="30">
 
                                 <Label
                                     Grid.Column="0"
@@ -146,9 +150,15 @@
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
+                                    HorizontalOptions="Center"
                                     Text="{Binding Data.Value}" 
-                                    Style="{StaticResource ValueStyle}"/>
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="False"/>
+
+                                <ProgressBar Progress="{Binding Data.Value}"
+                                    
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"/>
 
                             </Grid>
 
@@ -157,7 +167,8 @@
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Grid
                                 HorizontalOptions="Center"
-                                WidthRequest="200">
+                                WidthRequest="240"
+                                HeightRequest="30">
 
                                 <Label
                                     Grid.Column="0"
@@ -169,7 +180,12 @@
                                     Grid.Column="1"
                                     HorizontalOptions="EndAndExpand"
                                     Text="{Binding Data.Damage}" 
-                                    Style="{StaticResource ValueStyle}"/>
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="False"/>
+
+                                <ProgressBar Progress="{Binding Data.Value}" 
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"/>
 
                             </Grid>
 
@@ -179,7 +195,6 @@
 
                 </StackLayout>
 
-            </Frame>
 
         </ContentView>
 
