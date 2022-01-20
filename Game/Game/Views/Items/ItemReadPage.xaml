@@ -24,110 +24,45 @@
                 BackgroundColor="DimGray"
                 WidthRequest="500">
 
-                <!--<StackLayout>
-                    <StackLayout Padding="20" Spacing="20">
+                <StackLayout>
 
-                        <StackLayout Padding="20" Spacing="20" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
-
-                            <Label HorizontalOptions="Center" Text="{Binding Data.Name}" BackgroundColor="LimeGreen"/>
-
-                            <Image Source="{Binding Data.ImageURI}" HeightRequest="200"/>
-
-                            <Label HorizontalOptions="Center" Text="{Binding Data.Description}" BackgroundColor="LimeGreen"/>
-
-                        </StackLayout>
-
-                        <StackLayout Padding="20" Spacing="20">
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                                <Label Text="Location" />
-
-                                <Label Text="{Binding Data.Location}" BackgroundColor="LimeGreen"/>
-
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                                <Label Text="Attribute" />
-
-                                <Label Text="{Binding Data.Attribute}" BackgroundColor="LimeGreen"/>
-
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                                <Label Text="Damage" />
-
-                                <Label Text="{Binding Data.Damage}" BackgroundColor="LimeGreen"/>
-
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Label Text="Range" />
-
-                                <ProgressBar Progress="{Binding Data.Range}" WidthRequest="300" HeightRequest="30" ProgressColor="LimeGreen"/>
-
-                                <Label  
-                                    Text="{Binding Data.Value}" 
-                                    Style="{StaticResource ValueStyle}"/>
-
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
-                                <Label Text="Value" />
-
-                                <ProgressBar Progress="{Binding Data.Value}" WidthRequest="300" HeightRequest="30" ProgressColor="LimeGreen"/>
-
-                                <StackLayout Style="{StaticResource HorizontalStack}">
-
-                                    <Label 
-                                                        Text="{Binding Data.Value}" 
-                                                        Style="{StaticResource ValueStyle}"/>
-                                </StackLayout>
-
-                            </StackLayout>
-                            
-                        </StackLayout>
-
-                    </StackLayout>
-                </StackLayout>-->
-                
-                <StackLayout  
-                    Padding="20" Spacing="20">
-                    
                     <StackLayout 
                         Padding="20" Spacing="20"
                         HorizontalOptions="Center" 
                         Orientation="Vertical" 
                         VerticalOptions="Center">
-                        
+
                         <Label 
                             Text="{Binding Data.Name}"
                             FontSize="Title"
                             HorizontalOptions="CenterAndExpand"
                             BackgroundColor="LightSeaGreen"/>
 
-                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
+                        <Image Source="{Binding Data.ImageURI}" 
+                            Style="{StaticResource ImageLargeStyle}"
+                            HeightRequest="200"
+                            WidthRequest="200"
                             BackgroundColor="Gold"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                        <StackLayout 
+                            Style="{StaticResource HorizontalStack}" 
+                            HorizontalOptions="Center"
+                            Padding="10" Spacing="10">
 
                             <Grid
                                 HorizontalOptions="Center"
-                                WidthRequest="200">
-                                
-                                <Label
+                                WidthRequest="250">
+
+                                <!--<Label
                                     Grid.Column="0"
                                     HorizontalOptions="Start"
-                                    Text="Description : " 
-                                    Style="{StaticResource LabelStyle}"/>
+                                    Text="Description: " 
+                                    Style="{StaticResource LabelStyle}"/>-->
 
                                 <Label
-                                    Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
+                                    HorizontalOptions="Center"
                                     Text="{Binding Data.Description}"
+                                    FontSize="Medium"
                                     FontAttributes="Italic"
                                     Style="{StaticResource ValueStyle}"/>
                             </Grid>
@@ -137,20 +72,20 @@
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Grid
                                 HorizontalOptions="Center"
-                                WidthRequest="200">
-                                
+                                WidthRequest="250">
+
                                 <Label
                                     Grid.Column="0"
                                     HorizontalOptions="Start"
-                                    Text="Location : " 
+                                    Text="Location: " 
                                     Style="{StaticResource LabelStyle}"/>
-                                
+
                                 <Label
                                     Grid.Column="1"
                                     HorizontalOptions="EndAndExpand"
                                     Text="{Binding Data.Location}" 
                                     Style="{StaticResource ValueStyle}"/>
-                                
+
                             </Grid>
 
                         </StackLayout>
@@ -159,11 +94,11 @@
                             <Grid
                                 HorizontalOptions="Center"
                                 WidthRequest="200">
-                                
+
                                 <Label
                                     Grid.Column="0"
                                     HorizontalOptions="Start"
-                                    Text="Attribute : " 
+                                    Text="Attribute: " 
                                     Style="{StaticResource LabelStyle}"/>
 
                                 <Label
@@ -171,36 +106,73 @@
                                     HorizontalOptions="EndAndExpand"
                                     Text="{Binding Data.Attribute}" 
                                     Style="{StaticResource ValueStyle}"/>
-                                
+
                             </Grid>
 
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                            <Label 
-                                Text="Range : " 
-                                Style="{StaticResource LabelStyle}"/>
-                            <Label 
-                                Text="{Binding Data.Range}" 
-                                Style="{StaticResource ValueStyle}"/>
+
+                            <Grid
+                                HorizontalOptions="Center"
+                                WidthRequest="200">
+
+                                <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Range: " 
+                                    Style="{StaticResource LabelStyle}"/>
+
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="{Binding Data.Range}" 
+                                    Style="{StaticResource ValueStyle}"/>
+
+                            </Grid>
+
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                            <Label 
-                                Text="Value : " 
-                                Style="{StaticResource LabelStyle}"/>
-                            <Label 
-                                Text="{Binding Data.Value}" 
-                                Style="{StaticResource ValueStyle}"/>
+                            <Grid
+                                HorizontalOptions="Center"
+                                WidthRequest="200">
+
+                                <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Value: " 
+                                    Style="{StaticResource LabelStyle}"/>
+
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="{Binding Data.Value}" 
+                                    Style="{StaticResource ValueStyle}"/>
+
+                            </Grid>
+
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                            <Label 
-                                Text="Damage : " 
-                                Style="{StaticResource LabelStyle}"/>
-                            <Label 
-                                Text="{Binding Data.Damage}" 
-                                Style="{StaticResource ValueStyle}"/>
+                            <Grid
+                                HorizontalOptions="Center"
+                                WidthRequest="200">
+
+                                <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Damage: " 
+                                    Style="{StaticResource LabelStyle}"/>
+
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="{Binding Data.Damage}" 
+                                    Style="{StaticResource ValueStyle}"/>
+
+                            </Grid>
+
                         </StackLayout>
 
                     </StackLayout>
@@ -210,7 +182,7 @@
             </Frame>
 
         </ContentView>
-    </StackLayout>
 
+    </StackLayout>
     
 </ContentPage>
