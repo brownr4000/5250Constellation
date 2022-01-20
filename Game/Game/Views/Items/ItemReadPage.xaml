@@ -23,41 +23,116 @@
                 BorderColor="Black"
                 BackgroundColor="DimGray"
                 WidthRequest="500">
+
+                <!--<StackLayout>
+                    <StackLayout Padding="20" Spacing="20">
+
+                        <StackLayout Padding="20" Spacing="20" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+
+                            <Label HorizontalOptions="Center" Text="{Binding Data.Name}" BackgroundColor="LimeGreen"/>
+
+                            <Image Source="{Binding Data.ImageURI}" HeightRequest="200"/>
+
+                            <Label HorizontalOptions="Center" Text="{Binding Data.Description}" BackgroundColor="LimeGreen"/>
+
+                        </StackLayout>
+
+                        <StackLayout Padding="20" Spacing="20">
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                                <Label Text="Location" />
+
+                                <Label Text="{Binding Data.Location}" BackgroundColor="LimeGreen"/>
+
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                                <Label Text="Attribute" />
+
+                                <Label Text="{Binding Data.Attribute}" BackgroundColor="LimeGreen"/>
+
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                                <Label Text="Damage" />
+
+                                <Label Text="{Binding Data.Damage}" BackgroundColor="LimeGreen"/>
+
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="Range" />
+
+                                <ProgressBar Progress="{Binding Data.Range}" WidthRequest="300" HeightRequest="30" ProgressColor="LimeGreen"/>
+
+                                <Label  
+                                    Text="{Binding Data.Value}" 
+                                    Style="{StaticResource ValueStyle}"/>
+
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                                <Label Text="Value" />
+
+                                <ProgressBar Progress="{Binding Data.Value}" WidthRequest="300" HeightRequest="30" ProgressColor="LimeGreen"/>
+
+                                <StackLayout Style="{StaticResource HorizontalStack}">
+
+                                    <Label 
+                                                        Text="{Binding Data.Value}" 
+                                                        Style="{StaticResource ValueStyle}"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                            
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>-->
                 
                 <StackLayout  
-                Spacing="10">
+                    Padding="20" Spacing="20">
                     
-                    <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
-                        <Frame
-                            BackgroundColor="AntiqueWhite"
-                            BorderColor="Black"
+                    <StackLayout 
+                        Padding="20" Spacing="20"
+                        HorizontalOptions="Center" 
+                        Orientation="Vertical" 
+                        VerticalOptions="Center">
+                        
+                        <Label 
+                            Text="{Binding Data.Name}"
+                            FontSize="Title"
                             HorizontalOptions="CenterAndExpand"
-                            IsClippedToBounds="True"
-                            WidthRequest="500">
-                            
-                            <Label 
-                                Text="{Binding Data.Name}"
-                                FontSize="Title"
-                                HorizontalOptions="CenterAndExpand"
-                                BackgroundColor="LightSeaGreen"/>
-                            
-                        </Frame>
+                            BackgroundColor="LightSeaGreen"/>
 
                         <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
                             BackgroundColor="Gold"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label 
-                                Text="Description : " 
-                                Style="{StaticResource LabelStyle}"/>
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
 
-                            <Label 
-                                Text="{Binding Data.Description}" 
-                                Style="{StaticResource ValueStyle}"/>
+                            <Grid>
+                                <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Description : " 
+                                    Style="{StaticResource LabelStyle}"/>
+
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    Text="{Binding Data.Description}"
+                                    FontAttributes="Italic"
+                                    Style="{StaticResource ValueStyle}"/>
+                            </Grid>
+
 
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Label 
                                 Text="Location : " 
                                 Style="{StaticResource LabelStyle}"/>
@@ -66,7 +141,7 @@
                                 Style="{StaticResource ValueStyle}"/>
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Label 
                                 Text="Attribute : " 
                                 Style="{StaticResource LabelStyle}"/>
@@ -75,7 +150,7 @@
                                 Style="{StaticResource ValueStyle}"/>
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Label 
                                 Text="Range : " 
                                 Style="{StaticResource LabelStyle}"/>
@@ -84,7 +159,7 @@
                                 Style="{StaticResource ValueStyle}"/>
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Label 
                                 Text="Value : " 
                                 Style="{StaticResource LabelStyle}"/>
@@ -93,7 +168,7 @@
                                 Style="{StaticResource ValueStyle}"/>
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Label 
                                 Text="Damage : " 
                                 Style="{StaticResource LabelStyle}"/>
