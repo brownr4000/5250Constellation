@@ -8,7 +8,7 @@
 
         <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
 
-            <FlexLayout x:Name="flexLayout"
+            <!--<FlexLayout x:Name="flexLayout"
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
                         AlignContent="SpaceAround">
@@ -66,7 +66,66 @@
 
                 </StackLayout>
 
-            </FlexLayout>
+            </FlexLayout>-->
+            <StackLayout Spacing="100">
+
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <ImageButton
+                                Source="item.png"
+                                Style="{StaticResource ImageLargeStyle}"
+                                Clicked="CharactersButton_Clicked"
+                                HorizontalOptions="Center"/>
+
+                    <Label 
+                                Text="Characters"
+                                Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+
+                
+                <StackLayout Orientation="Horizontal" Margin="100">
+                   
+                    <StackLayout Orientation="Vertical">
+ 
+                        <ImageButton
+                                        Source="item.png"
+                                        Style="{StaticResource ImageLargeStyle}"
+                                        Clicked="ItemsButton_Clicked"
+                                        HorizontalOptions="Start"/>
+
+                        <Label 
+                                Text="Items"
+                                Style="{StaticResource CenterMessageStyle}"/>
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                        <ImageButton
+                                        Source="item.png"
+                                        Style="{StaticResource ImageLargeStyle}"
+                                        Clicked="MonstersButton_Clicked"
+                                        />
+
+                        <Label 
+                                        Text="Monsters"
+                                        Style="{StaticResource CenterMessageStyle}"/>
+                    </StackLayout>
+                    
+                </StackLayout>
+
+                <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="Center">
+                    <ImageButton
+                                Source="item.png"
+                                Style="{StaticResource ImageLargeStyle}"
+                                Clicked="ScoresButton_Clicked"
+                                />
+
+                    <Label 
+                                Text="Scores"
+                                Style="{StaticResource CenterMessageStyle}"/>
+                </StackLayout>
+                
+            </StackLayout>
+            
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
