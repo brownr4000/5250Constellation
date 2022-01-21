@@ -125,7 +125,7 @@
                                     HorizontalOptions="Center"
                                     Text="{Binding Data.Range}" 
                                     Style="{StaticResource ValueStyle}"
-                                    IsVisible="False"/>
+                                    IsVisible="True"/>
 
                                 <ProgressBar Progress="{Binding Data.Range}" 
                                     ProgressColor="LimeGreen"
@@ -153,7 +153,7 @@
                                     HorizontalOptions="Center"
                                     Text="{Binding Data.Value}" 
                                     Style="{StaticResource ValueStyle}"
-                                    IsVisible="False"/>
+                                    IsVisible="True"/>
 
                                 <ProgressBar Progress="{Binding Data.Value}"
                                     
@@ -178,10 +178,10 @@
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
+                                    HorizontalOptions="Center"
                                     Text="{Binding Data.Damage}" 
                                     Style="{StaticResource ValueStyle}"
-                                    IsVisible="False"/>
+                                    IsVisible="True"/>
 
                                 <ProgressBar Progress="{Binding Data.Value}" 
                                     ProgressColor="LimeGreen"
