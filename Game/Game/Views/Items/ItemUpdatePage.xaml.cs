@@ -33,11 +33,6 @@ namespace Game.Views
 
             this.ViewModel.Title = "Update " + data.Title;
 
-            // Load the values for the Level into the Picker
-            for (var i = 1; i <= LevelTableHelper.MaxLevel;i++) {
-                ItemLevelPicker.Items.Add(i.ToString());
-            }
-
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = data.Data.Location.ToString();
             AttributePicker.SelectedItem = data.Data.Attribute.ToString();
