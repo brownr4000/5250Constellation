@@ -13,7 +13,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+        <!--<StackLayout Style="{StaticResource OuterBoxStack}">
 
             <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
 
@@ -73,6 +73,62 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+        </StackLayout>-->
+        
+        <StackLayout Style="{StaticResource OuterBoxStack}">
+
+            <Label Text="Characters List Page" Style="{StaticResource HeaderStyle}"
+                   FontAttributes="Bold"/>
+
+            <CollectionView x:Name="CharactersListView" 
+                ItemsSource="{Binding Dataset}"
+                SelectionMode="Single"
+                SelectionChanged="CollectionView_OnItemSelected">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10"
+                            RowDefinitions="Auto, *"
+                            ColumnDefinitions="Auto, *">
+
+                            <Image Grid.RowSpan="2"
+                                Source="{Binding ImageURI}"
+                                Aspect="AspectFit"
+                                WidthRequest="80"
+                                BackgroundColor="YellowGreen"/>
+
+                            <StackLayout Grid.Column="1"
+                                Margin="20">
+
+                                <Label
+                                    Text="{Binding Name}"
+                                    FontAttributes="Bold" 
+                                    BackgroundColor="Cyan"/>
+
+                                <Label
+                                    Grid.Row="1"
+                                    Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
+                                    VerticalOptions="End" 
+                                    BackgroundColor="OrangeRed"/>
+
+                                <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
+                                        Style="{StaticResource ListStyle}"/>
+
+                                <Label Grid.Row="2"
+                                    Text="{Binding Description}"
+                                    BackgroundColor="Gray"/>
+
+                            </StackLayout>
+
+                        </Grid>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

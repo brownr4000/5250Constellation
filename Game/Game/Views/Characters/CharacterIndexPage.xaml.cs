@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -52,6 +53,27 @@ namespace Game.Views
             await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
 
             // Manually deselect Character.
+            CharactersListView.SelectedItem = null;
+        }
+
+        /// <summary>
+        /// The CollectionView_OnItemSelected method selects the row from the CollectionView layout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void CollectionView_OnItemSelected(object sender, SelectionChangedEventArgs args)
+        {
+            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;
+
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
+
+            // Manually deselect item.
             CharactersListView.SelectedItem = null;
         }
 
