@@ -187,14 +187,6 @@
                                Text="{Binding Data.Name}" 
                                Style="{StaticResource EntryStyle}"/>
 
-                        <Label Grid.Row="1" Grid.Column="0"
-                               Text="Level"
-                               Style="{StaticResource LabelStyle}"/>
-
-                        <Picker Grid.Row="1" Grid.Column="1"
-                                SelectedItem="{Binding SelectedItemProperty}"
-                                SelectedIndexChanged="Level_Changed"
-                                x:Name="ItemLevelPicker"/>
 
                         <Label Grid.Row="2" Grid.Column="0"
                                Text="Description" 

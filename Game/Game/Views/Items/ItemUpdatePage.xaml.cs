@@ -100,15 +100,6 @@ namespace Game.Views
             DamageValue.Text = String.Format("{0}", e.NewValue);
         }
 
-        /// <summary>
-        /// Item Level selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void Level_Changed(object sender, EventArgs args)
-        {
-            // Change the Level
-            ViewModel.Data.Level = ItemLevelPicker.SelectedIndex + 1;
-        }
+     
     }
 }
