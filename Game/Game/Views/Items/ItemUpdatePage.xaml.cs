@@ -36,6 +36,8 @@ namespace Game.Views
             //Need to make the SelectedItem a string, so it can select the correct item.
             LocationPicker.SelectedItem = data.Data.Location.ToString();
             AttributePicker.SelectedItem = data.Data.Attribute.ToString();
+
+            CautionStack.IsVisible = false;
         }
 
         /// <summary>
@@ -45,6 +47,22 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(ViewModel.Data.Name) && string.IsNullOrEmpty(ViewModel.Data.Description))
+            {
+                CautionStack.IsVisible = true;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(ViewModel.Data.Name)) {
+                CautionStack.IsVisible = true;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(ViewModel.Data.Description)) {
+                CautionStack.IsVisible = true;
+                return;
+            }
+            
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
             {

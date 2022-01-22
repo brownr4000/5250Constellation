@@ -164,7 +164,7 @@
                 Spacing="10">
 
                 <Label Text="Update Page" Style="{StaticResource LabelBaseStyle}" FontSize="Large" HorizontalOptions = "Center" Padding="15" />
-                
+
                 <StackLayout Orientation="Horizontal">
 
                     <Grid
@@ -220,6 +220,11 @@
                     </Grid>
 
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" Margin="50"/>
+
+                    <StackLayout x:Name="CautionStack" Orientation="Vertical">
+                        <Label Text="Name and Description cannot be empty!" FontSize="Large" TextColor="blue"/>
+                        <Label Text="Please try again." FontSize="Large" TextColor="blue" HorizontalOptions="Center"/>
+                    </StackLayout>
 
                 </StackLayout>
 
@@ -287,12 +292,6 @@
 
                 </StackLayout>
 
-                <StackLayout>
-                    <Label Text="Change Armor" Style="{StaticResource LabelBaseStyle}" FontSize="Large" HorizontalOptions = "Center" Padding="15"/>
-                </StackLayout>
-
-                
-                
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Clicked="Cancel_Clicked" FontSize="Medium" BackgroundColor="LightGray" Margin="25" WidthRequest="150"/>
                     <Button Text="Update" Clicked="Save_Clicked" FontSize="Medium" BackgroundColor="LightGray" Margin="25" WidthRequest="150"/>
