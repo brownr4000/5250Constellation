@@ -82,7 +82,7 @@
                 </StackLayout>
 
                 
-                <StackLayout Orientation="Horizontal" Margin="100">
+                <StackLayout Orientation="Horizontal">
                    
                     <StackLayout Orientation="Vertical">
  
