@@ -8,7 +8,7 @@
 
         <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
 
-            <FlexLayout x:Name="flexLayout"
+            <!--<FlexLayout x:Name="flexLayout"
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
                         AlignContent="SpaceAround">
@@ -48,7 +48,57 @@
                         Text="Auto Battle"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
-            </FlexLayout>
+            </FlexLayout>-->
+
+            <StackLayout Spacing="100">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <ImageButton
+                                   Source="item.png"
+                                   Style="{StaticResource ImageLargeStyle}"
+                                   Clicked="AboutButton_Clicked"/>
+
+                    <Label Text="About"
+                           Style="{StaticResource CenterMessageStyle}"/>
+                    
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout>
+                        <ImageButton Source="item.png"
+                                     Style="{StaticResource ImageLargeStyle}"
+                                     Clicked="VillageButton_Clicked"/>
+
+                        <Label Text="Village"
+                               Style="{StaticResource CenterMessageStyle}"/>
+                    
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="EndAndExpand">
+                        <ImageButton Source="item.png"
+                                     Style="{StaticResource ImageLargeStyle}"
+                                     Clicked="DungeonButton_Clicked"/>
+
+                        <Label
+                                Text="Dungeon"
+                                Style="{StaticResource CenterMessageStyle}"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout>
+                    <ImageButton
+                                    Source="item.png"
+                                    Style="{StaticResource ImageLargeStyle}"
+                                    Clicked="AutobattleButton_Clicked"/>
+
+                    <Label 
+                            Text="Auto Battle"
+                            Style="{StaticResource CenterMessageStyle}"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
