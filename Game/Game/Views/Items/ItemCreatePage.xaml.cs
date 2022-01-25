@@ -18,7 +18,7 @@ namespace Game.Views
     {
         // The item to create
         public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
-
+       // public static bool isFirstLoad;
         // Empty Constructor for UTs
         public ItemCreatePage(bool UnitTest) { }
 
@@ -33,7 +33,10 @@ namespace Game.Views
             this.ViewModel.Title = "Create";
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
-            ShowHideDamage(Double.Parse(RangeValue.Text));
+            //isFirstLoad = true;
+            //ShowHideDamage(Double.Parse(RangeValue.Text));
+            LocationAttributeErrorMessage.IsVisible = false;            
+            ShowHideRange(false);
         }
 
         /// <summary>
@@ -46,11 +49,42 @@ namespace Game.Views
             // If the image in the data box is empty, use the default one..
             //New item default image while saving
             ViewModel.Data.ImageURI = Services.ItemService.DefaultNewItemImageURI;
-            if(!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible)
+
+            bool isShowLocationAttributeErrorMessage = ShowLocationAttributeErrorMessage();
+            if (!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !isShowLocationAttributeErrorMessage)
             {
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
                 _ = await Navigation.PopModalAsync();
-            }           
+            }
+        }
+
+        public bool ShowLocationAttributeErrorMessage()
+        {
+            bool returnValue = false;
+            LocationAttributeErrorMessage.Text = "";
+            var locationValue = LocationPicker.SelectedItem.ToString();
+            var attributeValue = AttributePicker.SelectedItem.ToString();
+            if (locationValue == "Unknown")
+            {
+                if (attributeValue == "Unknown")
+                {
+                    LocationAttributeErrorMessage.Text = "Please select a Location and Attribute";
+                }
+                else
+                {
+                    LocationAttributeErrorMessage.Text = "Please select a Location";
+                }
+                LocationAttributeErrorMessage.IsVisible = true;
+                returnValue = true;                
+            }
+            else if (attributeValue == "Unknown")
+            {
+                LocationAttributeErrorMessage.Text = "Please select a Attribute";
+                LocationAttributeErrorMessage.IsVisible = true;
+                returnValue = true;
+            }
+            LocationAttributeErrorMessage.IsVisible = returnValue;
+            return returnValue;            
         }
 
         /// <summary>
@@ -83,13 +117,23 @@ namespace Game.Views
         {
             DamageValue.IsVisible = true;
             DamageLabel.IsVisible = true;
-
             if (value < 1)
             {
                 DamageValue.IsVisible = false;
                 DamageLabel.IsVisible = false;
+                DamageValue.Text = null;
                 return;
-            }
+            }            
+        }
+
+        /// <summary>
+        /// Show or hide Range on Page load and Location selected
+        /// </summary>
+        public void ShowHideRange(bool rangeStatus)
+        {
+            //rangeStatus = true(show) or false(hide)
+            RangeLabel.IsVisible = rangeStatus;
+            RangeValue.IsVisible = rangeStatus;
         }
 
         /// <summary>
@@ -118,6 +162,35 @@ namespace Game.Views
             {
                 DescErrorMessage.IsVisible = true;
             }
+        }
+
+        /// <summary>
+        /// On value changed event for Location
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LocationPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RangeValue.Text = "0";
+            DamageValue.Text = "0";
+            ShowHideRange(false);
+            var selectedItem = LocationPicker.SelectedItem;
+            LocationAttributeErrorMessage.IsVisible = false;
+            if (selectedItem.ToString() == "PrimaryHand")
+            {
+                ShowHideRange(true);
+                RangeValue.Text = "1";
+            }
+        }
+
+        /// <summary>
+        /// On value change event for Attribute
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AttributePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LocationAttributeErrorMessage.IsVisible = false;
         }
     }
 }

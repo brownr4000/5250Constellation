@@ -38,11 +38,11 @@
 
                 <Label Grid.Row="2" Grid.Column="0" Text="Location"/>
                 <Picker Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" x:Name="LocationPicker"                                             
-                        BackgroundColor="LimeGreen" 
+                        BackgroundColor="LimeGreen" SelectedIndexChanged="LocationPicker_SelectedIndexChanged"
                         ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}"/>
                 <Label Grid.Row="3" Grid.Column="0" Text="Attributes"/>
-                <Picker Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
+                <Picker Grid.Row="3" Grid.Column="1" SelectedIndexChanged="AttributePicker_SelectedIndexChanged"  HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         BackgroundColor="LimeGreen" x:Name="AttributePicker"/>
 
@@ -55,7 +55,7 @@
                     <Entry Text="{Binding Data.NewItemImageURI}" BackgroundColor="LimeGreen" WidthRequest="425" />
                 </StackLayout>
 
-                <Label Grid.Row="6" Grid.Column="0" Text="Range"/>
+                <Label Grid.Row="6" Grid.Column="0" x:Name="RangeLabel" Text="Range"/>
                 <Entry TextChanged="RangeValue_TextChanged" Text="{Binding Data.Range}" x:Name="RangeValue" Grid.Row="6" Grid.Column="1" HorizontalTextAlignment="Center" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250"/>
                 
                 <Label Grid.Row="7" Grid.Column="0" x:Name="DamageLabel" Text="Damage"/>
@@ -64,6 +64,7 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Please Enter the Item Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
                 <Label Text="Please Enter the Item Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
+                <Label x:Name="LocationAttributeErrorMessage" TextColor="Yellow"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Cancel" Clicked="Cancel_Clicked"/>
