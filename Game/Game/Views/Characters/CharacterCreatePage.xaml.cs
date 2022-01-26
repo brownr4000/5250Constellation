@@ -23,6 +23,10 @@ namespace Game.Views
         // The Character to create
         public GenericViewModel<CharacterModel> ViewModel { get; set; }
 
+        public List<ItemModel> AllLocations { get; set; }
+        // The view model, used for data binding
+        //readonly ItemIndexViewModel ViewModel = CharacterModel();
+
         // Hold the current location selected
         public ItemLocationEnum PopupLocationEnum = ItemLocationEnum.Unknown;
 
@@ -41,15 +45,31 @@ namespace Game.Views
             this.ViewModel = data;
 
             this.ViewModel.Title = "Create";
+            NameErrorMessage.IsVisible = false;
+            DescErrorMessage.IsVisible = false;            
+            ClassErrorMessage.IsVisible = false;
 
-            // Load the values for the Level into the Picker
+            //Load the values for the Level into the Picker
             for (var i = 1; i <= LevelTableHelper.MaxLevel; i++)
             {
                 LevelPicker.Items.Add(i.ToString());
             }
 
             this.ViewModel.Data.Level = 1;
-            // LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+            LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+
+
+            //foreach (string classNames in Enum.GetNames(typeof(CharacterJobEnum)))
+            //{
+            //    if(classNames != "Unknown")
+            //        {
+            //            ClassPicker.Items.Add(classNames);
+            //        }            
+            //}
+            //Load the values for the Class into the Picker
+            ClassPicker.Items.Add(CharacterJobEnum.Fighter.ToMessage());
+            ClassPicker.Items.Add(CharacterJobEnum.Cleric.ToMessage());
+            ClassPicker.Items.Add(CharacterJobEnum.Support.ToMessage());
 
             _ = UpdatePageBindingContext();
         }
@@ -72,29 +92,109 @@ namespace Game.Views
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
             ManageHealth();
-
             AddItemsToDisplay();
-
             return true;
         }
 
         /// <summary>
+        /// Randomize Character Values and Items
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RollDice_Clicked(object sender, EventArgs e)
+        {
+            //_ = DiceAnimationHandeler();
+
+            //_ = RandomizeCharacter();
+
+            return;
+        }
+
+        ///// <summary>
+        ///// Catch the change to the Stepper for Defense
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    DefenseValue.Text = string.Format("{0}", e.NewValue);
+        //}
+
+        ///// <summary>
+        ///// Catch the change to the Stepper for Attack
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    AttackValue.Text = string.Format("{0}", e.NewValue);
+        //}
+
+        ///// <summary>
+        ///// Catch the change to the Stepper for Speed
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        //{
+        //    SpeedValue.Text = string.Format("{0}", e.NewValue);
+        //}
+
+        /// <summary>
         /// The Level selected from the list
-        /// Need to recalculate Max Health
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void Level_Changed(object sender, EventArgs args)
         {
+            // Only change if different
+            if (LevelPicker.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            if (ViewModel.Data.Level == LevelPicker.SelectedIndex + 1)
+            {
+                return;
+            }
+
             // Change the Level
             ViewModel.Data.Level = LevelPicker.SelectedIndex + 1;
-
-            ManageHealth();
+            ManageHealth();      
         }
 
         /// <summary>
-        /// Change the Level Picker
+        /// The Level selected from the list
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void Class_Changed(object sender, EventArgs args)
+        {
+            var selectedClass = ClassPicker.SelectedItem;   
+            if(selectedClass != null)
+            {
+                ClassErrorMessage.IsVisible = false;
+            }
+            // Change the Class
+            switch (selectedClass)
+            {
+                case "Tank":
+                    ViewModel.Data.Job = CharacterJobEnum.Fighter;
+                    break;
+                case "Damage":
+                    ViewModel.Data.Job = CharacterJobEnum.Cleric;
+                    break;
+                case "Support":
+                    ViewModel.Data.Job = CharacterJobEnum.Support;
+                    break;
+                default:
+                    break;
+            }            
+        }
+
+        ///// <summary>
+        ///// Change the Level Picker
+        ///// </summary>
         public void ManageHealth()
         {
             // Roll for new HP
@@ -116,9 +216,17 @@ namespace Game.Views
             {
                 ViewModel.Data.ImageURI = new CharacterModel().ImageURI;
             }
+            if (ClassPicker.SelectedItem == null)
+            {
+                ClassErrorMessage.IsVisible = true;
+                ClassErrorMessage.Text = "Please select a Class";
+            }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+            if(!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible)
+            {
+                MessagingCenter.Send(this, "Create", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }            
         }
 
         /// <summary>
@@ -130,37 +238,35 @@ namespace Game.Views
         {
             _ = await Navigation.PopModalAsync();
         }
-
         /// <summary>
-        /// Catch the change to the Stepper for Attack
+        /// On change event of Attack stepper
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            AttackValue.Text = String.Format("{0}", e.NewValue);
+            AttackValue.Text = string.Format("{0}", e.NewValue);
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Defense
+        /// On change event of Defense stepper
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DefenseValue.Text = String.Format("{0}", e.NewValue);
+            DefenseValue.Text = string.Format("{0}", e.NewValue);
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Speed
+        /// On change event of Speed stepper
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            SpeedValue.Text = String.Format("{0}", e.NewValue);
+            SpeedValue.Text = string.Format("{0}", e.NewValue);
         }
-
 
         /// <summary>
         /// The row selected from the list
@@ -223,6 +329,32 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Item Location change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Location_Changed(object sender, EventArgs e)
+        {
+            //Make a fake item for None
+               var NoneItem = new ItemModel
+               {
+                   Id = null, // to clear the item
+                    Guid = "None", // how to find this item amoung all of them
+                    ImageURI = "icon_cancel.png",
+                   Name = "None",
+                   Description = "None"
+               };
+
+               List < ItemModel > itemList = new List<ItemModel>
+               {
+                    NoneItem
+               };
+
+            // Add the rest of the items to the list
+           // itemList.AddRange(ItemIndexViewModel.Instance.GetLocationItems(location));
+        }
+
+        /// <summary>
         /// When the user clicks the close in the Popup
         /// hide the view
         /// show the scroll view
@@ -243,10 +375,11 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Show the Items the Character has
+        /// Display Items of the Character
         /// </summary>
         public void AddItemsToDisplay()
         {
+
             var FlexList = ItemBox.Children.ToList();
             foreach (var data in FlexList)
             {
@@ -260,13 +393,27 @@ namespace Game.Views
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
+
+
+            // Defualt Image is the Plus
+            // var ImageSource = "icon_add.png";
+            // AllLocations = ViewModel.Data.GetItemByLocation(ItemLocationEnum.Head);
+            // var locationData = ViewModel.Data.GetItemByLocation(ItemLocationEnum.Head);
+            //if (locationData == null)
+            //{
+            //    locationData = new ItemModel { Location = ItemLocationEnum.Head, ImageURI = ImageSource };
+            //}
+            //List<string> locationData = new List<string>();
+            //locationData.Add("Head");
+            //locationData.Add("Primary Hand");
+            //ItemBox.ItemsSource = locationData;
         }
 
-        /// <summary>
-        /// Look up the Item to Display
-        /// </summary>
-        /// <param name="location"></param>
-        /// <returns></returns>
+        ///// <summary>
+        ///// Look up the Item to Display
+        ///// </summary>
+        ///// <param name="location"></param>
+        ///// <returns></returns>
         public StackLayout GetItemToDisplay(ItemLocationEnum location)
         {
             // Get the Item, if it exist show the info
@@ -288,11 +435,11 @@ namespace Game.Views
                 Source = data.ImageURI
             };
 
-            // Add a event to the user can click the item and see more
+            //Add a event to the user can click the item and see more
             ItemButton.Clicked += (sender, args) => ShowPopup(location);
 
-            // Add the Display Text for the item
-            var ItemLabel = new Label
+        // Add the Display Text for the item
+        var ItemLabel = new Label
             {
                 Text = location.ToMessage(),
                 Style = (Style)Application.Current.Resources["ValueStyleMicro"],
@@ -316,84 +463,112 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Randomize Character Values and Items
+        /// Name change event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void RollDice_Clicked(object sender, EventArgs e)
+        private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _ = DiceAnimationHandeler();
-
-            _ = RandomizeCharacter();
-
-            return;
+            NameErrorMessage.IsVisible = false;
+            if (String.IsNullOrEmpty(NameValue.Text))
+            {
+                NameErrorMessage.IsVisible = true;
+            }
         }
 
         /// <summary>
-        /// 
-        /// Randomize the Character
-        /// Keep the Level the Same
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public bool RandomizeCharacter()
-        {
-            // Randomize Name
-            ViewModel.Data.Name = RandomPlayerHelper.GetCharacterName();
-            ViewModel.Data.Description = RandomPlayerHelper.GetCharacterDescription();
-
-            // Randomize the Attributes
-            ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
-            ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
-            ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
-
-            // Randomize an Item for Location
-            ViewModel.Data.Head = RandomPlayerHelper.GetItem(ItemLocationEnum.Head);
-            ViewModel.Data.Necklass = RandomPlayerHelper.GetItem(ItemLocationEnum.Necklass);
-            ViewModel.Data.PrimaryHand = RandomPlayerHelper.GetItem(ItemLocationEnum.PrimaryHand);
-            ViewModel.Data.OffHand = RandomPlayerHelper.GetItem(ItemLocationEnum.OffHand);
-            ViewModel.Data.RightFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
-            ViewModel.Data.LeftFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
-            ViewModel.Data.Feet = RandomPlayerHelper.GetItem(ItemLocationEnum.Feet);
-
-            ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
-
-            ViewModel.Data.ImageURI = RandomPlayerHelper.GetCharacterImage();
-
-            _ = UpdatePageBindingContext();
-
-            return true;
-        }
-
-        /// <summary>
-        /// Setup the Dice Animation
+        /// Description change event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public bool DiceAnimationHandeler()
+        private void Desc_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Animate the Rolling of the Dice
-            var image = RollDice;
-            uint duration = 1000;
-
-            var parentAnimation = new Animation();
-
-            // Grow the image Size
-            var scaleUpAnimation = new Animation(v => image.Scale = v, 1, 2, Easing.SpringIn);
-
-            // Spin the Image
-            var rotateAnimation = new Animation(v => image.Rotation = v, 0, 360);
-
-            // Shrink the Image
-            var scaleDownAnimation = new Animation(v => image.Scale = v, 2, 1, Easing.SpringOut);
-
-            parentAnimation.Add(0, 0.5, scaleUpAnimation);
-            parentAnimation.Add(0, 1, rotateAnimation);
-            parentAnimation.Add(0.5, 1, scaleDownAnimation);
-
-            parentAnimation.Commit(this, "ChildAnimations", 16, duration, null, null);
-
-            return true;
+            DescErrorMessage.IsVisible = false;
+            if (String.IsNullOrEmpty(DescValue.Text))
+            {
+                DescErrorMessage.IsVisible = true;
+            }
         }
+
+        ///// <summary>
+        ///// Randomize Character Values and Items
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public void RollDice_Clicked(object sender, EventArgs e)
+        //{
+        //    _ = DiceAnimationHandeler();
+
+        //    _ = RandomizeCharacter();
+
+        //    return;
+        //}
+
+        ///// <summary>
+        ///// 
+        ///// Randomize the Character
+        ///// Keep the Level the Same
+        ///// 
+        ///// </summary>
+        ///// <returns></returns>
+        //public bool RandomizeCharacter()
+        //{
+        //    // Randomize Name
+        //    ViewModel.Data.Name = RandomPlayerHelper.GetCharacterName();
+        //    ViewModel.Data.Description = RandomPlayerHelper.GetCharacterDescription();
+
+        //    // Randomize the Attributes
+        //    ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
+        //    ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
+        //    ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
+
+        //    // Randomize an Item for Location
+        //    ViewModel.Data.Head = RandomPlayerHelper.GetItem(ItemLocationEnum.Head);
+        //    ViewModel.Data.Necklass = RandomPlayerHelper.GetItem(ItemLocationEnum.Necklass);
+        //    ViewModel.Data.PrimaryHand = RandomPlayerHelper.GetItem(ItemLocationEnum.PrimaryHand);
+        //    ViewModel.Data.OffHand = RandomPlayerHelper.GetItem(ItemLocationEnum.OffHand);
+        //    ViewModel.Data.RightFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
+        //    ViewModel.Data.LeftFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
+        //    ViewModel.Data.Feet = RandomPlayerHelper.GetItem(ItemLocationEnum.Feet);
+
+        //    ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
+
+        //    ViewModel.Data.ImageURI = RandomPlayerHelper.GetCharacterImage();
+
+        //    _ = UpdatePageBindingContext();
+
+        //    return true;
+        //}
+
+        ///// <summary>
+        ///// Setup the Dice Animation
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public bool DiceAnimationHandeler()
+        //{
+        //    // Animate the Rolling of the Dice
+        //    var image = RollDice;
+        //    uint duration = 1000;
+
+        //    var parentAnimation = new Animation();
+
+        //    // Grow the image Size
+        //    var scaleUpAnimation = new Animation(v => image.Scale = v, 1, 2, Easing.SpringIn);
+
+        //    // Spin the Image
+        //    var rotateAnimation = new Animation(v => image.Rotation = v, 0, 360);
+
+        //    // Shrink the Image
+        //    var scaleDownAnimation = new Animation(v => image.Scale = v, 2, 1, Easing.SpringOut);
+
+        //    parentAnimation.Add(0, 0.5, scaleUpAnimation);
+        //    parentAnimation.Add(0, 1, rotateAnimation);
+        //    parentAnimation.Add(0.5, 1, scaleDownAnimation);
+
+        //    parentAnimation.Commit(this, "ChildAnimations", 16, duration, null, null);
+
+        //    return true;
+        //}
     }
 }

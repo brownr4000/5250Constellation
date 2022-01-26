@@ -18,15 +18,15 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Character;
             Guid = Id;
-            Name = "Elf";
-            Description = "Happy Elf";
+            Name = "Default Character Name";
+            Description = "Default Character Description";
             Level = 1;
             ImageURI = "knight.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
-            // Default to unknown, which is no special job
-            Job = CharacterJobEnum.Unknown;
+            // Default to Tank, which is to attack
+            Job = CharacterJobEnum.Fighter;
         }
 
         /// <summary>

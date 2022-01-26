@@ -15,6 +15,8 @@
         // Clerics defend well and have buff abilities
         Cleric = 12,
 
+        // Clerics support well and have healing abilities
+        Support = 20
     }
 
     /// <summary>
@@ -35,11 +37,15 @@
             switch (value)
             {
                 case CharacterJobEnum.Fighter:
-                    Message = "Fighter";
+                    Message = "Tank";
                     break;
 
                 case CharacterJobEnum.Cleric:
-                    Message = "Cleric";
+                    Message = "Damage";
+                    break;
+
+                case CharacterJobEnum.Support:
+                    Message = "Support";
                     break;
 
                 case CharacterJobEnum.Unknown:
