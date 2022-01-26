@@ -224,7 +224,41 @@
                                         x:Name="ItemBox">
         </FlexLayout>
 
-        <!--The Item Popup-->
+            
+            <!--<CollectionView x:Name="ItemBox" ItemsSource="{Binding DataSet}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="35"/>
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="140"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.RowSpan="2"
+                                    Source="{Binding ImageUrl}"
+                                    Aspect="AspectFill"
+                                    HeightRequest="60"
+                                    WidthRequest="60"/>
+
+                            <Label Grid.Column="1"
+                                   Text="{Binding Name}"/>
+
+                        </Grid>
+
+                    </DataTemplate>
+                    
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>-->
+
+                    <!--The Item Popup-->
     <StackLayout x:Name="PopupLoadingView" 
                  BackgroundColor="{StaticResource PageBackgroundColor}" 
                  IsVisible="false" 
@@ -265,34 +299,148 @@
     </StackLayout>
 
         <StackLayout Orientation="Vertical" Spacing="20">
-            <StackLayout Orientation="Horizontal" Spacing="30">
-                <Label Text="Attack" Style="{StaticResource LabelStyle}" BackgroundColor="LightGray" WidthRequest="60" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding Data.GetAttackTotal}" Style="{StaticResource ValueStyle}"/>
+                <StackLayout Orientation="Horizontal">
 
-            </StackLayout>
+                    <Grid
+                                WidthRequest="800"
+                                HeightRequest="30">
 
-            <StackLayout Orientation="Horizontal" Spacing="30">
-                <Label Text="Defense" Style="{StaticResource LabelStyle}" BackgroundColor="LightGray" WidthRequest="60" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding Data.GetDefenseTotal}" Style="{StaticResource ValueStyle}"/>
+                        <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Attack " 
+                                    Style="{StaticResource LabelStyle}"
+                                    BackgroundColor="LightGray" 
+                                    WidthRequest="200" HorizontalTextAlignment="Center"/>
 
-            </StackLayout>
+                        <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Data.GetAttackTotal}" 
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="True"/>
 
-            <StackLayout Orientation="Horizontal" Spacing="30">
-                <Label Text="Speed" Style="{StaticResource LabelStyle}" BackgroundColor="LightGray" WidthRequest="60" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding Data.GetDefenseTotal}" Style="{StaticResource ValueStyle}"/>
+                        <ProgressBar Progress="{Binding Data.GetAttackTotal}" 
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"/>
 
-            </StackLayout>
+                    </Grid>
 
-            <StackLayout Orientation="Horizontal" Spacing="30">
-                <Label Text="Health" Style="{StaticResource LabelStyle}" BackgroundColor="LightGray" WidthRequest="60" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding Data.GetMaxHealthTotal}" Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                </StackLayout>
 
-            <StackLayout Orientation="Horizontal" Spacing="30">
-                <Label Text="Damage" Style="{StaticResource LabelStyle}" BackgroundColor="LightGray" WidthRequest="60" HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding Data.GetDamageTotalString}" Style="{StaticResource ValueStyle}"/>
+                <StackLayout Orientation="Horizontal">
 
-            </StackLayout>
+                    <Grid
+                                WidthRequest="800"
+                                HeightRequest="30">
+
+                        <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Defense " 
+                                    Style="{StaticResource LabelStyle}"
+                                    BackgroundColor="LightGray" 
+                                    WidthRequest="200" HorizontalTextAlignment="Center"/>
+
+                        <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Data.GetDefenseTotal}" 
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="True"/>
+
+                        <ProgressBar Progress="{Binding Data.GetDefenseTotal}" 
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"/>
+
+                    </Grid>
+
+                </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                    <Grid
+                                WidthRequest="800"
+                                HeightRequest="30">
+
+                        <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Speed " 
+                                    Style="{StaticResource LabelStyle}"
+                                    BackgroundColor="LightGray" 
+                                    WidthRequest="200" HorizontalTextAlignment="Center"/>
+
+                        <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Data.GetSpeedTotal}" 
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="True"/>
+
+                        <ProgressBar Progress="{Binding Data.GetSpeedTotal}" 
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"/>
+
+                    </Grid>
+
+                </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                    <Grid
+                                WidthRequest="800"
+                                HeightRequest="30">
+
+                        <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Health " 
+                                    Style="{StaticResource LabelStyle}"
+                                    BackgroundColor="LightGray" 
+                                    WidthRequest="200" HorizontalTextAlignment="Center"/>
+
+                        <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Data.GetMaxHealthTotal}" 
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="True"/>
+
+                        <ProgressBar Progress="{Binding Data.GetMaxHealthTotal}" 
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"/>
+
+                        </Grid>
+                </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                
+                    <Grid
+                                WidthRequest="800"
+                                HeightRequest="30">
+
+                        <Label
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Text="Damage " 
+                                    Style="{StaticResource LabelStyle}"
+                                    BackgroundColor="LightGray" 
+                                    WidthRequest="200" HorizontalTextAlignment="Center"/>
+
+                        <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Data.GetDamageTotalString}" 
+                                    Style="{StaticResource ValueStyle}"
+                                    IsVisible="True"/>
+
+                        <ProgressBar Progress="{Binding Data.GetDamageTotalString}" 
+                                    ProgressColor="LimeGreen"
+                                    Grid.Column="2"/>
+
+                    </Grid>
+
+                </StackLayout>
         </StackLayout>
 
 
