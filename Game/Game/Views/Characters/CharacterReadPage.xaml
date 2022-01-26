@@ -168,9 +168,9 @@
             <StackLayout Spacing="20">
                 <Label Text="Character Details" Style="{StaticResource HeaderStyle}" FontSize="25"/>
 
-                <StackLayout Orientation="Horizontal" Margin="20">
+                <StackLayout Orientation="Horizontal" Margin="20" Spacing="40">
 
-                    <StackLayout Orientation="Vertical" Spacing="25"  WidthRequest="500">
+                    <StackLayout Orientation="Vertical" Spacing="25"  WidthRequest="275">
                         <StackLayout Orientation="Horizontal" BackgroundColor="LightGray">
                             <Label 
                             Text="Name : " 
@@ -201,7 +201,7 @@
 
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" BackgroundColor="LightGray">
+                        <StackLayout Orientation="Vertical" BackgroundColor="LightGray">
                             <Label Text="Description :"
                            Style="{StaticResource LabelBaseStyle}"/>
                             <Label Text="{Binding Data.Description}"
