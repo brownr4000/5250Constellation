@@ -35,6 +35,40 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             AddItemsToDisplay();
+            // Temp store off the Level
+            var level = this.ViewModel.Data.Level;            
+            ViewModel.Data.Level = level - 1;
+
+            //Converting Job to Class and assigning to ClassPicker            
+            string result = ConverClasstoJob(ViewModel.Data.Job);
+            if (String.IsNullOrEmpty(result))
+            {
+                ClassValue.Text = result;
+            }
+        }
+
+        /// <summary>
+        /// Convert Class to Job
+        /// </summary>
+        /// <param name="selectedClass"></param>
+        public string ConverClasstoJob(object selectedClass)
+        {
+            string result = null;
+            switch (selectedClass.ToString())
+            {
+                case "Fighter":
+                    result = CharacterJobEnum.Fighter.ToMessage();
+                    break;
+                case "Cleric":
+                    result = CharacterJobEnum.Cleric.ToMessage();
+                    break;
+                case "Support":
+                    result = CharacterJobEnum.Support.ToMessage();
+                    break;
+                default: 
+                    break;
+            }
+            return result;
         }
 
         /// <summary>
@@ -66,7 +100,7 @@ namespace Game.Views
         {
             // Defualt Image is the Plus
             var ImageSource = "icon_cancel.png";
-            var ClickableButton = true;
+            //var ClickableButton = true;
 
             var data = ViewModel.Data.GetItemByLocation(location);
             if (data == null)
@@ -75,7 +109,7 @@ namespace Game.Views
                 data = new ItemModel { Location = location, ImageURI = ImageSource };
 
                 // Turn off click action
-                ClickableButton = false;
+                //ClickableButton = false;
             }
 
             // Hookup the Image Button to show the Item picture
@@ -83,13 +117,7 @@ namespace Game.Views
             {
                 Style = (Style)Application.Current.Resources["ImageMediumStyle"],
                 Source = data.ImageURI
-            };
-
-            if (ClickableButton)
-            {
-                // Add a event to the user can click the item and see more
-                ItemButton.Clicked += (sender, args) => ShowPopup(data);
-            }
+            };            
 
             // Add the Display Text for the item
             var ItemLabel = new Label
@@ -122,20 +150,6 @@ namespace Game.Views
         /// <returns></returns>
         public bool ShowPopup(ItemModel data)
         {
-            PopupLoadingView.IsVisible = true;
-            PopupItemImage.Source = data.ImageURI;
-
-            PopupItemName.Text = data.Name;
-            PopupItemDescription.Text = data.Description;
-            PopupItemLocation.Text = data.Location.ToMessage();
-            PopupItemAttribute.Text = data.Attribute.ToMessage();
-            PopupItemValue.Text = " + " + data.Value.ToString();
-
-            //// Close the popup after 3 seconds
-            //Device.StartTimer(TimeSpan.FromSeconds(3), () => { 
-            //        PopupLoadingView.IsVisible = false;
-            //        return true; }); 
-
             return true;
         }
 
@@ -148,7 +162,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ClosePopup_Clicked(object sender, EventArgs e)
         {
-            PopupLoadingView.IsVisible = false;
+            // PopupLoadingView.IsVisible = false;
+            var result = "null";
         }
 
         /// <summary>
@@ -165,12 +180,13 @@ namespace Game.Views
         /// <summary>
         /// Calls for Delete
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name = "sender" ></ param >
+        /// < param name="e"></param>
         public async void Delete_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(ViewModel)));
             _ = await Navigation.PopAsync();
         }
+
     }
 }
