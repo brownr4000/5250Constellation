@@ -110,36 +110,6 @@ namespace Game.Views
             return;
         }
 
-        ///// <summary>
-        ///// Catch the change to the Stepper for Defense
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    DefenseValue.Text = string.Format("{0}", e.NewValue);
-        //}
-
-        ///// <summary>
-        ///// Catch the change to the Stepper for Attack
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    AttackValue.Text = string.Format("{0}", e.NewValue);
-        //}
-
-        ///// <summary>
-        ///// Catch the change to the Stepper for Speed
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    SpeedValue.Text = string.Format("{0}", e.NewValue);
-        //}
-
         /// <summary>
         /// The Level selected from the list
         /// </summary>
@@ -392,21 +362,7 @@ namespace Game.Views
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.OffHand));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
-            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
-
-
-            // Defualt Image is the Plus
-            // var ImageSource = "icon_add.png";
-            // AllLocations = ViewModel.Data.GetItemByLocation(ItemLocationEnum.Head);
-            // var locationData = ViewModel.Data.GetItemByLocation(ItemLocationEnum.Head);
-            //if (locationData == null)
-            //{
-            //    locationData = new ItemModel { Location = ItemLocationEnum.Head, ImageURI = ImageSource };
-            //}
-            //List<string> locationData = new List<string>();
-            //locationData.Add("Head");
-            //locationData.Add("Primary Hand");
-            //ItemBox.ItemsSource = locationData;
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));           
         }
 
         ///// <summary>
