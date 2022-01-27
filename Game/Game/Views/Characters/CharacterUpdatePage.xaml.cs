@@ -36,14 +36,26 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
-
             this.ViewModel.Title = "Update " + data.Title;
+            NameErrorMessage.IsVisible = false;
+            DescErrorMessage.IsVisible = false;
+            ClassErrorMessage.IsVisible = false;
 
             // Load the values for the Level into the Picker
             for (var i = 1; i <= LevelTableHelper.MaxLevel; i++)
             {
                 LevelPicker.Items.Add(i.ToString());
             }
+
+            //Load the values for the Class into the Picker
+            ClassPicker.Items.Add(CharacterJobEnum.Fighter.ToMessage());
+            ClassPicker.Items.Add(CharacterJobEnum.Cleric.ToMessage());
+            ClassPicker.Items.Add(CharacterJobEnum.Support.ToMessage());
+
+            //Setting Stepper value
+            //AttackValue = ViewModel.Data.Attack;
+            //AttackValue = ViewModel.Data.Attack;
+            //AttackValue = ViewModel.Data.Attack;
 
             _ = UpdatePageBindingContext();
         }
@@ -65,11 +77,69 @@ namespace Game.Views
             ViewModel.Data.Level = level;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
-            ManageHealth();
+            //Converting Job to Class and assigning to ClassPicker            
+            ConverClasstoJob(ViewModel.Data.Job);
 
+            ManageHealth();
             AddItemsToDisplay();
 
             return true;
+        }
+
+        /// <summary>
+        /// The Level selected from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void Class_Changed(object sender, EventArgs args)
+        {
+            var selectedClass = ClassPicker.SelectedItem;
+            if (selectedClass != null)
+            {
+                ClassErrorMessage.IsVisible = false;
+            }
+            // Change the Class
+            ConverJobtoClass(selectedClass);           
+        }
+
+        public void ConverJobtoClass(object selectedJob)
+        {
+            switch (selectedJob)
+            {
+                case "Tank":
+                    ViewModel.Data.Job = CharacterJobEnum.Fighter;
+                    break;
+                case "Damage":
+                    ViewModel.Data.Job = CharacterJobEnum.Cleric;
+                    break;
+                case "Support":
+                    ViewModel.Data.Job = CharacterJobEnum.Support;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Convert Class to Job
+        /// </summary>
+        /// <param name="selectedClass"></param>
+        public void ConverClasstoJob(object selectedClass)
+        {
+            switch (selectedClass.ToString())
+            {
+                case "Fighter":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Fighter.ToMessage();
+                    break;
+                case "Cleric":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Cleric.ToMessage();
+                    break;
+                case "Support":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Support.ToMessage();
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -361,6 +431,34 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Name change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            NameErrorMessage.IsVisible = false;
+            if (String.IsNullOrEmpty(NameValue.Text))
+            {
+                NameErrorMessage.IsVisible = true;
+            }
+        }
+
+        /// <summary>
+        /// Description change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Desc_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DescErrorMessage.IsVisible = false;
+            if (String.IsNullOrEmpty(DescValue.Text))
+            {
+                DescErrorMessage.IsVisible = true;
+            }
+        }
+
+        /// <summary>
         /// Setup the Dice Animation
         /// </summary>
         /// <param name="sender"></param>
@@ -368,25 +466,25 @@ namespace Game.Views
         public bool DiceAnimationHandeler()
         {
             // Animate the Rolling of the Dice
-            var image = RollDice;
-            uint duration = 1000;
+            //var image = RollDice;
+            //uint duration = 1000;
 
-            var parentAnimation = new Animation();
+            //var parentAnimation = new Animation();
 
-            // Grow the image Size
-            var scaleUpAnimation = new Animation(v => image.Scale = v, 1, 2, Easing.SpringIn);
+            //// Grow the image Size
+            //var scaleUpAnimation = new Animation(v => image.Scale = v, 1, 2, Easing.SpringIn);
 
-            // Spin the Image
-            var rotateAnimation = new Animation(v => image.Rotation = v, 0, 360);
+            //// Spin the Image
+            //var rotateAnimation = new Animation(v => image.Rotation = v, 0, 360);
 
-            // Shrink the Image
-            var scaleDownAnimation = new Animation(v => image.Scale = v, 2, 1, Easing.SpringOut);
+            //// Shrink the Image
+            //var scaleDownAnimation = new Animation(v => image.Scale = v, 2, 1, Easing.SpringOut);
 
-            parentAnimation.Add(0, 0.5, scaleUpAnimation);
-            parentAnimation.Add(0, 1, rotateAnimation);
-            parentAnimation.Add(0.5, 1, scaleDownAnimation);
+            //parentAnimation.Add(0, 0.5, scaleUpAnimation);
+            //parentAnimation.Add(0, 1, rotateAnimation);
+            //parentAnimation.Add(0.5, 1, scaleDownAnimation);
 
-            parentAnimation.Commit(this, "ChildAnimations", 16, duration, null, null);
+            //parentAnimation.Commit(this, "ChildAnimations", 16, duration, null, null);
 
             return true;
         }
