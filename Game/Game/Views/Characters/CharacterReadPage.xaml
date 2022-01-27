@@ -32,22 +32,22 @@
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
                             <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                                <Label Text="Name"/>
+                                <Label Text="Name:"/>
                                 <Label
                                 Text="{Binding Data.Name}"
                                 Style="{StaticResource ValueStyle}"
                                 />
-                                <Label Text="Level"/>
+                                <Label Text="Level:"/>
                                 <Label
                                 Text="{Binding Data.Level}"
                                 Style="{StaticResource ValueStyle}"
                                 />
-                                <Label Text="Class"/>
+                                <Label Text="Class:"/>
                                 <Label
                                 Text="{Binding Data.Job}"
                                 Style="{StaticResource ValueStyle}"
                                  x:Name="ClassValue"/>
-                                <Label Text="Description"/>
+                                <Label Text="Description:"/>
                                 <Label
                                 Text="{Binding Data.Description}"
                                 Style="{StaticResource ValueStyle}"
@@ -56,7 +56,7 @@
                                     <Label Text="Max Health" 
                                 Style="{StaticResource LabelStyle}"/>
                                     <Label x:Name="MaxHealthValue"
-                                Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}"/>
+                                Text="{Binding Data.MaxHealth, StringFormat= '{0:G}'}"/>
                                 </StackLayout>
 
                             </StackLayout>

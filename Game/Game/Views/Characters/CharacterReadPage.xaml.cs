@@ -41,7 +41,7 @@ namespace Game.Views
 
             //Converting Job to Class and assigning to ClassPicker            
             string result = ConverClasstoJob(ViewModel.Data.Job);
-            if (String.IsNullOrEmpty(result))
+            if (!String.IsNullOrEmpty(result))
             {
                 ClassValue.Text = result;
             }
