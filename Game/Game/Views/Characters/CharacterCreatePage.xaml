@@ -61,24 +61,24 @@
                             <Image Source="{Binding Data.ImageURI}" HeightRequest="100" WidthRequest="100" Grid.Row="0" Grid.Column="1"/>
                         </Grid>
                         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal">                                
                                 <Label Text="Attack"/>
                                 <Stepper Maximum="10"
-                             Increment="1"
-                             Value="{Binding Data.Attack, Mode=TwoWay}" 
-                             ValueChanged="Attack_OnStepperValueChanged"
-                             BackgroundColor="LimeGreen"/>
-                                <Label Text="{Binding Data.Attack, Mode=TwoWay}" 
-                           x:Name="AttackValue"
-                           Style="{StaticResource ValueStyle}"
-                           Padding="0,0,10,0"
-                           HorizontalOptions="End"
-                           HorizontalTextAlignment="End"/>
+                                     Increment="1"
+                                     Value="{Binding Data.Attack, Mode=TwoWay}" 
+                                     ValueChanged="Attack_OnStepperValueChanged"
+                                     BackgroundColor="LimeGreen"/>
+                                <Label Text="{Binding Data.Attack}" 
+                                   x:Name="AttackValue"
+                                   Style="{StaticResource ValueStyle}"
+                                   Padding="0,0,10,0"
+                                   HorizontalOptions="End"
+                                   HorizontalTextAlignment="End"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Defense"/>
                                 <Stepper Maximum="10"
-                            Increment="1" Value="{Binding Data.Attack, Mode=TwoWay}" BackgroundColor="LimeGreen"
+                            Increment="1" Value="{Binding Data.Defense, Mode=TwoWay}" BackgroundColor="LimeGreen"
                             ValueChanged="Defense_OnStepperValueChanged"/>
                                 <Label Text="{Binding Data.Defense, Mode=TwoWay}" 
                            x:Name="DefenseValue"
