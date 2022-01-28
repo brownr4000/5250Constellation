@@ -5,6 +5,9 @@ using Game.ViewModels;
 
 namespace Game.GameRules
 {
+    /// <summary>
+    /// The DefaultData class defines the structre and attributes of the Default data in the Game
+    /// </summary>
     public static class DefaultData
     {
         /// <summary>
@@ -16,32 +19,32 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "Gold Sword",
-                    Description = "Sword made of Gold, really expensive looking",
+                    Name = "Stun Gun",
+                    Description = "A handheld weapon that stuns a target",
                     ImageURI = "sword1.png",
-                    Range = 0,
-                    Damage = 10,
-                    Value = 9,
+                    Range = 1,
+                    Damage = 1,
+                    Value = 1,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
-                    Name = "Pirate Sword",
-                    Description = "Aye matie",
+                    Name = "Pistol",
+                    Description = "A handheld gun, standard issue",
                     ImageURI = "sword2.png",
-                    Range = 0,
-                    Damage = 8,
-                    Value = 9,
+                    Range = 9,
+                    Damage = 2,
+                    Value = 2,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
-                    Name = "Dagger",
-                    Description = "watch out",
+                    Name = "Crystal Sword",
+                    Description = "A one-handed sword made of crystals from space",
                     ImageURI = "sword3.png",
-                    Range = 0,
-                    Damage = 6,
-                    Value = 9,
+                    Range = 1,
+                    Damage = 2,
+                    Value = 3,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack},
 
