@@ -303,8 +303,8 @@ namespace Game.GameRules
             var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
-                    Name = "Mike",
-                    Description = "Archer Wannabe",
+                    Name = "Agent 1",
+                    Description = "The oldest Agent",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "elf1.png",
@@ -315,11 +315,12 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Job = CharacterJobEnum.Fighter
                 },
 
                 new CharacterModel {
-                    Name = "Tim",
-                    Description = "Hawk eye",
+                    Name = "Agent Alpha",
+                    Description = "The first Agent",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "elf2.png",
@@ -330,13 +331,15 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Job = CharacterJobEnum.Cleric
                 },
 
                 new CharacterModel {
-                    Name = "Doug",
-                    Description = "Warrior in training",
+                    Name = "Agent Omega",
+                    Description = "The final defense",
                     Level = 1,
                     MaxHealth = 8,
+                    Defense = 9,
                     ImageURI = "elf4.png",
                     Head = HeadString,
                     Necklass = NecklassString,
@@ -345,38 +348,44 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
+                    Job = CharacterJobEnum.Fighter
                 },
 
                 new CharacterModel {
-                    Name = "Sue",
-                    Description = "A strong Warrior",
+                    Name = "Agent Dave",
+                    Description = "A normal guy",
                     Level = 4,
                     MaxHealth = 38,
-                    ImageURI = "elf3.png"
+                    ImageURI = "elf3.png",
+                    Job = CharacterJobEnum.Cleric
                 },
 
                 new CharacterModel {
-                    Name = "Jea",
-                    Description = "Come and get me",
+                    Name = "Agent K",
+                    Description = "Not Tommy Lee Jones",
                     Level = 5,
                     MaxHealth = 43,
-                    ImageURI = "elf5.png"
+                    Attack = 2,
+                    ImageURI = "elf5.png",
+                    Job = CharacterJobEnum.Cleric
                 },
 
                 new CharacterModel {
-                    Name = "Darren",
-                    Description = "The Wiz",
+                    Name = "Agent Pug",
+                    Description = "Someone recruited a dog to become an Agent",
                     Level = 5,
-                    MaxHealth = 43,
-                    ImageURI = "elf6.png"
+                    MaxHealth = 21,
+                    ImageURI = "elf6.png",
+                    Job = CharacterJobEnum.Support
                 },
 
                 new CharacterModel {
-                    Name = "Dani",
-                    Description = "A powerfull Cleric",
-                    Level = 5,
-                    MaxHealth = 43,
-                    ImageURI = "elf7.png"
+                    Name = "Larry",
+                    Description = "No one understands how Larry got here",
+                    Level = 1,
+                    MaxHealth = 3,
+                    ImageURI = "elf7.png",
+                    Job = CharacterJobEnum.Support
                 }
             };
 
