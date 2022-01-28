@@ -79,74 +79,74 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense},
 
                 new ItemModel {
-                    Name = "Mace of Health",
-                    Description = "Feeling Good",
+                    Name = "Nosiy Cricket",
+                    Description = "A tiny weapon of extraterrestrial design",
                     ImageURI = "sword7.png",
-                    Range = 0,
-                    Damage = 6,
+                    Range = 4,
+                    Damage = 9,
                     Value = 9,
                     Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.CurrentHealth},
+                    Attribute = AttributeEnum.Speed},
 
                 new ItemModel {
-                    Name = "Arrows",
-                    Description = "Poke your eye out",
+                    Name = "Carbonizer",
+                    Description = "A device that slows down a Monster",
                     ImageURI = "sword8.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Range = 1,
+                    Damage = 2,
+                    Value = 0,
                     Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack},
+                    Attribute = AttributeEnum.Speed},
 
                 new ItemModel {
-                    Name = "Boxing",
-                    Description = "watch out",
-                    ImageURI = "sword9.png",
-                    Range = 0,
-                    Damage = 6,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack},
-
-                new ItemModel {
-                    Name = "Bow",
-                    Description = "Fast Bow",
-                    ImageURI = "sword10.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack},
-
-                new ItemModel {
-                    Name = "Fire Bow",
-                    Description = "Fast Bow",
-                    ImageURI = "sword11.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack},
-
-                new ItemModel {
-                    Name = "Strong Shield",
-                    Description = "Enough to hide behind",
-                    ImageURI = "shield1.png",
-                    Range = 0,
-                    Damage = 0,
-                    Value = 9,
-                    Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Defense},
-
-                new ItemModel {
-                    Name = "Fancy Shield",
-                    Description = "Enough to hide behind",
+                    Name = "Defense Shield",
+                    Description = "A device that protects the user from harm",
                     ImageURI = "shield2.png",
                     Range = 0,
                     Damage = 0,
-                    Value = 9,
+                    Value = 3,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Defense},
+
+                new ItemModel {
+                    Name = "Sunglasses",
+                    Description = "A pair of shades that protect the wearer from getting things in their eye",
+                    ImageURI = "hat1.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 1,
+                    Location = ItemLocationEnum.Head,
+                    Attribute = AttributeEnum.Defense},
+
+                new ItemModel {
+                    Name = "Moon Boots",
+                    Description = "Bouncy boots that boost the speed of the wearer",
+                    ImageURI = "feet2.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 5,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Speed},
+
+                new ItemModel {
+                    Name = "Fedora",
+                    Description = "A standard issue hat for the men in black",
+                    ImageURI = "shield1.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 1,
+                    Location = ItemLocationEnum.Head,
+                    Attribute = AttributeEnum.Defense},
+
+                new ItemModel {
+                    Name = "Power Ring",
+                    Description = "A ring of alien design that provides the wearer unbelievable power",
+                    ImageURI = "ring2.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 10,
+                    Location = ItemLocationEnum.Finger,
+                    Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
                     Name = "Health Shield",
