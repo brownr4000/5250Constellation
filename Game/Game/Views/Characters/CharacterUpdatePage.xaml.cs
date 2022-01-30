@@ -182,9 +182,12 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = new CharacterModel().ImageURI;
             }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
+            if (!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible)
+            {
+                MessagingCenter.Send(this, "Update", ViewModel.Data);
 
-            _ = await Navigation.PopModalAsync();
+                _ = await Navigation.PopModalAsync();
+            }                
         }
 
         /// <summary>
