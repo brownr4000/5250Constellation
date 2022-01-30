@@ -108,8 +108,8 @@
                         x:Name="ItemBox">
                         </FlexLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="Please Enter the Item Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
-                            <Label Text="Please Enter the Item Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
+                            <Label Text="Please Enter the Character Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
+                            <Label Text="Please Enter the Character Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
                             <Label x:Name="ClassErrorMessage" TextColor="Yellow"/>
                         </StackLayout>
                         <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
