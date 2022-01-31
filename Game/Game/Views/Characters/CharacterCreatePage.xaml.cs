@@ -24,9 +24,7 @@ namespace Game.Views
         public GenericViewModel<CharacterModel> ViewModel { get; set; }
 
         public List<ItemModel> AllLocations { get; set; }
-        // The view model, used for data binding
-        //readonly ItemIndexViewModel ViewModel = CharacterModel();
-
+        
         // Hold the current location selected
         public ItemLocationEnum PopupLocationEnum = ItemLocationEnum.Unknown;
 
@@ -58,14 +56,6 @@ namespace Game.Views
             this.ViewModel.Data.Level = 1;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
-
-            //foreach (string classNames in Enum.GetNames(typeof(CharacterJobEnum)))
-            //{
-            //    if(classNames != "Unknown")
-            //        {
-            //            ClassPicker.Items.Add(classNames);
-            //        }            
-            //}
             //Load the values for the Class into the Picker
             ClassPicker.Items.Add(CharacterJobEnum.Fighter.ToMessage());
             ClassPicker.Items.Add(CharacterJobEnum.Cleric.ToMessage());
@@ -319,9 +309,6 @@ namespace Game.Views
                {
                     NoneItem
                };
-
-            // Add the rest of the items to the list
-           // itemList.AddRange(ItemIndexViewModel.Instance.GetLocationItems(location));
         }
 
         /// <summary>
@@ -372,9 +359,6 @@ namespace Game.Views
         ///// <returns></returns>
         public StackLayout GetItemToDisplay(ItemLocationEnum location)
         {
-            // Get the Item, if it exist show the info
-            // If it does not exist, show a Plus Icon for the location
-
             // Defualt Image is the Plus
             var ImageSource = "icon_add.png";
 
@@ -444,87 +428,6 @@ namespace Game.Views
             {
                 DescErrorMessage.IsVisible = true;
             }
-        }
-
-        ///// <summary>
-        ///// Randomize Character Values and Items
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //public void RollDice_Clicked(object sender, EventArgs e)
-        //{
-        //    _ = DiceAnimationHandeler();
-
-        //    _ = RandomizeCharacter();
-
-        //    return;
-        //}
-
-        ///// <summary>
-        ///// 
-        ///// Randomize the Character
-        ///// Keep the Level the Same
-        ///// 
-        ///// </summary>
-        ///// <returns></returns>
-        //public bool RandomizeCharacter()
-        //{
-        //    // Randomize Name
-        //    ViewModel.Data.Name = RandomPlayerHelper.GetCharacterName();
-        //    ViewModel.Data.Description = RandomPlayerHelper.GetCharacterDescription();
-
-        //    // Randomize the Attributes
-        //    ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
-
-        //    // Randomize an Item for Location
-        //    ViewModel.Data.Head = RandomPlayerHelper.GetItem(ItemLocationEnum.Head);
-        //    ViewModel.Data.Necklass = RandomPlayerHelper.GetItem(ItemLocationEnum.Necklass);
-        //    ViewModel.Data.PrimaryHand = RandomPlayerHelper.GetItem(ItemLocationEnum.PrimaryHand);
-        //    ViewModel.Data.OffHand = RandomPlayerHelper.GetItem(ItemLocationEnum.OffHand);
-        //    ViewModel.Data.RightFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
-        //    ViewModel.Data.LeftFinger = RandomPlayerHelper.GetItem(ItemLocationEnum.Finger);
-        //    ViewModel.Data.Feet = RandomPlayerHelper.GetItem(ItemLocationEnum.Feet);
-
-        //    ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
-
-        //    ViewModel.Data.ImageURI = RandomPlayerHelper.GetCharacterImage();
-
-        //    _ = UpdatePageBindingContext();
-
-        //    return true;
-        //}
-
-        ///// <summary>
-        ///// Setup the Dice Animation
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //public bool DiceAnimationHandeler()
-        //{
-        //    // Animate the Rolling of the Dice
-        //    var image = RollDice;
-        //    uint duration = 1000;
-
-        //    var parentAnimation = new Animation();
-
-        //    // Grow the image Size
-        //    var scaleUpAnimation = new Animation(v => image.Scale = v, 1, 2, Easing.SpringIn);
-
-        //    // Spin the Image
-        //    var rotateAnimation = new Animation(v => image.Rotation = v, 0, 360);
-
-        //    // Shrink the Image
-        //    var scaleDownAnimation = new Animation(v => image.Scale = v, 2, 1, Easing.SpringOut);
-
-        //    parentAnimation.Add(0, 0.5, scaleUpAnimation);
-        //    parentAnimation.Add(0, 1, rotateAnimation);
-        //    parentAnimation.Add(0.5, 1, scaleDownAnimation);
-
-        //    parentAnimation.Commit(this, "ChildAnimations", 16, duration, null, null);
-
-        //    return true;
-        //}
+        }      
     }
 }
