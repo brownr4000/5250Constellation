@@ -111,8 +111,6 @@ namespace Game.Views
         public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             DamageValue.Text = string.Format("{0}", e.NewValue);
-        }
-
-     
+        }     
     }
 }
