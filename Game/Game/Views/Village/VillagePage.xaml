@@ -6,8 +6,7 @@
 
     <ContentPage.Content>
 
-        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
-
+        
             <!--<FlexLayout x:Name="flexLayout"
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
@@ -67,9 +66,9 @@
                 </StackLayout>
 
             </FlexLayout>-->
-            <StackLayout Spacing="100">
+            <StackLayout HorizontalOptions="Center" Spacing="50">
 
-                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout>
                     <ImageButton
                                 Source="item.png"
                                 Style="{StaticResource ImageLargeStyle}"
@@ -82,9 +81,9 @@
                 </StackLayout>
 
                 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Spacing="100"> 
                    
-                    <StackLayout Orientation="Vertical">
+                    <StackLayout>
  
                         <ImageButton
                                         Source="item.png"
@@ -98,7 +97,7 @@
 
                     </StackLayout>
 
-                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+                    <StackLayout>
                         <ImageButton
                                         Source="item.png"
                                         Style="{StaticResource ImageLargeStyle}"
@@ -112,7 +111,7 @@
                     
                 </StackLayout>
 
-                <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="Center">
+                <StackLayout>
                     <ImageButton
                                 Source="item.png"
                                 Style="{StaticResource ImageLargeStyle}"
@@ -126,6 +125,6 @@
                 
             </StackLayout>
             
-        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>
