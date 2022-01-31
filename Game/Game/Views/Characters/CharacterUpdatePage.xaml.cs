@@ -52,11 +52,6 @@ namespace Game.Views
             ClassPicker.Items.Add(CharacterJobEnum.Cleric.ToMessage());
             ClassPicker.Items.Add(CharacterJobEnum.Support.ToMessage());
 
-            //Setting Stepper value
-            //AttackValue = ViewModel.Data.Attack;
-            //AttackValue = ViewModel.Data.Attack;
-            //AttackValue = ViewModel.Data.Attack;
-
             _ = UpdatePageBindingContext();
         }
 
@@ -103,6 +98,10 @@ namespace Game.Views
             ConverJobtoClass(selectedClass);           
         }
 
+        /// <summary>
+        /// Convert job enum to class
+        /// </summary>
+        /// <param name="selectedJob"></param>
         public void ConverJobtoClass(object selectedJob)
         {
             switch (selectedJob)
@@ -122,7 +121,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Convert Class to Job
+        /// Convert Class to Job enum values
         /// </summary>
         /// <param name="selectedClass"></param>
         public void ConverClasstoJob(object selectedClass)
@@ -153,7 +152,6 @@ namespace Game.Views
         {
             // Change the Level
             ViewModel.Data.Level = LevelPicker.SelectedIndex + 1;
-
             ManageHealth();
         }
 
@@ -197,11 +195,6 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
-            // TODO: Mike, refactor this. Setting and Showing is causing a bug
-            // Don't want to set the value on update constructor, only after save on the page
-            // need to make sure that cancel from a save, actually cancels.
-            // Make a copy of the object and work from that and then have that passed in to update
-
             _ = await Navigation.PopModalAsync();
         }
 
@@ -469,28 +462,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public bool DiceAnimationHandeler()
         {
-            // Animate the Rolling of the Dice
-            //var image = RollDice;
-            //uint duration = 1000;
-
-            //var parentAnimation = new Animation();
-
-            //// Grow the image Size
-            //var scaleUpAnimation = new Animation(v => image.Scale = v, 1, 2, Easing.SpringIn);
-
-            //// Spin the Image
-            //var rotateAnimation = new Animation(v => image.Rotation = v, 0, 360);
-
-            //// Shrink the Image
-            //var scaleDownAnimation = new Animation(v => image.Scale = v, 2, 1, Easing.SpringOut);
-
-            //parentAnimation.Add(0, 0.5, scaleUpAnimation);
-            //parentAnimation.Add(0, 1, rotateAnimation);
-            //parentAnimation.Add(0.5, 1, scaleDownAnimation);
-
-            //parentAnimation.Commit(this, "ChildAnimations", 16, duration, null, null);
-
-            return true;
+           return true;
         }
     }
 }
