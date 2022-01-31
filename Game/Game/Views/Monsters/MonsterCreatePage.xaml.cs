@@ -36,6 +36,16 @@ namespace Game.Views
 
             this.ViewModel.Title = "Create";
 
+            // Hiding error messages
+            NameErrorMessage.IsVisible = false;
+            DescErrorMessage.IsVisible = false;
+            ClassErrorMessage.IsVisible = false;
+
+            // Load the values for the Class into the Picker
+            ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Cleric.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Support.ToMessage());
+
             _ = UpdatePageBindingContext();
         }
 
@@ -84,29 +94,62 @@ namespace Game.Views
             _ = await Navigation.PopModalAsync();
         }
 
+        /// <summary>
+        /// Name change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NameValue_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            NameErrorMessage.IsVisible = false;
+            if (string.IsNullOrEmpty(NameValue.Text))
+            {
+                NameErrorMessage.IsVisible = true;
+            }
         }
 
+        /// <summary>
+        /// On change event of Attack stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AttackStepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            AttackValue.Text = string.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// On change event of Defense stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            DefenseValue.Text = string.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// On change event of Speed stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-
+            SpeedValue.Text = string.Format("{0}", e.NewValue);
         }
 
+        /// <summary>
+        /// Description change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DescriptionValue_TextChanged(object sender, ValueChangedEventArgs e)
         {
-
+            DescErrorMessage.IsVisible = false;
+            if (string.IsNullOrEmpty(DescValue.Text))
+            {
+                DescErrorMessage.IsVisible = true;
+            }
         }
 
         private void UniqueItemPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,38 +157,33 @@ namespace Game.Views
 
         }
 
+        /// <summary>
+        /// The Class selected from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClassPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        ///// <summary>
-        ///// 
-        ///// Randomize the Monster
-        ///// Keep the Level the Same
-        ///// 
-        ///// </summary>
-        ///// <returns></returns>
-        //public bool RandomizeMonster()
-        //{
-        //    // Randomize Name
-        //    ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
-        //    ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
-
-        //    // Randomize the Attributes
-        //    ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
-
-        //    ViewModel.Data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
-
-        //    ViewModel.Data.ImageURI = RandomPlayerHelper.GetMonsterImage();
-
-        //    ViewModel.Data.UniqueItem = RandomPlayerHelper.GetMonsterUniqueItem();
-
-        //    _ = UpdatePageBindingContext();
-
-        //    return true;
-        //}
+            var selectedClass = ClassPicker.SelectedItem;
+            if (selectedClass != null)
+            {
+                ClassErrorMessage.IsVisible = false;
+            }
+            // Convert class based on selected value
+            switch (selectedClass)
+            {
+                case "Tank":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Fighter;
+                    break;
+                case "Damage":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Cleric;
+                    break;
+                case "Support":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Support;
+                    break;
+                default:
+                    break;
+            }
+        }       
     }
 }

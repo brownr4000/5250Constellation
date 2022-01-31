@@ -25,8 +25,7 @@
                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
                     AbsoluteLayout.LayoutFlags="All">
 
-                <ScrollView>
-                    
+                <ScrollView>                    
                     <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
                         <Image Source="{Binding Data.ImageURI}" HeightRequest="150" WidthRequest="150"/>                        
                             <StackLayout Orientation="Vertical" VerticalOptions="Center">
