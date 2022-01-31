@@ -84,6 +84,41 @@ namespace Game.Views
             _ = await Navigation.PopModalAsync();
         }
 
+        private void NameValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void AttackStepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
+
+        private void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
+
+        private void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
+
+        private void DescriptionValue_TextChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
+
+        private void UniqueItemPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ClassPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         ///// <summary>
         ///// 
         ///// Randomize the Monster
