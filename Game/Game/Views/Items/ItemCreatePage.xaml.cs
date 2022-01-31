@@ -126,6 +126,7 @@ namespace Game.Views
         {
             DamageValue.IsVisible = true;
             DamageLabel.IsVisible = true;
+
             if (value < 1)
             {
                 DamageValue.IsVisible = false;
@@ -153,6 +154,7 @@ namespace Game.Views
         public void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
             NameErrorMessage.IsVisible = false;
+
             if(string.IsNullOrEmpty(NameValue.Text))
             {
                 NameErrorMessage.IsVisible = true;
@@ -180,11 +182,16 @@ namespace Game.Views
         /// <param name="e"></param>
         private void LocationPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Default Range and Damage values
             RangeValue.Text = "0";
             DamageValue.Text = "0";
+
             ShowHideRange(false);
+
             var selectedItem = LocationPicker.SelectedItem;
+
             LocationAttributeErrorMessage.IsVisible = false;
+
             if (selectedItem.ToString() == "PrimaryHand")
             {
                 ShowHideRange(true);
