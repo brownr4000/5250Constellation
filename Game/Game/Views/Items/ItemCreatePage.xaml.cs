@@ -28,14 +28,21 @@ namespace Game.Views
         public ItemCreatePage()
         {
             InitializeComponent();
+
             this.ViewModel.Data = new ItemModel();
+            
             BindingContext = this.ViewModel;
+
             this.ViewModel.Title = "Create";
+            
+            //Adding Location value to the picker selected item
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
+            
+            //Adding Attribute value to the picker selected item
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
-            //isFirstLoad = true;
-            //ShowHideDamage(Double.Parse(RangeValue.Text));
+            
             LocationAttributeErrorMessage.IsVisible = false;            
+            
             ShowHideRange(false);
         }
 
