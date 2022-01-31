@@ -47,7 +47,7 @@ namespace Game.Views
             DescErrorMessage.IsVisible = false;            
             ClassErrorMessage.IsVisible = false;
 
-            //Load the values for the Level into the Picker
+            // Load the values for the Level into the Picker
             for (var i = 1; i <= LevelTableHelper.MaxLevel; i++)
             {
                 LevelPicker.Items.Add(i.ToString());
@@ -56,7 +56,7 @@ namespace Game.Views
             this.ViewModel.Data.Level = 1;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
-            //Load the values for the Class into the Picker
+            // Load the values for the Class into the Picker
             ClassPicker.Items.Add(CharacterJobEnum.Fighter.ToMessage());
             ClassPicker.Items.Add(CharacterJobEnum.Cleric.ToMessage());
             ClassPicker.Items.Add(CharacterJobEnum.Support.ToMessage());
@@ -135,7 +135,7 @@ namespace Game.Views
             {
                 ClassErrorMessage.IsVisible = false;
             }
-            // Change the Class
+            // Convert class based on selected value
             switch (selectedClass)
             {
                 case "Tank":
@@ -176,6 +176,7 @@ namespace Game.Views
             {
                 ViewModel.Data.ImageURI = new CharacterModel().ImageURI;
             }
+
             if (ClassPicker.SelectedItem == null)
             {
                 ClassErrorMessage.IsVisible = true;
@@ -186,7 +187,7 @@ namespace Game.Views
             {
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
                 _ = await Navigation.PopModalAsync();
-            }            
+            }   
         }
 
         /// <summary>
@@ -295,7 +296,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Location_Changed(object sender, EventArgs e)
         {
-            //Make a fake item for None
+            // Make a fake item for None
                var NoneItem = new ItemModel
                {
                    Id = null, // to clear the item
@@ -375,7 +376,7 @@ namespace Game.Views
                 Source = data.ImageURI
             };
 
-            //Add a event to the user can click the item and see more
+            // Add a event to the user can click the item and see more
             ItemButton.Clicked += (sender, args) => ShowPopup(location);
 
         // Add the Display Text for the item
