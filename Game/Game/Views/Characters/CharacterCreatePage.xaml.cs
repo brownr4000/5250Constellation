@@ -297,19 +297,19 @@ namespace Game.Views
         public void Location_Changed(object sender, EventArgs e)
         {
             // Make a fake item for None
-               var NoneItem = new ItemModel
-               {
-                   Id = null, // to clear the item
-                    Guid = "None", // how to find this item amoung all of them
-                    ImageURI = "icon_cancel.png",
-                   Name = "None",
-                   Description = "None"
-               };
+            var NoneItem = new ItemModel
+            {
+                Id = null, // to clear the item
+                Guid = "None", // how to find this item amoung all of them
+                ImageURI = "icon_cancel.png",
+                Name = "None",
+                Description = "None"
+            };
 
-               List < ItemModel > itemList = new List<ItemModel>
-               {
-                    NoneItem
-               };
+            List < ItemModel > itemList = new List<ItemModel>
+            {
+                NoneItem
+            };
         }
 
         /// <summary>
