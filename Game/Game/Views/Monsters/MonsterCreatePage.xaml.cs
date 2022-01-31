@@ -40,11 +40,19 @@ namespace Game.Views
             NameErrorMessage.IsVisible = false;
             DescErrorMessage.IsVisible = false;
             ClassErrorMessage.IsVisible = false;
+            DifficultyErrorMessage.IsVisible = false;
 
             // Load the values for the Class into the Picker
             ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
             ClassPicker.Items.Add(MonsterJobEnum.Cleric.ToMessage());
             ClassPicker.Items.Add(MonsterJobEnum.Support.ToMessage());
+
+            // Load the values for the Dificulty into the Picker
+            DifficultyPicker.Items.Add(DifficultyEnum.Easy.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Average.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Hard.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Difficult.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Impossible.ToMessage());
 
             _ = UpdatePageBindingContext();
         }
@@ -155,6 +163,41 @@ namespace Game.Views
         private void UniqueItemPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        
+        /// <summary>
+        /// Dificulty picker change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+       private void DifficultyPicker_SelectedIndexChanged(object sender, EventArgs e)
+       {
+            var selectedDifficulty = DifficultyPicker.SelectedItem;
+            if (selectedDifficulty != null)
+            {
+                DifficultyErrorMessage.IsVisible = false;
+            }
+            // Convert difficulty based on selected value
+            switch (selectedDifficulty)
+            {
+                case "Easy":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Easy;
+                    break;
+                case "Average":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Average;
+                    break;
+                case "Hard":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Hard;
+                    break;
+                case "Impossible":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Impossible;
+                    break;
+                case "Difficult":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Difficult;
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>

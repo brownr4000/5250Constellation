@@ -41,8 +41,12 @@
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                     <Grid WidthRequest="500">
                                         <Label Grid.Row="0" Grid.Column="0" Text="Difficulty"/>
-                                        <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Data.Difficulty, Mode=TwoWay}" WidthRequest="200" BackgroundColor="LimeGreen"/>
-                                    </Grid>
+                                        <Picker Grid.Row="0" Grid.Column="1"
+                                            WidthRequest="200" BackgroundColor="LimeGreen" 
+                                            SelectedItem="{Binding SelectedItemProperty}" 
+                                            SelectedIndexChanged="DifficultyPicker_SelectedIndexChanged"
+                                            x:Name="DifficultyPicker"/>
+                                </Grid>
                                 </StackLayout>
                                 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -82,7 +86,7 @@
                         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Attack"/>
-                                <Stepper Maximum="10"
+                                <Stepper Maximum="9"
                                      Increment="1"
                                      Value="{Binding Data.Attack, Mode=TwoWay}" 
                                      ValueChanged="AttackStepper_ValueChanged"
@@ -97,20 +101,20 @@
                             
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Defense"/>
-                                <Stepper Maximum="10"
-                            Increment="1" Value="{Binding Data.Defense, Mode=TwoWay}" BackgroundColor="LimeGreen"
-                            ValueChanged="Defense_OnStepperValueChanged"/>
+                                <Stepper Maximum="9"
+                                    Increment="1" Value="{Binding Data.Defense, Mode=TwoWay}" BackgroundColor="LimeGreen"
+                                    ValueChanged="Defense_OnStepperValueChanged"/>
                                 <Label Text="{Binding Data.Defense, Mode=TwoWay}" 
-                           x:Name="DefenseValue"
-                           Style="{StaticResource ValueStyle}"
-                           Padding="0,0,10,0"
-                           HorizontalOptions="End"
-                           HorizontalTextAlignment="End"/>
+                                   x:Name="DefenseValue"
+                                   Style="{StaticResource ValueStyle}"
+                                   Padding="0,0,10,0"
+                                   HorizontalOptions="End"
+                                   HorizontalTextAlignment="End"/>
                             </StackLayout>
                             
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Speed"/>
-                                <Stepper Maximum="10"
+                                <Stepper Maximum="9"
                                      Increment="1" Value="{Binding Data.Speed, Mode=TwoWay}" BackgroundColor="LimeGreen"
                                      ValueChanged="Speed_OnStepperValueChanged"/>
                                 <Label Text="{Binding Data.Speed, Mode=TwoWay}" 
@@ -132,6 +136,7 @@
                             <Label Text="Please Enter the Monster Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
                             <Label Text="Please Enter the Monster Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
                             <Label x:Name="ClassErrorMessage" TextColor="Yellow"/>
+                            <Label x:Name="DifficultyErrorMessage" TextColor="Yellow"/>
                         </StackLayout>
                         <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
                             <Button Text="Cancel" WidthRequest="100" Clicked="Cancel_Clicked"/>
