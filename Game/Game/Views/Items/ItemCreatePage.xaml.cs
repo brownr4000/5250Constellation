@@ -144,7 +144,7 @@ namespace Game.Views
         public void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
             NameErrorMessage.IsVisible = false;
-            if(String.IsNullOrEmpty(NameValue.Text))
+            if(string.IsNullOrEmpty(NameValue.Text))
             {
                 NameErrorMessage.IsVisible = true;
             }
@@ -158,7 +158,7 @@ namespace Game.Views
         public void Desc_TextChanged(object sender, TextChangedEventArgs e)
         {
             DescErrorMessage.IsVisible = false;
-            if (String.IsNullOrEmpty(DescValue.Text))
+            if (string.IsNullOrEmpty(DescValue.Text))
             {
                 DescErrorMessage.IsVisible = true;
             }
