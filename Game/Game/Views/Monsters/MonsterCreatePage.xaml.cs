@@ -88,8 +88,25 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = new MonsterModel().ImageURI;
             }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+            // Checking if Class picker has value selected
+            if (ClassPicker.SelectedItem == null)
+            {
+                ClassErrorMessage.IsVisible = true;
+                ClassErrorMessage.Text = "Please select a Class";
+            }
+
+            // Checking if Difficulty picker has value selected
+            if (DifficultyPicker.SelectedItem == null)
+            {
+                DifficultyErrorMessage.IsVisible = true;
+                DifficultyErrorMessage.Text = "Please select a Difficulty level";
+            }
+
+            if (!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible  && !DifficultyErrorMessage.IsVisible)
+            {
+                MessagingCenter.Send(this, "Create", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }               
         }
 
         /// <summary>
@@ -166,7 +183,7 @@ namespace Game.Views
         }
         
         /// <summary>
-        /// Dificulty picker change event
+        /// Difficulty picker change event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -177,6 +194,7 @@ namespace Game.Views
             {
                 DifficultyErrorMessage.IsVisible = false;
             }
+
             // Convert difficulty based on selected value
             switch (selectedDifficulty)
             {
@@ -212,6 +230,7 @@ namespace Game.Views
             {
                 ClassErrorMessage.IsVisible = false;
             }
+
             // Convert class based on selected value
             switch (selectedClass)
             {
