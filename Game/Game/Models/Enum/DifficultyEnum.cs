@@ -59,7 +59,7 @@ namespace Game.Models
                     break;
 
                 case DifficultyEnum.Difficult:
-                    Message = "Harder than Hard";
+                    Message = "Difficult";
                     break;
 
                 case DifficultyEnum.Impossible:
