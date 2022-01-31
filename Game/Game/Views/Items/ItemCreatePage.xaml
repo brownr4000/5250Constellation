@@ -21,12 +21,15 @@
         <StackLayout Padding="20" Spacing="20" HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
 
             <Image HeightRequest="50" Source="{Binding Data.ImageURI}"/>
+            
             <Grid RowSpacing="1"
                   ColumnSpacing="2"
                   VerticalOptions="Center" WidthRequest="600">
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
@@ -60,16 +63,20 @@
                 
                 <Label Grid.Row="7" Grid.Column="0" x:Name="DamageLabel" Text="Damage"/>
                 <Entry Text="{Binding Data.Damage}" x:Name="DamageValue" Grid.Row="7" Grid.Column="1" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center"/>
+            
             </Grid>
+            
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Label Text="Please Enter the Item Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
                 <Label Text="Please Enter the Item Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
                 <Label x:Name="LocationAttributeErrorMessage" TextColor="Yellow"/>
             </StackLayout>
+            
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Cancel" Clicked="Cancel_Clicked"/>
                 <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Create" Clicked="Save_Clicked"/>
             </StackLayout>
+            
         </StackLayout>
 
     </ContentPage.Content>

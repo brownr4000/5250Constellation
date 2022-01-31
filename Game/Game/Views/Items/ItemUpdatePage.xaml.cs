@@ -37,7 +37,32 @@ namespace Game.Views
             LocationPicker.SelectedItem = data.Data.Location.ToString();
             AttributePicker.SelectedItem = data.Data.Attribute.ToString();
 
-            CautionStack.IsVisible = false;
+        }
+        
+        /// <summary>
+        /// Event Handler for Name's Text Changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Name_TextChanged(object sender, TextChangedEventArgs e) {
+            NameErrorMessage.IsVisible = false;
+
+            if (String.IsNullOrEmpty(NameValue.Text)) {
+                NameErrorMessage.IsVisible = true;
+            }
+        }
+
+        /// <summary>
+        /// Event Handler for Description 's Text Changed
+        /// </summary>
+        /// <param name="sendder"></param>
+        /// <param name="e"></param>
+        public void Description_TextChanged(object sendder, TextChangedEventArgs e) {
+            DescriptionErrorMessage.IsVisible = false;
+
+            if (String.IsNullOrEmpty(DescriptionValue.Text)) {
+                DescriptionErrorMessage.IsVisible = true;
+            }
         }
 
         /// <summary>
@@ -47,21 +72,6 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ViewModel.Data.Name) && string.IsNullOrEmpty(ViewModel.Data.Description))
-            {
-                CautionStack.IsVisible = true;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(ViewModel.Data.Name)) {
-                CautionStack.IsVisible = true;
-                return;
-            }
-
-            if (string.IsNullOrEmpty(ViewModel.Data.Description)) {
-                CautionStack.IsVisible = true;
-                return;
-            }
             
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
@@ -69,8 +79,12 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
             }
 
-            MessagingCenter.Send(this, "Update", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+            if (!NameErrorMessage.IsVisible && !DescriptionErrorMessage.IsVisible)
+            {
+                MessagingCenter.Send(this, "Update", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }
+
         }
 
         /// <summary>

@@ -6,9 +6,7 @@
 
     <ContentPage.Content>
 
-        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
-
-            <!--<FlexLayout x:Name="flexLayout"
+        <!--<FlexLayout x:Name="flexLayout"
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
                         AlignContent="SpaceAround">
@@ -50,8 +48,8 @@
                 </StackLayout>
             </FlexLayout>-->
 
-            <StackLayout Spacing="100">
-                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <StackLayout Spacing="50" HorizontalOptions="Center">
+                <StackLayout>
                     <ImageButton
                                    Source="item.png"
                                    Style="{StaticResource ImageLargeStyle}"
@@ -62,7 +60,7 @@
                     
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Spacing="100">
                     <StackLayout>
                         <ImageButton Source="item.png"
                                      Style="{StaticResource ImageLargeStyle}"
@@ -73,7 +71,7 @@
                     
                     </StackLayout>
 
-                    <StackLayout HorizontalOptions="EndAndExpand">
+                    <StackLayout>
                         <ImageButton Source="item.png"
                                      Style="{StaticResource ImageLargeStyle}"
                                      Clicked="DungeonButton_Clicked"/>
@@ -99,6 +97,5 @@
 
             </StackLayout>
 
-        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
