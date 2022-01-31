@@ -18,7 +18,7 @@ namespace Game.Views
     {
         // The item to create
         public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
-       // public static bool isFirstLoad;
+
         // Empty Constructor for UTs
         public ItemCreatePage(bool UnitTest) { }
 
@@ -35,10 +35,10 @@ namespace Game.Views
 
             this.ViewModel.Title = "Create";
             
-            //Adding Location value to the picker selected item
+            // Adding Location value to the picker selected item
             LocationPicker.SelectedItem = ViewModel.Data.Location.ToString();
             
-            //Adding Attribute value to the picker selected item
+            // Adding Attribute value to the picker selected item
             AttributePicker.SelectedItem = ViewModel.Data.Attribute.ToString();
             
             LocationAttributeErrorMessage.IsVisible = false;            
@@ -54,10 +54,12 @@ namespace Game.Views
         public async void Save_Clicked(object sender, EventArgs e)
         {
             // If the image in the data box is empty, use the default one..
-            //New item default image while saving
+            // New item default image while saving
             ViewModel.Data.ImageURI = Services.ItemService.DefaultNewItemImageURI;
 
+            // Setting Location/Attribute error message with text
             bool isShowLocationAttributeErrorMessage = ShowLocationAttributeErrorMessage();
+
             if (!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !isShowLocationAttributeErrorMessage)
             {
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
@@ -69,8 +71,10 @@ namespace Game.Views
         {
             bool returnValue = false;
             LocationAttributeErrorMessage.Text = "";
+
             var locationValue = LocationPicker.SelectedItem.ToString();
             var attributeValue = AttributePicker.SelectedItem.ToString();
+
             if (locationValue == "Unknown")
             {
                 if (attributeValue == "Unknown")
@@ -90,7 +94,9 @@ namespace Game.Views
                 LocationAttributeErrorMessage.IsVisible = true;
                 returnValue = true;
             }
+
             LocationAttributeErrorMessage.IsVisible = returnValue;
+
             return returnValue;            
         }
 
