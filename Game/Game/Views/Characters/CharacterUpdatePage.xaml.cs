@@ -205,7 +205,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            AttackValue.Text = String.Format("{0}", e.NewValue);
+            AttackValue.Text = string.Format("{0}", e.NewValue);
         }
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DefenseValue.Text = String.Format("{0}", e.NewValue);
+            DefenseValue.Text = string.Format("{0}", e.NewValue);
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            SpeedValue.Text = String.Format("{0}", e.NewValue);
+            SpeedValue.Text = string.Format("{0}", e.NewValue);
         }
 
         /// <summary>
@@ -435,7 +435,7 @@ namespace Game.Views
         private void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
             NameErrorMessage.IsVisible = false;
-            if (String.IsNullOrEmpty(NameValue.Text))
+            if (string.IsNullOrEmpty(NameValue.Text))
             {
                 NameErrorMessage.IsVisible = true;
             }
@@ -449,7 +449,7 @@ namespace Game.Views
         private void Desc_TextChanged(object sender, TextChangedEventArgs e)
         {
             DescErrorMessage.IsVisible = false;
-            if (String.IsNullOrEmpty(DescValue.Text))
+            if (string.IsNullOrEmpty(DescValue.Text))
             {
                 DescErrorMessage.IsVisible = true;
             }
