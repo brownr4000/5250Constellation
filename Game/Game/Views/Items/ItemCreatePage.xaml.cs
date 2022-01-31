@@ -75,20 +75,16 @@ namespace Game.Views
             var locationValue = LocationPicker.SelectedItem.ToString();
             var attributeValue = AttributePicker.SelectedItem.ToString();
 
+            // Setting the error message when Location or Location and Attribute values are unknown 
             if (locationValue == "Unknown")
-            {
-                if (attributeValue == "Unknown")
-                {
-                    LocationAttributeErrorMessage.Text = "Please select a Location and Attribute";
-                }
-                else
-                {
-                    LocationAttributeErrorMessage.Text = "Please select a Location";
-                }
+            {               
+                LocationAttributeErrorMessage.Text = attributeValue == "Unknown" ? "Please select a Location and Attribute" : "Please select a Location";
                 LocationAttributeErrorMessage.IsVisible = true;
                 returnValue = true;                
             }
-            else if (attributeValue == "Unknown")
+            
+            // Setting error message when only the attribute value is unknown
+            if (locationValue != "Unknown" && attributeValue == "Unknown")
             {
                 LocationAttributeErrorMessage.Text = "Please select a Attribute";
                 LocationAttributeErrorMessage.IsVisible = true;
