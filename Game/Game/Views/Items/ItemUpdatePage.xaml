@@ -46,7 +46,9 @@
                                Text="Name" 
                                Style="{StaticResource LabelStyle}"/>
 
-                        <Entry Grid.Row="0" Grid.Column="1"
+                        <Entry x:Name="NameValue"
+                               TextChanged="Name_TextChanged"
+                               Grid.Row="0" Grid.Column="1"
                                Text="{Binding Data.Name}" 
                                Style="{StaticResource EntryStyle}"/>
 
@@ -55,7 +57,9 @@
                                Text="Description" 
                                Style="{StaticResource LabelStyle}"/>
 
-                        <Entry Grid.Row="1" Grid.Column="1"
+                        <Entry x:Name="DescriptionValue"
+                               TextChanged="Description_TextChanged"
+                               Grid.Row="1" Grid.Column="1"
                                Text="{Binding Data.Description}" 
                                Style="{StaticResource EntryStyle}"/>
 
@@ -83,11 +87,6 @@
                     </Grid>
 
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" Margin="50"/>
-
-                    <StackLayout x:Name="CautionStack" Orientation="Vertical">
-                        <Label Text="Name and Description cannot be empty!" FontSize="Large" TextColor="blue"/>
-                        <Label Text="Please try again." FontSize="Large" TextColor="blue" HorizontalOptions="Center"/>
-                    </StackLayout>
 
                 </StackLayout>
 
@@ -155,9 +154,16 @@
 
                 </StackLayout>
 
+                <StackLayout  Orientation="Vertical">
+                    <Label x:Name="NameErrorMessage" Text="Item's name cannot be empty!" FontSize="Large" TextColor="blue"/>
+                    <Label x:Name="DescriptionErrorMessage" Text="Item's description cannot be empty!" FontSize="Large" TextColor="blue"/>
+                    
+                </StackLayout>
+                
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Clicked="Cancel_Clicked" FontSize="Medium" BackgroundColor="LightGray" Margin="25" WidthRequest="150"/>
                     <Button Text="Update" Clicked="Save_Clicked" FontSize="Medium" BackgroundColor="LightGray" Margin="25" WidthRequest="150"/>
+                        
                 </StackLayout>
 
                 </StackLayout>
