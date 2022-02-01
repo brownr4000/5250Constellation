@@ -139,12 +139,6 @@
                             </StackLayout>
                         </StackLayout>
 
-                        <FlexLayout                        
-                            Wrap="Wrap"
-                            JustifyContent="SpaceAround"
-                            AlignContent="SpaceAround"
-                            x:Name="ItemBox">
-                        </FlexLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="Please Enter the Monster Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
                             <Label Text="Please Enter the Monster Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
