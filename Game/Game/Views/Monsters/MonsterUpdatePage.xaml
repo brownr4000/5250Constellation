@@ -52,7 +52,7 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Grid WidthRequest="500">
                                     <Label Grid.Row="0" Grid.Column="0" Text="Experience"/>
-                                    <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Data.ExperienceTotal, Mode=TwoWay}" WidthRequest="200" BackgroundColor="LimeGreen"/>
+                                    <Entry Grid.Row="0" Grid.Column="1" TextChanged="ExperienceValue_TextChanged" x:Name="ExperienceValue" Text="{Binding Data.ExperienceTotal, Mode=TwoWay}" WidthRequest="200" BackgroundColor="LimeGreen"/>
                                 </Grid>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -61,7 +61,6 @@
                                     <Picker Grid.Row="0" Grid.Column="1"
                                             WidthRequest="200" BackgroundColor="LimeGreen" 
                                             SelectedItem="{Binding SelectedItemProperty}" 
-                                            SelectedIndexChanged="UniqueItemPicker_SelectedIndexChanged"
                                             x:Name="UniqueItemPicker"/>
                                 </Grid>
                             </StackLayout>
@@ -104,7 +103,7 @@
                                 <Stepper Maximum="9"
                                     Increment="1" Value="{Binding Data.Defense, Mode=TwoWay}" BackgroundColor="LimeGreen"
                                     ValueChanged="Defense_OnStepperValueChanged"/>
-                                <Label Text="{Binding Data.Defense, Mode=TwoWay}" 
+                                <Label Text="{Binding Data.Defense}" 
                                    x:Name="DefenseValue"
                                    Style="{StaticResource ValueStyle}"
                                    Padding="0,0,10,0"
@@ -117,8 +116,21 @@
                                 <Stepper Maximum="9"
                                      Increment="1" Value="{Binding Data.Speed, Mode=TwoWay}" BackgroundColor="LimeGreen"
                                      ValueChanged="Speed_OnStepperValueChanged"/>
-                                <Label Text="{Binding Data.Speed, Mode=TwoWay}" 
+                                <Label Text="{Binding Data.Speed}" 
                                        x:Name="SpeedValue"
+                                       Style="{StaticResource ValueStyle}"
+                                       Padding="0,0,10,0"
+                                       HorizontalOptions="End"
+                                       HorizontalTextAlignment="End"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Health"/>
+                                <Stepper Maximum="100" Minimum="10"
+                                     Increment="1" Value="{Binding Data.MaxHealth, Mode=TwoWay}" BackgroundColor="LimeGreen"
+                                     ValueChanged="Health_OnStepperValueChanged"/>
+                                <Label Text="{Binding Data.MaxHealth}" 
+                                       x:Name="HealthValue"
                                        Style="{StaticResource ValueStyle}"
                                        Padding="0,0,10,0"
                                        HorizontalOptions="End"
@@ -136,7 +148,9 @@
                             <Label Text="Please Enter the Monster Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
                             <Label Text="Please Enter the Monster Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
                             <Label x:Name="ClassErrorMessage" TextColor="Yellow"/>
+                            <Label x:Name="ExperienceErrorMessage" TextColor="Yellow"/>
                             <Label x:Name="DifficultyErrorMessage" TextColor="Yellow"/>
+                            <Label x:Name="ExperienceOverflowErrorMessage" TextColor="Yellow"/>
                         </StackLayout>
                         <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
                             <Button Text="Cancel" WidthRequest="100" Clicked="Cancel_Clicked"/>
