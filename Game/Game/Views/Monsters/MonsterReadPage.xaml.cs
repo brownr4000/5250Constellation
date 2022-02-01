@@ -32,6 +32,37 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            //Converting Job to Class and assigning to ClassPicker
+            string result = ConverClasstoJob(ViewModel.Data.Job);
+            if (!string.IsNullOrEmpty(result))
+            {
+                ClassValue.Text = result;
+            }
+        }
+
+        /// <summary>
+        /// Convert Class to Job
+        /// </summary>
+        /// <param name="selectedClass"></param>
+        public string ConverClasstoJob(object selectedClass)
+        {
+            string result = null;
+            switch (selectedClass.ToString())
+            {
+                case "Fighter":
+                    result = CharacterJobEnum.Fighter.ToMessage();
+                    break;
+                case "Cleric":
+                    result = CharacterJobEnum.Cleric.ToMessage();
+                    break;
+                case "Support":
+                    result = CharacterJobEnum.Support.ToMessage();
+                    break;
+                default:
+                    break;
+            }
+            return result;
         }
 
         /// <summary>
