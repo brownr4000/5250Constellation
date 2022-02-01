@@ -16,7 +16,7 @@
                 Spacing="10">
 
                 <Label 
-                    Text="Delete Monster Page" 
+                    Text="Delete Item" 
                     HorizontalOptions="Center"
                     FontAttributes="Bold"
                     Style="{StaticResource HeaderStyle}"/>
