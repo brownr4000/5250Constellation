@@ -87,7 +87,7 @@
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Attack"/>
                                 <Stepper Maximum="9"
-                                     Increment="1"
+                                     Increment="1" Minimum="1"
                                      Value="{Binding Data.Attack, Mode=TwoWay}" 
                                      ValueChanged="AttackStepper_ValueChanged"
                                      BackgroundColor="LimeGreen"/>
