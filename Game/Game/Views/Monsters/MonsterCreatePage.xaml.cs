@@ -43,7 +43,7 @@ namespace Game.Views
             foreach (var item in itemsData.Dataset)
             {
                 UniqueItemPicker.Items.Add(item.Name);
-            }            
+            }
 
             // Hiding error messages
             NameErrorMessage.IsVisible = false;
@@ -115,13 +115,13 @@ namespace Game.Views
 
             //ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
 
-            if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible && 
-                !ExperienceOverflowErrorMessage.IsVisible && !DescErrorMessage.IsVisible && 
-                !ClassErrorMessage.IsVisible  && !DifficultyErrorMessage.IsVisible)
+            if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible &&
+                !ExperienceOverflowErrorMessage.IsVisible && !DescErrorMessage.IsVisible &&
+                !ClassErrorMessage.IsVisible && !DifficultyErrorMessage.IsVisible)
             {
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
                 _ = await Navigation.PopModalAsync();
-            }               
+            }
         }
 
         /// <summary>
@@ -213,7 +213,7 @@ namespace Game.Views
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void DifficultyPicker_SelectedIndexChanged(object sender, EventArgs e)
-       {
+        {
             var selectedDifficulty = DifficultyPicker.SelectedItem;
             if (selectedDifficulty != null)
             {
@@ -282,18 +282,18 @@ namespace Game.Views
         {
             ExperienceErrorMessage.IsVisible = false;
             ExperienceOverflowErrorMessage.IsVisible = false;
-            
+
             if (string.IsNullOrEmpty(ExperienceValue.Text))
             {
                 ExperienceErrorMessage.IsVisible = true;
                 ExperienceErrorMessage.Text = "Please enter the Experience";
-            }            
+            }
 
             // Checking valid input for Experience
-            else if(!string.IsNullOrEmpty(ExperienceValue.Text) && !Int32.TryParse(ExperienceValue.Text, out int parsedInt))
+            else if (!string.IsNullOrEmpty(ExperienceValue.Text) && !Int32.TryParse(ExperienceValue.Text, out int parsedInt))
             {
                 ExperienceErrorMessage.Text = "Please enter valid Experience value";
-                ExperienceErrorMessage.IsVisible = true;                
+                ExperienceErrorMessage.IsVisible = true;
             }
 
             else if (int.Parse(ExperienceValue.Text) > 500 || int.Parse(ExperienceValue.Text) < 0)
