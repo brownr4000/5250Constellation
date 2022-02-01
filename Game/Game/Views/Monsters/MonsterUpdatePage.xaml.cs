@@ -36,6 +36,24 @@ namespace Game.Views
 
             this.ViewModel.Title = "Update " + data.Title;
 
+            // Hiding error messages
+            NameErrorMessage.IsVisible = false;
+            DescErrorMessage.IsVisible = false;
+            ClassErrorMessage.IsVisible = false;
+            DifficultyErrorMessage.IsVisible = false;
+
+            // Load the values for the Class into the Picker
+            ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Cleric.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Support.ToMessage());
+
+            // Load the values for the Dificulty into the Picker
+            DifficultyPicker.Items.Add(DifficultyEnum.Easy.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Average.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Hard.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Difficult.ToMessage());
+            DifficultyPicker.Items.Add(DifficultyEnum.Impossible.ToMessage());
+
             _ = UpdatePageBindingContext();
         }
 
@@ -52,7 +70,12 @@ namespace Game.Views
             BindingContext = null;
             BindingContext = this.ViewModel;
 
-            ViewModel.Data.Difficulty = difficulty;
+            //Converting Job to Class and assigning to ClassPicker            
+            ConverClasstoJob(ViewModel.Data.Job);
+
+            //ViewModel.Data.Difficulty = difficulty;
+
+            ConvertDifficultytoDifficultyEnum(difficulty);
 
             return true;
         }
@@ -70,9 +93,11 @@ namespace Game.Views
                 ViewModel.Data.ImageURI = new MonsterModel().ImageURI;
             }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-
-            _ = await Navigation.PopModalAsync();
+            if (!NameErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible && !DifficultyErrorMessage.IsVisible)
+            {
+                MessagingCenter.Send(this, "Update", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }            
         }
 
         /// <summary>
@@ -85,30 +110,221 @@ namespace Game.Views
             _ = await Navigation.PopModalAsync();
         }
 
-        ///// <summary>
-        ///// Randomize the Monster, keep the level the same
-        ///// </summary>
-        ///// <returns></returns>
-        //public bool RandomizeMonster()
-        //{
-        //    // Randomize Name
-        //    ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
-        //    ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
+        /// <summary>
+        /// Name change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NameValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            NameErrorMessage.IsVisible = false;
+            if (string.IsNullOrEmpty(NameValue.Text))
+            {
+                NameErrorMessage.IsVisible = true;
+            }
+        }
 
-        //    // Randomize the Attributes
-        //    ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
+        /// <summary>
+        /// On change event of Attack stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AttackStepper_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            AttackValue.Text = string.Format("{0}", e.NewValue);
+        }
 
-        //    ViewModel.Data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
+        /// <summary>
+        /// On change event of Defense stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            DefenseValue.Text = string.Format("{0}", e.NewValue);
+        }
 
-        //    ViewModel.Data.ImageURI = RandomPlayerHelper.GetMonsterImage();
+        /// <summary>
+        /// On change event of Speed stepper
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            SpeedValue.Text = string.Format("{0}", e.NewValue);
+        }
 
-        //    ViewModel.Data.UniqueItem = RandomPlayerHelper.GetMonsterUniqueItem();
+        /// <summary>
+        /// Description change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DescriptionValue_TextChanged(object sender, ValueChangedEventArgs e)
+        {
+            DescErrorMessage.IsVisible = false;
+            if (string.IsNullOrEmpty(DescValue.Text))
+            {
+                DescErrorMessage.IsVisible = true;
+            }
+        }
 
-        //    _ = UpdatePageBindingContext();
+        private void UniqueItemPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        //    return true;
-        //}
+        }
+
+        /// <summary>
+        /// Difficulty picker change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DifficultyPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedDifficulty = DifficultyPicker.SelectedItem;
+            if (selectedDifficulty != null)
+            {
+                DifficultyErrorMessage.IsVisible = false;
+            }
+
+            // Convert difficulty based on selected value
+            switch (selectedDifficulty)
+            {
+                case "Easy":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Easy;
+                    break;
+                case "Average":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Average;
+                    break;
+                case "Hard":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Hard;
+                    break;
+                case "Impossible":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Impossible;
+                    break;
+                case "Difficult":
+                    ViewModel.Data.Difficulty = DifficultyEnum.Difficult;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// The Level selected from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void Class_Changed(object sender, EventArgs args)
+        {
+            var selectedClass = ClassPicker.SelectedItem;
+            if (selectedClass != null)
+            {
+                ClassErrorMessage.IsVisible = false;
+            }
+            // Change the Class
+            ConverJobtoClass(selectedClass);
+        }
+
+        /// <summary>
+        /// Convert job enum to class
+        /// </summary>
+        /// <param name="selectedJob"></param>
+        public void ConverJobtoClass(object selectedJob)
+        {
+            switch (selectedJob)
+            {
+                case "Tank":
+                    ViewModel.Data.Job = CharacterJobEnum.Fighter;
+                    break;
+                case "Damage":
+                    ViewModel.Data.Job = CharacterJobEnum.Cleric;
+                    break;
+                case "Support":
+                    ViewModel.Data.Job = CharacterJobEnum.Support;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Convert Class to Job enum values
+        /// </summary>
+        /// <param name="selectedClass"></param>
+        public void ConverClasstoJob(object selectedClass)
+        {
+            switch (selectedClass.ToString())
+            {
+                case "Fighter":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Fighter.ToMessage();
+                    break;
+                case "Cleric":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Cleric.ToMessage();
+                    break;
+                case "Support":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Support.ToMessage();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Convert difficulty value to enum value
+        /// </summary>
+        /// <param name="selectedClass"></param>
+        public void ConvertDifficultytoDifficultyEnum(object selectedValue)
+        {
+            switch (selectedValue.ToString())
+            {
+                case "Easy":
+                    DifficultyPicker.SelectedItem = DifficultyEnum.Easy.ToMessage();
+                    break;
+                case "Average":
+                    DifficultyPicker.SelectedItem = DifficultyEnum.Average.ToMessage();
+                    break;
+                case "Hard":
+                    DifficultyPicker.SelectedItem = DifficultyEnum.Hard.ToMessage();
+                    break;
+                case "Difficult":
+                    DifficultyPicker.SelectedItem = DifficultyEnum.Difficult.ToMessage();
+                    break;
+                case "Impossible":
+                    DifficultyPicker.SelectedItem = DifficultyEnum.Impossible.ToMessage();
+                    break;                
+                default:
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// The Class selected from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClassPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedClass = ClassPicker.SelectedItem;
+            if (selectedClass != null)
+            {
+                ClassErrorMessage.IsVisible = false;
+            }
+
+            // Convert class based on selected value
+            switch (selectedClass)
+            {
+                case "Tank":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Fighter;
+                    break;
+                case "Damage":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Cleric;
+                    break;
+                case "Support":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Support;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
