@@ -51,6 +51,7 @@ namespace Game.Views
             ClassErrorMessage.IsVisible = false;
             DifficultyErrorMessage.IsVisible = false;
             ExperienceErrorMessage.IsVisible = false;
+            ExperienceOverflowErrorMessage.IsVisible = false;
 
             // Load the values for the Class into the Picker
             ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
@@ -112,7 +113,7 @@ namespace Game.Views
                 DifficultyErrorMessage.Text = "Please select a Difficulty level";
             }
 
-            ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
+            //ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
 
             if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible  && !DifficultyErrorMessage.IsVisible)
             {
@@ -201,15 +202,15 @@ namespace Game.Views
 
         private void UniqueItemPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
         }
-        
+
         /// <summary>
         /// Difficulty picker change event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-       private void DifficultyPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private void DifficultyPicker_SelectedIndexChanged(object sender, EventArgs e)
        {
             var selectedDifficulty = DifficultyPicker.SelectedItem;
             if (selectedDifficulty != null)
