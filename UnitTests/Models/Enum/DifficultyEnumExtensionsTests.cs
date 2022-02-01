@@ -60,7 +60,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Harder than Hard", result);
+            Assert.AreEqual("Difficult", result);
         }
 
         [Test]
