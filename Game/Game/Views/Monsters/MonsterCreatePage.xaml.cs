@@ -38,7 +38,7 @@ namespace Game.Views
             this.ViewModel = data;
             this.ViewModel.Title = "Create";
 
-            // Adding items to Unique picker
+            // Load items to Unique picker
             var itemsData = ItemsViewModel;
             foreach (var item in itemsData.Dataset)
             {
@@ -63,13 +63,6 @@ namespace Game.Views
             DifficultyPicker.Items.Add(DifficultyEnum.Hard.ToMessage());
             DifficultyPicker.Items.Add(DifficultyEnum.Difficult.ToMessage());
             DifficultyPicker.Items.Add(DifficultyEnum.Impossible.ToMessage());
-
-            // Load Item values to UniquePicker
-            //foreach(var item in ItemViewModel.)
-            //{
-
-            //}
-            //UniqueItemPicker.Items.Add(ItemViewModel.Data)
 
             _ = UpdatePageBindingContext();
         }
