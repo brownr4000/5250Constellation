@@ -14,10 +14,10 @@
     <ScrollView>
         <StackLayout>
             <StackLayout 
-            Style="{StaticResource OuterBoxStack}"
-            Orientation="Vertical"
-            HorizontalOptions="Center"
-            Spacing="10">
+                Style="{StaticResource OuterBoxStack}"
+                Orientation="Vertical"
+                HorizontalOptions="Center"
+                Spacing="10">
 
                 <Label 
                     Text="Delete Monster Page" 
