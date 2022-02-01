@@ -6,20 +6,63 @@
              mc:Ignorable="d"
              x:Class="Game.Views.ItemDeletePage"
              Title="{Binding Title}">
+    
+    <ScrollView>
+        <StackLayout>
+            <StackLayout 
+                Style="{StaticResource OuterBoxStack}"
+                Orientation="Vertical"
+                HorizontalOptions="Center"
+                Spacing="10">
 
-    <StackLayout Padding="20" Spacing="10" HorizontalOptions="Center">
+                <Label 
+                    Text="Delete Monster Page" 
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    Style="{StaticResource HeaderStyle}"/>
 
-        <Label Text="Are you sure you want to delete this item? This action cannot be undone."/>
-        <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-            <Image HeightRequest="150" Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-            <Label HorizontalTextAlignment="Center" Text="{Binding Data.Name}"/>
+                <Label 
+                    Text="Are you sure you want to delete this Item?" 
+                    Style="{StaticResource MessageStyle}"
+                    HorizontalOptions="CenterAndExpand"/>
+
+                <Label
+                    Text="This action cannot be undone."
+                    Style="{StaticResource MessageStyle}"
+                    HorizontalOptions="CenterAndExpand"/>
+
+                <StackLayout 
+                    Orientation="Vertical"
+                    Margin="50">
+
+                    <Image Source="{Binding Data.ImageURI}"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       HorizontalOptions="Center"/>
+
+                    <Label
+                    Text="{Binding Data.Name}"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"/>
+
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center" Padding="20">
+                    <Button Text="Delete Item"
+                        Clicked="Delete_Clicked"
+                        TextColor="Black"
+                        WidthRequest="400"/>
+
+                    <Button Text="Back to Menu"
+                        Clicked="Cancel_Clicked"
+                        TextColor="Black"
+                        WidthRequest="400"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
         </StackLayout>
 
-        <StackLayout HorizontalOptions="Center" Padding="20">
-            <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Delete Item" Clicked="Delete_Clicked"/>
-            <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Back to Menu" Clicked="Cancel_Clicked"/>
-        </StackLayout>
-
-    </StackLayout>
-
+    </ScrollView>
 </ContentPage>
