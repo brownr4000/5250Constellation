@@ -152,9 +152,9 @@ namespace Game.Views
             }            
         }
 
-        ///// <summary>
-        ///// Change the Level Picker
-        ///// </summary>
+        /// <summary>
+        /// Change the Level Picker
+        /// </summary>
         public void ManageHealth()
         {
             // Roll for new HP
@@ -199,6 +199,7 @@ namespace Game.Views
         {
             _ = await Navigation.PopModalAsync();
         }
+
         /// <summary>
         /// On change event of Attack stepper
         /// </summary>
@@ -353,11 +354,11 @@ namespace Game.Views
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));           
         }
 
-        ///// <summary>
-        ///// Look up the Item to Display
-        ///// </summary>
-        ///// <param name="location"></param>
-        ///// <returns></returns>
+        /// <summary>
+        /// Look up the Item to Display
+        /// </summary>
+        /// <param name="location">The Location on the Character being selected</param>
+        /// <returns>Displays popup view with Item Detail</returns>
         public StackLayout GetItemToDisplay(ItemLocationEnum location)
         {
             // Defualt Image is the Plus
@@ -378,9 +379,9 @@ namespace Game.Views
 
             // Add a event to the user can click the item and see more
             ItemButton.Clicked += (sender, args) => ShowPopup(location);
-
-        // Add the Display Text for the item
-        var ItemLabel = new Label
+            
+            // Add the Display Text for the item
+            var ItemLabel = new Label
             {
                 Text = location.ToMessage(),
                 Style = (Style)Application.Current.Resources["ValueStyleMicro"],
