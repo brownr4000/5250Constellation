@@ -307,7 +307,7 @@ namespace Game.Views
                 Description = "None"
             };
 
-            List < ItemModel > itemList = new List<ItemModel>
+            List<ItemModel> itemList = new List<ItemModel>
             {
                 NoneItem
             };
