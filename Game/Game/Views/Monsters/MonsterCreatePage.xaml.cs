@@ -115,7 +115,9 @@ namespace Game.Views
 
             //ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
 
-            if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible  && !DifficultyErrorMessage.IsVisible)
+            if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible && 
+                !ExperienceOverflowErrorMessage.IsVisible && !DescErrorMessage.IsVisible && 
+                !ClassErrorMessage.IsVisible  && !DifficultyErrorMessage.IsVisible)
             {
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
                 _ = await Navigation.PopModalAsync();
