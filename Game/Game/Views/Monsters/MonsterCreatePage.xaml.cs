@@ -119,19 +119,7 @@ namespace Game.Views
                 DifficultyErrorMessage.Text = "Please select a Difficulty level";
             }
 
-            // Checking Experience value is not empty
-            //if (string.IsNullOrEmpty(ExperienceValue.Text))
-            //{
-            //    ExperienceErrorMessage.Text = ExperienceErrorMessage.Text + "Please enter value for Experience";
-            //    ExperienceErrorMessage.IsVisible = true;
-            //}
-
-            //// Checking valid input for Experience
-            //if (!string.IsNullOrEmpty(ExperienceValue.Text) && !Int32.TryParse(ExperienceValue.Text, out int parsedInt))
-            //{
-            //    ExperienceErrorMessage.Text = ExperienceErrorMessage.Text + " Please enter valid Experience value";
-            //    ExperienceErrorMessage.IsVisible = true;
-            //}
+            ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
 
             if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible  && !DifficultyErrorMessage.IsVisible)
             {
