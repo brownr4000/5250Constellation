@@ -7,17 +7,61 @@
              x:Class="Game.Views.MonsterDeletePage"
              Title="{Binding Title}">
     
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
-    </ContentPage.ToolbarItems>
-
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
+        <StackLayout>
+            <StackLayout 
+                Style="{StaticResource OuterBoxStack}"
+                Orientation="Vertical"
+                HorizontalOptions="Center"
                 Spacing="10">
 
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
+                <Label 
+                    Text="Delete Monster Page" 
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    Style="{StaticResource HeaderStyle}"/>
+
+                <Label 
+                    Text="Are you sure you want to delete this Monster?" 
+                    Style="{StaticResource MessageStyle}"
+                    HorizontalOptions="CenterAndExpand"/>
+
+                <Label
+                    Text="This action cannot be undone."
+                    Style="{StaticResource MessageStyle}"
+                    HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout 
+                Orientation="Vertical"
+                Margin="50">
+
+                <Image Source="{Binding Data.ImageURI}"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       HorizontalOptions="Center"/>
+
+                <Label
+                    Text="{Binding Data.Name}"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"/>
+
+            </StackLayout>
+
+            <StackLayout Margin="50">
+                <Button Text="Delete Character"
+                        Clicked="Delete_Clicked"
+                        TextColor="Black"
+                        WidthRequest="400"/>
+
+                <Button Text="Back to Menu"
+                        Clicked="Cancel_Clicked"
+                        TextColor="Black"
+                        WidthRequest="400"/>
+
+            </StackLayout>
             
         </StackLayout>
+        
     </ScrollView>
 </ContentPage>

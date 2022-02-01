@@ -22,18 +22,18 @@
                 Dark
                 -->
 
-            <Color x:Key="PageBackgroundColor">gray</Color>
-            <Color x:Key="ViewBackgroundColor">green</Color>
-            <Color x:Key="NavigationBarColor">orange</Color>
+            <Color x:Key="PageBackgroundColor">#202020</Color>
+            <Color x:Key="ViewBackgroundColor">#333333</Color>
+            <Color x:Key="NavigationBarColor">#7F47DD</Color>
 
-            <Color x:Key="PrimaryBackgroundColor">red</Color>
-            <Color x:Key="SecondaryBackgroundColor">gray</Color>
-            <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
-            <Color x:Key="LightBackgroundColor">orange</Color>
+            <Color x:Key="PrimaryBackgroundColor">#202020</Color>
+            <Color x:Key="SecondaryBackgroundColor">#C1FC57</Color>
+            <Color x:Key="TriciaryBackgroundColor">#7F47DD</Color>
+            <Color x:Key="LightBackgroundColor">bisque</Color>
 
-            <Color x:Key="PrimaryTextColor">black</Color>
-            <Color x:Key="SecondaryTextColor">darkblue</Color>
-            <Color x:Key="TriciaryTextColor">darkgreen</Color>
+            <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
+            <Color x:Key="SecondaryTextColor">#C1FC57</Color>
+            <Color x:Key="TriciaryTextColor">#733612</Color>
 
             <Color x:Key="TransparentColor">Transparent</Color>
 
@@ -45,6 +45,10 @@
                     <x:Double>0.75</x:Double>
                 </x:Arguments>
             </Color>
+
+            <!-- Button Colors-->
+            <Color x:Key="MainButtonColor">#C1FC57</Color>
+            <Color x:Key="SecondaryButtonColor">#7F47DD</Color>
 
             <!-- Battle Map Colors for Backgrounds -->
             <Color x:Key="BattleMapTransparentColor">Transparent</Color>

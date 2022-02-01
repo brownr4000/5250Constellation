@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -87,6 +88,21 @@ namespace Game.Views
             }
 
             BindingContext = ViewModel;
+        }
+
+        public async void CollectionView_OnItemSelected(object sender, SelectionChangedEventArgs args) {
+            MonsterModel data = args.CurrentSelection.FirstOrDefault() as MonsterModel;
+
+            if (data is null){
+                return;
+            }
+
+            // Navigate to Monster Read page
+            await Navigation.PushAsync(new MonsterReadPage( new GenericViewModel<MonsterModel>(data)));
+
+            // Manually deselect item
+            MonstersListView.SelectedItem = null;
+
         }
     }
 }
