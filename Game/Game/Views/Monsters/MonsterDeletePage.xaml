@@ -7,10 +7,6 @@
              x:Class="Game.Views.MonsterDeletePage"
              Title="{Binding Title}">
     
-    <ContentPage.ToolbarItems>
-        
-    </ContentPage.ToolbarItems>
-
     <ScrollView>
         <StackLayout>
             <StackLayout 
@@ -22,6 +18,7 @@
                 <Label 
                     Text="Delete Monster Page" 
                     HorizontalOptions="Center"
+                    FontAttributes="Bold"
                     Style="{StaticResource HeaderStyle}"/>
 
                 <Label 
@@ -35,31 +32,32 @@
                     HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical">
+            <StackLayout 
+                Orientation="Vertical"
+                Margin="50">
 
                 <Image Source="{Binding Data.ImageURI}"
                        HeightRequest="200"
+                       WidthRequest="200"
                        HorizontalOptions="Center"/>
 
                 <Label
-                        Text="{Binding Data.Name}"
-                        FontSize="Medium"
-                        HorizontalOptions="Center"/>
+                    Text="{Binding Data.Name}"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"/>
 
             </StackLayout>
 
-            <StackLayout>
+            <StackLayout Margin="50">
                 <Button Text="Delete Character"
                         Clicked="Delete_Clicked"
                         TextColor="Black"
-                        WidthRequest="400"
-                        />
+                        WidthRequest="400"/>
 
                 <Button Text="Back to Menu"
                         Clicked="Cancel_Clicked"
                         TextColor="Black"
-                        WidthRequest="400"
-                        />
+                        WidthRequest="400"/>
 
             </StackLayout>
             
