@@ -136,7 +136,7 @@ namespace Game.Views
                 DifficultyErrorMessage.Text = "Please select a Difficulty level";
             }
 
-            if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible && ExperienceOverflowErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible && !DifficultyErrorMessage.IsVisible)
+            if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible && !ExperienceOverflowErrorMessage.IsVisible && !DescErrorMessage.IsVisible && !ClassErrorMessage.IsVisible && !DifficultyErrorMessage.IsVisible)
             {
                 MessagingCenter.Send(this, "Update", ViewModel.Data);
                 _ = await Navigation.PopModalAsync();
