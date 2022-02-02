@@ -34,7 +34,7 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             //Converting Job to Class and assigning to ClassPicker
-            string result = ConverClasstoJob(ViewModel.Data.Job);
+            string result = ConverClasstoJob(ViewModel.Data.MonsterJob);
             if (!string.IsNullOrEmpty(result))
             {
                 ClassValue.Text = result;
