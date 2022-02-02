@@ -60,14 +60,15 @@
                                     <Label Grid.Row="0" Grid.Column="0" Text="Unique Item"/>
                                     <Picker Grid.Row="0" Grid.Column="1"
                                             WidthRequest="200" BackgroundColor="LimeGreen" 
-                                            SelectedItem="{Binding SelectedItemProperty}" 
+                                            SelectedItem="{Binding SelectedItemProperty}"                                             
                                             x:Name="UniqueItemPicker"/>
                                 </Grid>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                                 <Grid WidthRequest="500">
                                     <Label Grid.Row="0" Grid.Column="0" Text="Class"/>
-                                    <Picker Grid.Row="0" Grid.Column="1" WidthRequest="200" BackgroundColor="LimeGreen" 
+                                    <Picker Grid.Row="0" Grid.Column="1" 
+                                            WidthRequest="200" BackgroundColor="LimeGreen" 
                                                 SelectedItem="{Binding SelectedItemProperty}" 
                                                 SelectedIndexChanged="ClassPicker_SelectedIndexChanged"
                                                 x:Name="ClassPicker"/>

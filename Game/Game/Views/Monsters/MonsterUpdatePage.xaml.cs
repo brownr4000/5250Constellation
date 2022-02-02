@@ -51,25 +51,9 @@ namespace Game.Views
             var itemsData = ItemsViewModel;
             foreach (var item in itemsData.Dataset)
             {
-                UniqueItemPicker.Items.Add(item.Name);
+                UniqueItemPicker.Items.Add(item.Name);               
             }
-
-            //Setting the UniqueItem selected value
-            UniqueItemPicker.SelectedItem = ViewModel.Data.UniqueItem;            
-            //foreach(var item in UniqueItemPicker.Items)
-            //{
-            //    if(item == ViewModel.Data.UniqueItem)
-            //    {
-            //        UniqueItemPicker.SelectedItem = item;
-            //    }
-            //}            
-
-            // Hiding error messages
-            NameErrorMessage.IsVisible = false;
-            DescErrorMessage.IsVisible = false;
-            ClassErrorMessage.IsVisible = false;
-            DifficultyErrorMessage.IsVisible = false;
-
+                       
             // Load the values for the Class into the Picker
             ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
             ClassPicker.Items.Add(MonsterJobEnum.Cleric.ToMessage());
@@ -103,6 +87,8 @@ namespace Game.Views
 
             ConvertDifficultytoDifficultyEnum(difficulty);
 
+            AssignUniquePickerSelectedItem();
+
             return true;
         }
 
@@ -120,7 +106,7 @@ namespace Game.Views
             }
 
             // Set unique item selected to View Model
-            //ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
+            ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem != null ? UniqueItemPicker.SelectedItem.ToString() : null;
 
             // Checking if Class picker has value selected
             if (ClassPicker.SelectedItem == null)
@@ -256,6 +242,19 @@ namespace Game.Views
                     break;
             }
         }
+        
+        /// <summary>
+        /// Assign Unique Picker selected Item value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AssignUniquePickerSelectedItem()
+        {
+            if (!string.IsNullOrEmpty(ViewModel.Data.UniqueItem))
+            {
+                UniqueItemPicker.SelectedItem = ViewModel.Data.UniqueItem;
+            }            
+        }
 
         /// <summary>
         /// The Level selected from the list
@@ -282,13 +281,13 @@ namespace Game.Views
             switch (selectedJob)
             {
                 case "Tank":
-                    ViewModel.Data.Job = CharacterJobEnum.Fighter;
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Fighter;
                     break;
                 case "Damage":
-                    ViewModel.Data.Job = CharacterJobEnum.Cleric;
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Cleric;
                     break;
                 case "Support":
-                    ViewModel.Data.Job = CharacterJobEnum.Support;
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Support;
                     break;
                 default:
                     break;
@@ -304,17 +303,17 @@ namespace Game.Views
             switch (selectedClass.ToString())
             {
                 case "Fighter":
-                    ClassPicker.SelectedItem = CharacterJobEnum.Fighter.ToMessage();
+                    ClassPicker.SelectedItem = MonsterJobEnum.Fighter.ToMessage();
                     break;
                 case "Cleric":
-                    ClassPicker.SelectedItem = CharacterJobEnum.Cleric.ToMessage();
+                    ClassPicker.SelectedItem = MonsterJobEnum.Cleric.ToMessage();
                     break;
                 case "Support":
-                    ClassPicker.SelectedItem = CharacterJobEnum.Support.ToMessage();
+                    ClassPicker.SelectedItem = MonsterJobEnum.Support.ToMessage();
                     break;
                 default:
                     break;
-            }
+            }            
         }
 
         /// <summary>
@@ -342,7 +341,7 @@ namespace Game.Views
                     break;                
                 default:
                     break;
-            }
+            }            
         }
 
         /// <summary>
@@ -359,20 +358,7 @@ namespace Game.Views
             }
 
             // Convert class based on selected value
-            switch (selectedClass)
-            {
-                case "Tank":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Fighter;
-                    break;
-                case "Damage":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Cleric;
-                    break;
-                case "Support":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Support;
-                    break;
-                default:
-                    break;
-            }
+            ConverJobtoClass(selectedClass);
         }
 
         /// <summary>
