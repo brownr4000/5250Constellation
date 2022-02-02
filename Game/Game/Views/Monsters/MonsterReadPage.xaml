@@ -68,7 +68,7 @@
                                 HeightRequest="30">
 
                                 <Label Grid.Column="0" Text="Attack"/>
-                                <ProgressBar Grid.Column="1" Progress="{Binding Data.Attack}" 
+                                <ProgressBar x:Name="AttackProgressBar" Grid.Column="1" Progress="{Binding Data.Attack}" 
                                     ProgressColor="LimeGreen"/>
                                 <Label Grid.Column="2" Text="{Binding Data.Attack}" 
                                    x:Name="AttackValue"
@@ -84,7 +84,7 @@
                                 WidthRequest="240"
                                 HeightRequest="30">
                                 <Label Grid.Column="0" Text="Defense"/>
-                                <ProgressBar Grid.Column="1" Progress="{Binding Data.Defense}" 
+                                <ProgressBar x:Name="DefenseProgressBar" Grid.Column="1" Progress="{Binding Data.Defense}" 
                                     ProgressColor="LimeGreen"/>
                                 <Label Grid.Column="2" Text="{Binding Data.Defense}" 
                                    x:Name="DefenseValue"
@@ -100,7 +100,7 @@
                                 WidthRequest="240"
                                 HeightRequest="30">
                                 <Label Grid.Column="0" Text="Speed"/>
-                                <ProgressBar Grid.Column="1" Progress="{Binding Data.Speed}" 
+                                <ProgressBar x:Name="SpeedProgressBar" Grid.Column="1" Progress="{Binding Data.Speed}" 
                                     ProgressColor="LimeGreen"/>
                                 <Label Grid.Column="2" Text="{Binding Data.Speed}" 
                                    x:Name="SpeedValue"
@@ -117,7 +117,7 @@
                                 HeightRequest="30">
 
                                 <Label Grid.Column="0" Text="Health"/>
-                                <ProgressBar Grid.Column="1" Progress="{Binding Data.MaxHealth}" 
+                                <ProgressBar x:Name="HealthProgressBar" Grid.Column="1" Progress="{Binding Data.MaxHealth}" 
                                     ProgressColor="LimeGreen"/>
                                 <Label Grid.Column="2" Text="{Binding Data.MaxHealth}" 
                                    x:Name="HealthValue"
