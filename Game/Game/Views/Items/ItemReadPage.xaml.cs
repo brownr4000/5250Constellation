@@ -32,6 +32,12 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            // Setting Progress of named ProgressBars to the value of the
+            // related stored Attribute divided by maximum value
+            RangeProgressBar.Progress = ViewModel.Data.Range / 9f;
+            ValueProgressBar.Progress = ViewModel.Data.Value / 9f;
+            DamageProgressBar.Progress = ViewModel.Data.Damage / 9f;
         }
 
         /// <summary>

@@ -125,7 +125,6 @@
 
                                 <ProgressBar 
                                     x:Name="RangeProgressBar"
-                                    Progress="{Binding Data.Range}" 
                                     ProgressColor="LimeGreen"
                                     Grid.Column="2"/>
 
@@ -154,7 +153,6 @@
 
                                 <ProgressBar 
                                     x:Name="ValueProgressBar"
-                                    Progress="{Binding Data.Value}"
                                     ProgressColor="LimeGreen"
                                     Grid.Column="2"/>
 
@@ -183,7 +181,6 @@
 
                                 <ProgressBar 
                                     x:Name="DamageProgressBar"
-                                    Progress="{Binding Data.Value}" 
                                     ProgressColor="LimeGreen"
                                     Grid.Column="2"/>
 
