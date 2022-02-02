@@ -45,6 +45,12 @@ namespace Game.Views
             {
                 ClassValue.Text = result;
             }
+
+            // Setting Progress of named ProgressBars to the value of the
+            // related stored Attribute divided by maximum value
+            AttackProgressBar.Progress = ViewModel.Data.Attack / 9f;
+            DefenseProgressBar.Progress = ViewModel.Data.Defense / 9f;
+            SpeedProgressBar.Progress = ViewModel.Data.Speed / 9f;
         }
 
         /// <summary>
