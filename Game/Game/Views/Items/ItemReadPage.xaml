@@ -14,10 +14,6 @@
 
 
     <StackLayout>
-        <Label Text="Item Read Page" Style="{StaticResource HeaderStyle}"
-                   FontAttributes="Bold"
-                   BackgroundColor="YellowGreen"/>
-
         <ContentView>
             
             <StackLayout>
@@ -127,10 +123,11 @@
                                     Style="{StaticResource ValueStyle}"
                                     IsVisible="True"/>
 
-                                <ProgressBar Progress="{Binding Data.Range}" 
+                                <ProgressBar 
+                                    x:Name="RangeProgressBar"
+                                    Progress="{Binding Data.Range}" 
                                     ProgressColor="LimeGreen"
-                                    Grid.Column="2"
-                                    />
+                                    Grid.Column="2"/>
 
                             </Grid>
 
@@ -155,8 +152,9 @@
                                     Style="{StaticResource ValueStyle}"
                                     IsVisible="True"/>
 
-                                <ProgressBar Progress="{Binding Data.Value}"
-                                    
+                                <ProgressBar 
+                                    x:Name="ValueProgressBar"
+                                    Progress="{Binding Data.Value}"
                                     ProgressColor="LimeGreen"
                                     Grid.Column="2"/>
 
@@ -183,7 +181,9 @@
                                     Style="{StaticResource ValueStyle}"
                                     IsVisible="True"/>
 
-                                <ProgressBar Progress="{Binding Data.Value}" 
+                                <ProgressBar 
+                                    x:Name="DamageProgressBar"
+                                    Progress="{Binding Data.Value}" 
                                     ProgressColor="LimeGreen"
                                     Grid.Column="2"/>
 
