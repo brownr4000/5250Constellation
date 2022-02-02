@@ -63,7 +63,7 @@
                         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
                             <StackLayout Orientation="Horizontal">                                
                                 <Label Text="Attack"/>
-                                <Stepper Maximum="10"
+                                <Stepper Maximum="9"
                                      Increment="1"
                                      Value="{Binding Data.Attack, Mode=TwoWay}" 
                                      ValueChanged="Attack_OnStepperValueChanged"
@@ -77,7 +77,7 @@
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Defense"/>
-                                <Stepper Maximum="10"
+                                <Stepper Maximum="9"
                             Increment="1" Value="{Binding Data.Defense, Mode=TwoWay}" BackgroundColor="LimeGreen"
                             ValueChanged="Defense_OnStepperValueChanged"/>
                                 <Label Text="{Binding Data.Defense, Mode=TwoWay}" 
@@ -89,7 +89,7 @@
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Speed"/>
-                                <Stepper Maximum="10"
+                                <Stepper Maximum="9"
                                      Increment="1" Value="{Binding Data.Speed, Mode=TwoWay}" BackgroundColor="LimeGreen"
                                      ValueChanged="Speed_OnStepperValueChanged"/>
                                 <Label Text="{Binding Data.Speed, Mode=TwoWay}" 
