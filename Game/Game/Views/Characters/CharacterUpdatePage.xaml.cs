@@ -69,8 +69,7 @@ namespace Game.Views
             BindingContext = this.ViewModel;
 
             // This resets the Picker to -1 index, need to reset it back
-            ViewModel.Data.Level = level;
-            //LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+            ViewModel.Data.Level = level;           
             LevelPicker.SelectedIndex = ViewModel.Data.Level;
 
             //Converting Job to Class and assigning to ClassPicker            
