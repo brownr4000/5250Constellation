@@ -16,12 +16,6 @@
                 Spacing="10">
 
                 <Label 
-                    Text="Delete Item" 
-                    HorizontalOptions="Center"
-                    FontAttributes="Bold"
-                    Style="{StaticResource HeaderStyle}"/>
-
-                <Label 
                     Text="Are you sure you want to delete this Item?" 
                     Style="{StaticResource MessageStyle}"
                     HorizontalOptions="CenterAndExpand"/>
@@ -31,34 +25,35 @@
                     Style="{StaticResource MessageStyle}"
                     HorizontalOptions="CenterAndExpand"/>
 
-                <StackLayout 
+            </StackLayout>
+
+            <StackLayout 
                     Orientation="Vertical"
                     Margin="50">
 
-                    <Image Source="{Binding Data.ImageURI}"
+                <Image Source="{Binding Data.ImageURI}"
                        HeightRequest="200"
                        WidthRequest="200"
                        HorizontalOptions="Center"/>
 
-                    <Label
-                    Text="{Binding Data.Name}"
-                    FontSize="Medium"
-                    HorizontalOptions="Center"/>
+                <Label
+                        Text="{Binding Data.Name}"
+                        Style="{StaticResource LabelStyle}"
+                        FontSize="Large"
+                        HorizontalOptions="Center"/>
 
-                </StackLayout>
+            </StackLayout>
 
-                <StackLayout HorizontalOptions="Center" Padding="20">
-                    <Button Text="Delete Item"
+            <StackLayout Margin="50">
+                <Button Text="Delete Item"
                         Clicked="Delete_Clicked"
                         TextColor="Black"
                         WidthRequest="400"/>
 
-                    <Button Text="Back to Menu"
+                <Button Text="Back to Menu"
                         Clicked="Cancel_Clicked"
                         TextColor="Black"
                         WidthRequest="400"/>
-
-                </StackLayout>
 
             </StackLayout>
 
