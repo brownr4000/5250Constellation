@@ -35,30 +35,62 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
+                            
                             <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                                <Label Text="Name"/>
-                                <Entry Text="{Binding Data.Name, Mode=TwoWay}" x:Name="NameValue" TextChanged="Name_TextChanged" WidthRequest="200" BackgroundColor="LimeGreen"/>
-                                <Label Text="Level"/>
+                                <Label Text="Name"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
+                                <Entry Text="{Binding Data.Name, Mode=TwoWay}" 
+                                       x:Name="NameValue" 
+                                       TextChanged="Name_TextChanged" 
+                                       WidthRequest="200" 
+                                       BackgroundColor="LimeGreen"/>
+                                
+                                <Label Text="Level"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
                                 <Picker WidthRequest="200" BackgroundColor="LimeGreen" 
-                            SelectedItem="{Binding SelectedItemProperty}" 
-                            SelectedIndexChanged="Level_Changed"
-                            x:Name="LevelPicker"/>
-                                <Label Text="Class"/>
+                                        SelectedItem="{Binding SelectedItemProperty}" 
+                                        SelectedIndexChanged="Level_Changed"
+                                        x:Name="LevelPicker"/>
+                                
+                                <Label Text="Class"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
                                 <Picker WidthRequest="200" BackgroundColor="LimeGreen"
-                            SelectedItem="{Binding SelectedItemProperty}" 
-                            SelectedIndexChanged="Class_Changed"
-                            x:Name="ClassPicker"/>
-                                <Label Text="Description"/>
-                                <Entry Text="{Binding Data.Description, Mode=TwoWay}" x:Name="DescValue" TextChanged="Desc_TextChanged" WidthRequest="200" BackgroundColor="LimeGreen"/>
+                                        SelectedItem="{Binding SelectedItemProperty}" 
+                                        SelectedIndexChanged="Class_Changed"
+                                        x:Name="ClassPicker"/>
+                                
+                                <Label Text="Description"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
+                                <Entry Text="{Binding Data.Description, Mode=TwoWay}" 
+                                       x:Name="DescValue"
+                                       TextChanged="Desc_TextChanged" 
+                                       WidthRequest="200" 
+                                       BackgroundColor="LimeGreen"/>
+                                
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="20" Spacing="20">
                                     <Label Text="Max Health" 
-                                Style="{StaticResource LabelStyle}"/>
+                                           Style="{StaticResource LabelStyle}"
+                                           FontSize="Small"/>
+                                    
                                     <Label x:Name="MaxHealthValue"
-                                Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}"/>
+                                           Style="{StaticResource LabelStyle}"
+                                           FontSize="Small"
+                                           Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}"/>
                                 </StackLayout>
 
                             </StackLayout>
-                            <Image Source="{Binding Data.ImageURI}" HeightRequest="100" WidthRequest="100" Grid.Row="0" Grid.Column="1"/>
+                            <Image Source="{Binding Data.ImageURI}" 
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   Grid.Row="0" Grid.Column="1"/>
                         </Grid>
                         <FlexLayout                        
                         Wrap="Wrap"
@@ -68,39 +100,64 @@
                         </FlexLayout>
                         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Attack"/>
+                                <Label Text="Attack"
+                                       TextColor="#7F47DD"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
                                 <Stepper Maximum="9"
                                      Increment="1"
                                      Value="{Binding Data.Attack, Mode=TwoWay}" 
                                      ValueChanged="Attack_OnStepperValueChanged"
-                                     BackgroundColor="LimeGreen"/>  
+                                     BackgroundColor="#7F47DD"/>  
+                                
                                 <Label Text="{Binding Data.Attack}" 
                                    x:Name="AttackValue"
-                                   Style="{StaticResource ValueStyle}"
+                                   Style="{StaticResource LabelStyle}"
+                                   FontSize="Small"
+                                   TextColor="#7F47DD"
                                    Padding="0,0,10,0"
                                    HorizontalOptions="End"
                                    HorizontalTextAlignment="End"/>  
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Defense"/>
+                                <Label Text="Defense"
+                                       TextColor="#7F47DD"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
                                 <Stepper Maximum="9"
-                                    Increment="1" Value="{Binding Data.Defense, Mode=TwoWay}" BackgroundColor="LimeGreen"
-                                    ValueChanged="Defense_OnStepperValueChanged"/>
+                                         Increment="1" 
+                                         BackgroundColor="#7F47DD"
+                                         Value="{Binding Data.Defense, Mode=TwoWay}"
+                                         ValueChanged="Defense_OnStepperValueChanged"/>
+                                
                                 <Label Text="{Binding Data.Defense}" 
-                                   x:Name="DefenseValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
+                                       x:Name="DefenseValue"
+                                       TextColor="#7F47DD"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"
+                                       Padding="0,0,10,0"
+                                       HorizontalOptions="End"
+                                       HorizontalTextAlignment="End"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Speed"/>
+                                <Label Text="Speed"
+                                       TextColor="#7F47DD"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
                                 <Stepper Maximum="9"
-                                     Increment="1" Value="{Binding Data.Speed, Mode=TwoWay}" BackgroundColor="LimeGreen"
-                                     ValueChanged="Speed_OnStepperValueChanged"/>
+                                         Increment="1" 
+                                         Value="{Binding Data.Speed, Mode=TwoWay}" 
+                                         BackgroundColor="#7F47DD"
+                                         ValueChanged="Speed_OnStepperValueChanged"/>
+                                
                                 <Label Text="{Binding Data.Speed}" 
                                        x:Name="SpeedValue"
-                                       Style="{StaticResource ValueStyle}"
+                                       TextColor="#7F47DD"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"
                                        Padding="0,0,10,0"
                                        HorizontalOptions="End"
                                        HorizontalTextAlignment="End"/>
@@ -109,13 +166,27 @@
 
                        
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Label Text="Please Enter the Item Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
-                            <Label Text="Please Enter the Item Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
-                            <Label x:Name="ClassErrorMessage" TextColor="Yellow"/>
+                            <Label Text="Please Enter the Item Name" 
+                                   x:Name="NameErrorMessage" 
+                                   TextColor="Yellow"/>
+                            
+                            <Label Text="Please Enter the Item Description" 
+                                   x:Name="DescErrorMessage"
+                                   TextColor="Yellow"/>
+                            
+                            <Label x:Name="ClassErrorMessage" 
+                                   TextColor="Yellow"/>
                         </StackLayout>
                         <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
-                            <Button Text="Cancel" WidthRequest="100" Clicked="Cancel_Clicked"/>
-                            <Button Text="Save" WidthRequest="100" Clicked="Save_Clicked"/>
+                            <Button Text="Cancel"
+                                    TextColor="Black"
+                                    WidthRequest="100" 
+                                    Clicked="Cancel_Clicked"/>
+                            
+                            <Button Text="Save"
+                                    TextColor="Black"
+                                    WidthRequest="100"
+                                    Clicked="Save_Clicked"/>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
@@ -132,8 +203,7 @@
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"
                     WidthRequest="300"
-                    HeightRequest="300"
-                    >
+                    HeightRequest="300">
 
                     <Frame BackgroundColor="LimeGreen" BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
                         <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
@@ -145,8 +215,7 @@
                                 ItemSelected="OnPopupItemSelected"
                                 HasUnevenRows="true"
                                 Margin="5,0,5,0"
-                                RowHeight="80"
-                                >
+                                RowHeight="80">
 
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
@@ -163,23 +232,25 @@
                                                 </Grid.RowDefinitions>
 
                                                 <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                            Source="{Binding ImageURI}"
-                                            Style="{StaticResource ImageSmallStyle}"
-                                            VerticalOptions="CenterAndExpand"/>
+                                                        Source="{Binding ImageURI}"
+                                                        Style="{StaticResource ImageSmallStyle}"
+                                                        VerticalOptions="CenterAndExpand"/>
 
                                                 <Label Grid.Column="1" Grid.Row="0"
-                                            Text="{Binding Name}" 
-                                            Style="{StaticResource ListStyle}"/>
+                                                        Text="{Binding Name}" 
+                                                        Style="{StaticResource LabelStyle}"/>
 
                                                 <StackLayout Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
-                                                    <Label Text="{Binding Attribute}" Style="{StaticResource ListStyle}"/>
-                                                    <Label Text="{Binding Value}" Style="{StaticResource ListStyle}"/>
+                                                    <Label Text="{Binding Attribute}" 
+                                                           Style="{StaticResource LabelStyle}"/>
+                                                    <Label Text="{Binding Value}" 
+                                                           Style="{StaticResource LabelStyle}"/>
                                                 </StackLayout>
 
                                                 <Label Grid.Column="1" Grid.Row="2"
-                                                Text="{Binding Description}" 
-                                                Style="{StaticResource ListStyle}"
-                                                FontSize="Micro"/>
+                                                        Text="{Binding Description}" 
+                                                        Style="{StaticResource LabelStyle}"
+                                                        FontSize="Micro"/>
                                             </Grid>
                                         </ViewCell>
                                     </DataTemplate>
@@ -187,8 +258,8 @@
                             </ListView>
 
                             <Button x:Name="PopupCloseButton" 
-                                Clicked="ClosePopup_Clicked" 
-                                Text="Close"/>
+                                    Clicked="ClosePopup_Clicked" 
+                                    Text="Close"/>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
