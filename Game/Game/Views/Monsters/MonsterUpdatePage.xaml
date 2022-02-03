@@ -145,42 +145,45 @@
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
-                        <StackLayout Orientation="Horizontal">
+                        <Grid>
                             <Label 
-                                    Text="Attack"
-                                    Style="{StaticResource LabelStyle}"
-                                    FontSize="Small"
-                                    TextColor="#7F47DD"/>
+                                Text="Attack"
+                                Style="{StaticResource LabelStyle}"
+                                FontSize="Small"
+                                TextColor="#7F47DD"
+                                HorizontalOptions="Start"/>
 
                             <Stepper Maximum="9"
                                      Increment="1"
                                      Value="{Binding Data.Attack, Mode=TwoWay}" 
                                      ValueChanged="AttackStepper_ValueChanged"
-                                     BackgroundColor="#7F47DD"/>
+                                     BackgroundColor="#7F47DD"
+                                     HorizontalOptions="CenterAndExpand"/>
 
                             <Label Text="{Binding Data.Attack}" 
                                    x:Name="AttackValue"
                                    Style="{StaticResource ValueStyle}"
                                    TextColor="#FFFFFF"
                                    Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
+                                   HorizontalOptions="End"/>
 
-                        </StackLayout>
+                        </Grid>
 
-                        <StackLayout Orientation="Horizontal">
+                        <Grid>
                             <Label 
-                                    Text="Defense"
-                                    Style="{StaticResource LabelStyle}"
-                                    FontSize="Small"
-                                    TextColor="#7F47DD"/>
+                                Text="Defense"
+                                Style="{StaticResource LabelStyle}"
+                                FontSize="Small"
+                                TextColor="#7F47DD"
+                                HorizontalOptions="Start"/>
 
                             <Stepper 
                                     Maximum="9"
                                     Increment="1" 
                                     Value="{Binding Data.Defense, Mode=TwoWay}" 
                                     BackgroundColor="#7F47DD"
-                                    ValueChanged="Defense_OnStepperValueChanged"/>
+                                    ValueChanged="Defense_OnStepperValueChanged"
+                                    HorizontalOptions="CenterAndExpand"/>
 
                             <Label 
                                     Text="{Binding Data.Defense}" 
@@ -188,24 +191,25 @@
                                     Style="{StaticResource ValueStyle}"
                                     TextColor="#FFFFFF"
                                     Padding="0,0,10,0"
-                                    HorizontalOptions="End"
-                                    HorizontalTextAlignment="End"/>
+                                    HorizontalOptions="End"/>
 
-                        </StackLayout>
+                        </Grid>
 
-                        <StackLayout Orientation="Horizontal">
+                        <Grid>
                             <Label 
-                                    Text="Speed"
-                                    Style="{StaticResource LabelStyle}"
-                                    FontSize="Small"
-                                    TextColor="#7F47DD"/>
+                                Text="Speed"
+                                Style="{StaticResource LabelStyle}"
+                                FontSize="Small"
+                                TextColor="#7F47DD"
+                                HorizontalOptions="Start"/>
 
                             <Stepper 
                                     Maximum="9"
                                     Increment="1"
                                     Value="{Binding Data.Speed, Mode=TwoWay}"
                                     BackgroundColor="#7F47DD"
-                                    ValueChanged="Speed_OnStepperValueChanged"/>
+                                    ValueChanged="Speed_OnStepperValueChanged"
+                                    HorizontalOptions="CenterAndExpand"/>
 
                             <Label 
                                     Text="{Binding Data.Speed}" 
@@ -213,24 +217,25 @@
                                     Style="{StaticResource ValueStyle}"
                                     TextColor="#FFFFFF"
                                     Padding="0,0,10,0"
-                                    HorizontalOptions="End"
-                                    HorizontalTextAlignment="End"/>
+                                    HorizontalOptions="End"/>
 
-                        </StackLayout>
+                        </Grid>
 
-                        <StackLayout Orientation="Horizontal">
-                            <Label 
-                                    Text="Health"
-                                    Style="{StaticResource LabelStyle}"
-                                    FontSize="Small"
-                                    TextColor="#7F47DD"/>
+                        <Grid>
+                            <Label
+                                Text="Health"
+                                Style="{StaticResource LabelStyle}"
+                                FontSize="Small"
+                                TextColor="#7F47DD"
+                                HorizontalOptions="Start"/>
 
                             <Stepper 
                                     Maximum="100"
                                     Minimum="10"
                                     Increment="1" Value="{Binding Data.MaxHealth, Mode=TwoWay}" 
                                     BackgroundColor="#7F47DD"
-                                    ValueChanged="Health_OnStepperValueChanged"/>
+                                    ValueChanged="Health_OnStepperValueChanged"
+                                    HorizontalOptions="CenterAndExpand"/>
 
                             <Label 
                                     Text="{Binding Data.MaxHealth}" 
@@ -238,19 +243,11 @@
                                     Style="{StaticResource ValueStyle}"
                                     TextColor="#FFFFFF"
                                     Padding="0,0,10,0"
-                                    HorizontalOptions="End"
-                                    HorizontalTextAlignment="End"/>
+                                    HorizontalOptions="End"/>
 
-                        </StackLayout>
+                        </Grid>
 
                     </StackLayout>
-
-                    <FlexLayout                        
-                            Wrap="Wrap"
-                            JustifyContent="SpaceAround"
-                            AlignContent="SpaceAround"
-                            x:Name="ItemBox">
-                    </FlexLayout>
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                         <Label Text="Please Enter the Monster Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
