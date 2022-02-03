@@ -200,30 +200,55 @@
                             </StackLayout>
 
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Speed"/>
-                                <Stepper Maximum="9"
-                                     Increment="1" Value="{Binding Data.Speed, Mode=TwoWay}" BackgroundColor="LimeGreen"
-                                     ValueChanged="Speed_OnStepperValueChanged"/>
-                                <Label Text="{Binding Data.Speed}" 
-                                       x:Name="SpeedValue"
-                                       Style="{StaticResource ValueStyle}"
-                                       Padding="0,0,10,0"
-                                       HorizontalOptions="End"
-                                       HorizontalTextAlignment="End"/>
+                                <Label 
+                                    Text="Speed"
+                                    Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"
+                                    TextColor="#7F47DD"/>
+                                
+                                <Stepper 
+                                    Maximum="9"
+                                    Increment="1"
+                                    Value="{Binding Data.Speed, Mode=TwoWay}"
+                                    BackgroundColor="#7F47DD"
+                                    ValueChanged="Speed_OnStepperValueChanged"/>
+                                
+                                <Label 
+                                    Text="{Binding Data.Speed}" 
+                                    x:Name="SpeedValue"
+                                    Style="{StaticResource ValueStyle}"
+                                    TextColor="#FFFFFF"
+                                    Padding="0,0,10,0"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="End"/>
+                                
                             </StackLayout>
 
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Health"/>
-                                <Stepper Maximum="100" Minimum="10"
-                                     Increment="1" Value="{Binding Data.MaxHealth, Mode=TwoWay}" BackgroundColor="LimeGreen"
-                                     ValueChanged="Health_OnStepperValueChanged"/>
-                                <Label Text="{Binding Data.MaxHealth}" 
-                                       x:Name="HealthValue"
-                                       Style="{StaticResource ValueStyle}"
-                                       Padding="0,0,10,0"
-                                       HorizontalOptions="End"
-                                       HorizontalTextAlignment="End"/>
+                                <Label 
+                                    Text="Health"
+                                    Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"
+                                    TextColor="#7F47DD"/>
+                                
+                                <Stepper 
+                                    Maximum="100"
+                                    Minimum="10"
+                                    Increment="1" Value="{Binding Data.MaxHealth, Mode=TwoWay}" 
+                                    BackgroundColor="#7F47DD"
+                                    ValueChanged="Health_OnStepperValueChanged"/>
+                                
+                                <Label 
+                                    Text="{Binding Data.MaxHealth}" 
+                                    x:Name="HealthValue"
+                                    Style="{StaticResource ValueStyle}"
+                                    TextColor="#FFFFFF"
+                                    Padding="0,0,10,0"
+                                    HorizontalOptions="End"
+                                    HorizontalTextAlignment="End"/>
+                                
                             </StackLayout>
+                            
                         </StackLayout>
 
                         <FlexLayout                        
@@ -232,13 +257,20 @@
                             AlignContent="SpaceAround"
                             x:Name="ItemBox">
                         </FlexLayout>
+                        
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="Please Enter the Monster Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
+                            
                             <Label Text="Please Enter the Monster Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
+                            
                             <Label x:Name="ClassErrorMessage" TextColor="Yellow"/>
+                            
                             <Label x:Name="ExperienceErrorMessage" TextColor="Yellow"/>
+                            
                             <Label x:Name="DifficultyErrorMessage" TextColor="Yellow"/>
+                            
                             <Label x:Name="ExperienceOverflowErrorMessage" TextColor="Yellow"/>
+                            
                         </StackLayout>
                         
                         <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
