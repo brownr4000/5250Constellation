@@ -22,9 +22,9 @@
 
             <Image HeightRequest="50" Source="{Binding Data.ImageURI}"/>
             
-            <Grid RowSpacing="1"
-                  ColumnSpacing="2"
-                  VerticalOptions="Center" WidthRequest="600">
+            <Grid RowSpacing="1" Padding="0,20,20,0"
+                  ColumnSpacing="2" 
+                  VerticalOptions="Center" WidthRequest="450">
                 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
@@ -33,48 +33,109 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-                
-                <Label Grid.Row="0" Grid.Column="0" Text="Name" />
-                <Entry Grid.Row="0" Grid.Column="1" x:Name="NameValue" TextChanged="Name_TextChanged" Text="{Binding Data.Name}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
-                <Label Grid.Row="1" Grid.Column="0" Text="Brief Description"/>
-                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Data.Description}" x:Name="DescValue" TextChanged="Desc_TextChanged" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center" />
 
-                <Label Grid.Row="2" Grid.Column="0" Text="Location"/>
-                <Picker Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" x:Name="LocationPicker"                                             
-                        BackgroundColor="LimeGreen" SelectedIndexChanged="LocationPicker_SelectedIndexChanged"
+                <Label Padding="30" Grid.Row="0" Grid.Column="0" 
+                       HeightRequest="50" Text="Name" 
+                       HorizontalTextAlignment="Center" />
+                <Entry Grid.Row="0" Grid.Column="1" 
+                       x:Name="NameValue" 
+                       TextChanged="Name_TextChanged" 
+                       Text="{Binding Data.Name}"
+                       BackgroundColor="LimeGreen" 
+                       HorizontalTextAlignment="Center"/>
+                
+                <Label Padding="0,0,30,10" Grid.Row="1" Grid.Column="0" 
+                       HorizontalTextAlignment="Center" 
+                       Text="Brief Description"/>
+                <Entry Grid.Row="1" Grid.Column="1" 
+                       Text="{Binding Data.Description}" 
+                       x:Name="DescValue" 
+                       TextChanged="Desc_TextChanged" 
+                       BackgroundColor="LimeGreen" 
+                       HorizontalTextAlignment="Center"/>
+                
+                <Label Padding="30" Grid.Row="2" Grid.Column="0" 
+                       Text="Location" 
+                       HorizontalTextAlignment="Center"/>
+                <Picker Grid.Row="2" Grid.Column="1" 
+                        HorizontalTextAlignment="Center" 
+                        x:Name="LocationPicker"                                             
+                        BackgroundColor="LimeGreen" 
+                        SelectedIndexChanged="LocationPicker_SelectedIndexChanged"
                         ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}"/>
-                <Label Grid.Row="3" Grid.Column="0" Text="Attributes"/>
-                <Picker Grid.Row="3" Grid.Column="1" SelectedIndexChanged="AttributePicker_SelectedIndexChanged"  HorizontalTextAlignment="Center" HeightRequest="50" WidthRequest="250" ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
+               
+                <Label Padding="30" Grid.Row="3" Grid.Column="0" 
+                       Text="Attributes" 
+                       HorizontalTextAlignment="Center"/>
+                <Picker Grid.Row="3" Grid.Column="1" 
+                        SelectedIndexChanged="AttributePicker_SelectedIndexChanged" 
+                        HorizontalTextAlignment="Center" 
+                        ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         BackgroundColor="LimeGreen" x:Name="AttributePicker"/>
 
-                <Label Grid.Row="4" Grid.Column="0" Text="Value"/>
-                <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Data.Value}" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center"/>
+                <Label Padding="30" Grid.Row="4" Grid.Column="0" 
+                       Text="Value" 
+                       HorizontalTextAlignment="Center"/>
+                <Entry Grid.Row="4" Grid.Column="1" 
+                       Text="{Binding Data.Value}"
+                       BackgroundColor="LimeGreen"
+                       HorizontalTextAlignment="Center"/>
 
-                <Label Grid.Row="5" Grid.Column="0" Text="Image"/>
-                <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <Label Padding="30" Grid.Row="5" Grid.Column="0" 
+                       Text="Image" HorizontalTextAlignment="Center"/>
+                <StackLayout Grid.Row="5" Grid.Column="1"
+                             Orientation="Horizontal" 
+                             HorizontalOptions="StartAndExpand">
                     <Image Source="Shield1.png"/>
-                    <Entry Text="{Binding Data.NewItemImageURI}" BackgroundColor="LimeGreen" WidthRequest="425" />
+                    <Entry Text="{Binding Data.NewItemImageURI}" 
+                           BackgroundColor="LimeGreen"
+                           WidthRequest="250" />
                 </StackLayout>
 
-                <Label Grid.Row="6" Grid.Column="0" x:Name="RangeLabel" Text="Range"/>
-                <Entry TextChanged="RangeValue_TextChanged" Text="{Binding Data.Range}" x:Name="RangeValue" Grid.Row="6" Grid.Column="1" HorizontalTextAlignment="Center" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250"/>
-                
-                <Label Grid.Row="7" Grid.Column="0" x:Name="DamageLabel" Text="Damage"/>
-                <Entry Text="{Binding Data.Damage}" x:Name="DamageValue" Grid.Row="7" Grid.Column="1" BackgroundColor="LimeGreen" HeightRequest="50" WidthRequest="250" HorizontalTextAlignment="Center"/>
-            
+                <Label Padding="30" Grid.Row="6" Grid.Column="0" 
+                       x:Name="RangeLabel" Text="Range"
+                       HorizontalTextAlignment="Center"/>
+                <Entry Grid.Row="6" Grid.Column="1" 
+                       TextChanged="RangeValue_TextChanged" 
+                       Text="{Binding Data.Range}"
+                       x:Name="RangeValue" 
+                       HorizontalTextAlignment="Center"
+                       BackgroundColor="LimeGreen" />
+
+                <Label Padding="30" Grid.Row="7" Grid.Column="0" 
+                       x:Name="DamageLabel" 
+                       Text="Damage" 
+                       HorizontalTextAlignment="Center"/>
+                <Entry Grid.Row="7" Grid.Column="1"
+                       Text="{Binding Data.Damage}" 
+                       x:Name="DamageValue" 
+                       BackgroundColor="LimeGreen" 
+                       HorizontalTextAlignment="Center"/>            
             </Grid>
             
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label Text="Please Enter the Item Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
-                <Label Text="Please Enter the Item Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
-                <Label x:Name="LocationAttributeErrorMessage" TextColor="Yellow"/>
+                <Label Text="Please Enter the Item Name" 
+                       x:Name="NameErrorMessage" 
+                       TextColor="Yellow"/>
+                <Label Text="Please Enter the Item Description" 
+                       x:Name="DescErrorMessage" 
+                       TextColor="Yellow"/>
+                <Label x:Name="LocationAttributeErrorMessage" 
+                       TextColor="Yellow"/>
             </StackLayout>
             
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Cancel" Clicked="Cancel_Clicked"/>
-                <Button BackgroundColor="Gray" HeightRequest="50" WidthRequest="150" Text="Create" Clicked="Save_Clicked"/>
+                <Button BackgroundColor="Gray" 
+                        HeightRequest="50" 
+                        WidthRequest="150" 
+                        Text="Cancel" Clicked="Cancel_Clicked"/>
+                <Button BackgroundColor="Gray" 
+                        HeightRequest="50" 
+                        WidthRequest="150"
+                        Text="Create" 
+                        Clicked="Save_Clicked"/>
             </StackLayout>
             
         </StackLayout>
