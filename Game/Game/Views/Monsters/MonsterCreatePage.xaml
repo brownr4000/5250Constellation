@@ -17,40 +17,84 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Style="{StaticResource VerticalStack}">
             <ScrollView>
-                <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
+                    
                     <Image Source="{Binding Data.ImageURI}" HeightRequest="150" WidthRequest="150"/>
-                    <StackLayout Orientation="Vertical" VerticalOptions="Center">
 
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
-                                <Label Grid.Row="0" Grid.Column="0" Text="Name"/>
-                                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Data.Name, Mode=TwoWay}" x:Name="NameValue" 
-                                         TextChanged="NameValue_TextChanged" WidthRequest="200" BackgroundColor="LimeGreen"/>
+                                <Label 
+                                    Grid.Row="0" 
+                                    Grid.Column="0" 
+                                    Text="Name"
+                                    Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"/>
+                                
+                                <Entry 
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding Data.Name, Mode=TwoWay}"
+                                    x:Name="NameValue" 
+                                    TextChanged="NameValue_TextChanged" 
+                                    WidthRequest="200"
+                                    BackgroundColor="LimeGreen"/>
+                                
                             </Grid>
+                            
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
-                                <Label Grid.Row="0" Grid.Column="0" Text="Difficulty"/>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="Difficulty"
+                                    Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"/>
+                                
                                 <Picker Grid.Row="0" Grid.Column="1"
                                             WidthRequest="200" BackgroundColor="LimeGreen" 
                                             SelectedItem="{Binding SelectedItemProperty}" 
                                             SelectedIndexChanged="DifficultyPicker_SelectedIndexChanged"
                                             x:Name="DifficultyPicker"/>
                             </Grid>
+                            
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
-                                <Label Grid.Row="0" Grid.Column="0" Text="Experience"/>
-                                <Entry Grid.Row="0" Grid.Column="1" TextChanged="ExperienceValue_TextChanged" x:Name="ExperienceValue" Text="{Binding Data.ExperienceTotal, Mode=TwoWay}" WidthRequest="200" BackgroundColor="LimeGreen"/>
+                                <Label 
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="Experience"
+                                    Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"/>
+                                
+                                <Entry
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    TextChanged="ExperienceValue_TextChanged"
+                                    x:Name="ExperienceValue"
+                                    Text="{Binding Data.ExperienceTotal, Mode=TwoWay}"
+                                    WidthRequest="200" 
+                                    BackgroundColor="LimeGreen"/>
+                                
                             </Grid>
+                            
                         </StackLayout>
+                        
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
-                                <Label Grid.Row="0" Grid.Column="0" Text="Unique Item"/>
+                                <Label 
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="Unique Item"
+                                    Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"/>
+                                
                                 <Picker Grid.Row="0" Grid.Column="1"
                                             WidthRequest="200" BackgroundColor="LimeGreen" 
                                             SelectedItem="{Binding SelectedItemProperty}" 
@@ -60,7 +104,8 @@
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
-                                <Label Grid.Row="0" Grid.Column="0" Text="Class"/>
+                                <Label Grid.Row="0" Grid.Column="0" Text="Class" Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"/>
                                 <Picker Grid.Row="0" Grid.Column="1" WidthRequest="200" BackgroundColor="LimeGreen" 
                                                 SelectedItem="{Binding SelectedItemProperty}" 
                                                 SelectedIndexChanged="ClassPicker_SelectedIndexChanged"
@@ -69,7 +114,8 @@
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
-                                <Label Grid.Row="0" Grid.Column="0" Text="Description"/>
+                                <Label Grid.Row="0" Grid.Column="0" Text="Description" Style="{StaticResource LabelStyle}"
+                                    FontSize="Small"/>
                                 <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Data.Description, Mode=TwoWay}" x:Name="DescValue" TextChanged="DescriptionValue_TextChanged" WidthRequest="200" BackgroundColor="LimeGreen"/>
                             </Grid>
                         </StackLayout>
