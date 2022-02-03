@@ -84,7 +84,7 @@
                                             Style="{StaticResource LabelStyle}"
                                             FontSize="Small"/>
                                     <Label  x:Name="MaxHealthValue" 
-                                            Style="{StaticResource LabelStyle}"
+                                            Style="{StaticResource ValueStyle}"
                                             FontSize="Small"
                                             Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}"/>
                                 </StackLayout>
