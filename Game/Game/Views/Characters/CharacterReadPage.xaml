@@ -31,94 +31,143 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
+                            
                             <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
-                                <Label Text="Name:"/>
-                                <Label
-                                Text="{Binding Data.Name}"
-                                Style="{StaticResource ValueStyle}"
-                                />
-                                <Label Text="Level:"/>
-                                <Label
-                                Text="{Binding Data.Level}"
-                                Style="{StaticResource ValueStyle}"
-                                />
-                                <Label Text="Class:"/>
-                                <Label
-                                Text="{Binding Data.Job}"
-                                Style="{StaticResource ValueStyle}"
-                                 x:Name="ClassValue"/>
-                                <Label Text="Description:"/>
-                                <Label
-                                Text="{Binding Data.Description}"
-                                Style="{StaticResource ValueStyle}"
-                                />
+                                <Label Text="Name:"
+                                       Style="{StaticResource LabelStyle}"
+                                        FontSize="Small"/>
+
+                                <Label Style="{StaticResource ValueStyle}"
+                                        FontSize="Small"
+                                       Text="{Binding Data.Name}"/>
+                                
+                                <Label Text="Level:" 
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
+                                <Label Text="{Binding Data.Level}"
+                                       Style="{StaticResource ValueStyle}"
+                                       FontSize="Small"/>
+                                
+                                <Label Text="Class:"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
+                                <Label Text="{Binding Data.Job}"
+                                       Style="{StaticResource ValueStyle}"
+                                       FontSize="Small"
+                                       x:Name="ClassValue"/>
+
+                                <Label Text="Description:" 
+                                       Style="{StaticResource LabelStyle}"
+                                       FontSize="Small"/>
+                                
+                                <Label Text="{Binding Data.Description}"
+                                       Style="{StaticResource ValueStyle}"
+                                       FontSize="Small"/>
+                                
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Padding="0,20,0,20">
                                     <Label Text="Max Health" 
-                                Style="{StaticResource LabelStyle}"/>
+                                            FontSize="Small"
+                                           Style="{StaticResource LabelStyle}"/>
+                                    
                                     <Label x:Name="MaxHealthValue"
-                                Text="{Binding Data.MaxHealth, StringFormat= '{0:G}'}"/>
+                                           Style="{StaticResource ValueStyle}"
+                                           FontSize="Small"
+                                           Text="{Binding Data.MaxHealth, StringFormat= '{0:G}'}"/>
                                 </StackLayout>
-
                             </StackLayout>
-                            <Image Source="{Binding Data.ImageURI}" HeightRequest="100" WidthRequest="100" Grid.Row="0" Grid.Column="1"/>
+                            
+                            <Image Source="{Binding Data.ImageURI}" 
+                                   HeightRequest="100"
+                                   WidthRequest="100"
+                                   Grid.Row="0" Grid.Column="1"/>
                         </Grid>
+                        
                         <FlexLayout Padding="0,20,0,0"                     
-                            Wrap="Wrap"
-                            JustifyContent="SpaceAround"
-                            AlignContent="SpaceAround"
-                            x:Name="ItemBox">
+                                    Wrap="Wrap"
+                                    JustifyContent="SpaceAround"
+                                    AlignContent="SpaceAround"
+                                    x:Name="ItemBox">
                         </FlexLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
+                        
+                        <StackLayout Orientation="Vertical"
+                                     HorizontalOptions="CenterAndExpand" 
+                                     Padding="0,20,0,0" Spacing="30">
                             <StackLayout Orientation="Horizontal">
-
                                 <Grid
                                 HorizontalOptions="Center"
                                 WidthRequest="240"
                                 HeightRequest="30">
                                     
-                                    <Label Grid.Column="0" Text="Attack"/>
-                                    <ProgressBar x:Name="AttackProgressBar" Grid.Column="1" Progress="{Binding Data.Attack}" 
-                                    ProgressColor="LimeGreen"/>
-                                    <Label Grid.Column="2" Text="{Binding Data.Attack}" 
-                                   x:Name="AttackValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
+                                    <Label Grid.Column="0" Text="Attack"
+                                           Style="{StaticResource LabelStyle}"
+                                           FontSize="Small"/>
+                                    
+                                    <ProgressBar x:Name="AttackProgressBar" 
+                                                 Grid.Column="1"
+                                                 Progress="{Binding Data.Attack}" 
+                                                 ProgressColor="LimeGreen"/>
 
-                                </Grid>
-                                
+                                    <Label Grid.Column="2" 
+                                           Text="{Binding Data.Attack}" 
+                                           x:Name="AttackValue"
+                                           Style="{StaticResource ValueStyle}"
+                                           FontSize="Small"
+                                           Padding="0,0,10,0"
+                                           HorizontalOptions="End"
+                                           HorizontalTextAlignment="End"/>  
+                                </Grid>                                
                             </StackLayout>
+                            
                             <StackLayout Orientation="Horizontal">
                                 <Grid
-                                HorizontalOptions="Center"
-                                WidthRequest="240"
-                                HeightRequest="30">
-                                    <Label Grid.Column="0" Text="Defense"/>
-                                    <ProgressBar x:Name="DefenseProgressBar" Grid.Column="1" Progress="{Binding Data.Defense}" 
-                                    ProgressColor="LimeGreen"/>
-                                    <Label Grid.Column="2" Text="{Binding Data.Defense}" 
-                                   x:Name="DefenseValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
+                                    HorizontalOptions="Center"
+                                    WidthRequest="240"
+                                    HeightRequest="30">
+                                    <Label Grid.Column="0" 
+                                           Text="Defense" 
+                                           Style="{StaticResource LabelStyle}"
+                                           FontSize="Small"/>
+                                    
+                                    <ProgressBar x:Name="DefenseProgressBar" 
+                                                 Grid.Column="1"
+                                                 Progress="{Binding Data.Defense}" 
+                                                ProgressColor="LimeGreen"/>
+                                    <Label Grid.Column="2" 
+                                           Text="{Binding Data.Defense}" 
+                                           x:Name="DefenseValue"
+                                           Style="{StaticResource ValueStyle}"
+                                           FontSize="Small"
+                                           Padding="0,0,10,0"
+                                           HorizontalOptions="End"
+                                           HorizontalTextAlignment="End"/>
                                 </Grid>
                             </StackLayout>
+                            
                             <StackLayout Orientation="Horizontal">
                                 <Grid
-                                HorizontalOptions="Center"
-                                WidthRequest="240"
-                                HeightRequest="30">
-                                    <Label Grid.Column="0" Text="Speed"/>
-                                    <ProgressBar x:Name="SpeedProgressBar" Grid.Column="1" Progress="{Binding Data.Speed}" 
-                                    ProgressColor="LimeGreen"/>
-                                    <Label Grid.Column="2" Text="{Binding Data.Speed}" 
-                                   x:Name="SpeedValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
+                                    HorizontalOptions="Center"
+                                    WidthRequest="240"
+                                    HeightRequest="30">
+                                    <Label Grid.Column="0" 
+                                           Text="Speed"
+                                           Style="{StaticResource LabelStyle}"
+                                           FontSize="Small"/>
+                                    
+                                    <ProgressBar x:Name="SpeedProgressBar" 
+                                                 Grid.Column="1" 
+                                                 Progress="{Binding Data.Speed}" 
+                                                ProgressColor="LimeGreen"/>
+                                    
+                                    <Label Grid.Column="2" 
+                                           Text="{Binding Data.Speed}" 
+                                           x:Name="SpeedValue"
+                                           Style="{StaticResource ValueStyle}"
+                                           FontSize="Small"
+                                           Padding="0,0,10,0"
+                                           HorizontalOptions="End"
+                                           HorizontalTextAlignment="End"/>
                                 </Grid>
                             </StackLayout>
                         </StackLayout>
