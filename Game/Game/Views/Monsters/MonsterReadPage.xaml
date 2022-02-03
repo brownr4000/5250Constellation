@@ -15,7 +15,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout
-                Padding="20" Spacing="20">
+                Padding="20" Spacing="15">
                 
                 <StackLayout 
                     HorizontalOptions="Center" 
@@ -190,73 +190,134 @@
                     </Grid>
                 </StackLayout>
 
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
-                    <StackLayout Orientation="Horizontal">
-                        <Grid
-                                HorizontalOptions="Center"
-                                WidthRequest="240"
-                                HeightRequest="30">
+                <StackLayout
+                            Style="{StaticResource HorizontalStack}"
+                            HorizontalOptions="Center" 
+                            Orientation="Vertical" 
+                            VerticalOptions="Center">
 
-                            <Label Grid.Column="0" Text="Attack"/>
-                            <ProgressBar x:Name="AttackProgressBar" Grid.Column="1" Progress="{Binding Data.Attack}" 
-                                    ProgressColor="LimeGreen"/>
-                            <Label Grid.Column="2" Text="{Binding Data.Attack}" 
-                                   x:Name="AttackValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
-                        </Grid>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Grid
-                                HorizontalOptions="Center"
-                                WidthRequest="240"
-                                HeightRequest="30">
-                            <Label Grid.Column="0" Text="Defense"/>
-                            <ProgressBar x:Name="DefenseProgressBar" Grid.Column="1" Progress="{Binding Data.Defense}" 
-                                    ProgressColor="LimeGreen"/>
-                            <Label Grid.Column="2" Text="{Binding Data.Defense}" 
-                                   x:Name="DefenseValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
-                        </Grid>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Grid
-                                HorizontalOptions="Center"
-                                WidthRequest="240"
-                                HeightRequest="30">
-                            <Label Grid.Column="0" Text="Speed"/>
-                            <ProgressBar x:Name="SpeedProgressBar" Grid.Column="1" Progress="{Binding Data.Speed}" 
-                                    ProgressColor="LimeGreen"/>
-                            <Label Grid.Column="2" Text="{Binding Data.Speed}" 
-                                   x:Name="SpeedValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
-                        </Grid>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Grid
-                                HorizontalOptions="Center"
-                                WidthRequest="240"
-                                HeightRequest="30">
+                    <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
 
-                            <Label Grid.Column="0" Text="Health"/>
-                            <ProgressBar x:Name="HealthProgressBar" Grid.Column="1" Progress="{Binding Data.MaxHealth}" 
-                                    ProgressColor="LimeGreen"/>
-                            <Label Grid.Column="2" Text="{Binding Data.MaxHealth}" 
-                                   x:Name="HealthValue"
-                                   Style="{StaticResource ValueStyle}"
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
-                        </Grid>
-                    </StackLayout>
+                        <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Attack"
+                                FontSize="Small"
+                                HorizontalOptions="Start"/>
+
+                        <ProgressBar 
+                            x:Name="AttackProgressBar" 
+                            Grid.Column="1" 
+                            Progress="{Binding Data.Attack}" 
+                            ProgressColor="LimeGreen"/>
+                        
+                        <Label 
+                            x:Name="AttackValue"
+                            Grid.Column="2"
+                            Text="{Binding Data.Attack}"
+                            Style="{StaticResource ValueStyle}"
+                            HorizontalOptions="End"/>
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout
+                            Style="{StaticResource HorizontalStack}"
+                            HorizontalOptions="Center" 
+                            Orientation="Vertical" 
+                            VerticalOptions="Center">
+
+                    <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                        <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Defense"
+                                FontSize="Small"
+                                HorizontalOptions="Start"/>
+
+                        <ProgressBar 
+                            x:Name="DefenseProgressBar" 
+                            Grid.Column="1" 
+                            ProgressColor="LimeGreen"/>
+
+                        <Label 
+                            x:Name="DefenseValue"
+                            Grid.Column="2" 
+                            Text="{Binding Data.Defense}"
+                            Style="{StaticResource ValueStyle}"
+                            HorizontalOptions="End"/>
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout
+                            Style="{StaticResource HorizontalStack}"
+                            HorizontalOptions="Center" 
+                            Orientation="Vertical" 
+                            VerticalOptions="Center">
+
+                    <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                        <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Speed"
+                                FontSize="Small"
+                                HorizontalOptions="Start"/>
+
+                        <ProgressBar 
+                            x:Name="SpeedProgressBar" 
+                            Grid.Column="1" 
+                            ProgressColor="LimeGreen"/>
+
+                        <Label 
+                            x:Name="SpeedValue"
+                            Grid.Column="2" 
+                            Text="{Binding Data.Speed}"
+                            Style="{StaticResource ValueStyle}"
+                            HorizontalOptions="End"/>
+
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout
+                            Style="{StaticResource HorizontalStack}"
+                            HorizontalOptions="Center" 
+                            Orientation="Vertical" 
+                            VerticalOptions="Center">
+
+                    <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                        <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Health"
+                                FontSize="Small"
+                                HorizontalOptions="Start"/>
+
+                        <ProgressBar 
+                            x:Name="HealthProgressBar" 
+                            Grid.Column="1" 
+                            ProgressColor="LimeGreen"/>
+
+                        <Label 
+                            x:Name="HealthValue"
+                            Grid.Column="2" 
+                            Text="{Binding Data.MaxHealth}"
+                            Style="{StaticResource ValueStyle}"
+                            HorizontalOptions="End"/>
+
+                    </Grid>
+                    
                 </StackLayout>
 
             </StackLayout>
