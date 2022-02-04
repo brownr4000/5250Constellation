@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+              xmlns:local_helpers="clr-namespace:Game.Helpers"
              x:Class="Game.Views.ItemReadPage"
              Title="{Binding Title}">
 
@@ -12,6 +13,12 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+            <local_helpers:ItemLocationEnumConverter x:Key="ItemLocationEnumConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <StackLayout>
         <ContentView>
@@ -66,7 +73,7 @@
                                 <Label
                                     Grid.Column="1"
                                     HorizontalOptions="EndAndExpand"
-                                    Text="{Binding Data.Location}"
+                                    Text="{Binding Data.Location, Converter={StaticResource ItemLocationEnumConverter}}" 
                                     FontSize="Small"
                                     Style="{StaticResource ValueStyle}"/>
 
