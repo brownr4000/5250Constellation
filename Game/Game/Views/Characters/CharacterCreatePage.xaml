@@ -194,7 +194,7 @@
                 </ScrollView>
             </StackLayout>
 
-            <!--The Item Popup-->
+            <!--The Item Popup-->          
             <StackLayout x:Name="PopupItemSelector" 
                  BackgroundColor="{StaticResource PageBackgroundColor}" 
                  IsVisible="false" 
@@ -207,18 +207,23 @@
                     WidthRequest="300"
                     HeightRequest="300">
 
-                    <Frame BackgroundColor="LimeGreen" BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
-                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
-                            <Label x:Name="PopupLocationLabel" Style="{StaticResource LabelStyle}" />
-                            <Label x:Name="PopupLocationValue" Style="{StaticResource LabelStyle}" />
+                    <Frame BackgroundColor="LimeGreen" 
+                           BorderColor="{StaticResource TriciaryTextColor}"
+                           Padding="1">
+                        <StackLayout Style="{StaticResource VerticalStack}" 
+                                     HorizontalOptions="CenterAndExpand" 
+                                     Padding="2">
+                            <Label x:Name="PopupLocationLabel" 
+                                   Style="{StaticResource PopupItemTextStyle}" />
+                            <Label x:Name="PopupLocationValue" 
+                                   Style="{StaticResource PopupItemTextStyle}" />
 
                             <ListView x:Name="PopupLocationItemListView" 
                                 CachingStrategy="RecycleElement"
                                 ItemSelected="OnPopupItemSelected"
                                 HasUnevenRows="true"
                                 Margin="5,0,5,0"
-                                RowHeight="80"
-                                >
+                                RowHeight="80">
 
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
@@ -236,7 +241,7 @@
 
                                                 <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                                                         Source="{Binding ImageURI}"
-                                                        Style="{StaticResource LabelStyle}"
+                                                        Style="{StaticResource ImageSmallStyle}"
                                                         VerticalOptions="CenterAndExpand"/>
 
                                                 <Label Grid.Column="1" Grid.Row="0"
@@ -244,16 +249,16 @@
                                                         Style="{StaticResource LabelStyle}"/>
 
                                                 <StackLayout Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
-                                                    <Label Text="{Binding Attribute}"
+                                                    <Label Text="{Binding Attribute}" 
                                                            Style="{StaticResource LabelStyle}"/>
-                                                    <Label Text="{Binding Value}"
+                                                    <Label Text="{Binding Value}" 
                                                            Style="{StaticResource LabelStyle}"/>
                                                 </StackLayout>
 
                                                 <Label Grid.Column="1" Grid.Row="2"
                                                         Text="{Binding Description}" 
                                                         Style="{StaticResource LabelStyle}"
-                                                FontSize="Micro"/>
+                                                        FontSize="Micro"/>
                                             </Grid>
                                         </ViewCell>
                                     </DataTemplate>
@@ -261,8 +266,8 @@
                             </ListView>
 
                             <Button x:Name="PopupCloseButton" 
-                                Clicked="ClosePopup_Clicked" 
-                                Text="Close"/>
+                                    Clicked="ClosePopup_Clicked" 
+                                    Text="Close"/>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
