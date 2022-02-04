@@ -25,7 +25,7 @@
 
                     <StackLayout Orientation="Vertical" VerticalOptions="Center">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Grid WidthRequest="500">
+                            <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
                                         Grid.Column="0" 
@@ -47,7 +47,7 @@
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Grid WidthRequest="500">
+                            <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
                                         Grid.Column="0" 
@@ -65,7 +65,7 @@
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Grid WidthRequest="500">
+                            <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
                                         Grid.Column="0" 
@@ -87,7 +87,7 @@
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Grid WidthRequest="500">
+                            <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
                                         Grid.Column="0" 
@@ -104,7 +104,7 @@
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Grid WidthRequest="500">
+                            <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
                                         Grid.Column="0"
@@ -122,7 +122,7 @@
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Grid WidthRequest="500">
+                            <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
                                         Grid.Column="0" 
