@@ -402,39 +402,62 @@ namespace Game.GameRules
             var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "Green Troll",
-                    Description = "Big and Ugly",
+                    Name = "Pisces",
+                    Description = "A fish constellation",
                     ImageURI = "troll1.png",
+                    Attack = 3,
+                    Defense = 3,
+                    Speed = 3,
                 },
 
                 new MonsterModel {
-                    Name = "Old Troll",
-                    Description = "Old and Powerfull",
+                    Name = "Cancer",
+                    Description = "A crab constellation",
                     ImageURI = "troll2.png",
+                    Attack = 2,
+                    Defense = 8,
+                    Speed = 2,
                 },
 
                 new MonsterModel {
-                    Name = "Dainty Troll",
-                    Description = "and fast",
+                    Name = "Aries",
+                    Description = "A ram constellation",
                     ImageURI = "troll3.png",
+                    Attack = 4,
+                    Defense = 2,
+                    Speed = 5,
                 },
 
                 new MonsterModel {
-                    Name = "Troll's Troll",
-                    Description = "wozer",
+                    Name = "Scorpio",
+                    Description = "A scorpion constellation",
                     ImageURI = "troll4.png",
+                    Attack = 8,
+                    Defense = 7,
+                    Speed = 4,
+                    Difficulty = DifficultyEnum.Average,
+                    MaxHealth = 80,
                 },
 
                 new MonsterModel {
-                    Name = "Warrior Troll",
-                    Description = "with sword",
+                    Name = "Lepus",
+                    Description = "A hare constellation",
                     ImageURI = "troll5.png",
+                    Attack = 1,
+                    Speed = 8,
+                    Defense = 2,
+                    MaxHealth = 12,
                 },
 
                 new MonsterModel {
-                    Name = "Ax Troll",
-                    Description = "with Hat and Ax",
+                    Name = "Corvus",
+                    Description = "A crow constellation",
                     ImageURI = "troll6.png",
+                    Attack = 2,
+                    Speed = 2,
+                    Defense = 3,
+                    MaxHealth = 15,
+                    Difficulty = DifficultyEnum.Easy,
                 },
             };
 
