@@ -45,11 +45,11 @@
 
                                 <Label
                                     Grid.Row="1"
-                                    Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
+                                    Text="{Binding Path=Description}"
                                     VerticalOptions="End" 
                                     BackgroundColor="{StaticResource LightBackgroundColor}"/>
 
-                                <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
+                                <Label Text="{Binding Path=Difficulty}" 
                                         Style="{StaticResource ListStyle}"/>
 
                                 <Label Grid.Row="2"
