@@ -64,29 +64,7 @@
 
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                            <Grid WidthRequest="500" HeightRequest="40">
-                                <Label 
-                                        Grid.Row="0" 
-                                        Grid.Column="0" 
-                                        Text="Experience"
-                                        Style="{StaticResource LabelStyle}"
-                                        FontSize="Small"/>
-
-                                <Entry 
-                                        Grid.Row="0" 
-                                        Grid.Column="1" 
-                                        TextChanged="ExperienceValue_TextChanged" 
-                                        x:Name="ExperienceValue" 
-                                        Text="{Binding Data.ExperienceTotal, Mode=TwoWay}" 
-                                        WidthRequest="200" 
-                                        BackgroundColor="LimeGreen"/>
-
-                            </Grid>
-
-                        </StackLayout>
-
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                       <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
@@ -221,32 +199,6 @@
 
                         </Grid>
 
-                        <Grid>
-                            <Label
-                                Text="Health"
-                                Style="{StaticResource LabelStyle}"
-                                FontSize="Small"
-                                TextColor="#7F47DD"
-                                HorizontalOptions="Start"/>
-
-                            <Stepper 
-                                    Maximum="100"
-                                    Minimum="10"
-                                    Increment="1" Value="{Binding Data.MaxHealth, Mode=TwoWay}" 
-                                    BackgroundColor="#7F47DD"
-                                    ValueChanged="Health_OnStepperValueChanged"
-                                    HorizontalOptions="CenterAndExpand"/>
-
-                            <Label 
-                                    Text="{Binding Data.MaxHealth}" 
-                                    x:Name="HealthValue"
-                                    Style="{StaticResource ValueStyle}"
-                                    TextColor="#FFFFFF"
-                                    Padding="0,0,10,0"
-                                    HorizontalOptions="End"/>
-
-                        </Grid>
-
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -256,11 +208,7 @@
 
                         <Label x:Name="ClassErrorMessage" TextColor="Yellow"/>
 
-                        <Label x:Name="ExperienceErrorMessage" TextColor="Yellow"/>
-
                         <Label x:Name="DifficultyErrorMessage" TextColor="Yellow"/>
-
-                        <Label x:Name="ExperienceOverflowErrorMessage" TextColor="Yellow"/>
 
                     </StackLayout>
 
