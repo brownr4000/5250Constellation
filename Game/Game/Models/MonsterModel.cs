@@ -21,7 +21,6 @@ namespace Game.Models
             Name = "Troll";
             Description = "Angry Troll";
             Attack = 1;
-            MaxHealth = 10;
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
             ImageURI = "troll.png";
