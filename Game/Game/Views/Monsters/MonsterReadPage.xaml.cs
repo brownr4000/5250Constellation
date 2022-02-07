@@ -45,7 +45,6 @@ namespace Game.Views
             AttackProgressBar.Progress = ViewModel.Data.Attack / 9f;
             DefenseProgressBar.Progress = ViewModel.Data.Defense / 9f;
             SpeedProgressBar.Progress = ViewModel.Data.Speed / 9f;
-            HealthProgressBar.Progress = ViewModel.Data.MaxHealth / 100f;
         }
 
         /// <summary>
