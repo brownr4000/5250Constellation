@@ -27,8 +27,8 @@ namespace Game.Models
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
-            // Default to unknown, which is no special job
-            MonsterJob = MonsterJobEnum.Unknown;
+            // Default to support
+            MonsterJob = MonsterJobEnum.Support;
         }
 
         /// <summary>
