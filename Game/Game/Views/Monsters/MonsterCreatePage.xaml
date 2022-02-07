@@ -64,7 +64,7 @@
                             
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
                                 <Label 
                                     Grid.Row="0"
@@ -84,7 +84,7 @@
                                 
                             </Grid>
                             
-                        </StackLayout>
+                        </StackLayout>-->
                         
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
@@ -222,35 +222,7 @@
                                 Padding="0,0,10,0"
                                 HorizontalOptions="End"/>
                             
-                        </Grid>
-
-                        <Grid>
-                            <Label
-                                Text="Health"
-                                Style="{StaticResource LabelStyle}"
-                                FontSize="Small"
-                                TextColor="#7F47DD"
-                                HorizontalOptions="Start"/>
-                            
-                            <Stepper
-                                Maximum="100"
-                                Minimum="10"
-                                Increment="1"
-                                Value="{Binding Data.MaxHealth, Mode=TwoWay}"
-                                ValueChanged="Health_OnStepperValueChanged"
-                                BackgroundColor="#7F47DD"
-                                HorizontalOptions="CenterAndExpand"/>
-                            
-                            <Label 
-                                Text="{Binding Data.MaxHealth}" 
-                                x:Name="HealthValue"
-                                Style="{StaticResource ValueStyle}"
-                                TextColor="#FFFFFF"
-                                Padding="0,0,10,0"
-                                HorizontalOptions="End"
-                                HorizontalTextAlignment="End"/>
-                            
-                        </Grid>
+                        </Grid>                      
                         
                     </StackLayout>
 
@@ -258,14 +230,10 @@
                         <Label Text="Please Enter the Monster Name" x:Name="NameErrorMessage" TextColor="Yellow"/>
                         
                         <Label Text="Please Enter the Monster Description" x:Name="DescErrorMessage" TextColor="Yellow"/>
-                        
+
                         <Label x:Name="ClassErrorMessage" TextColor="Yellow"/>
-                        
-                        <Label x:Name="ExperienceErrorMessage" TextColor="Yellow"/>
-                        
+
                         <Label x:Name="DifficultyErrorMessage" TextColor="Yellow"/>
-                        
-                        <Label x:Name="ExperienceOverflowErrorMessage" TextColor="Yellow"/>
                         
                     </StackLayout>
                     

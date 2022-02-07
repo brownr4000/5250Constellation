@@ -50,8 +50,6 @@ namespace Game.Views
             DescErrorMessage.IsVisible = false;
             ClassErrorMessage.IsVisible = false;
             DifficultyErrorMessage.IsVisible = false;
-            ExperienceErrorMessage.IsVisible = false;
-            ExperienceOverflowErrorMessage.IsVisible = false;
 
             // Load the values for the Class into the Picker
             ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
@@ -113,10 +111,8 @@ namespace Game.Views
                 DifficultyErrorMessage.Text = "Please select a Difficulty level";
             }
 
-            //ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
-
-            if (!NameErrorMessage.IsVisible && !ExperienceErrorMessage.IsVisible &&
-                !ExperienceOverflowErrorMessage.IsVisible && !DescErrorMessage.IsVisible &&
+            if (!NameErrorMessage.IsVisible 
+                && !DescErrorMessage.IsVisible &&
                 !ClassErrorMessage.IsVisible && !DifficultyErrorMessage.IsVisible)
             {
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
@@ -177,16 +173,6 @@ namespace Game.Views
         {
             SpeedValue.Text = string.Format("{0}", e.NewValue);
         }        
-
-        /// <summary>
-        /// On change event of Speed stepper
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Health_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        {
-            HealthValue.Text = string.Format("{0}", e.NewValue);
-        }
 
         /// <summary>
         /// Description change event
@@ -270,36 +256,6 @@ namespace Game.Views
                     break;
                 default:
                     break;
-            }
-        }
-
-        /// <summary>
-        /// On change event of Experience
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ExperienceValue_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            ExperienceErrorMessage.IsVisible = false;
-            ExperienceOverflowErrorMessage.IsVisible = false;
-
-            if (string.IsNullOrEmpty(ExperienceValue.Text))
-            {
-                ExperienceErrorMessage.IsVisible = true;
-                ExperienceErrorMessage.Text = "Please enter the Experience";
-            }
-
-            // Checking valid input for Experience
-            else if (!string.IsNullOrEmpty(ExperienceValue.Text) && !Int32.TryParse(ExperienceValue.Text, out int parsedInt))
-            {
-                ExperienceErrorMessage.Text = "Please enter valid Experience value";
-                ExperienceErrorMessage.IsVisible = true;
-            }
-
-            else if (int.Parse(ExperienceValue.Text) > 500 || int.Parse(ExperienceValue.Text) < 0)
-            {
-                ExperienceOverflowErrorMessage.IsVisible = true;
-                ExperienceOverflowErrorMessage.Text = "The Experience value can only be between 0 and 500";
             }
         }
     }
