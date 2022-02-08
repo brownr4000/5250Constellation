@@ -126,9 +126,39 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="CenterLargeLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="LargeLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ValueStyle"
                 BasedOn="{StaticResource LabelStyle}">
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="CenterValueStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="EndValueStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
             </Style>
 
             <Style TargetType="Label"
@@ -155,7 +185,8 @@
             <Style TargetType="Label"
                 x:Key="MessageStyle"
                 BasedOn="{StaticResource HeaderStyle}">
-                <Setter Property="TextColor" Value="{StaticResource TriciaryTextColor}" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="TextColor" Value="{StaticResource SecondaryBackgroundColor}" />
             </Style>
 
             <Style TargetType="Label"

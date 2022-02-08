@@ -34,8 +34,7 @@
                         <Label 
                             Text="{Binding Data.Name}"
                             FontSize="Title"
-                            Style="{StaticResource HeaderStyle}"
-                            HorizontalOptions="CenterAndExpand"/>
+                            Style="{StaticResource CenterLargeLabelStyle}"/>
 
                         <Image Source="{Binding Data.ImageURI}" 
                             Style="{StaticResource ImageLargeStyle}"
@@ -48,13 +47,8 @@
                             Padding="10" Spacing="10">
 
                             <Label
-                                HorizontalOptions="CenterAndExpand"
-                                LineBreakMode="WordWrap"
                                 Text="{Binding Data.Description}"
-                                FontSize="Small"
-                                FontAttributes="Italic"
-                                Style="{StaticResource ValueStyle}"
-                                MinimumHeightRequest="100"/>
+                                Style="{StaticResource CenterValueStyle}"/>
                             
                         </StackLayout>
 
@@ -65,17 +59,13 @@
 
                                 <Label
                                     Grid.Column="0"
-                                    HorizontalOptions="Start"
                                     Text="Location: "
-                                    FontSize="Small"
                                     Style="{StaticResource LabelStyle}"/>
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
                                     Text="{Binding Data.Location, Converter={StaticResource ItemLocationEnumConverter}}" 
-                                    FontSize="Small"
-                                    Style="{StaticResource ValueStyle}"/>
+                                    Style="{StaticResource EndValueStyle}"/>
 
                             </Grid>
 
@@ -88,20 +78,14 @@
 
                                 <Label
                                     Grid.Column="0"
-                                    HorizontalOptions="Start"
                                     Text="Attribute: "
-                                    FontSize="Small"
                                     Style="{StaticResource LabelStyle}"/>
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand"
                                     Text="{Binding Data.Attribute}"
-                                    FontSize="Small"
-                                    Style="{StaticResource ValueStyle}"/>
-
+                                    Style="{StaticResource EndValueStyle}"/>
                             </Grid>
-
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
@@ -113,17 +97,13 @@
 
                                 <Label
                                     Grid.Column="0"
-                                    HorizontalOptions="Start"
                                     Text="Range: "
-                                    FontSize="Small"
                                     Style="{StaticResource LabelStyle}"/>
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="Center"
                                     Text="{Binding Data.Range}"
-                                    FontSize="Small"
-                                    Style="{StaticResource ValueStyle}"
+                                    Style="{StaticResource CenterValueStyle}"
                                     IsVisible="True"/>
 
                                 <ProgressBar 
@@ -143,17 +123,13 @@
 
                                 <Label
                                     Grid.Column="0"
-                                    HorizontalOptions="Start"
                                     Text="Value: "
-                                    FontSize="Small"
                                     Style="{StaticResource LabelStyle}"/>
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="Center"
                                     Text="{Binding Data.Value}"
-                                    FontSize="Small"
-                                    Style="{StaticResource ValueStyle}"
+                                    Style="{StaticResource CenterValueStyle}"
                                     IsVisible="True"/>
 
                                 <ProgressBar 
@@ -173,17 +149,13 @@
 
                                 <Label
                                     Grid.Column="0"
-                                    HorizontalOptions="Start"
                                     Text="Damage: "
-                                    FontSize="Small"
                                     Style="{StaticResource LabelStyle}"/>
 
                                 <Label
                                     Grid.Column="1"
-                                    HorizontalOptions="Center"
                                     Text="{Binding Data.Damage}"
-                                    FontSize="Small"
-                                    Style="{StaticResource ValueStyle}"
+                                    Style="{StaticResource CenterValueStyle}"
                                     IsVisible="True"/>
 
                                 <ProgressBar 
