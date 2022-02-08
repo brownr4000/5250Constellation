@@ -35,7 +35,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Padding="30" Grid.Row="0" Grid.Column="0" 
+                <Label Grid.Row="0" Grid.Column="0" 
                        HeightRequest="50" Text="Name" 
                        HorizontalTextAlignment="Center" />
                 <Entry Grid.Row="0" Grid.Column="1" 
@@ -45,7 +45,7 @@
                        BackgroundColor="LimeGreen" 
                        HorizontalTextAlignment="Center"/>
                 
-                <Label Padding="0,0,30,10" Grid.Row="1" Grid.Column="0" 
+                <Label Grid.Row="1" Grid.Column="0" 
                        HorizontalTextAlignment="Center" 
                        Text="Brief Description"/>
                 <Entry Grid.Row="1" Grid.Column="1" 
@@ -55,7 +55,7 @@
                        BackgroundColor="LimeGreen" 
                        HorizontalTextAlignment="Center"/>
                 
-                <Label Padding="30" Grid.Row="2" Grid.Column="0" 
+                <Label Grid.Row="2" Grid.Column="0" 
                        Text="Location" 
                        HorizontalTextAlignment="Center"/>
                 <Picker Grid.Row="2" Grid.Column="1" 
@@ -66,9 +66,7 @@
                         ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListItemMessage}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource ItemLocationEnumConverter}, Mode=TwoWay}"/>
                 
-                
-               
-                <Label Padding="30" Grid.Row="3" Grid.Column="0" 
+                <Label Grid.Row="3" Grid.Column="0" 
                        Text="Attributes" 
                        HorizontalTextAlignment="Center"/>
                 <Picker Grid.Row="3" Grid.Column="1" 
@@ -78,7 +76,7 @@
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         BackgroundColor="LimeGreen" x:Name="AttributePicker"/>
 
-                <Label Padding="30" Grid.Row="4" Grid.Column="0" 
+                <Label Grid.Row="4" Grid.Column="0" 
                        Text="Value" 
                        HorizontalTextAlignment="Center"/>
                 <Entry Grid.Row="4" Grid.Column="1" 
@@ -86,7 +84,7 @@
                        BackgroundColor="LimeGreen"
                        HorizontalTextAlignment="Center"/>
 
-                <Label Padding="30" Grid.Row="5" Grid.Column="0" 
+                <Label Grid.Row="5" Grid.Column="0" 
                        Text="Image" HorizontalTextAlignment="Center"/>
                 <StackLayout Grid.Row="5" Grid.Column="1"
                              Orientation="Horizontal" 
@@ -94,10 +92,10 @@
                     <Image Source="Shield1.png"/>
                     <Entry Text="{Binding Data.NewItemImageURI}" 
                            BackgroundColor="LimeGreen"
-                           WidthRequest="250" />
+                           WidthRequest="274"/>
                 </StackLayout>
 
-                <Label Padding="30" Grid.Row="6" Grid.Column="0" 
+                <Label Grid.Row="6" Grid.Column="0" 
                        x:Name="RangeLabel" Text="Range"
                        HorizontalTextAlignment="Center"/>
                 <Entry Grid.Row="6" Grid.Column="1" 
@@ -107,7 +105,7 @@
                        HorizontalTextAlignment="Center"
                        BackgroundColor="LimeGreen" />
 
-                <Label Padding="30" Grid.Row="7" Grid.Column="0" 
+                <Label Grid.Row="7" Grid.Column="0" 
                        x:Name="DamageLabel" 
                        Text="Damage" 
                        HorizontalTextAlignment="Center"/>
