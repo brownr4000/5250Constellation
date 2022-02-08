@@ -121,7 +121,7 @@
             <Style TargetType="Label"
                 x:Key="LabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
-                <!--<Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />-->
+                <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
                 <Setter Property="FontSize" Value="14" />                
             </Style>
 
