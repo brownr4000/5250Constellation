@@ -110,5 +110,25 @@ namespace Game.Views
             // Manually deselect item.
             ScoresListView.SelectedItem = null;
         }
+
+        /// <summary>
+        /// The row selected from the list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            ScoreModel data = args.SelectedItem as ScoreModel;
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(data)));
+
+            // Manually deselect Character.
+            ScoresListView.SelectedItem = null;
+        }
     }
 }

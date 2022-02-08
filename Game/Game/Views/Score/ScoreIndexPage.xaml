@@ -20,7 +20,7 @@
             <CollectionView x:Name="ScoresListView" 
                     ItemsSource="{Binding Dataset}"
                     SelectionMode="Single"
-                    SelectedItem="CollectionView_OnItemSelected">
+                    SelectionChanged="CollectionView_OnItemSelected">
                 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
