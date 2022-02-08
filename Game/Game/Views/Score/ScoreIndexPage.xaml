@@ -49,7 +49,7 @@
 
                                         <Label Grid.Column="1" Grid.Row="1"
                                            x:Name="CurrentDateTime"
-                                           Text="{Binding RoundCount}"
+                                           Text="{Binding GameDate}"
                                            Style="{StaticResource ListStyle}"/>
 
                                     </StackLayout>
