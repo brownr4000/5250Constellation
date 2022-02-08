@@ -192,7 +192,7 @@ namespace Game.Views
 
             LocationAttributeErrorMessage.IsVisible = false;
 
-            if (selectedItem.ToString() == "PrimaryHand")
+            if (selectedItem.ToString() == "Primary Hand")
             {
                 ShowHideRange(true);
                 RangeValue.Text = "1";
