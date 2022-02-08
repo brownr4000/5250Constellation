@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Game.Views.ItemDeletePage"
              Title="{Binding Title}">
-    
+
     <ScrollView>
         <StackLayout>
             <StackLayout 
@@ -17,13 +17,11 @@
 
                 <Label 
                     Text="Are you sure you want to delete this Item?" 
-                    Style="{StaticResource MessageStyle}"
-                    HorizontalOptions="CenterAndExpand"/>
+                    Style="{StaticResource MessageStyle}"/>
 
                 <Label
                     Text="This action cannot be undone."
-                    Style="{StaticResource MessageStyle}"
-                    HorizontalOptions="CenterAndExpand"/>
+                    Style="{StaticResource MessageStyle}"/>
 
             </StackLayout>
 
@@ -38,22 +36,18 @@
 
                 <Label
                         Text="{Binding Data.Name}"
-                        Style="{StaticResource LabelStyle}"
-                        FontSize="Large"
-                        HorizontalOptions="Center"/>
+                        Style="{StaticResource LargeLabelStyle}"/>
 
             </StackLayout>
 
-            <StackLayout Margin="50">
+            <StackLayout Margin="150">
                 <Button Text="Delete Item"
                         Clicked="Delete_Clicked"
-                        TextColor="Black"
-                        WidthRequest="400"/>
+                        Style="{StaticResource ButtonStyle}"/>
 
                 <Button Text="Back to Menu"
                         Clicked="Cancel_Clicked"
-                        TextColor="Black"
-                        WidthRequest="400"/>
+                        Style="{StaticResource ButtonStyle}"/>
 
             </StackLayout>
 
