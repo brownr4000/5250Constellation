@@ -31,18 +31,28 @@
                             <StackLayout Grid.Column="1"
                                          Margin="20"
                                          Orientation="Horizontal"
-                                         BackgroundColor="#4D2B06"
+                                         BackgroundColor="#330505"
                                          >
 
-                                <StackLayout BackgroundColor="#400020" HeightRequest="100" WidthRequest="150">
+                                <StackLayout BackgroundColor="#662929" Orientation="Vertical" HeightRequest="100" WidthRequest="150">
                                     <Label Grid.Column="0" Grid.Row="0"
                                        Text="{Binding Name}" 
                                        Style="{StaticResource PopupItemTextStyle}"/>
-                                
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="50">
+                                        <Label Grid.Column="0" Grid.Row="2"
+                                               Text="Score" 
+                                               Style="{StaticResource PopupItemTextStyle}"/>
+                                        <Label Grid.Column="1" Grid.Row="2"
+                                               Text="{Binding ScoreTotal}" 
+                                               Style="{StaticResource ListStyle}"/>
+
+                                    </StackLayout>
+
                                 </StackLayout>
 
-                                <StackLayout HeightRequest="100" WidthRequest="300" BackgroundColor="#4D2B06">
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                                <StackLayout HeightRequest="100" WidthRequest="300" BackgroundColor="#582966">
+                                    <StackLayout Orientation="Horizontal">
                                         <Label Style="{StaticResource PopupItemTextStyle}" 
                                                HorizontalOptions="End"
                                                Text="Date"/>
@@ -53,8 +63,8 @@
                                            Style="{StaticResource ListStyle}"/>
 
                                     </StackLayout>
-                                    
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End" >
+
+                                    <StackLayout Orientation="Horizontal">
                                         <Label Grid.Column="0" Grid.Row="1"
                                            Text="Rounds" 
                                            Style="{StaticResource PopupItemTextStyle}"/>
@@ -66,13 +76,15 @@
 
                                     </StackLayout>
 
-                                    <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-                                        <Label Grid.Column="0" Grid.Row="2"
-                                               Text="Score" 
-                                               Style="{StaticResource PopupItemTextStyle}"/>
-                                        <Label Grid.Column="1" Grid.Row="2"
-                                               Text="{Binding ScoreTotal}" 
-                                               Style="{StaticResource ListStyle}"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Grid.Column="0" Grid.Row="1"
+                                           Text="Turns" 
+                                           Style="{StaticResource PopupItemTextStyle}"/>
+
+                                        <Label Grid.Column="1" Grid.Row="1"
+                                           Text="{Binding TurnCount}" 
+                                           Style="{StaticResource ListStyle}"/>
+
 
                                     </StackLayout>
 
