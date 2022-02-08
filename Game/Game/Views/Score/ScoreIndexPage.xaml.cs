@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -35,25 +36,25 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
-        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            ScoreModel data = args.SelectedItem as ScoreModel;
-            if (data == null)
-            {
-                return;
-            }
+        ///// <summary>
+        ///// The row selected from the list
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="args"></param>
+        //public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        //{
+        //    ScoreModel data = args.SelectedItem as ScoreModel;
+        //    if (data == null)
+        //    {
+        //        return;
+        //    }
 
-            // Open the Read Page
-            await Navigation.PushAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(data)));
+        //    // Open the Read Page
+        //    await Navigation.PushAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(data)));
 
-            // Manually deselect item.
-            DataListView.SelectedItem = null;
-        }
+        //    // Manually deselect item.
+        //    ScoresListView.SelectedItem = null;
+        //}
 
         /// <summary>
         /// Call to Add a new record
@@ -87,6 +88,27 @@ namespace Game.Views
             }
 
             BindingContext = ViewModel;
+        }
+
+        /// <summary>
+        /// The CollectionView_OnItemSelected method selects the row from the CollectionView layout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public async void CollectionView_OnItemSelected(object sender, SelectionChangedEventArgs args)
+        {
+            ScoreModel data = args.CurrentSelection.FirstOrDefault() as ScoreModel;
+
+            if (data == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(data)));
+
+            // Manually deselect item.
+            ScoresListView.SelectedItem = null;
         }
     }
 }
