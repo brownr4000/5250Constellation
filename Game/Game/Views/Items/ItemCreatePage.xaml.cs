@@ -86,7 +86,7 @@ namespace Game.Views
             // Setting error message when only the attribute value is unknown
             if (locationValue != "Unknown" && attributeValue == "Unknown")
             {
-                LocationAttributeErrorMessage.Text = "Please select a Attribute";
+                LocationAttributeErrorMessage.Text = "Please select an Attribute";
                 LocationAttributeErrorMessage.IsVisible = true;
                 returnValue = true;
             }
