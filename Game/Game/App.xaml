@@ -106,6 +106,14 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="StepperLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="TextColor" Value="{StaticResource TriciaryBackgroundColor}" />
+                <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ListStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro" />
@@ -339,14 +347,35 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="CenterStack">
+                <!--<Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="Center" />-->
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Spacing" Value="1" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="VerticalStack"
                    BasedOn="{StaticResource HorizontalStack}">
                 <Setter Property="Orientation" Value="Vertical" />
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="VerticalCenterStack"
+                   BasedOn="{StaticResource CenterStack}">
+                <Setter Property="Orientation" Value="Vertical" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="OuterBoxStack"
                 BasedOn="{StaticResource VerticalStack}">
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="OuterBoxCenterStack"
+                BasedOn="{StaticResource VerticalCenterStack}">
             </Style>
 
             <Style TargetType="StackLayout"
@@ -525,11 +554,10 @@
             </Style>
 
             <!-- Stepper -->
-            <Style TargetType="Stepper">
-                <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="VerticalOptions" Value="Center" />
+            <Style TargetType="Stepper" x:Key="StepperStyle">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />                
                 <Setter Property="Margin" Value="0" />
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}" />
                 <Setter Property="Minimum" Value="0" />
                 <Setter Property="Maximum" Value="9" />
                 <Setter Property="Increment" Value="1" />
@@ -546,7 +574,7 @@
                 
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="TitleColor" Value="{StaticResource SecondaryTextColor}" />
-                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />

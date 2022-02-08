@@ -19,17 +19,13 @@
     <ContentPage.Content>
         <ScrollView>
 
-            <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
-
-                <Label Text="Update Page" Style="{StaticResource LabelBaseStyle}" FontSize="Large" HorizontalOptions = "Center" Padding="15" />
-
-                <StackLayout Orientation="Horizontal">
+            <StackLayout Style="{StaticResource OuterBoxCenterStack}" Padding="20" Spacing="20">
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
                     <Grid
                         RowSpacing="10"
-                        ColumnSpacing="10"
-                        >
+                        ColumnSpacing="10">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -48,7 +44,6 @@
                                Text="{Binding Data.Name}" 
                                Style="{StaticResource EntryStyle}"/>
 
-
                         <Label Grid.Row="1" Grid.Column="0"
                                Text="Description" 
                                Style="{StaticResource LabelStyle}"/>
@@ -64,6 +59,7 @@
                                Style="{StaticResource LabelStyle}"/>
 
                         <Picker Grid.Row="2" Grid.Column="1"
+                                Style="{StaticResource PickerStyle}"
                                ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListItemMessage}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource ItemLocationEnumConverter}, Mode=TwoWay}" 
                                 x:Name="LocationPicker"/>
@@ -73,6 +69,7 @@
                                Style="{StaticResource LabelStyle}"/>
 
                         <Picker Grid.Row="3" Grid.Column="1"
+                                Style="{StaticResource PickerStyle}"
                                 ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
                                 SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                 x:Name="AttributePicker"/>
@@ -87,82 +84,74 @@
                 </StackLayout>
 
 
-                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand" Spacing="10">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
                     <Label 
                         Text="Range" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                        <Label 
-                            Text="{Binding Data.Range}" 
-                            x:Name="RangeValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
-
-                    </StackLayout>
+                        Style="{StaticResource StepperLabelStyle}"/>
 
                     <Label 
+                            Text="{Binding Data.Range}" 
+                            x:Name="RangeValue"
+                            Style="{StaticResource StepperLabelStyle}"/>
+
+                    <Stepper 
+                            Value="{Binding Data.Range, Mode=TwoWay}"
+                            ValueChanged="Range_OnStepperValueChanged"
+                        Style="{StaticResource StepperStyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+                <Label 
                         Text="Value"
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
+                        Style="{StaticResource StepperLabelStyle}"/>
+                    
                         <Label 
                             Text="{Binding Data.Value}" 
                             x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
+                            Style="{StaticResource StepperLabelStyle}"
                             Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
                         <Stepper 
                             Value="{Binding Data.Value, Mode=TwoWay}"
+                            Style="{StaticResource StepperStyle}"
                             ValueChanged="Value_OnStepperValueChanged"/>
 
                     </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
 
                     <Label 
                         Text="Damage" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                        Style="{StaticResource StepperLabelStyle}"/>
 
                         <Label 
                             Text="{Binding Data.Damage}" 
                             x:Name="DamageValue"
-                            Style="{StaticResource ValueStyle}"
+                            Style="{StaticResource StepperLabelStyle}"
                             Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
                         <Stepper 
                             Value="{Binding Data.Damage, Mode=TwoWay}"
+                            Style="{StaticResource StepperStyle}"
                             ValueChanged="Damage_OnStepperValueChanged"/>
 
                     </StackLayout>
 
-                </StackLayout>
-
-                <StackLayout  Orientation="Vertical">
-                    <Label x:Name="NameErrorMessage" Text="Item's name cannot be empty!" FontSize="Large" TextColor="blue"/>
-                    <Label x:Name="DescriptionErrorMessage" Text="Item's description cannot be empty!" FontSize="Large" TextColor="blue"/>
+                <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label x:Name="NameErrorMessage" Text="Item's name cannot be empty!" Style="{StaticResource ErrorMessageStyle}"/>
+                    <Label x:Name="DescriptionErrorMessage" Text="Item's description cannot be empty!" Style="{StaticResource ErrorMessageStyle}"/>
                     
                 </StackLayout>
-                
-                <StackLayout Orientation="Horizontal">
-                    <Button Text="Cancel" Clicked="Cancel_Clicked" FontSize="Medium" BackgroundColor="LightGray" Margin="25" WidthRequest="150"/>
-                    <Button Text="Update" Clicked="Save_Clicked" FontSize="Medium" BackgroundColor="LightGray" Margin="25" WidthRequest="150"/>
+
+                <StackLayout Padding="10" Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Cancel" Clicked="Cancel_Clicked" Style="{StaticResource ButtonStyle}"/>
+                    <Button Text="Update" Clicked="Save_Clicked" Style="{StaticResource ButtonStyle}"/>
                         
                 </StackLayout>
 
-                </StackLayout>
+            </StackLayout>
         </ScrollView>
 
     </ContentPage.Content>
