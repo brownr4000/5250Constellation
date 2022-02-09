@@ -43,15 +43,14 @@
                                 <Entry Text="{Binding Data.Name, Mode=TwoWay}" 
                                        x:Name="NameValue" 
                                        TextChanged="Name_TextChanged"
-                                       WidthRequest="200" 
-                                       BackgroundColor="LimeGreen"/>
+                                       Style="{StaticResource EntryStyle}"
+                                       />
                                 
                                 <Label Text="Level"
                                        Style="{StaticResource LabelStyle}"
                                        FontSize="Small"/>
-                                
-                                <Picker WidthRequest="200" 
-                                        BackgroundColor="LimeGreen" 
+
+                                <Picker Style="{StaticResource PickerStyle}"
                                         SelectedItem="{Binding SelectedItemProperty}" 
                                         SelectedIndexChanged="Level_Changed"
                                         x:Name="LevelPicker"/>
@@ -59,9 +58,8 @@
                                 <Label Text="Class"
                                        Style="{StaticResource LabelStyle}"
                                        FontSize="Small"/>
-                                
-                                <Picker WidthRequest="200" 
-                                        BackgroundColor="LimeGreen"
+
+                                <Picker Style="{StaticResource PickerStyle}"
                                         SelectedItem="{Binding SelectedItemProperty}" 
                                         SelectedIndexChanged="Class_Changed"
                                         x:Name="ClassPicker"/>
@@ -73,8 +71,7 @@
                                 <Entry Text="{Binding Data.Description, Mode=TwoWay}"
                                        x:Name="DescValue" 
                                        TextChanged="Desc_TextChanged" 
-                                       WidthRequest="200" 
-                                       BackgroundColor="LimeGreen"/>
+                                       Style="{StaticResource EntryStyle}"/>
                                 
                                 <StackLayout Orientation="Horizontal" 
                                              HorizontalOptions="Start" 
@@ -97,67 +94,47 @@
                         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Attack"
-                                       TextColor="#7F47DD"
-                                       Style="{StaticResource LabelStyle}"
+                                       Style="{StaticResource StepperLabelStyle}"
                                        FontSize="Small"/>
-                                
-                                <Stepper Maximum="9"
-                                     Increment="1"
+
+                                <Stepper Style="{StaticResource StepperStyle}"
                                      Value="{Binding Data.Attack, Mode=TwoWay}" 
                                      ValueChanged="Attack_OnStepperValueChanged"
-                                     BackgroundColor="#7F47DD"/>
+                                     />
                                 
-                                <Label Text="{Binding Data.Attack}" 
-                                       TextColor="#7F47DD"
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"
+                                <Label Text="{Binding Data.Attack}"
+                                       Style="{StaticResource StepperLabelStyle}"                                       
                                        x:Name="AttackValue"
-                                       Padding="0,0,10,0"
-                                       HorizontalOptions="End"
-                                       HorizontalTextAlignment="End"/>
+                                       Padding="0,0,10,0"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Defense"
-                                       TextColor="#7F47DD"
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"/>
+                                       Style="{StaticResource StepperLabelStyle}"/>
                                 
-                                <Stepper Maximum="9"
-                                        Increment="1" 
+                                <Stepper 
                                         Value="{Binding Data.Defense, Mode=TwoWay}"
-                                        BackgroundColor="#7F47DD"
+                                        Style="{StaticResource StepperStyle}"
                                         ValueChanged="Defense_OnStepperValueChanged"/>
                                 
                                 <Label Text="{Binding Data.Defense, Mode=TwoWay}" 
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"
-                                       TextColor="#7F47DD"
+                                       Style="{StaticResource StepperLabelStyle}"
                                        x:Name="DefenseValue"
-                                       Padding="0,0,10,0"
-                                       HorizontalOptions="End"
-                                       HorizontalTextAlignment="End"/>
+                                       Padding="0,0,10,0"/>
                             </StackLayout>
                             
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Speed"
-                                       TextColor="#7F47DD"
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"/>
+                                       Style="{StaticResource StepperLabelStyle}"/>
                                 
-                                <Stepper Maximum="9"
-                                     Increment="1" 
+                                <Stepper 
                                          Value="{Binding Data.Speed, Mode=TwoWay}"
-                                         BackgroundColor="#7F47DD"
+                                         Style="{StaticResource StepperStyle}"
                                      ValueChanged="Speed_OnStepperValueChanged"/>
                                 
                                 <Label Text="{Binding Data.Speed, Mode=TwoWay}" 
-                                       TextColor="#7F47DD"
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"
+                                       Style="{StaticResource StepperLabelStyle}"
                                        x:Name="SpeedValue"
-                                       Padding="0,0,10,0"
-                                       HorizontalOptions="End"
-                                       HorizontalTextAlignment="End"/>
+                                       Padding="0,0,10,0"/>
                             </StackLayout>
                         </StackLayout>
 
@@ -170,24 +147,22 @@
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Label Text="Please Enter the Character Name" 
                                    x:Name="NameErrorMessage" 
-                                   TextColor="Yellow"/>
+                                   Style="{StaticResource ErrorMessageStyle}"/>
                             
                             <Label Text="Please Enter the Character Description"
                                    x:Name="DescErrorMessage" 
-                                   TextColor="Yellow"/>
+                                   Style="{StaticResource ErrorMessageStyle}"/>
                             
                             <Label x:Name="ClassErrorMessage" 
-                                   TextColor="Yellow"/>
+                                   Style="{StaticResource ErrorMessageStyle}"/>
                         </StackLayout>
-                        <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout Padding="20" Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
                             <Button Text="Cancel"
-                                    TextColor="Black" 
-                                    WidthRequest="100" 
+                                    Style="{StaticResource ButtonStyle}"
                                     Clicked="Cancel_Clicked"/>
                             
                             <Button Text="Create" 
-                                    TextColor="Black"
-                                    WidthRequest="100" 
+                                    Style="{StaticResource ButtonStyle}" 
                                     Clicked="Save_Clicked"/>
                         </StackLayout>
                     </StackLayout>
@@ -204,12 +179,11 @@
                 <StackLayout 
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand"
-                    WidthRequest="300"
-                    HeightRequest="300">
+                    WidthRequest="350"
+                    HeightRequest="350">
 
-                    <Frame BackgroundColor="LimeGreen" 
-                           BorderColor="{StaticResource TriciaryTextColor}"
-                           Padding="1">
+                    <Frame Style="{StaticResource PopupItemColorStyle}">
+                        
                         <StackLayout Style="{StaticResource VerticalStack}" 
                                      HorizontalOptions="CenterAndExpand" 
                                      Padding="2">

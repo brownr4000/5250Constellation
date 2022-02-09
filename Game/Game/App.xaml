@@ -239,7 +239,13 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-            
+
+            <Style TargetType="Frame"
+                x:Key="PopupItemColorStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource TriciaryTextColor}"/>
+            </Style>
+
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="ImageLargeStyle">
