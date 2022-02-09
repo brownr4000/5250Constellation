@@ -307,4 +307,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\troll3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Earth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Alien_Planet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\UFO.png" />
+  </ItemGroup>
 </Project>
