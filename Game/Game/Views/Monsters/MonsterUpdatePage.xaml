@@ -20,8 +20,8 @@
         <StackLayout HorizontalOptions="Center">
             <ScrollView>
                 <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
-                    
-                    <Image Source="{Binding Data.ImageURI}"/>
+
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
 
                     <StackLayout Orientation="Vertical" VerticalOptions="Center">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
