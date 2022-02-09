@@ -127,6 +127,14 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="BoldLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
@@ -242,6 +250,12 @@
 
             <Style TargetType="Frame"
                 x:Key="PopupItemColorStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource TriciaryTextColor}"/>
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="FrameStyle">
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
                 <Setter Property="BorderColor" Value="{StaticResource TriciaryTextColor}"/>
             </Style>
@@ -375,6 +389,12 @@
             <Style TargetType="StackLayout"
                 x:Key="OuterBoxStack"
                 BasedOn="{StaticResource VerticalStack}">
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="OuterBoxHorizontalCenterStack">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Orientation" Value="Horizontal"/>
             </Style>
 
             <Style TargetType="StackLayout"
