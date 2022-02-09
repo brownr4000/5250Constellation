@@ -225,6 +225,8 @@
       <Link>.editorconfig</Link>
     </None>
     <EmbeddedResource Include="Fonts\PlatNomor-eZ2dm.otf" />
+    <Content Include="Assets\PlatNomor-WyVnn.ttf" />
+    <Content Include="Assets\SpaceSpeedFontRegular-YzvY8.ttf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

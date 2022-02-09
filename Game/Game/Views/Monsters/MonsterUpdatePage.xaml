@@ -21,7 +21,7 @@
             <ScrollView>
                 <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
                     
-                    <Image Source="{Binding Data.ImageURI}" HeightRequest="150" WidthRequest="150"/>
+                    <Image Source="{Binding Data.ImageURI}"/>
 
                     <StackLayout Orientation="Vertical" VerticalOptions="Center">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
