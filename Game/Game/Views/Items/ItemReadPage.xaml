@@ -36,12 +36,10 @@
                             FontSize="Title"
                             Style="{StaticResource CenterLabelStyle}"/>
 
-                        <Image Source="{Binding Data.ImageURI}" 
-                            Style="{StaticResource ImageLargeStyle}"
-                            HeightRequest="200"
-                            WidthRequest="200"/>
+                    <Image Source="{Binding Data.ImageURI}" 
+                            Style="{StaticResource ImageLargeStyle}"/>
 
-                        <StackLayout 
+                    <StackLayout 
                             Style="{StaticResource HorizontalStack}" 
                             HorizontalOptions="Center"
                             Padding="10" Spacing="10">
