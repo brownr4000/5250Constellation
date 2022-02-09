@@ -397,6 +397,14 @@
                 <Setter Property="WidthRequest" Value="150"/>
             </Style>
 
+            <!--Grid-->
+            <Style TargetType="Grid" x:Key="GridCenterwithWidth">
+                <Setter Property="WidthRequest" Value="600"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="RowSpacing" Value="1"/>
+                <Setter Property="ColumnSpacing" Value="2"/>
+            </Style>
+            
             <!-- Stack Layouts -->
             <Style TargetType="StackLayout"
                 x:Key="HorizontalStack">
@@ -409,11 +417,26 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="HorizontalStartwithPaddingandSpacingStack">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="Spacing" Value="20" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="HorizontalCenterWithPaddingSpacingStack">
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="Padding" Value="20" />
                 <Setter Property="Spacing" Value="20" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalCenterStack">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
             <Style TargetType="StackLayout"
