@@ -104,10 +104,12 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.png" />
     <Content Include="action_ability.png" />
     <Content Include="action_attack.png" />
     <Content Include="action_default.png" />
     <Content Include="action_move.png" />
+    <Content Include="Alien_Planet.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
@@ -139,6 +141,7 @@
     <Content Include="d10.png" />
     <Content Include="d20_2.png" />
     <Content Include="dungeon_door.png" />
+    <Content Include="Earth.png" />
     <Content Include="elf1.png" />
     <Content Include="elf2.png" />
     <Content Include="elf3.png" />
@@ -187,6 +190,7 @@
     <Content Include="troll4.png" />
     <Content Include="troll5.png" />
     <Content Include="troll6.png" />
+    <Content Include="UFO.png" />
     <Content Include="village.png" />
   </ItemGroup>
   <ItemGroup>
@@ -220,7 +224,7 @@
     <None Include="..\..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
-    <Content Include="PlatNomor-eZ2dm.otf" />
+    <EmbeddedResource Include="Fonts\PlatNomor-eZ2dm.otf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

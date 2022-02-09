@@ -6,52 +6,10 @@
 
     <ContentPage.Content>
 
-        <!--<FlexLayout x:Name="flexLayout"
-                        Wrap="Wrap"
-                        JustifyContent="SpaceAround"
-                        AlignContent="SpaceAround">
-
-                <StackLayout Style="{StaticResource CardImageTextBox}">
-
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="VillageButton_Clicked"/>
-
-                    <Label 
-                        Text="Village"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource CardImageTextBox}">
-
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="DungeonButton_Clicked"/>
-
-                    <Label 
-                        Text="Dungeon"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource CardImageTextBox}">
-
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="AutobattleButton_Clicked"/>
-
-                    <Label 
-                        Text="Auto Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
-            </FlexLayout>-->
-
             <StackLayout Spacing="50" HorizontalOptions="Center">
                 <StackLayout>
                     <ImageButton
-                                   Source="item.png"
+                                   Source="About.png"
                                    Style="{StaticResource ImageLargeStyle}"
                                    Clicked="AboutButton_Clicked"/>
 
@@ -62,7 +20,7 @@
 
                 <StackLayout Orientation="Horizontal" Spacing="100">
                     <StackLayout>
-                        <ImageButton Source="item.png"
+                        <ImageButton Source="Earth.png"
                                      Style="{StaticResource ImageLargeStyle}"
                                      Clicked="VillageButton_Clicked"/>
 
@@ -72,7 +30,7 @@
                     </StackLayout>
 
                     <StackLayout>
-                        <ImageButton Source="item.png"
+                        <ImageButton Source="Alien_Planet.png"
                                      Style="{StaticResource ImageLargeStyle}"
                                      Clicked="DungeonButton_Clicked"/>
 
@@ -85,7 +43,7 @@
 
                 <StackLayout>
                     <ImageButton
-                                    Source="item.png"
+                                    Source="UFO.png"
                                     Style="{StaticResource ImageLargeStyle}"
                                     Clicked="AutobattleButton_Clicked"/>
 
