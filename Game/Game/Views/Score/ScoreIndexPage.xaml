@@ -18,7 +18,7 @@
             <Label Text="Score List Page" Style="{StaticResource HeaderStyle}"/>
 
             <CollectionView x:Name="ScoresListView" 
-                    ItemsSource="{Binding Dataset}"
+                    ItemsSource="{Binding Dataset}"                    
                     SelectionMode="Single"
                     SelectionChanged="CollectionView_OnItemSelected">
                 
@@ -31,7 +31,7 @@
                             <StackLayout Grid.Column="1"
                                          Margin="20"
                                          Orientation="Horizontal"
-                                         BackgroundColor="#330505"
+                                         BackgroundColor="#582966"
                                          >
 
                                 <StackLayout BackgroundColor="#662929" Orientation="Vertical" HeightRequest="100" WidthRequest="150">
@@ -51,40 +51,61 @@
 
                                 </StackLayout>
 
-                                <StackLayout HeightRequest="100" WidthRequest="300" BackgroundColor="#582966">
+                                <StackLayout BackgroundColor="#582966">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Style="{StaticResource PopupItemTextStyle}" 
-                                               HorizontalOptions="End"
-                                               Text="Date"/>
+                                        <CollectionView 
+                                            ItemsLayout="HorizontalList"
+                                            ItemsSource="{Binding CharacterModelDeathList}"
+                                            WidthRequest="500" HeightRequest="200"
+                                            HorizontalScrollBarVisibility="Never">
+                                            
+                                            <CollectionView.ItemTemplate >
+                                                <DataTemplate>
 
-                                        <Label Grid.Column="1" Grid.Row="1"
-                                           x:Name="CurrentDateTime"
-                                           Text="{Binding GameDate}"
-                                           Style="{StaticResource ListStyle}"/>
+                                                    <Image Source="{Binding ImageURI}" Style="{StaticResource ImageSmallStyle}" Aspect="AspectFit"/>
 
-                                    </StackLayout>
+                                                </DataTemplate>
 
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Grid.Column="0" Grid.Row="1"
+                                            </CollectionView.ItemTemplate>
+
+                                        </CollectionView>
+
+                                        <StackLayout VerticalOptions="Center">
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Style="{StaticResource PopupItemTextStyle}" 
+                                                       Text="Date"/>
+
+                                                <Label Grid.Column="1" Grid.Row="1"
+                                                   x:Name="CurrentDateTime"
+                                                   Text="{Binding GameDate}"
+                                                   Style="{StaticResource ListStyle}"/>
+
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Grid.Column="0" Grid.Row="1"
                                            Text="Rounds" 
                                            Style="{StaticResource PopupItemTextStyle}"/>
 
-                                        <Label Grid.Column="1" Grid.Row="1"
+                                                <Label Grid.Column="1" Grid.Row="1"
                                            Text="{Binding RoundCount}" 
                                            Style="{StaticResource ListStyle}"/>
 
 
-                                    </StackLayout>
+                                            </StackLayout>
 
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Grid.Column="0" Grid.Row="1"
-                                           Text="Turns" 
-                                           Style="{StaticResource PopupItemTextStyle}"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Grid.Column="0" Grid.Row="1"
+                                                       Text="Turns" 
+                                                       Style="{StaticResource PopupItemTextStyle}"/>
 
-                                        <Label Grid.Column="1" Grid.Row="1"
-                                           Text="{Binding TurnCount}" 
-                                           Style="{StaticResource ListStyle}"/>
+                                                <Label Grid.Column="1" Grid.Row="1"
+                                                       Text="{Binding TurnCount}" 
+                                                       Style="{StaticResource ListStyle}"/>
 
+
+                                            </StackLayout>
+                                        </StackLayout>
 
                                     </StackLayout>
 

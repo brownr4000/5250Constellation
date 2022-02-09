@@ -129,5 +129,6 @@ namespace Game.Views
             // Manually deselect Character.
             ScoresListView.SelectedItem = null;
         }
+        
     }
 }
