@@ -295,6 +295,12 @@
             </Style>
 
             <Style TargetType="Image"
+                x:Key="StandardImageStyle" BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="WidthRequest" Value="150" />
+            </Style>
+
+            <Style TargetType="Image"
                 x:Key="ImageLargerStyle" BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="200" />
                 <Setter Property="WidthRequest" Value="200" />
@@ -306,6 +312,13 @@
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="WidthRequest" Value="50" />
             </Style>
+
+            <!--<Style TargetType="Image"
+                x:Key="ImageStyle"
+                BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+            </Style>-->
 
             <Style TargetType="Image"
                 x:Key="ImageSmallStyle"
