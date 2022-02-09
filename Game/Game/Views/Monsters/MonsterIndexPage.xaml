@@ -15,46 +15,43 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
-
             <CollectionView x:Name="MonstersListView" 
                             ItemsSource="{Binding Dataset}"
                             SelectionMode="Single"
-                            SelectionChanged="CollectionView_OnItemSelected"
-                            BackgroundColor="{StaticResource ViewBackgroundColor}">
+                            SelectionChanged="CollectionView_OnItemSelected">
                 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10"
                               RowDefinitions="Auto, *"
                               ColumnDefinitions="Auto, *">
-
-                            <Image Grid.RowSpan="2"
+                          
+                                <Image Grid.RowSpan="2"
                                    Source="{Binding ImageURI}"
                                    Aspect="AspectFill"
                                    WidthRequest="80"/>
 
-                            <StackLayout Grid.Column="1"
+                                <StackLayout Grid.Column="1"
                                          Margin="20">
 
-                                <Label
+                                    <Label
                                     Text="{Binding Name}"
                                     Style="{StaticResource BoldLabelStyle}"/>
 
-                                <Label
+                                    <Label
                                     Grid.Row="1"
                                     Text="{Binding Path=Description}"
                                      Style="{StaticResource LabelStyle}"/>
 
-                                <Label Text="{Binding Path=Difficulty}" 
+                                    <Label Text="{Binding Path=Difficulty}" 
                                         Style="{StaticResource ListStyle}"/>
 
-                                <Label Grid.Row="2"
+                                    <Label Grid.Row="2"
                                     Text="{Binding UniqueItem}"
                                         Style="{StaticResource LabelStyle}"/>
 
-                            </StackLayout>
-
+                                </StackLayout>
+                            
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
