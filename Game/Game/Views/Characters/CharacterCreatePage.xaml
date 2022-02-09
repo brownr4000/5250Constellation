@@ -37,18 +37,15 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" VerticalOptions="Center">
                                 <Label Text="Name" 
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"/>
+                                       Style="{StaticResource LabelStyle}"/>
                                 
                                 <Entry Text="{Binding Data.Name, Mode=TwoWay}" 
                                        x:Name="NameValue" 
                                        TextChanged="Name_TextChanged"
-                                       Style="{StaticResource EntryStyle}"
-                                       />
+                                       Style="{StaticResource EntryStyle}"/>
                                 
                                 <Label Text="Level"
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"/>
+                                       Style="{StaticResource LabelStyle}"/>
 
                                 <Picker Style="{StaticResource PickerStyle}"
                                         SelectedItem="{Binding SelectedItemProperty}" 
@@ -56,8 +53,7 @@
                                         x:Name="LevelPicker"/>
                                 
                                 <Label Text="Class"
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"/>
+                                       Style="{StaticResource LabelStyle}"/>
 
                                 <Picker Style="{StaticResource PickerStyle}"
                                         SelectedItem="{Binding SelectedItemProperty}" 
@@ -65,8 +61,7 @@
                                         x:Name="ClassPicker"/>
                                 
                                 <Label Text="Description"
-                                       Style="{StaticResource LabelStyle}"
-                                       FontSize="Small"/>
+                                       Style="{StaticResource LabelStyle}"/>
                                 
                                 <Entry Text="{Binding Data.Description, Mode=TwoWay}"
                                        x:Name="DescValue" 
@@ -78,11 +73,9 @@
                                              Padding="20" Spacing="20">
                                     
                                     <Label Text="Max Health" 
-                                            Style="{StaticResource LabelStyle}"
-                                            FontSize="Small"/>
+                                            Style="{StaticResource LabelStyle}"/>
                                     <Label  x:Name="MaxHealthValue" 
                                             Style="{StaticResource ValueStyle}"
-                                            FontSize="Small"
                                             Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}"/>
                                 </StackLayout>
 
@@ -94,13 +87,11 @@
                         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,0" Spacing="30">
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="Attack"
-                                       Style="{StaticResource StepperLabelStyle}"
-                                       FontSize="Small"/>
+                                       Style="{StaticResource StepperLabelStyle}"/>
 
                                 <Stepper Style="{StaticResource StepperStyle}"
                                      Value="{Binding Data.Attack, Mode=TwoWay}" 
-                                     ValueChanged="Attack_OnStepperValueChanged"
-                                     />
+                                     ValueChanged="Attack_OnStepperValueChanged"/>
                                 
                                 <Label Text="{Binding Data.Attack}"
                                        Style="{StaticResource StepperLabelStyle}"                                       
@@ -138,7 +129,7 @@
                             </StackLayout>
                         </StackLayout>
 
-                        <FlexLayout                        
+                        <FlexLayout Padding="0,20,0,0"                    
                             Wrap="Wrap"
                             JustifyContent="SpaceAround"
                             AlignContent="SpaceAround"
