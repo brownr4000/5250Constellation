@@ -43,10 +43,12 @@
 
                                 <Label
                                     Grid.Row="1"
-                                    Text="{Binding Location}"/>
+                                    Text="{Binding Location}"
+                                    Style="{StaticResource LabelStyle}"/>
 
                                 <Label Grid.Row="2"
-                                    Text="{Binding Description}"/>
+                                    Text="{Binding Description}"
+                                       Style="{StaticResource LabelStyle}"/>
 
                             </StackLayout>
 
