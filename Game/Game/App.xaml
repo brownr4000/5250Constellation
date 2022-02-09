@@ -354,8 +354,6 @@
 
             <Style TargetType="StackLayout"
                 x:Key="CenterStack">
-                <!--<Setter Property="Orientation" Value="Horizontal" />
-                <Setter Property="HorizontalOptions" Value="Center" />-->
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="0" />
@@ -570,20 +568,18 @@
             </Style>
 
             <!-- Picker -->
-            <Style TargetType="Picker" x:Key="PickerStyle">
-                <!--<Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
-                <Setter Property="TitleColor" Value="{StaticResource PrimaryTextColor}" />
-                <Setter Property="FontSize" Value="Small" />
-                <Setter Property="HorizontalTextAlignment" Value="Center" />
-                <Setter Property="FontAttributes" Value="None" />
-                <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />-->
-                
+            <Style TargetType="Picker" x:Key="PickerStyle">                
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="TitleColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+            </Style>
+            
+            <!--ProgressBar-->
+            <Style TargetType="ProgressBar" x:Key="ProgressBarStyle">                
+                <Setter Property="ProgressColor" Value="{StaticResource SecondaryBackgroundColor}" />
             </Style>
 
         </ResourceDictionary>

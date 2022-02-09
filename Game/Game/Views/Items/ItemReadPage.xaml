@@ -108,7 +108,7 @@
 
                                 <ProgressBar 
                                     x:Name="RangeProgressBar"
-                                    ProgressColor="LimeGreen"
+                                    Style="{StaticResource ProgressBarStyle}"
                                     Grid.Column="2"/>
 
                             </Grid>
@@ -134,7 +134,7 @@
 
                                 <ProgressBar 
                                     x:Name="ValueProgressBar"
-                                    ProgressColor="LimeGreen"
+                                    Style="{StaticResource ProgressBarStyle}"
                                     Grid.Column="2"/>
 
                             </Grid>
@@ -160,7 +160,7 @@
 
                                 <ProgressBar 
                                     x:Name="DamageProgressBar"
-                                    ProgressColor="LimeGreen"
+                                    Style="{StaticResource ProgressBarStyle}"
                                     Grid.Column="2"/>
 
                             </Grid>
