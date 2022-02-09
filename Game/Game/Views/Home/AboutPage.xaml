@@ -37,7 +37,7 @@
                
                 </StackLayout>
 
-                   <Label x:Name="CurrentDateTime" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                   <Label x:Name="CurrentDateTime" Style="{StaticResource CenterMessageStyle}"/>
             
             </StackLayout>
 
