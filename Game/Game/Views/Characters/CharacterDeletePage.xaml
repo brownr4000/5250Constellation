@@ -11,19 +11,16 @@
         <StackLayout>
             <StackLayout 
                 Style="{StaticResource OuterBoxStack}"
-                Orientation="Vertical"
                 HorizontalOptions="Center"
                 Spacing="10">
 
                 <Label
                     Text="Are you sure you want to delete this Character?"
-                    Style="{StaticResource MessageStyle}"
-                    HorizontalOptions="CenterAndExpand"/>
+                    Style="{StaticResource MessageStyle}"/>
 
                 <Label
                     Text="This action cannot be undone."
-                    Style="{StaticResource MessageStyle}"
-                    HorizontalOptions="CenterAndExpand"/>
+                    Style="{StaticResource MessageStyle}"/>
 
             </StackLayout>
 
@@ -36,24 +33,20 @@
                        WidthRequest="200"
                        HorizontalOptions="Center"/>
 
-                <Label
+                <Label Padding="0,0,0,20"
                     Text="{Binding Data.Name}"
-                    Style="{StaticResource LabelStyle}"
-                    FontSize="Large"
-                    HorizontalOptions="Center"/>
+                    Style="{StaticResource LargeLabelStyle}"/>
 
             </StackLayout>
 
             <StackLayout Margin="50">
                 <Button Text="Delete Character"
                         Clicked="Delete_Clicked"
-                        TextColor="Black"
-                        WidthRequest="400"/>
+                        Style="{StaticResource ButtonStyle}"/>
 
                 <Button Text="Back to Menu"
                         Clicked="Cancel_Clicked"
-                        TextColor="Black"
-                        WidthRequest="400"/>
+                        Style="{StaticResource ButtonStyle}"/>
                 
             </StackLayout>
         
