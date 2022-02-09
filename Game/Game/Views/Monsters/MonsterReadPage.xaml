@@ -22,9 +22,7 @@
                     Orientation="Vertical"
                     VerticalOptions="Center">
 
-                    <Image Source="{Binding Data.ImageURI}" 
-                               HeightRequest="200" 
-                               WidthRequest="200"/>
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
                 </StackLayout>
 
                 <StackLayout
@@ -40,16 +38,12 @@
                         <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Name"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Name"/>
 
                         <Label 
                                 Grid.Column="1" 
                                 Text="{Binding Data.Name}"
-                                FontSize="Small"
-                                Style="{StaticResource ValueStyle}"
-                                HorizontalOptions="EndAndExpand"/>
+                                Style="{StaticResource ValueStyle}"/>
 
                     </Grid>
                 </StackLayout>
@@ -67,16 +61,12 @@
                         <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Difficulty"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Difficulty"/>
 
                         <Label 
                                 Grid.Column="1" 
                                 Text="{Binding Data.Difficulty}"
-                                FontSize="Small"
-                                Style="{StaticResource ValueStyle}"
-                                HorizontalOptions="EndAndExpand"/>
+                                Style="{StaticResource ValueStyle}"/>
 
                     </Grid>
                 </StackLayout>
@@ -94,16 +84,12 @@
                         <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Unique Item"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Unique Item"/>
 
                         <Label 
                                 Grid.Column="1" 
                                 Text="{Binding Data.UniqueItem}"
-                                FontSize="Small"
-                                Style="{StaticResource ValueStyle}"
-                                HorizontalOptions="EndAndExpand"/>
+                                Style="{StaticResource ValueStyle}"/>
 
                     </Grid>
                 </StackLayout>
@@ -121,17 +107,13 @@
                         <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Class"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Class"/>
 
                         <Label
                                 x:Name="ClassValue"
                                 Grid.Column="1" 
                                 Text="{Binding Data.MonsterJob}"
-                                FontSize="Small"
-                                Style="{StaticResource ValueStyle}"
-                                HorizontalOptions="EndAndExpand"/>
+                                Style="{StaticResource ValueStyle}"/>
 
                     </Grid>
                 </StackLayout>
@@ -149,116 +131,107 @@
                         <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Description"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Description"/>
 
                         <Label
                                 Grid.Column="1" 
                                 Text="{Binding Data.Description}"
-                                FontSize="Small"
-                                Style="{StaticResource ValueStyle}"
-                                HorizontalOptions="EndAndExpand"/>
+                                Style="{StaticResource ValueStyle}"/>
 
                     </Grid>
                 </StackLayout>
-
-                <StackLayout
+                <StackLayout Padding="0,30,0,0">
+                    <StackLayout
                             Style="{StaticResource HorizontalStack}"
                             HorizontalOptions="Center" 
                             Orientation="Vertical" 
                             VerticalOptions="Center">
 
-                    <Grid
+                        <Grid
                             HorizontalOptions="Center"
                             WidthRequest="300">
 
-                        <Label
+                            <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Attack"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Attack"/>
 
-                        <ProgressBar 
+                            <ProgressBar 
                             x:Name="AttackProgressBar" 
                             Grid.Column="1" 
-                            Progress="{Binding Data.Attack}" 
-                            ProgressColor="LimeGreen"/>
-                        
-                        <Label 
+                            Progress="{Binding Data.Attack}"
+                            Style="{StaticResource ProgressBarStyle}"/>
+
+                            <Label 
                             x:Name="AttackValue"
                             Grid.Column="2"
                             Text="{Binding Data.Attack}"
-                            Style="{StaticResource ValueStyle}"
-                            HorizontalOptions="End"/>
+                            Style="{StaticResource CenterValueStyle}"/>
 
-                    </Grid>
-                </StackLayout>
+                        </Grid>
+                    </StackLayout>
 
-                <StackLayout
+                    <StackLayout
                             Style="{StaticResource HorizontalStack}"
                             HorizontalOptions="Center" 
                             Orientation="Vertical" 
                             VerticalOptions="Center">
 
-                    <Grid
+                        <Grid
                             HorizontalOptions="Center"
                             WidthRequest="300">
 
-                        <Label
+                            <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Defense"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Defense"/>
 
-                        <ProgressBar 
+                            <ProgressBar 
                             x:Name="DefenseProgressBar" 
                             Grid.Column="1" 
-                            ProgressColor="LimeGreen"/>
+                            Progress="{Binding Data.Defense}"
+                            Style="{StaticResource ProgressBarStyle}"/>
 
-                        <Label 
+                            <Label 
                             x:Name="DefenseValue"
                             Grid.Column="2" 
                             Text="{Binding Data.Defense}"
-                            Style="{StaticResource ValueStyle}"
-                            HorizontalOptions="End"/>
+                            Style="{StaticResource CenterValueStyle}"/>
 
-                    </Grid>
-                </StackLayout>
+                        </Grid>
+                    </StackLayout>
 
-                <StackLayout
+                    <StackLayout
                             Style="{StaticResource HorizontalStack}"
                             HorizontalOptions="Center" 
                             Orientation="Vertical" 
                             VerticalOptions="Center">
 
-                    <Grid
+                        <Grid
                             HorizontalOptions="Center"
                             WidthRequest="300">
 
-                        <Label
+                            <Label
                                 Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
-                                Text="Speed"
-                                FontSize="Small"
-                                HorizontalOptions="Start"/>
+                                Text="Speed"/>
 
-                        <ProgressBar 
+                            <ProgressBar 
                             x:Name="SpeedProgressBar" 
                             Grid.Column="1" 
-                            ProgressColor="LimeGreen"/>
+                            Progress="{Binding Data.Speed}"
+                            Style="{StaticResource ProgressBarStyle}"/>
 
-                        <Label 
+                            <Label 
                             x:Name="SpeedValue"
                             Grid.Column="2" 
                             Text="{Binding Data.Speed}"
-                            Style="{StaticResource ValueStyle}"
-                            HorizontalOptions="End"/>
+                            Style="{StaticResource CenterValueStyle}"/>
 
-                    </Grid>
+                        </Grid>
+                    </StackLayout>
                 </StackLayout>
+              
 
             </StackLayout>
             

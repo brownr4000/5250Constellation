@@ -22,6 +22,18 @@
                 Dark
                 -->
 
+            <OnPlatform x:TypeArguments="x:String" x:Key="PlatNomor">
+                <On Platform="Android" Value="PlatNomor-WyVnn.ttf#PlatNomor" />
+                <On Platform="UWP" Value="/Assets/PlatNomor-WyVnn.ttf#PlatNomor" />
+                <On Platform="iOS" Value="PlatNomor-WyVnn" />
+            </OnPlatform>
+
+            <OnPlatform x:TypeArguments="x:String" x:Key="SpaceSpeed">
+                <On Platform="Android" Value="SpaceSpeedFontRegular-YzvY8.ttf#SpaceSpeed" />
+                <On Platform="UWP" Value="/Assets/SpaceSpeedFontRegular-YzvY8.ttf#SpaceSpeed" />
+                <On Platform="iOS" Value="SpaceSpeedFontRegular-YzvY8" />
+            </OnPlatform>
+
             <Color x:Key="PageBackgroundColor">#202020</Color>
             <Color x:Key="ViewBackgroundColor">#333333</Color>
             <Color x:Key="NavigationBarColor">#7F47DD</Color>
@@ -137,12 +149,19 @@
             <Style TargetType="Label"
                 x:Key="LabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
-                <Setter Property="FontSize" Value="14" />                
+                <Setter Property="FontFamily" Value="PlatNomor" />
+                <Setter Property="FontSize" Value="16" />                
             </Style>
 
             <Style TargetType="Label"
-                x:Key="CenterLargeLabelStyle"
+                x:Key="CheckLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontFamily" Value="PlatNomor" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="CenterLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
                 <Setter Property="FontSize" Value="16" />
@@ -262,9 +281,7 @@
 
             <!-- Image -->
             <Style TargetType="Image"
-                x:Key="ImageLargeStyle">
-                <Setter Property="HeightRequest" Value="120" />
-                <Setter Property="WidthRequest" Value="120" />
+                x:Key="ImageStyle">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
@@ -272,50 +289,69 @@
             </Style>
 
             <Style TargetType="Image"
+                x:Key="ImageLargeStyle" BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="HeightRequest" Value="120" />
+                <Setter Property="WidthRequest" Value="120" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="ImageLargerStyle" BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="HeightRequest" Value="200" />
+                <Setter Property="WidthRequest" Value="200" />
+            </Style>
+
+            <Style TargetType="Image"
                 x:Key="ImageMediumStyle"
-                BasedOn="{StaticResource ImageLargeStyle}">
+                BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="WidthRequest" Value="50" />
             </Style>
 
             <Style TargetType="Image"
                 x:Key="ImageSmallStyle"
-                BasedOn="{StaticResource ImageLargeStyle}">
+                BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="WidthRequest" Value="30" />
             </Style>
 
             <Style TargetType="Image"
+                x:Key="MonsterCreateImageStyle"
+                BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="WidthRequest" Value="150" />
+            </Style>
+
+            <Style TargetType="Image"
                 x:Key="PlayerBattleSmallStyle"
-                BasedOn="{StaticResource ImageLargeStyle}">
+                BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="40" />
                 <Setter Property="WidthRequest" Value="40" />
             </Style>
 
             <Style TargetType="Image"
                 x:Key="PlayerBattleMediumStyle"
-                BasedOn="{StaticResource ImageLargeStyle}">
+                BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="75" />
                 <Setter Property="WidthRequest" Value="75" />
             </Style>
 
             <Style TargetType="Image"
                 x:Key="ImageBattleSmallStyle"
-                BasedOn="{StaticResource ImageLargeStyle}">
+                BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="WidthRequest" Value="50" />
             </Style>
 
             <Style TargetType="Image"
                 x:Key="ImageBattleMediumStyle"
-                BasedOn="{StaticResource ImageLargeStyle}">
+                BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="60" />
                 <Setter Property="WidthRequest" Value="60" />
             </Style>
 
             <Style TargetType="Image"
                 x:Key="ImageBattleLargeStyle"
-                BasedOn="{StaticResource ImageLargeStyle}">
+                BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="75" />
                 <Setter Property="WidthRequest" Value="75" />
             </Style>
