@@ -32,29 +32,26 @@
                             <Image Grid.RowSpan="2"
                                    Source="{Binding ImageURI}"
                                    Aspect="AspectFill"
-                                   WidthRequest="80"
-                                   BackgroundColor="{StaticResource BattleMapMonsterColor}"/>
+                                   WidthRequest="80"/>
 
                             <StackLayout Grid.Column="1"
                                          Margin="20">
 
                                 <Label
                                     Text="{Binding Name}"
-                                    FontAttributes="Bold" 
-                                    BackgroundColor="{StaticResource TriciaryTextColor}"/>
+                                    Style="{StaticResource BoldLabelStyle}"/>
 
                                 <Label
                                     Grid.Row="1"
                                     Text="{Binding Path=Description}"
-                                    VerticalOptions="End" 
-                                    BackgroundColor="{StaticResource LightBackgroundColor}"/>
+                                     Style="{StaticResource LabelStyle}"/>
 
                                 <Label Text="{Binding Path=Difficulty}" 
                                         Style="{StaticResource ListStyle}"/>
 
                                 <Label Grid.Row="2"
-                                    Text="{Binding Description}"
-                                    BackgroundColor="{StaticResource  PrimaryTextColor}"/>
+                                    Text="{Binding UniqueItem}"
+                                        Style="{StaticResource LabelStyle}"/>
 
                             </StackLayout>
 
