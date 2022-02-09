@@ -19,6 +19,9 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CharacterUpdatePage : ContentPage
     {
+        //Hold a copy of data
+        public CharacterModel DataCopy;
+
         // The Character to create
         public GenericViewModel<CharacterModel> ViewModel { get; set; }
 
@@ -40,6 +43,9 @@ namespace Game.Views
             NameErrorMessage.IsVisible = false;
             DescErrorMessage.IsVisible = false;
             ClassErrorMessage.IsVisible = false;
+
+            //Copy of Character to restore for cancel
+            DataCopy = new CharacterModel(data.Data);
 
             // Load the values for the Level into the Picker
             for (var i = 1; i <= LevelTableHelper.MaxLevel; i++)
@@ -194,6 +200,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Use the copy
+            ViewModel.Data.Update(DataCopy);
+
             _ = await Navigation.PopModalAsync();
         }
 
