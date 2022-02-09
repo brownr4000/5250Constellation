@@ -315,10 +315,10 @@
             </Style>
 
             <Style TargetType="Image"
-                x:Key="MonsterCreateImageStyle"
+                x:Key="IndexImageStyle"
                 BasedOn="{StaticResource ImageStyle}">
-                <Setter Property="HeightRequest" Value="150" />
                 <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="Aspect" Value="AspectFill" />
             </Style>
 
             <Style TargetType="Image"

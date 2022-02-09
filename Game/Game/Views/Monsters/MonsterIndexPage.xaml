@@ -29,7 +29,7 @@
                                 <Image Grid.RowSpan="2"
                                    Source="{Binding ImageURI}"
                                    Aspect="AspectFill"
-                                   WidthRequest="80"/>
+                                   WidthRequest="150"/>
 
                                 <StackLayout Grid.Column="1"
                                          Margin="20">
