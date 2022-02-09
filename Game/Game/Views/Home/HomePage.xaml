@@ -38,16 +38,6 @@
                         MaxLines="5"
                         />
 
-                    <Label 
-                        Text="Checking the Font difference here. Applied PlatNomor Here."
-                        Style="{StaticResource CheckLabelStyle}"
-                        FontSize="Medium"
-                        LineBreakMode="WordWrap"
-                        MaxLines="5"
-                        />
-
-                    <Label Text="Welcome to Xamarin Forms!" FontSize="14" FontFamily="{StaticResource SpaceSpeed}" />
-                    <Label Text="Welcome to Xamarin Forms! New Font" FontSize="14" FontFamily="{StaticResource PlatNomor}" />
                 </StackLayout>
 
                 <Button
