@@ -268,6 +268,12 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
+            <Style TargetType="Label"
+                x:Key="MenuTextStyle">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+
             <Style TargetType="Frame"
                 x:Key="PopupItemColorStyle">
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
