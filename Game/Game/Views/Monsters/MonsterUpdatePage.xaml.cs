@@ -16,6 +16,9 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MonsterUpdatePage : ContentPage
     {
+        //Hold a copy of data
+        public MonsterModel DataCopy;
+
         // The Monster to create
         public GenericViewModel<MonsterModel> ViewModel { get; set; }
 
@@ -38,6 +41,9 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             this.ViewModel.Title = "Update " + data.Title;
+
+            //Copy of Character to restore for cancel
+            DataCopy = new MonsterModel(data.Data);
 
             // Hiding error messages
             NameErrorMessage.IsVisible = false;
@@ -134,6 +140,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Use the copy
+            ViewModel.Data.Update(DataCopy);
+
             _ = await Navigation.PopModalAsync();
         }
 
