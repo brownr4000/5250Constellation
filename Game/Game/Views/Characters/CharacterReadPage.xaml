@@ -101,22 +101,18 @@
                                 HeightRequest="30">
                                     
                                     <Label Grid.Column="0" Text="Attack"
-                                           Style="{StaticResource LabelStyle}"
-                                           FontSize="Small"/>
+                                           Style="{StaticResource LabelStyle}"/>
                                     
                                     <ProgressBar x:Name="AttackProgressBar" 
                                                  Grid.Column="1"
                                                  Progress="{Binding Data.Attack}" 
-                                                 ProgressColor="LimeGreen"/>
+                                                 Style="{StaticResource ProgressBarStyle}"/>
 
                                     <Label Grid.Column="2" 
                                            Text="{Binding Data.Attack}" 
                                            x:Name="AttackValue"
-                                           Style="{StaticResource ValueStyle}"
-                                           FontSize="Small"
-                                           Padding="0,0,10,0"
-                                           HorizontalOptions="End"
-                                           HorizontalTextAlignment="End"/>  
+                                           Style="{StaticResource CenterValueStyle}"
+                                           Padding="0,0,10,0"/>  
                                 </Grid>                                
                             </StackLayout>
                             
@@ -127,21 +123,18 @@
                                     HeightRequest="30">
                                     <Label Grid.Column="0" 
                                            Text="Defense" 
-                                           Style="{StaticResource LabelStyle}"
-                                           FontSize="Small"/>
+                                           Style="{StaticResource LabelStyle}"/>
                                     
                                     <ProgressBar x:Name="DefenseProgressBar" 
                                                  Grid.Column="1"
                                                  Progress="{Binding Data.Defense}" 
-                                                ProgressColor="LimeGreen"/>
+                                                Style="{StaticResource ProgressBarStyle}"/>
+                                    
                                     <Label Grid.Column="2" 
                                            Text="{Binding Data.Defense}" 
                                            x:Name="DefenseValue"
-                                           Style="{StaticResource ValueStyle}"
-                                           FontSize="Small"
-                                           Padding="0,0,10,0"
-                                           HorizontalOptions="End"
-                                           HorizontalTextAlignment="End"/>
+                                           Style="{StaticResource CenterValueStyle}"
+                                           Padding="0,0,10,0"/>
                                 </Grid>
                             </StackLayout>
                             
@@ -152,22 +145,18 @@
                                     HeightRequest="30">
                                     <Label Grid.Column="0" 
                                            Text="Speed"
-                                           Style="{StaticResource LabelStyle}"
-                                           FontSize="Small"/>
+                                           Style="{StaticResource LabelStyle}"/>
                                     
                                     <ProgressBar x:Name="SpeedProgressBar" 
                                                  Grid.Column="1" 
                                                  Progress="{Binding Data.Speed}" 
-                                                ProgressColor="LimeGreen"/>
+                                               Style="{StaticResource ProgressBarStyle}"/>
                                     
                                     <Label Grid.Column="2" 
                                            Text="{Binding Data.Speed}" 
                                            x:Name="SpeedValue"
-                                           Style="{StaticResource ValueStyle}"
-                                           FontSize="Small"
-                                           Padding="0,0,10,0"
-                                           HorizontalOptions="End"
-                                           HorizontalTextAlignment="End"/>
+                                           Style="{StaticResource CenterValueStyle}"
+                                           Padding="0,0,10,0"/>
                                 </Grid>
                             </StackLayout>
                         </StackLayout>
