@@ -17,10 +17,10 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource VerticalStack}">
+        <StackLayout Orientation="Horizontal">
             <ScrollView>
                 <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
-                    
+
                     <Image Source="{Binding Data.ImageURI}" HeightRequest="150" WidthRequest="150"/>
 
                     <StackLayout Orientation="Vertical" VerticalOptions="Center">
@@ -31,16 +31,16 @@
                                     Grid.Column="0" 
                                     Text="Name"
                                     Style="{StaticResource LabelStyle}"/>
-                                
+
                                 <Entry 
                                     Grid.Row="0"
                                     Grid.Column="1"
                                     Text="{Binding Data.Name, Mode=TwoWay}"
                                     x:Name="NameValue" 
                                     TextChanged="NameValue_TextChanged" 
-                                    Style="{StaticResource EntryStyle}"/>                                
+                                    Style="{StaticResource EntryStyle}"/>
                             </Grid>
-                            
+
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -50,16 +50,16 @@
                                     Grid.Column="0"
                                     Text="Difficulty"
                                     Style="{StaticResource LabelStyle}"/>
-                                
+
                                 <Picker Grid.Row="0" Grid.Column="1"
                                             Style="{StaticResource PickerStyle}"
                                             SelectedItem="{Binding SelectedItemProperty}" 
                                             SelectedIndexChanged="DifficultyPicker_SelectedIndexChanged"
                                             x:Name="DifficultyPicker"/>
                             </Grid>
-                            
+
                         </StackLayout>
-                        
+
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
                                 <Label 
@@ -74,9 +74,9 @@
                                         SelectedIndexChanged="UniqueItemPicker_SelectedIndexChanged"
                                         x:Name="UniqueItemPicker"/>
                             </Grid>
-                            
+
                         </StackLayout>
-                        
+
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
                                 <Label 
@@ -84,16 +84,16 @@
                                     Grid.Column="0"
                                     Text="Class"
                                     Style="{StaticResource LabelStyle}"/>
-                                
+
                                 <Picker Grid.Row="0" Grid.Column="1" 
                                         Style="{StaticResource PickerStyle}" 
                                         SelectedItem="{Binding SelectedItemProperty}" 
                                         SelectedIndexChanged="ClassPicker_SelectedIndexChanged"
-                                        x:Name="ClassPicker"/>                                
+                                        x:Name="ClassPicker"/>
                             </Grid>
-                            
+
                         </StackLayout>
-                        
+
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                             <Grid WidthRequest="500">
                                 <Label
@@ -114,54 +114,51 @@
 
                     </StackLayout>
 
-                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Padding="0,20,0,20">
-                        <Grid>
-                            <Label
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+                        <Label 
                                 Text="Attack"
                                 Style="{StaticResource StepperLabelStyle}"/>
 
-                            <Stepper
-                                Value="{Binding Data.Attack, Mode=TwoWay}" 
-                                ValueChanged="AttackStepper_ValueChanged"
-                                Style="{StaticResource StepperStyle}"/>
+                        <Stepper Style="{StaticResource StepperStyle}"
+                                     Value="{Binding Data.Attack, Mode=TwoWay}" 
+                                     ValueChanged="AttackStepper_ValueChanged"/>
 
-                            <Label
-                                x:Name="AttackValue"
-                                Text="{Binding Data.Attack}"
-                                Style="{StaticResource StepperLabelStyle}"/>
-                        </Grid>
+                        <Label Text="{Binding Data.Attack}" 
+                                   x:Name="AttackValue"
+                                   Style="{StaticResource StepperLabelStyle}" />
 
-                        <Grid>
-                            <Label 
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+                        <Label 
                                 Text="Defense"
                                 Style="{StaticResource StepperLabelStyle}"/>
-                            
-                            <Stepper
-                                Value="{Binding Data.Defense, Mode=TwoWay}"
-                                ValueChanged="Defense_OnStepperValueChanged"
-                                Style="{StaticResource StepperStyle}"/>
-                            
-                            <Label Text="{Binding Data.Defense}" 
-                                   x:Name="DefenseValue"
-                                   Style="{StaticResource StepperLabelStyle}"/>                            
-                        </Grid>
 
-                        <Grid>
-                            <Label
+                        <Stepper Style="{StaticResource StepperStyle}"
+                                    Value="{Binding Data.Defense, Mode=TwoWay}" 
+                                    ValueChanged="Defense_OnStepperValueChanged"/>
+
+                        <Label 
+                                    Text="{Binding Data.Defense}" 
+                                    x:Name="DefenseValue"
+                                    Style="{StaticResource StepperLabelStyle}" />
+
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+                        <Label 
                                 Text="Speed"
                                 Style="{StaticResource StepperLabelStyle}"/>
-                            
-                            <Stepper
-                                Value="{Binding Data.Speed, Mode=TwoWay}"
-                                ValueChanged="Speed_OnStepperValueChanged"
-                                Style="{StaticResource StepperStyle}"/>
-                            
-                            <Label 
-                                Text="{Binding Data.Speed}" 
-                                x:Name="SpeedValue"
-                                Style="{StaticResource StepperLabelStyle}"/>                            
-                        </Grid>                      
-                        
+
+                        <Stepper 
+                                    Style="{StaticResource StepperStyle}"
+                                    Value="{Binding Data.Speed, Mode=TwoWay}"                                    
+                                    ValueChanged="Speed_OnStepperValueChanged"/>
+
+                        <Label 
+                                    Text="{Binding Data.Speed}" 
+                                    x:Name="SpeedValue"
+                                    Style="{StaticResource StepperLabelStyle}" />
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
@@ -172,25 +169,23 @@
                         <Label x:Name="ClassErrorMessage" Style="{StaticResource ErrorMessageStyle}"/>
 
                         <Label x:Name="DifficultyErrorMessage" Style="{StaticResource ErrorMessageStyle}"/>
-                        
+
                     </StackLayout>
-                    
+
                     <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
                         <Button 
                             Text="Cancel"
                             Style="{StaticResource ButtonStyle}"
                             Clicked="Cancel_Clicked"/>
-                        
+
                         <Button
                             Text="Create"
                             Style="{StaticResource ButtonStyle}"
                             Clicked="Save_Clicked"/>
-                        
+
                     </StackLayout>
                 </StackLayout>
-
             </ScrollView>
-        </StackLayout>
-
+        </StackLayout>           
     </ContentPage.Content>
 </ContentPage>
