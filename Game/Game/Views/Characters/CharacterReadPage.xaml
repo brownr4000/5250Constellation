@@ -20,7 +20,7 @@
             <StackLayout Style="{StaticResource VerticalStack}"
                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
                     AbsoluteLayout.LayoutFlags="All">
-                <Label Text="Read Page" Style="{StaticResource HeaderStyle}"/>
+                
                 <ScrollView>
                     <StackLayout HorizontalOptions="Center">
                         <Grid RowSpacing="1" ColumnSpacing="2"
