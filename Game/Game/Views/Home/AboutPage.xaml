@@ -14,34 +14,26 @@
       Orientation="Vertical">
 
         <StackLayout Spacing="50">
-
-            <!--<StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
-
-                <Image Source="d20_2.png" Style="{StaticResource ImageMediumStyle}"/>
-                <Label Text="Constellation" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Bob Brown" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Madhuri Tatineni" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Han Duong" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label x:Name="CurrentDateTime" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-            </StackLayout>-->
-            
+           
             <StackLayout HorizontalOptions="Center" Spacing="20">
 
-                <Image Source="d20_2.png" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="Center"/>
-                <Label Text="Constellation" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                <Image Source="d20_2.png" Style="{StaticResource ImageLargeStyle}"/>
+                <Label Text="Constellation" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                <StackLayout>
-                    <Label Text="Developer Team" Style="{StaticResource CenterMessageStyle}"/>
-                    <Label Text="Bob Brown" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <Label Text="Madhuri Tatineni" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <Label Text="Han Duong" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                <Label Text="Developer Team" Style="{StaticResource CenterMessageStyle}"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    
+                    <Label Text="Bob Brown" Style="{StaticResource MessageStyle}"/>
+                    <Label Text="Madhuri Tatineni" Style="{StaticResource MessageStyle}"/>
+                    <Label Text="Han Duong" Style="{StaticResource MessageStyle}"/>
                 
                 </StackLayout>
 
-                <StackLayout>
-                    <Label Text="Desinger Team" Style="{StaticResource CenterMessageStyle}"/>
-                    <Label Text="Emily Effird" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"/>
-                    <Label Text="Takumi Aoyama" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"/>
+                <Label Text="Desinger Team" Style="{StaticResource CenterMessageStyle}"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    
+                    <Label Text="Emily Effird" Style="{StaticResource MessageStyle}"/>
+                    <Label Text="Takumi Aoyama" Style="{StaticResource MessageStyle}"/>
                
                 </StackLayout>
 
@@ -49,16 +41,15 @@
             
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
-                <StackLayout Orientation="Vertical" Spacing="10">
+                <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="10">
                     <!--Debug Settings Frame-->
                     <StackLayout Style="{StaticResource HorizontalStack}">
 
                         <Label
                                 Text="Debug Settings"
-                                Style="{DynamicResource CenterMessageLargeStyle}"
-                    />
+                                Style="{DynamicResource CenterMessageLargeStyle}"/>
 
                         <Switch
                                 x:Name="DebugSettingsSwitch"
@@ -77,24 +68,12 @@
 
                                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
                                     <Label
-                                            Text="Number of Items "
-                                            HorizontalTextAlignment="Start"
-                                            HorizontalOptions="Start"
-                                            Style="{DynamicResource LabelStyle}"
-                                    />
+                                            Text="Number of Items "                                            
+                                            Style="{DynamicResource LabelStyle}"/>
 
                                     <Entry
-                                            x:Name="ServerItemValue"
-                                            Text="1" 
-                                            FontSize="Micro"
-                                            MaxLength="5"
-                                            CursorPosition="0"
-                                            SelectionLength = "5"
-                                            Keyboard="Numeric"
-                                            WidthRequest="50"
-                                            HorizontalOptions="FillAndExpand"
-                                            Style="{DynamicResource EntryStyle}"
-                                    />
+                                            x:Name="ServerItemValue"                                            
+                                            Style="{DynamicResource ServerItemEntryStyle}"/>
                                 </StackLayout>
 
                                 <StackLayout Style="{StaticResource HorizontalStack}">
@@ -112,8 +91,7 @@
                                             IsVisible="false"
                                             IsEnabled="false"
                                             HorizontalOptions="StartAndExpand"
-                                            VerticalOptions="StartAndExpand"
-                                />
+                                            VerticalOptions="StartAndExpand"/>
 
                             </StackLayout>
                         </StackLayout>
