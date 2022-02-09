@@ -21,7 +21,7 @@
             <ScrollView>
                 <StackLayout Orientation="Vertical">
 
-                    <Image Source="{Binding Data.ImageURI}" HeightRequest="150" WidthRequest="150"/>
+                   <Image Source="{Binding Data.ImageURI}"/>
 
                     <StackLayout Orientation="Vertical">
                         <StackLayout Orientation="Horizontal">
