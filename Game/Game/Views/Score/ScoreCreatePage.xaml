@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              xmlns:local="using:Game.Models"
              xmlns:local_helpers="clr-namespace:Game.Helpers"
@@ -37,7 +36,7 @@
                     <Entry
                             Text="{Binding Data.Name}" 
                             Style="{StaticResource EntryStyle}"/>
-                        
+
                 </StackLayout>
 
                 <StackLayout WidthRequest="250">
@@ -52,8 +51,6 @@
                 </StackLayout>
 
             </StackLayout>
-
-            <DatePicker Date="{x:Static sys:DateTime.Today}"/>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
                 <Button Text="Cancel" Clicked="Cancel_Clicked" TextColor="Black" WidthRequest="200"/>
