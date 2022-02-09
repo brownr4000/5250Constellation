@@ -29,7 +29,9 @@
                             Style="{StaticResource LabelStyle}"/>
 
                     <Entry
-                            Text="{Binding Data.Name}" 
+                            x:Name="NameText"
+                            TextChanged="NameText_Changed"
+                            Text="{Binding Data.Name, Mode=TwoWay}" 
                             Style="{StaticResource EntryStyle}"/>
 
                 </StackLayout>
@@ -40,6 +42,8 @@
                             Style="{StaticResource LabelStyle}"/>
 
                     <Entry
+                            x:Name="ScoreValue"
+                            TextChanged="Score_Value_Changed"
                             Text="{Binding Data.ScoreTotal}" 
                             Style="{StaticResource EntryStyle}"/>
 
@@ -47,6 +51,13 @@
 
             </StackLayout>
 
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label x:Name="ScoreNameErrorMessage"  Text="Please Enter a Score Name" Style="{StaticResource ErrorMessageStyle}"/>
+                <Label x:Name="ScoreValueErrorMessage" Text="Please Enter a Score Value" Style="{StaticResource ErrorMessageStyle}"/>
+                
+            </StackLayout>
+            
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
                 <Button Text="Cancel" Clicked="Cancel_Clicked" TextColor="Black" WidthRequest="200"/>
                 <Button Text="Create" Clicked="Save_Clicked" TextColor="Black" WidthRequest="200"/>
