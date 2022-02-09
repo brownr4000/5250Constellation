@@ -29,8 +29,7 @@
                             
                                 <Image Grid.RowSpan="2"
                                 Source="{Binding ImageURI}"
-                                Aspect="AspectFit"
-                                WidthRequest="80"/>
+                                       Style="{StaticResource IndexImageStyle}"/>
 
                                 <StackLayout Grid.Column="1" Margin="20">
 
