@@ -44,9 +44,10 @@
             <Color x:Key="LightBackgroundColor">bisque</Color>
 
             <Color x:Key="PrimaryTextColor">#FFFFFF</Color>
-            <!--<Color x:Key="SecondaryTextColor">#C1FC57</Color>-->
-            <Color x:Key="SecondaryTextColor">#202020</Color>
+            <Color x:Key="SecondaryTextColor">#C1FC57</Color>
+            <!--<Color x:Key="SecondaryTextColor">#202020</Color>-->
             <Color x:Key="TriciaryTextColor">#733612</Color>
+            <Color x:Key="ContrastTextColor">#202020</Color>
 
             <Color x:Key="TransparentColor">Transparent</Color>
 
@@ -397,10 +398,11 @@
             <!-- Button -->
             <Style TargetType="Button" x:Key="ButtonStyle">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ContrastTextColor}" />
                 <Setter Property="FontSize" Value="14"/>
                 <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="WidthRequest" Value="150"/>
+                <Setter Property="CornerRadius" Value="5"/>
             </Style>
 
             <!--Grid-->
@@ -640,7 +642,7 @@
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ContrastTextColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
             </Style>
 
@@ -654,7 +656,7 @@
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ContrastTextColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
             </Style>
 
@@ -664,7 +666,7 @@
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="StartAndExpand" />
                 <Setter Property="Margin" Value="0" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ContrastTextColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
                 <Setter Property="AutoSize" Value="TextChanges" />
@@ -682,8 +684,8 @@
 
             <!-- Picker -->
             <Style TargetType="Picker" x:Key="PickerStyle">                
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
-                <Setter Property="TitleColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ContrastTextColor}" />
+                <Setter Property="TitleColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontAttributes" Value="None" />
