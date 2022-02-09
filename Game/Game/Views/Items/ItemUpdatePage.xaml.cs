@@ -19,6 +19,9 @@ namespace Game.Views
         // View Model for Item
         public readonly GenericViewModel<ItemModel> ViewModel;
 
+        //Hold a copy of data
+        public ItemModel DataCopy;
+
         // Empty Constructor for Tests
         public ItemUpdatePage(bool UnitTest) { }
 
@@ -28,6 +31,9 @@ namespace Game.Views
         public ItemUpdatePage(GenericViewModel<ItemModel> data)
         {
             InitializeComponent();
+
+            //Copy of Character to restore for cancel
+            DataCopy = new ItemModel(data.Data);
 
             BindingContext = this.ViewModel = data;
 
@@ -94,6 +100,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Use the copy
+            ViewModel.Data.Update(DataCopy);
+
             _ = await Navigation.PopModalAsync();
         }
 
