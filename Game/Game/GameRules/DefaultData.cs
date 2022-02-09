@@ -402,9 +402,9 @@ namespace Game.GameRules
             var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "Pisces",
-                    Description = "A fish constellation",
-                    ImageURI = "troll1.png",
+                    Name = "Serpens",
+                    Description = "A ram constellation",
+                    ImageURI = "Serpens_Monster.png",
                     Attack = 3,
                     Defense = 3,
                     Speed = 3,
@@ -413,16 +413,16 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Cancer",
                     Description = "A crab constellation",
-                    ImageURI = "troll2.png",
+                    ImageURI = "Cancer_Monster.png",
                     Attack = 2,
                     Defense = 8,
                     Speed = 2,
                 },
 
                 new MonsterModel {
-                    Name = "Aries",
-                    Description = "A ram constellation",
-                    ImageURI = "troll3.png",
+                    Name = "Pisces",
+                    Description = "A fish constellation",
+                    ImageURI = "Pisces_Monster.png",
                     Attack = 4,
                     Defense = 2,
                     Speed = 5,
@@ -431,7 +431,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Scorpio",
                     Description = "A scorpion constellation",
-                    ImageURI = "troll4.png",
+                    ImageURI = "Scorpio_Monster.png",
                     Attack = 8,
                     Defense = 7,
                     Speed = 4,
@@ -442,7 +442,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Lepus",
                     Description = "A hare constellation",
-                    ImageURI = "troll5.png",
+                    ImageURI = "Placeholder_Monster1.png",
                     Attack = 1,
                     Speed = 8,
                     Defense = 2,
@@ -452,7 +452,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Corvus",
                     Description = "A crow constellation",
-                    ImageURI = "troll6.png",
+                    ImageURI = "Placeholder_Monster2.png",
                     Attack = 2,
                     Speed = 2,
                     Defense = 3,

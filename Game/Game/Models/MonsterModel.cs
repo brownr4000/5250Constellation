@@ -23,7 +23,7 @@ namespace Game.Models
             Attack = 1;
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
-            ImageURI = "troll.png";
+            ImageURI = "Scorpio_Monster.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
