@@ -13,7 +13,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+        <StackLayout>
 
             <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"
                    FontAttributes="Bold"/>
@@ -32,26 +32,21 @@
                             <Image Grid.RowSpan="2"
                                 Source="{Binding ImageURI}"
                                 Aspect="AspectFit"
-                                WidthRequest="80"
-                                BackgroundColor="YellowGreen"/>
+                                WidthRequest="80"/>
 
                             <StackLayout Grid.Column="1"
                                 Margin="20">
                                 
                                 <Label
                                     Text="{Binding Name}"
-                                    FontAttributes="Bold" 
-                                    BackgroundColor="Cyan"/>
+                                    Style="{StaticResource BoldLabelStyle}"/>
 
                                 <Label
                                     Grid.Row="1"
-                                    Text="{Binding Location}"
-                                    VerticalOptions="End" 
-                                    BackgroundColor="OrangeRed"/>
+                                    Text="{Binding Location}"/>
 
                                 <Label Grid.Row="2"
-                                    Text="{Binding Description}"
-                                    BackgroundColor="Gray"/>
+                                    Text="{Binding Description}"/>
 
                             </StackLayout>
 
