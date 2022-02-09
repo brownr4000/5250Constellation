@@ -41,11 +41,8 @@
 
                 <Button
                     Text="Enter"
-                    FontSize="Large"
                     Clicked="GameButton_Clicked"
-                    BackgroundColor="LightGray"
-                    WidthRequest="300"
-                    HeightRequest="50"
+                    Style="{StaticResource ButtonStyle}"
                 />
 
             </StackLayout>

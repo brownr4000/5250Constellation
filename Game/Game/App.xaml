@@ -545,6 +545,20 @@
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
             </Style>
 
+            <Style TargetType="Entry"
+                x:Key="ServerItemEntryStyle">
+                <Setter Property="Text" Value="1"/>
+                <Setter Property="MaxLength" Value="5"/>
+                <Setter Property="CursorPosition" Value="0"/>
+                <Setter Property="SelectionLength" Value="5"/>
+                <Setter Property="Keyboard" Value="Numeric"/>
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
+            </Style>
+
             <!-- Editor-->
             <Style TargetType="Editor">
                 <Setter Property="FontSize" Value="Small" />
