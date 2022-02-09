@@ -9,8 +9,7 @@
 
     <ScrollView>
         <StackLayout>
-            <StackLayout                 
-                Spacing="10">
+            <StackLayout>
 
                 <Label
                     Text="Are you sure you want to delete this Character?"
