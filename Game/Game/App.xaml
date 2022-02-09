@@ -313,13 +313,6 @@
                 <Setter Property="WidthRequest" Value="50" />
             </Style>
 
-            <!--<Style TargetType="Image"
-                x:Key="ImageStyle"
-                BasedOn="{StaticResource ImageStyle}">
-                <Setter Property="HeightRequest" Value="30" />
-                <Setter Property="WidthRequest" Value="30" />
-            </Style>-->
-
             <Style TargetType="Image"
                 x:Key="ImageSmallStyle"
                 BasedOn="{StaticResource ImageStyle}">
@@ -413,6 +406,14 @@
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="Spacing" Value="1" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalCenterWithPaddingSpacingStack">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="Spacing" Value="20" />
             </Style>
 
             <Style TargetType="StackLayout"
