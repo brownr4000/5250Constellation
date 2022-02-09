@@ -113,57 +113,7 @@
                         </StackLayout>
 
                     </StackLayout>
-
-                    <!--<StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="10" Spacing="10">
-                        <Grid>
-                            <Label 
-                                Text="Attack"
-                                Style="{StaticResource StepperLabelStyle}"/>
-
-                            <Stepper Style="{StaticResource StepperStyle}"
-                                     Value="{Binding Data.Attack, Mode=TwoWay}" 
-                                     ValueChanged="AttackStepper_ValueChanged"/>
-
-                            <Label Text="{Binding Data.Attack}" 
-                                   x:Name="AttackValue"
-                                   Style="{StaticResource StepperLabelStyle}" />
-
-                        </Grid>
-
-                        <Grid>
-                            <Label 
-                                Text="Defense"
-                                Style="{StaticResource StepperLabelStyle}"/>
-
-                            <Stepper Style="{StaticResource StepperStyle}"
-                                    Value="{Binding Data.Defense, Mode=TwoWay}" 
-                                    ValueChanged="Defense_OnStepperValueChanged"/>
-
-                            <Label 
-                                    Text="{Binding Data.Defense}" 
-                                    x:Name="DefenseValue"
-                                    Style="{StaticResource StepperLabelStyle}" />
-
-                        </Grid>
-
-                        <Grid>
-                            <Label 
-                                Text="Speed"
-                                Style="{StaticResource StepperLabelStyle}"/>
-
-                            <Stepper 
-                                    Style="{StaticResource StepperStyle}"
-                                    Value="{Binding Data.Speed, Mode=TwoWay}"                                    
-                                    ValueChanged="Speed_OnStepperValueChanged"/>
-
-                            <Label 
-                                    Text="{Binding Data.Speed}" 
-                                    x:Name="SpeedValue"
-                                    Style="{StaticResource StepperLabelStyle}" />
-
-                        </Grid>
-
-                    </StackLayout>-->
+                    
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
                         <Label 
                                 Text="Attack"
