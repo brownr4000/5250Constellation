@@ -34,7 +34,7 @@
                         <Label 
                             Text="{Binding Data.Name}"
                             FontSize="Title"
-                            Style="{StaticResource CenterLargeLabelStyle}"/>
+                            Style="{StaticResource CenterLabelStyle}"/>
 
                         <Image Source="{Binding Data.ImageURI}" 
                             Style="{StaticResource ImageLargeStyle}"
