@@ -152,7 +152,26 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor" />
                 <Setter Property="FontSize" Value="16" />                
-            </Style>           
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="HomeLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}"/>
+                <Setter Property="FontFamily" Value="PlatNomor" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="HomeDescLabelStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}"/>
+                <Setter Property="FontFamily" Value="PlatNomor" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
 
             <Style TargetType="Label"
                 x:Key="CenterLabelStyle"
