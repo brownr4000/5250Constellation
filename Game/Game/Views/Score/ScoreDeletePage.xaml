@@ -12,13 +12,13 @@
             <Frame
                 BorderColor="Gray"
                 WidthRequest="350"
-                Padding="10">
+                Padding="5">
                 
                 <!--Score Details-->
                 <StackLayout Orientation="Vertical">
                     <Label
                         Text="{Binding Data.Name}"
-                        Padding="20"
+                        Padding="10"
                         Style="{StaticResource LargeLabelStyle}"/>
 
                     <Grid
@@ -73,7 +73,9 @@
                             Grid.Row="2"
                             Orientation="Vertical"
                             Padding="10">
-                            <Label Text="Score"/>
+                            <Label 
+                                Text="Score"
+                                Style="{StaticResource ValueStyleMicro}"/>
 
                             <Label
                                 Text="{Binding Data.ScoreTotal}"
@@ -86,7 +88,9 @@
                             Grid.Row="2"
                             Orientation="Vertical"
                             Padding="10">
-                            <Label Text="Rounds"/>
+                            <Label 
+                                Text="Rounds"
+                                Style="{StaticResource ValueStyleMicro}"/>
 
                             <Label
                                 Text="{Binding Data.RoundCount}"
@@ -99,7 +103,9 @@
                             Grid.Row="2"
                             Orientation="Vertical"
                             Padding="10">
-                            <Label Text="Turns"/>
+                            <Label
+                                Text="Turns"
+                                Style="{StaticResource ValueStyleMicro}"/>
 
                             <Label
                                 Text="{Binding Data.TurnCount}"
@@ -111,7 +117,7 @@
 
                     <StackLayout Orientation="Horizontal"
                                  Style="{StaticResource HorizontalStack}"
-                                 Padding="20"
+                                 Padding="10"
                                  WidthRequest="300">
                         <Label
                             Text="Game Date: "
@@ -125,7 +131,7 @@
 
                     <StackLayout Orientation="Horizontal"
                                  Style="{StaticResource HorizontalStack}"
-                                 Padding="20"
+                                 Padding="10"
                                  WidthRequest="300">
                         <Label
                             Text="AutoBattle: "
