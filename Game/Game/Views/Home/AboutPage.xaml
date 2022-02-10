@@ -17,7 +17,7 @@
            
             <StackLayout HorizontalOptions="Center" Spacing="20">
 
-                <Image Source="d20_2.png" Style="{StaticResource ImageLargeStyle}"/>
+                <Image Source="Logo.png" Style="{StaticResource ImageLargeStyle}"/>
                 <Label Text="Constellation" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                 <Label Text="Development Team" Style="{StaticResource CenterMessageStyle}"/>
