@@ -356,4 +356,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\monsters_page_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_update_purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_delete_purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_new_purple.png" />
+  </ItemGroup>
 </Project>
