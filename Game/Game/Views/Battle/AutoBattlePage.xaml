@@ -34,9 +34,10 @@
 
                 <Image
                         x:Name="AutobattleImage"
-                        Source="elf1_a.gif"
-                        IsAnimationPlaying="True"
+                        Source="elf1.gif"
                         Style="{StaticResource ImageLargeStyle}"></Image>
+                        <!--IsAnimationPlaying="True"-->
+                        
 
             </StackLayout>
         </StackLayout>
