@@ -146,6 +146,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="battleboard.png" />
     <Content Include="Cancer_Monster.png" />
+    <Content Include="characters_page_icon.png" />
     <Content Include="d10.png" />
     <Content Include="d20_2.png" />
     <Content Include="dungeon_door.png" />
@@ -169,9 +170,11 @@
     <Content Include="icon_save.png" />
     <Content Include="item.png" />
     <Content Include="items.png" />
+    <Content Include="items_page_icon.png" />
     <Content Include="item_placeholder.png" />
     <Content Include="knight.png" />
     <Content Include="Logo.png" />
+    <Content Include="monsters_page_icon.png" />
     <Content Include="neck1.png" />
     <Content Include="neck2.png" />
     <Content Include="Pisces_Monster.png" />
@@ -181,6 +184,7 @@
     <Content Include="ring1.png" />
     <Content Include="ring2.png" />
     <Content Include="score.png" />
+    <Content Include="scores_page_icon.png" />
     <Content Include="Scorpio_Monster.png" />
     <Content Include="Serpens_Monster.png" />
     <Content Include="shield1.png" />

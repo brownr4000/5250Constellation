@@ -344,4 +344,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\agent6.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scores_page_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\characters_page_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\items_page_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsters_page_icon.png" />
+  </ItemGroup>
 </Project>
