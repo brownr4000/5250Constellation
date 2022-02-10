@@ -302,28 +302,28 @@ namespace Game.GameRules
 
             var datalist = new List<CharacterModel>()
             {
-                new CharacterModel {
-                    Name = "Agent 1",
-                    Description = "The oldest Agent",
-                    Level = 1,
-                    MaxHealth = 5,
-                    ImageURI = "elf1.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                    Job = CharacterJobEnum.Fighter
-                },
+                //new CharacterModel {
+                //    Name = "Agent 1",
+                //    Description = "The oldest Agent",
+                //    Level = 1,
+                //    MaxHealth = 5,
+                //    ImageURI = "elf1.png",
+                //    Head = HeadString,
+                //    Necklass = NecklassString,
+                //    PrimaryHand = PrimaryHandString,
+                //    OffHand = OffHandString,
+                //    Feet = FeetString,
+                //    RightFinger = RightFingerString,
+                //    LeftFinger = LeftFingerString,
+                //    Job = CharacterJobEnum.Fighter
+                //},
 
                 new CharacterModel {
                     Name = "Agent Alpha",
                     Description = "The first Agent",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "elf2.png",
+                    ImageURI = "Character.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -340,7 +340,7 @@ namespace Game.GameRules
                     Level = 1,
                     MaxHealth = 8,
                     Defense = 9,
-                    ImageURI = "elf4.png",
+                    ImageURI = "Character.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -356,7 +356,7 @@ namespace Game.GameRules
                     Description = "A normal guy",
                     Level = 4,
                     MaxHealth = 38,
-                    ImageURI = "elf3.png",
+                    ImageURI = "Character.png",
                     Job = CharacterJobEnum.Cleric
                 },
 
@@ -366,7 +366,7 @@ namespace Game.GameRules
                     Level = 5,
                     MaxHealth = 43,
                     Attack = 2,
-                    ImageURI = "elf5.png",
+                    ImageURI = "Character.png",
                     Job = CharacterJobEnum.Cleric
                 },
 
@@ -375,7 +375,7 @@ namespace Game.GameRules
                     Description = "Someone recruited a dog to become an Agent",
                     Level = 5,
                     MaxHealth = 21,
-                    ImageURI = "elf6.png",
+                    ImageURI = "Character.png",
                     Job = CharacterJobEnum.Support
                 },
 
@@ -384,7 +384,7 @@ namespace Game.GameRules
                     Description = "No one understands how Larry got here",
                     Level = 1,
                     MaxHealth = 3,
-                    ImageURI = "elf7.png",
+                    ImageURI = "Character.png",
                     Job = CharacterJobEnum.Support
                 }
             };
