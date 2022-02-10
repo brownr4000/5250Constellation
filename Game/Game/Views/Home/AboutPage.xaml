@@ -20,19 +20,23 @@
                 <Image Source="d20_2.png" Style="{StaticResource ImageLargeStyle}"/>
                 <Label Text="Constellation" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                <Label Text="Developer Team" Style="{StaticResource CenterMessageStyle}"/>
+                <Label Text="Development Team" Style="{StaticResource CenterMessageStyle}"/>
+                
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="Madhuri Tatineni" Style="{StaticResource MessageStyle}"/>
+                    
+                    <Label Text="Han Duong" Style="{StaticResource MessageStyle}"/>
                     
                     <Label Text="Bob Brown" Style="{StaticResource MessageStyle}"/>
-                    <Label Text="Madhuri Tatineni" Style="{StaticResource MessageStyle}"/>
-                    <Label Text="Han Duong" Style="{StaticResource MessageStyle}"/>
                 
                 </StackLayout>
 
-                <Label Text="Desinger Team" Style="{StaticResource CenterMessageStyle}"/>
+                <Label Text="Design Team" Style="{StaticResource CenterMessageStyle}"/>
+                
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     
-                    <Label Text="Emily Effird" Style="{StaticResource MessageStyle}"/>
+                    <Label Text="Emily Efird" Style="{StaticResource MessageStyle}"/>
+                    
                     <Label Text="Takumi Aoyama" Style="{StaticResource MessageStyle}"/>
                
                 </StackLayout>
@@ -42,7 +46,6 @@
             </StackLayout>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-
                 <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="10">
                     <!--Debug Settings Frame-->
                     <StackLayout Style="{StaticResource HorizontalStack}">
