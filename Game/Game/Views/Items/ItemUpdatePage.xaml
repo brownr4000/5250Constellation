@@ -19,8 +19,8 @@
     <ContentPage.Content>
         <ScrollView>
 
-            <StackLayout Style="{StaticResource OuterBoxCenterStack}" Padding="20" Spacing="20">
-                
+            <StackLayout Style="{StaticResource OuterBoxCenterStack}" Padding="0,50,0,0" Spacing="10">
+
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 
                     <Grid
