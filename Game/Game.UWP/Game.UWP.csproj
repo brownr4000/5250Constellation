@@ -164,6 +164,7 @@
     <Content Include="items.png" />
     <Content Include="Item_Placeholder.png" />
     <Content Include="knight.png" />
+    <Content Include="Logo.png" />
     <Content Include="neck1.png" />
     <Content Include="neck2.png" />
     <Content Include="Pisces_Monster.png" />
