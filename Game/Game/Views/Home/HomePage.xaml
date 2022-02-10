@@ -20,8 +20,7 @@
                 
                 </StackLayout>
                 
-                <StackLayout HorizontalOptions="Center" WidthRequest="300" Padding="70,5,70,0"> 
-               
+                <StackLayout Style="{StaticResource HorizontalCenterWithPaddingForHomeStack}">
                     <Label 
                         Text="Battle of Cosmos"
                         Style="{StaticResource HomeLabelStyle}"
