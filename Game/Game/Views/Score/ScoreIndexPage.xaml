@@ -33,24 +33,25 @@
                                          Orientation="Horizontal">
 
                                     <StackLayout
-                                    Orientation="Vertical"
-                                    WidthRequest="180"
-                                    HeightRequest="200"
-                                    VerticalOptions="CenterAndExpand">
+                                        Orientation="Vertical"
+                                        WidthRequest="180"
+                                        HeightRequest="200"
+                                        VerticalOptions="CenterAndExpand">
                                         <Label 
-                                        Grid.Column="0"
-                                        Grid.Row="0"
-                                        Text="{Binding Name}" 
-                                        Style="{StaticResource PopupItemTextStyle}"
-                                        HorizontalOptions="Center"
-                                        LineBreakMode="WordWrap"/>
+                                            Grid.Column="0"
+                                            Grid.Row="0"
+                                            Text="{Binding Name}" 
+                                            Style="{StaticResource PopupItemTextStyle}"
+                                            HorizontalOptions="Center"
+                                            LineBreakMode="WordWrap"/>
 
                                         <Label 
-                                        Grid.Column="0"
-                                        Grid.Row="1"
-                                        Text="{Binding ScoreTotal}" 
-                                        Style="{StaticResource ListStyle}"
-                                        HorizontalOptions="Center"/>
+                                            Grid.Column="0"
+                                            Grid.Row="1"
+                                            Text="{Binding ScoreTotal}" 
+                                            Style="{StaticResource ListStyle}"
+                                            FontSize="Small"
+                                            HorizontalOptions="Center"/>
 
                                     </StackLayout>
 
@@ -74,12 +75,12 @@
                                             </CollectionView>
 
                                             <StackLayout
-                                            VerticalOptions="Center"
-                                            WidthRequest="200">
+                                                VerticalOptions="Center"
+                                                WidthRequest="200">
                                                 <Label
-                                                Style="{StaticResource PopupItemTextStyle}" 
-                                                Text="Date"
-                                                FontSize="12"/>
+                                                    Style="{StaticResource PopupItemTextStyle}" 
+                                                    Text="Date"
+                                                    FontSize="12"/>
 
                                                 <Label
                                                    x:Name="CurrentDateTime"
@@ -88,14 +89,14 @@
                                                    FontSize="12"/>
 
                                                 <Label 
-                                                Text="Rounds" 
-                                                Style="{StaticResource PopupItemTextStyle}"
-                                                FontSize="12"/>
+                                                    Text="Rounds" 
+                                                    Style="{StaticResource PopupItemTextStyle}"
+                                                    FontSize="12"/>
 
                                                 <Label 
-                                                Text="{Binding RoundCount}" 
-                                                Style="{StaticResource ListStyle}"
-                                                FontSize="12"/>
+                                                    Text="{Binding RoundCount}" 
+                                                    Style="{StaticResource ListStyle}"
+                                                    FontSize="12"/>
 
                                                 <Label 
                                                 Text="Turns" 
@@ -103,9 +104,9 @@
                                                 FontSize="12"/>
 
                                                 <Label 
-                                                Text="{Binding TurnCount}" 
-                                                Style="{StaticResource ListStyle}"
-                                                FontSize="12"/>
+                                                    Text="{Binding TurnCount}" 
+                                                    Style="{StaticResource ListStyle}"
+                                                    FontSize="12"/>
 
 
                                             </StackLayout>
