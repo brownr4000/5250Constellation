@@ -22,15 +22,10 @@
                 <Frame
                 BorderColor="Gray"
                 WidthRequest="350"
-                Padding="10">
+                Padding="5">
 
                     <!--Score Details-->
                     <StackLayout Orientation="Vertical">
-                        <Label
-                        Text="{Binding Data.Name}"
-                        Padding="20"
-                        Style="{StaticResource LargeLabelStyle}"/>
-
                         <Entry 
                             Text="{Binding Data.Name}"
                             FontSize="20"
@@ -54,71 +49,77 @@
                             </Grid.ColumnDefinitions>
 
                             <Image
-                            Grid.Column="0"
-                            Grid.Row="0"
-                            Source="{Binding Data.CharacterModelDeathList[0]}"/>
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Source="{Binding Data.CharacterModelDeathList[0]}"/>
 
                             <Image 
-                            Grid.Column="1"
-                            Grid.Row="0"
-                            Source="{Binding Data.CharacterModelDeathList[1]}"/>
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Source="{Binding Data.CharacterModelDeathList[1]}"/>
 
                             <Image 
-                            Grid.Column="2"
-                            Grid.Row="0"
-                            Source="{Binding Data.CharacterModelDeathList[2]}"/>
+                                Grid.Column="2"
+                                Grid.Row="0"
+                                Source="{Binding Data.CharacterModelDeathList[2]}"/>
 
                             <Image
-                            Grid.Column="0"
-                            Grid.Row="1"
-                            Source="{Binding Data.CharacterModelDeathList[3]}"/>
+                                Grid.Column="0"
+                                Grid.Row="1"
+                                Source="{Binding Data.CharacterModelDeathList[3]}"/>
 
                             <Image 
-                            Grid.Column="1"
-                            Grid.Row="1"
-                            Source="{Binding Data.CharacterModelDeathList[4]}"/>
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Source="{Binding Data.CharacterModelDeathList[4]}"/>
 
                             <Image 
-                            Grid.Column="2"
-                            Grid.Row="1"
-                            Source="{Binding Data.CharacterModelDeathList[5]}"/>
+                                Grid.Column="2"
+                                Grid.Row="1"
+                                Source="{Binding Data.CharacterModelDeathList[5]}"/>
 
                             <StackLayout
-                            Grid.Column="0"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                            Padding="10">
-                                <Label Text="Score"/>
+                                Grid.Column="0"
+                                Grid.Row="2"
+                                Orientation="Vertical"
+                                Padding="10">
+                                <Label 
+                                    Text="Score"
+                                    Style="{StaticResource ValueStyleMicro}"/>
 
                                 <Label
-                                Text="{Binding Data.ScoreTotal}"
-                                Style="{StaticResource ValueStyle}"/>
+                                    Text="{Binding Data.ScoreTotal}"
+                                    Style="{StaticResource ValueStyle}"/>
 
                             </StackLayout>
 
                             <StackLayout
-                            Grid.Column="1"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                            Padding="10">
-                                <Label Text="Rounds"/>
+                                Grid.Column="1"
+                                Grid.Row="2"
+                                Orientation="Vertical"
+                                Padding="10">
+                                <Label 
+                                    Text="Rounds"
+                                    Style="{StaticResource ValueStyleMicro}"/>
 
                                 <Label
-                                Text="{Binding Data.RoundCount}"
-                                Style="{StaticResource ValueStyle}"/>
+                                    Text="{Binding Data.RoundCount}"
+                                    Style="{StaticResource ValueStyle}"/>
 
                             </StackLayout>
 
                             <StackLayout
-                            Grid.Column="2"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                            Padding="10">
-                                <Label Text="Turns"/>
+                                Grid.Column="2"
+                                Grid.Row="2"
+                                Orientation="Vertical"
+                                Padding="10">
+                                <Label 
+                                    Text="Turns"
+                                    Style="{StaticResource ValueStyleMicro}"/>
 
                                 <Label
-                                Text="{Binding Data.TurnCount}"
-                                Style="{StaticResource ValueStyle}"/>
+                                    Text="{Binding Data.TurnCount}"
+                                    Style="{StaticResource ValueStyle}"/>
 
                             </StackLayout>
 
@@ -126,31 +127,31 @@
 
                         <StackLayout Orientation="Horizontal"
                                  Style="{StaticResource HorizontalStack}"
-                                 Padding="20"
+                                 Padding="10"
                                  WidthRequest="300">
                             <Label
-                            Text="Game Date: "
-                            Style="{StaticResource LabelStyle}"/>
+                                Text="Game Date: "
+                                Style="{StaticResource LabelStyle}"/>
 
                             <Label 
-                            Text="{Binding Data.GameDate}"
-                            Style="{StaticResource ValueStyle}"/>
+                                Text="{Binding Data.GameDate}"
+                                Style="{StaticResource ValueStyle}"/>
 
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal"
                                  Style="{StaticResource HorizontalStack}"
-                                 Padding="20"
+                                 Padding="10"
                                  WidthRequest="300">
                             <Label
-                            Text="AutoBattle: "
-                            Style="{StaticResource LabelStyle}"
-                            HorizontalOptions="Start"/>
+                                Text="AutoBattle: "
+                                Style="{StaticResource LabelStyle}"
+                                HorizontalOptions="Start"/>
 
                             <Label 
-                            Text="{Binding Data.AutoBattle}"
-                            Style="{StaticResource ValueStyle}"
-                            HorizontalOptions="End"/>
+                                Text="{Binding Data.AutoBattle}"
+                                Style="{StaticResource ValueStyle}"
+                                HorizontalOptions="End"/>
 
                         </StackLayout>
 
