@@ -21,7 +21,7 @@ namespace Game.Models
             Name = "Default Character Name";
             Description = "Default Character Description";
             Level = 1;
-            ImageURI = "Character.png";
+            ImageURI = "agent1.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
