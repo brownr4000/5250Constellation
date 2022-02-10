@@ -21,7 +21,7 @@
 
         <StackLayout Padding="20" Spacing="20" HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
 
-            <Image HeightRequest="50" Source="{Binding Data.ImageURI}"/>
+            <Image Source="Item_Placeholder.png" Style="{StaticResource ImageLargeStyle}"/>
             
             <Grid RowSpacing="1" Padding="0,20,20,0"
                   ColumnSpacing="2" 
@@ -82,14 +82,18 @@
                 <Label Grid.Row="5" Grid.Column="0" 
                        Text="Image" 
                        Style="{StaticResource LabelStyle}"/>
-                <StackLayout Grid.Row="5" Grid.Column="1"
+                <Entry Grid.Row="5" Grid.Column="1"
+                       Text="{Binding Data.NewItemImageURI}" 
+                       Style="{StaticResource EntryStyle}"/>
+                
+                <!--<StackLayout Grid.Row="5" Grid.Column="1"
                              Orientation="Horizontal" 
                              HorizontalOptions="StartAndExpand">
                     <Image Source="Shield1.png"/>
                     <Entry Text="{Binding Data.NewItemImageURI}" 
                            Style="{StaticResource EntryStyle}"
                            WidthRequest="274"/>
-                </StackLayout>
+                </StackLayout>-->
 
                 <Label Grid.Row="6" Grid.Column="0" 
                        x:Name="RangeLabel" Text="Range"
