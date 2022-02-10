@@ -11,14 +11,67 @@
         <StackLayout>
             <Frame
                 BorderColor="Gray"
-                WidthRequest="400">
+                WidthRequest="350">
                 <StackLayout Orientation="Vertical">
                     <Label
                         Text="{Binding Data.Name}"
                         Style="{StaticResource LargeLabelStyle}"/>
 
-                    <Grid>
+                    <Grid
+                        RowSpacing="25"
+                        ColumnSpacing="25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                            
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="100" />
+
+
+                        </Grid.RowDefinitions>
                         
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Source="{Binding Data.CharacterModelDeathList[0]}"
+                            BackgroundColor="blue"/>
+
+                        <Image 
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Source="hat1.png"
+                            BackgroundColor="Wheat"/>
+
+                        <Image 
+                            Grid.Column="2"
+                            Grid.Row="0"
+                            Source="{Binding Data.CharacterModelDeathList[2]}"
+                            BackgroundColor="Wheat"/>
+
+                        <Image
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Source="{Binding Data.CharacterModelDeathList[0]}"
+                            BackgroundColor="blue"/>
+
+                        <Image 
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Source="hat1.png"
+                            BackgroundColor="Wheat"/>
+
+                        <Image 
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            Source="{Binding Data.CharacterModelDeathList[2]}"
+                            BackgroundColor="HotPink"/>
+
                     </Grid>
 
                 </StackLayout>
