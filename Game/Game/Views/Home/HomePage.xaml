@@ -38,7 +38,7 @@
                         />
 
                     <Label Padding="0,10,0,0"
-                        Text="As a leader of the agents in back team, the Earth needs your protection against the invaders."
+                        Text="As a leader of the agents in black team, the Earth needs your protection against the invaders."
                         Style="{StaticResource HomeDescLabelStyle}"
                         LineBreakMode="WordWrap"
                         MaxLines="5"
