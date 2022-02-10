@@ -24,7 +24,7 @@
                                      Style="{StaticResource ImageLargeStyle}"
                                      Clicked="VillageButton_Clicked"/>
 
-                        <Label Text="Village"
+                        <Label Text="Headquarters"
                                Style="{StaticResource CenterMessageStyle}"/>
                     
                     </StackLayout>
