@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Game.Views.VillagePage"
-             >
+             Title="Headquarters">
 
     <ContentPage.Content>
 
@@ -70,13 +70,13 @@
 
                 <StackLayout>
                     <ImageButton
-                                Source="item.png"
+                                Source="characters_page_icon.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="CharactersButton_Clicked"
                                 HorizontalOptions="Center"/>
 
                     <Label 
-                                Text="Characters"
+                                Text="Agents"
                                 Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
@@ -86,26 +86,26 @@
                     <StackLayout>
  
                         <ImageButton
-                                        Source="item.png"
+                                        Source="items_page_icon.png"
                                         Style="{StaticResource ImageLargeStyle}"
                                         Clicked="ItemsButton_Clicked"
                                         HorizontalOptions="Start"/>
 
                         <Label 
-                                Text="Items"
+                                Text="Equipment"
                                 Style="{StaticResource CenterMessageStyle}"/>
 
                     </StackLayout>
 
                     <StackLayout>
                         <ImageButton
-                                        Source="item.png"
+                                        Source="monsters_page_icon.png"
                                         Style="{StaticResource ImageLargeStyle}"
                                         Clicked="MonstersButton_Clicked"
                                         />
 
                         <Label 
-                                        Text="Monsters"
+                                        Text="Aliens"
                                         Style="{StaticResource CenterMessageStyle}"/>
                     </StackLayout>
                     
@@ -113,7 +113,7 @@
 
                 <StackLayout>
                     <ImageButton
-                                Source="item.png"
+                                Source="scores_page_icon.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="ScoresButton_Clicked"
                                 />
