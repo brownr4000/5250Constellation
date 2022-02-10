@@ -323,4 +323,25 @@
   <ItemGroup>
     <BundleResource Include="Resources\item_placeholder.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent6.png" />
+  </ItemGroup>
 </Project>

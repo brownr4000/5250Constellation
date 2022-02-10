@@ -109,6 +109,13 @@
     <Content Include="action_attack.png" />
     <Content Include="action_default.png" />
     <Content Include="action_move.png" />
+    <Content Include="agent1.png" />
+    <Content Include="agent2.png" />
+    <Content Include="agent3.png" />
+    <Content Include="agent4.png" />
+    <Content Include="agent5.png" />
+    <Content Include="agent6.png" />
+    <Content Include="agent7.png" />
     <Content Include="Alien_Planet.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
