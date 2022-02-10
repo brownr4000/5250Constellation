@@ -17,13 +17,10 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-
         <StackLayout>
-            <Label Text="Create Score" Style="{StaticResource HeaderStyle}"/>
-
             <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="100">
 
-                <StackLayout WidthRequest="250">
+                <StackLayout WidthRequest="300">
                     <Label
                             Text="Score Name:" 
                             Style="{StaticResource LabelStyle}"/>
@@ -36,7 +33,7 @@
 
                 </StackLayout>
 
-                <StackLayout WidthRequest="250">
+                <StackLayout WidthRequest="300">
                     <Label 
                             Text="Score:" 
                             Style="{StaticResource LabelStyle}"/>
@@ -53,17 +50,36 @@
 
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label x:Name="ScoreNameErrorMessage"  Text="Please Enter a Score Name" Style="{StaticResource ErrorMessageStyle}"/>
-                <Label x:Name="ScoreValueErrorMessage" Text="Please Enter a Score Value" Style="{StaticResource ErrorMessageStyle}"/>
+                <Label 
+                    x:Name="ScoreNameErrorMessage"
+                    Text="Please Enter a Score Name"
+                    Style="{StaticResource ErrorMessageStyle}"/>
+                
+                <Label 
+                    x:Name="ScoreValueErrorMessage"
+                    Text="Please Enter a Score Value"
+                    Style="{StaticResource ErrorMessageStyle}"/>
                 
             </StackLayout>
             
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
-                <Button Text="Cancel" Clicked="Cancel_Clicked" TextColor="Black" WidthRequest="200"/>
-                <Button Text="Create" Clicked="Save_Clicked" TextColor="Black" WidthRequest="200"/>
+            <StackLayout 
+                Padding="20" Spacing="20"
+                Orientation="Horizontal"
+                HorizontalOptions="Center">
+                <Button
+                    Text="Cancel"
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Cancel_Clicked"/>
+                
+                <Button
+                    Text="Create"
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Save_Clicked"/>
+                
             </StackLayout>
 
         </StackLayout>
         
     </ContentPage.Content>
+    
 </ContentPage>
