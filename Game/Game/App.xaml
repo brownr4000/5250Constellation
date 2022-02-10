@@ -152,14 +152,7 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor" />
                 <Setter Property="FontSize" Value="16" />                
-            </Style>
-
-            <Style TargetType="Label"
-                x:Key="CheckLabelStyle"
-                BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontFamily" Value="PlatNomor" />
-                <Setter Property="FontSize" Value="16" />
-            </Style>
+            </Style>           
 
             <Style TargetType="Label"
                 x:Key="CenterLabelStyle"

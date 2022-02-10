@@ -14,7 +14,7 @@
 
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
+        <!--<StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
             <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
@@ -117,6 +117,574 @@
                 Text="{Binding Data.ItemsDroppedList}"
                 Style="{StaticResource ValueStyle}"/>
 
+        </StackLayout>-->
+
+        <StackLayout Style="{StaticResource VerticalCenterStack}">
+
+            <Label Text="Characters" Padding="0,20,0,20" Style="{StaticResource CenterLabelStyle}"/>
+            
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">               
+                
+                <Grid
+                        RowSpacing="25"
+                        ColumnSpacing="25">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Column="0"
+                                Grid.Row="0" Orientation="Vertical">                       
+                            <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="agent1.png" Style="{StaticResource StandardImageStyle}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Agent Alpha"    />
+                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            </Grid>  
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Column="1"
+                                Grid.Row="0" Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="agent2.png" Style="{StaticResource StandardImageStyle}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Agent Omega"    />
+                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2"
+                                Grid.Row="0"
+                                Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="agent3.png" Style="{StaticResource StandardImageStyle}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Agent Dave"    />
+                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Grid.Column="0"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="agent4.png" Style="{StaticResource StandardImageStyle}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Agent K"    />
+                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="agent5.png" Style="{StaticResource StandardImageStyle}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Agent Pug"    />
+                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="agent6.png" Style="{StaticResource StandardImageStyle}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Larry"    />
+                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout
+                                Grid.Column="0"
+                                Grid.Row="2"
+                                Orientation="Vertical"
+                                Padding="10">
+                        <Label 
+                                    Text="Score"
+                                    Style="{StaticResource ValueStyleMicro}"/>
+
+                        <Label
+                                    Text="{Binding Data.ScoreTotal}"
+                                    Style="{StaticResource ValueStyle}"/>
+
+                    </StackLayout>
+
+                    <StackLayout
+                                Grid.Column="1"
+                                Grid.Row="2"
+                                Orientation="Vertical"
+                                Padding="10">
+                        <Label 
+                                    Text="Rounds"
+                                    Style="{StaticResource ValueStyleMicro}"/>
+
+                        <Label
+                                    Text="{Binding Data.RoundCount}"
+                                    Style="{StaticResource ValueStyle}"/>
+
+                    </StackLayout>
+
+                    <StackLayout
+                                Grid.Column="2"
+                                Grid.Row="2"
+                                Orientation="Vertical"
+                                Padding="10">
+                        <Label 
+                                    Text="Turns"
+                                    Style="{StaticResource ValueStyleMicro}"/>
+
+                        <Label
+                                    Text="{Binding Data.TurnCount}"
+                                    Style="{StaticResource ValueStyle}"/>
+
+                    </StackLayout>
+
+                </Grid>
+            </StackLayout>
+           
+
+            <Label Text="Number of Monsters Slain" Style="{StaticResource CenterLabelStyle}"/>
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                <Grid
+                        RowSpacing="25"
+                        ColumnSpacing="25">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+
+                    </Grid.ColumnDefinitions>
+                    <StackLayout
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Orientation="Vertical"
+                                Padding="10">
+                        <Label 
+                                    Text="Total Number"
+                                    Style="{StaticResource ValueStyleMicro}"/>
+
+                        <Label
+                                    Text="{Binding Data.MonsterSlainNumber}"
+                                    Style="{StaticResource ValueStyle}"/>
+
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="0" WidthRequest="190">
+                        <Grid
+                        RowSpacing="25"
+                        ColumnSpacing="25">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="100" />
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0"
+                                Grid.Row="0" Orientation="Vertical">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="Serpens_Monster.png" Style="{StaticResource StandardImageStyle}"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Serpens"    />
+                                    <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                                </Grid>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1"
+                                Grid.Row="0" Orientation="Vertical">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="Cancer_Monster.png" Style="{StaticResource StandardImageStyle}"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Cancer"    />
+                                    <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                                </Grid>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="2"
+                                Grid.Row="0"
+                                Orientation="Vertical">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="Pisces_Monster.png" Style="{StaticResource StandardImageStyle}"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Pisces"    />
+                                    <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                                </Grid>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="0"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="Scorpio_Monster.png" Style="{StaticResource StandardImageStyle}"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Scorpio"    />
+                                    <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                                </Grid>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="Pisces_Monster.png" Style="{StaticResource StandardImageStyle}"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Lepus"    />
+                                    <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                                </Grid>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="2"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+                                        <RowDefinition Height="100" />
+
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="Scorpio_Monster.png" Style="{StaticResource StandardImageStyle}"/>
+                                    <Label Grid.Row="1" Grid.Column="0" Text="Corvus"    />
+                                    <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                                </Grid>
+                            </StackLayout>
+
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+               
+            <StackLayout Style="{StaticResource VerticalCenterStack}">
+                <Label Text="Total Experience" Style="{StaticResource CenterLabelStyle}"/>
+                <Label Text="{Binding Data.ExperienceGainedTotal}" Style="{StaticResource CenterLabelStyle}"/>
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource VerticalCenterStack}">
+                <Label Text="Items Monsters Dropped" Style="{StaticResource CenterLabelStyle}"/>
+                <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                    <Grid
+                        RowSpacing="25"
+                        ColumnSpacing="25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="100" />
+                            <RowDefinition Height="100" />
+
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout Grid.Column="0"
+                                Grid.Row="0" Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="Item_Placeholder.png" Style="{StaticResource StandardImageStyle}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Carbonizer"    />
+                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1"
+                                Grid.Row="0" Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="Item_Placeholder.png" Style="{StaticResource StandardImageStyle}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Stun Gun"    />
+                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2"
+                                Grid.Row="0"
+                                Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="Item_Placeholder.png" Style="{StaticResource StandardImageStyle}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Pistol"    />
+                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="0"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="Item_Placeholder.png" Style="{StaticResource StandardImageStyle}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Laser Gun"    />
+                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="Item_Placeholder.png" Style="{StaticResource StandardImageStyle}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Defense Shield"    />
+                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="2"
+                                Grid.Row="1"
+                                Orientation="Vertical">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="Item_Placeholder.png" Style="{StaticResource StandardImageStyle}"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="Laser Sword"    />
+                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            </Grid>
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+                   
+            </StackLayout>
+
         </StackLayout>
+       
+        
     </ScrollView>
 </ContentPage>
+   
