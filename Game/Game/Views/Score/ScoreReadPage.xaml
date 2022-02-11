@@ -7,14 +7,14 @@
              x:Class="Game.Views.ScoreReadPage"
              Title="{Binding Title}">
 
-    <ContentPage.ToolbarItems>
+    <!--<ContentPage.ToolbarItems>
         <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_update_purple.png"/>
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete_purple.png"/>
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
 
     <ScrollView>
-        
+
         <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="35">
 
             <Label Text="Characters" Padding="0,20,0,20" Style="{StaticResource CenterLabelStyle}"/>
@@ -28,7 +28,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Image Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
-                        
+
                     </DataTemplate>
 
                 </CollectionView.ItemTemplate>
@@ -41,47 +41,47 @@
                                 Grid.Row="2"
                                 Orientation="Vertical"
                                 Padding="10">
-                        <Label 
+                    <Label 
                                     Text="Score"
                                     Style="{StaticResource ValueStyleMicro}"/>
 
-                        <Label
+                    <Label
                                     Text="{Binding ScoreTotal}"
                                     Style="{StaticResource ValueStyle}"/>
 
-                    </StackLayout>
+                </StackLayout>
 
-                    <StackLayout
+                <StackLayout
                                 Grid.Column="1"
                                 Grid.Row="2"
                                 Orientation="Vertical"
                                 Padding="10">
-                        <Label 
+                    <Label 
                                     Text="Rounds"
                                     Style="{StaticResource ValueStyleMicro}"/>
 
-                        <Label
+                    <Label
                                     Text="{Binding RoundCount}"
                                     Style="{StaticResource ValueStyle}"/>
 
-                    </StackLayout>
+                </StackLayout>
 
-                    <StackLayout
+                <StackLayout
                                 Grid.Column="2"
                                 Grid.Row="2"
                                 Orientation="Vertical"
                                 Padding="10">
-                        <Label 
+                    <Label 
                                     Text="Turns"
                                     Style="{StaticResource ValueStyleMicro}"/>
 
-                        <Label
+                    <Label
                                     Text="{Binding TurnCount}"
                                     Style="{StaticResource ValueStyle}"/>
 
-                    </StackLayout>
-
                 </StackLayout>
+
+            </StackLayout>
 
 
             <Label Text="Number of Monsters Slain" Style="{StaticResource CenterLabelStyle}"/>
@@ -89,39 +89,39 @@
 
 
                 <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="25">
-                        
-                        <Label 
+
+                    <Label 
                                     Text="Total Number"
                                     Style="{StaticResource ValueStyleMicro}"/>
 
-                        <Label      VerticalOptions="Center"
+                    <Label      VerticalOptions="Center"
                                     Text="{Binding MonsterSlainNumber}"
                                     Style="{StaticResource ValueStyle}"/>
 
-                    </StackLayout>
+                </StackLayout>
 
-                    <CollectionView
+                <CollectionView
                             ItemsLayout="HorizontalList"
                             ItemsSource="{Binding MonsterModelDeathList}"
                             HorizontalScrollBarVisibility="Never"
                             WidthRequest="500"
                             HeightRequest= "80">
 
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                               
-                                    <Image Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
-                                
-                            </DataTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
 
-                        </CollectionView.ItemTemplate>
+                            <Image Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
 
-                    </CollectionView>
+                        </DataTemplate>
 
-                    
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+
 
             </StackLayout>
-               
+
             <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="25">
                 <Label Text="Total Experience" Style="{StaticResource CenterLabelStyle}"/>
                 <Label Text="{Binding ExperienceGainedTotal}" Style="{StaticResource CenterLabelStyle}"/>
@@ -134,7 +134,7 @@
                             ItemsLayout="HorizontalList"
                             ItemsSource="{Binding ItemModelDropList }"
                             HorizontalScrollBarVisibility="Never"
-                            WidthRequest="500"
+                            WidthRequest="200"
                             HeightRequest= "80">
 
                     <CollectionView.ItemTemplate>
@@ -151,8 +151,7 @@
             </StackLayout>
 
         </StackLayout>
-       
-        
+
     </ScrollView>
 </ContentPage>
    
