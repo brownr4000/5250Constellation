@@ -18,12 +18,26 @@
         <StackLayout Style="{StaticResource VerticalCenterStack}">
 
             <Label Text="Characters" Padding="0,20,0,20" Style="{StaticResource CenterLabelStyle}"/>
-            
-            <StackLayout Style="{StaticResource HorizontalCenterStack}">               
+
+            <CollectionView 
+                    ItemsLayout="HorizontalList"
+                    ItemsSource="{Binding CharacterModelDeathList}"
+                    WidthRequest="500" HeightRequest="200"
+                    HorizontalScrollBarVisibility="Never">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
                 
-                <Grid
+            </CollectionView>
+            <!--<StackLayout Style="{StaticResource HorizontalCenterStack}">-->               
+                <!--<Grid
                         RowSpacing="25"
-                        ColumnSpacing="25">
+                        ColumnSpacing="25"
+                        >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100" />
                         <RowDefinition Height="100" />
@@ -36,31 +50,34 @@
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition Width="100"/>
 
-                    </Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>-->
+                
 
-                    <StackLayout Grid.Column="0"
+                    <!--<StackLayout Grid.Column="0"
                                 Grid.Row="0" Orientation="Vertical">                       
-                            <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="100" />
-                                <RowDefinition Height="100" />
-                                <RowDefinition Height="100" />
+                            <Grid BindingContext="{Binding Dataset}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="100" />
 
-                            </Grid.RowDefinitions>
+                                </Grid.RowDefinitions>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
 
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.Row="0" Grid.Column="0" Source="agent1.png" Style="{StaticResource StandardImageStyle}"/>
-                            <Label Grid.Row="1" Grid.Column="0" Text="Agent Alpha"    />
-                                <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding ImageURI}" Style="{StaticResource StandardImageStyle}"/>
+                                --><!--<Label Grid.Row="1" Grid.Column="0" Text="Agent Alpha"    />-->
+                                    <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />--><!--
                             </Grid>  
-                    </StackLayout>
+                    </StackLayout>-->
                     
-                    <StackLayout Grid.Column="1"
+                    
+                    
+                    <!--<StackLayout Grid.Column="1"
                                 Grid.Row="0" Orientation="Vertical">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -78,7 +95,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Grid.Row="0" Grid.Column="0" Source="agent2.png" Style="{StaticResource StandardImageStyle}"/>
                             <Label Grid.Row="1" Grid.Column="0" Text="Agent Omega"    />
-                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            --><!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />--><!--
                         </Grid>
                     </StackLayout>
                     <StackLayout Grid.Column="2"
@@ -100,7 +117,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Grid.Row="0" Grid.Column="0" Source="agent3.png" Style="{StaticResource StandardImageStyle}"/>
                             <Label Grid.Row="1" Grid.Column="0" Text="Agent Dave"    />
-                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            --><!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />--><!--
                         </Grid>
                     </StackLayout>
                     <StackLayout Grid.Column="0"
@@ -122,7 +139,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Grid.Row="0" Grid.Column="0" Source="agent4.png" Style="{StaticResource StandardImageStyle}"/>
                             <Label Grid.Row="1" Grid.Column="0" Text="Agent K"    />
-                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            --><!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />--><!--
                         </Grid>
                     </StackLayout>
 
@@ -145,7 +162,7 @@
                             </Grid.ColumnDefinitions>
                             <Image Grid.Row="0" Grid.Column="0" Source="agent5.png" Style="{StaticResource StandardImageStyle}"/>
                             <Label Grid.Row="1" Grid.Column="0" Text="Agent Pug"    />
-                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
+                            --><!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />--><!--
                         </Grid>
                     </StackLayout>
 
@@ -168,9 +185,9 @@
                             </Grid.ColumnDefinitions>
                             <Image Grid.Row="0" Grid.Column="0" Source="agent6.png" Style="{StaticResource StandardImageStyle}"/>
                             <Label Grid.Row="1" Grid.Column="0" Text="Larry"    />
-                            <!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />-->
-                        </Grid>
-                    </StackLayout>
+                            --><!--<Label Text="{Binding Data.CharacterModelDeathList[0]}"    />--><!--
+                        </Grid>-->
+                    <!--</StackLayout>-->
 
                     <StackLayout
                                 Grid.Column="0"
@@ -182,7 +199,7 @@
                                     Style="{StaticResource ValueStyleMicro}"/>
 
                         <Label
-                                    Text="{Binding Data.ScoreTotal}"
+                                    Text="{Binding ScoreTotal}"
                                     Style="{StaticResource ValueStyle}"/>
 
                     </StackLayout>
@@ -197,7 +214,7 @@
                                     Style="{StaticResource ValueStyleMicro}"/>
 
                         <Label
-                                    Text="{Binding Data.RoundCount}"
+                                    Text="{Binding RoundCount}"
                                     Style="{StaticResource ValueStyle}"/>
 
                     </StackLayout>
@@ -212,13 +229,13 @@
                                     Style="{StaticResource ValueStyleMicro}"/>
 
                         <Label
-                                    Text="{Binding Data.TurnCount}"
+                                    Text="{Binding TurnCount}"
                                     Style="{StaticResource ValueStyle}"/>
 
                     </StackLayout>
 
-                </Grid>
-            </StackLayout>
+                <!--</Grid>-->
+            <!--</StackLayout>-->
            
 
             <Label Text="Number of Monsters Slain" Style="{StaticResource CenterLabelStyle}"/>
