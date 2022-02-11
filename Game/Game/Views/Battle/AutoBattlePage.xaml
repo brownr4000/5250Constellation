@@ -5,7 +5,7 @@
              >
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
+        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Spacing="20">
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
@@ -15,10 +15,11 @@
 
                 <Label 
                         Text="Begin Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
+                        Style="{StaticResource MenuTextStyle}"
+                        HorizontalOptions="Center"/>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource CardImageTextBox}">
+            <StackLayout Style="{StaticResource CardImageTextBox}" Spacing="20">
 
                 <Label 
                     x:Name="BattleMessageValue"
@@ -29,7 +30,7 @@
                     HorizontalOptions="CenterAndExpand"
                     VerticalTextAlignment="Center"
                     HorizontalTextAlignment="Center"
-                    Style="{StaticResource ListStyle}"
+                    Style="{StaticResource MessageStyle}"
                     />
 
                 <Image
