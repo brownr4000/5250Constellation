@@ -15,23 +15,23 @@
 
     <ScrollView>
 
-        <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="35">
+        <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="15">
 
             <Label Text="Characters" Padding="0,20,0,20" Style="{StaticResource CenterLabelStyle}"/>
 
             <CollectionView 
                     ItemsLayout="HorizontalList"
                     ItemsSource="{Binding CharacterModelDeathList}"
-                    WidthRequest="500" HeightRequest="200"
+                    WidthRequest="500" HeightRequest="100"
                     HorizontalScrollBarVisibility="Never"
                     HorizontalOptions="Center">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="1*" />
                                 <RowDefinition Height="*" />
-                                <RowDefinition Height="100" />
+                                <RowDefinition Height="1" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
