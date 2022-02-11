@@ -37,9 +37,13 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="20" />
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
-                        
                             
+                            <Image Grid.Row="0" Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+
+                            <StackLayout Grid.Row="1">
+                                <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
+                            </StackLayout>
+
                         </Grid>
 
                     </DataTemplate>
@@ -47,6 +51,8 @@
                 </CollectionView.ItemTemplate>
 
             </CollectionView>
+            
+            
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <StackLayout
@@ -123,7 +129,12 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
-                            <Image Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+                            <Grid>
+                                <Image Grid.Row="0" Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
+                                </StackLayout>
+                            </Grid>
 
                         </DataTemplate>
 
@@ -152,9 +163,13 @@
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-
-                            <Image Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
-
+                            <Grid>
+                                <Image Grid.Row="0" Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
+                                </StackLayout>
+                            </Grid>
+                            
                         </DataTemplate>
 
                     </CollectionView.ItemTemplate>
