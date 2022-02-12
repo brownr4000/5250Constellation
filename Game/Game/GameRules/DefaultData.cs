@@ -419,17 +419,19 @@ namespace Game.GameRules
             {
                 new MonsterModel {
                     Name = "Serpens",
-                    Description = "A ram constellation",
+                    Description = "A constellation of a large snake",
                     ImageURI = "Serpens_Monster.png",
+                    Difficulty = DifficultyEnum.Average,
                     Attack = 3,
                     Defense = 3,
-                    Speed = 3,
+                    Speed = 5,
                 },
 
                 new MonsterModel {
                     Name = "Cancer",
-                    Description = "A crab constellation",
+                    Description = "A medium size constellation of a crab",
                     ImageURI = "Cancer_Monster.png",
+                    Difficulty = DifficultyEnum.Average,
                     Attack = 2,
                     Defense = 8,
                     Speed = 2,
@@ -437,8 +439,9 @@ namespace Game.GameRules
 
                 new MonsterModel {
                     Name = "Pisces",
-                    Description = "A fish constellation",
+                    Description = "A constellation of two fish",
                     ImageURI = "Pisces_Monster.png",
+                    Difficulty = DifficultyEnum.Average,
                     Attack = 4,
                     Defense = 2,
                     Speed = 5,
@@ -446,33 +449,31 @@ namespace Game.GameRules
 
                 new MonsterModel {
                     Name = "Scorpio",
-                    Description = "A scorpion constellation",
+                    Description = "A constellation of a giant scorpion",
                     ImageURI = "Scorpio_Monster.png",
-                    Attack = 8,
+                    Attack = 6,
                     Defense = 7,
                     Speed = 4,
-                    Difficulty = DifficultyEnum.Average,
-                    MaxHealth = 80,
+                    Difficulty = DifficultyEnum.Average
                 },
 
                 new MonsterModel {
                     Name = "Lepus",
-                    Description = "A hare constellation",
+                    Description = "A hare constellation being chased around the sky, or possibly the Moon Rabbit",
                     ImageURI = "Placeholder_Monster1.png",
-                    Attack = 1,
+                    Difficulty = DifficultyEnum.Easy,
+                    Attack = 2,
                     Speed = 8,
-                    Defense = 2,
-                    MaxHealth = 12,
+                    Defense = 2
                 },
 
                 new MonsterModel {
                     Name = "Corvus",
-                    Description = "A crow constellation",
+                    Description = "A small crow or a raven constellation from the Southern sky",
                     ImageURI = "Placeholder_Monster2.png",
-                    Attack = 2,
-                    Speed = 2,
-                    Defense = 3,
-                    MaxHealth = 15,
+                    Attack = 3,
+                    Speed = 3,
+                    Defense = 2,
                     Difficulty = DifficultyEnum.Easy,
                 },
             };
