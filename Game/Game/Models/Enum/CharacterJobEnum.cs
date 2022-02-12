@@ -19,8 +19,14 @@ namespace Game.Models
         // Clerics defend well and have buff abilities
         Cleric = 12,
 
-        // Clerics support well and have healing abilities
-        Support = 20
+        // Defender Class has high defense abilities, aka Tank
+        Defender = 20,
+
+        // Striker Class has high attack and speed abilities, aka Damage
+        Striker = 30,
+
+        // Support Class can heal and have buff abilities
+        Support = 40
     }
 
     /// <summary>
@@ -41,11 +47,19 @@ namespace Game.Models
             switch (value)
             {
                 case CharacterJobEnum.Fighter:
-                    Message = "Tank";
+                    Message = "Fighter";
                     break;
 
                 case CharacterJobEnum.Cleric:
-                    Message = "Damage";
+                    Message = "Cleric";
+                    break;
+
+                case CharacterJobEnum.Defender:
+                    Message = "Defender";
+                    break;
+
+                case CharacterJobEnum.Striker:
+                    Message = "Striker";
                     break;
 
                 case CharacterJobEnum.Support:
