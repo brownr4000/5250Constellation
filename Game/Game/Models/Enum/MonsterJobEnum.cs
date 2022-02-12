@@ -9,14 +9,21 @@
         // Not specified
         Unknown = 0,
 
-        // Fighters hit hard and have fight abilities
-        Fighter = 11,
+        Fighter = 9,
 
-        // Clerics defend well and have buff abilities
-        Cleric = 15,
+        // Brute Monsters hit hard and are tough to beat
+        Brute = 10,
 
-        // Clerics support well and have healing abilities
-        Support = 25
+        Cleric = 19,
+        
+        // Swift Monsters attack quickly
+        Swift = 20,
+
+
+        Support = 29,
+
+        // Clever Monsters have access to buffs
+        Clever = 30
     }
 
     /// <summary>
@@ -37,15 +44,15 @@
             switch (value)
             {
                 case MonsterJobEnum.Fighter:
-                    Message = "Tank";
+                    Message = "Brute";
                     break;
 
                 case MonsterJobEnum.Cleric:
-                    Message = "Damage";
+                    Message = "Swift";
                     break;
 
                 case MonsterJobEnum.Support:
-                    Message = "Support";
+                    Message = "Clever";
                     break;
 
                 case MonsterJobEnum.Unknown:
