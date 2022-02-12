@@ -25,8 +25,8 @@ namespace Game.Models
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
-            // Default to Tank, which is to attack
-            Job = CharacterJobEnum.Fighter;
+            // Default to Defender, which is to attack
+            Job = CharacterJobEnum.Defender;
         }
 
         /// <summary>
