@@ -66,6 +66,9 @@ namespace UnitTests.Models
             Assert.IsNotNull(result.Speed);
         }
 
+        /// <summary>
+        /// The CharacterModel_Set_Default_Should_Pass tests the creation of a new CharacterModel object
+        /// </summary>
         [Test]
         public void CharacterModel_Set_Default_Should_Pass()
         {
@@ -87,7 +90,7 @@ namespace UnitTests.Models
             Assert.IsNotNull(result.Id);
             Assert.AreEqual(result.Id, result.Guid);
 
-            Assert.AreEqual("knight.png", result.ImageURI);
+            Assert.AreEqual("agent1.png", result.ImageURI);
             Assert.AreEqual(PlayerTypeEnum.Character, result.PlayerType);
 
             Assert.AreEqual(true, result.Alive);
@@ -109,7 +112,7 @@ namespace UnitTests.Models
 
             Assert.AreEqual(DifficultyEnum.Unknown, result.Difficulty);
 
-            Assert.AreEqual(CharacterJobEnum.Unknown, result.Job);
+            Assert.AreEqual(CharacterJobEnum.Defender, result.Job);
         }
 
         [Test]
