@@ -40,7 +40,7 @@ namespace Game.Views
             ViewModel.Data.Level = level - 1;
 
             //Converting Job to Class and assigning to ClassPicker            
-            string result = ConverClasstoJob(ViewModel.Data.Job);
+            string result = ConvertClassToJob(ViewModel.Data.Job);
             if (!string.IsNullOrEmpty(result))
             {
                 ClassValue.Text = result;
@@ -57,16 +57,16 @@ namespace Game.Views
         /// Convert Class to Job
         /// </summary>
         /// <param name="selectedClass"></param>
-        public string ConverClasstoJob(object selectedClass)
+        public string ConvertClassToJob(object selectedClass)
         {
             string result = null;
             switch (selectedClass.ToString())
             {
-                case "Fighter":
-                    result = CharacterJobEnum.Fighter.ToMessage();
+                case "Defender":
+                    result = CharacterJobEnum.Defender.ToMessage();
                     break;
-                case "Cleric":
-                    result = CharacterJobEnum.Cleric.ToMessage();
+                case "Striker":
+                    result = CharacterJobEnum.Striker.ToMessage();
                     break;
                 case "Support":
                     result = CharacterJobEnum.Support.ToMessage();
