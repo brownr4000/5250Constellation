@@ -79,7 +79,7 @@ namespace Game.Views
             LevelPicker.SelectedIndex = ViewModel.Data.Level;
 
             //Converting Job to Class and assigning to ClassPicker            
-            ConverClasstoJob(ViewModel.Data.Job);
+            ConvertClassToJob(ViewModel.Data.Job);
 
             ManageHealth();
             AddItemsToDisplay();
@@ -100,22 +100,22 @@ namespace Game.Views
                 ClassErrorMessage.IsVisible = false;
             }
             // Change the Class
-            ConverJobtoClass(selectedClass);           
+            ConvertJobToClass(selectedClass);           
         }
 
         /// <summary>
         /// Convert job enum to class
         /// </summary>
         /// <param name="selectedJob"></param>
-        public void ConverJobtoClass(object selectedJob)
+        public void ConvertJobToClass(object selectedJob)
         {
             switch (selectedJob)
             {
-                case "Tank":
-                    ViewModel.Data.Job = CharacterJobEnum.Fighter;
+                case "Defender":
+                    ViewModel.Data.Job = CharacterJobEnum.Defender;
                     break;
-                case "Damage":
-                    ViewModel.Data.Job = CharacterJobEnum.Cleric;
+                case "Striker":
+                    ViewModel.Data.Job = CharacterJobEnum.Striker;
                     break;
                 case "Support":
                     ViewModel.Data.Job = CharacterJobEnum.Support;
@@ -129,15 +129,15 @@ namespace Game.Views
         /// Convert Class to Job enum values
         /// </summary>
         /// <param name="selectedClass"></param>
-        public void ConverClasstoJob(object selectedClass)
+        public void ConvertClassToJob(object selectedClass)
         {
             switch (selectedClass.ToString())
             {
-                case "Fighter":
-                    ClassPicker.SelectedItem = CharacterJobEnum.Fighter.ToMessage();
+                case "Defender":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Defender.ToMessage();
                     break;
-                case "Cleric":
-                    ClassPicker.SelectedItem = CharacterJobEnum.Cleric.ToMessage();
+                case "Striker":
+                    ClassPicker.SelectedItem = CharacterJobEnum.Striker.ToMessage();
                     break;
                 case "Support":
                     ClassPicker.SelectedItem = CharacterJobEnum.Support.ToMessage();
