@@ -57,8 +57,8 @@ namespace Game.Views
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
             // Load the values for the Class into the Picker
-            ClassPicker.Items.Add(CharacterJobEnum.Fighter.ToMessage());
-            ClassPicker.Items.Add(CharacterJobEnum.Cleric.ToMessage());
+            ClassPicker.Items.Add(CharacterJobEnum.Defender.ToMessage());
+            ClassPicker.Items.Add(CharacterJobEnum.Striker.ToMessage());
             ClassPicker.Items.Add(CharacterJobEnum.Support.ToMessage());
 
             _ = UpdatePageBindingContext();
