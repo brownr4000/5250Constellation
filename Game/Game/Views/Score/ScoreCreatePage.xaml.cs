@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Game.Views
 {
     /// <summary>
-    /// Create Item
+    /// Create Score
     /// </summary>
     [DesignTimeVisible(false)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -82,6 +82,11 @@ namespace Game.Views
         
         }
 
+        /// <summary>
+        /// Check for valid Score Value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void Score_Value_Changed(object sender, TextChangedEventArgs args) {
             ScoreValueErrorMessage.IsVisible = false;
 
