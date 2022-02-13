@@ -90,10 +90,12 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
-        public async void CollectionView_OnItemSelected(object sender, SelectionChangedEventArgs args) {
+        public async void CollectionView_OnItemSelected(object sender, SelectionChangedEventArgs args) 
+        {
             MonsterModel data = args.CurrentSelection.FirstOrDefault() as MonsterModel;
 
-            if (data is null){
+            if (data is null)
+            {
                 return;
             }
 
