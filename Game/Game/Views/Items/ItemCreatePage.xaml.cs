@@ -67,6 +67,10 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// To show or hide Location and Attribute error messages
+        /// </summary>
+        /// <returns></returns>
         public bool ShowLocationAttributeErrorMessage()
         {
             bool returnValue = false;
