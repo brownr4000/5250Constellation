@@ -244,7 +244,7 @@ namespace UnitTests.Helpers
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result.Name.Contains("Elf"));
+            Assert.AreEqual(true, result.Name.Contains("Default"));
         }
 
         [Test]
