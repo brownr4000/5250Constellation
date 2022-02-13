@@ -90,6 +90,11 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
+        /// <summary>
+        /// Monster selection changed event to show new monster
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public async void CollectionView_OnItemSelected(object sender, SelectionChangedEventArgs args) 
         {
             MonsterModel data = args.CurrentSelection.FirstOrDefault() as MonsterModel;
