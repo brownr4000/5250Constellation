@@ -7,10 +7,10 @@
              x:Class="Game.Views.ScoreReadPage"
              Title="{Binding Title}">
 
-    <!--<ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_update_purple.png"/>
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete_purple.png"/>
-    </ContentPage.ToolbarItems>-->
+    </ContentPage.ToolbarItems>
 
 
     <ScrollView>
