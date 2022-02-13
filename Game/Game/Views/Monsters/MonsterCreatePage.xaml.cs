@@ -188,6 +188,11 @@ namespace Game.Views
             }
         }
 
+        /// <summary>
+        /// UniqueItem picker change event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UniqueItemPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             ViewModel.Data.UniqueItem = UniqueItemPicker.SelectedItem.ToString();
