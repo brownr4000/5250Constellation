@@ -22,18 +22,6 @@
                 Dark
                 -->
 
-            <OnPlatform x:TypeArguments="x:String" x:Key="PlatNomor">
-                <On Platform="Android" Value="PlatNomor-WyVnn.ttf#PlatNomor" />
-                <On Platform="UWP" Value="/Assets/PlatNomor-WyVnn.ttf#PlatNomor" />
-                <On Platform="iOS" Value="PlatNomor-WyVnn" />
-            </OnPlatform>
-
-            <OnPlatform x:TypeArguments="x:String" x:Key="SpaceSpeed">
-                <On Platform="Android" Value="SpaceSpeedFontRegular-YzvY8.ttf#SpaceSpeed" />
-                <On Platform="UWP" Value="/Assets/SpaceSpeedFontRegular-YzvY8.ttf#SpaceSpeed" />
-                <On Platform="iOS" Value="SpaceSpeedFontRegular-YzvY8" />
-            </OnPlatform>
-
             <Color x:Key="PageBackgroundColor">#202020</Color>
             <Color x:Key="ViewBackgroundColor">#333333</Color>
             <Color x:Key="NavigationBarColor">#7F47DD</Color>
@@ -122,7 +110,7 @@
                 x:Key="StepperLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="TextColor" Value="{StaticResource TriciaryBackgroundColor}" />
-                <Setter Property="FontFamily" Value="PlatNomor-eZ2dm" />
+                <Setter Property="FontFamily" Value="PlatNomor" />
                 <Setter Property="FontSize" Value="14" />
             </Style>
 
