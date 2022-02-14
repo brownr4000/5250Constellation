@@ -16,5 +16,19 @@ namespace Game.Views.Battle
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Cancel and close this page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public async void CancelButton_Clicked(object sender, EventArgs e ) {
+            _= await Navigation.PopAsync();
+        }
+
+        public async void ProtectButton_Clicked(object sender, EventArgs e) {
+            await Navigation.PushAsync(new PickCharactersPage());
+        }
     }
 }
