@@ -25,11 +25,7 @@
             
             <StackLayout>
 
-                <StackLayout 
-                    Padding="20" Spacing="20"
-                    HorizontalOptions="Center" 
-                    Orientation="Vertical" 
-                    VerticalOptions="Center">
+                <StackLayout Style="{StaticResource VerticalCenterWithPaddingSpacingStack}">
 
                         <Label 
                             Text="{Binding Data.Name}"
@@ -40,9 +36,7 @@
                             Style="{StaticResource ImageLargeStyle}"/>
 
                     <StackLayout 
-                            Style="{StaticResource HorizontalStack}" 
-                            HorizontalOptions="Center"
-                            Padding="10" Spacing="10">
+                            Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
 
                             <Label
                                 Text="{Binding Data.Description}"
@@ -50,26 +44,25 @@
                             
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                            <Grid
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                        <Grid
                                 HorizontalOptions="Center"
                                 WidthRequest="240">
 
-                                <Label
+                            <Label
                                     Grid.Column="0"
                                     Text="Location: "
                                     Style="{StaticResource LabelStyle}"/>
 
-                                <Label
+                            <Label
                                     Grid.Column="1"
                                     Text="{Binding Data.Location, Converter={StaticResource ItemLocationEnumConverter}}" 
                                     Style="{StaticResource EndValueStyle}"/>
 
-                            </Grid>
+                        </Grid>
+                    </StackLayout>
 
-                        </StackLayout>
-
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
                             <Grid
                                 HorizontalOptions="Center"
                                 WidthRequest="240">
@@ -86,7 +79,7 @@
                             </Grid>
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
 
                             <Grid
                                 HorizontalOptions="Center"
@@ -110,10 +103,9 @@
                                     Grid.Column="2"/>
 
                             </Grid>
-
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
                             <Grid
                                 HorizontalOptions="Center"
                                 WidthRequest="240"
@@ -136,10 +128,9 @@
                                     Grid.Column="2"/>
 
                             </Grid>
-
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
                             <Grid
                                 HorizontalOptions="Center"
                                 WidthRequest="240"
@@ -162,7 +153,6 @@
                                     Grid.Column="2"/>
 
                             </Grid>
-
                         </StackLayout>
 
                     </StackLayout>
