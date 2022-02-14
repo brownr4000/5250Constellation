@@ -20,7 +20,7 @@
                     Style="{StaticResource MessageStyle}"/>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource VerticalWithMarginStack}">
+            <StackLayout Style="{StaticResource VerticalCenterWithMarginStack}">
 
                 <Image Source="{Binding Data.ImageURI}"
                        Style="{StaticResource ImageLargerStyle}"/>
