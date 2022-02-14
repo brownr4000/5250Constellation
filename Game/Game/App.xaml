@@ -143,6 +143,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="LabelWithPaddingStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="HomeLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="HorizontalOptions" Value="Center"/>
@@ -187,6 +193,12 @@
                 x:Key="ValueStyle"
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="ValueWithPaddingStyle"
+                BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="Padding" Value="0,0,0,10" />
             </Style>
 
             <Style TargetType="Label"
@@ -454,6 +466,17 @@
             <Style TargetType="StackLayout"
                 x:Key="HorizontalOptionCenterStack">
                 <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalOptionCenterWithPaddingStack">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Padding" Value="30" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalOrientationStack">
+                <Setter Property="Orientation" Value="Horizontal" />
             </Style>
 
             <Style TargetType="StackLayout"
