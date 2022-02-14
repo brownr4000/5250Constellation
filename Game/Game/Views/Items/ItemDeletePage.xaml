@@ -8,7 +8,7 @@
              Title="{Binding Title}">
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout Style="{StaticResource StackWithPadding}">
             <StackLayout>
 
                 <Label 
@@ -21,9 +21,7 @@
 
             </StackLayout>
 
-            <StackLayout 
-                    Orientation="Vertical"
-                    Margin="50">
+            <StackLayout Style="{StaticResource VerticalOnlyStack}">
 
                 <Image Source="{Binding Data.ImageURI}"
                        Style="{StaticResource ImageLargerStyle}"/>
