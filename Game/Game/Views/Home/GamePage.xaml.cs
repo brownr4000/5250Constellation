@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Game.Views.Battle;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,14 +19,18 @@ namespace Game.Views
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Jump to the Dungeon
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void DungeonButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new PickCharactersPage());
+        ///// <summary>
+        ///// Jump to the Dungeon
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public async void DungeonButton_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new PickCharactersPage());
+        //}
+
+        public async void DungeonButton_Clicked(object sender, EventArgs e) {
+            await Navigation.PushAsync(new BattleEntryPage());
         }
 
         /// <summary>
