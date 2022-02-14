@@ -17,14 +17,14 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center">
+        <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
             <ScrollView>
-                <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
+                <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
 
-                    <StackLayout Orientation="Vertical" VerticalOptions="Center">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Style="{StaticResource VerticalCenterStack}">
+                        <StackLayout Style="{StaticResource HorizontalCenterWith5PaddingSpacingStack}">
                             <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
@@ -43,7 +43,7 @@
 
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout Style="{StaticResource HorizontalCenterWith5PaddingSpacingStack}">
                             <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
@@ -60,7 +60,7 @@
 
                         </StackLayout>
 
-                       <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout Style="{StaticResource HorizontalCenterWith5PaddingSpacingStack}">
                             <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
@@ -76,7 +76,7 @@
 
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout Style="{StaticResource HorizontalCenterWith5PaddingSpacingStack}">
                             <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
@@ -93,7 +93,7 @@
 
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout Style="{StaticResource HorizontalCenterWith5PaddingSpacingStack}">
                             <Grid WidthRequest="500" HeightRequest="40">
                                 <Label 
                                         Grid.Row="0" 
@@ -113,8 +113,8 @@
                         </StackLayout>
 
                     </StackLayout>
-                    
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+
+                    <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
                         <Label 
                                 Text="Attack"
                                 Style="{StaticResource StepperLabelStyle}"/>
@@ -128,8 +128,8 @@
                                    Style="{StaticResource StepperLabelStyle}" />
 
                     </StackLayout>
-                    
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+
+                    <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
                         <Label 
                                 Text="Defense"
                                 Style="{StaticResource StepperLabelStyle}"/>
@@ -144,8 +144,8 @@
                                     Style="{StaticResource StepperLabelStyle}" />
 
                     </StackLayout>
-                    
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+
+                    <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
                         <Label 
                                 Text="Speed"
                                 Style="{StaticResource StepperLabelStyle}"/>
@@ -161,7 +161,7 @@
                                     Style="{StaticResource StepperLabelStyle}" />
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
                         <Label Text="Please Enter the Monster Name" x:Name="NameErrorMessage" Style="{StaticResource ErrorMessageStyle}"/>
 
                         <Label Text="Please Enter the Monster Description" x:Name="DescErrorMessage" Style="{StaticResource ErrorMessageStyle}"/>
@@ -172,7 +172,7 @@
 
                     </StackLayout>
 
-                    <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
                         <Button 
                                 Text="Cancel"
                                 Style="{StaticResource ButtonStyle}" 

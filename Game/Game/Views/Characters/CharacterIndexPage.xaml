@@ -32,13 +32,13 @@
                                     Source="{Binding ImageURI}"
                                     Style="{StaticResource IndexImageStyle}"/>
 
-                                <StackLayout Grid.Column="1" Margin="20">
+                                <StackLayout Grid.Column="1" Style="{StaticResource StackWithMargin}">
 
                                     <Label
                                         Text="{Binding Name}"
                                         Style="{StaticResource BoldLabelStyle}"/>
 
-                                    <StackLayout Orientation="Horizontal">
+                                <StackLayout Style="{StaticResource HorizontalStack}">
                                         <Label
                                             Grid.Row="1"
                                             Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
