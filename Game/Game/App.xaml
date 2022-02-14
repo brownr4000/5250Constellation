@@ -431,10 +431,8 @@
             </Style>
 
             <Style TargetType="StackLayout"
-                x:Key="HorizontalStartwithPaddingandSpacingStack">
-                <Setter Property="Orientation" Value="Horizontal" />
-                <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="VerticalOptions" Value="Start" />
+                x:Key="HorizontalStartwithPaddingandSpacingStack"
+                   BasedOn="{StaticResource HorizontalStack}">
                 <Setter Property="Padding" Value="20" />
                 <Setter Property="Spacing" Value="20" />
             </Style>
@@ -446,7 +444,14 @@
                 <Setter Property="Padding" Value="20" />
                 <Setter Property="Spacing" Value="20" />
             </Style>
-            
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalCenterWithLessPaddingSpacingStack" 
+                   BasedOn="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Spacing" Value="10" />
+            </Style>
+
             <Style TargetType="StackLayout"
                 x:Key="HorizontalCenterWithPaddingForHomeStack">
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -500,6 +505,14 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="VerticalCenterWithPaddingStack">
+                <Setter Property="Orientation" Value="Vertical" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="OuterBoxStack"
                 BasedOn="{StaticResource VerticalStack}">
             </Style>
@@ -513,6 +526,13 @@
             <Style TargetType="StackLayout"
                 x:Key="OuterBoxCenterStack"
                 BasedOn="{StaticResource VerticalCenterStack}">
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="OuterBoxCenterWithPaddingSpacingStack"
+                BasedOn="{StaticResource VerticalCenterStack}">
+                <Setter Property="Padding" Value="0,50,0,0" />
+                <Setter Property="Spacing" Value="10" />
             </Style>
 
             <Style TargetType="StackLayout"

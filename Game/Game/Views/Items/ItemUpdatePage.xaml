@@ -18,10 +18,10 @@
 
     <ContentPage.Content>
         <ScrollView>
+            
+            <StackLayout Style="{StaticResource OuterBoxCenterWithPaddingSpacingStack}">
 
-            <StackLayout Style="{StaticResource OuterBoxCenterStack}" Padding="0,50,0,0" Spacing="10">
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Style="{StaticResource HorizontalCenterStack}">
 
                     <Grid
                         RowSpacing="10"
@@ -83,8 +83,7 @@
 
                 </StackLayout>
 
-
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+                <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
                     <Label 
                         Text="Range" 
                         Style="{StaticResource StepperLabelStyle}"/>
@@ -99,7 +98,7 @@
                             ValueChanged="Range_OnStepperValueChanged"
                         Style="{StaticResource StepperStyle}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+                <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
                 <Label 
                         Text="Value"
                         Style="{StaticResource StepperLabelStyle}"/>
@@ -118,7 +117,7 @@
                             ValueChanged="Value_OnStepperValueChanged"/>
 
                     </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10" Spacing="10">
+                <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
 
                     <Label 
                         Text="Damage" 
@@ -139,13 +138,13 @@
 
                     </StackLayout>
 
-                <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout Style="{StaticResource VerticalCenterWithPaddingStack}">
                     <Label x:Name="NameErrorMessage" Text="Item's name cannot be empty!" Style="{StaticResource ErrorMessageStyle}"/>
                     <Label x:Name="DescriptionErrorMessage" Text="Item's description cannot be empty!" Style="{StaticResource ErrorMessageStyle}"/>
                     
                 </StackLayout>
 
-                <StackLayout Padding="10" Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Style="{StaticResource HorizontalCenterStack}">
                     <Button Text="Cancel" Clicked="Cancel_Clicked" Style="{StaticResource ButtonStyle}"/>
                     <Button Text="Update" Clicked="Save_Clicked" Style="{StaticResource ButtonStyle}"/>
                         
