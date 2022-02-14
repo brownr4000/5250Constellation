@@ -19,8 +19,8 @@
 
     <ContentPage.Content>
 
-        <StackLayout Padding="20" Spacing="20" HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
-
+        <StackLayout Style="{StaticResource VerticalCenterWithPaddingSpacingStack}">
+            
             <Image Source="Item_Placeholder.png" Style="{StaticResource ImageLargeStyle}"/>
             
             <Grid RowSpacing="1" Padding="0,20,20,0"
@@ -86,15 +86,6 @@
                        Text="{Binding Data.NewItemImageURI}" 
                        Style="{StaticResource EntryStyle}"/>
                 
-                <!--<StackLayout Grid.Row="5" Grid.Column="1"
-                             Orientation="Horizontal" 
-                             HorizontalOptions="StartAndExpand">
-                    <Image Source="Shield1.png"/>
-                    <Entry Text="{Binding Data.NewItemImageURI}" 
-                           Style="{StaticResource EntryStyle}"
-                           WidthRequest="274"/>
-                </StackLayout>-->
-
                 <Label Grid.Row="6" Grid.Column="0" 
                        x:Name="RangeLabel" Text="Range"
                        Style="{StaticResource LabelStyle}"/>
@@ -113,8 +104,8 @@
                        Text="{Binding Data.Damage}" 
                        x:Name="DamageValue" />            
             </Grid>
-            
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">
                 <Label Text="Please Enter the Item Name" 
                        x:Name="NameErrorMessage" 
                        Style="{StaticResource ErrorMessageStyle}"/>
@@ -124,8 +115,8 @@
                 <Label x:Name="LocationAttributeErrorMessage" 
                        Style="{StaticResource ErrorMessageStyle}"/>
             </StackLayout>
-            
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">
                 <Button 
                         Style="{StaticResource ButtonStyle}"
                         Text="Cancel" Clicked="Cancel_Clicked"/>
