@@ -483,7 +483,7 @@
                 x:Key="VerticalStack"
                    BasedOn="{StaticResource HorizontalStack}">
                 <Setter Property="Orientation" Value="Vertical" />
-            </Style>
+            </Style>            
 
             <Style TargetType="StackLayout"
                 x:Key="StackWithPadding">
@@ -499,6 +499,12 @@
                 x:Key="VerticalCenterStack" 
                    BasedOn="{StaticResource CenterStack}">
                 <Setter Property="Orientation" Value="Vertical" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="VerticalWithMarginStack"
+                   BasedOn="{StaticResource VerticalCenterStack}">
+                <Setter Property="Margin" Value="30" />
             </Style>
 
             <Style TargetType="StackLayout"
