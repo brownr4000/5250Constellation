@@ -14,22 +14,15 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout
-                Padding="20" Spacing="15">
-                
-                <StackLayout 
-                    HorizontalOptions="Center" 
-                    Orientation="Vertical"
-                    VerticalOptions="Center">
+            <StackLayout Style="{StaticResource StackWithPaddingandSpacing}">
+
+                <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
                 </StackLayout>
 
                 <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                            Style="{StaticResource VerticalCenterStack}" >
 
                     <Grid
                             HorizontalOptions="Center"
@@ -48,11 +41,7 @@
                     </Grid>
                 </StackLayout>
 
-                <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                     <Grid
                             HorizontalOptions="Center"
@@ -71,11 +60,7 @@
                     </Grid>
                 </StackLayout>
 
-                <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                     <Grid
                             HorizontalOptions="Center"
@@ -94,11 +79,7 @@
                     </Grid>
                 </StackLayout>
 
-                <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                     <Grid
                             HorizontalOptions="Center"
@@ -118,11 +99,7 @@
                     </Grid>
                 </StackLayout>
 
-                <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                     <Grid
                             HorizontalOptions="Center"
@@ -141,11 +118,7 @@
                     </Grid>
                 </StackLayout>
                 <StackLayout Padding="0,30,0,0">
-                    <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                    <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                         <Grid
                             HorizontalOptions="Center"
@@ -171,11 +144,7 @@
                         </Grid>
                     </StackLayout>
 
-                    <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                    <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                         <Grid
                             HorizontalOptions="Center"
@@ -201,11 +170,7 @@
                         </Grid>
                     </StackLayout>
 
-                    <StackLayout
-                            Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Center" 
-                            Orientation="Vertical" 
-                            VerticalOptions="Center">
+                    <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                         <Grid
                             HorizontalOptions="Center"
