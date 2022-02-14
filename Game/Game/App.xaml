@@ -495,7 +495,15 @@
                 x:Key="VerticalStack"
                    BasedOn="{StaticResource HorizontalStack}">
                 <Setter Property="Orientation" Value="Vertical" />
-            </Style>            
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="VerticalItemPopStack"
+                   BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Padding" Value="2" />
+                
+            </Style>
 
             <Style TargetType="StackLayout"
                 x:Key="StackWithPadding">
@@ -571,6 +579,14 @@
                 <Setter Property="HeightRequest" Value="150" />
                 <Setter Property="WidthRequest" Value="150" />
                 <Setter Property="Spacing" Value="1" />
+            </Style>
+            
+            <Style TargetType="StackLayout"
+                x:Key="ItemPopupStack">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HeightRequest" Value="350" />
+                <Setter Property="WidthRequest" Value="350" />
             </Style>
 
             <Style TargetType="StackLayout"
