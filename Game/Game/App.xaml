@@ -479,10 +479,9 @@
                 <Setter Property="Padding" Value="50" />
             </Style>
 
-
             <Style TargetType="StackLayout"
-                x:Key="VerticalOnlyStack">
-                <Setter Property="Orientation" Value="Vertical" />
+                x:Key="StackWithMargin">
+                <Setter Property="Padding" Value="20" />
             </Style>
 
             <Style TargetType="StackLayout"

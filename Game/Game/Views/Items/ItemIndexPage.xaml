@@ -15,9 +15,6 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"
-                   FontAttributes="Bold"/>
-
             <CollectionView x:Name="ItemsListView"
                 ItemsSource="{Binding Dataset}"
                 SelectionMode="Single"
@@ -33,8 +30,7 @@
                                 Source="{Binding ImageURI}"
                                Style="{StaticResource IndexImageStyle}"/>
 
-                            <StackLayout Grid.Column="1"
-                                Margin="20">
+                            <StackLayout Grid.Column="1" Style="{StaticResource StackWithMargin}">
                                 
                                 <Label
                                     Text="{Binding Name}"
