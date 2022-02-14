@@ -6,13 +6,13 @@
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.PickCharactersPage"
-             Title="{Binding Title}">
+             Title="Choose Your Characters!">
 
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
-            <StackLayout Style="{StaticResource OuterBoxStack}">
+            <StackLayout Style="{StaticResource OuterBoxStack}" Spacing="20">
 
-                <Label Text="Battle Time" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Text="Your Squad!" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
@@ -34,8 +34,9 @@
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
-                                        <Grid>
-
+                                        <Grid WidthRequest="10" BackgroundColor="Crimson">
+                                 
+                                                   
                                             <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
                                                     Source="{Binding ImageURI}"
                                                     Style="{StaticResource ImageMediumStyle}"/>
