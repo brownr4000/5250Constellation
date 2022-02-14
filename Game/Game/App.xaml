@@ -178,6 +178,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="LargeLabelWithPaddingStyle"
+                BasedOn="{StaticResource LargeLabelStyle}">
+                <Setter Property="Padding" Value="0,0,0,20" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ValueStyle"
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
@@ -528,8 +534,14 @@
             </Style>
 
             <Style TargetType="StackLayout"
-                x:Key="VerticalWithMarginStack"
+                x:Key="VerticalCenterWithMarginStack"
                    BasedOn="{StaticResource VerticalCenterStack}">
+                <Setter Property="Margin" Value="30" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="VerticalWithMarginStack">
+                <Setter Property="Orientation" Value="Vertical"/>
                 <Setter Property="Margin" Value="30" />
             </Style>
 

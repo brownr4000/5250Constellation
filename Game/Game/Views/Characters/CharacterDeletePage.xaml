@@ -21,14 +21,12 @@
 
             </StackLayout>
 
-            <StackLayout 
-                Orientation="Vertical" 
-                Margin="50">
+            <StackLayout Style="{StaticResource VerticalWithMarginStack}">
 
                 <Image Source="{Binding Data.ImageURI}"
                        Style="{StaticResource ImageLargerStyle}"/>
 
-                <Label Padding="0,0,0,20"
+                <Label 
                     Text="{Binding Data.Name}"
                     Style="{StaticResource LargeLabelStyle}"/>
 
