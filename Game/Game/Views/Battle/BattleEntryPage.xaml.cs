@@ -27,6 +27,11 @@ namespace Game.Views.Battle
             _= await Navigation.PopAsync();
         }
 
+        /// <summary>
+        /// Navigate to pick characters page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public async void ProtectButton_Clicked(object sender, EventArgs e) {
             await Navigation.PushAsync(new PickCharactersPage());
         }
