@@ -46,7 +46,6 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalCenterStack}">
-                <!--<StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="10">-->
                 <StackLayout Style="{StaticResource VerticalCenterWithSpacingStack}">
                     <!--Debug Settings Frame-->
                     <StackLayout Style="{StaticResource HorizontalStack}">
