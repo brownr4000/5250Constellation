@@ -14,15 +14,15 @@
       Orientation="Vertical">
 
         <StackLayout Spacing="50">
-           
-            <StackLayout HorizontalOptions="Center" Spacing="20">
+
+            <StackLayout Style="{StaticResource HorizontalOptionCenterWithSpacingStack}">
 
                 <Image Source="Logo.png" Style="{StaticResource ImageLargeStyle}"/>
                 <Label Text="Constellation" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                 <Label Text="Development Team" Style="{StaticResource CenterMessageStyle}"/>
-                
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                <StackLayout Style="{StaticResource HorizontalCenterStack}">
                     <Label Text="Madhuri Tatineni" Style="{StaticResource MessageStyle}"/>
                     
                     <Label Text="Han Duong" Style="{StaticResource MessageStyle}"/>
@@ -32,9 +32,9 @@
                 </StackLayout>
 
                 <Label Text="Design Team" Style="{StaticResource CenterMessageStyle}"/>
-                
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    
+
+                <StackLayout Style="{StaticResource HorizontalCenterStack}">
+
                     <Label Text="Emily Efird" Style="{StaticResource MessageStyle}"/>
                     
                     <Label Text="Takumi Aoyama" Style="{StaticResource MessageStyle}"/>
@@ -45,8 +45,9 @@
             
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="10">
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                <!--<StackLayout Orientation="Vertical" VerticalOptions="Center" Spacing="10">-->
+                <StackLayout Style="{StaticResource VerticalCenterWithSpacingStack}">
                     <!--Debug Settings Frame-->
                     <StackLayout Style="{StaticResource HorizontalStack}">
 
@@ -63,7 +64,7 @@
 
                     <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False">
 
-                        <StackLayout Style="{StaticResource VerticalStack}" Padding="5,0,0,0" Spacing="10">
+                        <StackLayout Style="{StaticResource VerticalWithPaddingSpacingStack}">
 
                             <Label Text="More Debug Settings to come..." Style="{DynamicResource MessageStyle}"/>
 
@@ -105,7 +106,7 @@
                 <StackLayout>
                     <!--Database Settings Frame-->
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="EndAndExpand">
+                    <StackLayout Style="{StaticResource HorizontalWithEndExpandStack}">
 
                         <Label
                                 Text="Database Settings"
