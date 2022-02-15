@@ -6,6 +6,8 @@ using Xamarin.Forms.Xaml;
 using Game.ViewModels;
 using Game.Models;
 using System.Linq;
+using System.Collections.Generic;
+using Game.Views.Battle;
 
 namespace Game.Views
 {
@@ -179,8 +181,23 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Update_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new CharacterUpdatePage(ViewModel)));
-            _ = await Navigation.PopAsync();
+            List<Page> li = Navigation.NavigationStack.ToList();
+            Page twoPreviousPage = li.ElementAt(li.Count - 2);
+
+            if (Equals(twoPreviousPage.GetType().Name, "PickCharactersPage"))
+            {
+                await Navigation.PushModalAsync(new NavigationPage(new BattleCharacterItemsUpdatePage(ViewModel)));
+                _ = await Navigation.PopAsync();
+                return;
+            }
+
+            if (!Equals(twoPreviousPage.GetType().Name, "PickCharactersPage"))
+            {
+                await Navigation.PushModalAsync(new NavigationPage(new CharacterUpdatePage(ViewModel)));
+                _ = await Navigation.PopAsync();
+                return;
+            }
+
         }
 
         /// <summary>
