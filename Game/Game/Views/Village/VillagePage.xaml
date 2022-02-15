@@ -6,65 +6,65 @@
 
     <ContentPage.Content>
 
-            <StackLayout HorizontalOptions="Center" Spacing="50">
+        <StackLayout Style="{StaticResource HorizontalCenterOptionWith50SpacingStack}">
 
-                <StackLayout>
-                    <ImageButton
+            <StackLayout>
+                <ImageButton
                                 Source="characters_page_icon.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="CharactersButton_Clicked"
                                 HorizontalOptions="Center"/>
 
-                    <Label 
+                <Label 
                                 Text="Agents"
                                 Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
+            </StackLayout>
 
-                
-                <StackLayout Orientation="Horizontal" Spacing="100"> 
-                   
-                    <StackLayout>
- 
-                        <ImageButton
+
+            <StackLayout Style="{StaticResource HorizontalOptionWith100SpacingStack}">
+
+                <StackLayout>
+
+                    <ImageButton
                                         Source="items_page_icon.png"
                                         Style="{StaticResource ImageLargeStyle}"
                                         Clicked="ItemsButton_Clicked"
                                         HorizontalOptions="Start"/>
 
-                        <Label 
+                    <Label 
                                 Text="Equipment"
                                 Style="{StaticResource CenterMessageStyle}"/>
 
-                    </StackLayout>
+                </StackLayout>
 
-                    <StackLayout>
-                        <ImageButton
+                <StackLayout>
+                    <ImageButton
                                         Source="monsters_page_icon.png"
                                         Style="{StaticResource ImageLargeStyle}"
                                         Clicked="MonstersButton_Clicked"
                                         />
 
-                        <Label 
+                    <Label 
                                         Text="Aliens"
                                         Style="{StaticResource CenterMessageStyle}"/>
-                    </StackLayout>
-                    
                 </StackLayout>
 
-                <StackLayout>
-                    <ImageButton
+            </StackLayout>
+
+            <StackLayout>
+                <ImageButton
                                 Source="scores_page_icon.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="ScoresButton_Clicked"
                                 />
 
-                    <Label 
+                <Label 
                                 Text="Scores"
                                 Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
-                
             </StackLayout>
-            
+
+        </StackLayout>
+
 
     </ContentPage.Content>
 </ContentPage>
