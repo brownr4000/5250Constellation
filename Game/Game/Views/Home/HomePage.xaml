@@ -8,10 +8,7 @@
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
             
-            <StackLayout
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Spacing="50">
+            <StackLayout Style="{StaticResource CenterWithSpacingStack}">
 
                 <StackLayout Style="{StaticResource HorizontalCenterStack}">
                     <Image
@@ -23,26 +20,15 @@
                 <StackLayout Style="{StaticResource HorizontalCenterWithPaddingForHomeStack}">
                     <Label 
                         Text="Battle of Cosmos"
-                        Style="{StaticResource HomeLabelStyle}"
-                        FontSize="Medium"
-                        LineBreakMode="WordWrap"
-                        MaxLines="5"
-                        />
+                        Style="{StaticResource HomeLabelStyle}"/>
 
-                    <Label Padding="0,10,0,0"
-                        Text="Constellations are trying to invade Earth to build a celestial city disguised as ordinary citizens."                        Style="{StaticResource HomeDescLabelStyle}"
-                        LineBreakMode="WordWrap"
-                        MaxLines="5"
-                        CharacterSpacing="1"
-                        />
+                    <Label 
+                        Text="Constellations are trying to invade Earth to build a celestial city disguised as ordinary citizens."    
+                        Style="{StaticResource HomeDescLabelStyle}"/>
 
-                    <Label Padding="0,10,0,0"
+                    <Label
                         Text="As a leader of the agents in black team, the Earth needs your protection against the invaders."
-                        Style="{StaticResource HomeDescLabelStyle}"
-                        LineBreakMode="WordWrap"
-                        MaxLines="5"
-                        CharacterSpacing="1"
-                        />
+                        Style="{StaticResource HomeDescLabelStyle}"/>
 
                 </StackLayout>
 
