@@ -24,7 +24,7 @@
                 <ScrollView>
                     <StackLayout Style="{StaticResource HorizontalOptionCenterWithPaddingStack}">
                         <Grid RowSpacing="1" ColumnSpacing="2"
-                        HorizontalOptions="Center" WidthRequest="600" >
+                        HorizontalOptions="Center" WidthRequest="600">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
@@ -32,7 +32,7 @@
                                 <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <StackLayout Style="{StaticResource VerticalCenterStack}" Grid.Row="0" Grid.Column="0">
+                            <StackLayout Style="{StaticResource VerticalCenterStack}" Grid.Row="0" Grid.Column="0" Spacing="10">
                                 <Label Text="Name:"
                                        Style="{StaticResource LabelStyle}"/>
 
@@ -56,7 +56,8 @@
                                        Style="{StaticResource LabelStyle}"/>
                                 
                                 <Label Text="{Binding Data.Description}"
-                                       Style="{StaticResource ValueWithPaddingStyle}"/>
+                                       Style="{StaticResource ValueWithPaddingStyle}"
+                                       FontSize="12"/>
                                 
                                 <StackLayout Style="{StaticResource HorizontalStartwithPaddingandSpacingStack}">
                                     <Label Text="Max Health" 
@@ -70,7 +71,9 @@
                             
                             <Image Source="{Binding Data.ImageURI}" 
                                    Style="{StaticResource ImageLargerStyle}"
-                                   Grid.Row="0" Grid.Column="1"/>
+                                   Grid.Row="0" Grid.Column="1"
+                                   WidthRequest="150"
+                                   HeightRequest="150"/>
                         </Grid>
                         
                         <FlexLayout Padding="0,20,0,0"                     

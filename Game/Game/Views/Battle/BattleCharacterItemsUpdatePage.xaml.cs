@@ -25,10 +25,8 @@ namespace Game.Views.Battle
         // Hold the current location selected
         public ItemLocationEnum PopupLocationEnum = ItemLocationEnum.Unknown;
 
-        public BattleCharacterItemsUpdatePage()
-        {
-            InitializeComponent();
-        }
+    
+
         /// <summary>
         /// Constructor for Create makes a new model
         /// </summary>
@@ -102,34 +100,34 @@ namespace Game.Views.Battle
         /// <returns></returns>
         public bool ShowPopup(ItemLocationEnum location)
         {
-            //PopupItemSelector.IsVisible = true;
+            PopupItemSelector.IsVisible = true;
 
-            //PopupLocationLabel.Text = "Items for :";
-            //PopupLocationValue.Text = location.ToMessage();
+            PopupLocationLabel.Text = "Items for :";
+            PopupLocationValue.Text = location.ToMessage();
 
-            //// Make a fake item for None
-            //var NoneItem = new ItemModel
-            //{
-            //    Id = null, // will use null to clear the item
-            //    Guid = "None", // how to find this item amoung all of them
-            //    ImageURI = "icon_cancel.png",
-            //    Name = "None",
-            //    Description = "None"
-            //};
+            // Make a fake item for None
+            var NoneItem = new ItemModel
+            {
+                Id = null, // will use null to clear the item
+                Guid = "None", // how to find this item amoung all of them
+                ImageURI = "icon_cancel.png",
+                Name = "None",
+                Description = "None"
+            };
 
-            //List<ItemModel> itemList = new List<ItemModel>
-            //{
-            //    NoneItem
-            //};
+            List<ItemModel> itemList = new List<ItemModel>
+            {
+                NoneItem
+            };
 
-            //// Add the rest of the items to the list
-            //itemList.AddRange(ItemIndexViewModel.Instance.GetLocationItems(location));
+            // Add the rest of the items to the list
+            itemList.AddRange(ItemIndexViewModel.Instance.GetLocationItems(location));
 
-            //// Populate the list with the items
-            //PopupLocationItemListView.ItemsSource = itemList;
+            // Populate the list with the items
+            PopupLocationItemListView.ItemsSource = itemList;
 
-            //// Remember the location for this popup
-            //PopupLocationEnum = location;
+            // Remember the location for this popup
+            PopupLocationEnum = location;
 
             return true;
         }
@@ -151,7 +149,7 @@ namespace Game.Views.Battle
         /// </summary>
         public void ClosePopup()
         {
-            //PopupItemSelector.IsVisible = false;
+            PopupItemSelector.IsVisible = false;
         }
 
         /// <summary>
@@ -159,19 +157,19 @@ namespace Game.Views.Battle
         /// </summary>
         public void AddItemsToDisplay()
         {
-            //var FlexList = ItemBox.Children.ToList();
-            //foreach (var data in FlexList)
-            //{
-            //    _ = ItemBox.Children.Remove(data);
-            //}
+            var FlexList = ItemBox.Children.ToList();
+            foreach (var data in FlexList)
+            {
+                _ = ItemBox.Children.Remove(data);
+            }
 
-            //ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Head));
-            //ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Necklass));
-            //ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.PrimaryHand));
-            //ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.OffHand));
-            //ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
-            //ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
-            //ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Head));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Necklass));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.PrimaryHand));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.OffHand));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
+            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
         }
 
         /// <summary>

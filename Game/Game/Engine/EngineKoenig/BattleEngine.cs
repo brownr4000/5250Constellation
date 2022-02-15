@@ -2,7 +2,6 @@
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Models;
-using Game.ViewModels;
 
 namespace Game.Engine.EngineKoenig
 {
@@ -46,15 +45,13 @@ namespace Game.Engine.EngineKoenig
         /// <param name="isAutoBattle"></param>
         /// <returns></returns>
         public override bool StartBattle(bool isAutoBattle)
-        {            
+        {
             // Reset the Score so it is fresh
             EngineSettings.BattleScore = new ScoreModel
             {
                 AutoBattle = isAutoBattle
             };
 
-            // Save score to data set
-            ScoreIndexViewModel.Instance.Dataset.Add(EngineSettings.BattleScore);
             BattleRunning = true;
 
             _ = Round.NewRound();

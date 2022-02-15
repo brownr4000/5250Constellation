@@ -4,7 +4,7 @@
              x:Class="Game.Views.Battle.BattleEntryPage"
              Title="Let's Protect Our City!">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Crimson" WidthRequest="540" HeightRequest="960">
+        <StackLayout BackgroundColor="Crimson" WidthRequest="1080" HeightRequest="1920">
             <Image Source="UFO.png"/>
 
             <StackLayout Orientation="Horizontal" Padding="20">

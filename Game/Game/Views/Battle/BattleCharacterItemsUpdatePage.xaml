@@ -72,48 +72,7 @@
                             x:Name="ItemBox">
                         </FlexLayout>
 
-                        <StackLayout Style="{StaticResource VerticalCenterExpandWithPaddingSpacingStack}">
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Attack"                                       
-                                       Style="{StaticResource StepperLabelStyle}"/>
-
-                                <Stepper
-                                     Value="{Binding Data.Attack, Mode=TwoWay}" 
-                                     Style="{StaticResource StepperStyle}"/>
-
-                                <Label Text="{Binding Data.Attack}" 
-                                   x:Name="AttackValue"
-                                   Style="{StaticResource StepperLabelStyle}"                                   
-                                   Padding="0,0,10,0"
-                                   HorizontalOptions="End"
-                                   HorizontalTextAlignment="End"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Defense"
-                                       Style="{StaticResource StepperLabelStyle}"/>
-
-                                <Stepper Style="{StaticResource StepperStyle}"
-                                         Value="{Binding Data.Defense, Mode=TwoWay}"/>
-
-                                <Label Text="{Binding Data.Defense}" 
-                                       x:Name="DefenseValue"
-                                       Style="{StaticResource StepperLabelStyle}"
-                                       Padding="0,0,10,0"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="Speed"
-                                       Style="{StaticResource StepperLabelStyle}"/>
-
-                                <Stepper
-                                         Value="{Binding Data.Speed, Mode=TwoWay}" 
-                                         Style="{StaticResource StepperStyle}"/>
-
-                                <Label Text="{Binding Data.Speed}" 
-                                       x:Name="SpeedValue"
-                                       Style="{StaticResource StepperLabelStyle}"
-                                       Padding="0,0,10,0"/>
-                            </StackLayout>
-                        </StackLayout>
+                        
 
                         <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
                             <Button Text="Cancel"
@@ -123,8 +82,11 @@
                             <Button Text="Save"
                                     Style="{StaticResource ButtonStyle}"
                                     Clicked="Save_Clicked"/>
+                            
                         </StackLayout>
+                        
                     </StackLayout>
+                    
                 </ScrollView>
             </StackLayout>
 
