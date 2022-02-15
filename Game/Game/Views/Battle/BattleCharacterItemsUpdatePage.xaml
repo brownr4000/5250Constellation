@@ -32,30 +32,23 @@
                                 <Label Text="Name"
                                        Style="{StaticResource LabelStyle}"/>
 
-                                <Entry Text="{Binding Data.Name, Mode=TwoWay}" 
-                                       x:Name="NameValue" 
+                                <Label Text="{Binding Data.Name}" 
                                        Style="{StaticResource EntryStyle}"/>
 
                                 <Label Text="Level"
                                        Style="{StaticResource LabelWithPaddingStyle}"/>
 
-                                <Picker Style="{StaticResource PickerStyle}"
-                                        SelectedItem="{Binding SelectedItemProperty}" 
-                                        x:Name="LevelPicker"/>
+                                <Label Text="{Binding Data.Level}"/>
 
                                 <Label Text="Class"
                                        Style="{StaticResource LabelWithPaddingStyle}"/>
 
-                                <Picker Style="{StaticResource PickerStyle}"
-                                        SelectedItem="{Binding SelectedItemProperty}" 
-                                        x:Name="ClassPicker"/>
+                                <Label Text="{Binding Data.Job}"/>
 
                                 <Label Text="Description"
                                        Style="{StaticResource LabelWithPaddingStyle}"/>
 
-                                <Entry Text="{Binding Data.Description, Mode=TwoWay}" 
-                                       x:Name="DescValue"
-                                       Style="{StaticResource EntryStyle}"/>
+                                <Label Text="{Binding Data.Description}"/>
 
                                 <StackLayout Style="{StaticResource HorizontalStartwithPaddingandSpacingStack}">
                                     <Label Text="Max Health" 
