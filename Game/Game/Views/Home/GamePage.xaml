@@ -6,7 +6,7 @@
 
     <ContentPage.Content>
 
-            <StackLayout Spacing="50" HorizontalOptions="Center">
+        <StackLayout Style="{StaticResource HorizontalCenterOptionWith50SpacingStack}">
                 <StackLayout>
                     <ImageButton
                                    Source="About.png"
@@ -18,8 +18,8 @@
                     
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Spacing="100">
-                    <StackLayout>
+            <StackLayout Style="{StaticResource HorizontalOptionWith100SpacingStack}">
+                <StackLayout>
                         <ImageButton Source="Earth.png"
                                      Style="{StaticResource ImageLargeStyle}"
                                      Clicked="VillageButton_Clicked"/>
