@@ -129,7 +129,7 @@
                                            Padding="0,0,10,0"/>
                                 </Grid>
                             </StackLayout>
-                            
+
                             <StackLayout Style="{StaticResource HorizontalOrientationStack}">
                                 <Grid
                                     HorizontalOptions="Center"
@@ -138,12 +138,12 @@
                                     <Label Grid.Column="0" 
                                            Text="Speed"
                                            Style="{StaticResource LabelStyle}"/>
-                                    
+
                                     <ProgressBar x:Name="SpeedProgressBar" 
                                                  Grid.Column="1" 
                                                  Progress="{Binding Data.Speed}" 
                                                Style="{StaticResource ProgressBarStyle}"/>
-                                    
+
                                     <Label Grid.Column="2" 
                                            Text="{Binding Data.Speed}" 
                                            x:Name="SpeedValue"
@@ -152,11 +152,6 @@
                                 </Grid>
                             </StackLayout>
 
-                            <StackLayout x:Name="BackToPartyButton" IsVisible="false">
-                                <Button Text="Back To Party" ImageSource="item.png" BackgroundColor="Crimson" Clicked="BackToParty_Clicked"/>
-                                
-                            </StackLayout>
-                            
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
