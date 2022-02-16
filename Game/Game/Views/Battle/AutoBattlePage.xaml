@@ -9,14 +9,13 @@
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="dungeon_door.png"
+                        Source="UFO.png"
                         Style="{StaticResource ImageLargeStyle}"
                         Clicked="AutobattleButton_Clicked"/>
 
                 <Label 
                         Text="Begin Battle"
-                        Style="{StaticResource MenuTextStyle}"
-                        HorizontalOptions="Center"/>
+                        Style="{StaticResource MenuTextStyle}"/>
             </StackLayout>
 
             <StackLayout Style="{StaticResource CardImageTextBox}" Spacing="20">
