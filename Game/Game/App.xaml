@@ -298,7 +298,9 @@
             <Style TargetType="Label"
                 x:Key="MenuTextStyle">
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}"/>
-                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="PlatNomor"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Padding" Value="20"/>
             </Style>
 
             <Style TargetType="Frame"
