@@ -90,7 +90,7 @@ namespace Game.Views
             // Manually deselect Character.
             CharactersListView.SelectedItem = null;
 
-            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
+            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data), true));
 
             // Don't add more than the party max
             if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)

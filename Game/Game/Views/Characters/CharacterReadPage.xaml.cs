@@ -30,7 +30,7 @@ namespace Game.Views
         /// The viewModel is the data that should be displayed
         /// </summary>
         /// <param name="viewModel"></param>
-        public CharacterReadPage(GenericViewModel<CharacterModel> data)
+        public CharacterReadPage(GenericViewModel<CharacterModel> data, bool fromPick = false)
         {
             InitializeComponent();
 
@@ -50,6 +50,11 @@ namespace Game.Views
             AttackProgressBar.Progress = ViewModel.Data.Attack / 9f;
             DefenseProgressBar.Progress = ViewModel.Data.Defense / 9f;
             SpeedProgressBar.Progress = ViewModel.Data.Speed / 9f;
+
+            if (fromPick)
+            {
+                BackToPartyButton.IsVisible = true;
+            }
         }
 
         /// <summary>
@@ -70,7 +75,7 @@ namespace Game.Views
                 case "Support":
                     result = CharacterJobEnum.Support.ToMessage();
                     break;
-                default: 
+                default:
                     break;
             }
             return result;
@@ -122,7 +127,7 @@ namespace Game.Views
             {
                 Style = (Style)Application.Current.Resources["ImageMediumStyle"],
                 Source = data.ImageURI
-            };            
+            };
 
             // Add the Display Text for the item
             var ItemLabel = new Label
@@ -181,8 +186,9 @@ namespace Game.Views
             List<Page> li = Navigation.NavigationStack.ToList();
             Page previousPage = li.ElementAt(li.Count - 2);
 
-            if (Equals(previousPage.GetType().Name, "PickCharactersPage") || Equals(previousPage.GetType().Name,"BattleCharacterItemsUpdatePage"))
+            if (Equals(previousPage.GetType().Name, "PickCharactersPage") || Equals(previousPage.GetType().Name, "BattleCharacterItemsUpdatePage"))
             {
+                
                 await Navigation.PushModalAsync(new NavigationPage(new BattleCharacterItemsUpdatePage(ViewModel)));
                 _ = await Navigation.PopAsync();
                 return;
@@ -195,6 +201,10 @@ namespace Game.Views
                 return;
             }
 
+        }
+
+        public async void BackToParty_Clicked(object sender, EventArgs e) {
+            await Navigation.PushAsync(new PickCharactersPage());
         }
 
         /// <summary>

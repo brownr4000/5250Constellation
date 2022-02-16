@@ -151,6 +151,12 @@
                                            Padding="0,0,10,0"/>
                                 </Grid>
                             </StackLayout>
+
+                            <StackLayout x:Name="BackToPartyButton" IsVisible="false">
+                                <Button Text="Back To Party" ImageSource="item.png" BackgroundColor="Crimson" Clicked="BackToParty_Clicked"/>
+                                
+                            </StackLayout>
+                            
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
