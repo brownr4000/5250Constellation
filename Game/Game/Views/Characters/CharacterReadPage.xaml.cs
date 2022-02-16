@@ -183,28 +183,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Update_Clicked(object sender, EventArgs e)
         {
-            List<Page> li = Navigation.NavigationStack.ToList();
-            Page previousPage = li.ElementAt(li.Count - 2);
-
-            if (Equals(previousPage.GetType().Name, "PickCharactersPage") || Equals(previousPage.GetType().Name, "BattleCharacterItemsUpdatePage"))
-            {
-                
-                await Navigation.PushModalAsync(new NavigationPage(new BattleCharacterItemsUpdatePage(ViewModel)));
-                _ = await Navigation.PopAsync();
-                return;
-            }
-
-            if (!Equals(previousPage.GetType().Name, "PickCharactersPage"))
-            {
-                await Navigation.PushModalAsync(new NavigationPage(new CharacterUpdatePage(ViewModel)));
-                _ = await Navigation.PopAsync();
-                return;
-            }
-
-        }
-
-        public async void BackToParty_Clicked(object sender, EventArgs e) {
-            //await Navigation.PushAsync(new PickCharactersPage(ViewModel));
+            await Navigation.PushModalAsync(new NavigationPage(new CharacterUpdatePage(ViewModel)));
+            _ = await Navigation.PopAsync();
         }
 
         /// <summary>
