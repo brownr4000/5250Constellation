@@ -55,5 +55,19 @@ namespace UnitTests.Views
             Assert.IsNotNull(result);
         }
 
+        [Test]
+        public void BattleEntryPage_Cancel_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.CancelButton_Clicked(null,null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
     }
 }
