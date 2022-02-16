@@ -25,7 +25,7 @@
                 Padding="5">
 
                     <!--Score Details-->
-                    <StackLayout Orientation="Vertical">
+                    <StackLayout Style="{StaticResource VerticalOnlyStack}">
                         <Entry 
                             Text="{Binding Data.Name}"
                             Style="{StaticResource LargeEntryStyle}"/>
