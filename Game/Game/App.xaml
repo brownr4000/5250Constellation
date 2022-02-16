@@ -916,6 +916,7 @@
             <Style TargetType="Picker" x:Key="PickerStyle">                
                 <Setter Property="TextColor" Value="{StaticResource ContrastTextColor}" />
                 <Setter Property="TitleColor" Value="{StaticResource PrimaryTextColor}" />
+                <Setter Property="FontFamily" Value="PlatNomor" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontAttributes" Value="None" />
