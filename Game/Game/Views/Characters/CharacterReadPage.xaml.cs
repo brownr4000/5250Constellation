@@ -37,9 +37,6 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             AddItemsToDisplay();
-            // Temp store off the Level
-            var level = this.ViewModel.Data.Level;            
-            ViewModel.Data.Level = level - 1;
 
             //Converting Job to Class and assigning to ClassPicker            
             string result = ConvertClassToJob(ViewModel.Data.Job);
