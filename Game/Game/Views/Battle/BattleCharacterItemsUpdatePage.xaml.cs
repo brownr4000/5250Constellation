@@ -77,7 +77,8 @@ namespace Game.Views.Battle
 
                 MessagingCenter.Send(this, "Update", ViewModel.Data);
 
-            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(ViewModel.Data)));
+            //await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(ViewModel.Data)));
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
