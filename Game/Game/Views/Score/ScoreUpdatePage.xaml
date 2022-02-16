@@ -124,10 +124,8 @@
 
                         </Grid>
 
-                        <StackLayout Orientation="Horizontal"
-                                 Style="{StaticResource HorizontalStack}"
-                                 Padding="10"
-                                 WidthRequest="300">
+                        <StackLayout
+                                 Style="{StaticResource HorizontalWithWidthPaddingStack}">
                             <Label
                                 Text="Game Date: "
                                 Style="{StaticResource LabelStyle}"/>
