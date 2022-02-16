@@ -27,6 +27,7 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PickCharactersPage : ContentPage
     {
+        private GenericViewModel<CharacterModel> viewModel;
 
         // Empty Constructor for UTs
         public PickCharactersPage(bool UnitTest) { }
@@ -45,6 +46,27 @@ namespace Game.Views
 
             // Clear the Database List and the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
+
+            UpdateNextButtonState();
+        }
+
+        public PickCharactersPage(GenericViewModel<CharacterModel> data)
+        {
+            this.viewModel = data;
+
+            InitializeComponent();
+
+            BindingContext = BattleEngineViewModel.Instance;
+            //BindingContext = BattleEngineViewModel.Instance;
+
+            // Clear the Database List and the Party List to start
+            BattleEngineViewModel.Instance.PartyCharacterList.Clear();
+
+            // Don't add more than the party max
+            if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
+            {
+                BattleEngineViewModel.Instance.PartyCharacterList.Add(data.Data);
+            }
 
             UpdateNextButtonState();
         }

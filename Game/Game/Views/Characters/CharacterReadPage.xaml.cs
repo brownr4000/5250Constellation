@@ -204,7 +204,7 @@ namespace Game.Views
         }
 
         public async void BackToParty_Clicked(object sender, EventArgs e) {
-            await Navigation.PushAsync(new PickCharactersPage());
+            await Navigation.PushAsync(new PickCharactersPage(ViewModel));
         }
 
         /// <summary>
