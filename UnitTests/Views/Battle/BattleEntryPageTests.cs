@@ -40,20 +40,20 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
-        //[Test]
-        //public void BatttleEntryPage_ConstructorDefault_Should_Pass()
-        //{
+        [Test]
+        public void BatttleEntryPage_ConstructorDefault_Should_Pass()
+        {
 
-        //    // Arrange
+            // Arrange
 
-        //    // Act
-        //    var result = page;
+            // Act
+            var result = page;
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
+            // Assert
+            Assert.IsNotNull(result);
+        }
 
     }
 }
