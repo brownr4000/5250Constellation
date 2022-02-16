@@ -18,7 +18,6 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <!--<StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="100">-->
             <StackLayout Style="{StaticResource HorizontalCenterWithVerticalOptionsSpacingStack}">
                 <StackLayout Style="{StaticResource StackWithWidth}">
                     <Label
