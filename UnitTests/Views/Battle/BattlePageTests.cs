@@ -9,6 +9,7 @@ using Game;
 using Game.Views;
 using Game.Models;
 using Game.ViewModels;
+using Game.Views.Battle;
 
 namespace UnitTests.Views
 {
@@ -1015,6 +1016,11 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got Here
+        }
+
+        public static implicit operator BattlePageTests(BattleEntryPage v)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

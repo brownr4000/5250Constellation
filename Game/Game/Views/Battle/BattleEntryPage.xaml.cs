@@ -12,6 +12,10 @@ namespace Game.Views.Battle
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BattleEntryPage : ContentPage
     {
+        // Empty Constructor for UTs
+        bool UnitTestSetting;
+        public BattleEntryPage(bool UnitTest) { UnitTestSetting = UnitTest; }
+
         public BattleEntryPage()
         {
             InitializeComponent();
