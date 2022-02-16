@@ -5,8 +5,8 @@
              >
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Spacing="20">
-            <StackLayout Style="{StaticResource CardImageTextBox}">
+        <StackLayout Style="{StaticResource VerticalCenterExpandWithPaddingSpacingStack}">
+            <StackLayout Style="{StaticResource AutoBattleCardImageTextBox}">
 
                 <ImageButton
                         Source="UFO.png"
@@ -15,29 +15,20 @@
 
                 <Label 
                         Text="Begin Battle"
-                        Style="{StaticResource MenuTextStyle}"/>
+                        Style="{StaticResource ColouredLargeLabelStyle}"/>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource CardImageTextBox}" Spacing="20">
+            <StackLayout Style="{StaticResource AutoBattleCardImageTextBox}">
 
                 <Label 
-                    x:Name="BattleMessageValue"
-                    Text=""
-                    LineBreakMode="WordWrap"
-                    MaxLines="10"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"
-                    Style="{StaticResource MessageStyle}"
-                    />
+                    x:Name="BattleMessageValue"                    
+                    Style="{StaticResource AutoBattleMessageStyle}"/>
 
                 <Image
                         x:Name="AutobattleImage"
                         Source="elf1.gif"
-                        Style="{StaticResource ImageLargeStyle}"></Image>
-                        <!--IsAnimationPlaying="True"-->
-                        
+                        Style="{StaticResource ImageLargeStyle}"/>
+                        <!--IsAnimationPlaying="True"-->                        
 
             </StackLayout>
         </StackLayout>
