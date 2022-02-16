@@ -12,12 +12,11 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete_purple.png"/>
     </ContentPage.ToolbarItems>
 
-
     <ScrollView>
 
-        <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="15">
+        <StackLayout Style="{StaticResource VerticalCenterWithSpacingStack}">
 
-            <Label Text="Characters" Padding="0,20,0,20" Style="{StaticResource CenterLabelStyle}"/>
+            <Label Text="Characters" Style="{StaticResource CenterLabelWithPaddingStyle}"/>
 
             <CollectionView 
                     ItemsLayout="HorizontalList"
@@ -38,7 +37,8 @@
                                 <ColumnDefinition Width="20" />
                             </Grid.ColumnDefinitions>
                             
-                            <Image Grid.Row="0" Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+                            <Image Grid.Row="0" Source="{Binding ImageURI}" 
+                                   Style="{StaticResource ImageMediumAspectToFitStyle}"/>
 
                             <StackLayout Grid.Row="1">
                                 <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
@@ -51,15 +51,12 @@
                 </CollectionView.ItemTemplate>
 
             </CollectionView>
-            
-            
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">
                 <StackLayout
                                 Grid.Column="0"
-                                Grid.Row="2"
-                                Orientation="Vertical"
-                                Padding="10">
+                                Grid.Row="2" 
+                                Style="{StaticResource VerticalWithPaddingStack}">
                     <Label 
                                     Text="Score"
                                     Style="{StaticResource ValueStyleMicro}"/>
@@ -73,8 +70,7 @@
                 <StackLayout
                                 Grid.Column="1"
                                 Grid.Row="2"
-                                Orientation="Vertical"
-                                Padding="10">
+                                Style="{StaticResource VerticalWithPaddingStack}">
                     <Label 
                                     Text="Rounds"
                                     Style="{StaticResource ValueStyleMicro}"/>
@@ -88,8 +84,7 @@
                 <StackLayout
                                 Grid.Column="2"
                                 Grid.Row="2"
-                                Orientation="Vertical"
-                                Padding="10">
+                                Style="{StaticResource VerticalWithPaddingStack}">
                     <Label 
                                     Text="Turns"
                                     Style="{StaticResource ValueStyleMicro}"/>
@@ -107,7 +102,7 @@
             <StackLayout Style="{StaticResource HorizontalCenterStack}">
 
 
-                <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="25">
+                <StackLayout Style="{StaticResource VerticalCenterWith25SpacingStack}" >
 
                     <Label 
                                     Text="Total Number"
@@ -130,7 +125,8 @@
                         <DataTemplate>
 
                             <Grid>
-                                <Image Grid.Row="0" Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+                                <Image Grid.Row="0" Source="{Binding ImageURI}" 
+                                       Style="{StaticResource ImageMediumAspectToFitStyle}"/>
                                 <StackLayout Grid.Row="1">
                                     <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
                                 </StackLayout>
@@ -146,7 +142,7 @@
 
             </StackLayout>
 
-            <StackLayout Style="{StaticResource VerticalCenterStack}" Spacing="25">
+            <StackLayout Style="{StaticResource VerticalCenterWith25SpacingStack}">
                 <Label Text="Total Experience" Style="{StaticResource CenterLabelStyle}"/>
                 <Label Text="{Binding ExperienceGainedTotal}" Style="{StaticResource CenterLabelStyle}"/>
             </StackLayout>
@@ -164,7 +160,8 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Grid.Row="0" Source="{Binding ImageURI}" Style="{StaticResource ImageMediumStyle}" Aspect="AspectFit"/>
+                                <Image Grid.Row="0" Source="{Binding ImageURI}" 
+                                       Style="{StaticResource ImageMediumAspectToFitStyle}"/>
                                 <StackLayout Grid.Row="1">
                                     <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
                                 </StackLayout>

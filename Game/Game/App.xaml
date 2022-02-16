@@ -198,6 +198,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="CenterLabelWithPaddingStyle"
+                BasedOn="{StaticResource CenterLabelStyle}">
+                <Setter Property="Padding" Value="0,20,0,20" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LargeLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor" />
@@ -398,6 +404,12 @@
                 BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="WidthRequest" Value="50" />
+            </Style>
+
+            <Style TargetType="Image"
+                x:Key="ImageMediumAspectToFitStyle"
+                BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
             <Style TargetType="Image"
@@ -723,6 +735,12 @@
                 x:Key="VerticalCenterWithSpacingStack"
                    BasedOn="{StaticResource VerticalCenterStack}">
                 <Setter Property="Spacing" Value="10" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="VerticalCenterWith25SpacingStack"
+                   BasedOn="{StaticResource VerticalCenterStack}">
+                <Setter Property="Spacing" Value="25" />
             </Style>
 
             <Style TargetType="StackLayout"
