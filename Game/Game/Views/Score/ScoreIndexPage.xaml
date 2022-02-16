@@ -28,30 +28,20 @@
                               RowDefinitions="Auto, *"
                               ColumnDefinitions="Auto, *">
 
-                                <StackLayout Grid.Column="1"
-                                         Margin="20"
-                                         Orientation="Horizontal">
+                                <StackLayout Grid.Column="1" Style="{StaticResource HorizontalWithMarginStack}">
 
-                                    <StackLayout
-                                        Orientation="Vertical"
-                                        WidthRequest="180"
-                                        HeightRequest="200"
-                                        VerticalOptions="CenterAndExpand">
+                                    <StackLayout Style="{StaticResource VerticalCenterExpandWithHeightWidthStack}">
                                         <Label 
                                             Grid.Column="0"
                                             Grid.Row="0"
                                             Text="{Binding Name}" 
-                                            Style="{StaticResource PopupItemTextStyle}"
-                                            HorizontalOptions="Center"
-                                            LineBreakMode="WordWrap"/>
+                                            Style="{StaticResource ScoreLabelStyle}"/>
 
                                         <Label 
                                             Grid.Column="0"
                                             Grid.Row="1"
                                             Text="{Binding ScoreTotal}" 
-                                            Style="{StaticResource ListStyle}"
-                                            FontSize="Small"
-                                            HorizontalOptions="Center"/>
+                                            Style="{StaticResource ListSmallLabelStyle}"/>
 
                                     </StackLayout>
 
@@ -66,7 +56,8 @@
                                                 <CollectionView.ItemTemplate >
                                                     <DataTemplate>
 
-                                                        <Image Source="{Binding ImageURI}" Style="{StaticResource ImageSmallStyle}" Aspect="AspectFit"/>
+                                                        <Image Source="{Binding ImageURI}" 
+                                                               Style="{StaticResource ImageSmallAspectToFitStyle}"/>
 
                                                     </DataTemplate>
 
@@ -74,40 +65,31 @@
 
                                             </CollectionView>
 
-                                            <StackLayout
-                                                VerticalOptions="Center"
-                                                WidthRequest="200">
+                                            <StackLayout Style="{StaticResource VerticalCenterWithWidthStack}">
                                                 <Label
-                                                    Style="{StaticResource PopupItemTextStyle}" 
-                                                    Text="Date"
-                                                    FontSize="12"/>
+                                                    Style="{StaticResource ScoreLabelSmallStyle}" 
+                                                    Text="Date"/>
 
                                                 <Label
                                                    x:Name="CurrentDateTime"
                                                    Text="{Binding GameDate}"
-                                                   Style="{StaticResource ListStyle}"
-                                                   FontSize="12"/>
+                                                   Style="{StaticResource ListSmallFontSizeLabelStyle}"/>
 
                                                 <Label 
                                                     Text="Rounds" 
-                                                    Style="{StaticResource PopupItemTextStyle}"
-                                                    FontSize="12"/>
+                                                    Style="{StaticResource ScoreLabelSmallStyle}"/>
 
                                                 <Label 
                                                     Text="{Binding RoundCount}" 
-                                                    Style="{StaticResource ListStyle}"
-                                                    FontSize="12"/>
+                                                    Style="{StaticResource ListSmallFontSizeLabelStyle}"/>
 
                                                 <Label 
                                                 Text="Turns" 
-                                                Style="{StaticResource PopupItemTextStyle}"
-                                                FontSize="12"/>
+                                                Style="{StaticResource ScoreLabelSmallStyle}"/>
 
                                                 <Label 
                                                     Text="{Binding TurnCount}" 
-                                                    Style="{StaticResource ListStyle}"
-                                                    FontSize="12"/>
-
+                                                    Style="{StaticResource ListSmallFontSizeLabelStyle}"/>
 
                                             </StackLayout>
 
