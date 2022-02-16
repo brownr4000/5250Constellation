@@ -485,21 +485,8 @@
                 <Setter Property="HorizontalOptions" Value="EndAndExpand" />
             </Style>
 
-            <Style TargetType="StackLayout"
-                x:Key="HorizontalStartwithPaddingandSpacingStack"
-                   BasedOn="{StaticResource HorizontalStack}">
-                <Setter Property="Padding" Value="20" />
-                <Setter Property="Spacing" Value="20" />
-            </Style>
+          
             
-            <Style TargetType="StackLayout"
-                x:Key="HorizontalCenterWithPaddingSpacingStack">
-                <Setter Property="Orientation" Value="Horizontal" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Padding" Value="20" />
-                <Setter Property="Spacing" Value="20" />
-            </Style>
-
             <Style TargetType="StackLayout"
                 x:Key="HorizontalOptionCenterStack">
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -539,12 +526,26 @@
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
+            
+              <Style TargetType="StackLayout"
+                x:Key="HorizontalStartwithPaddingandSpacingStack"
+                   BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="Spacing" Value="20" />
+            </Style>
 
             <Style TargetType="StackLayout"
                 x:Key="HorizontalCenterWithLessPaddingSpacingStack" 
                    BasedOn="{StaticResource HorizontalCenterStack}">
                 <Setter Property="Padding" Value="10" />
                 <Setter Property="Spacing" Value="10" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalCenterWithPaddingSpacingStack" 
+                   BasedOn="{StaticResource HorizontalCenterStack}">
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="Spacing" Value="20" />
             </Style>
 
             <Style TargetType="StackLayout"
@@ -567,7 +568,14 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Spacing" Value="50" />
             </Style>
-
+           
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalCenterWithVerticalOptionsSpacingStack">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="Spacing" Value="100" />
+            </Style>
+            
             <Style TargetType="StackLayout"
                 x:Key="HorizontalCenterWithSpacingStack"
                    BasedOn="{StaticResource HorizontalCenterStack}">
@@ -609,7 +617,11 @@
                 <Setter Property="Padding" Value="0,0,0,20" />
                 <Setter Property="Spacing" Value="30" />
             </Style>
-            
+
+            <Style TargetType="StackLayout"
+                x:Key="StackWithWidth">
+                <Setter Property="WidthRequest" Value="300" />
+            </Style>
 
             <Style TargetType="StackLayout"
                 x:Key="StackWithPadding">

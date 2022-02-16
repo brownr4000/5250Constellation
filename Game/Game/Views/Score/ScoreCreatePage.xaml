@@ -18,9 +18,9 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="100">
-
-                <StackLayout WidthRequest="300">
+            <!--<StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Spacing="100">-->
+            <StackLayout Style="{StaticResource HorizontalCenterWithVerticalOptionsSpacingStack}">
+                <StackLayout Style="{StaticResource StackWithWidth}">
                     <Label
                             Text="Score Name:" 
                             Style="{StaticResource LabelStyle}"/>
@@ -33,7 +33,7 @@
 
                 </StackLayout>
 
-                <StackLayout WidthRequest="300">
+                <StackLayout Style="{StaticResource StackWithWidth}">
                     <Label 
                             Text="Score:" 
                             Style="{StaticResource LabelStyle}"/>
@@ -49,7 +49,7 @@
             </StackLayout>
 
 
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">
                 <Label 
                     x:Name="ScoreNameErrorMessage"
                     Text="Please Enter a Score Name"
@@ -61,11 +61,8 @@
                     Style="{StaticResource ErrorMessageStyle}"/>
                 
             </StackLayout>
-            
-            <StackLayout 
-                Padding="20" Spacing="20"
-                Orientation="Horizontal"
-                HorizontalOptions="Center">
+
+            <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
                 <Button
                     Text="Cancel"
                     Style="{StaticResource ButtonStyle}"
