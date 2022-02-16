@@ -50,26 +50,26 @@ namespace Game.Views
             UpdateNextButtonState();
         }
 
-        public PickCharactersPage(GenericViewModel<CharacterModel> data)
-        {
-            this.viewModel = data;
+        //public PickCharactersPage(GenericViewModel<CharacterModel> data)
+        //{
+        //    this.viewModel = data;
 
-            InitializeComponent();
+        //    InitializeComponent();
 
-            BindingContext = BattleEngineViewModel.Instance;
-            //BindingContext = BattleEngineViewModel.Instance;
+        //    BindingContext = BattleEngineViewModel.Instance;
+        //    //BindingContext = BattleEngineViewModel.Instance;
 
-            // Clear the Database List and the Party List to start
-            BattleEngineViewModel.Instance.PartyCharacterList.Clear();
+        //    // Clear the Database List and the Party List to start
+        //    BattleEngineViewModel.Instance.PartyCharacterList.Clear();
 
-            // Don't add more than the party max
-            if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
-            {
-                BattleEngineViewModel.Instance.PartyCharacterList.Add(data.Data);
-            }
+        //    // Don't add more than the party max
+        //    if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
+        //    {
+        //        BattleEngineViewModel.Instance.PartyCharacterList.Add(data.Data);
+        //    }
 
-            UpdateNextButtonState();
-        }
+        //    UpdateNextButtonState();
+        //}
 
         ///// <summary>
         ///// The row selected from the list
