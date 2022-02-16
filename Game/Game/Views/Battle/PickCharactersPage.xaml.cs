@@ -50,58 +50,12 @@ namespace Game.Views
             UpdateNextButtonState();
         }
 
-        //public PickCharactersPage(GenericViewModel<CharacterModel> data)
-        //{
-        //    this.viewModel = data;
-
-        //    InitializeComponent();
-
-        //    BindingContext = BattleEngineViewModel.Instance;
-        //    //BindingContext = BattleEngineViewModel.Instance;
-
-        //    // Clear the Database List and the Party List to start
-        //    BattleEngineViewModel.Instance.PartyCharacterList.Clear();
-
-        //    // Don't add more than the party max
-        //    if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
-        //    {
-        //        BattleEngineViewModel.Instance.PartyCharacterList.Add(data.Data);
-        //    }
-
-        //    UpdateNextButtonState();
-        //}
-
-        ///// <summary>
-        ///// The row selected from the list
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="args"></param>
-        //public void OnDatabaseCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
-        //{
-        //    CharacterModel data = args.SelectedItem as CharacterModel;
-        //    if (data == null)
-        //    {
-        //        return;
-        //    }
-
-        //    // Manually deselect Character.
-        //    CharactersListView.SelectedItem = null;
-
-        //    // Don't add more than the party max
-        //    if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
-        //    {
-        //        BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
-        //    }
-
-        //    UpdateNextButtonState();
-        //}
-
         /// <summary>
         /// The row selected from the list
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        public async void OnDatabaseCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
+        public void OnDatabaseCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
             CharacterModel data = args.SelectedItem as CharacterModel;
             if (data == null)
@@ -111,8 +65,6 @@ namespace Game.Views
 
             // Manually deselect Character.
             CharactersListView.SelectedItem = null;
-
-            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data), true));
 
             // Don't add more than the party max
             if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
