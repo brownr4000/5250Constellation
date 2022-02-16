@@ -1017,10 +1017,5 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got Here
         }
-
-        public static implicit operator BattlePageTests(BattleEntryPage v)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
