@@ -30,7 +30,7 @@ namespace Game.Views
         /// The viewModel is the data that should be displayed
         /// </summary>
         /// <param name="viewModel"></param>
-        public CharacterReadPage(GenericViewModel<CharacterModel> data, bool fromPick = false)
+        public CharacterReadPage(GenericViewModel<CharacterModel> data)
         {
             InitializeComponent();
 
@@ -50,11 +50,6 @@ namespace Game.Views
             AttackProgressBar.Progress = ViewModel.Data.Attack / 9f;
             DefenseProgressBar.Progress = ViewModel.Data.Defense / 9f;
             SpeedProgressBar.Progress = ViewModel.Data.Speed / 9f;
-
-            if (fromPick)
-            {
-                BackToPartyButton.IsVisible = true;
-            }
         }
 
         /// <summary>
