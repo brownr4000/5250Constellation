@@ -1,4 +1,4 @@
-﻿<!--<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local_helpers="clr-namespace:Game.Helpers"
              x:Class="Game.Views.Battle.BattleCharacterItemsUpdatePage">
@@ -9,8 +9,8 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout
-        HorizontalOptions="FillAndExpand"
+        <!--<AbsoluteLayout-->
+        <!--HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand">
 
             <StackLayout Style="{StaticResource VerticalStack}"
@@ -90,7 +90,7 @@
                 </ScrollView>
             </StackLayout>
 
-            --><!--The Item Popup--><!--
+            The Item Popup
             <StackLayout x:Name="PopupItemSelector" 
                  BackgroundColor="{StaticResource PageBackgroundColor}" 
                  IsVisible="false" 
@@ -161,8 +161,8 @@
                     </Frame>
                 </StackLayout>
             </StackLayout>
-        </AbsoluteLayout>
+        </AbsoluteLayout>-->
 
     </ContentPage.Content>
 
-</ContentPage>-->
+</ContentPage>
