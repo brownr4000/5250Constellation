@@ -512,6 +512,13 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="HorizontalWithWidthPaddingStack"
+                   BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="WidthRequest" Value="10" />
+                <Setter Property="Padding" Value="300" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="HorizontalWithEndExpandStack"
                    BasedOn="{StaticResource HorizontalStack}">
                 <Setter Property="HorizontalOptions" Value="EndAndExpand" />
@@ -675,6 +682,12 @@
             <Style TargetType="StackLayout"
                 x:Key="VerticalOnlyStack">
                 <Setter Property="Orientation" Value="Vertical" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="VerticalWithPaddingStack" 
+                   BasedOn="{StaticResource VerticalOnlyStack}">
+                <Setter Property="Padding" Value="10" />
             </Style>
 
             <Style TargetType="StackLayout"

@@ -14,8 +14,8 @@
                 WidthRequest="350"
                 Padding="5">
                 
-                <!--Score Details-->
-                <StackLayout Orientation="Vertical">
+                <StackLayout Style="{StaticResource VerticalOnlyStack}">
+                    
                     <Label
                         Text="{Binding Data.Name}"
                         Padding="10"
@@ -68,11 +68,11 @@
                             Grid.Row="1"
                             Source="{Binding Data.CharacterModelDeathList[5]}"/>
 
-                        <StackLayout
+                        <StackLayout 
                             Grid.Column="0"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                            Padding="10">
+                            Grid.Row="2" 
+                            Style="{StaticResource VerticalWithPaddingStack}">
+                            
                             <Label 
                                 Text="Score"
                                 Style="{StaticResource ValueStyleMicro}"/>
@@ -86,8 +86,8 @@
                         <StackLayout
                             Grid.Column="1"
                             Grid.Row="2"
-                            Orientation="Vertical"
-                            Padding="10">
+                            Style="{StaticResource VerticalWithPaddingStack}">
+                            
                             <Label 
                                 Text="Rounds"
                                 Style="{StaticResource ValueStyleMicro}"/>
@@ -100,9 +100,9 @@
 
                         <StackLayout
                             Grid.Column="2"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                            Padding="10">
+                            Grid.Row="2" 
+                            Style="{StaticResource VerticalWithPaddingStack}">
+                            
                             <Label
                                 Text="Turns"
                                 Style="{StaticResource ValueStyleMicro}"/>
@@ -114,11 +114,9 @@
                         </StackLayout>
 
                     </Grid>
-
-                    <StackLayout Orientation="Horizontal"
-                                 Style="{StaticResource HorizontalStack}"
-                                 Padding="10"
-                                 WidthRequest="300">
+                    
+                    <StackLayout Style="{StaticResource HorizontalWithWidthPaddingStack}">
+                        
                         <Label
                             Text="Game Date: "
                             Style="{StaticResource LabelStyle}"/>
@@ -129,10 +127,8 @@
 
                     </StackLayout>
 
-                    <StackLayout Orientation="Horizontal"
-                                 Style="{StaticResource HorizontalStack}"
-                                 Padding="10"
-                                 WidthRequest="300">
+                    <StackLayout Style="{StaticResource HorizontalWithWidthPaddingStack}">
+                        
                         <Label
                             Text="AutoBattle: "
                             Style="{StaticResource LabelStyle}"
