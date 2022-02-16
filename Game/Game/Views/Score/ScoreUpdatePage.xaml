@@ -28,8 +28,7 @@
                     <StackLayout Orientation="Vertical">
                         <Entry 
                             Text="{Binding Data.Name}"
-                            FontSize="20"
-                            Style="{StaticResource EntryStyle}"/>
+                            Style="{StaticResource LargeEntryStyle}"/>
 
                         <Grid
                         RowSpacing="25"
@@ -81,8 +80,8 @@
                             <StackLayout
                                 Grid.Column="0"
                                 Grid.Row="2"
-                                Orientation="Vertical"
-                                Padding="10">
+                                Style="{StaticResource VerticalWithPaddingStack}">
+                                
                                 <Label 
                                     Text="Score"
                                     Style="{StaticResource ValueStyleMicro}"/>
@@ -96,8 +95,8 @@
                             <StackLayout
                                 Grid.Column="1"
                                 Grid.Row="2"
-                                Orientation="Vertical"
-                                Padding="10">
+                                Style="{StaticResource VerticalWithPaddingStack}">
+                                
                                 <Label 
                                     Text="Rounds"
                                     Style="{StaticResource ValueStyleMicro}"/>
@@ -111,8 +110,8 @@
                             <StackLayout
                                 Grid.Column="2"
                                 Grid.Row="2"
-                                Orientation="Vertical"
-                                Padding="10">
+                                Style="{StaticResource VerticalWithPaddingStack}">
+                                
                                 <Label 
                                     Text="Turns"
                                     Style="{StaticResource ValueStyleMicro}"/>
@@ -139,10 +138,7 @@
 
                         </StackLayout>
 
-                        <StackLayout Orientation="Horizontal"
-                                 Style="{StaticResource HorizontalStack}"
-                                 Padding="10"
-                                 WidthRequest="300">
+                        <StackLayout Style="{StaticResource HorizontalWithWidthPaddingStack}">
                             <Label
                                 Text="AutoBattle: "
                                 Style="{StaticResource LabelStyle}"

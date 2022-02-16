@@ -952,6 +952,12 @@
             </Style>
 
             <Style TargetType="Entry"
+                x:Key="LargeEntryStyle"
+                   BasedOn="{StaticResource EntryStyle}">
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style TargetType="Entry"
                 x:Key="ServerItemEntryStyle">
                 <Setter Property="Text" Value="1"/>
                 <Setter Property="MaxLength" Value="5"/>
