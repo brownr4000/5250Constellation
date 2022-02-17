@@ -22,8 +22,6 @@ namespace Game.Views
     {
         // The Character to create
         public GenericViewModel<CharacterModel> ViewModel { get; set; }
-
-        public List<ItemModel> AllLocations { get; set; }
         
         // Hold the current location selected
         public ItemLocationEnum PopupLocationEnum = ItemLocationEnum.Unknown;
