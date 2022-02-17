@@ -275,5 +275,18 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(ItemLocationEnum.Head,result);
         }
+
+        [Test]
+        public void ItemLocationEnumHelper_ConvertMessageToEnum_Invalid_Bogus_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = ItemLocationEnumHelper.ConvertMessageToEnum("bogus");
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ItemLocationEnum.Unknown,result);
+        }
     }
 }
