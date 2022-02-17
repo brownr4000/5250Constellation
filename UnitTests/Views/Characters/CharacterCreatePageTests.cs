@@ -308,14 +308,60 @@ namespace UnitTests.Views
         public void CharacterCreatePage_Location_Changed_Valid_Should_Pass()
         {
             // Arrange
-            Location_Changed(null, null);
 
             // Act
+            Location_Changed(null, null);
 
             // Reset
 
             // Assert
             Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// Tests the Name_TextChanged Error Message Display
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Name_TextChanged_Invalid_Should_Pass()
+        {
+            // Arrange
+            var entry = (Entry)page.FindByName("NameValue");
+
+            entry.Text = null;
+
+            var textChanged = new TextChangedEventArgs(entry.Text, null);
+
+            // Act
+            page.Name_TextChanged(null, textChanged);
+            
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
+        /// <summary>
+        /// Tests the Desc_TextChanged Error Message Display
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Desc_TextChanged_Invalid_Should_Pass()
+        {
+            // Arrange
+            var entry = (Entry)page.FindByName("DescValue");
+
+            entry.Text = null;
+
+            var textChanged = new TextChangedEventArgs(entry.Text, null);
+
+            // Act
+            page.Desc_TextChanged(null, textChanged);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
         }
     }
 }
