@@ -137,5 +137,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void MonsterCreatePage_DifficultyPicker_SelectedIndexChanged_Valid_Hard_Should_Pass()
+        {
+            // Arrange
+            var selectedDifficulty = (Picker)page.FindByName("DifficultyPicker");
+
+            // Act
+            selectedDifficulty.SelectedIndex = 2;
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
