@@ -261,5 +261,19 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(Expected, Actual, TestContext.CurrentContext.Test.Name);
         }
+
+        [Test]
+        public void ItemLocationEnumHelper_ConvertMessageToEnum_Valid_Head_Should_Pass() 
+        {
+            // Arrange
+
+            // Act
+            var result = ItemLocationEnumHelper.ConvertMessageToEnum("Head");
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ItemLocationEnum.Head,result);
+        }
     }
 }
