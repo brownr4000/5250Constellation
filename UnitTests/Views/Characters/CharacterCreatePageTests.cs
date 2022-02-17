@@ -300,5 +300,22 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        /// <summary>
+        /// Tests the Location_Changed Event
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Location_Changed_Valid_Should_Pass()
+        {
+            // Arrange
+            Location_Changed(null, null);
+
+            // Act
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
