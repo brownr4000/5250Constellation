@@ -410,7 +410,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Name_TextChanged(object sender, TextChangedEventArgs e)
+        public void Name_TextChanged(object sender, TextChangedEventArgs e)
         {
             NameErrorMessage.IsVisible = false;
             if (string.IsNullOrEmpty(NameValue.Text))
@@ -424,7 +424,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Desc_TextChanged(object sender, TextChangedEventArgs e)
+        public void Desc_TextChanged(object sender, TextChangedEventArgs e)
         {
             DescErrorMessage.IsVisible = false;
             if (string.IsNullOrEmpty(DescValue.Text))
