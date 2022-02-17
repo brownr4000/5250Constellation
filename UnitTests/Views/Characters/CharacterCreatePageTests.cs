@@ -363,5 +363,25 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
 
         }
+
+        /// <summary>
+        /// Tests if Class_Changed has a null picker entry
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Class_Changed_Invalid_Should_Pass()
+        {
+            // Arrange
+            var selectedClass = (Picker)page.FindByName("ClassPicker");
+
+            selectedClass.SelectedItem = null;
+
+            // Act
+            page.Class_Changed(selectedClass, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
