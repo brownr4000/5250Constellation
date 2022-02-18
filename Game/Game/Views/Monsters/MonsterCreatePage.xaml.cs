@@ -52,9 +52,9 @@ namespace Game.Views
             DifficultyErrorMessage.IsVisible = false;
 
             // Load the values for the Class into the Picker
-            ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
-            ClassPicker.Items.Add(MonsterJobEnum.Cleric.ToMessage());
-            ClassPicker.Items.Add(MonsterJobEnum.Support.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Brute.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Swift.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Clever.ToMessage());
 
             // Load the values for the Dificulty into the Picker
             DifficultyPicker.Items.Add(DifficultyEnum.Easy.ToMessage());
