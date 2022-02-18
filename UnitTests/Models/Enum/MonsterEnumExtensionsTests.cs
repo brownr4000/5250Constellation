@@ -45,17 +45,17 @@ namespace UnitTests.Models
             Assert.AreEqual("Swift", result);
         }
 
-        //[Test]
-        //public void MonsterJobEnumExtensionsTests_Clever_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void MonsterJobEnumExtensionsTests_Clever_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = MonsterJobEnum.Clever.ToMessage();
-        //    // Reset
+            // Act
+            var result = MonsterJobEnum.Clever.ToMessage();
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual("Clever", result);
-        //}
+            // Assert
+            Assert.AreEqual("Clever", result);
+        }
     }
 }
