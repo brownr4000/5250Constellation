@@ -243,5 +243,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void MonsterCreatePage_ClassPicker_SelectedIndexChanged_Clever_Valid_Should_Pass()
+        {
+            // Arrange
+            var selectedClass = (Picker)page.FindByName("ClassPicker");
+
+            // Act
+            selectedClass.SelectedIndex = 2;
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
