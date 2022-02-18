@@ -201,5 +201,20 @@ namespace UnitTests.Views
 
         }
 
+        [Test]
+        public void MonsterUpdatePage_Class_Changed_Valid_Should_Pass()
+        {
+            // Arrange
+            var selectedClass = (Picker)page.FindByName("ClassPicker");
+            selectedClass.SelectedItem = null;
+
+            // Act
+            page.Class_Changed(selectedClass, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
