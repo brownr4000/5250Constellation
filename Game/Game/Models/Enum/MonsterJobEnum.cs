@@ -43,15 +43,15 @@
 
             switch (value)
             {
-                case MonsterJobEnum.Fighter:
+                case MonsterJobEnum.Brute:
                     Message = "Brute";
                     break;
 
-                case MonsterJobEnum.Cleric:
+                case MonsterJobEnum.Swift:
                     Message = "Swift";
                     break;
 
-                case MonsterJobEnum.Support:
+                case MonsterJobEnum.Clever:
                     Message = "Clever";
                     break;
 
