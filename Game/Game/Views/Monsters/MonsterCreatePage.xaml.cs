@@ -239,7 +239,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ClassPicker_SelectedIndexChanged(object sender, EventArgs e)
+        public void ClassPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedClass = ClassPicker.SelectedItem;
             if (selectedClass != null)
