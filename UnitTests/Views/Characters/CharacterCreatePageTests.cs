@@ -439,5 +439,25 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        /// <summary>
+        /// Tests if Level_Changed has a valid picker entry
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Level_Changed_Valid_Should_Pass()
+        {
+            // Arrange
+            var selectedClass = (Picker)page.FindByName("LevelPicker");
+
+            selectedClass.SelectedIndex = 20;
+
+            // Act
+            page.Class_Changed(selectedClass, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
