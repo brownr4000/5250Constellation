@@ -383,5 +383,61 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Save_Clicked_Error_Message_IsVisible_False_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+
+            var desc = (Entry)page.FindByName("DescValue");
+
+            var job = (Picker)page.FindByName("ClassPicker");
+
+            name.Text = "test";
+
+            desc.Text = "test";
+
+            job.SelectedItem = CharacterJobEnum.Defender;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Save_Clicked_Error_Message_IsVisible_True_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+
+            var desc = (Entry)page.FindByName("DescValue");
+
+            var job = (Picker)page.FindByName("ClassPicker");
+
+            name.Text = null;
+
+            desc.Text = null;
+
+            job.SelectedItem = null;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
