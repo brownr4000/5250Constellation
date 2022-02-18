@@ -109,14 +109,14 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void MonsterUpdatePage_DifficultyPicker_SelectedIndexChanged_Easy_Valid_Should_Pass() 
+        public void MonsterUpdatePage_DifficultyPicker_SelectedIndexChanged_Easy_Valid_Should_Pass()
         {
             // Arrange
             var selectedDificulty = (Picker)page.FindByName("DifficultyPicker");
             selectedDificulty.SelectedItem = "Easy";
 
             // Act
-            page.DifficultyPicker_SelectedIndexChanged(selectedDificulty,null);
+            page.DifficultyPicker_SelectedIndexChanged(selectedDificulty, null);
             // Reset
 
             // Assert
@@ -183,5 +183,23 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void MonsterUpdatePage_DifficultyPicker_SelectedIndexChanged_Invalid_Should_Pass()
+        {
+            // Arrange
+            var selectedDifficulty = (Picker)page.FindByName("DifficultyPicker");
+            selectedDifficulty.SelectedItem = null;
+
+            // Act
+            page.DifficultyPicker_SelectedIndexChanged(selectedDifficulty, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
     }
 }
