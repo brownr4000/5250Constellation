@@ -413,7 +413,7 @@ namespace UnitTests.Views
         }
 
         /// <summary>
-        /// 
+        /// Saved_Clicked flag unit tests
         /// </summary>
         [Test]
         public void CharacterCreatePage_Save_Clicked_Error_Message_IsVisible_True_Should_Pass()
@@ -450,6 +450,66 @@ namespace UnitTests.Views
             var selectedClass = (Picker)page.FindByName("LevelPicker");
 
             selectedClass.SelectedIndex = 20;
+
+            // Act
+            page.Class_Changed(selectedClass, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// Class Changed to Defender Unit Test
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Class_Changed_Defender_Should_Pass()
+        {
+            // Arrange
+            var job = (Picker)page.FindByName("ClassPicker");
+
+            job.SelectedItem = "Defender";
+
+            // Act
+            page.Class_Changed(job, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// Class Changed to Striker Unit Test
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Class_Changed_Striker_Should_Pass()
+        {
+            // Arrange
+            var job = (Picker)page.FindByName("ClassPicker");
+
+            job.SelectedItem = "Striker";
+
+            // Act
+            page.Class_Changed(job, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// Class Changed to Support Unit Test
+        /// </summary>
+        [Test]
+        public void CharacterCreatePage_Class_Changed_Support_Should_Pass()
+        {
+            // Arrange
+            var selectedClass = (Picker)page.FindByName("ClassPicker");
+
+            selectedClass.SelectedItem = "Support";
 
             // Act
             page.Class_Changed(selectedClass, null);
