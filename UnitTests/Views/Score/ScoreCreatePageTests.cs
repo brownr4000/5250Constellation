@@ -110,7 +110,7 @@ namespace UnitTests.Views
 
 
         [Test]
-        public void ScoreCreatePage_Saved_Clicked_Valid_Score_Name_And_Score_Value_Should_Pass()
+        public void ScoreCreatePage_Saved_Clicked_Valid_Score_Name_And_Score_Value_Valid_Should_Pass()
         {
             // Arrange
             page.ViewModel.Data.Name = "Name";
@@ -118,6 +118,25 @@ namespace UnitTests.Views
 
             // Act
             page.Save_Clicked(null, null);            
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ScoreCreatePage_Saved_Clicked_Valid_Score_Name_And_Score_Value_InValid_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameText");
+            var value = (Entry)page.FindByName("ScoreValue");
+
+            name.Text = null;
+            value.Text = null;
+
+            // Act
+            page.Save_Clicked(null, null);
 
             // Reset
 
