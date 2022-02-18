@@ -258,5 +258,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void MonsterCreatePage_DescriptionValue_TextChanged_Valid_Should_Pass()
+        {
+            // Arrange
+            var desc = (Entry)page.FindByName("DescValue");
+            desc.Text = null;
+
+            // Act
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
