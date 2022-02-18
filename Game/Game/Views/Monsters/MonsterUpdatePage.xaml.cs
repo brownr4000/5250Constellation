@@ -209,7 +209,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DifficultyPicker_SelectedIndexChanged(object sender, EventArgs e)
+        public void DifficultyPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedDifficulty = DifficultyPicker.SelectedItem;
             if (selectedDifficulty != null)
