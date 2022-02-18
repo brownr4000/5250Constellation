@@ -26,7 +26,7 @@
 
                 <Image
                         x:Name="AutobattleImage"
-                        Source="elf1.gif"
+                        Source="item_placeholder.gif"
                         Style="{StaticResource ImageLargeStyle}"/>
                         <!--IsAnimationPlaying="True"-->                        
 
