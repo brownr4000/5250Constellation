@@ -32,18 +32,18 @@ namespace UnitTests.Models
             Assert.AreEqual("Brute", result);
         }
 
-        //[Test]
-        //public void MonsterJobEnumExtensionsTests_Swift_Default_Should_Pass()
-        //{
-        //    // Arrange
+        [Test]
+        public void MonsterJobEnumExtensionsTests_Swift_Default_Should_Pass()
+        {
+            // Arrange
 
-        //    // Act
-        //    var result = MonsterJobEnum.Swift.ToMessage();
-        //    // Reset
+            // Act
+            var result = MonsterJobEnum.Swift.ToMessage();
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual("Swift", result);
-        //}
+            // Assert
+            Assert.AreEqual("Swift", result);
+        }
 
         //[Test]
         //public void MonsterJobEnumExtensionsTests_Clever_Default_Should_Pass()
