@@ -250,14 +250,14 @@ namespace Game.Views
             // Convert class based on selected value
             switch (selectedClass)
             {
-                case "Tank":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Fighter;
+                case "Brute":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Brute;
                     break;
-                case "Damage":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Cleric;
+                case "Swift":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Swift;
                     break;
-                case "Support":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Support;
+                case "Clever":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Clever;
                     break;
                 default:
                     break;
