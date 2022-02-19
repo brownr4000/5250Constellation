@@ -303,5 +303,25 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        /// <summary>
+        /// LocationPicker_SelectedIndexChanged is PrimaryHand location Unit Test
+        /// </summary>
+        [Test]
+        public void ItemCreatePage_LocationPicker_SelectedIndexChanged_Primary_Hand_Should_Pass()
+        {
+            // Arrange
+            var loc = (Picker)page.FindByName("LocationPicker");
+
+            loc.SelectedItem = "Primary Hand";
+
+            // Act
+            page.LocationPicker_SelectedIndexChanged(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
