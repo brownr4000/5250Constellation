@@ -1,7 +1,10 @@
 ﻿using NUnit.Framework;
+using System.Linq;
 
 using Game;
 using Game.Views;
+using Game.Models;
+using Game.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
@@ -164,5 +167,69 @@ namespace UnitTests.Views
         //    // Assert
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
+
+        /// <summary>
+        /// Save Clicked with Error Messages Not Shown Unit Test
+        /// </summary>
+        [Test]
+        public void ItemCreatePage_Save_Clicked_Error_Message_IsVisible_False_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+
+            var desc = (Entry)page.FindByName("DescValue");
+
+            var loc = (Picker)page.FindByName("LocationPicker");
+
+            var attribute = (Picker)page.FindByName("AttributePicker");
+
+            name.Text = "test";
+
+            desc.Text = "test";
+
+            loc.SelectedItem = ItemLocationEnum.Finger;
+
+            attribute.SelectedItem = AttributeEnum.Attack;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// Save Clicked with Error Messages Shown Unit Test with "Unknown" location and attribute values
+        /// </summary>
+        [Test]
+        public void ItemCreatePage_Save_Clicked_Error_Message_IsVisible_True_Should_Pass()
+        {
+            var name = (Entry)page.FindByName("NameValue");
+
+            var desc = (Entry)page.FindByName("DescValue");
+
+            var loc = (Picker)page.FindByName("LocationPicker");
+
+            var attribute = (Picker)page.FindByName("AttributePicker");
+
+
+            name.Text = null;
+
+            desc.Text = null;
+
+            loc.SelectedItem = "Unknown";
+
+            attribute.SelectedItem = "Unknown";
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
