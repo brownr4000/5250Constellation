@@ -206,6 +206,7 @@ namespace UnitTests.Views
         [Test]
         public void ItemCreatePage_Save_Clicked_Error_Message_IsVisible_True_Should_Pass()
         {
+            // Arrange
             var name = (Entry)page.FindByName("NameValue");
 
             var desc = (Entry)page.FindByName("DescValue");
@@ -213,7 +214,6 @@ namespace UnitTests.Views
             var loc = (Picker)page.FindByName("LocationPicker");
 
             var attribute = (Picker)page.FindByName("AttributePicker");
-
 
             name.Text = null;
 
@@ -225,6 +225,54 @@ namespace UnitTests.Views
 
             // Act
             page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// ShowLocationAttributeErrorMessage method unit test for Attribute Unknown
+        /// </summary>
+        [Test]
+        public void ItemCreatePage_ShowLocationAttributeErrorMessage_Attibute_Unknown_Should_Pass()
+        {
+            // Arrange
+            var loc = (Picker)page.FindByName("LocationPicker");
+
+            var attribute = (Picker)page.FindByName("AttributePicker");
+
+            loc.SelectedItem = ItemLocationEnum.Finger;
+
+            attribute.SelectedItem = "Unknown";
+
+            // Act
+            page.ShowLocationAttributeErrorMessage();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        /// <summary>
+        /// ShowLocationAttributeErrorMessage method unit test for Location Unknown
+        /// </summary>
+        [Test]
+        public void ItemCreatePage_ShowLocationAttributeErrorMessage_Location_Unknown_Should_Pass()
+        {
+            // Arrange
+            var loc = (Picker)page.FindByName("LocationPicker");
+
+            var attribute = (Picker)page.FindByName("AttributePicker");
+
+            loc.SelectedItem = "Unknown";
+
+            attribute.SelectedItem = AttributeEnum.Attack;
+
+            // Act
+            page.ShowLocationAttributeErrorMessage();
 
             // Reset
 
