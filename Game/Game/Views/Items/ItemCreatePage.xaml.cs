@@ -184,7 +184,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void LocationPicker_SelectedIndexChanged(object sender, EventArgs e)
+        public void LocationPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Default Range and Damage values
             RangeValue.Text = "0";
@@ -208,7 +208,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AttributePicker_SelectedIndexChanged(object sender, EventArgs e)
+        public void AttributePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             LocationAttributeErrorMessage.IsVisible = false;
         }
