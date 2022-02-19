@@ -323,5 +323,27 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        /// <summary>
+        /// RangeValue_TextChanged checks if range is "" to set default value of range to 0
+        /// </summary>
+        [Test]
+        public void ItemCreatePage_RangeValue_TextChanged_Invalid_Should_Pass()
+        {
+            // Arrange
+            var range = (Entry)page.FindByName("RangeValue");
+
+            range.Text = "";
+
+            var textChanged = new TextChangedEventArgs(range.Text, null);
+
+            // Act
+            page.RangeValue_TextChanged(null, textChanged);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
