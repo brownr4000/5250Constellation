@@ -279,5 +279,29 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        /// <summary>
+        /// AttributePicker_SelectedIndexChanged Unit Test
+        /// </summary>
+        [Test]
+        public void ItemCreatePage_AttributePicker_SelectedIndexChanged_Error_Should_Pass()
+        {
+            // Arrange
+            var loc = (Picker)page.FindByName("LocationPicker");
+
+            var attribute = (Picker)page.FindByName("AttributePicker");
+
+            loc.SelectedItem = "Unknown";
+
+            attribute.SelectedItem = AttributeEnum.Attack;
+
+            // Act
+            page.AttributePicker_SelectedIndexChanged(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
