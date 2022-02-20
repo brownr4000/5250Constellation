@@ -158,6 +158,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="LabelCenterStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LabelWithPaddingStyle"
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="Padding" Value="0,10,0,0" />

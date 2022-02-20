@@ -10,12 +10,144 @@
 
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
-            <StackLayout Style="{StaticResource HorizontalCenterStack}">
+            <StackLayout Style="{StaticResource VerticalCenterStack}">
 
                 <Label Text="Your Squad!" Style="{StaticResource CenterMessageLargeStyle}"/>
-
-                <Label Text="Agents Information here" Style="{StaticResource BoldLabelStyle}"/>
                 
+                <StackLayout Style="{StaticResource VerticalCenterStack}">
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
+                </StackLayout>
+
+                <Label Text="{Binding Data.Name}" Margin="10" Style="{StaticResource CenterLabelStyle}"/>
+
+                <Frame Style="{StaticResource FrameStyle}" HeightRequest="300">
+                    <StackLayout Style="{StaticResource VerticalCenterStack}">
+                        <Label Text="Character Details" Margin="10" Style="{StaticResource LabelCenterStyle}"/>
+
+                        <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
+                            <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                                <Label
+                                    Grid.Column="0"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="Attack"/>
+
+                                <ProgressBar 
+                                  
+                                    Grid.Column="1" 
+                                    Progress="{Binding Data.Attack}"
+                                    Style="{StaticResource ProgressBarStyle}"/>
+
+                                <Label 
+                                  
+                                    Grid.Column="2"
+                                    Text="{Binding Data.Attack}"
+                                    Style="{StaticResource CenterValueStyle}"/>
+
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
+                            <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                                <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Defense"/>
+
+                                <ProgressBar 
+                            
+                            Grid.Column="1" 
+                            Progress="{Binding Data.Defense}"
+                            Style="{StaticResource ProgressBarStyle}"/>
+
+                                <Label 
+                          
+                            Grid.Column="2" 
+                            Text="{Binding Data.Defense}"
+                            Style="{StaticResource CenterValueStyle}"/>
+
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
+                            <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                                <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Speed"/>
+
+                                <ProgressBar 
+                            
+                            Grid.Column="1" 
+                            Progress="{Binding Data.Speed}"
+                            Style="{StaticResource ProgressBarStyle}"/>
+
+                                <Label 
+                           
+                            Grid.Column="2" 
+                            Text="{Binding Data.Speed}"
+                            Style="{StaticResource CenterValueStyle}"/>
+
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
+                            <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                                <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Health"/>
+
+                                <ProgressBar 
+                            Grid.Column="1" 
+                            Progress="{Binding Data.Health}"
+                            Style="{StaticResource ProgressBarStyle}"/>
+
+                                <Label 
+                            Grid.Column="2" 
+                            Text="{Binding Data.Health}"
+                            Style="{StaticResource CenterValueStyle}"/>
+
+                            </Grid>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
+                            <Grid
+                            HorizontalOptions="Center"
+                            WidthRequest="300">
+
+                                <Label
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Damage"/>
+
+                                <ProgressBar 
+                            Grid.Column="1" 
+                            Progress="{Binding Data.damage}"
+                            Style="{StaticResource ProgressBarStyle}"/>
+
+                                <Label 
+                            Grid.Column="2" 
+                            Text="{Binding Data.damage}"
+                            Style="{StaticResource CenterValueStyle}"/>
+
+                            </Grid>
+                        </StackLayout>                        
+
+                    </StackLayout>
+                </Frame>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
