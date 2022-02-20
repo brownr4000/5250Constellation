@@ -14,7 +14,7 @@
 
                 <Label Text="Your Squad!" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                <!--<StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
                     <StackLayout HorizontalOptions="Start">
 
@@ -119,7 +119,49 @@
                             </ListView.ItemTemplate>
                         </ListView>
                     </StackLayout>
-                </StackLayout>
+                </StackLayout>-->
+
+                <CollectionView x:Name="MonstersListView" 
+                            ItemsSource="{Binding Dataset}"
+                            SelectionMode="Single"
+                            SelectionChanged="CharacterListView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Frame Style="{StaticResource FrameStyle}">
+                                    <StackLayout Grid.Column="1">
+                                    <Grid Padding="10"
+                                      RowDefinitions="Auto, *"
+                                      ColumnDefinitions="Auto, *">
+
+                                        <Image Grid.Column="0" Grid.RowSpan="2"
+                                        Source="{Binding ImageURI}"
+                                        Style="{StaticResource IndexImageStyle}"/>
+
+                                        <StackLayout Grid.Column="1" 
+                                         Style="{StaticResource StackWithMargin}">
+
+                                            <Label
+                                            Text="{Binding Name}"
+                                            Style="{StaticResource BoldLabelStyle}"/>
+
+                                            <Label
+                                            Grid.Row="1"
+                                            Text="{Binding Path=Level}"
+                                            Style="{StaticResource LabelStyle}"/>
+
+                                            <Label Text="{Binding Path=Job}" 
+                                            Style="{StaticResource ListStyle}"/>
+
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                                </Frame>                                   
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
 
             </StackLayout>
         </ScrollView>

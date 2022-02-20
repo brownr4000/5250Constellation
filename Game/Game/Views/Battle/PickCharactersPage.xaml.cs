@@ -27,7 +27,8 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PickCharactersPage : ContentPage
     {
-        private GenericViewModel<CharacterModel> viewModel;
+        // The view model, used for data binding
+        readonly CharacterIndexViewModel ViewModel = CharacterIndexViewModel.Instance;
 
         // Empty Constructor for UTs
         public PickCharactersPage(bool UnitTest) { }
@@ -38,116 +39,27 @@ namespace Game.Views
         /// Get the CharacterIndexView Model
         /// </summary>
         public PickCharactersPage()
-        {
+        {  
             InitializeComponent();
-
-            BindingContext = BattleEngineViewModel.Instance;
-            //BindingContext = BattleEngineViewModel.Instance;
-
-            // Clear the Database List and the Party List to start
-            BattleEngineViewModel.Instance.PartyCharacterList.Clear();
-
-            UpdateNextButtonState();
-        }
+            BindingContext = ViewModel;
+        }        
 
         /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void OnDatabaseCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            CharacterModel data = args.SelectedItem as CharacterModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Manually deselect Character.
-            CharactersListView.SelectedItem = null;
-
-            // Don't add more than the party max
-            if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
-            {
-                BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
-            }
-
-            UpdateNextButtonState();
-        }
-
-        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void OnPartyCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            CharacterModel data = args.SelectedItem as CharacterModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Manually deselect Character.
-            PartyListView.SelectedItem = null;
-
-            // Remove the character from the list
-            _ = BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
-
-            UpdateNextButtonState();
-        }
-
-        /// <summary>
-        /// Next Button is based on the count
-        /// 
-        /// If no selected characters, disable
-        /// 
-        /// Show the Count of the party
-        /// 
-        /// </summary>
-        public void UpdateNextButtonState()
-        {
-            // If no characters disable Next button
-            BeginBattleButton.IsEnabled = true;
-
-            var currentCount = BattleEngineViewModel.Instance.PartyCharacterList.Count();
-            if (currentCount == 0)
-            {
-                BeginBattleButton.IsEnabled = false;
-            }
-
-            PartyCountLabel.Text = currentCount.ToString();
-        }
-
-        /// <summary>
-        /// Jump to the Battle
-        /// 
-        /// Its Modal because don't want user to come back...
+        /// On Character selected go to Agent Info page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void BattleButton_Clicked(object sender, EventArgs e)
+        private async void CharacterListView_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            CreateEngineCharacterList();
+            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;
 
-            await Navigation.PushModalAsync(new NavigationPage(new BattlePage()));
-            _ = await Navigation.PopAsync();
-        }
+            if (data == null)
+                {
+                    return;
+                }
 
-        /// <summary>
-        /// Clear out the old list and make the new list
-        /// </summary>
-        public void CreateEngineCharacterList()
-        {
-            // Clear the currett list
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
-
-            // Load the Characters into the Engine
-            foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
-            {
-                data.CurrentHealth = data.GetMaxHealthTotal;
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-            }
+            // Open the Agent info Page
+            await Navigation.PushAsync(new CharacterAgentInfoPage(new GenericViewModel<CharacterModel>(data)));         
         }
     }
 }
