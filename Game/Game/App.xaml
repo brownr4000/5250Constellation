@@ -210,6 +210,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="CenterLabelWithMarginStyle"
+                BasedOn="{StaticResource CenterLabelStyle}">
+                <Setter Property="Margin" Value="10" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LargeLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor" />
@@ -372,6 +378,12 @@
                 <Setter Property="BorderColor" Value="{StaticResource TriciaryTextColor}"/>
             </Style>
 
+            <Style TargetType="Frame"
+                x:Key="FrameWithHeightStyle"
+                   BasedOn="{StaticResource FrameStyle}">
+                <Setter Property="HeightRequest" Value="300" />
+            </Style>
+
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="ImageStyle">
@@ -479,13 +491,22 @@
             </Style>
 
             <!-- ImageButton -->
-            <Style TargetType="ImageButton">
+            <Style TargetType="ImageButton"
+                   x:Key="ImageButtonStyle">
                 <Setter Property="HeightRequest" Value="150" />
                 <Setter Property="WidthRequest" Value="150" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
+
+            <Style TargetType="ImageButton"
+                x:Key="ImageButtonSmallStyle"
+                BasedOn="{StaticResource ImageButtonStyle}">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+            </Style>
+
 
             <!-- ImageButton -->
             <Style TargetType="ImageButton"
@@ -773,6 +794,12 @@
             <Style TargetType="StackLayout"
                 x:Key="OuterBoxStack"
                 BasedOn="{StaticResource VerticalStack}">
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="OuterBoxWithSpacingStack"
+                BasedOn="{StaticResource OuterBoxStack}">
+                <Setter Property="Spacing" Value="20" />
             </Style>
 
             <Style TargetType="StackLayout"
