@@ -14,15 +14,21 @@
 
                 <Label Text="Your Squad!" Style="{StaticResource CenterMessageLargeStyle}"/>
                 
-                <StackLayout Style="{StaticResource VerticalCenterStack}">
+                <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
+                    <ImageButton Source="left_arrow.png" 
+                                 Style="{StaticResource ImageButtonSmallStyle}"
+                                 Clicked="LeftImageButton_Clicked"/>
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
+                    <ImageButton Source="right_arrow.png" 
+                                 Style="{StaticResource ImageButtonSmallStyle}"
+                                 Clicked="RightImageButton_Clicked"/>
                 </StackLayout>
 
-                <Label Text="{Binding Data.Name}" Margin="10" Style="{StaticResource CenterLabelStyle}"/>
+                <Label Text="{Binding Data.Name}" Style="{StaticResource CenterLabelWithMarginStyle}"/>
 
-                <Frame Style="{StaticResource FrameStyle}" HeightRequest="300">
+                <Frame Style="{StaticResource FrameWithHeightStyle}">
                     <StackLayout Style="{StaticResource VerticalCenterStack}">
-                        <Label Text="Character Details" Margin="10" Style="{StaticResource LabelCenterStyle}"/>
+                        <Label Text="Character Details" Style="{StaticResource CenterLabelWithMarginStyle}"/>
 
                         <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
                             <Grid
@@ -148,7 +154,7 @@
                     </StackLayout>
                 </Frame>
 
-                <StackLayout Padding="20" Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
                     <Button Text="Cancel"
                                     Style="{StaticResource ButtonStyle}"
                                     Clicked="Cancel_Clicked"/>

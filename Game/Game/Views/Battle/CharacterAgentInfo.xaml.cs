@@ -78,5 +78,15 @@ namespace Game.Views
         {
             await Navigation.PushAsync(new PickCharactersPage());
         }
+
+        private void LeftImageButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RightImageButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
