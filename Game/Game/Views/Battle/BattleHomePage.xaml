@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Game.Views.BattleHomePage"
+             Title="Battle Home">
+
+    <ContentPage.Content>
+        
+        <StackLayout Style="{StaticResource VerticalCenterWithPaddingSpacingStack}">
+
+            <Label Text="Click on each button to view Battle pages" Style="{StaticResource BoldLabelStyle}"/>
+
+            <Button Text="Begin Battle Page" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Begin_Battle_Page_Clicked"/>
+
+            <Button Text="Pick Characters Page" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Pick_Characters_Page_Clicked"/>
+
+            <Button Text="Pick Items Page" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Pick_Items_Page_Clicked"/>
+
+            <Button Text="Battle Entry Page" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Battle_Entry_Page_Clicked"/>
+
+            <Button Text="Battle Field Page" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Battle_Field_Page_Clicked"/>
+
+            <Button Text="Battle Sequence Page" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Battle_Sequence_Page_Clicked"/>
+
+            <Button Text="Game Over Page" 
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="Game_Over_Page_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
