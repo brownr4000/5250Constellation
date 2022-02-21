@@ -45,7 +45,6 @@ namespace Game.Views
 
             // Clear the Database List and the Party List to start
             BattleEngineViewModel.Instance.PartyCharacterList.Clear();
-
         }
 
         /// <summary>
@@ -58,6 +57,26 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
-        }               
+        }
+
+        /// <summary>
+        /// Cancel button clicked goes to index page without selecting  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PickCharactersPage());
+        }
+
+        /// <summary>
+        /// Next button clicked selects the character and goes back to index page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Select_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PickCharactersPage());
+        }
     }
 }

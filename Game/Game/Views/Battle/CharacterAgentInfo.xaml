@@ -148,6 +148,16 @@
                     </StackLayout>
                 </Frame>
 
+                <StackLayout Padding="20" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Cancel"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Clicked="Cancel_Clicked"/>
+
+                    <Button Text="Select"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Clicked="Select_Clicked"/>
+                </StackLayout>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
