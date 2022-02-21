@@ -28,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Battle\BattleHomePage.xaml.cs">
+      <DependentUpon>BattleHomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Battle\CharacterAgentInfo.xaml.cs">
       <DependentUpon>CharacterAgentInfo.xaml</DependentUpon>
     </Compile>

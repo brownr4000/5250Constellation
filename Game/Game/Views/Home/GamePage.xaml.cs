@@ -30,7 +30,8 @@ namespace Game.Views
         //}
 
         public async void DungeonButton_Clicked(object sender, EventArgs e) {
-            await Navigation.PushAsync(new BattleEntryPage());
+            //  await Navigation.PushAsync(new BattleEntryPage());
+            await Navigation.PushAsync(new BattleHomePage());
         }
 
         /// <summary>
