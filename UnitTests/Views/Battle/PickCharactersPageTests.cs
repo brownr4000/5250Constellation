@@ -67,41 +67,41 @@ namespace UnitTests.Views
             Assert.IsNotNull(result);
         }
 
-        [Test]
-        public void PickCharactersPage_BattleButton_Clicked_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void PickCharactersPage_BattleButton_Clicked_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            page.BattleButton_Clicked(null, null);
+        //    // Act
+        //    page.BattleButton_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void PickCharactersPage_CreateEngineCharacterList_Default_Should_Pass()
-        {
-            // Arrange
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList = new List<PlayerInfoModel>();
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+        //[Test]
+        //public void PickCharactersPage_CreateEngineCharacterList_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList = new List<PlayerInfoModel>();
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList = new List<PlayerInfoModel>();
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList = new List<PlayerInfoModel>();
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
 
-            BattleEngineViewModel.Instance.PartyCharacterList = new ObservableCollection<CharacterModel>();
-            BattleEngineViewModel.Instance.PartyCharacterList.Add(new CharacterModel());
+        //    BattleEngineViewModel.Instance.PartyCharacterList = new ObservableCollection<CharacterModel>();
+        //    BattleEngineViewModel.Instance.PartyCharacterList.Add(new CharacterModel());
 
-            // Act
-            page.CreateEngineCharacterList();
+        //    // Act
+        //    page.CreateEngineCharacterList();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         //[Test]
         //public void PickCharactersPage_OnApperaing_Default_Should_Pass()
@@ -129,86 +129,86 @@ namespace UnitTests.Views
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
 
-        [Test]
-        public void PickCharactersPage_UpdateButtonState_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void PickCharactersPage_UpdateButtonState_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            page.UpdateNextButtonState();
+        //    // Act
+        //    page.UpdateNextButtonState();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void PickCharactersPage_OnPartyCharacterItemSelected_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void PickCharactersPage_OnPartyCharacterItemSelected_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            var selectedCharacter = new CharacterModel();
+        //    var selectedCharacter = new CharacterModel();
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
 
-            // Act
-            page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+        //    // Act
+        //    page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void PickCharactersPage_OnPartyCharacterItemSelected_InValid_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void PickCharactersPage_OnPartyCharacterItemSelected_InValid_Should_Pass()
+        //{
+        //    // Arrange
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
 
-            // Act
-            page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+        //    // Act
+        //    page.OnPartyCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void PickCharactersPage_OnDatabaseCharacterItemSelected_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void PickCharactersPage_OnDatabaseCharacterItemSelected_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            var selectedCharacter = new CharacterModel();
+        //    var selectedCharacter = new CharacterModel();
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
 
-            // Act
-            page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+        //    // Act
+        //    page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void PickCharactersPage_OnDatabaseCharacterItemSelected_InValid_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void PickCharactersPage_OnDatabaseCharacterItemSelected_InValid_Should_Pass()
+        //{
+        //    // Arrange
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+        //    var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
 
-            // Act
-            page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
+        //    // Act
+        //    page.OnDatabaseCharacterItemSelected(null, selectedCharacterChangedEventArgs);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
     }
 }
