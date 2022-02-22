@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using System.Collections.Generic;
 using Game.Models;
 using Game.ViewModels;
 using System.Linq;
@@ -29,11 +29,16 @@ namespace Game.Views
     {
         private GenericViewModel<CharacterModel> ViewModel;
 
+        public List<CharacterModel> AllCharactersList { get; set; }
+
+        // Character index variable, to load first item
+        public int characterImageIndex = 0;
+
         //Hold a copy of data
         public CharacterModel DataCopy;
 
-        // Empty Constructor for UTs
-        //  public CharacterAgentInfoPage(bool UnitTest) { }
+        //Empty Constructor for UTs
+          public CharacterAgentInfoPage(bool UnitTest) { }
 
         /// <summary>
         /// Constructor for Index Page
@@ -55,14 +60,21 @@ namespace Game.Views
         /// 
         /// Get the CharacterIndexView Model
         /// </summary>
-        public CharacterAgentInfoPage(GenericViewModel<CharacterModel> data)
+        public CharacterAgentInfoPage(GenericViewModel<CharacterModel> characterData, CharacterIndexViewModel characterViewModel)
         {
             InitializeComponent();
 
-            BindingContext = this.ViewModel = data;
+            BindingContext = this.ViewModel = characterData;
+
+            AllCharactersList = new List<CharacterModel>();
+
+            foreach (CharacterModel character in characterViewModel.Dataset)
+            {
+                AllCharactersList.Add(character);
+            }
 
             //Copy of Character to restore for cancel
-            DataCopy = new CharacterModel(data.Data);
+            DataCopy = new CharacterModel(characterData.Data);
         }
 
         /// <summary>
@@ -90,12 +102,64 @@ namespace Game.Views
 
         private void LeftImageButton_Clicked(object sender, EventArgs e)
         {
+            int imageCount = AllCharactersList.Count;
 
+            // check if we are at the first photo and move to last photo when clicked
+            if (characterImageIndex == 0)
+            {
+                characterImageIndex = imageCount - 1;
+            }
+
+            // Move to the previous photo in the list
+            if (characterImageIndex > 0)
+            {
+                characterImageIndex--;
+            }
+
+            // Update the data
+            this.ViewModel.Data.Name = AllCharactersList[characterImageIndex].Name;
+            this.ViewModel.Data.ImageURI = AllCharactersList[characterImageIndex].NewItemImageURI;
+            CharacterImage.Source = this.ViewModel.Data.ImageURI;
+            CharacterNameLabel.Text = this.ViewModel.Data.Name;
+            AttackProgressBar.Progress = AllCharactersList[characterImageIndex].Attack;
+            SpeedProgressBar.Progress = AllCharactersList[characterImageIndex].Speed;
+            DefenseProgressBar.Progress = AllCharactersList[characterImageIndex].Defense;
+            HealthProgressBar.Progress = AllCharactersList[characterImageIndex].CurrentHealth;
+            AttackLabel.Text = AllCharactersList[characterImageIndex].Attack.ToString();
+            SpeedLabel.Text = AllCharactersList[characterImageIndex].Speed.ToString();
+            DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
+            HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
         }
 
         private void RightImageButton_Clicked(object sender, EventArgs e)
         {
+            int imageCount = AllCharactersList.Count;
 
+            // check if we are at the last photo and move to first photo when clicked
+            if (characterImageIndex == imageCount - 1)
+            {
+                characterImageIndex = 0;
+            }
+
+            // Move to the next photo in the list
+            else if (characterImageIndex < imageCount - 1)
+            {
+                characterImageIndex++;
+            }
+
+            // Update the data
+            this.ViewModel.Data.Name = AllCharactersList[characterImageIndex].Name;
+            this.ViewModel.Data.ImageURI = AllCharactersList[characterImageIndex].NewItemImageURI;
+            CharacterImage.Source = this.ViewModel.Data.ImageURI;
+            CharacterNameLabel.Text = this.ViewModel.Data.Name;
+            AttackProgressBar.Progress = AllCharactersList[characterImageIndex].Attack;
+            SpeedProgressBar.Progress = AllCharactersList[characterImageIndex].Speed;
+            DefenseProgressBar.Progress = AllCharactersList[characterImageIndex].Defense;
+            HealthProgressBar.Progress = AllCharactersList[characterImageIndex].CurrentHealth;
+            AttackLabel.Text = AllCharactersList[characterImageIndex].Attack.ToString();
+            SpeedLabel.Text = AllCharactersList[characterImageIndex].Speed.ToString();
+            DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
+            HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
         }
     }
 }

@@ -18,13 +18,15 @@
                     <ImageButton Source="left_arrow.png" 
                                  Style="{StaticResource ImageButtonSmallStyle}"
                                  Clicked="LeftImageButton_Clicked"/>
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
+                    <Image x:Name="CharacterImage" 
+                           Source="{Binding Data.ImageURI}" 
+                           Style="{StaticResource ImageLargerStyle}"/>
                     <ImageButton Source="right_arrow.png" 
                                  Style="{StaticResource ImageButtonSmallStyle}"
                                  Clicked="RightImageButton_Clicked"/>
                 </StackLayout>
 
-                <Label Text="{Binding Data.Name}" Style="{StaticResource CenterLabelWithMarginStyle}"/>
+                <Label x:Name="CharacterNameLabel" Text="{Binding Data.Name}" Style="{StaticResource CenterLabelWithMarginStyle}"/>
 
                 <Frame Style="{StaticResource FrameWithHeightStyle}">
                     <StackLayout Style="{StaticResource VerticalCenterStack}">
@@ -41,13 +43,13 @@
                                     Text="Attack"/>
 
                                 <ProgressBar 
-                                  
+                                  x:Name="AttackProgressBar"
                                     Grid.Column="1" 
                                     Progress="{Binding Data.Attack}"
                                     Style="{StaticResource ProgressBarStyle}"/>
 
                                 <Label 
-                                  
+                                  x:Name="AttackLabel"
                                     Grid.Column="2"
                                     Text="{Binding Data.Attack}"
                                     Style="{StaticResource CenterValueStyle}"/>
@@ -66,16 +68,16 @@
                                 Text="Defense"/>
 
                                 <ProgressBar 
-                            
-                            Grid.Column="1" 
-                            Progress="{Binding Data.Defense}"
-                            Style="{StaticResource ProgressBarStyle}"/>
+                                    x:Name="DefenseProgressBar"
+                                    Grid.Column="1" 
+                                    Progress="{Binding Data.Defense}"
+                                    Style="{StaticResource ProgressBarStyle}"/>
 
                                 <Label 
-                          
-                            Grid.Column="2" 
-                            Text="{Binding Data.Defense}"
-                            Style="{StaticResource CenterValueStyle}"/>
+                                    x:Name="DefenseLabel"
+                                    Grid.Column="2" 
+                                    Text="{Binding Data.Defense}"
+                                    Style="{StaticResource CenterValueStyle}"/>
 
                             </Grid>
                         </StackLayout>
@@ -91,16 +93,16 @@
                                 Text="Speed"/>
 
                                 <ProgressBar 
-                            
-                            Grid.Column="1" 
-                            Progress="{Binding Data.Speed}"
-                            Style="{StaticResource ProgressBarStyle}"/>
+                                    x:Name="SpeedProgressBar"
+                                    Grid.Column="1" 
+                                    Progress="{Binding Data.Speed}"
+                                    Style="{StaticResource ProgressBarStyle}"/>
 
                                 <Label 
-                           
-                            Grid.Column="2" 
-                            Text="{Binding Data.Speed}"
-                            Style="{StaticResource CenterValueStyle}"/>
+                                   x:Name="SpeedLabel"
+                                    Grid.Column="2" 
+                                    Text="{Binding Data.Speed}"
+                                    Style="{StaticResource CenterValueStyle}"/>
 
                             </Grid>
                         </StackLayout>
@@ -111,24 +113,26 @@
                             WidthRequest="300">
 
                                 <Label
-                                Grid.Column="0"
-                                Style="{StaticResource LabelStyle}"
-                                Text="Health"/>
+                                    Grid.Column="0"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="Health"/>
 
                                 <ProgressBar 
-                            Grid.Column="1" 
-                            Progress="{Binding Data.Health}"
-                            Style="{StaticResource ProgressBarStyle}"/>
+                                    x:Name="HealthProgressBar"
+                                    Grid.Column="1" 
+                                    Progress="{Binding Data.Health}"
+                                    Style="{StaticResource ProgressBarStyle}"/>
 
                                 <Label 
-                            Grid.Column="2" 
-                            Text="{Binding Data.Health}"
-                            Style="{StaticResource CenterValueStyle}"/>
+                                    x:Name="HealthLabel"
+                                    Grid.Column="2" 
+                                    Text="{Binding Data.Health}"
+                                    Style="{StaticResource CenterValueStyle}"/>
 
                             </Grid>
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
+                        <!--<StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
                             <Grid
                             HorizontalOptions="Center"
                             WidthRequest="300">
@@ -139,17 +143,19 @@
                                 Text="Damage"/>
 
                                 <ProgressBar 
-                            Grid.Column="1" 
-                            Progress="{Binding Data.damage}"
-                            Style="{StaticResource ProgressBarStyle}"/>
+                                    x:Name="AttackLabel"
+                                    Grid.Column="1" 
+                                    Progress="{Binding Data.damage}"
+                                    Style="{StaticResource ProgressBarStyle}"/>
 
                                 <Label 
-                            Grid.Column="2" 
-                            Text="{Binding Data.damage}"
-                            Style="{StaticResource CenterValueStyle}"/>
+                                    x:Name="AttackLabel"
+                                    Grid.Column="2" 
+                                    Text="{Binding Data.damage}"
+                                    Style="{StaticResource CenterValueStyle}"/>
 
                             </Grid>
-                        </StackLayout>                        
+                        </StackLayout>-->                        
 
                     </StackLayout>
                 </Frame>
