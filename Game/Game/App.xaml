@@ -338,6 +338,13 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="BattleFieldStyle"
+                BasedOn="{StaticResource GridValueStyle}">
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="PopupItemTextStyle"
                 BasedOn="{StaticResource ValueStyle}">
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
@@ -765,6 +772,14 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="VerticalCenterWithSpacingHorizontalStack"
+                   BasedOn="{StaticResource HorizontalCenterStack}">
+                <Setter Property="Spacing" Value="20" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Orientation" Value="Vertical" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="VerticalCenterWith25SpacingStack"
                    BasedOn="{StaticResource VerticalCenterStack}">
                 <Setter Property="Spacing" Value="25" />
@@ -980,10 +995,10 @@
             <Style TargetType="Frame"
                 x:Key="BattleFieldFrame"
                    BasedOn="{StaticResource BattleMapFrame}">
-                <Setter Property="HeightRequest" Value="250" />
-                <Setter Property="WidthRequest" Value="250" />                
+                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="WidthRequest" Value="400" />                
             </Style>
-
+            
             <!-- Grid -->
             <Style TargetType="Grid">
                 <Setter Property="ColumnSpacing" Value="0" />
