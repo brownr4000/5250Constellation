@@ -66,7 +66,7 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PickCharactersPage());
+            await Navigation.PopAsync();
         }
 
         /// <summary>

@@ -20,11 +20,11 @@
             </FlexLayout>
 
             <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                <Button Text="Cancel"
+                <Button Text="Back"
                                     Style="{StaticResource ButtonStyle}"
                                     Clicked="Cancel_Clicked"/>
 
-                <Button Text="Select"
+                <Button Text="Protect City!"
                                     Style="{StaticResource ButtonStyle}"
                                     Clicked="Protect_Clicked"/>
             </StackLayout>
