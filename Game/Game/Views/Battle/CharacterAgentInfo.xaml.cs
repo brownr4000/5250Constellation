@@ -75,7 +75,7 @@ namespace Game.Views
             // Use the copy
             ViewModel.Data.Update(DataCopy);
 
-            _ = await Navigation.PopModalAsync();
+            _ = await Navigation.PopAsync();
         }
 
         /// <summary>
