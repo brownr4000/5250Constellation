@@ -23,6 +23,9 @@ namespace Game.Views
         // Empty Constructor for UTs
         public PickItemsPage(bool UnitTest) { }
 
+        //Hold a copy of data
+        public CharacterModel DataCopy;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -31,6 +34,9 @@ namespace Game.Views
 
             InitializeComponent();
             BindingContext = this.ViewModel = data;
+
+            //Copy of Character to restore for cancel
+            DataCopy = new CharacterModel(data.Data);
 
             _ = UpdatePageBindingContext();
         }
@@ -133,7 +139,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
-            _= await Navigation.PopAsync();
+            // Use the copy
+            ViewModel.Data.Update(DataCopy);
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>

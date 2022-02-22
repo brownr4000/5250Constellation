@@ -75,7 +75,7 @@ namespace Game.Views
             // Use the copy
             ViewModel.Data.Update(DataCopy);
 
-            _ = await Navigation.PopAsync();
+            _ = await Navigation.PopModalAsync();
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void Select_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NavigationPage(new PickItemsPage(ViewModel)));
+            await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage(ViewModel)));
         }
 
         private void LeftImageButton_Clicked(object sender, EventArgs e)
