@@ -98,8 +98,8 @@ namespace Game.Views
                 Source = data.ImageURI
             };
 
-            // Add a event to the user can click the item and see more
-            ItemButton.Clicked += (sender, args) => ShowPopup(location);
+            //// Add a event to the user can click the item and see more
+            //ItemButton.Clicked += (sender, args) => ShowPopup(location);
 
             // Add the Display Text for the item
             var ItemLabel = new Label
@@ -125,95 +125,25 @@ namespace Game.Views
             return ItemStack;
         }
 
-        /// <summary>
-        /// Show the Popup for Selecting Items
-        /// </summary>
-        /// <param name="location"></param>
-        /// <returns></returns>
-        public bool ShowPopup(ItemLocationEnum location)
-        {
-            PopupItemSelector.IsVisible = true;
 
-            PopupLocationLabel.Text = "Items for :";
-            PopupLocationValue.Text = location.ToMessage();
-
-            // Make a fake item for None
-            var NoneItem = new ItemModel
-            {
-                Id = null, // will use null to clear the item
-                Guid = "None", // how to find this item amoung all of them
-                ImageURI = "icon_cancel.png",
-                Name = "None",
-                Description = "None"
-            };
-
-            List<ItemModel> itemList = new List<ItemModel>
-            {
-                NoneItem
-            };
-
-            // Add the rest of the items to the list
-            itemList.AddRange(ItemIndexViewModel.Instance.GetLocationItems(location));
-
-            // Populate the list with the items
-            PopupLocationItemListView.ItemsSource = itemList;
-
-            // Remember the location for this popup
-            PopupLocationEnum = location;
-
-            return true;
-        }
-
-        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void OnPopupItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            ItemModel data = args.SelectedItem as ItemModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            _ = ViewModel.Data.AddItem(PopupLocationEnum, data.Id);
-
-            AddItemsToDisplay();
-
-            ClosePopup();
-        }
-
-        /// <summary>
-        /// When the user clicks the close in the Popup
-        /// hide the view
-        /// show the scroll view
+        //// <summary>
+        /// Cancel button clicked goes to index page without selecting  
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void ClosePopup_Clicked(object sender, EventArgs e)
+        public async void Cancel_Clicked(object sender, EventArgs e)
         {
-            ClosePopup();
+            await Navigation.PushAsync(new PickCharactersPage());
         }
 
         /// <summary>
-        /// Close the popup
-        /// </summary>
-        public void ClosePopup()
-        {
-            PopupItemSelector.IsVisible = false;
-        }
-
-        /// <summary>
-        /// Quit the Battle
-        /// 
-        /// Quitting out
+        /// Next button clicked selects the character and goes back to index page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void CloseButton_Clicked(object sender, EventArgs e)
+        public async void Protect_Clicked(object sender, EventArgs e)
         {
-            _ = await Navigation.PopModalAsync();
+            await Navigation.PushAsync(new NewRoundPage());
         }
     }
 }

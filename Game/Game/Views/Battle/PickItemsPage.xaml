@@ -8,6 +8,10 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource VerticalStack}">
 
+            <Image Source="{Binding Data.ImageURI}" 
+                                   Style="{StaticResource ImageLargeStyle}"
+                                   Grid.Row="0" Grid.Column="1"/>
+
             <FlexLayout Padding="0,20,0,0"                       
                             Wrap="Wrap"
                             JustifyContent="SpaceAround"
@@ -15,80 +19,16 @@
                             x:Name="ItemBox">
             </FlexLayout>
 
-            <!--The Item Popup-->
-            <StackLayout x:Name="PopupItemSelector" 
-                 BackgroundColor="{StaticResource PageBackgroundColor}" 
-                 IsVisible="false" 
-                 AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
-                 AbsoluteLayout.LayoutFlags="All">
+            <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
+                <Button Text="Cancel"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Clicked="Cancel_Clicked"/>
 
-                <StackLayout Style="{StaticResource ItemPopupStack}">
-
-                    <Frame Style="{StaticResource PopupItemColorStyle}">
-
-                        <StackLayout Style="{StaticResource VerticalItemPopStack}">
-                            <Label x:Name="PopupLocationLabel" 
-                                   Style="{StaticResource PopupItemTextStyle}" />
-                            <Label x:Name="PopupLocationValue" 
-                                   Style="{StaticResource PopupItemTextStyle}" />
-
-                            <ListView x:Name="PopupLocationItemListView" 
-                                CachingStrategy="RecycleElement"
-                                ItemSelected="OnPopupItemSelected"
-                                HasUnevenRows="true"
-                                Margin="5,0,5,0"
-                                RowHeight="80">
-
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <Grid ColumnSpacing="5" RowSpacing="1">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto"/>
-                                                    <ColumnDefinition Width="*"/>
-                                                </Grid.ColumnDefinitions>
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="auto"/>
-                                                    <RowDefinition Height="auto"/>
-                                                    <RowDefinition Height="auto"/>
-                                                </Grid.RowDefinitions>
-
-                                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                                        Source="{Binding ImageURI}"
-                                                        Style="{StaticResource ImageSmallStyle}"
-                                                        VerticalOptions="CenterAndExpand"/>
-
-                                                <Label Grid.Column="1" Grid.Row="0"
-                                                        Text="{Binding Name}" 
-                                                        Style="{StaticResource LabelStyle}"/>
-
-                                                <StackLayout Grid.Column="1" Grid.Row="1" Style="{StaticResource HorizontalStack}">
-                                                    <Label Text="{Binding Attribute}" 
-                                                           Style="{StaticResource LabelStyle}"/>
-                                                    <Label Text="{Binding Value}" 
-                                                           Style="{StaticResource LabelStyle}"/>
-                                                </StackLayout>
-
-                                                <Label Grid.Column="1" Grid.Row="2"
-                                                        Text="{Binding Description}" 
-                                                        Style="{StaticResource LabelStyle}"
-                                                        FontSize="Micro"/>
-                                            </Grid>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-
-                            <Button x:Name="PopupCloseButton" 
-                                    Clicked="ClosePopup_Clicked" 
-                                    Text="Close"/>
-                        </StackLayout>
-                    </Frame>
-                </StackLayout>
+                <Button Text="Select"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Clicked="Protect_Clicked"/>
             </StackLayout>
-            
-            <Button Clicked="CloseButton_Clicked" Text="Close"></Button>
-            
+
         </StackLayout>
         
     </ContentPage.Content>
