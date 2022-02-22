@@ -5,6 +5,7 @@ using Game.ViewModels;
 using Game.Models;
 using System.Linq;
 using System.Collections.Generic;
+using Game.Views.Battle;
 
 namespace Game.Views
 {
@@ -104,8 +105,8 @@ namespace Game.Views
                 Source = data.ImageURI
             };
 
-            //// Add a event to the user can click the item and see more
-            //ItemButton.Clicked += (sender, args) => ShowPopup(location);
+            // Add a event to the user can click the item and see more
+            ItemButton.Clicked += (sender, args) => OnItemSelected(location);
 
             // Add the Display Text for the item
             var ItemLabel = new Label
@@ -129,6 +130,18 @@ namespace Game.Views
             };
 
             return ItemStack;
+        }
+
+        /// <summary>
+        /// Navigate to pick item page for each location
+        /// </summary>
+        /// <param name="location"></param>
+        public async void OnItemSelected(ItemLocationEnum location)
+        {
+            await Navigation.PushModalAsync( new NavigationPage( new ItemSelectionPage(ViewModel)));
+
+            // Remember the location for this item selection
+            PopupLocationEnum = location;
         }
 
 
