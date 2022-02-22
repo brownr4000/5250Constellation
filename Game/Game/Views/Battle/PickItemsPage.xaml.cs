@@ -133,7 +133,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            _= await Navigation.PopAsync();
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Protect_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NewRoundPage());
+             await Navigation.PushAsync(new NewRoundPage());
         }
     }
 }
