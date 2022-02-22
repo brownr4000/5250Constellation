@@ -14,7 +14,7 @@
 
                 <Label Text="Your Squad!" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                <CollectionView x:Name="MonstersListView" 
+                <CollectionView x:Name="CharactersListView" 
                             ItemsSource="{Binding Dataset}"
                             SelectionMode="Single"
                             SelectionChanged="CharacterListView_SelectionChanged">

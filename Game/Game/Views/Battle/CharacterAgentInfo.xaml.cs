@@ -29,8 +29,11 @@ namespace Game.Views
     {
         private GenericViewModel<CharacterModel> ViewModel;
 
+        //Hold a copy of data
+        public CharacterModel DataCopy;
+
         // Empty Constructor for UTs
-      //  public CharacterAgentInfoPage(bool UnitTest) { }
+        //  public CharacterAgentInfoPage(bool UnitTest) { }
 
         /// <summary>
         /// Constructor for Index Page
@@ -57,6 +60,9 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = this.ViewModel = data;
+
+            //Copy of Character to restore for cancel
+            DataCopy = new CharacterModel(data.Data);
         }
 
         /// <summary>
@@ -66,17 +72,20 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PickCharactersPage());
+            // Use the copy
+            ViewModel.Data.Update(DataCopy);
+
+            _ = await Navigation.PopAsync();
         }
 
         /// <summary>
-        /// Next button clicked selects the character and goes back to index page
+        /// Next button clicked selects the character and goes back to item pick
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private async void Select_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PickCharactersPage());
+            await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage(ViewModel)));
         }
 
         private void LeftImageButton_Clicked(object sender, EventArgs e)
