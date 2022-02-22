@@ -66,17 +66,17 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            _= await Navigation.PopAsync();
         }
 
         /// <summary>
-        /// Next button clicked selects the character and goes back to index page
+        /// Next button clicked selects the character and goes back to item pick
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private async void Select_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PickItemsPage(new GenericViewModel <CharacterModel> (ViewModel.Data)));
+            await Navigation.PushAsync(new NavigationPage(new PickItemsPage(ViewModel)));
         }
 
         private void LeftImageButton_Clicked(object sender, EventArgs e)
