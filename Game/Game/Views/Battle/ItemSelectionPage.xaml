@@ -4,9 +4,16 @@
              x:Class="Game.Views.Battle.ItemSelectionPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
+                <ImageButton Source="left_arrow.png" 
+                                 Style="{StaticResource ImageButtonSmallStyle}"
+                                 Clicked="LeftImageButton_Clicked"/>
+                <Image x:Name="itemImage" Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
+                <ImageButton Source="right_arrow.png" 
+                                 Style="{StaticResource ImageButtonSmallStyle}"
+                                 Clicked="RightImageButton_Clicked"/>
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

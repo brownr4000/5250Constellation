@@ -14,12 +14,76 @@ namespace Game.Views.Battle
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemSelectionPage : ContentPage
     {
-        public GenericViewModel<CharacterModel> ViewModel { get; set; }
+        // The item to create
+        public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
 
-        public ItemSelectionPage(GenericViewModel<CharacterModel> data)
+        public List<ItemModel> ItemList { get; }
+
+        // Item index variable, to load first item
+        public int itemImageIndex = 0;
+        public ItemSelectionPage(List<ItemModel> itemList)
         {
             InitializeComponent();
-            ViewModel = this.ViewModel = data;
+
+            this.ViewModel.Data = new ItemModel();
+
+            ItemList = itemList;
+
+            // Load the first image in the list when the Create page is opened
+            this.ViewModel.Data.ImageURI = ItemList[itemImageIndex].NewItemImageURI;
+
+
+        }
+
+        public bool UpdatePageBindingContext()
+        {
+            // Clear the Binding and reset it
+            BindingContext = null;
+            BindingContext = this.ViewModel;
+
+            return true;
+        }
+
+        public void LeftImageButton_Clicked(object sender, EventArgs e)
+        {
+            int imageCount = ItemList.Count;
+
+            // check if we are at the first photo and move to last photo when clicked
+            if (itemImageIndex == 0)
+            {
+                itemImageIndex = imageCount - 1;
+            }
+
+            // Move to the previous photo in the list
+            if (itemImageIndex > 0)
+            {
+                itemImageIndex--;
+            }
+
+            // Update the image
+            this.ViewModel.Data.ImageURI = ItemList[itemImageIndex].NewItemImageURI;
+            itemImage.Source = this.ViewModel.Data.ImageURI;
+        }
+
+        public void RightImageButton_Clicked(object sender, EventArgs e)
+        {
+            int imageCount = ItemList.Count;
+
+            // check if we are at the last photo and move to first photo when clicked
+            if (itemImageIndex == imageCount - 1)
+            {
+                itemImageIndex = 0;
+            }
+
+            // Move to the next photo in the list
+            else if (itemImageIndex < imageCount - 1)
+            {
+                itemImageIndex++;
+            }
+
+            // Update the image
+            this.ViewModel.Data.ImageURI = ItemList[itemImageIndex].NewItemImageURI;
+            itemImage.Source = this.ViewModel.Data.ImageURI;
         }
 
     }

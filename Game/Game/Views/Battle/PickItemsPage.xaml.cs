@@ -138,7 +138,25 @@ namespace Game.Views
         /// <param name="location"></param>
         public async void OnItemSelected(ItemLocationEnum location)
         {
-            await Navigation.PushModalAsync( new NavigationPage( new ItemSelectionPage(ViewModel)));
+            // Make a fake item for None
+            var NoneItem = new ItemModel
+            {
+                Id = null, // will use null to clear the item
+                Guid = "None", // how to find this item amoung all of them
+                ImageURI = "icon_cancel.png",
+                Name = "None",
+                Description = "None"
+            };
+
+            List<ItemModel> itemList = new List<ItemModel>
+            {
+                NoneItem
+            };
+
+            // Add the rest of the items to the list
+            itemList.AddRange(ItemIndexViewModel.Instance.GetLocationItems(location));
+
+            await Navigation.PushModalAsync( new NavigationPage( new ItemSelectionPage(itemList)));
 
             // Remember the location for this item selection
             PopupLocationEnum = location;
