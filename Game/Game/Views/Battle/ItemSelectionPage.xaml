@@ -8,8 +8,14 @@
                 <ImageButton Source="left_arrow.png" 
                                  Style="{StaticResource ImageButtonSmallStyle}"
                                  Clicked="LeftImageButton_Clicked"/>
-                <Image x:Name="itemImage" Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
-                <ImageButton Source="right_arrow.png" 
+                
+                <StackLayout Orientation="Vertical">
+                    <Image x:Name="itemImage" Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
+                    <Label x:Name="itemName" Style="{StaticResource ColouredLargeLabelStyle}"/>
+                        
+                </StackLayout>
+                
+                        <ImageButton Source="right_arrow.png" 
                                  Style="{StaticResource ImageButtonSmallStyle}"
                                  Clicked="RightImageButton_Clicked"/>
             </StackLayout>

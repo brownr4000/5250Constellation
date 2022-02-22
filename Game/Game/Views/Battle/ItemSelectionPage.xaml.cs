@@ -30,6 +30,7 @@ namespace Game.Views.Battle
             ItemList = itemList;
 
             // Load the first image in the list when the Create page is opened
+            this.ViewModel.Data.Name = ItemList[itemImageIndex].Name;
             this.ViewModel.Data.ImageURI = ItemList[itemImageIndex].NewItemImageURI;
 
 
@@ -61,8 +62,10 @@ namespace Game.Views.Battle
             }
 
             // Update the image
+            this.ViewModel.Data.Name = ItemList[itemImageIndex].Name;
             this.ViewModel.Data.ImageURI = ItemList[itemImageIndex].NewItemImageURI;
             itemImage.Source = this.ViewModel.Data.ImageURI;
+            itemName.Text = this.ViewModel.Data.Name;
         }
 
         public void RightImageButton_Clicked(object sender, EventArgs e)
@@ -82,8 +85,10 @@ namespace Game.Views.Battle
             }
 
             // Update the image
+            this.ViewModel.Data.Name = ItemList[itemImageIndex].Name;
             this.ViewModel.Data.ImageURI = ItemList[itemImageIndex].NewItemImageURI;
             itemImage.Source = this.ViewModel.Data.ImageURI;
+            itemName.Text = this.ViewModel.Data.Name;
         }
 
     }
