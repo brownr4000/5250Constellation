@@ -76,7 +76,7 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void Select_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PickItemsPage());
+            await Navigation.PushAsync(new PickItemsPage(new GenericViewModel <CharacterModel> (ViewModel.Data)));
         }
 
         private void LeftImageButton_Clicked(object sender, EventArgs e)
