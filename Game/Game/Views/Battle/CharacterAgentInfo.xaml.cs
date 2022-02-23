@@ -100,7 +100,7 @@ namespace Game.Views
         {
             int imageCount = AllCharactersList.Count;
 
-            // check if we are at the first photo and move to last photo when clicked
+            // Check if we are at the first photo and move to last photo when clicked
             if (characterImageIndex == 0)
             {
                 characterImageIndex = imageCount - 1;
@@ -123,6 +123,10 @@ namespace Game.Views
             SpeedLabel.Text = AllCharactersList[characterImageIndex].Speed.ToString();
             DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
             HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
+
+            // Update ViewModel with latest character selected to pass this to select items page
+            this.ViewModel.Data = AllCharactersList[characterImageIndex];
+
         }
 
         private void RightImageButton_Clicked(object sender, EventArgs e)
@@ -152,6 +156,9 @@ namespace Game.Views
             SpeedLabel.Text = AllCharactersList[characterImageIndex].Speed.ToString();
             DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
             HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
+
+            // Update ViewModel with latest character selected to pass this to select items page
+            this.ViewModel.Data = AllCharactersList[characterImageIndex];
         }
     }
 }
