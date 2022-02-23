@@ -59,7 +59,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Pick_Items_Page_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new PickItemsPage());
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Game_Over_Page_Clicked(object sender, EventArgs e)
         {
-           
+            await Navigation.PushAsync(new GameOverPage());
         }
     }
 }

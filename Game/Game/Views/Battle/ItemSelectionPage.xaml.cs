@@ -134,7 +134,10 @@ namespace Game.Views.Battle
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NewRoundPage());
+            MessagingCenter.Send(this, "Update", ViewModel.Data);
+
+            _ = await Navigation.PopModalAsync();
+
         }
 
     }
