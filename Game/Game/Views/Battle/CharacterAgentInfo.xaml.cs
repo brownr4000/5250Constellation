@@ -82,9 +82,7 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void Cancel_Clicked(object sender, EventArgs e)
         {
-            // Use the copy
-            ViewModel.Data.Update(DataCopy);
-
+            await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
             _ = await Navigation.PopAsync();
         }
 
@@ -115,10 +113,8 @@ namespace Game.Views
             }
 
             // Update the data
-            this.ViewModel.Data.Name = AllCharactersList[characterImageIndex].Name;
-            this.ViewModel.Data.ImageURI = AllCharactersList[characterImageIndex].NewItemImageURI;
-            CharacterImage.Source = this.ViewModel.Data.ImageURI;
-            CharacterNameLabel.Text = this.ViewModel.Data.Name;
+            CharacterImage.Source = AllCharactersList[characterImageIndex].ImageURI;
+            CharacterNameLabel.Text = AllCharactersList[characterImageIndex].Name;
             AttackProgressBar.Progress = AllCharactersList[characterImageIndex].Attack;
             SpeedProgressBar.Progress = AllCharactersList[characterImageIndex].Speed;
             DefenseProgressBar.Progress = AllCharactersList[characterImageIndex].Defense;
@@ -146,10 +142,8 @@ namespace Game.Views
             }
 
             // Update the data
-            this.ViewModel.Data.Name = AllCharactersList[characterImageIndex].Name;
-            this.ViewModel.Data.ImageURI = AllCharactersList[characterImageIndex].NewItemImageURI;
-            CharacterImage.Source = this.ViewModel.Data.ImageURI;
-            CharacterNameLabel.Text = this.ViewModel.Data.Name;
+            CharacterImage.Source = AllCharactersList[characterImageIndex].ImageURI;
+            CharacterNameLabel.Text = AllCharactersList[characterImageIndex].Name;
             AttackProgressBar.Progress = AllCharactersList[characterImageIndex].Attack;
             SpeedProgressBar.Progress = AllCharactersList[characterImageIndex].Speed;
             DefenseProgressBar.Progress = AllCharactersList[characterImageIndex].Defense;
