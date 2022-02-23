@@ -59,7 +59,7 @@ namespace Game.Views
                 }
 
             // Open the Agent info Page
-            await Navigation.PushAsync(new CharacterAgentInfoPage(new GenericViewModel<CharacterModel>(data)));
+            await Navigation.PushAsync(new CharacterAgentInfoPage(new GenericViewModel<CharacterModel>(data), ViewModel));
 
         }
     }
