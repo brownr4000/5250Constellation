@@ -16,5 +16,10 @@ namespace Game.Views.Battle
         {
             InitializeComponent();
         }
+
+        public async void ViewResult_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ScoreIndexPage());
+        }
     }
 }
