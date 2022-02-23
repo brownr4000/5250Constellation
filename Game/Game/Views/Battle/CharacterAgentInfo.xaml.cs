@@ -41,9 +41,7 @@ namespace Game.Views
           public CharacterAgentInfoPage(bool UnitTest) { }
 
         /// <summary>
-        /// Constructor for Index Page
-        /// 
-        /// Get the CharacterIndexView Model
+        /// Constructor for CharacterAgentInfoPage Page
         /// </summary>
         public CharacterAgentInfoPage()
         {
