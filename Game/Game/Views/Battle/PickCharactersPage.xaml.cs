@@ -48,7 +48,7 @@ namespace Game.Views
         /// On Character selected go to Agent Info page
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="args"></param>
         public async void CharacterListView_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
             CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;
