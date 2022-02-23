@@ -51,16 +51,11 @@ namespace Game.Views
         /// <param name="args"></param>
         public async void CharacterListView_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;
-
-            if (data == null)
-                {
-                    return;
-                }
+            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;           
 
             // Open the Agent info Page
             await Navigation.PushAsync(new CharacterAgentInfoPage(new GenericViewModel<CharacterModel>(data), ViewModel));
 
-        }
+        }       
     }
 }
