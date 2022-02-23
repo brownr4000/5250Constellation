@@ -8,10 +8,12 @@ using Xamarin.Forms;
 namespace UnitTests.Views
 {
     [TestFixture]
-    public class PickItemsPageTests
+    public class PickItemsPageTests : PickItemsPage
     {
         App app;
         PickItemsPage page;
+
+        public PickItemsPageTests() : base(true) { }
 
         [SetUp]
         public void Setup()
@@ -47,11 +49,25 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void PickItemsPage_CloseButton_Clicked_Default_Should_Pass()
+        public void PickItemsPage_CancelButton_Clicked_Default_Should_Pass()
         {
             // Arrange
             // Act
-            page.CloseButton_Clicked(null, null);
+            page.Cancel_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void PickItemsPage_Protect_Clicked_Default_Should_Pass() 
+        {
+            // Arrange
+
+            // Act
+            page.Protect_Clicked(null, null);
 
             // Reset
 
