@@ -32,74 +32,14 @@ namespace Game.Views
             BindingContext = BattleEngineViewModel.Instance;
         }
 
-        /// <summary>
-        /// Button click will go to Pick characters page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Pick_Characters_Page_Clicked(object sender, EventArgs e)
+        public void FightButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PickCharactersPage());
+            // Fight button code
         }
 
-        /// <summary>
-        /// Button click will go to Begin battle page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Begin_Battle_Page_Clicked(object sender, EventArgs e)
+        public void DefenseButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BattleEntryPage());
-        }
-
-        /// <summary>
-        /// Button click will go to Pick Items page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Pick_Items_Page_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Button click will go to Battle Entry page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Battle_Entry_Page_Clicked(object sender, EventArgs e)
-        {
-            
-        }
-
-        /// <summary>
-        /// Button click will go to Battle Field page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Battle_Field_Page_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new BattlePage());
-        }
-
-        /// <summary>
-        /// Button click will go to Battle Sequence page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Battle_Sequence_Page_Clicked(object sender, EventArgs e)
-        {
-           
-        }
-
-        /// <summary>
-        /// Button click will go to Game Over page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Game_Over_Page_Clicked(object sender, EventArgs e)
-        {
-           
+            // Defense button code
         }
     }
 }

@@ -143,8 +143,8 @@
 
                 <StackLayout Grid.Column="1" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
 
-                    <Button Text="Fight" x:Name="FightButton" Style="{StaticResource ButtonStyle}"/>
-                    <Button Text="Defense" x:Name="DefenseButton" Style="{StaticResource ButtonStyle}"/>
+                    <Button Text="Fight" Clicked="FightButton_Clicked" x:Name="FightButton" Style="{StaticResource ButtonStyle}"/>
+                    <Button Text="Defense" Clicked="DefenseButton_Clicked" x:Name="DefenseButton" Style="{StaticResource ButtonStyle}"/>
                     
                 </StackLayout>
 
