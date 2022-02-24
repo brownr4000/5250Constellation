@@ -40,19 +40,6 @@ namespace Game.Views
         //Empty Constructor for UTs
           public CharacterAgentInfoPage(bool UnitTest) { }
 
-        ///// <summary>
-        ///// Constructor for CharacterAgentInfoPage Page
-        ///// </summary>
-        //public CharacterAgentInfoPage()
-        //{
-        //    InitializeComponent();
-
-        //    BindingContext = BattleEngineViewModel.Instance;
-
-        //    // Clear the Database List and the Party List to start
-        //    BattleEngineViewModel.Instance.PartyCharacterList.Clear();
-        //}
-
         /// <summary>
         /// Constructor for Index Page accepting data
         /// 

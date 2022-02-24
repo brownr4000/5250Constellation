@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.CharacterAgentInfoPage"
-             Title="Agent Info!">
+             Title="Agent Info!"
+             BackgroundImageSource="battle_background.png">
 
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
@@ -120,13 +121,13 @@
                                 <ProgressBar 
                                     x:Name="HealthProgressBar"
                                     Grid.Column="1" 
-                                    Progress="{Binding Data.Health}"
+                                    Progress="{Binding Data.CurrentHealth}"
                                     Style="{StaticResource ProgressBarStyle}"/>
 
                                 <Label 
                                     x:Name="HealthLabel"
                                     Grid.Column="2" 
-                                    Text="{Binding Data.Health}"
+                                    Text="{Binding Data.CurrentHealth}"
                                     Style="{StaticResource CenterValueStyle}"/>
 
                             </Grid>
