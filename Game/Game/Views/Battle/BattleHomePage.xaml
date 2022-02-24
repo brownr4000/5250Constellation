@@ -19,10 +19,6 @@
                     Style="{StaticResource ButtonStyle}"
                     Clicked="Pick_Characters_Page_Clicked"/>
 
-            <!--<Button Text="Pick Items Page" 
-                    Style="{StaticResource ButtonStyle}"
-                    Clicked="Pick_Items_Page_Clicked"/>-->
-
             <Button Text="Round Start Page" 
                     Style="{StaticResource ButtonStyle}"
                     Clicked="New_Round_Page_Clicked"/>
