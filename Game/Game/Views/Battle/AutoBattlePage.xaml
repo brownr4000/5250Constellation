@@ -23,13 +23,7 @@
                 <Label 
                     x:Name="BattleMessageValue"                    
                     Style="{StaticResource AutoBattleMessageStyle}"/>
-
-                <Image
-                        x:Name="AutobattleImage"
-                        Source="item_placeholder.gif"
-                        Style="{StaticResource ImageLargeStyle}"/>
-                        <!--IsAnimationPlaying="True"-->                        
-
+               
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

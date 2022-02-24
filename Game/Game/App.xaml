@@ -512,14 +512,14 @@
                    x:Key="ImageStartButtonStyle" 
                    BasedOn="{StaticResource ImageButtonStyle}">
                 <Setter Property="HorizontalOptions" Value="Start"/>
-                <Setter Property="Margin" Value="0,400,40,0"/>
+                <Setter Property="Margin" Value="0,300,30,0"/>
             </Style>
 
             <Style TargetType="ImageButton"
                    x:Key="ImageEndButtonStyle" 
                    BasedOn="{StaticResource ImageButtonStyle}">
                 <Setter Property="HorizontalOptions" Value="End"/>
-                <Setter Property="Margin" Value="40,400,0,0"/>
+                <Setter Property="Margin" Value="0,300,0,0"/>
             </Style>
 
             <Style TargetType="ImageButton"
