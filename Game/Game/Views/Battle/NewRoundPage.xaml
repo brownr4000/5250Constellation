@@ -12,7 +12,11 @@
                     <Frame BorderColor="Gold">
                         <FlexLayout>
                             <StackLayout Style="{StaticResource VerticalStack}">
-                                <Label Text="Characters" Style="{StaticResource MessageLargeStyle}"/>
+                                <Label 
+                                    Text="Characters"
+                                    Style="{StaticResource MessageLargeStyle}"
+                                    HorizontalOptions="StartAndExpand"
+                                    Margin="10"/>
 
                                 <FlexLayout x:Name="PartyListFrame"
                                     JustifyContent="Start"
