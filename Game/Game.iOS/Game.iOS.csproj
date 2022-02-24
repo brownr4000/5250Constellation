@@ -309,9 +309,6 @@
     <BundleResource Include="Resources\troll3.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\About.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\Earth.png" />
   </ItemGroup>
   <ItemGroup>
@@ -382,5 +379,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\update_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about.png" />
   </ItemGroup>
 </Project>

@@ -104,7 +104,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.png" />
+    <Content Include="about.png" />
     <Content Include="action_ability.png" />
     <Content Include="action_attack.png" />
     <Content Include="action_default.png" />
