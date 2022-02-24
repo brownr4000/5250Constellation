@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Game.Views.Battle.GameOverPage"
-             Title="City Taken Over!">
+             Title="City Taken Over!"
+             BackgroundImageSource="battle_background.png">
+    
     <ContentPage.Content>
         <StackLayout Style="{StaticResource CenterWithSpacingStack}">
             <Label Text="Game Over"
