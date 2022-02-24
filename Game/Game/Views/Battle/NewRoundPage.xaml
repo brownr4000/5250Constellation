@@ -5,32 +5,55 @@
 
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+            <FlexLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-            <StackLayout Style="{StaticResource VerticalStack}">
+                    <Frame BorderColor="Gold">
+                        <FlexLayout>
+                            <StackLayout Style="{StaticResource VerticalStack}">
+                                <Label Text="Characters" Style="{StaticResource MessageLargeStyle}"/>
 
-                <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
-
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
-
-                <Label Text="Characters" Style="{StaticResource MessageLargeStyle}"/>
-
-                <FlexLayout x:Name="PartyListFrame"
+                                <FlexLayout x:Name="PartyListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                <Label Text="Monsters" Style="{StaticResource MessageLargeStyle}"/>
+                                <StackLayout Padding="1"></StackLayout>
 
-                <FlexLayout x:Name="MonsterListFrame"
+                            </StackLayout>
+
+                        </FlexLayout>
+
+                    </Frame>
+
+                    <Label Text="VS" Style="{StaticResource CenterMessageLargeStyle}"/>
+
+                    <Frame BorderColor="Gold">
+                        <FlexLayout>
+                            <StackLayout>
+                                <Label Text="Monsters" Style="{StaticResource MessageLargeStyle}"/>
+
+                                <FlexLayout x:Name="MonsterListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                <StackLayout Padding="1"></StackLayout>
+                            </StackLayout>
 
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
+                        </FlexLayout>
+
+                    </Frame>
+
+                    <Button Clicked="BeginButton_Clicked" Text="Begin"/>
+                    
+                </StackLayout>
+              
                 
-            </StackLayout>
+            </FlexLayout>
+
         </ScrollView>
+        
     </ContentPage.Content>
+    
 </ContentPage>
