@@ -117,6 +117,12 @@
     <Content Include="agent6.png" />
     <Content Include="agent7.png" />
     <Content Include="agents_button.png" />
+    <Content Include="agent_amelix.png" />
+    <Content Include="agent_baby.png" />
+    <Content Include="agent_dog.png" />
+    <Content Include="agent_prof_tompkins.png" />
+    <Content Include="agent_robot.png" />
+    <Content Include="agent_smith.png" />
     <Content Include="aliens_button.png" />
     <Content Include="Alien_Planet.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
