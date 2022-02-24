@@ -40,18 +40,18 @@ namespace Game.Views
         //Empty Constructor for UTs
           public CharacterAgentInfoPage(bool UnitTest) { }
 
-        /// <summary>
-        /// Constructor for CharacterAgentInfoPage Page
-        /// </summary>
-        public CharacterAgentInfoPage()
-        {
-            InitializeComponent();
+        ///// <summary>
+        ///// Constructor for CharacterAgentInfoPage Page
+        ///// </summary>
+        //public CharacterAgentInfoPage()
+        //{
+        //    InitializeComponent();
 
-            BindingContext = BattleEngineViewModel.Instance;
+        //    BindingContext = BattleEngineViewModel.Instance;
 
-            // Clear the Database List and the Party List to start
-            BattleEngineViewModel.Instance.PartyCharacterList.Clear();
-        }
+        //    // Clear the Database List and the Party List to start
+        //    BattleEngineViewModel.Instance.PartyCharacterList.Clear();
+        //}
 
         /// <summary>
         /// Constructor for Index Page accepting data
@@ -80,7 +80,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Cancel_Clicked(object sender, EventArgs e)
+        public async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
             _ = await Navigation.PopAsync();
@@ -91,12 +91,12 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Select_Clicked(object sender, EventArgs e)
+        public async void Select_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage(ViewModel)));
         }
 
-        private void LeftImageButton_Clicked(object sender, EventArgs e)
+        public void LeftImageButton_Clicked(object sender, EventArgs e)
         {
             int imageCount = AllCharactersList.Count;
 
@@ -129,7 +129,7 @@ namespace Game.Views
 
         }
 
-        private void RightImageButton_Clicked(object sender, EventArgs e)
+        public void RightImageButton_Clicked(object sender, EventArgs e)
         {
             int imageCount = AllCharactersList.Count;
 
