@@ -4,7 +4,7 @@
              x:Class="Game.Views.Battle.BattleMessagesPage"
              BackgroundImageSource="battle_background.png">
 
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
             <FlexLayout>
                 <StackLayout Orientation="Vertical">
@@ -43,19 +43,7 @@
                                     LineHeight="1"
                                     CharacterSpacing="1"
                                     Style="{StaticResource LabelStyle}"
-                                    FontSize="Micro"/>
-
-                                <!--<WebView
-                                    x:Name="HtmlBox"
-                                    WidthRequest="100"
-                                    MinimumWidthRequest="100"
-                                    HeightRequest="100"
-                                    MinimumHeightRequest="100"
-                                    HorizontalOptions="FillAndExpand"
-                                    VerticalOptions="Start"
-                                    BackgroundColor="Transparent"
-                                    IsVisible="false"
-                                    />-->
+                                    FontSize="Micro"/>                               
 
                             </StackLayout>
                         </Frame>
@@ -91,6 +79,105 @@
 
         </ScrollView>
         
+    </ContentPage.Content>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <CollectionView 
+                    ItemsLayout="HorizontalList"
+                    ItemsSource="{Binding CharacterModelDeathList}"
+                    WidthRequest="500" HeightRequest="100"
+                    HorizontalScrollBarVisibility="Never"
+                    HorizontalOptions="Center">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="1" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Source="{Binding ImageURI}" 
+                                   Style="{StaticResource ImageMediumAspectToFitStyle}"/>
+
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
+                                </StackLayout>
+
+                            </Grid>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+
+            <Frame Style="{StaticResource BattleSequenceFrame}">
+                <StackLayout Style="{StaticResource VerticalOnlyStack}">
+                    <Label Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
+
+                    <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
+                        <Image Source="agent_amelix.png" Style="{StaticResource ImageLargeStyle}"/>
+
+                        <Label Text="VS" Style="{StaticResource CenterLabelStyle}"/>
+
+                        <Image Source="cancer_monster.png" Style="{StaticResource ImageLargeStyle}"/>
+                    </StackLayout>
+
+                    <Label Text="Amelix hits Cancer monster" Style="{StaticResource ListSmallLabelStyle}"/>
+
+                </StackLayout>
+            </Frame>
+            
+
+            <StackLayout>
+                <CollectionView 
+                        ItemsLayout="HorizontalList"
+                        ItemsSource="{Binding CharacterModelDeathList}"
+                        WidthRequest="500" HeightRequest="100"
+                        HorizontalScrollBarVisibility="Never"
+                        HorizontalOptions="Center">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="1" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Source="{Binding ImageURI}" 
+                                       Style="{StaticResource ImageMediumAspectToFitStyle}"/>
+
+                                <StackLayout Grid.Row="1">
+                                    <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
+                                </StackLayout>
+
+                            </Grid>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
+                <Button Text="Tap to make progress" 
+                    Clicked="Button_Clicked" 
+                    Style="{StaticResource ButtonStyle}"/>
+            </StackLayout>
+           
+
+        </StackLayout>
+        
     </ContentPage.Content>
-    
 </ContentPage>

@@ -132,7 +132,7 @@
                 x:Key="ListSmallFontSizeLabelStyle"
                 BasedOn="{StaticResource ListStyle}">
                 <Setter Property="FontSize" Value="12"/>
-            </Style>
+            </Style>            
 
             <Style TargetType="Label"
                 x:Key="HeaderStyle"
@@ -155,6 +155,12 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor" />
                 <Setter Property="FontSize" Value="16" />                
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="LabelStartStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
             </Style>
 
             <Style TargetType="Label"
@@ -559,7 +565,7 @@
                 <Setter Property="WidthRequest" Value="150"/>
                 <Setter Property="CornerRadius" Value="5"/>
             </Style>
-
+            
             <!--Grid-->
             <Style TargetType="Grid" x:Key="GridCenterwithWidth">
                 <Setter Property="WidthRequest" Value="600"/>
@@ -1048,7 +1054,16 @@
                 <Setter Property="HeightRequest" Value="150" />
                 <Setter Property="WidthRequest" Value="400" />                
             </Style>
-            
+
+
+            <Style TargetType="Frame"
+                x:Key="BattleSequenceFrame"
+                   BasedOn="{StaticResource BattleFieldFrame}">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HeightRequest" Value="230" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+
             <!-- Grid -->
             <Style TargetType="Grid">
                 <Setter Property="ColumnSpacing" Value="0" />

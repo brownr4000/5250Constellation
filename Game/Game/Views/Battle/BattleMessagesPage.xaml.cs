@@ -26,16 +26,16 @@ namespace Game.Views.Battle
             InitializeComponent();
 
             // Draw the Characters
-            foreach (var data in EngineViewModel.Engine.EngineSettings.CharacterList)
-            {
-                PartyListFrame.Children.Add(CreatePlayerDisplayBox(data));
-            }
+          //  foreach (var data in EngineViewModel.Engine.EngineSettings.CharacterList)
+          //  {
+          //      PartyListFrame.Children.Add(CreatePlayerDisplayBox(data));
+          //  }
 
-            // Draw the Monsters
-            foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)
-            {
-                MonsterListFrame.Children.Add(CreatePlayerDisplayBox(data));
-            }
+          //  // Draw the Monsters
+          //  foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)
+          //  {
+          //     MonsterListFrame.Children.Add(CreatePlayerDisplayBox(data));
+          //  }
         }
 
         /// <summary>
@@ -132,6 +132,11 @@ namespace Game.Views.Battle
         {
             await Navigation.PushModalAsync(new NavigationPage(new BattleHomePage()));
             _ = await Navigation.PopAsync();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
