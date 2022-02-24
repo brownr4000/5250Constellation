@@ -79,7 +79,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Battle_Sequence_Page_Clicked(object sender, EventArgs e)
         {
-           
+            await Navigation.PushAsync(new BattleMessagesPage());
         }
 
         /// <summary>
