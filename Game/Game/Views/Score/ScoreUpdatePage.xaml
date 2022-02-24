@@ -155,13 +155,15 @@
 
                 <!--Buttons-->
                 <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                    <Button Text="Update Score"
-                        Clicked="Save_Clicked"
-                        Style="{StaticResource ButtonStyle}"/>
+                    <ImageButton 
+                            Source="update_button.png"
+                            Style="{StaticResource ImageButtonStyle}"
+                            Clicked="Save_Clicked"/>
 
-                    <Button Text="Back to Menu"
-                        Clicked="Cancel_Clicked"
-                        Style="{StaticResource ButtonStyle}"/>
+                    <ImageButton 
+                            Source="cancel_button.png"
+                            Style="{StaticResource ImageButtonStyle}"
+                            Clicked="Cancel_Clicked"/>
 
                 </StackLayout>
                 
