@@ -17,9 +17,7 @@
                             Source="enter_button.png"
                             Style="{StaticResource ImageEndButtonStyle}"
                             Clicked="ProtectButton_Clicked"/>
-
-            </StackLayout>
-            
+            </StackLayout>           
             
         </StackLayout>
     </ContentPage.Content>
