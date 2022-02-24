@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Name="BrowseItemsPage"
              x:Class="Game.Views.PickCharactersPage"
-             Title="Choose Your Characters!">
+             Title="Choose Your Characters!"
+             BackgroundImageSource="battle_background.png">
 
     <ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
@@ -19,39 +20,44 @@
                             SelectionMode="Single"
                             SelectionChanged="CharacterListView_SelectionChanged">
 
+
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
+                            <Grid Padding="10"
+                            RowDefinitions="Auto, *"
+                            ColumnDefinitions="Auto, *">
 
-                            <Frame Style="{StaticResource FrameStyle}">
-                                    <StackLayout Grid.Column="1">
-                                    <Grid Padding="10"
-                                      RowDefinitions="Auto, *"
-                                      ColumnDefinitions="Auto, *">
+                                <Image 
+                                    Grid.RowSpan="2"
+                                    Source="{Binding ImageURI}"
+                                    Style="{StaticResource IndexImageStyle}"/>
 
-                                        <Image Grid.Column="0" Grid.RowSpan="2"
-                                        Source="{Binding ImageURI}"
-                                        Style="{StaticResource IndexImageStyle}"/>
+                                <StackLayout Grid.Column="1" Style="{StaticResource StackWithMargin}">
 
-                                        <StackLayout Grid.Column="1" 
-                                         Style="{StaticResource StackWithMargin}">
+                                    <Label
+                                        Text="{Binding Name}"
+                                        Style="{StaticResource BoldLabelStyle}"/>
 
-                                            <Label
-                                            Text="{Binding Name}"
-                                            Style="{StaticResource BoldLabelStyle}"/>
-
-                                            <Label
+                                        <Label
                                             Grid.Row="1"
-                                            Text="{Binding Path=Level}"
+                                            Text="{Binding Path=Level, StringFormat='Level {0:G}'}"
                                             Style="{StaticResource LabelStyle}"/>
 
-                                            <Label Text="{Binding Path=Job}" 
-                                            Style="{StaticResource ListStyle}"/>
+                                        <Label
+                                            Text="{Binding Job}"
+                                            Style="{StaticResource LabelStyle}"/>
 
-                                        </StackLayout>
-                                    </Grid>
+                                    <Label 
+                                        Text="{Binding Path=MaxHealth,
+                                        StringFormat= '{0:G} hp'}" 
+                                        Style="{StaticResource ListStyle}"/>
+
                                 </StackLayout>
-                                </Frame>                                   
+
+                            </Grid>
+
                         </DataTemplate>
+
                     </CollectionView.ItemTemplate>
 
                 </CollectionView>
