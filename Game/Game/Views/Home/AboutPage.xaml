@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Game.Views.AboutPage"
-             Title="About">
+             Title="About"
+             BackgroundImageSource="background_ahgv.png">
 
     <ScrollView
       Padding="10,10,10,10"

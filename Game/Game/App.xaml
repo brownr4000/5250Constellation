@@ -110,7 +110,7 @@
             <Style TargetType="Label"
                 x:Key="StepperLabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="TextColor" Value="{StaticResource TriciaryBackgroundColor}" />
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontFamily" Value="PlatNomor" />
                 <Setter Property="FontSize" Value="14" />
             </Style>
@@ -1115,6 +1115,7 @@
                 <Setter Property="Maximum" Value="9" />
                 <Setter Property="Increment" Value="1" />
             </Style>
+            
 
             <!-- Picker -->
             <Style TargetType="Picker" x:Key="PickerStyle">                
