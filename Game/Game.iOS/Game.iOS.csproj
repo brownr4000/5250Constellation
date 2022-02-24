@@ -395,4 +395,43 @@
   <ItemGroup>
     <BundleResource Include="Resources\items_button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\crystal_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fedora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\laser_rifle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\laser_sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moon_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\noisy_cricket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pistol_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\power_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rocket_boots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shield_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shotgun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\stun_gun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sunglasses.png" />
+  </ItemGroup>
 </Project>
