@@ -320,7 +320,7 @@ namespace Game.GameRules
                     Attack = 2,
                     Defense = 6,
                     Speed = 1,
-                    ImageURI = "agent7.png",
+                    ImageURI = "agent_robot.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -339,7 +339,7 @@ namespace Game.GameRules
                     Attack = 3,
                     Defense = 5,
                     Speed = 1,
-                    ImageURI = "agent1.png",
+                    ImageURI = "agent_smith.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -358,7 +358,7 @@ namespace Game.GameRules
                     Attack = 3,
                     Defense = 2,
                     Speed = 4,
-                    ImageURI = "agent2.png",
+                    ImageURI = "agent_dog.png",
                     Head = HeadString,
                     PrimaryHand = PrimaryHandString,
                     OffHand = OffHandString,
@@ -374,7 +374,7 @@ namespace Game.GameRules
                     Attack = 1,
                     Defense = 3,
                     Speed = 2,
-                    ImageURI = "agent3.png",
+                    ImageURI = "agent_prof_tompkins.png",
                     Job = CharacterJobEnum.Support
                 },
 
@@ -386,7 +386,7 @@ namespace Game.GameRules
                     Attack = 2,
                     Defense = 2,
                     Speed = 3,
-                    ImageURI = "agent4.png",
+                    ImageURI = "agent_baby.png",
                     Job = CharacterJobEnum.Striker
                 },
 
@@ -398,20 +398,8 @@ namespace Game.GameRules
                     Attack = 3,
                     Defense = 1,
                     Speed = 5,
-                    ImageURI = "agent5.png",
+                    ImageURI = "agent_amelix.png",
                     Job = CharacterJobEnum.Striker
-                },
-
-                new CharacterModel {
-                    Name = "Larry",
-                    Description = "From the Accounting department",
-                    Level = 1,
-                    MaxHealth = 6,
-                    Attack = 1,
-                    Defense = 3,
-                    Speed = 2,
-                    ImageURI = "agent6.png",
-                    Job = CharacterJobEnum.Support
                 }
             };
 
