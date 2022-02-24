@@ -52,15 +52,15 @@ namespace Game.Views
             await Navigation.PushAsync(new BattleEntryPage());
         }
 
-        /// <summary>
-        /// Button click will go to Pick Items page
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Pick_Items_Page_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new PickItemsPage());
-        }
+        ///// <summary>
+        ///// Button click will go to Pick Items page
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //public async void Pick_Items_Page_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new PickItemsPage());
+        //}
 
         /// <summary>
         /// Button click will go to Battle Entry page
