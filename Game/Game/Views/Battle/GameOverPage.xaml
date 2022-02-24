@@ -13,7 +13,7 @@
 
             <Image Source="Alien_Planet.png" Style="{StaticResource StandardImageStyle}"/>
 
-            <Button Text="View Your Results" Clicked="ViewResult_Clicked"/>
+            <Button Text="View Your Results" Clicked="ViewResult_Clicked" Style="{StaticResource ButtonStyle}"/>
 
         </StackLayout>
     </ContentPage.Content>
