@@ -36,7 +36,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Speed,
                     Value = 1,
-                    ImageURI = "",},
+                    ImageURI = "moon_boots.png",},
 
                 new ItemModel {
                     Name = "Rocket Boots",
@@ -46,7 +46,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Speed,
                     Value = 5,
-                    ImageURI = "",},
+                    ImageURI = "rocket_boots.png",},
 
                 new ItemModel {
                     Name = "Power Ring",
@@ -56,7 +56,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Finger,
                     Attribute = AttributeEnum.Attack,
                     Value = 9,
-                    ImageURI = "",},
+                    ImageURI = "power_ring.png",},
 
                 new ItemModel {
                     Name = "Battleglove",
@@ -96,7 +96,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Defense,
                     Value = 1,
-                    ImageURI = "",},
+                    ImageURI = "sunglasses.png",},
 
                 new ItemModel {
                     Name = "Fedora",
@@ -106,7 +106,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Defense,
                     Value = 3,
-                    ImageURI = "",},
+                    ImageURI = "fedora.png",},
 
                 new ItemModel {
                     Name = "Ushanka",
@@ -166,7 +166,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Defense,
                     Value = 3,
-                    ImageURI = "",},
+                    ImageURI = "shield_01.png",},
 
                 new ItemModel {
                     Name = "Ballistic Shield",
@@ -186,7 +186,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
                     Value = 1,
-                    ImageURI = "",},
+                    ImageURI = "stun_gun.png",},
 
                 new ItemModel {
                     Name = "Baton",
@@ -206,7 +206,7 @@ namespace Game.GameRules
                    Location = ItemLocationEnum.PrimaryHand,
                    Attribute = AttributeEnum.Attack,
                    Value = 2,
-                   ImageURI = "",},
+                   ImageURI = "pistol_01.png",},
 
                 new ItemModel {
                     Name = "Crystal Sword",
@@ -216,7 +216,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
                     Value = 3,
-                    ImageURI = "",},
+                    ImageURI = "crystal_sword.png",},
 
                 new ItemModel {
                     Name = "Laser Sword",
@@ -226,7 +226,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
                     Value = 4,
-                    ImageURI = "",},
+                    ImageURI = "laser_sword.png",},
 
                 new ItemModel {
                     Name = "Parallax Laser Rifle",
@@ -236,7 +236,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
                     Value = 5,
-                    ImageURI = "",},
+                    ImageURI = "laser_rifle.png",},
 
                 new ItemModel {
                     Name = "Noisy Cricket",
@@ -246,7 +246,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Speed,
                     Value = 5,
-                    ImageURI = "",},
+                    ImageURI = "noisy_cricket.png",},
 
                 new ItemModel {
                     Name = "Tactical Shotgun",
@@ -256,7 +256,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Defense,
                     Value = 3,
-                    ImageURI = "",},
+                    ImageURI = "shotgun.png",},
 
                 new ItemModel {
                     Name = "Proton Cannon",
