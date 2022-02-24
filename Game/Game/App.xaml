@@ -509,6 +509,15 @@
             </Style>
 
             <Style TargetType="ImageButton"
+                   x:Key="ImageHomeButtonStyle">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+
+            <Style TargetType="ImageButton"
                 x:Key="ImageButtonSmallStyle"
                 BasedOn="{StaticResource ImageButtonStyle}">
                 <Setter Property="HeightRequest" Value="30" />

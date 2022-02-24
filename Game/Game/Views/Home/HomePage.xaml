@@ -32,11 +32,10 @@
 
                 </StackLayout>
 
-                <Button
-                    Text="Enter"
-                    Clicked="GameButton_Clicked"
-                    Style="{StaticResource ButtonStyle}"
-                />
+                <ImageButton 
+                            Source="enter_button.png"
+                            Style="{StaticResource ImageHomeButtonStyle}"
+                            Clicked="GameButton_Clicked"/>
 
             </StackLayout>
         </ScrollView>
