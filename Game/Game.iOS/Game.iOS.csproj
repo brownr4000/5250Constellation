@@ -365,4 +365,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_new_purple.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\back_buttton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cancel_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\create_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\enter_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\update_button.png" />
+  </ItemGroup>
 </Project>
