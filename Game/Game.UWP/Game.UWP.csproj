@@ -152,8 +152,10 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="background_ahgv.png" />
     <Content Include="back_button.png" />
     <Content Include="battleboard.png" />
+    <Content Include="battle_background.png" />
     <Content Include="cancel_button.png" />
     <Content Include="Cancer_Monster.png" />
     <Content Include="characters_page_icon.png" />
