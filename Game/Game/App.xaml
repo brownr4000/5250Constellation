@@ -509,6 +509,20 @@
             </Style>
 
             <Style TargetType="ImageButton"
+                   x:Key="ImageStartButtonStyle" 
+                   BasedOn="{StaticResource ImageButtonStyle}">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="Margin" Value="0,400,40,0"/>
+            </Style>
+
+            <Style TargetType="ImageButton"
+                   x:Key="ImageEndButtonStyle" 
+                   BasedOn="{StaticResource ImageButtonStyle}">
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="Margin" Value="40,400,0,0"/>
+            </Style>
+
+            <Style TargetType="ImageButton"
                    x:Key="ImageHomeButtonStyle">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
@@ -601,6 +615,21 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="HorizontalWithSpacingStack"
+                   BasedOn="{StaticResource HorizontalOrientationStack}">
+                <Setter Property="Spacing" Value="20" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalWithPaddingSpacingForBattleStack">
+                <Setter Property="Margin" Value="200" />
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="VerticalOptions" Value="End" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="Spacing" Value="140" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="HorizontalWithMarginStack"
                    BasedOn="{StaticResource HorizontalOrientationStack}">
                 <Setter Property="Margin" Value="20" />
@@ -662,6 +691,13 @@
                 x:Key="HorizontalCenterWithPaddingForHomeStack">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="Padding" Value="70,5,70,0" />
+                <Setter Property="WidthRequest" Value="300" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalCenterWithPaddingForBattleStack">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Padding" Value="70,5,70,50" />
                 <Setter Property="WidthRequest" Value="300" />
             </Style>
 
