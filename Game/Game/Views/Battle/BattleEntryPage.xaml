@@ -4,8 +4,8 @@
              x:Class="Game.Views.Battle.BattleEntryPage"
              Title="Let's Protect Our City!">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Crimson" WidthRequest="1080" HeightRequest="1920">
-            <Image Source="UFO.png"/>
+        <StackLayout WidthRequest="1080" HeightRequest="1920">
+            <Image Source="Background_AHGV.png"/>
 
             <StackLayout Orientation="Horizontal" Padding="20">
                 <ImageButton Source="Cancel_Button.png" Style="{StaticResource ImageButtonStyle}" HorizontalOptions="Start" Clicked="CancelButton_Clicked"/>
