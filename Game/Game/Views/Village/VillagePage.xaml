@@ -10,7 +10,7 @@
 
             <StackLayout>
                 <ImageButton
-                                Source="characters_page_icon.png"
+                                Source="agents_button.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="CharactersButton_Clicked"
                                 HorizontalOptions="Center"/>
@@ -26,7 +26,7 @@
                 <StackLayout>
 
                     <ImageButton
-                                        Source="items_page_icon.png"
+                                        Source="items_button.png"
                                         Style="{StaticResource ImageLargeStyle}"
                                         Clicked="ItemsButton_Clicked"
                                         HorizontalOptions="Start"/>
@@ -39,7 +39,7 @@
 
                 <StackLayout>
                     <ImageButton
-                                        Source="monsters_page_icon.png"
+                                        Source="aliens_button.png"
                                         Style="{StaticResource ImageLargeStyle}"
                                         Clicked="MonstersButton_Clicked"
                                         />
@@ -53,7 +53,7 @@
 
             <StackLayout>
                 <ImageButton
-                                Source="scores_page_icon.png"
+                                Source="score_button.png"
                                 Style="{StaticResource ImageLargeStyle}"
                                 Clicked="ScoresButton_Clicked"
                                 />
