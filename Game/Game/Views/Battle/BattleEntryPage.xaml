@@ -11,13 +11,14 @@
                 <ImageButton Source="cancel_button.png" 
                              Style="{StaticResource ImageStartButtonStyle}" 
                              Clicked="CancelButton_Clicked"/>
-            <ImageButton 
+                <ImageButton 
                             Source="enter_button.png"
                             Style="{StaticResource ImageEndButtonStyle}"
                             Clicked="ProtectButton_Clicked"/>
 
             </StackLayout>
-
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
