@@ -8,8 +8,8 @@
             <Image Source="UFO.png"/>
 
             <StackLayout Orientation="Horizontal" Padding="20">
-                <ImageButton Source="item.png" HorizontalOptions="Start" Clicked="CancelButton_Clicked"/>
-                <ImageButton Source="item.png" HorizontalOptions="EndAndExpand" Clicked="ProtectButton_Clicked"/>
+                <ImageButton Source="Cancel_Button.png" Style="{StaticResource ImageButtonStyle}" HorizontalOptions="Start" Clicked="CancelButton_Clicked"/>
+                <ImageButton Source="item.png" Style="{StaticResource ImageButtonStyle}" HorizontalOptions="EndAndExpand" Clicked="ProtectButton_Clicked"/>
 
             </StackLayout>
 
