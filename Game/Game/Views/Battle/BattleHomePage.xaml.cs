@@ -67,9 +67,9 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void Battle_Entry_Page_Clicked(object sender, EventArgs e)
+        public async void New_Round_Page_Clicked(object sender, EventArgs e)
         {
-            
+            await Navigation.PushAsync(new NewRoundPage());
         }
 
         /// <summary>

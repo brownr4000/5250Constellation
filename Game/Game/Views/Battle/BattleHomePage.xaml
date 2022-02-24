@@ -22,9 +22,9 @@
                     Style="{StaticResource ButtonStyle}"
                     Clicked="Pick_Items_Page_Clicked"/>
 
-            <Button Text="Battle Entry Page" 
+            <Button Text="Round Start Page" 
                     Style="{StaticResource ButtonStyle}"
-                    Clicked="Battle_Entry_Page_Clicked"/>
+                    Clicked="New_Round_Page_Clicked"/>
 
             <Button Text="Battle Field Page" 
                     Style="{StaticResource ButtonStyle}"
