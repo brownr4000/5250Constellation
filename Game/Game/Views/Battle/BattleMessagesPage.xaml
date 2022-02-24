@@ -3,12 +3,94 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Game.Views.Battle.BattleMessagesPage"
              BackgroundImageSource="battle_background.png">
-    
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+            <FlexLayout>
+                <StackLayout Orientation="Vertical">
+                    <Frame BorderColor="{StaticResource TriciaryBackgroundColor}">
+                        <FlexLayout>
+                            <StackLayout>
+                                <FlexLayout x:Name="MonsterListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+                            </StackLayout>
+
+                        </FlexLayout>
+
+                    </Frame>
+                    
+                    <StackLayout
+                        Style="{StaticResource VerticalStack}" 
+                        HeightRequest="100"
+                        HorizontalOptions="CenterAndExpand">
+
+                        <Frame BorderColor="gray">
+                            <StackLayout 
+                                x:Name="MessageDisplayBox" 
+                                IsVisible="false"
+                                Style="{StaticResource VerticalStack}" 
+                                VerticalOptions="StartAndExpand"
+                                HorizontalOptions="CenterAndExpand">
+
+                                <Label 
+                                    x:Name="BattleMessages" 
+                                    HorizontalOptions="FillAndExpand" 
+                                    LineBreakMode="WordWrap" 
+                                    MaxLines="3"
+                                    LineHeight="1"
+                                    CharacterSpacing="1"
+                                    Style="{StaticResource LabelStyle}"
+                                    FontSize="Micro"/>
+
+                                <!--<WebView
+                                    x:Name="HtmlBox"
+                                    WidthRequest="100"
+                                    MinimumWidthRequest="100"
+                                    HeightRequest="100"
+                                    MinimumHeightRequest="100"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start"
+                                    BackgroundColor="Transparent"
+                                    IsVisible="false"
+                                    />-->
+
+                            </StackLayout>
+                        </Frame>
+
+                    </StackLayout>
+
+                    <Frame BorderColor="{StaticResource TriciaryBackgroundColor}">
+                        <FlexLayout>
+                            <StackLayout Style="{StaticResource VerticalStack}">
+                                <FlexLayout x:Name="PartyListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
+
+                            </StackLayout>
+
+                        </FlexLayout>
+
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource VerticalCenterWithPaddingSpacingStack}">
+                    <ImageButton 
+                                 Source="cancel_button.png"
+                                 Style="{StaticResource ImageButtonStyle}"
+                                 Clicked="Cancel_Clicked"/>
+
+
+                </StackLayout>
+                
+            </FlexLayout>
+
+        </ScrollView>
+        
     </ContentPage.Content>
+    
 </ContentPage>
