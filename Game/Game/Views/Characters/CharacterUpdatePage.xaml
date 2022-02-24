@@ -137,8 +137,8 @@
                             </StackLayout>
                         </StackLayout>
 
-                       
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                        <StackLayout Style="{StaticResource HorizontalCenterStack}">
                             <Label Text="Please Enter the Item Name" 
                                    x:Name="NameErrorMessage" 
                                    Style="{StaticResource ErrorMessageStyle}"/>
@@ -150,14 +150,18 @@
                             <Label x:Name="ClassErrorMessage" 
                                    Style="{StaticResource ErrorMessageStyle}"/>
                         </StackLayout>
-                        <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center">
-                            <Button Text="Cancel"
-                                    Style="{StaticResource ButtonStyle}"
-                                    Clicked="Cancel_Clicked"/>
+
+                        <StackLayout Style="{StaticResource HorizontalCenterWith20SpacingStack}">
+                            <ImageButton 
+                                 Source="back_button.png"
+                                 Style="{StaticResource ImageButtonStyle}"
+                                 Clicked="Cancel_Clicked"/>
+
+                            <ImageButton 
+                                 Source="update_button.png"
+                                 Style="{StaticResource ImageButtonStyle}"
+                                 Clicked="Save_Clicked"/>
                             
-                            <Button Text="Save"
-                                    Style="{StaticResource ButtonStyle}"
-                                    Clicked="Save_Clicked"/>
                         </StackLayout>
                     </StackLayout>
                 </ScrollView>
