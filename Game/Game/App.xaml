@@ -614,8 +614,14 @@
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-            
-              <Style TargetType="StackLayout"
+
+            <Style TargetType="StackLayout"
+                x:Key="HorizontalCenterWith20SpacingStack"
+                   BasedOn="{StaticResource HorizontalCenterStack}">
+                <Setter Property="Spacing" Value="20" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="HorizontalStartwithPaddingandSpacingStack"
                    BasedOn="{StaticResource HorizontalStack}">
                 <Setter Property="Padding" Value="20" />
