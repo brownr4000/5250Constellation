@@ -62,16 +62,16 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                <Button
-                    Text="Cancel"
-                    Style="{StaticResource ButtonStyle}"
-                    Clicked="Cancel_Clicked"/>
-                
-                <Button
-                    Text="Create"
-                    Style="{StaticResource ButtonStyle}"
-                    Clicked="Save_Clicked"/>
-                
+                <ImageButton 
+                            Source="cancel_button.png"
+                            Style="{StaticResource ImageButtonStyle}"
+                            Clicked="Cancel_Clicked"/>
+
+                <ImageButton 
+                            Source="create_button.png"
+                            Style="{StaticResource ImageButtonStyle}"
+                            Clicked="Save_Clicked"/>
+
             </StackLayout>
 
         </StackLayout>
