@@ -131,39 +131,14 @@
 
                             </Grid>
                         </StackLayout>
-
-                        <!--<StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
-                            <Grid
-                            HorizontalOptions="Center"
-                            WidthRequest="300">
-
-                                <Label
-                                Grid.Column="0"
-                                Style="{StaticResource LabelStyle}"
-                                Text="Damage"/>
-
-                                <ProgressBar 
-                                    x:Name="AttackLabel"
-                                    Grid.Column="1" 
-                                    Progress="{Binding Data.damage}"
-                                    Style="{StaticResource ProgressBarStyle}"/>
-
-                                <Label 
-                                    x:Name="AttackLabel"
-                                    Grid.Column="2" 
-                                    Text="{Binding Data.damage}"
-                                    Style="{StaticResource CenterValueStyle}"/>
-
-                            </Grid>
-                        </StackLayout>-->                        
-
                     </StackLayout>
                 </Frame>
 
                 <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                    <Button Text="Cancel"
-                                    Style="{StaticResource ButtonStyle}"
-                                    Clicked="Cancel_Clicked"/>
+                    <ImageButton 
+                                 Source="cancel_button.png"
+                                 Style="{StaticResource ImageButtonStyle}"
+                                 Clicked="Cancel_Clicked"/>
 
                     <Button Text="Select"
                                     Style="{StaticResource ButtonStyle}"
