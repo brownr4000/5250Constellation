@@ -500,11 +500,12 @@
             <!-- ImageButton -->
             <Style TargetType="ImageButton"
                    x:Key="ImageButtonStyle">
-                <Setter Property="HeightRequest" Value="150" />
-                <Setter Property="WidthRequest" Value="150" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="120"/>
+                <Setter Property="CornerRadius" Value="5"/>
             </Style>
 
             <Style TargetType="ImageButton"
@@ -513,9 +514,7 @@
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="WidthRequest" Value="30" />
             </Style>
-
-
-            <!-- ImageButton -->
+            
             <Style TargetType="ImageButton"
                    x:Key="BattleToolbarStyle">
                 <Setter Property="Aspect" Value="Fill" />
