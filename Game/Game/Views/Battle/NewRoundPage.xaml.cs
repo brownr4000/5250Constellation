@@ -108,6 +108,13 @@ namespace Game.Views
                 MaxLines = 1,
             };
 
+            var PlayerImageFrame = new Frame
+            {
+                BorderColor = (Color)Application.Current.Resources["ViewBackgroundColor"],
+                CornerRadius = 50,
+                Content = PlayerImage,
+            };
+
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
             {
@@ -116,7 +123,7 @@ namespace Game.Views
                 Padding = 0,
                 Spacing = 0,
                 Children = {
-                    PlayerImage,
+                    PlayerImageFrame,
                     PlayerNameLabel,
                     PlayerLevelLabel,
                     PlayerHPLabel,

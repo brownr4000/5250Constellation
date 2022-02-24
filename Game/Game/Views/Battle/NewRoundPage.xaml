@@ -7,9 +7,9 @@
         <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
             <FlexLayout>
                 <StackLayout Orientation="Vertical">
-                    <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
+                    <Label Text="Round Start" Style="{StaticResource CenterMessageLargeStyle}" Margin="10"/>
 
-                    <Frame BorderColor="Gold">
+                    <Frame BorderColor="{StaticResource TriciaryBackgroundColor}">
                         <FlexLayout>
                             <StackLayout Style="{StaticResource VerticalStack}">
                                 <Label 
@@ -23,20 +23,22 @@
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                                <StackLayout Padding="1"></StackLayout>
-
                             </StackLayout>
 
                         </FlexLayout>
 
                     </Frame>
 
-                    <Label Text="VS" Style="{StaticResource CenterMessageLargeStyle}"/>
+                    <Label Text="VS" Style="{StaticResource CenterMessageLargeStyle}" Margin="10"/>
 
-                    <Frame BorderColor="Gold">
+                    <Frame BorderColor="{StaticResource TriciaryBackgroundColor}">
                         <FlexLayout>
                             <StackLayout>
-                                <Label Text="Monsters" Style="{StaticResource MessageLargeStyle}"/>
+                                <Label
+                                    Text="Aliens"
+                                    Style="{StaticResource MessageLargeStyle}"
+                                    HorizontalOptions="StartAndExpand"
+                                    Margin="10"/>
 
                                 <FlexLayout x:Name="MonsterListFrame"
                                     JustifyContent="Start"
@@ -49,11 +51,16 @@
 
                     </Frame>
 
-                    <Button Clicked="BeginButton_Clicked" Text="Begin"/>
-                    
+                    <StackLayout Style="{StaticResource VerticalCenterWithPaddingSpacingStack}">
+                        <Button
+                            Text="Fight!"
+                            Style="{StaticResource ButtonStyle}"
+                            Clicked="BeginButton_Clicked"/>
+                        
+                    </StackLayout>
+
                 </StackLayout>
               
-                
             </FlexLayout>
 
         </ScrollView>
