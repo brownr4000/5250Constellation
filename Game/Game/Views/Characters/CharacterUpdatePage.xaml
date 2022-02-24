@@ -153,7 +153,7 @@
 
                         <StackLayout Style="{StaticResource HorizontalCenterWith20SpacingStack}">
                             <ImageButton 
-                                 Source="back_button.png"
+                                 Source="cancel_button.png"
                                  Style="{StaticResource ImageButtonStyle}"
                                  Clicked="Cancel_Clicked"/>
 
