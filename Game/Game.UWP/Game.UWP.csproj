@@ -116,6 +116,8 @@
     <Content Include="agent5.png" />
     <Content Include="agent6.png" />
     <Content Include="agent7.png" />
+    <Content Include="agents_button.png" />
+    <Content Include="aliens_button.png" />
     <Content Include="Alien_Planet.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
@@ -178,6 +180,7 @@
     <Content Include="icon_update_purple.png" />
     <Content Include="item.png" />
     <Content Include="items.png" />
+    <Content Include="items_button.png" />
     <Content Include="items_page_icon.png" />
     <Content Include="item_placeholder.png" />
     <Content Include="knight.png" />
@@ -195,6 +198,7 @@
     <Content Include="ring2.png" />
     <Content Include="score.png" />
     <Content Include="scores_page_icon.png" />
+    <Content Include="score_button.png" />
     <Content Include="Scorpio_Monster.png" />
     <Content Include="Serpens_Monster.png" />
     <Content Include="shield1.png" />

@@ -383,4 +383,16 @@
   <ItemGroup>
     <BundleResource Include="Resources\about.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\score_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agents_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\aliens_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\items_button.png" />
+  </ItemGroup>
 </Project>
