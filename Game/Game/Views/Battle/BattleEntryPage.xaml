@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Game.Views.Battle.BattleEntryPage"
-             Title="Let's Protect Our City!">
+             Title="Let's Protect Our City!"
+              BackgroundImageSource="battle_background.png">
+    
     <ContentPage.Content>
         <StackLayout Style="{StaticResource HorizontalCenterWithPaddingForBattleStack}">
             <Image Source="UFO.png" Style="{StaticResource ImageLargerStyle}"/>
