@@ -25,17 +25,16 @@ namespace Game.Views.Battle
         {
             InitializeComponent();
 
-            // Draw the Characters
-          //  foreach (var data in EngineViewModel.Engine.EngineSettings.CharacterList)
-          //  {
-          //      PartyListFrame.Children.Add(CreatePlayerDisplayBox(data));
-          //  }
-
-          //  // Draw the Monsters
-          //  foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)
-          //  {
-          //     MonsterListFrame.Children.Add(CreatePlayerDisplayBox(data));
-          //  }
+            // Temporary draw of Characters
+            for (int i=0; i< EngineViewModel.DatabaseCharacterList.Count; i++)
+            {
+                if(i%2 != 0)
+                {
+                    EngineViewModel.PartyCharacterList.Add(EngineViewModel.DatabaseCharacterList[i]);
+                }                
+            }
+           
+            BindingContext = EngineViewModel;          
         }
 
         /// <summary>

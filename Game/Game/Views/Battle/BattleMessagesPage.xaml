@@ -86,7 +86,7 @@
             <StackLayout>
                 <CollectionView 
                     ItemsLayout="HorizontalList"
-                    ItemsSource="{Binding CharacterModelDeathList}"
+                    ItemsSource="{Binding PartyCharacterList}"
                     WidthRequest="500" HeightRequest="100"
                     HorizontalScrollBarVisibility="Never"
                     HorizontalOptions="Center">
@@ -138,7 +138,7 @@
             <StackLayout>
                 <CollectionView 
                         ItemsLayout="HorizontalList"
-                        ItemsSource="{Binding CharacterModelDeathList}"
+                        ItemsSource="{Binding DatabaseMonsterList}"
                         WidthRequest="500" HeightRequest="100"
                         HorizontalScrollBarVisibility="Never"
                         HorizontalOptions="Center">
