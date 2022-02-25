@@ -113,13 +113,8 @@ namespace UnitTests.Views
         [Test]
         public void CharacterAgentInfoPage_RightImageButton_LastImage_Clicked_Default_Should_Pass()
         {
-            // Arrange
-           
-
-            int imageCount = AllCharactersList.Count;
-
-            int characterImageIndex = imageCount - 1;
-
+            //// Arrange
+          
             // Act
             page.RightImageButton_Clicked(null, null);
 
