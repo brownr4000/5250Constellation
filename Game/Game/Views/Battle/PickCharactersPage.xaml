@@ -27,6 +27,16 @@
                             RowDefinitions="Auto, *"
                             ColumnDefinitions="Auto, *">
 
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="#C1FC57" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+
                                 <Image 
                                     Grid.RowSpan="2"
                                     Source="{Binding ImageURI}"
