@@ -17,7 +17,7 @@
 
                 <CollectionView x:Name="CharactersListView" 
                             ItemsSource="{Binding Dataset}"
-                            SelectionMode="Single"
+                            SelectionMode="Multiple"
                             SelectionChanged="CharacterListView_SelectionChanged">
 
 
