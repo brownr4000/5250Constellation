@@ -19,8 +19,7 @@
 
                     <Button Text="Save" Clicked="SaveButton_Clicked" Style="{StaticResource ButtonEndStyle}"/>
                     
-                </StackLayout>
-                
+                </StackLayout>                
 
                 <CollectionView x:Name="CharactersListView" 
                             ItemsSource="{Binding Dataset}"
@@ -78,7 +77,6 @@
                     </CollectionView.ItemTemplate>
 
                 </CollectionView>
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
