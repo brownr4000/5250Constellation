@@ -51,11 +51,28 @@ namespace Game.Views
         /// <param name="args"></param>
         public async void CharacterListView_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;           
-
+            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;
+            BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
             // Open the Agent info Page
             await Navigation.PushAsync(new CharacterAgentInfoPage(new GenericViewModel<CharacterModel>(data), ViewModel));
+        }
 
-        }       
+        /// <summary>
+        /// Save button loads characters list and takes to next page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void SaveButton_Clicked(object sender, EventArgs e)
+        {
+            // Load the Characters into the Engine
+            foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
+            {
+                data.CurrentHealth = data.GetMaxHealthTotal;
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            }
+
+            await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
+            _ = await Navigation.PopAsync();
+        }
     }
 }

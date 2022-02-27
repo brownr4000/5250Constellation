@@ -543,7 +543,20 @@
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="WidthRequest" Value="30" />
             </Style>
-            
+
+            <Style TargetType="ImageButton"
+                x:Key="ImageButtonBattleFieldStyle"
+                BasedOn="{StaticResource ImageButtonStyle}">
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="WidthRequest" Value="60" />
+            </Style>
+
+            <Style TargetType="ImageButton"
+                x:Key="ImageButtonBattleFieldWithBackgroundStyle"
+                BasedOn="{StaticResource ImageButtonBattleFieldStyle}">
+                <Setter Property="BackgroundColor" Value="Black" />
+            </Style>
+
             <Style TargetType="ImageButton"
                    x:Key="BattleToolbarStyle">
                 <Setter Property="Aspect" Value="Fill" />
@@ -565,7 +578,15 @@
                 <Setter Property="WidthRequest" Value="150"/>
                 <Setter Property="CornerRadius" Value="5"/>
             </Style>
-            
+
+            <Style TargetType="Button" x:Key="ButtonEndStyle"
+                   BasedOn="{StaticResource ButtonStyle}">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+                <Setter Property="Margin" Value="50,0,0,0"/>
+                <Setter Property="WidthRequest" Value="70"/>
+                <Setter Property="HeightRequest" Value="30"/>
+            </Style>
+
             <!--Grid-->
             <Style TargetType="Grid" x:Key="GridCenterwithWidth">
                 <Setter Property="WidthRequest" Value="600"/>
@@ -953,6 +974,11 @@
                 BasedOn="{StaticResource PlayerInfoBox}">
                 <Setter Property="HeightRequest" Value="80" />
                 <Setter Property="WidthRequest" Value="80" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="StackWithTopPadding">
+                <Setter Property="Padding" Value="0,40,0,0" />
             </Style>
 
             <Style TargetType="StackLayout"
