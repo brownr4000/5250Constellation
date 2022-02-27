@@ -80,7 +80,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Select_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage(ViewModel)));
+            await Navigation.PopAsync();
         }
 
         public void LeftImageButton_Clicked(object sender, EventArgs e)
