@@ -6,153 +6,84 @@
               BackgroundImageSource="battle_background.png">
 
     <ContentPage.Content>
-        
-        <StackLayout Style="{StaticResource VerticalCenterWithSpacingStack}">
 
-            <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                <Frame OutlineColor="Black" Padding="1">
-                    <Grid ColumnSpacing="1" 
-                                RowSpacing="1"
-                                BackgroundColor="Black">
+        <StackLayout Style="{StaticResource StackWithTopPadding}">
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                        <Label Grid.Column="0" Grid.Row="0"                                  
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="1" Grid.Row="0"                                       
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="2" Grid.Row="0"                                      
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="3" Grid.Row="0"                                      
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="4" Grid.Row="0" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="5" Grid.Row="0" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-
-                        <Label Grid.Column="0" Grid.Row="1"                                  
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="1" Grid.Row="1"                                       
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="2" Grid.Row="1"                                      
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="3" Grid.Row="1"                                      
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="4" Grid.Row="1" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="5" Grid.Row="1" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-
-                        <Label Grid.Column="0" Grid.Row="2"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="1" Grid.Row="2" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="2" Grid.Row="2"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="3" Grid.Row="2" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="4" Grid.Row="2"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="5" Grid.Row="2"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-
-                        <Label Grid.Column="0" Grid.Row="3"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="1" Grid.Row="3"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="2" Grid.Row="3"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="3" Grid.Row="3" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="4" Grid.Row="3"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="5" Grid.Row="3"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-
-                        <Label Grid.Column="0" Grid.Row="4"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="1" Grid.Row="4" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="2" Grid.Row="4"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="3" Grid.Row="4" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="4" Grid.Row="4"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="5" Grid.Row="4" 
-                                       Style="{StaticResource BattleFieldStyle}"/>
-
-                        <Label Grid.Column="0" Grid.Row="5"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="1" Grid.Row="5"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="2" Grid.Row="5"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="3" Grid.Row="5"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="4" Grid.Row="5"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                        <Label Grid.Column="5" Grid.Row="5"
-                                       Style="{StaticResource BattleFieldStyle}"/>
-                    </Grid>
-                </Frame>
+            <!--The Battle Map Display -->
+            <StackLayout x:Name="BattleMapDisplay" Style="{StaticResource BattleMapBox}"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+                <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    
+                    <Image Source="battleboard.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="Fill"/>
+                    <Grid x:Name="MapGrid" HorizontalOptions="Center" VerticalOptions="Start" ColumnSpacing="0" RowSpacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+                
+                </AbsoluteLayout>
             </StackLayout>
 
-            <Frame Style="{StaticResource BattleFieldFrame}">
+            <Frame x:Name="NextMoveFrame" Style="{StaticResource BattleFieldFrame}">
                 <Grid>
-                <StackLayout Grid.Column="0" Style="{StaticResource VerticalCenterStack}">
+                    <StackLayout Grid.Column="0" Style="{StaticResource VerticalCenterStack}">
 
-                    <Label Text="Name of the Character" Style="{StaticResource CenterLabelStyle}"/>
+                        <Label Text="Name of the Character" Style="{StaticResource CenterLabelStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
-                        <Label Text="Health"
-                                           Style="{StaticResource LabelStyle}"/>
+                        <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                            <Label Text="Health" Style="{StaticResource LabelStyle}"/>
 
-                        <ProgressBar x:Name="HealthProgressBar" 
-                                                 Grid.Column="1"
-                                                 Progress="{Binding Data.Health}" 
-                                                 Style="{StaticResource ProgressBarStyle}"/>
+                            <ProgressBar x:Name="HealthProgressBar" 
+                                                     Grid.Column="1"
+                                                     Progress="{Binding Data.Health}" 
+                                                     Style="{StaticResource ProgressBarStyle}"/>
 
-                        <Label Grid.Column="2" 
-                                           Text="{Binding Data.Health}" 
-                                           x:Name="HealthValue"
-                                           Style="{StaticResource CenterValueStyle}"
-                                           Padding="0,0,10,0"/>
+                            <Label Grid.Column="2" 
+                                               Text="{Binding Data.Health}" 
+                                               x:Name="HealthValue"
+                                               Style="{StaticResource CenterValueStyle}"
+                                               Padding="0,0,10,0"/>
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                            <Label Text="Range" Style="{StaticResource LabelStyle}"/>
+
+                            <ProgressBar x:Name="RangeProgressBar" 
+                                                     Grid.Column="1"
+                                                     Progress="{Binding Data.Range}" 
+                                                     Style="{StaticResource ProgressBarStyle}"/>
+
+                            <Label Grid.Column="2" 
+                                               Text="{Binding Data.Range}" 
+                                               x:Name="RangeValue"
+                                               Style="{StaticResource CenterValueStyle}"
+                                               Padding="0,0,10,0"/>
+                        </StackLayout>
                     </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
-                        <Label Text="Range"
-                                           Style="{StaticResource LabelStyle}"/>
+                    <StackLayout Grid.Column="1" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
 
-                        <ProgressBar x:Name="RangeProgressBar" 
-                                                 Grid.Column="1"
-                                                 Progress="{Binding Data.Range}" 
-                                                 Style="{StaticResource ProgressBarStyle}"/>
-
-                        <Label Grid.Column="2" 
-                                           Text="{Binding Data.Range}" 
-                                           x:Name="RangeValue"
-                                           Style="{StaticResource CenterValueStyle}"
-                                           Padding="0,0,10,0"/>
-                    </StackLayout>
-                </StackLayout>
-
-                <StackLayout Grid.Column="1" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
-
-                    <Button Text="Fight" Clicked="FightButton_Clicked" x:Name="FightButton" Style="{StaticResource ButtonStyle}"/>
-                    <Button Text="Defense" Clicked="DefenseButton_Clicked" x:Name="DefenseButton" Style="{StaticResource ButtonStyle}"/>
+                        <Button Text="Attack" Clicked="AttackButton_Clicked" x:Name="FightButton" Style="{StaticResource ButtonStyle}"/>
+                        <Button Text="Move" Clicked="MoveButton_Clicked" x:Name="MoveButton" Style="{StaticResource ButtonStyle}"/>
+                        <Button Text="Use Ability" Clicked="AbilitiesButton_Clicked" x:Name="AbilitiesButton" Style="{StaticResource ButtonStyle}"/>
                     
-                </StackLayout>
+                    </StackLayout>
 
             </Grid>
-                
             </Frame>
-          
+
+            <Frame x:Name="BattleSequenceFrame" Style="{StaticResource BattleSequenceFrame}">
+                <StackLayout Style="{StaticResource VerticalOnlyStack}">
+                    <Label Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
+
+                    <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
+                        <Image Source="Agent_B_With_Background.png" Style="{StaticResource ImageLargeStyle}"/>
+
+                        <Label Text="VS" Style="{StaticResource LargeLabelStyle}"/>
+
+                        <Image Source="Musca_With_Background.png" Style="{StaticResource ImageLargeStyle}"/>
+                    </StackLayout>
+
+                    <Label Text="Amelix hits Cancer monster" Style="{StaticResource ListSmallLabelStyle}"/>
+
+                </StackLayout>
+            </Frame>            
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
