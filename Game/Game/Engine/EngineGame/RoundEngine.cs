@@ -319,7 +319,15 @@ namespace Game.Engine.EngineGame
 
             // I use the same logic for Auto Battle as I do for Manual Battle
 
-            return false;
+            _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.Head);
+            _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.Necklass);
+            _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.PrimaryHand);
+            _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.OffHand);
+            _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.RightFinger);
+            _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.LeftFinger);
+            _ = GetItemFromPoolIfBetter(character, ItemLocationEnum.Feet);
+
+            return true;
         }
 
         /// <summary>
