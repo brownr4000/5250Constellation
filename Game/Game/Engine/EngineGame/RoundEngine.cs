@@ -1,13 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
+using Game.GameRules
 using Game.Models;
 
 namespace Game.Engine.EngineGame
 {
     /// <summary>
-    /// Manages the Rounds
+    /// The Round class manages the Rounds for each Battle
     /// </summary>
     public class RoundEngine : RoundEngineBase, IRoundEngineInterface
     {
@@ -29,7 +33,7 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// Clear the List between Rounds
+        /// The ClearLists method clears the List between Rounds
         /// </summary>
         public override bool ClearLists()
         {
@@ -39,7 +43,9 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// Call to make a new set of monsters..
+        /// The NewRound method controls and resets the status of the Battle at the start of each Round
+        /// 
+        /// It is called to make a new set of monsters, and reset Character buffs
         /// </summary>
         public override bool NewRound()
         {
@@ -114,6 +120,12 @@ namespace Game.Engine.EngineGame
         {
             // In Auto Battle this happens and the characters get their items
             // When called manualy, make sure to do the character pickup before calling EndRound
+
+            // Have each character pickup items...
+            foreach (var character in EngineSettings.CharacterList)
+            {
+                _ = PickupItemsFromPool(character);
+            }
 
             return true;
         }
