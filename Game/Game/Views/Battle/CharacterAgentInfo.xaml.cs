@@ -42,7 +42,6 @@ namespace Game.Views
 
         /// <summary>
         /// Constructor for Index Page accepting data
-        /// 
         /// Get the CharacterIndexView Model
         /// </summary>
         public CharacterAgentInfoPage(GenericViewModel<CharacterModel> characterData, CharacterIndexViewModel characterViewModel)
