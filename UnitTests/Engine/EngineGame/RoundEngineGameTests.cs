@@ -417,6 +417,23 @@ namespace UnitTests.Engine.EngineGame
         public void RoundEngine_RoundNextTurn_Valid_No_Monsters_Should_Return_NewRound()
         {
             // Arrange
+            Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 100,
+                                Attack = 100,
+                                Defense = 100,
+                                Level = 1,
+                                CurrentHealth = 111,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                                ListOrder = 1,
+                            });
+
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
 
             // Act
             var result = Engine.Round.RoundNextTurn();
@@ -424,7 +441,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(RoundEnum.Unknown, result);
+            Assert.AreEqual(RoundEnum.NewRound, result);
         }
 
         [Test]
