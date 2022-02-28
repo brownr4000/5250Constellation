@@ -205,9 +205,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
-            // TODO Teams: Implement the order
             // Order by Speed (Descending)
-            // Then by CharacterJobEnum.Striker
             // Then by CharacterJobEnum.Striker
             // Then by MonsterJobEnum.Swift
             // Then by CharacterJobEnum.Defender
@@ -331,7 +329,50 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
-            return false;
+            var thisLocation = setLocation;
+            if (setLocation == ItemLocationEnum.RightFinger)
+            {
+                thisLocation = ItemLocationEnum.Finger;
+            }
+
+            if (setLocation == ItemLocationEnum.LeftFinger)
+            {
+                thisLocation = ItemLocationEnum.Finger;
+            }
+
+            // Sort by Location
+            // Then by Attribute
+            // Then by Damage
+            // Then by Value
+            var myList = EngineSettings.ItemPool.Where(a => a.Location == thisLocation)
+                .OrderByDescending(a => a.Attribute)
+                .ThenBy(a => a.Damage)
+                .ThenBy(a => a.Value)
+                .ToList();
+
+            // Check if no items in the list
+            if (!myList.Any())
+            {
+                return false;
+            }
+
+            var CharacterItem = character.GetItemByLocation(setLocation);
+            if (CharacterItem == null)
+            {
+                _ = SwapCharacterItem(character, setLocation, myList.FirstOrDefault());
+                return true;
+            }
+
+            foreach (var PoolItem in myList)
+            {
+                if (PoolItem.Value > CharacterItem.Value)
+                {
+                    _ = SwapCharacterItem(character, setLocation, PoolItem);
+                    return true;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
