@@ -5,7 +5,7 @@ using System.Linq;
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
-using Game.GameRules
+using Game.GameRules;
 using Game.Models;
 
 namespace Game.Engine.EngineGame
@@ -201,13 +201,25 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// Order the Players in Turn Sequence
+        /// The OrderPlayerListByTurnOrder orders the Players in Turn Sequence
         /// </summary>
         public override List<PlayerInfoModel> OrderPlayerListByTurnOrder()
         {
             // TODO Teams: Implement the order
+            // Order by Speed (Descending)
+            // Then by Monster before CharacterModel (enum descending)
+            // Then by CharacterJob
+            // Then by MonsterJob 
+            // Then by Highest level (Descending)
+            // Then by Alphabetic on Name (Desending)
+            // Then by First in list order (Ascending)
 
-            return null;
+            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.GetSpeed())
+                .ThenBy(a => a.PlayerType)
+                .ThenBy(a => a.Job.Equals(CharacterJobEnum.Striker))
+                .ToList();
+
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
