@@ -64,11 +64,17 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void SaveButton_Clicked(object sender, EventArgs e)
         {
+            var count = 0;
             // Load the Characters into the Engine
             foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
             {
                 data.CurrentHealth = data.GetMaxHealthTotal;
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+                if (count < 6)
+                {
+                        BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+                        count++;
+                }
+                
             }
 
             await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
