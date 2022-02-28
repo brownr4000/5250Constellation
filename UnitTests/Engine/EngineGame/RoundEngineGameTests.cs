@@ -410,7 +410,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(RoundEnum.Unknown, result);
+            Assert.AreEqual(RoundEnum.GameOver, result);
         }
 
         [Test]
