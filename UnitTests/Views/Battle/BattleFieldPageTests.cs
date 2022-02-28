@@ -61,7 +61,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.FightButton_Clicked(null, null);
+            //page.FightButton_Clicked(null, null);
 
             // Reset
 
@@ -75,7 +75,7 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            page.DefenseButton_Clicked(null, null);
+            //page.DefenseButton_Clicked(null, null);
 
             // Reset
 
