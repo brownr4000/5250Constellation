@@ -205,6 +205,7 @@
     <Content Include="items_page_icon.png" />
     <Content Include="item_placeholder.png" />
     <Content Include="knight.png" />
+    <Content Include="Lacerta_Monster.png" />
     <Content Include="Lactera_With_Background.png" />
     <Content Include="laser_rifle.png" />
     <Content Include="laser_sword.png" />
@@ -212,6 +213,7 @@
     <Content Include="Logo.png" />
     <Content Include="monsters_page_icon.png" />
     <Content Include="moon_boots.png" />
+    <Content Include="Musca_Monster.png" />
     <Content Include="Musca_With_Background.png" />
     <Content Include="neck1.png" />
     <Content Include="neck2.png" />
