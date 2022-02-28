@@ -60,8 +60,6 @@ namespace Game.Views
 
             //Copy of Character to restore for cancel
             DataCopy = new CharacterModel(characterData.Data);
-
-            _ = UpdatePageBindingContext();
         }
 
         /// <summary>
@@ -82,7 +80,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Select_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "Update", ViewModel.Data);
+            await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
             await Navigation.PopAsync();
         }
 
@@ -151,11 +149,5 @@ namespace Game.Views
             this.ViewModel.Data = AllCharactersList[characterImageIndex];
         }
 
-        public bool UpdatePageBindingContext()
-        {
-
-
-            return true;
-        }
     }
 }
