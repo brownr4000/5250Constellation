@@ -278,6 +278,71 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void RoundEngine_GetNextPlayerInList_Valid_Sue_Should_Return_Monster()
         {
+            Engine.EngineSettings.MonsterList.Clear();
+
+            // Arrange
+            var CharacterPlayerMike = new PlayerInfoModel(
+                                        new CharacterModel
+                                        {
+                                            Speed = 200,
+                                            Level = 1,
+                                            CurrentHealth = 1,
+                                            ExperienceTotal = 1,
+                                            Name = "Mike",
+                                            ListOrder = 1,
+                                        });
+
+            var CharacterPlayerDoug = new PlayerInfoModel(
+                                        new CharacterModel
+                                        {
+                                            Speed = 20,
+                                            Level = 1,
+                                            CurrentHealth = 1,
+                                            ExperienceTotal = 1,
+                                            Name = "Doug",
+                                            ListOrder = 2,
+                                        });
+
+            var CharacterPlayerSue = new PlayerInfoModel(
+                                        new CharacterModel
+                                        {
+                                            Speed = 2,
+                                            Level = 1,
+                                            CurrentHealth = 1,
+                                            ExperienceTotal = 1,
+                                            Name = "Sue",
+                                            ListOrder = 3,
+                                        });
+
+            var MonsterPlayer = new PlayerInfoModel(
+                                    new MonsterModel
+                                    {
+                                        Speed = 1,
+                                        Level = 1,
+                                        CurrentHealth = 1,
+                                        ExperienceTotal = 1,
+                                        Name = "Monster",
+                                        ListOrder = 4,
+                                    });
+
+            // Add each model here to warm up and load it.
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
+
+            Engine.EngineSettings.CharacterList.Clear();
+
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayerDoug);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayerSue);
+
+            Engine.EngineSettings.MonsterList.Clear();
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Make the List
+            Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
+
+            // Set Sue as the Player
+            Engine.EngineSettings.CurrentAttacker = CharacterPlayerSue;
+
             // Arrange
 
             // Act
@@ -286,13 +351,73 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual("Monster", result.Name);
         }
 
         [Test]
         public void RoundEngine_GetNextPlayerInList_Valid_Monster_Should_Return_Mike()
         {
+            Engine.EngineSettings.MonsterList.Clear();
+
             // Arrange
+            var CharacterPlayerMike = new PlayerInfoModel(
+                                        new CharacterModel
+                                        {
+                                            Speed = 200,
+                                            Level = 1,
+                                            CurrentHealth = 1,
+                                            ExperienceTotal = 1,
+                                            Name = "Mike",
+                                            ListOrder = 1,
+                                        });
+
+            var CharacterPlayerDoug = new PlayerInfoModel(
+                                        new CharacterModel
+                                        {
+                                            Speed = 20,
+                                            Level = 1,
+                                            CurrentHealth = 1,
+                                            ExperienceTotal = 1,
+                                            Name = "Doug",
+                                            ListOrder = 2,
+                                        });
+
+            var CharacterPlayerSue = new PlayerInfoModel(
+                                        new CharacterModel
+                                        {
+                                            Speed = 2,
+                                            Level = 1,
+                                            CurrentHealth = 1,
+                                            ExperienceTotal = 1,
+                                            Name = "Sue",
+                                            ListOrder = 3,
+                                        });
+
+            var MonsterPlayer = new PlayerInfoModel(
+                                    new MonsterModel
+                                    {
+                                        Speed = 1,
+                                        Level = 1,
+                                        CurrentHealth = 1,
+                                        ExperienceTotal = 1,
+                                        Name = "Monster",
+                                        ListOrder = 4,
+                                    });
+
+            // Add each model here to warm up and load it.
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
+
+            Engine.EngineSettings.CharacterList.Clear();
+
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayerDoug);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayerSue);
+
+            Engine.EngineSettings.MonsterList.Clear();
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Make the List
+            Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
 
             // Act
             var result = Engine.Round.GetNextPlayerInList();
@@ -301,7 +426,7 @@ namespace UnitTests.Engine.EngineGame
 
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual("Mike", result.Name);
         }
 
         #endregion GetNextPlayerInList
