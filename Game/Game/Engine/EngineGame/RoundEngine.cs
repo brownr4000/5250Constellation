@@ -232,19 +232,49 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// Who is Playing this round?
+        /// The MakePlayerList method creates the list of Players for the Round
         /// </summary>
         public override List<PlayerInfoModel> MakePlayerList()
         {
             // Start from a clean list of players
+            EngineSettings.PlayerList.Clear();
 
             // Remember the Insert order, used for Sorting
+            var ListOrder = 0;
 
             // Add the Characters
+            foreach (var data in EngineSettings.CharacterList)
+            {
+                if (data.Alive)
+                {
+                    EngineSettings.PlayerList.Add(
+                        new PlayerInfoModel(data)
+                        {
+                            // Remember the order
+                            ListOrder = ListOrder
+                        });
+
+                    ListOrder++;
+                }
+            }
 
             // Add the Monsters
+            foreach (var data in EngineSettings.MonsterList)
+            {
+                if (data.Alive)
+                {
+                    EngineSettings.PlayerList.Add(
+                        new PlayerInfoModel(data)
+                        {
+                            // Remember the order
+                            ListOrder = ListOrder
+                        });
 
-            return null;
+                    ListOrder++;
+                }
+            }
+
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
@@ -257,15 +287,28 @@ namespace Game.Engine.EngineGame
             // If not, return first player (looped)
 
             // If List is empty, return null
+            if (EngineSettings.PlayerList.Count == 0)
+            {
+                return null;
+            }
 
             // No current player, so set the first one
+            if (EngineSettings.CurrentAttacker == null)
+            {
+                return EngineSettings.PlayerList.FirstOrDefault();
+            }
 
             // Find current player in the list
+            var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
 
             // If at the end of the list, return the first element
+            if (index == EngineSettings.PlayerList.Count() - 1)
+            {
+                return EngineSettings.PlayerList.FirstOrDefault();
+            }
 
             // Return the next element
-            return null;
+            return EngineSettings.PlayerList[index + 1];
         }
 
         /// <summary>
