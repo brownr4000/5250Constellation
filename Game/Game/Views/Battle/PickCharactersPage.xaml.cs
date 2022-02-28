@@ -69,8 +69,10 @@ namespace Game.Views
             if(BattleEngineViewModel.Instance.PartyCharacterList.Count == 0)
             {
                 ErrorMessage.IsVisible = true;
+                return;
             }
-            else
+            
+            if(BattleEngineViewModel.Instance.PartyCharacterList.Count != 0)
             {
                 // Load the Characters into the Engine
                 foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
