@@ -80,6 +80,29 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Select_Clicked(object sender, EventArgs e)
         {
+            // Check to avoid duplicates to the character list
+            if (BattleEngineViewModel.Instance.PartyCharacterList.Count > 0)
+            {
+                bool isDuplicateCharacter = false;
+                foreach (var character in BattleEngineViewModel.Instance.PartyCharacterList)
+                {
+                    if (character.Id == this.ViewModel.Data.Id)
+                    {
+                        isDuplicateCharacter = true;                       
+                    }
+                }
+                if (!isDuplicateCharacter)
+                {
+                    BattleEngineViewModel.Instance.PartyCharacterList.Add(this.ViewModel.Data);
+                }
+            }
+
+            // First character added to list
+            if (BattleEngineViewModel.Instance.PartyCharacterList.Count == 0)
+            {
+                BattleEngineViewModel.Instance.PartyCharacterList.Add(this.ViewModel.Data);
+            }
+
             await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
             await Navigation.PopAsync();
         }
@@ -112,7 +135,7 @@ namespace Game.Views
             DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
             HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
 
-            // Update ViewModel with latest character selected to pass this to select items page
+            // Update ViewModel with latest character selected to pass this to pick characters page
             this.ViewModel.Data = AllCharactersList[characterImageIndex];
 
         }
@@ -145,7 +168,7 @@ namespace Game.Views
             DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
             HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
 
-            // Update ViewModel with latest character selected to pass this to select items page
+            // Update ViewModel with latest character selected to pass this to pick items page
             this.ViewModel.Data = AllCharactersList[characterImageIndex];
         }
 
