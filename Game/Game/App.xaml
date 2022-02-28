@@ -323,8 +323,15 @@
                 x:Key="MessageLargeStyle"
                 BasedOn="{StaticResource MessageStyle}">
                 <Setter Property="FontSize" Value="Large" />
-            </Style>            
-            
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="LabelStartAndExpandStyle"
+                BasedOn="{StaticResource MessageLargeStyle}">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand" />
+                <Setter Property="Margin" Value="10" />
+            </Style>
+
             <Style TargetType="Label"
                 x:Key="CenterMessageStyle"
                 BasedOn="{StaticResource HeaderStyle}">

@@ -15,9 +15,7 @@
                             <StackLayout Style="{StaticResource VerticalStack}">
                                 <Label 
                                     Text="Characters"
-                                    Style="{StaticResource MessageLargeStyle}"
-                                    HorizontalOptions="StartAndExpand"
-                                    Margin="10"/>
+                                    Style="{StaticResource LabelStartAndExpandStyle}"/>
 
                                 <FlexLayout x:Name="PartyListFrame"
                                     JustifyContent="Start"
@@ -32,14 +30,12 @@
 
                     <Label Text="VS" Style="{StaticResource CenterMessageLargeStyle}" Margin="10"/>
 
-                    <Frame BorderColor="{StaticResource TriciaryBackgroundColor}">
+                    <Frame Style="{StaticResource FrameTriciaryColorStyle}">
                         <FlexLayout>
                             <StackLayout>
                                 <Label
                                     Text="Aliens"
-                                    Style="{StaticResource MessageLargeStyle}"
-                                    HorizontalOptions="StartAndExpand"
-                                    Margin="10"/>
+                                    Style="{StaticResource LabelStartAndExpandStyle}"/>
 
                                 <FlexLayout x:Name="MonsterListFrame"
                                     JustifyContent="Start"
