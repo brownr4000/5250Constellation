@@ -6,7 +6,7 @@ using Game.Models;
 namespace Game.Engine.EngineGame
 {
     /// <summary>
-    /// Battle Engine for the Game
+    /// The BattleEngine class defines the Battle Engine for the Game
     /// </summary>
     public class BattleEngine : BattleEngineBase, IBattleEngineInterface
     {
@@ -28,32 +28,50 @@ namespace Game.Engine.EngineGame
         public new EngineSettingsModel EngineSettings { get; set; } = EngineSettingsModel.Instance;
 
         /// <summary>
-        /// Add the charcter to the character list
+        /// The PopulateCharacterList method adds a Charcter to the Character list
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
         public override bool PopulateCharacterList(CharacterModel data)
         {
-            return base.PopulateCharacterList(data);
+            EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+
+            return true;
         }
 
         /// <summary>
-        /// Start the Battle
+        /// The StartBattle method starts the battle
+        /// 
+        /// This method overrides the default IBattleEngineInterface StartBattle method
         /// </summary>
-        /// <param name="isAutoBattle"></param>
+        /// <param name="isAutoBattle">The flag if the Battle is an AutoBattle</param>
         /// <returns></returns>
         public override bool StartBattle(bool isAutoBattle)
         {
-            return base.StartBattle(isAutoBattle);
+            // Reset the Score so it is fresh
+            EngineSettings.BattleScore = new ScoreModel
+            {
+                AutoBattle = isAutoBattle
+            };
+
+            BattleRunning = true;
+
+            _ = Round.NewRound();
+
+            return true;
         }
 
         /// <summary>
-        /// End the Battle
+        /// The EndBattle method ends the Battle
         /// </summary>
         /// <returns></returns>
         public override bool EndBattle()
         {
-            return base.EndBattle();
+            BattleRunning = false;
+
+            _ = EngineSettings.BattleScore.CalculateScore();
+
+            return true;
         }
     }
 }
