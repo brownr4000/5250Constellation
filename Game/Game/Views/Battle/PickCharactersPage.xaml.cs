@@ -41,6 +41,7 @@ namespace Game.Views
         public PickCharactersPage()
         {  
             InitializeComponent();
+            ErrorMessage.IsVisible = false;
             BindingContext = ViewModel;
         }        
 
@@ -51,8 +52,9 @@ namespace Game.Views
         /// <param name="args"></param>
         public async void CharacterListView_SelectionChanged(object sender, SelectionChangedEventArgs args)
         {
-            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;
-            BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
+            ErrorMessage.IsVisible = false;
+            CharacterModel data = args.CurrentSelection.FirstOrDefault() as CharacterModel;           
+           
             // Open the Agent info Page
             await Navigation.PushAsync(new CharacterAgentInfoPage(new GenericViewModel<CharacterModel>(data), ViewModel));
         }
@@ -64,21 +66,23 @@ namespace Game.Views
         /// <param name="e"></param>
         private async void SaveButton_Clicked(object sender, EventArgs e)
         {
-            var count = 0;
-            // Load the Characters into the Engine
-            foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
+            if(BattleEngineViewModel.Instance.PartyCharacterList.Count == 0)
             {
-                data.CurrentHealth = data.GetMaxHealthTotal;
-                if (count < 6)
-                {
-                        BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
-                        count++;
-                }
-                
+                ErrorMessage.IsVisible = true;
             }
+            else
+            {
+                // Load the Characters into the Engine
+                foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
+                {
+                    data.CurrentHealth = data.GetMaxHealthTotal;
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+                }
 
-            await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
-            _ = await Navigation.PopAsync();
+                ErrorMessage.IsVisible = false;
+                await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
+                _ = await Navigation.PopAsync();
+            }            
         }
     }
 }

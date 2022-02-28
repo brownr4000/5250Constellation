@@ -164,6 +164,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="LabelEndStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LabelCenterStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -395,6 +401,12 @@
                 x:Key="FrameStyle">
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
                 <Setter Property="BorderColor" Value="{StaticResource TriciaryTextColor}"/>
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="FrameTriciaryColorStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource TriciaryBackgroundColor}"/>
             </Style>
 
             <Style TargetType="Frame"
