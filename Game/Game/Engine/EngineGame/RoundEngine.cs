@@ -207,16 +207,25 @@ namespace Game.Engine.EngineGame
         {
             // TODO Teams: Implement the order
             // Order by Speed (Descending)
-            // Then by Monster before CharacterModel (enum descending)
-            // Then by CharacterJob
-            // Then by MonsterJob 
+            // Then by CharacterJobEnum.Striker
+            // Then by CharacterJobEnum.Striker
+            // Then by MonsterJobEnum.Swift
+            // Then by CharacterJobEnum.Defender
+            // Then by MonsterJobEnum.Brute
+            // Then by CharacterJobEnum.Support 
             // Then by Highest level (Descending)
-            // Then by Alphabetic on Name (Desending)
+            // Then by CurrentHealth (Desending)
             // Then by First in list order (Ascending)
 
             EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.GetSpeed())
-                .ThenBy(a => a.PlayerType)
                 .ThenBy(a => a.Job.Equals(CharacterJobEnum.Striker))
+                .ThenBy(a => a.Job.Equals(MonsterJobEnum.Swift))
+                .ThenBy(a => a.Job.Equals(CharacterJobEnum.Defender))
+                .ThenBy(a => a.Job.Equals(MonsterJobEnum.Brute))
+                .ThenBy(a => a.Job.Equals(CharacterJobEnum.Support))
+                .ThenByDescending(a => a.Level)
+                .ThenByDescending(a => a.CurrentHealth)
+                .ThenBy(a => a.ListOrder)
                 .ToList();
 
             return EngineSettings.PlayerList;
