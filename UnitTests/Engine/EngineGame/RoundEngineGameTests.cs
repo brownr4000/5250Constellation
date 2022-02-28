@@ -445,9 +445,42 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void RoundEngine_RoundNextTurn_Valid_Characters_Monsters_Should_Return_NewRound()
+        public void RoundEngine_RoundNextTurn_Valid_Characters_Monsters_Should_Return_NextTurn()
         {
             // Arrange
+            Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+            Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            var characterPlayer = new PlayerInfoModel(
+                    new CharacterModel 
+                    {
+                        Speed = 100,
+                        Attack = 100,
+                        Defense = 100,
+                        Level = 1,
+                        CurrentHealth = 111,
+                        ExperienceTotal = 1,
+                        ExperienceRemaining = 1,
+                        Name = "Mike",
+                        ListOrder = 1,
+                    });
+
+            Engine.EngineSettings.CharacterList.Add(characterPlayer);
+
+            var characterMonster = new PlayerInfoModel(
+                    new MonsterModel {
+                        Speed = 1,
+                        Attack = 1,
+                        Defense = 1,
+                        Level = 1,
+                        CurrentHealth = 1,
+                        ExperienceTotal = 1,
+                        ExperienceRemaining = 1,
+                        Name = "Sue",
+                        ListOrder = 2,
+                    });
+
+            Engine.EngineSettings.MonsterList.Add(characterMonster);
 
             // Act
             var result = Engine.Round.RoundNextTurn();
@@ -455,7 +488,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(RoundEnum.Unknown, result);
+            Assert.AreEqual(RoundEnum.NextTurn, result);
         }
         #endregion RoundNextTurn
 
