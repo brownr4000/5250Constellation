@@ -10,7 +10,7 @@
                 <StackLayout Orientation="Vertical">
                     <Label Text="Round Start" Style="{StaticResource CenterMessageLargeStyle}" Margin="10"/>
 
-                    <Frame BorderColor="{StaticResource TriciaryBackgroundColor}">
+                    <Frame Style="{StaticResource FrameTriciaryColorStyle}">
                         <FlexLayout>
                             <StackLayout Style="{StaticResource VerticalStack}">
                                 <Label 
