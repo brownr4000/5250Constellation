@@ -323,9 +323,9 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// Swap out the item if it is better
+        /// The GetItemFromPoolIfBetter method swaps out the item if it is better
         /// 
-        /// Uses Value to determine
+        /// This method uses Attribute, Damage then Value to determine if an item is better
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
@@ -376,21 +376,46 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// Swap the Item the character has for one from the pool
+        /// The SwapCharacterItem swaps the Item the Character has for one from the pool
         /// 
-        /// Drop the current item back into the Pool
+        /// It drops the current item back into the Pool
         /// </summary>
         public override ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
-            return null;
+            // Put on the new ItemModel, which drops the one back to the pool
+            var droppedItem = character.AddItem(setLocation, PoolItem.Id);
+
+            // Add the PoolItem to the list of selected items
+            EngineSettings.BattleScore.ItemModelSelectList.Add(PoolItem);
+
+            // Remove the ItemModel just put on from the pool
+            _ = EngineSettings.ItemPool.Remove(PoolItem);
+
+            if (droppedItem != null)
+            {
+                // Add the dropped ItemModel to the pool
+                EngineSettings.ItemPool.Add(droppedItem);
+            }
+
+            return droppedItem;
         }
 
         /// <summary>
-        /// For all characters in player list, remove their buffs
+        /// The RemoveCharacterBuffs removes buffs for all characters in player list
         /// </summary>
         public override bool RemoveCharacterBuffs()
         {
-            return false;
+            foreach (var data in EngineSettings.PlayerList)
+            {
+                _ = data.ClearBuffs();
+            }
+
+            foreach (var data in EngineSettings.PlayerList)
+            {
+                _ = data.ClearBuffs();
+            }
+
+            return true;
         }
     }
 }
