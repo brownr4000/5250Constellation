@@ -8,7 +8,7 @@
         <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
             <FlexLayout>
                 <StackLayout Orientation="Vertical">
-                    <Label Text="Round Start" Style="{StaticResource CenterMessageLargeStyle}" Margin="10"/>
+                    <Label Text="Round Start" Style="{StaticResource CenterMessageLargeWithMarginStyle}"/>
 
                     <Frame Style="{StaticResource FrameTriciaryColorStyle}">
                         <FlexLayout>
