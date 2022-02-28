@@ -59,6 +59,7 @@ namespace Game.Views
 
             //Copy of Character to restore for cancel
             DataCopy = new CharacterModel(characterData.Data);
+            DistinctErrorMessage.IsVisible = false;
         }
 
         /// <summary>

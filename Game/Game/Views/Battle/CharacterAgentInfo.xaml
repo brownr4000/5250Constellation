@@ -15,7 +15,6 @@
 
                 <Label Text="Your Agent!" Style="{StaticResource CenterMessageLargeStyle}"/>
                 
-                <Label x:Name="DistinctErrorMessage" Text="This agent is already in the squad. Please pick another agent!" Style="{StaticResource ErrorMessageStyle}"/>
                     
                 <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
                     <ImageButton Source="left_arrow.png" 
@@ -137,6 +136,8 @@
                     </StackLayout>
                 </Frame>
 
+                <Label x:Name="DistinctErrorMessage" Text="This agent is already in the squad. Please pick another agent!" Style="{StaticResource ErrorMessageStyle}" HorizontalOptions="Center" Padding="25"/>
+                
                 <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
                     <ImageButton 
                                  Source="cancel_button.png"
