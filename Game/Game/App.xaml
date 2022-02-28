@@ -248,6 +248,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="StartLabelStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="ValueWithPaddingStyle"
                 BasedOn="{StaticResource ValueStyle}">
                 <Setter Property="Padding" Value="0,0,0,10" />
@@ -584,6 +590,13 @@
                 <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
                 <Setter Property="Margin" Value="50,0,0,0"/>
                 <Setter Property="WidthRequest" Value="70"/>
+                <Setter Property="HeightRequest" Value="30"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="BattleFieldButtonStyle"
+                   BasedOn="{StaticResource ButtonStyle}">
+                <Setter Property="Margin" Value="50,0,0,0"/>
+                <Setter Property="WidthRequest" Value="200"/>
                 <Setter Property="HeightRequest" Value="30"/>
             </Style>
 
@@ -1172,6 +1185,12 @@
             <!--ProgressBar-->
             <Style TargetType="ProgressBar" x:Key="ProgressBarStyle">                
                 <Setter Property="ProgressColor" Value="{StaticResource SecondaryBackgroundColor}" />
+            </Style>
+
+            <Style TargetType="ProgressBar" 
+                   x:Key="ProgressBarWithHeight"
+                   BasedOn="{StaticResource ProgressBarStyle}">
+                <Setter Property="HeightRequest" Value="20" />
             </Style>
 
         </ResourceDictionary>

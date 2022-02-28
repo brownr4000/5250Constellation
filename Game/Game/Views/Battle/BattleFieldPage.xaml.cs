@@ -22,6 +22,9 @@ namespace Game.Views
         // HTML Formatting for message output box
         public HtmlWebViewSource htmlSource = new HtmlWebViewSource();
 
+        // View Model for Current Character
+        public PlayerInfoModel CurrentCharacterData;
+
         // Wait time before proceeding
         public int WaitTime = 1500;
 
@@ -62,50 +65,7 @@ namespace Game.Views
 
             // Ask the Game engine to select who goes first
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
-
-            // Add Players to Display
-           // DrawGameAttackerDefenderBoard();
-
-            // Set the Battle Mode
-            //ShowBattleMode();
         }
-
-        /// <summary>
-        /// Dray the Player Boxes
-        /// </summary>
-        //public void DrawPlayerBoxes()
-        //{
-        //    var CharacterBoxList = CharacterBox.Children.ToList();
-        //    foreach (var data in CharacterBoxList)
-        //    {
-        //        _ = CharacterBox.Children.Remove(data);
-        //    }
-
-        //    // Draw the Characters
-        //    foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
-        //    {
-        //        CharacterBox.Children.Add(PlayerInfoDisplayBox(data));
-        //    }
-
-        //    var MonsterBoxList = MonsterBox.Children.ToList();
-        //    foreach (var data in MonsterBoxList)
-        //    {
-        //        _ = MonsterBox.Children.Remove(data);
-        //    }
-
-        //    // Draw the Monsters
-        //    foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
-        //    {
-        //        MonsterBox.Children.Add(PlayerInfoDisplayBox(data));
-        //    }
-
-        //    // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-        //    CharacterBox.Children.Add(PlayerInfoDisplayBox(null));
-
-        //    // Add one black PlayerInfoDisplayBox to hold space incase the list is empty
-        //    MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
-
-        //}
 
         /// <summary>
         /// Put the Player into a Display Box
@@ -148,7 +108,12 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-            // Attack button code
+            BattleSequenceFrame.IsVisible = true;
+            NextMoveFrame.IsVisible = false;
+
+            CurrentCharacterImage.Source = CurrentCharacterData.ImageURI;
+            // CurrentMonsterImage.Source = CurrentCharacterData.ImageURI;
+            BattleGrammer.Text = CurrentCharacterData.Name + " hits monster";
         }
 
         /// <summary>
@@ -228,7 +193,6 @@ namespace Game.Views
                 {
                     // The Image is different, so need to re-create the Image Object and add it to the Stack
                     // That way the correct monster is in the box.
-
                     MapObject = GetMapGridObject(GetDictionaryStackName(data));
                     if (MapObject == null)
                     {
@@ -529,16 +493,19 @@ namespace Game.Views
         /// <returns></returns>
         public bool SetSelectedCharacter(MapModelLocation data)
         {
-            // TODO: Info
-
-            /*
-             * This gets called when the characters is clicked on
-             * Usefull if you want to select the character and then set state or do something
-             * 
-             * For Mike's simple battle grammar there is no selection of action so I just return true
-             */
-
             NextMoveFrame.IsVisible = true;
+
+            //Setting the ViewModel with current character details
+            CurrentCharacterData = new PlayerInfoModel();
+            CurrentCharacterData = data.Player;
+
+            CharacterName.Text = "Character: " + data.Player.Name;
+            HealthValue.Text = data.Player.CurrentHealth.ToString();
+            RangeValue.Text = data.Player.Range.ToString();
+
+            //Setting progress bars
+            HealthProgressBar.Progress = data.Player.CurrentHealth / 9f;
+            RangeProgressBar.Progress = data.Player.Range / 9f;
             return true;
         }
     }
