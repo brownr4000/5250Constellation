@@ -98,7 +98,6 @@
                                     
                                     <ProgressBar x:Name="AttackProgressBar" 
                                                  Grid.Column="1"
-                                                 Progress="{Binding Data.Attack}" 
                                                  Style="{StaticResource ProgressBarStyle}"/>
 
                                     <Label Grid.Column="2" 
@@ -120,7 +119,6 @@
                                     
                                     <ProgressBar x:Name="DefenseProgressBar" 
                                                  Grid.Column="1"
-                                                 Progress="{Binding Data.Defense}" 
                                                 Style="{StaticResource ProgressBarStyle}"/>
                                     
                                     <Label Grid.Column="2" 
@@ -142,7 +140,6 @@
 
                                     <ProgressBar x:Name="SpeedProgressBar" 
                                                  Grid.Column="1" 
-                                                 Progress="{Binding Data.Speed}" 
                                                Style="{StaticResource ProgressBarStyle}"/>
 
                                     <Label Grid.Column="2" 
