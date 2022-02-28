@@ -87,7 +87,9 @@ namespace Game.Views
                 {
                     if (character.Id == this.ViewModel.Data.Id)
                     {
-                        isDuplicateCharacter = true;                       
+                        isDuplicateCharacter = true;
+                        DistinctErrorMessage.IsVisible = true;
+                        return;
                     }
                 }
                 if (!isDuplicateCharacter)

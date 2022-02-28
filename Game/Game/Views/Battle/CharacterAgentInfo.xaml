@@ -13,8 +13,10 @@
         <ScrollView VerticalScrollBarVisibility="Never">
             <StackLayout Style="{StaticResource VerticalCenterStack}">
 
-                <Label Text="Your Squad!" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Text="Your Agent!" Style="{StaticResource CenterMessageLargeStyle}"/>
                 
+                <Label x:Name="DistinctErrorMessage" Text="This agent is already in the squad. Please pick another agent!" Style="{StaticResource ErrorMessageStyle}"/>
+                    
                 <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
                     <ImageButton Source="left_arrow.png" 
                                  Style="{StaticResource ImageButtonSmallStyle}"
