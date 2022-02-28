@@ -131,7 +131,7 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
-        /// Manage Next Turn
+        /// The RoundNextTurn method manges the next turn
         /// 
         /// Decides Who's Turn
         /// Remembers Current Player
@@ -139,17 +139,42 @@ namespace Game.Engine.EngineGame
         /// Starts the Turn
         /// 
         /// </summary>
+        /// <returns></returns>
         public override RoundEnum RoundNextTurn()
         {
             // No characters, game is over..
+            if (EngineSettings.CharacterList.Count < 1)
+            {
+                // Game Over
+                EngineSettings.RoundStateEnum = RoundEnum.GameOver;
+                return EngineSettings.RoundStateEnum;
+            }
 
             // Check if round is over
+            if (EngineSettings.MonsterList.Count < 1)
+            {
+                // If over, New Round
+                EngineSettings.RoundStateEnum = RoundEnum.NewRound;
+                return RoundEnum.NewRound;
+            }
 
             // If in Auto Battle pick the next attacker
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // Decide Who gets next turn
+                // Remember who just went...
+                EngineSettings.CurrentAttacker = GetNextPlayerTurn();
+
+                // Only Attack for now
+                EngineSettings.CurrentAction = ActionEnum.Attack;
+            }
 
             // Do the turn..
+            _ = Turn.TakeTurn(EngineSettings.CurrentAttacker);
 
-            return RoundEnum.Unknown;
+            EngineSettings.RoundStateEnum = RoundEnum.NextTurn;
+
+            return EngineSettings.RoundStateEnum;
         }
 
         /// <summary>
@@ -158,10 +183,12 @@ namespace Game.Engine.EngineGame
         public override PlayerInfoModel GetNextPlayerTurn()
         {
             // Remove the Dead
+            _ = RemoveDeadPlayersFromList();
 
             // Get Next Player
+            var PlayerCurrent = GetNextPlayerInList();
 
-            return null;
+            return PlayerCurrent;
         }
 
         /// <summary>
@@ -169,7 +196,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
-            return null;
+            EngineSettings.PlayerList = EngineSettings.PlayerList.Where(m => m.Alive == true).ToList();
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
