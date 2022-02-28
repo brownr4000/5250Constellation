@@ -25,6 +25,9 @@ namespace Game.Views
         // View Model for Current Character
         public PlayerInfoModel CurrentCharacterData;
 
+        // View Model for Current Monster
+        public PlayerInfoModel CurrentMonsterSelectedData;
+
         // Wait time before proceeding
         public int WaitTime = 1500;
 
@@ -112,8 +115,9 @@ namespace Game.Views
             NextMoveFrame.IsVisible = false;
 
             CurrentCharacterImage.Source = CurrentCharacterData.ImageURI;
-            // CurrentMonsterImage.Source = CurrentCharacterData.ImageURI;
-            BattleGrammer.Text = CurrentCharacterData.Name + " hits monster";
+            CurrentMonsterImage.Source = CurrentMonsterSelectedData.ImageURI;
+
+            BattleGrammer.Text = CurrentCharacterData.Name + " hits monster " + CurrentMonsterSelectedData.Name;
         }
 
         /// <summary>
@@ -482,7 +486,9 @@ namespace Game.Views
              */
 
             data.IsSelectedTarget = true;
-            NextMoveFrame.IsVisible = true;
+            // Setting selected Monster data
+            CurrentMonsterSelectedData = new PlayerInfoModel();
+            CurrentMonsterSelectedData = data.Player;
             return true;
         }
 
