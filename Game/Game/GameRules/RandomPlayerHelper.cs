@@ -54,8 +54,7 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetMonsterImage()
         {
-
-            List<String> FirstNameList = new List<String> { "troll1.png", "troll2.png", "troll3.png", "troll4.png", "troll5.png", "troll6.png" };
+            List<String> FirstNameList = new List<String> { "Cancer_Monster.png", "Musca_Monster.png", "Lacerta_Monster.png", "Pisces_Monster.png", "Scorpio_Monster.png", "Serpens_Monster.png" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -85,7 +84,7 @@ namespace Game.GameRules
         public static string GetMonsterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Arg", "Deg", "Ase", "Xes", "Zez", "Klk", "Oi", "Oni", "Tanu" };
+            List<String> FirstNameList = new List<String> { "Cancer", "Musca", "Lacerta", "Pisces", "Scorpio", "Serpens" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
