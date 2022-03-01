@@ -276,7 +276,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum BattleSettingsOverride(PlayerInfoModel Attacker)
         {
-            return HitStatusEnum.Unknown;
+            return base.BattleSettingsOverride(Attacker);
         }
 
         /// <summary>
@@ -285,8 +285,7 @@ namespace Game.Engine.EngineGame
         public override HitStatusEnum BattleSettingsOverrideHitStatusEnum(HitStatusEnum myEnum)
         {
             // Based on the Hit Status, establish a message
-
-            return HitStatusEnum.Unknown;
+            return base.BattleSettingsOverrideHitStatusEnum(myEnum);
         }
 
         /// <summary>
