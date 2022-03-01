@@ -61,7 +61,7 @@ namespace Game.Views
             _ = InitializeMapGrid();
 
             // Start the Battle Engine
-            _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
+           // _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
             // Populate the UI Map
             DrawMapGridInitialState();
@@ -111,13 +111,16 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-            BattleSequenceFrame.IsVisible = true;
-            NextMoveFrame.IsVisible = false;
+            if(CurrentMonsterSelectedData != null)
+            {
+                BattleSequenceFrame.IsVisible = true;
+                NextMoveFrame.IsVisible = false;
 
-            CurrentCharacterImage.Source = CurrentCharacterData.ImageURI;
-            CurrentMonsterImage.Source = CurrentMonsterSelectedData.ImageURI;
+                CurrentCharacterImage.Source = CurrentCharacterData.ImageURI;
+                CurrentMonsterImage.Source = CurrentMonsterSelectedData.ImageURI;
 
-            BattleGrammer.Text = CurrentCharacterData.Name + " hits monster " + CurrentMonsterSelectedData.Name;
+                BattleGrammer.Text = CurrentCharacterData.Name + " hits monster " + CurrentMonsterSelectedData.Name;
+            }           
         }
 
         /// <summary>
