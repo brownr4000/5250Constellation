@@ -111,6 +111,7 @@ namespace Game.Views
 
         public void LeftImageButton_Clicked(object sender, EventArgs e)
         {
+            DistinctErrorMessage.IsVisible = false;
             int imageCount = AllCharactersList.Count;
 
             // Check if we are at the first photo and move to last photo when clicked
@@ -144,6 +145,7 @@ namespace Game.Views
 
         public void RightImageButton_Clicked(object sender, EventArgs e)
         {
+            DistinctErrorMessage.IsVisible = false;
             int imageCount = AllCharactersList.Count;
 
             // check if we are at the last photo and move to first photo when clicked
