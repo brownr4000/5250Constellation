@@ -143,17 +143,38 @@ namespace Game.Engine.EngineGame
             if (Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                 // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
 
                 // Get X, Y for Defender
+                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+                if (locationDefender == null)
+                {
+                    return false;
+                }
 
                 // Get X, Y for the Attacker
+                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                if (locationAttacker == null)
+                {
+                    return false;
+                }
 
                 // Find Location Nearest to Defender that is Open.
 
                 // Get the Open Locations
+                var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
 
                 // Format a message to show
-                return false;
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
             }
 
             return true;
@@ -167,13 +188,32 @@ namespace Game.Engine.EngineGame
         public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
         {
             // See if healing is needed.
+            EngineSettings.CurrentActionAbility = Attacker.SelectHealingAbility();
+            if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+            {
+                EngineSettings.CurrentAction = ActionEnum.Ability;
+                return true;
+            }
 
             // If not needed, then role dice to see if other ability should be used
-            // Choose the % chance
+            // Choose the % chance - 15% Chance on a d20 roll
             // Select the ability
+            if (DiceHelper.RollDice(1, 20) < 3)
+            {
+                EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
 
+                if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+                {
+                    // Ability can , switch to unknown to exit
+                    EngineSettings.CurrentAction = ActionEnum.Ability;
+                    return true;
+                }
+
+                // No ability available
+                return false;
+            }
+            
             // Don't try
-
             return false;
         }
 
@@ -182,7 +222,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            return false;
+            return base.UseAbility(Attacker);
         }
 
         /// <summary>
