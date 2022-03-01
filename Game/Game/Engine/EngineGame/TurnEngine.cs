@@ -615,7 +615,7 @@ namespace Game.Engine.EngineGame
 
             // The Number drop can be Up to the Round Count, but may be less.  
             // Negative results in nothing dropped
-            var NumberToDrop = round * 2;   // (DiceHelper.RollDice(1, round + 1) - 1);
+            var NumberToDrop = (round + 1) * 2;   // (DiceHelper.RollDice(1, round + 1) - 1);
 
             var result = new List<ItemModel>();
 
