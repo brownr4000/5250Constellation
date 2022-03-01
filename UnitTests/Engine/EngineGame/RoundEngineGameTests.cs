@@ -665,18 +665,55 @@ namespace UnitTests.Engine.EngineGame
         #endregion PlayerList
 
         #region SwapCharacterItem
+        /// <summary>
+        /// This Unit Tests checks the SwapCharacterItem method
+        /// </summary>
+        /// <returns></returns>
         [Test]
-        public void RoundEngine_SwapCharacterItem_Valid_Default_Should_Pass()
+        public async Task RoundEngine_SwapCharacterItem_Valid_Default_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+            // Clear Monster and Character Lists
+            Engine.EngineSettings.MonsterList.Clear();
+            Engine.EngineSettings.CharacterList.Clear();
+
+            // Create new Character
+            var Character = new CharacterModel
+            {
+                Level = 5,
+                Attack = 2,
+                Speed = 2,
+                CurrentHealth = 1,
+                ExperienceTotal = 1,
+                Name = "Z",
+            };
+
+            // Add each model here to warm up and load it.
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
+
+            // Create Items
+            var item1 = new ItemModel { Attribute = AttributeEnum.Defense, Damage = 4, Value = 1, Location = ItemLocationEnum.PrimaryHand };
+            var item2 = new ItemModel { Attribute = AttributeEnum.Attack, Damage = 8, Value = 5, Location = ItemLocationEnum.PrimaryHand };
+
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item1);
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item2);
+
+            // Equip one Item to Character
+            _ = Character.AddItem(ItemLocationEnum.PrimaryHand, item1.Id);
+
+            // Add Character to CharacterList
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Clear();
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
             // Act
-            var result = Engine.Round.SwapCharacterItem(null, ItemLocationEnum.Head, null);
+            var result = Engine.Round.SwapCharacterItem(CharacterPlayer, ItemLocationEnum.PrimaryHand, item2);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual(item1, result);                         // Verify item1 was dropped
+            Assert.AreEqual(item2.Id, CharacterPlayer.PrimaryHand); // Verify that Character has Item2
         }
         #endregion SwapCharacterItem
 
