@@ -203,7 +203,7 @@ namespace Game.Engine.EngineGame
             // Manage autobattle
 
             // Do Attack
-            return false;
+            return base.Attack(Attacker);
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel AttackChoice(PlayerInfoModel data)
         {
-            return null;
+            return base.AttackChoice(data);
         }
 
         /// <summary>
