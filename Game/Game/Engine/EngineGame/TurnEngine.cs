@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 using Game.Models;
 using Game.Helpers;
-//using Game.ViewModels;
+using Game.ViewModels;
 using Game.GameRules;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
@@ -383,8 +383,18 @@ namespace Game.Engine.EngineGame
 
             // The Number drop can be Up to the Round Count, but may be less.  
             // Negative results in nothing dropped
+            var NumberToDrop = round * 2;   // (DiceHelper.RollDice(1, round + 1) - 1);
 
-            return null;
+            var result = new List<ItemModel>();
+
+            for (var i = 0; i < NumberToDrop; i++)
+            {
+                // Get a random Unique Item
+                var data = ItemIndexViewModel.Instance.GetItem(RandomPlayerHelper.GetMonsterUniqueItem());
+                result.Add(data);
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -392,7 +402,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool DetermineCriticalMissProblem(PlayerInfoModel attacker)
         {
-            return false;
+            return base.DetermineCriticalMissProblem(attacker);
         }
     }
 }
