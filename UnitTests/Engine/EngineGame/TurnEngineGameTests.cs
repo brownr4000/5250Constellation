@@ -161,6 +161,7 @@ namespace UnitTests.Engine.EngineGame
             var result = Engine.Round.Turn.AttackChoice(character);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
             Assert.AreEqual(monster, result);
@@ -204,6 +205,7 @@ namespace UnitTests.Engine.EngineGame
             var result = Engine.Round.Turn.SelectCharacterToAttack();
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
             Assert.AreEqual(character, result);
@@ -446,6 +448,7 @@ namespace UnitTests.Engine.EngineGame
             var result = Engine.Round.Turn.TakeTurn(character);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
             Assert.AreEqual(true, result);
@@ -477,6 +480,7 @@ namespace UnitTests.Engine.EngineGame
             var result = Engine.Round.Turn.TakeTurn(character);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
             Assert.AreEqual(true, result);
