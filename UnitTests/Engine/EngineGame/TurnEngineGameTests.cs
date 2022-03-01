@@ -427,7 +427,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(HitStatusEnum.Unknown, result);
+            Assert.AreEqual(HitStatusEnum.Hit, result);
         }
         #endregion RollToHitTarget
 
