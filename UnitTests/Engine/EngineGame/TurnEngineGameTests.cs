@@ -438,12 +438,12 @@ namespace UnitTests.Engine.EngineGame
             // Arrange 
 
             // Act
-            var result = Engine.Round.Turn.GetRandomMonsterItemDrops(1);
+            var result = Engine.Round.Turn.GetRandomMonsterItemDrops(1).Count();
 
             // Reset
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual(2, result);
         }
         #endregion GetRandomMonsterItemDrops
 
