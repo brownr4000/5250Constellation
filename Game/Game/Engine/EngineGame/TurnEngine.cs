@@ -259,11 +259,34 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectCharacterToAttack()
         {
+            // Check if there is less than one or no Players in the PlayerList
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
             // Select first in the list
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
+            // Sort list for Alive Characters,
+            // then order by Current Health,
+            // then by CharacterJob,
+            // then by Defense descending
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                .OrderBy(m => m.CurrentHealth)
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Support))
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Striker))
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Defender))
+                .ThenByDescending(m => m.Defense)
+                .FirstOrDefault();
 
-            return null;
+            return Defender;
         }
 
         /// <summary>
