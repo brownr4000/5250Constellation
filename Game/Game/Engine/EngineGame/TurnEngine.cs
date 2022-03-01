@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 using Game.Models;
 using Game.Helpers;
-using Game.ViewModels;
+//using Game.ViewModels;
 using Game.GameRules;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
