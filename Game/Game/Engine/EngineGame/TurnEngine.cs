@@ -352,14 +352,34 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override int DropItems(PlayerInfoModel Target)
         {
+            var DroppedMessage = "\nItems Dropped : \n";
+
             // Drop Items to ItemModel Pool
+            var myItemList = Target.DropAllItems();
 
             // I feel generous, even when characters die, random drops happen :-)
             // If Random drops are enabled, then add some....
+            myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
 
             // Add to ScoreModel
+            foreach (var ItemModel in myItemList)
+            {
+                EngineSettings.BattleScore.ItemsDroppedList += ItemModel.FormatOutput() + "\n";
+                DroppedMessage += ItemModel.Name + "\n";
+            }
 
-            return 0;
+            EngineSettings.ItemPool.AddRange(myItemList);
+
+            if (myItemList.Count == 0)
+            {
+                DroppedMessage = " Nothing dropped. ";
+            }
+
+            EngineSettings.BattleMessagesModel.DroppedMessage = DroppedMessage;
+
+            EngineSettings.BattleScore.ItemModelDropList.AddRange(myItemList);
+
+            return myItemList.Count();
         }
 
         /// <summary>
@@ -369,7 +389,51 @@ namespace Game.Engine.EngineGame
         /// <param name="DefenseScore"></param>
         public override HitStatusEnum RollToHitTarget(int AttackScore, int DefenseScore)
         {
-            return HitStatusEnum.Unknown;
+            var d20 = DiceHelper.RollDice(1, 20);
+
+            if (d20 == 1)
+            {
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Miss;
+                EngineSettings.BattleMessagesModel.AttackStatus = " rolls 1 to miss ";
+
+                if (EngineSettings.BattleSettingsModel.AllowCriticalMiss)
+                {
+                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 1 to completly miss ";
+                    EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.CriticalMiss;
+                }
+
+                return EngineSettings.BattleMessagesModel.HitStatus;
+            }
+
+            if (d20 == 20)
+            {
+                EngineSettings.BattleMessagesModel.AttackStatus = " rolls 20 for hit ";
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Hit;
+
+                if (EngineSettings.BattleSettingsModel.AllowCriticalHit)
+                {
+                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 20 for lucky hit ";
+                    EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.CriticalHit;
+                }
+                return EngineSettings.BattleMessagesModel.HitStatus;
+            }
+
+            var ToHitScore = d20 + AttackScore;
+            if (ToHitScore < DefenseScore)
+            {
+                EngineSettings.BattleMessagesModel.AttackStatus = " rolls " + d20 + " and misses ";
+
+                // Miss
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Miss;
+                EngineSettings.BattleMessagesModel.DamageAmount = 0;
+                return EngineSettings.BattleMessagesModel.HitStatus;
+            }
+
+            EngineSettings.BattleMessagesModel.AttackStatus = " rolls " + d20 + " and hits ";
+
+            // Hit
+            EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Hit;
+            return EngineSettings.BattleMessagesModel.HitStatus;
         }
 
         /// <summary>
