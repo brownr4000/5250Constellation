@@ -149,5 +149,73 @@ namespace Scenario
             Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
         #endregion Scenario1
+
+        #region Scenario2
+        [Test]
+        public async Task HakathonScenario_Scenario_2_Valid_Default_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      2
+            *      
+            * Description: 
+            *      Make a character called Doug, Doug always misses
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *       No Code changes requied 
+            * 
+            * Test Algrorithm:
+            *      Create a character called Doug
+            *      Set speed to 5
+            *      Set current health to 10
+            *      set Doug to always miss
+            *      set Monster to always hit
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify Battle Returned True
+            *      Verify Doug is not in the Player List
+            *      Verify Round Count is 1
+            *  
+            */
+
+            // Arrange
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var Doug = new PlayerInfoModel(
+                    new CharacterModel 
+                    {
+                        Speed = 5,
+                        Level = 1,
+                        CurrentHealth = 10,
+                        ExperienceTotal = 5,
+                        ExperienceRemaining = 1,
+                        Name = "Doug",
+                    });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(Doug);
+
+            // Doug always miss
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Miss;
+
+            // Monsters always hit
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+
+            // Act
+            var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
+
+            // Reset
+
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Doug")));
+            Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
+        }
+        #endregion Scenario2
     }
 }
