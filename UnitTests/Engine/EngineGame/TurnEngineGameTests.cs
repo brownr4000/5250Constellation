@@ -168,10 +168,37 @@ namespace UnitTests.Engine.EngineGame
         #endregion AttackChoice
 
         #region SelectCharacterToAttack
+        /// <summary>
+        /// Unit test for SelectCharacterToAttack
+        /// </summary>
         [Test]
-        public void RoundEngine_SelectCharacterToAttack_Valid_Default_Should_Pass()
+        public void TurnEngine_SelectCharacterToAttack_Valid_Default_Should_Pass()
         {
             // Arrange 
+            var character = new PlayerInfoModel(
+                new CharacterModel
+                {
+                    CurrentHealth = 2,
+                    Job = CharacterJobEnum.Support,
+                });
+
+            var monster = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    Speed = 1,
+                    Attack = 1,
+                    Defense = 1,
+                    Level = 1,
+                    CurrentHealth = 10,
+                    MonsterJob = MonsterJobEnum.Brute,
+                });
+
+            Engine.EngineSettings.PlayerList.Add(character);
+            Engine.EngineSettings.PlayerList.Add(monster);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAttacker = monster;
 
             // Act
             var result = Engine.Round.Turn.SelectCharacterToAttack();
@@ -179,7 +206,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual(character, result);
         }
         #endregion SelectCharacterToAttack
 
