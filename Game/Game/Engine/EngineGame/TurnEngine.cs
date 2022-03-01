@@ -1,21 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
 
 using Game.Models;
+using Game.Helpers;
+using Game.ViewModels;
+using Game.GameRules;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
 
 namespace Game.Engine.EngineGame
 {
-    /* 
-     * Need to decide who takes the next turn
-     * Target to Attack
-     * Should Move, or Stay put (can hit with weapon range?)
-     * Death
-     * Manage Round...
-     * 
-     */
-
     /// <summary>
     /// Engine controls the turns
     /// 
@@ -25,13 +21,21 @@ namespace Game.Engine.EngineGame
     public class TurnEngine : TurnEngineBase, ITurnEngineInterface
     {
         #region Algrorithm
-        // Attack or Move
-        // Roll To Hit
-        // Decide Hit or Miss
-        // Decide Damage
-        // Death
-        // Drop Items
-        // Turn Over
+        /* 
+            Need to decide who takes the next turn
+            Target to Attack
+            Should Move, or Stay put (can hit with weapon range?)
+            Death
+            Manage Round...
+          
+            Attack or Move
+            Roll To Hit
+            Decide Hit or Miss
+            Decide Damage
+            Death
+            Drop Items
+            Turn Over
+        */
         #endregion Algrorithm
 
         // Hold the BaseEngine
@@ -48,17 +52,46 @@ namespace Game.Engine.EngineGame
 
             // INFO: Teams, if you have other actions they would go here.
 
-            // If the action is not set, then try to set it or use Attact
+            var result = false;
 
-            // Based on the current action...
+            // If the action is not set, then try to set it or use Attact
+            if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+            {
+                // Set the action if one is not set
+                EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
+
+                // When in doubt, attack...
+                if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                {
+                    EngineSettings.CurrentAction = ActionEnum.Attack;
+                }
+            }
+
+            switch (EngineSettings.CurrentAction)
+            {
+                case ActionEnum.Attack:
+                    result = Attack(Attacker);
+                    break;
+
+                case ActionEnum.Ability:
+                    result = UseAbility(Attacker);
+                    break;
+
+                case ActionEnum.Move:
+                    result = MoveAsTurn(Attacker);
+                    break;
+            }
 
             // Increment Turn Count so you know what turn number
+            EngineSettings.BattleScore.TurnCount++;
 
             // Save the Previous Action off
+            EngineSettings.PreviousAction = EngineSettings.CurrentAction;
 
             // Reset the Action to unknown for next time
+            EngineSettings.CurrentAction = ActionEnum.Unknown;
 
-            return false;
+            return result;
         }
 
         /// <summary>
@@ -83,7 +116,7 @@ namespace Game.Engine.EngineGame
             // Check to see if ability is avaiable
 
             // See if Desired Target is within Range, and if so attack away
-            return ActionEnum.Unknown;
+            return base.DetermineActionChoice(Attacker);
         }
 
         /// <summary>
