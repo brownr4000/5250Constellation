@@ -23,7 +23,7 @@ namespace UnitTests.Engine.EngineGame
             Engine = new BattleEngine();
             Engine.Round = new RoundEngine();
             Engine.Round.Turn = new TurnEngine();
-            //Engine.StartBattle(true);   // Start engine in auto battle mode
+            Engine.StartBattle(true);   // Start engine in auto battle mode
         }
 
         [TearDown]
@@ -49,8 +49,11 @@ namespace UnitTests.Engine.EngineGame
         #endregion Constructor
 
         #region MoveAsTurn
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
-        public void RoundEngine_MoveAsTurn_Valid_Default_Should_Pass()
+        public void TurnEngine_MoveAsTurn_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -64,7 +67,7 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void RoundEngine_MoveAsTurn_Valid_Monster_Default_Should_Pass()
+        public void TurnEngine_MoveAsTurn_Valid_Monster_Default_Should_Pass()
         {
             // Arrange 
 
@@ -95,24 +98,46 @@ namespace UnitTests.Engine.EngineGame
         #endregion ApplyDamage
 
         #region Attack
+        /// <summary>
+        /// Unit test for the Attack method
+        /// </summary>
         [Test]
-        public void RoundEngine_Attack_Valid_Default_Should_Pass()
+        public void TurnEngine_Attack_Valid_Default_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+            var character = new PlayerInfoModel(new CharacterModel());
+            var monster  = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    Speed = 1,
+                    Attack = 1,
+                    Defense = 1,
+                    Level = 1,
+                    CurrentHealth = 1,
+                    MonsterJob = MonsterJobEnum.Brute,
+                });
+
+            Engine.EngineSettings.PlayerList.Add(character);
+            Engine.EngineSettings.PlayerList.Add(monster);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             // Act
-            var result = Engine.Round.Turn.Attack(new PlayerInfoModel());
+            var result = Engine.Round.Turn.Attack(character);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
         #endregion Attack
 
         #region AttackChoice
+        /// <summary>
+        /// Unit test for the AttackChoice method
+        /// </summary>
         [Test]
-        public void RoundEngine_AttackChoice_Valid_Default_Should_Pass()
+        public void TurnEngine_AttackChoice_Valid_Default_Should_Pass()
         {
             // Arrange 
 
