@@ -294,12 +294,30 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectMonsterToAttack()
         {
+            // Check if there is less than one or no Players in the PlayerList
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
             // Select first one to hit in the list for now...
             // Attack the Weakness (lowest HP) MonsterModel first 
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                .OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
+                .ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
+                .ThenBy(m => m.Attack)
+                .ThenBy(m => m.CurrentHealth)
+                .FirstOrDefault();
 
-            return null;
+            return Defender;
         }
 
         /// <summary>
