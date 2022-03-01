@@ -94,6 +94,7 @@ namespace Game.Engine.EngineGame
             return result;
         }
 
+        #region Action
         /// <summary>
         /// Determine what Actions to do
         /// </summary>
@@ -225,6 +226,9 @@ namespace Game.Engine.EngineGame
             return base.UseAbility(Attacker);
         }
 
+        #endregion Action
+
+        #region Attack
         /// <summary>
         /// Attack as a Turn
         /// 
@@ -404,6 +408,7 @@ namespace Game.Engine.EngineGame
 
             return true;
         }
+        #endregion Attack
 
         /// <summary>
         /// See if the Battle Settings will Override the Hit
