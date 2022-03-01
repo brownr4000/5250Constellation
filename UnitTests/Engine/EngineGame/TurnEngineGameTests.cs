@@ -83,7 +83,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region ApplyDamage
         [Test]
-        public void RoundEngine_ApplyDamage_Valid_Default_Should_Pass()
+        public void TurnEngine_ApplyDamage_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -212,7 +212,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region UseAbility
         [Test]
-        public void RoundEngine_UseAbility_Valid_Default_Should_Pass()
+        public void TurnEngine_UseAbility_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -228,7 +228,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region BattleSettingsOverrideHitStatusEnum
         [Test]
-        public void RoundEngine_BattleSettingsOverrideHitStatusEnum_Valid_Default_Should_Pass()
+        public void TurnEngine_BattleSettingsOverrideHitStatusEnum_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -244,7 +244,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region BattleSettingsOverride
         [Test]
-        public void RoundEngine_BattleSettingsOverride_Valid_Default_Should_Pass()
+        public void TurnEngine_BattleSettingsOverride_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -260,7 +260,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region CalculateExperience
         [Test]
-        public void RoundEngine_CalculateExperience_Valid_Default_Should_Pass()
+        public void TurnEngine_CalculateExperience_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -276,7 +276,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region CalculateAttackStatus
         [Test]
-        public void RoundEngine_CalculateAttackStatus_Valid_Default_Should_Pass()
+        public void TurnEngine_CalculateAttackStatus_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -292,7 +292,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region RemoveIfDead
         [Test]
-        public void RoundEngine_RemoveIfDead_Valid_Default_Should_Pass()
+        public void TurnEngine_RemoveIfDead_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -308,7 +308,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region ChooseToUseAbility
         [Test]
-        public void RoundEngine_ChooseToUseAbility_Valid_Default_Should_Pass()
+        public void TurnEngine_ChooseToUseAbility_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -324,7 +324,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region SelectMonsterToAttack
         [Test]
-        public void RoundEngine_SelectMonsterToAttack_Valid_Default_Should_Pass()
+        public void TurnEngine_SelectMonsterToAttack_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -343,7 +343,7 @@ namespace UnitTests.Engine.EngineGame
         /// Tests the DetermineActionChoice method for a Character Player
         /// </summary>
         [Test]
-        public void RoundEngine_DetermineActionChoice_Valid_Default_Should_Pass()
+        public void TurnEngine_DetermineActionChoice_Valid_Default_Should_Pass()
         {
             // Arrange
             Engine.EngineSettings.BattleScore.AutoBattle = false;
@@ -362,7 +362,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region TurnAsAttack
         [Test]
-        public void RoundEngine_TurnAsAttack_Valid_Default_Should_Pass()
+        public void TurnEngine_TurnAsAttack_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -378,7 +378,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region TargetDied
         [Test]
-        public void RoundEngine_TargetDied_Valid_Default_Should_Pass()
+        public void TurnEngine_TargetDied_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -394,7 +394,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region TakeTurn
         [Test]
-        public void RoundEngine_TakeTurn_Valid_Default_Should_Pass()
+        public void TurnEngine_TakeTurn_Valid_Default_Should_Pass()
         {
             // Arrange
             var PlayerInfo = new PlayerInfoModel(new CharacterModel());
@@ -485,7 +485,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region RollToHitTarget
         [Test]
-        public void RoundEngine_RollToHitTarget_Valid_Default_Should_Pass()
+        public void TurnEngine_RollToHitTarget_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -501,7 +501,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region GetRandomMonsterItemDrops
         [Test]
-        public void RoundEngine_GetRandomMonsterItemDrops_Valid_Default_Should_Pass()
+        public void TurnEngine_GetRandomMonsterItemDrops_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -517,7 +517,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region DetermineCriticalMissProblem
         [Test]
-        public void RoundEngine_DetermineCriticalMissProblem_Valid_Default_Should_Pass()
+        public void TurnEngine_DetermineCriticalMissProblem_Valid_Default_Should_Pass()
         {
             // Arrange 
 
@@ -533,7 +533,7 @@ namespace UnitTests.Engine.EngineGame
 
         #region DropItems
         [Test]
-        public void RoundEngine_DropItems_Valid_Default_Should_Pass()
+        public void TurnEngine_DropItems_Valid_Default_Should_Pass()
         {
             // Arrange 
 
