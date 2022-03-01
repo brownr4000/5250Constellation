@@ -399,10 +399,15 @@ namespace UnitTests.Engine.EngineGame
         #endregion EndRound
 
         #region RoundNextTurn
+        /// <summary>
+        /// Unit Test to check that no Valid Characters results in GameOver 
+        /// </summary>
         [Test]
         public void RoundEngine_RoundNextTurn_Valid_No_Characters_Should_Return_GameOver()
         {
             // Arrange
+            Engine.EngineSettings.MonsterList.Clear();
+            Engine.EngineSettings.CharacterList.Clear();
 
             // Act
             var result = Engine.Round.RoundNextTurn();
