@@ -264,15 +264,32 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void TurnEngine_CalculateExperience_Valid_Default_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+            var character = new PlayerInfoModel(
+                new CharacterModel
+                {
+                    CurrentHealth = 2,
+                    Job = CharacterJobEnum.Support,
+                });
+
+            var monster = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    CurrentHealth = 100,
+                    MonsterJob = MonsterJobEnum.Brute,
+                    Alive = false,
+                });
+            
+            Engine.EngineSettings.BattleMessagesModel.DamageAmount = 0;
 
             // Act
-            var result = Engine.Round.Turn.CalculateExperience(new PlayerInfoModel(), new PlayerInfoModel());
+            var result = Engine.Round.Turn.CalculateExperience(character, monster);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(1, character.ExperienceTotal);
         }
         #endregion CalculateExperience
 
@@ -539,12 +556,19 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void TurnEngine_DropItems_Valid_Default_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+            var player = new CharacterModel();
+
+            var PlayerInfo = new PlayerInfoModel(player);
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(0);
 
             // Act
-            var result = Engine.Round.Turn.DropItems(new PlayerInfoModel());
+            var result = Engine.Round.Turn.DropItems(PlayerInfo);
 
             // Reset
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(0, result);
