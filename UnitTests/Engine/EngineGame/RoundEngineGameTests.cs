@@ -700,7 +700,51 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void RoundEngine_RemoveDeadPlayersFromList_Valid_Default_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+            // Create Monster
+            var Monster = new MonsterModel
+            {
+                Speed = 20,
+                Level = 20,
+                CurrentHealth = 100,
+                ExperienceTotal = 1000,
+                Name = "Z",
+            };
+
+            // Add Monster to MonsterList
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Clear();
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Create Characters & Add to CharacterList
+            var Character = new CharacterModel
+            {
+                Speed = 1,
+                Level = 1,
+                CurrentHealth = 0,
+                ExperienceTotal = 1,
+                Name = "C",
+                Alive = false, // Set flag for Alive to false
+            };
+
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Clear();
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            Character = new CharacterModel
+            {
+                Speed = 1,
+                Level = 1,
+                CurrentHealth = 3,
+                ExperienceTotal = 1,
+                Name = "D",
+            };
+
+            CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            // Make the List
+            Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
 
             // Act
             var result = Engine.Round.RemoveDeadPlayersFromList();
@@ -708,7 +752,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual(2, result.Count);
         }
         #endregion RemoveDeadPlayersFromList
 
