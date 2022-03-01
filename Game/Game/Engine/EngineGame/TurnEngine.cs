@@ -294,7 +294,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ApplyDamage(PlayerInfoModel Target)
         {
-            return true;
+            return base.ApplyDamage(Target);
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum CalculateAttackStatus(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            return HitStatusEnum.Unknown;
+            return base.CalculateAttackStatus(Attacker, Target);
         }
 
         /// <summary>
@@ -311,7 +311,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool CalculateExperience(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            return false;
+            return base.CalculateExperience(Attacker, Target);
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveIfDead(PlayerInfoModel Target)
         {
-            return false;
+            return base.RemoveIfDead(Target);
         }
 
         /// <summary>
@@ -331,20 +331,49 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool TargetDied(PlayerInfoModel Target)
         {
+            bool found;
+
             // Mark Status in output
+            EngineSettings.BattleMessagesModel.TurnMessageSpecial = " and causes death. ";
 
             // Removing the 
+            _ = EngineSettings.MapModel.RemovePlayerFromMap(Target);
 
             // INFO: Teams, Hookup your Boss if you have one...
 
             // Using a switch so in the future additional PlayerTypes can be added (Boss...)
-            // Add the Character to the killed list
+            switch (Target.PlayerType)
+            {
+                case PlayerTypeEnum.Character:
+                    // Add the Character to the killed list
+                    EngineSettings.BattleScore.CharacterAtDeathList += Target.FormatOutput() + "\n";
 
-            // Add one to the monsters killed count...
+                    EngineSettings.BattleScore.CharacterModelDeathList.Add(Target);
 
-            // Add the MonsterModel to the killed list
+                    _ = DropItems(Target);
 
-            return false;
+                    found = EngineSettings.CharacterList.Remove(EngineSettings.CharacterList.Find(m => m.Guid.Equals(Target.Guid)));
+                    found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
+
+                    return true;
+
+                case PlayerTypeEnum.Monster:
+                default:
+                    // Add one to the monsters killed count...
+                    EngineSettings.BattleScore.MonsterSlainNumber++;
+
+                    // Add the MonsterModel to the killed list
+                    EngineSettings.BattleScore.MonstersKilledList += Target.FormatOutput() + "\n";
+
+                    EngineSettings.BattleScore.MonsterModelDeathList.Add(Target);
+
+                    _ = DropItems(Target);
+
+                    found = EngineSettings.MonsterList.Remove(EngineSettings.MonsterList.Find(m => m.Guid.Equals(Target.Guid)));
+                    found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
+
+                    return true;
+            }
         }
 
         /// <summary>
