@@ -284,30 +284,75 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool TurnAsAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
+            // Check if Attacker or Target are null
+            if (Attacker == null)
+            {
+                return false;
+            }
+
+            if (Target == null)
+            {
+                return false;
+            }
+
             // Set Messages to empty
+            _ = EngineSettings.BattleMessagesModel.ClearMessages();
 
             // Do the Attack
+            _ = CalculateAttackStatus(Attacker, Target);
 
             // Hackathon
             // ?? Hackathon Scenario ?? 
 
             // See if the Battle Settings Overrides the Roll
+            EngineSettings.BattleMessagesModel.HitStatus = BattleSettingsOverride(Attacker);
 
             // Based on the Hit Status, what to do...
-            // It's a Miss
+            switch (EngineSettings.BattleMessagesModel.HitStatus)
+            {
+                case HitStatusEnum.Miss:
+                    // It's a Miss
 
-            // It's a Hit
+                    break;
 
-            //Calculate Damage
+                case HitStatusEnum.CriticalMiss:
+                    // It's a Critical Miss, so Bad things may happen
+                    _ = DetermineCriticalMissProblem(Attacker);
 
-            // Apply the Damage
+                    break;
 
-            // Check if Dead and Remove
+                case HitStatusEnum.CriticalHit:
+                case HitStatusEnum.Hit:
+                    // It's a Hit
 
-            // If it is a character apply the experience earned
+                    //Calculate Damage
+                    EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
 
-            // Battle Message 
-            return false;
+                    // If critical Hit, double the damage
+                    if (EngineSettings.BattleMessagesModel.HitStatus == HitStatusEnum.CriticalHit)
+                    {
+                        EngineSettings.BattleMessagesModel.DamageAmount *= 2;
+                    }
+
+                    // Apply the Damage
+                    _ = ApplyDamage(Target);
+
+                    EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
+
+                    // Check if Dead and Remove
+                    _ = RemoveIfDead(Target);
+
+                    // If it is a character apply the experience earned
+                    _ = CalculateExperience(Attacker, Target);
+
+                    break;
+            }
+
+            // Battle Message
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
+            Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
+
+            return true;
         }
 
         /// <summary>
