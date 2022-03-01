@@ -139,15 +139,31 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void TurnEngine_AttackChoice_Valid_Default_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+            var character = new PlayerInfoModel(new CharacterModel());
+            var monster = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    Speed = 1,
+                    Attack = 1,
+                    Defense = 1,
+                    Level = 1,
+                    CurrentHealth = 1,
+                    MonsterJob = MonsterJobEnum.Brute,
+                });
+
+            Engine.EngineSettings.PlayerList.Add(character);
+            Engine.EngineSettings.PlayerList.Add(monster);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             // Act
-            var result = Engine.Round.Turn.AttackChoice(new PlayerInfoModel());
+            var result = Engine.Round.Turn.AttackChoice(character);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(null, result);
+            Assert.AreEqual(monster, result);
         }
         #endregion AttackChoice
 
