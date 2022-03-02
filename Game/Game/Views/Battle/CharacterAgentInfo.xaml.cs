@@ -80,8 +80,17 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Select_Clicked(object sender, EventArgs e)
         {
+            // First character added to list
+            if (BattleEngineViewModel.Instance.PartyCharacterList.Count == 0)
+            {
+                BattleEngineViewModel.Instance.PartyCharacterList.Add(this.ViewModel.Data);
+
+                await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
+                await Navigation.PopAsync();
+            }
+
             // Check to avoid duplicates to the character list
-            if (BattleEngineViewModel.Instance.PartyCharacterList.Count > 0)
+            if (BattleEngineViewModel.Instance.PartyCharacterList.Count > 0 && BattleEngineViewModel.Instance.PartyCharacterList.Count < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
             {
                 bool isDuplicateCharacter = false;
                 foreach (var character in BattleEngineViewModel.Instance.PartyCharacterList)
@@ -96,17 +105,16 @@ namespace Game.Views
                 if (!isDuplicateCharacter)
                 {
                     BattleEngineViewModel.Instance.PartyCharacterList.Add(this.ViewModel.Data);
-                }
-            }
+                }               
 
-            // First character added to list
-            if (BattleEngineViewModel.Instance.PartyCharacterList.Count == 0)
+                await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
+                await Navigation.PopAsync();
+            }
+            else
             {
-                BattleEngineViewModel.Instance.PartyCharacterList.Add(this.ViewModel.Data);
-            }
-
-            await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
-            await Navigation.PopAsync();
+                DistinctErrorMessage.Text = "Maximum number of Characters reached";
+                DistinctErrorMessage.IsVisible = true;
+            }           
         }
 
         public void LeftImageButton_Clicked(object sender, EventArgs e)
