@@ -305,11 +305,14 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_CalculateAttackStatus_Valid_Default_Should_Pass()
         {
             // Arrange 
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
 
             // Act
             var result = Engine.Round.Turn.CalculateAttackStatus(new PlayerInfoModel(), new PlayerInfoModel());
 
             // Reset
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(HitStatusEnum.Hit, result);
