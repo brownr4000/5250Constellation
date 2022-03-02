@@ -21,7 +21,7 @@
             <Frame x:Name="NextMoveFrame" Style="{StaticResource BattleFieldFrame}">
                 <Grid HorizontalOptions="Center"
                                 WidthRequest="450"
-                                HeightRequest="150">
+                                HeightRequest="250">
                     <StackLayout Grid.Column="0" Grid.Row="0" Style="{StaticResource VerticalCenterStack}">
 
                         <Label x:Name="CharacterName" 
@@ -68,6 +68,7 @@
                     <StackLayout Grid.Column="1" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
 
                         <Button Text="Attack" Clicked="AttackButton_Clicked" x:Name="FightButton" Style="{StaticResource BattleFieldButtonStyle}"/>
+                        <Button Text="Take a break" Clicked="RelaxButton_Clicked" x:Name="RelaxButton" Style="{StaticResource BattleFieldButtonStyle}"/>
                         <Button Text="Move" Clicked="MoveButton_Clicked" x:Name="MoveButton" Style="{StaticResource BattleFieldButtonStyle}"/>
                         <Button Text="Abilities" Clicked="AbilitiesButton_Clicked" x:Name="AbilitiesButton" Style="{StaticResource BattleFieldButtonStyle}"/>
                     
@@ -75,7 +76,7 @@
 
                 </Grid>
             </Frame>
-
+                        
             <Frame x:Name="BattleSequenceFrame" Style="{StaticResource BattleSequenceFrame}">
                 <StackLayout Style="{StaticResource VerticalOnlyStack}">
                     <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
@@ -91,7 +92,19 @@
                     <Label x:Name="BattleGrammer" Style="{StaticResource ListSmallLabelStyle}"/>
 
                 </StackLayout>
-            </Frame>            
+            </Frame>
+
+            <Frame x:Name="BreakBattleSequenceFrame" Style="{StaticResource BattleSequenceFrame}">
+                <StackLayout Style="{StaticResource VerticalOnlyStack}">
+
+                    <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
+                        <Image x:Name="CurrentBreakCharacterImage" Style="{StaticResource ImageLargeStyle}"/>                       
+                    </StackLayout>
+
+                    <Label x:Name="BreakBattleGrammer" Style="{StaticResource BreakBattleLabelStyle}"/>
+                    
+                </StackLayout>
+            </Frame>
 
         </StackLayout>
     </ContentPage.Content>

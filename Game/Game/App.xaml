@@ -128,6 +128,17 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
+
+            <Style TargetType="Label"
+                x:Key="BreakBattleLabelStyle"
+                BasedOn="{StaticResource ListSmallLabelStyle}">
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="MaxLines" Value="3" />
+                <Setter Property="LineHeight" Value="1" />
+                <Setter Property="CharacterSpacing" Value="1" />
+                
+            </Style>
+
             <Style TargetType="Label"
                 x:Key="ListSmallFontSizeLabelStyle"
                 BasedOn="{StaticResource ListStyle}">
@@ -621,8 +632,8 @@
             <Style TargetType="Button" x:Key="BattleFieldButtonStyle"
                    BasedOn="{StaticResource ButtonStyle}">
                 <Setter Property="Margin" Value="50,0,0,0"/>
-                <Setter Property="WidthRequest" Value="200"/>
-                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="WidthRequest" Value="170"/>
+                <Setter Property="HeightRequest" Value="25"/>
             </Style>
 
             <!--Grid-->
@@ -889,7 +900,7 @@
             <Style TargetType="StackLayout"
                 x:Key="VerticalCenterWithSpacingHorizontalStack"
                    BasedOn="{StaticResource HorizontalCenterStack}">
-                <Setter Property="Spacing" Value="20" />
+                <Setter Property="Spacing" Value="10" />
                 <Setter Property="Padding" Value="10" />
                 <Setter Property="Orientation" Value="Vertical" />
             </Style>

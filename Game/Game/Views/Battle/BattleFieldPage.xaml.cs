@@ -3,11 +3,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Diagnostics;
-
+using Game.Engine.EngineBase;
+using Game.Engine.EngineKoenig;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Game.Views.Battle;
 using Game.Models;
+using Game.Engine.EngineModels;
 using Game.ViewModels;
 
 namespace Game.Views
@@ -37,6 +39,8 @@ namespace Game.Views
         // This uses the Instance so it can be shared with other Battle Pages as needed
         public BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
 
+        BattleEngine Engine = new BattleEngine();
+
         // Empty Constructor for UTs
         bool UnitTestSetting;
         public BattleFieldPage(bool UnitTest) { UnitTestSetting = UnitTest; }
@@ -50,6 +54,7 @@ namespace Game.Views
 
             BattleSequenceFrame.IsVisible = false;
             NextMoveFrame.IsVisible = false;
+            BreakBattleSequenceFrame.IsVisible = false;
 
             // Set initial State to Starting
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
@@ -59,9 +64,6 @@ namespace Game.Views
 
             // Create and Draw the Map
             _ = InitializeMapGrid();
-
-            // Start the Battle Engine
-           // _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
 
             // Populate the UI Map
             DrawMapGridInitialState();
@@ -121,6 +123,101 @@ namespace Game.Views
 
                 BattleGrammer.Text = CurrentCharacterData.Name + " hits monster " + CurrentMonsterSelectedData.Name;
             }           
+        }
+
+        /// <summary>
+        /// Break Action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RelaxButton_Clicked(object sender, EventArgs e)
+        {
+            RelaxExample();
+            BreakBattleSequenceFrame.IsVisible = true;
+            NextMoveFrame.IsVisible = false;
+        }
+
+        /// <summary>
+        /// Next Attack Example
+        /// 
+        /// This code example follows the rule of
+        /// 
+        /// Auto Select Attacker
+        /// Auto Select Defender
+        /// 
+        /// Do the Attack and show the result
+        /// 
+        /// So the pattern is Click Next, Next, Next until game is over
+        /// 
+        /// </summary>
+        public void RelaxExample()
+        {
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Relax;           
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = CurrentCharacterData;
+
+            Engine.Round.Turn.TakeTurn(CurrentCharacterData);
+
+            CurrentBreakCharacterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
+
+            // Output the Message of what happened.
+            GameMessage();
+
+            // Get the turn, set the current player and attacker to match
+            SetAttackerAndDefender();
+        }
+
+        /// <summary>
+        /// Decide The Turn and who to Attack
+        /// </summary>
+        public void SetAttackerAndDefender()
+        {
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+
+            switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
+            {
+                case PlayerTypeEnum.Character:
+                    // User would select who to attack
+
+                    // for now just auto selecting
+                    _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    break;
+
+                case PlayerTypeEnum.Monster:
+                default:
+
+                    // Monsters turn, so auto pick a Character to Attack
+                    _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Builds up the output message
+        /// </summary>
+        /// <param name="message"></param>
+        public void GameMessage()
+        {
+            // Output The Message that happened.
+            BattleGrammer.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage, BattleGrammer.Text);
+
+            Debug.WriteLine(BattleGrammer.Text);
+
+            if (!string.IsNullOrEmpty(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage))
+            {
+                BattleGrammer.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage, BattleGrammer.Text);
+            }
+
+            BreakBattleGrammer.Text = BattleGrammer.Text;
+
+            //if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction == ActionEnum.Relax)
+            //{
+            //    //string breakText = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name +
+            //    //     " is taking a break this turn and health increased by 2 to: " +
+            //    //     BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth;
+
+            //    //BreakBattleGrammer.Text = string.Format("{0} \n{1}", breakText, BattleGrammer.Text);
+            //    BreakBattleGrammer.Text = BattleGrammer.Text;
+            //}
         }
 
         /// <summary>
@@ -503,6 +600,8 @@ namespace Game.Views
         public bool SetSelectedCharacter(MapModelLocation data)
         {
             NextMoveFrame.IsVisible = true;
+            BattleSequenceFrame.IsVisible = false;
+            BreakBattleSequenceFrame.IsVisible = false;
 
             //Setting the ViewModel with current character details
             CurrentCharacterData = new PlayerInfoModel();
