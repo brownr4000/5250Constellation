@@ -345,5 +345,90 @@ namespace Game.Models
         {
             return ((int)Math.Sqrt(Math.Pow((x1 - x2), 2) + Math.Pow((y1 - y2), 2)));
         }
+
+        /// <summary>
+        /// Determines a new location from
+        /// </summary>
+        /// <param name="Start"></param>
+        /// <param name="Range"></param>
+        /// <returns></returns>
+        public MapModelLocation ReverseDistance(MapModelLocation Start, int Range)
+        {
+            MapModelLocation Result = new MapModelLocation();
+
+            int x1 = Start.Column;
+            int y1 = Start.Row;
+
+            int x2 = Math.Abs(x1 - Range);
+            int y2 = Math.Abs(y1 - Range);
+
+            Result.Column = x2;
+
+            Result.Row = y2;
+
+            Result = SpeedClosestEmptyLocation(Result, Range);
+
+            return Result;
+        }
+
+        /// <summary>
+        /// Determine if the Attacker can move to the Defender in one action
+        /// using Speed as a movement value
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <param name="Defender"></param>
+        /// <returns></returns>
+        public bool IsTargetInSpeed(PlayerInfoModel Attacker, PlayerInfoModel Defender)
+        {
+            var locationAttacker = GetLocationForPlayer(Attacker);
+            var locationDefender = GetLocationForPlayer(Defender);
+
+            if (locationAttacker == null)
+            {
+                return false;
+            }
+
+            if (locationDefender == null)
+            {
+                return false;
+            }
+
+            // Get X distance in absolute value
+            var distance = Math.Abs(CalculateDistance(locationAttacker, locationDefender));
+
+            var AttackerSpeed = Attacker.GetSpeed();
+
+            // Can Reach on X?
+            if (distance <= AttackerSpeed)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Walk the Map and Find the Location that is close to the target based on Speed
+        /// </summary>
+        /// <param name="Target"></param>
+        /// <returns></returns>
+        public MapModelLocation SpeedClosestEmptyLocation(MapModelLocation Target, int Speed)
+        {
+            MapModelLocation Result = null;
+
+            int LowestDistance = Speed;
+
+            foreach (var data in GetEmptyLocations())
+            {
+                var distance = CalculateDistance(data, Target);
+                if (distance < LowestDistance)
+                {
+                    Result = data;
+                    LowestDistance = distance;
+                }
+            }
+
+            return Result;
+        }
     }
 }
