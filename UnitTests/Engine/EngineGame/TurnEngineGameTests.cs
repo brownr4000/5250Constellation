@@ -240,14 +240,15 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_BattleSettingsOverrideHitStatusEnum_Valid_Default_Should_Pass()
         {
             // Arrange 
+            Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Hit;
 
             // Act
-            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Unknown);
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Miss);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(HitStatusEnum.Unknown, result);
+            Assert.AreEqual(HitStatusEnum.Miss, result);
         }
         #endregion BattleSettingsOverrideHitStatusEnum
 
