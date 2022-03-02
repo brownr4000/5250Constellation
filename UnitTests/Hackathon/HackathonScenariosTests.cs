@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Game.ViewModels;
 using Game.Helpers;
 using Game.Engine.EngineModels;
+using Game.Engine.EngineGame;
 
 namespace Scenario
 {
@@ -13,7 +14,7 @@ namespace Scenario
     {
         #region TestSetup
         readonly BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
-        BattleEngine Engine = new BattleEngine();
+        Game.Engine.EngineKoenig.BattleEngine Engine = new Game.Engine.EngineKoenig.BattleEngine();
 
         [SetUp]
         public void Setup()
@@ -340,5 +341,86 @@ namespace Scenario
             Assert.AreEqual(7, EngineViewModel.Engine.EngineSettings.CharacterList.Find(m => m.Name.Equals("Doug")).CurrentHealth);
         }
         #endregion Scenario33
+
+        #region Scenario34
+        [Test]
+        public void HakathonScenario_Scenario_34_Valid_Default_Should_Pass()
+        {
+            /*
+            * Scenario Number:
+            *      # 34
+            *
+            * Description:
+            *      Move based on speed
+            *      Limit the distance a player can move to their speed attribute.
+            *      If a player has speed of 3, then they can move 3 squares, a speed of 6 can move 6 etc.
+            *
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes:
+            *      Added ReverseDistance, IsTargetInSpeed and SpeedClosestEmptyLocation methods to EngineGame.MapModel
+            *      Modified MoveAsAction in EngineGame.TurnEngine
+            *
+            * Test Algrorithm:
+            *      Create an new Character with Speed = 1
+            *      Create a new Monster with Speed = 2
+            *      Monster takes first action by calling MoveAsAction
+            *
+            * Test Conditions:
+            *      The starting location of the Monster
+            *      The ending location of the Monster
+            *      The calculated distance between the two locations
+            *
+            * Validation:
+            *      Verify that the starting and ending locations are different
+            *      Verify that the calculated distance is the same as the Monster's Speed Attribute
+            *
+            */
+
+            // Arrange
+            Game.Engine.EngineGame.BattleEngine Train = new Game.Engine.EngineGame.BattleEngine();
+
+            Train.EngineSettings.MaxNumberPartyCharacters = 1;
+            Train.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            Train.EngineSettings.CurrentAction = ActionEnum.Move;
+
+            var slowpoke = new PlayerInfoModel(
+                new CharacterModel
+                {
+                    Speed = 1,
+                    Level = 1,
+                    CurrentHealth = 10,
+                    Name = "slowpoke",
+                });
+
+            var fastMonster = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    Speed = 2,
+                    Level = 1,
+                    CurrentHealth = 10,
+                });
+
+            Train.EngineSettings.CharacterList.Add(slowpoke);
+            Train.EngineSettings.MonsterList.Add(fastMonster);
+
+            _ = Train.EngineSettings.MapModel.PopulateMapModel(Train.Round.MakePlayerList());
+
+            var StartLoc = Train.EngineSettings.MapModel.GetLocationForPlayer(fastMonster);
+
+            // Act
+            Train.Round.Turn.TakeTurn(fastMonster);
+
+            var result = Train.EngineSettings.MapModel.GetLocationForPlayer(fastMonster);
+
+            var distance = Train.EngineSettings.MapModel.CalculateDistance(StartLoc, result);
+
+            // Reset
+            Train.EngineSettings.PlayerList.Clear();
+
+            // Assert
+            Assert.AreNotEqual(StartLoc, result);
+            Assert.AreEqual(distance, fastMonster.Speed);
+        }
+        #endregion Scenario34
     }
 }
