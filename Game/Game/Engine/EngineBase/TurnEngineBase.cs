@@ -258,7 +258,7 @@ namespace Game.Engine.EngineBase
         /// <returns></returns>
         public virtual bool UseRelax(PlayerInfoModel Attacker)
         {
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Takes a break" + EngineSettings.CurrentActionAbility.ToMessage();
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Takes a break";
             Attacker.CurrentHealth += 2;
             return true;
         }
