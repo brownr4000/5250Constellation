@@ -188,12 +188,7 @@ namespace Game.Engine.EngineKoenig
                 // No ability available
                 return false;
             }
-
-            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.Relax)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
-            }
-
+            
             // Don't try
             return false;
         }
