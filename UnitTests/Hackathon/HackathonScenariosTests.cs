@@ -185,13 +185,15 @@ namespace Scenario
             * 
             * Validation:
             *      Verify Battle Returned True
-            *      Verify Doug is not in the Player List
+            *      Verify Doug's attack was a CriticalMiss
             *      Verify Round Count is 1
             *  
             */
 
             // Arrange
-            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+            Game.Engine.EngineGame.BattleEngine Train = new Game.Engine.EngineGame.BattleEngine();
+            
+            Train.EngineSettings.MaxNumberPartyCharacters = 1;
 
             var Doug = new PlayerInfoModel(
                     new CharacterModel 
@@ -204,7 +206,7 @@ namespace Scenario
                         Name = "Doug",
                     });
 
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(Doug);
+            Train.EngineSettings.CharacterList.Add(Doug);
 
             var Lisa = new PlayerInfoModel(
                     new MonsterModel
@@ -217,20 +219,22 @@ namespace Scenario
                         Name = "Lisa",
                     });
 
-            EngineViewModel.Engine.EngineSettings.MonsterList.Add(Lisa);
+            Train.EngineSettings.MonsterList.Add(Lisa);
 
             // Monsters always hit
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.CriticalHit;
+            Train.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.CriticalHit;
 
             // Act
-            var status = EngineViewModel.Engine.Round.Turn.TurnAsAttack(Doug, Lisa);
+            var status = Train.Round.Turn.TurnAsAttack(Doug, Lisa);
+
+            var result = Train.EngineSettings.BattleSettingsModel.CharacterHitEnum;
 
             // Reset
 
             // Assert
             Assert.AreEqual(true, status);
-            Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Doug")));
-            Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
+            Assert.AreEqual(HitStatusEnum.CriticalMiss, result);
+            Assert.AreEqual(1, Train.EngineSettings.BattleScore.RoundCount);
         }
         #endregion Scenario2
 
@@ -356,7 +360,7 @@ namespace Scenario
             *      If a player has speed of 3, then they can move 3 squares, a speed of 6 can move 6 etc.
             *
             * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes:
-            *      Added ReverseDistance, IsTargetInSpeed and SpeedClosestEmptyLocation methods to EngineGame.MapModel
+            *      Added ReverseDistance, IsTargetInSpeed and SpeedClosestEmptyLocation methods to MapModel
             *      Modified MoveAsAction in EngineGame.TurnEngine
             *
             * Test Algrorithm:
