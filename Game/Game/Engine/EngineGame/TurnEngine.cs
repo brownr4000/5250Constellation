@@ -167,9 +167,13 @@ namespace Game.Engine.EngineGame
                 }
 
                 // Find Location Nearest to Defender that is Open.
+                var openSquare = EngineSettings.MapModel.ReverseDistance(locationAttacker, Attacker.Speed);
 
                 // Get the Open Locations
-                var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+                if (EngineSettings.MapModel.IsTargetInSpeed(Attacker, EngineSettings.CurrentDefender))
+                {
+                    openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+                }
 
                 // Format a message to show
                 Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
