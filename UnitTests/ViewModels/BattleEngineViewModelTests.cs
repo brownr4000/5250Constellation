@@ -119,5 +119,22 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.IsNotNull(result.DatabaseMonsterList);
         }
+
+        [Test]
+        public void BattleEngineViewModel_DatabaseMonsterList_Set_Default_Should_Pass()
+        {
+            // Arrange
+            var result = ViewModel;
+
+            var countBefore = result.DatabaseMonsterList.Count;
+
+            // Act
+            result.DatabaseMonsterList = new ObservableCollection<MonsterModel>();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result.DatabaseMonsterList.Count);
+        }
     }
 }
