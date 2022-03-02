@@ -217,9 +217,16 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_UseAbility_Valid_Default_Should_Pass()
         {
             // Arrange 
+            var player = new PlayerInfoModel(
+                new CharacterModel 
+                { 
+                    Speed = 1,
+                    CurrentHealth = 2,
+                    Job = CharacterJobEnum.Fighter,
+                });
 
             // Act
-            var result = Engine.Round.Turn.UseAbility(null);
+            var result = Engine.Round.Turn.UseAbility(player);
 
             // Reset
 
