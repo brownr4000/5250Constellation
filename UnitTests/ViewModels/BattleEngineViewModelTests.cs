@@ -105,5 +105,19 @@ namespace UnitTests.ViewModels
             Assert.AreEqual(0, result.DatabaseCharacterList.Count);
             Assert.AreEqual(0, result.PartyCharacterList.Count);
         }
+
+        [Test]
+        public void BattleEngineViewModel_DatabaseMonsterList_Get_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel;
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result.DatabaseMonsterList);
+        }
     }
 }
