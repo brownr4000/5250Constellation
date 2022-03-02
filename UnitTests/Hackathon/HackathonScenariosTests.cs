@@ -3,6 +3,8 @@
 using Game.Models;
 using System.Threading.Tasks;
 using Game.ViewModels;
+using Game.Helpers;
+using Game.Engine.EngineModels;
 
 namespace Scenario
 {
@@ -217,5 +219,61 @@ namespace Scenario
             Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
         #endregion Scenario2
+
+
+        #region Scenario4
+        [Test]
+        public async Task HakathonScenario_Scenario_4_Valid_Default_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      4
+            *      
+            * Description: 
+            *      <Describe the scenario>
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      <List Files Changed>
+            *      <List Classes Changed>
+            *      <List Methods Changed>
+            * 
+            * Test Algrorithm:
+            *      <Step by step how to validate this change>
+            * 
+            * Test Conditions:
+            *      <List the different test conditions to make>
+            * 
+            * Validation:
+            *      <List how to validate this change>
+            *  
+            */
+
+            // Arrange
+
+            var AttackScore = 1;
+            var DefenseScore = 100;
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
+
+            var oldSeting = EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit;
+            EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit = true;
+
+            // Act
+            //var roll = DiceHelper.RollDice(1, 1);
+            //var message = EngineViewModel.Engine.EngineSettings.BattleMessagesModel.GetDamageMessage();
+            //var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
+            var status = EngineViewModel.Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+            EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit = oldSeting;
+
+            // Assert
+            //Assert.AreEqual(true, result);
+            Assert.AreEqual(HitStatusEnum.CriticalHit, status);
+            Assert.AreEqual(HitStatusEnum.CriticalHit.ToMessage(),status.ToMessage());
+        }
+        #endregion Scenario4
     }
 }
