@@ -76,6 +76,10 @@ namespace Game.Engine.EngineKoenig
                     result = UseAbility(Attacker);
                     break;
 
+                case ActionEnum.Relax:
+                    result = UseRelax(Attacker);
+                    break;
+
                 case ActionEnum.Move:
                     result = MoveAsTurn(Attacker);
                     break;
@@ -183,6 +187,11 @@ namespace Game.Engine.EngineKoenig
 
                 // No ability available
                 return false;
+            }
+
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.Relax)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
             }
 
             // Don't try
@@ -551,6 +560,14 @@ namespace Game.Engine.EngineKoenig
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
             return base.UseAbility(Attacker);
+        }
+
+        /// <summary>
+        /// Take a break
+        /// </summary>
+        public override bool UseRelax(PlayerInfoModel Attacker)
+        {
+            return base.UseRelax(Attacker);
         }
 
         /// <summary>

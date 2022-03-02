@@ -11,6 +11,7 @@ namespace Game.Engine.EngineInterfaces
         bool MoveAsTurn(PlayerInfoModel Attacker);
         bool ChooseToUseAbility(PlayerInfoModel Attacker);
         bool UseAbility(PlayerInfoModel Attacker);
+        bool UseRelax(PlayerInfoModel Attacker);
         bool Attack(PlayerInfoModel Attacker);
         PlayerInfoModel AttackChoice(PlayerInfoModel data);
         PlayerInfoModel SelectCharacterToAttack();

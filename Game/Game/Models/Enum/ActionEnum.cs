@@ -16,7 +16,10 @@
         Move = 10,
 
         // Ability
-        Ability = 20
+        Ability = 20,
+
+        // Break
+        Relax = 21
     }
 
     /// <summary>

@@ -79,6 +79,10 @@ namespace Game.Engine.EngineBase
                     result = UseAbility(Attacker);
                     break;
 
+                case ActionEnum.Relax:
+                    result = UseRelax(Attacker);
+                    break;
+
                 case ActionEnum.Move:
                     result = MoveAsTurn(Attacker);
                     break;
@@ -245,6 +249,18 @@ namespace Game.Engine.EngineBase
         {
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
             return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
+        }
+
+        /// <summary>
+        /// Take a break
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public virtual bool UseRelax(PlayerInfoModel Attacker)
+        {
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Takes a break" + EngineSettings.CurrentActionAbility.ToMessage();
+            Attacker.CurrentHealth += 2;
+            return true;
         }
 
         /// <summary>
