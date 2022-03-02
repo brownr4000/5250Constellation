@@ -155,7 +155,7 @@ namespace Scenario
 
         #region Scenario2
         [Test]
-        public async Task HakathonScenario_Scenario_2_Valid_Default_Should_Pass()
+        public void HakathonScenario_Scenario_2_Valid_Default_Should_Pass()
         {
             /* 
             * Scenario Number:  
@@ -219,7 +219,7 @@ namespace Scenario
             EngineViewModel.Engine.EngineSettings.MonsterList.Add(Lisa);
 
             // Monsters always hit
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.CriticalHit;
 
             // Act
             var status = EngineViewModel.Engine.Round.Turn.TurnAsAttack(Doug, Lisa);
