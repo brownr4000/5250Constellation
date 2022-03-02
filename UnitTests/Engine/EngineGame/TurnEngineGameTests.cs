@@ -257,6 +257,7 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_BattleSettingsOverride_Valid_Default_Should_Pass()
         {
             // Arrange 
+            Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Miss;
 
             // Act
             var result = Engine.Round.Turn.BattleSettingsOverride(new PlayerInfoModel());
@@ -264,7 +265,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(HitStatusEnum.Unknown, result);
+            Assert.AreEqual(HitStatusEnum.Miss, result);
         }
         #endregion BattleSettingsOverride
 
