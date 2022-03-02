@@ -305,6 +305,7 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_CalculateAttackStatus_Valid_Default_Should_Pass()
         {
             // Arrange 
+            // Force roll so the result will be constant
             _ = DiceHelper.EnableForcedRolls();
             _ = DiceHelper.SetForcedRollValue(20);
 
