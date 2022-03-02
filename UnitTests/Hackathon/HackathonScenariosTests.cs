@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-
+using Game.Engine.EngineKoenig;
 using Game.Models;
 using System.Threading.Tasks;
 using Game.ViewModels;
@@ -13,6 +13,7 @@ namespace Scenario
     {
         #region TestSetup
         readonly BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
+        BattleEngine Engine = new BattleEngine();
 
         [SetUp]
         public void Setup()
@@ -235,7 +236,7 @@ namespace Scenario
 
         #region Scenario4
         [Test]
-        public async Task HakathonScenario_Scenario_4_Valid_Default_Should_Pass()
+        public void HakathonScenario_Scenario_4_Valid_Default_Should_Pass()
         {
             /* 
             * Scenario Number:  
@@ -284,5 +285,60 @@ namespace Scenario
             Assert.AreEqual(HitStatusEnum.CriticalHit.ToMessage(),status.ToMessage());
         }
         #endregion Scenario4
+
+        #region Scenario33
+        [Test]
+        public void HackathonScenario_Scenario_33_Valid_Default_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      33
+            *      
+            * Description: 
+            *      Allow characters to choose to do nothing for their turn. Resting restores 2 health per rest.
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Enum: ActionEnum
+            *      Class: TurnEngineBase.cs, ITurnEngineInterface.cs, TurnEngine.cs
+            *      Methods: UseRelax, TakeTurn
+            * 
+            * Test Algrorithm:
+            *      Create a character Doug
+            *      Set the current Action to Relax
+            *      Call Turn Engine to Take Turn
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify the result is true
+            *      Verify the character's current health increase by 2
+            */
+
+            // Arrange
+            EngineViewModel.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var Doug = new PlayerInfoModel(
+                    new CharacterModel
+                    {
+                        Speed = 5,
+                        Level = 1,
+                        CurrentHealth = 5,
+                        ExperienceTotal = 5,
+                        ExperienceRemaining = 1,
+                        Name = "Doug",
+                    });
+
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(Doug);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Relax;
+
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(Doug);
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(7, EngineViewModel.Engine.EngineSettings.CharacterList.Find(m => m.Name.Equals("Doug")).CurrentHealth);
+        }
+        #endregion Scenario33
     }
 }
