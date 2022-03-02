@@ -164,12 +164,17 @@ namespace Scenario
             *      Make a character called Doug, Doug always misses
             * 
             * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *       No Code changes requied 
+            *       Changes in TurnEngine.cs method TurnAsAtack()
             * 
             * Test Algrorithm:
             *      Create a character called Doug
             *      Set speed to 5
             *      Set current health to 10
+            *      
+            *      Create a monster called Lisa
+            *      set speed to 5
+            *      set current health to 10
+            *      
             *      set Doug to always miss
             *      set Monster to always hit
             * 
@@ -199,22 +204,29 @@ namespace Scenario
 
             EngineViewModel.Engine.EngineSettings.CharacterList.Add(Doug);
 
-            // Doug always miss
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Miss;
+            var Lisa = new PlayerInfoModel(
+                    new MonsterModel
+                    {
+                        Speed = 5,
+                        Level = 1,
+                        CurrentHealth = 10,
+                        ExperienceTotal = 5,
+                        ExperienceRemaining = 1,
+                        Name = "Lisa",
+                    });
+
+            EngineViewModel.Engine.EngineSettings.MonsterList.Add(Lisa);
 
             // Monsters always hit
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
 
             // Act
-            var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
+            var status = EngineViewModel.Engine.Round.Turn.TurnAsAttack(Doug, Lisa);
 
             // Reset
 
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
-
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(true, status);
             Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Doug")));
             Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
