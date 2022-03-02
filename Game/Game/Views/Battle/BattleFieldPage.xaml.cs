@@ -208,16 +208,6 @@ namespace Game.Views
             }
 
             BreakBattleGrammer.Text = BattleGrammer.Text;
-
-            //if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction == ActionEnum.Relax)
-            //{
-            //    //string breakText = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name +
-            //    //     " is taking a break this turn and health increased by 2 to: " +
-            //    //     BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth;
-
-            //    //BreakBattleGrammer.Text = string.Format("{0} \n{1}", breakText, BattleGrammer.Text);
-            //    BreakBattleGrammer.Text = BattleGrammer.Text;
-            //}
         }
 
         /// <summary>
