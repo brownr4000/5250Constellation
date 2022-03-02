@@ -261,9 +261,6 @@ namespace Scenario
             EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit = true;
 
             // Act
-            //var roll = DiceHelper.RollDice(1, 1);
-            //var message = EngineViewModel.Engine.EngineSettings.BattleMessagesModel.GetDamageMessage();
-            //var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
             var status = EngineViewModel.Engine.Round.Turn.RollToHitTarget(AttackScore, DefenseScore);
 
             // Reset
@@ -271,7 +268,6 @@ namespace Scenario
             EngineSettingsModel.Instance.BattleSettingsModel.AllowCriticalHit = oldSeting;
 
             // Assert
-            //Assert.AreEqual(true, result);
             Assert.AreEqual(HitStatusEnum.CriticalHit, status);
             Assert.AreEqual(HitStatusEnum.CriticalHit.ToMessage(),status.ToMessage());
         }
