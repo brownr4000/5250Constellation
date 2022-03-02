@@ -230,21 +230,22 @@ namespace Scenario
             *      4
             *      
             * Description: 
-            *      <Describe the scenario>
+            *      The attacker will automatically hit and the window will return the message to that a critical hit happened
             * 
             * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *      <List Files Changed>
-            *      <List Classes Changed>
-            *      <List Methods Changed>
+            *      No code change required
             * 
             * Test Algrorithm:
-            *      <Step by step how to validate this change>
+            *      set the AttackScore to 1
+            *      set the DefenseScore to 100
+            *      EnableForecedRolls and set the forced roll value to 20
             * 
             * Test Conditions:
-            *      <List the different test conditions to make>
+            *      Default condition is sufficient
             * 
             * Validation:
-            *      <List how to validate this change>
+            *      Verify the HitStatusEnum is CriticalHit
+            *      Verify the HitStatusEnum message is " hits really hard "
             *  
             */
 
