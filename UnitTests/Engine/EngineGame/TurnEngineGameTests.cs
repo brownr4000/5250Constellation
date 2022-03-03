@@ -401,12 +401,12 @@ namespace UnitTests.Engine.EngineGame
             // Arrange 
 
             // Act
-            var result = Engine.Round.Turn.TurnAsAttack(new PlayerInfoModel(), new PlayerInfoModel());
+            var result = Engine.Round.Turn.TurnAsAttack(new PlayerInfoModel(new CharacterModel()), new PlayerInfoModel(new MonsterModel()));
 
             // Reset
 
             // Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
         #endregion TurnAsAttack
 
