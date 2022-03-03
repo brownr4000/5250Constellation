@@ -616,7 +616,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MapModel_IsTargetInSpeed_In_Should_Return_True()
+        public void MapModel_IsTargetInSpeed_Valid_Should_Return_True()
         {
             // Arrange
             var map = new MapModel();
@@ -649,6 +649,23 @@ namespace UnitTests.Models
             // Assert 
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void MapModel_IsTargetInSpeed_Invalid_Should_Return_True()
+        {
+            // Arrange
+            var map = new MapModel();
+
+
+            // Act
+            var result = map.IsTargetInSpeed(null, null);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(false, result);
+        }
+
 
         [Test]
         public void MapModel_IsTargetInRange_InValid_Attacker_Should_Fail()
