@@ -113,17 +113,91 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-            if(CurrentMonsterSelectedData != null)
-            {
                 BattleSequenceFrame.IsVisible = true;
                 NextMoveFrame.IsVisible = false;
 
-                CurrentCharacterImage.Source = CurrentCharacterData.ImageURI;
-                CurrentMonsterImage.Source = CurrentMonsterSelectedData.ImageURI;
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = CurrentCharacterData;
 
-                BattleGrammer.Text = CurrentCharacterData.Name + " hits monster " + CurrentMonsterSelectedData.Name;
-            }           
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+
+                // Get the turn, set the current player and attacker to match
+                SetAttackerAndDefender();
+                
+                if(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
+                {
+                    CurrentCharacterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
+                    CurrentMonsterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
+                }
+                else
+                {
+                    CurrentMonsterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
+                    CurrentCharacterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
+                }                
+
+                // Hold the current state
+                var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+
+                // Output the Message of what happened.
+                GameMessage();
+
+                // Show the outcome on the Board
+               // DrawGameAttackerDefenderBoard();
+
+                if (RoundCondition == RoundEnum.NewRound)
+                {
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+
+                    // Pause
+                    _ = Task.Delay(WaitTime);
+
+                    Debug.WriteLine("New Round");
+
+                    // Show the Round Over, after that is cleared, it will show the New Round Dialog
+                    ShowModalRoundOverPage();
+                    return;
+                }
+
+                // Check for Game Over
+                if (RoundCondition == RoundEnum.GameOver)
+                {
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+                    // Wrap up
+                    _ = BattleEngineViewModel.Instance.Engine.EndBattle();
+
+                    // Pause
+                    _ = Task.Delay(WaitTime);
+
+                    Debug.WriteLine("Game Over");
+
+                    GameOver();
+                    return;
+                }        
         }
+
+        /// <summary>
+        /// Game is over
+        /// Show Buttons
+        /// Clean up the Engine
+        /// Show the Score
+        /// Clear the Board
+        /// </summary>
+        public void GameOver()
+        {
+            // Save the Score to the Score View Model, by sending a message to it.
+            var Score = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore;
+            MessagingCenter.Send(this, "AddData", Score);
+        }     
+
+        /// <summary>
+        /// Show the Round Over page
+        /// Round Over is where characters get items
+        /// </summary>
+        public async void ShowModalRoundOverPage()
+        {
+           // ShowBattleMode();
+            await Navigation.PushModalAsync(new RoundOverPage());
+        }      
 
         /// <summary>
         /// Break Action
@@ -170,16 +244,18 @@ namespace Game.Views
         /// Decide The Turn and who to Attack
         /// </summary>
         public void SetAttackerAndDefender()
-        {
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+        {            
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+            var player = BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn();
 
-            switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
+            switch (player.PlayerType)
             {
                 case PlayerTypeEnum.Character:
                     // User would select who to attack
 
                     // for now just auto selecting
                     _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+
                     break;
 
                 case PlayerTypeEnum.Monster:

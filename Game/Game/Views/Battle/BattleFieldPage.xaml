@@ -89,7 +89,7 @@
                         <Image x:Name="CurrentMonsterImage" Style="{StaticResource ImageLargeStyle}"/>
                     </StackLayout>
 
-                    <Label x:Name="BattleGrammer" Style="{StaticResource ListSmallLabelStyle}"/>
+                    <Label x:Name="BattleGrammer" Style="{StaticResource BreakBattleLabelStyle}"/>
 
                 </StackLayout>
             </Frame>
