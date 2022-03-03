@@ -651,7 +651,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MapModel_IsTargetInSpeed_Invalid_Should_Return_True()
+        public void MapModel_IsTargetInSpeed_locationAttacker_Invalid_Should_Return_True()
         {
             // Arrange
             var map = new MapModel();
