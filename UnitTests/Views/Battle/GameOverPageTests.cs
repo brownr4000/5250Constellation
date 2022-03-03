@@ -57,5 +57,18 @@ namespace UnitTests.Views.Battle
             // Assert
             Assert.IsNotNull(result);
         }
+
+        [Test]
+        public void GameOverPage_ViewResult_Clicked_Default_Should_Pass()
+        {
+
+            // Act
+            page.ViewResult_Clicked(null,null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
