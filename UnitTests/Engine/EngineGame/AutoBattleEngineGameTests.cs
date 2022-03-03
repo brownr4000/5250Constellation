@@ -83,7 +83,7 @@ namespace UnitTests.Engine.EngineGame
             //Reset
 
             //Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
