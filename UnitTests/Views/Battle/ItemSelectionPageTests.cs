@@ -31,9 +31,9 @@ namespace UnitTests.Views.Battle
             //This is your App.xaml and App.xaml.cs, which can have resources, etc.
             app = new App();
             Application.Current = app;
-            List<ItemModel> itemList = new List<ItemModel>();
+            //List<ItemModel> itemList = new List<ItemModel>();
 
-            page = new ItemSelectionPage(itemList);
+            page = new ItemSelectionPage();
 
         }
 

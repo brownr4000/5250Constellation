@@ -48,31 +48,31 @@ namespace UnitTests.Views
             Assert.IsNotNull(result);
         }
 
-        [Test]
-        public void PickItemsPage_CancelButton_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-            // Act
-            page.Cancel_Clicked(null, null);
+        //[Test]
+        //public void PickItemsPage_CancelButton_Clicked_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    // Act
+        //    page.Cancel_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void PickItemsPage_Protect_Clicked_Default_Should_Pass() 
-        {
-            // Arrange
+        //[Test]
+        //public void PickItemsPage_Protect_Clicked_Default_Should_Pass() 
+        //{
+        //    // Arrange
 
-            // Act
-            page.Protect_Clicked(null, null);
+        //    // Act
+        //    page.Protect_Clicked(null, null);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
     }
 }

@@ -5,7 +5,7 @@
              Title="Pick Your Weapon!"
              BackgroundImageSource="battle_background.png">
 
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <ScrollView VerticalScrollBarVisibility="Never">
             <StackLayout Style="{StaticResource VerticalStack}">
 
@@ -33,5 +33,5 @@
             </StackLayout>
         </ScrollView>
 
-    </ContentPage.Content>
+    </ContentPage.Content>-->
 </ContentPage>

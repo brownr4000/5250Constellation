@@ -23,7 +23,7 @@ namespace Game.Views.Battle
 
         // The character
 
-        public List<ItemModel> ItemList { get; }
+        //public List<ItemModel> ItemList { get; }
 
         //// Item index variable, to load first item
         //public int itemImageIndex = 0;
@@ -31,7 +31,8 @@ namespace Game.Views.Battle
         ////Hold a copy of data
         //public ItemModel DataCopy;
 
-        public ItemSelectionPage(List<ItemModel> itemList)
+        //public ItemSelectionPage(List<ItemModel> itemList)
+        public ItemSelectionPage()
         {
             InitializeComponent();
 
