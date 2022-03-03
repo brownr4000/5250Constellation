@@ -12,6 +12,11 @@ namespace Game.Views.Battle
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GameOverPage : ContentPage
     {
+
+        // Empty Constructor for UTs
+        bool UnitTestSetting;
+        public GameOverPage(bool UnitTest) { UnitTestSetting = UnitTest; }
+
         public GameOverPage()
         {
             InitializeComponent();
