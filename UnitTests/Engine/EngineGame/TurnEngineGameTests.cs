@@ -524,6 +524,8 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_RollToHitTarget_Valid_Default_Should_Pass()
         {
             // Arrange 
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = Engine.Round.Turn.RollToHitTarget(1,1);
@@ -531,7 +533,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(HitStatusEnum.Hit, result);
+            Assert.AreEqual(HitStatusEnum.Miss, result);
         }
         #endregion RollToHitTarget
 

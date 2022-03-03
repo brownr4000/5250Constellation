@@ -55,6 +55,9 @@ namespace Scenario
 
             AutoBattle.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
 
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            AutoBattle.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
+
             var CharacterPlayerMike = new PlayerInfoModel(
                             new CharacterModel
                             {
@@ -71,9 +74,18 @@ namespace Scenario
 
 
             // Add Monsters
+            var monster = new PlayerInfoModel(
+                            new MonsterModel
+                            {
+                                Speed = 1,
+                                Level = 10,
+                                CurrentHealth = 11,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Leon",
+                            });
 
-            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
-            AutoBattle.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
+            AutoBattle.Battle.EngineSettings.MonsterList.Add(monster);
 
             //Act
             var result = await AutoBattle.RunAutoBattle();
