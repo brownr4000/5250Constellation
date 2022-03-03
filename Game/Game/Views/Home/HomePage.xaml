@@ -13,7 +13,7 @@
 
                 <StackLayout Style="{StaticResource HorizontalCenterStack}">
                     <Image
-                         Source="Logo.png"
+                         Source="Battle_Of_Cosmos.png"
                          Style="{StaticResource ImageLargeStyle}"/>
                 
                 </StackLayout>
