@@ -21,8 +21,19 @@
         <StackLayout Style="{StaticResource HorizontalCenterStack}">
             <ScrollView>
                 <StackLayout Style="{StaticResource VerticalCenterStack}">
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                        <ImageButton Source="left_arrow.png"
+                                         Style="{StaticResource ImageButtonSmallStyle}"
+                                         Clicked="RollDice_Clicked"/>
 
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargerStyle}"/>
+
+                        <ImageButton Source="right_arrow.png"
+                                         Style="{StaticResource ImageButtonSmallStyle}"
+                                         Clicked="RollDice_Clicked"/>
+
+                    </StackLayout>
+                   
 
                     <StackLayout Style="{StaticResource VerticalCenterWithPaddingStack}">
                         <StackLayout Style="{StaticResource HorizontalCenterStack}">

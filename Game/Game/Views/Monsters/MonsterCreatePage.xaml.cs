@@ -4,6 +4,7 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Game.Models;
+using Game.GameRules;
 using Game.ViewModels;
 
 namespace Game.Views
@@ -118,6 +119,37 @@ namespace Game.Views
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
                 _ = await Navigation.PopModalAsync();
             }
+        }
+
+        /// <summary>
+        /// Randomize Character Values and Items
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RollDice_Clicked(object sender, EventArgs e)
+        {
+            _ = RandomizeCharacter();
+            return;
+        }
+
+        /// <summary>
+        /// 
+        /// Randomize the Character
+        /// Keep the Level the Same
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool RandomizeCharacter()
+        {
+            // Randomize Name
+            ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
+            ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
+
+            ViewModel.Data.ImageURI = RandomPlayerHelper.GetMonsterImage();
+
+            _ = UpdatePageBindingContext();
+
+            return true;
         }
 
         /// <summary>
