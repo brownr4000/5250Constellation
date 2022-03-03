@@ -68,7 +68,7 @@ namespace Game.GameRules
         public static string GetCharacterImage()
         {
 
-            List<String> FirstNameList = new List<String> { "elf1.png", "elf2.png", "elf3.png", "elf4.png", "elf5.png", "elf6.png", "elf7.png" };
+            List<String> FirstNameList = new List<String> { "agent_amelix.png", "agent_baby.png", "agent_dog.png", "agent_prof_tompkins.png", "agent_robot.png", "agent_smith.png" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -115,7 +115,7 @@ namespace Game.GameRules
         public static string GetCharacterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Mike", "Doug", "Jea", "Sue", "Tim", "Daren", "Dani", "Mami", "Mari", "Ryu", "Hucky", "Peanut", "Sumi", "Apple", "Ami", "Honami", "Sonomi", "Pat", "Sakue", "Isamu" };
+            List<String> FirstNameList = new List<String> { "Agent Kay", "Agent Jay", "Agent Mercury", "Agent Lady Bug", "Agent Buck"};
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -130,7 +130,7 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetCharacterDescription()
         {
-            List<String> StringList = new List<String> { "the terrible", "the awesome", "the lost", "the old", "the younger", "the quiet", "the loud", "the helpless", "the happy", "the sleepy", "the angry", "the clever" };
+            List<String> StringList = new List<String> { "the courageous", "the awesome", "the younger", "the quiet", "the clever" };
 
             var result = StringList.ElementAt(DiceHelper.RollDice(1, StringList.Count()) - 1);
 
