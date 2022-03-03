@@ -175,7 +175,9 @@ namespace UnitTests.Engine.EngineGame
         [Test]
         public void TurnEngine_SelectCharacterToAttack_Valid_Default_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+            Engine.EngineSettings.PlayerList.Clear();
+
             var character = new PlayerInfoModel(
                 new CharacterModel
                 {
@@ -540,12 +542,12 @@ namespace UnitTests.Engine.EngineGame
             // Arrange 
 
             // Act
-            var result = Engine.Round.Turn.GetRandomMonsterItemDrops(1).Count();
+            var result = Engine.Round.Turn.GetRandomMonsterItemDrops(2).Count();
 
             // Reset
 
             // Assert
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(0, result);
         }
         #endregion GetRandomMonsterItemDrops
 
