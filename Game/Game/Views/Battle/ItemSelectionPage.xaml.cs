@@ -17,6 +17,10 @@ namespace Game.Views.Battle
         //// The item to select
         //public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
 
+        // Empty Constructor for UTs
+        bool UnitTestSetting;
+        public ItemSelectionPage(bool UnitTest) { UnitTestSetting = UnitTest; }
+
         // The character
 
         public List<ItemModel> ItemList { get; }
