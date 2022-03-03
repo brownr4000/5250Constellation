@@ -6,7 +6,7 @@
              
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
+            <!--<StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
                 <ImageButton Source="left_arrow.png" 
                                  Style="{StaticResource ImageButtonSmallStyle}"
                                  Clicked="LeftImageButton_Clicked"/>
@@ -143,7 +143,7 @@
                 <Button Text="Select"
                                     Style="{StaticResource ButtonStyle}"
                                     Clicked="Save_Clicked"/>
-            </StackLayout>
+            </StackLayout>-->
 
         </StackLayout>
     </ContentPage.Content>
