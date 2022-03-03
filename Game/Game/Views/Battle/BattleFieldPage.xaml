@@ -18,6 +18,10 @@
                 </AbsoluteLayout>
             </StackLayout>
 
+            <StackLayout Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
+                <Button Text="Start Battle" Clicked="StartBattleButton_Clicked"  x:Name="StartBattleButton" Style="{StaticResource ButtonStyle}"/>
+            </StackLayout>
+            
             <Frame x:Name="NextMoveFrame" Style="{StaticResource BattleFieldFrame}">
                 <Grid HorizontalOptions="Center"
                                 WidthRequest="450"
@@ -82,11 +86,11 @@
                     <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                        <Image x:Name="CurrentCharacterImage" Style="{StaticResource ImageLargeStyle}"/>
+                        <Image x:Name="Player1Image" Style="{StaticResource ImageLargeStyle}"/>
 
                         <Label Text="VS" Style="{StaticResource LargeLabelStyle}"/>
 
-                        <Image x:Name="CurrentMonsterImage" Style="{StaticResource ImageLargeStyle}"/>
+                        <Image x:Name="Player2Image" Style="{StaticResource ImageLargeStyle}"/>
                     </StackLayout>
 
                     <Label x:Name="BattleGrammer" Style="{StaticResource BreakBattleLabelStyle}"/>

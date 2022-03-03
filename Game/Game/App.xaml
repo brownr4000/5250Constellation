@@ -133,7 +133,7 @@
                 x:Key="BreakBattleLabelStyle"
                 BasedOn="{StaticResource ListSmallLabelStyle}">
                 <Setter Property="LineBreakMode" Value="WordWrap" />
-                <Setter Property="MaxLines" Value="3" />
+                <Setter Property="MaxLines" Value="2" />
                 <Setter Property="LineHeight" Value="1" />
                 <Setter Property="CharacterSpacing" Value="1" />
                 
