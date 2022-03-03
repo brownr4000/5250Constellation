@@ -616,6 +616,41 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void MapModel_IsTargetInSpeed_In_Should_Return_True()
+        {
+            // Arrange
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 3;
+            map.MapYAxiesCount = 3;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+            PlayerList.Add(new PlayerInfoModel(Character));
+            PlayerList.Add(new PlayerInfoModel(Character));
+            PlayerList.Add(new PlayerInfoModel(Character));
+
+            var Monster = new MonsterModel();
+            PlayerList.Add(new PlayerInfoModel(Monster));
+            PlayerList.Add(new PlayerInfoModel(Monster));
+            PlayerList.Add(new PlayerInfoModel(Monster));
+
+            _ = map.PopulateMapModel(PlayerList);
+            var start = map.GetPlayerAtLocation(0, 0);
+            var end = map.GetPlayerAtLocation(1, 0); // Person next to them....
+
+            // Act
+            var result = map.IsTargetInSpeed(start, end);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
         public void MapModel_IsTargetInRange_InValid_Attacker_Should_Fail()
         {
             // Arrange
