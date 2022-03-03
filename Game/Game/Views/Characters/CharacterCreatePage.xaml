@@ -81,9 +81,20 @@
                                 </StackLayout>
 
                             </StackLayout>
+                            
+                            <ImageButton Source="left_arrow.png"
+                                         Grid.Row="0" Grid.Column="1"
+                                         Style="{StaticResource ImageButtonSmallStyle}"
+                                         Clicked="RollDice_Clicked"/>
+
                             <Image Source="{Binding Data.ImageURI}" 
-                                   Style="{StaticResource ImageLargerStyle}"
-                                   Grid.Row="0" Grid.Column="1"/>
+                                   Style="{StaticResource StandardImageStyle}"
+                                   Grid.Row="0" Grid.Column="2"/>
+
+                            <ImageButton Source="right_arrow.png" 
+                                 Style="{StaticResource ImageButtonSmallStyle}"
+                                  Grid.Row="0" Grid.Column="3"
+                                         Clicked="RollDice_Clicked"/>
                         </Grid>
                         
                         <StackLayout Style="{StaticResource HorizontalCenterWithLessPaddingSpacingStack}">
