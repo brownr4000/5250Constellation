@@ -91,7 +91,26 @@ namespace Game.Engine.EngineGame
         public override int AddMonstersToRound()
         {
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            return 0;
+
+            var TargetLevel = 1;
+
+            if (EngineSettings.CharacterList.Count() > 0)
+            {
+                // Get the Min Character Level (linq is soo cool....)
+                TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Min(m => m.Level));
+            }
+
+            for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
+            {
+                var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+
+                // Help identify which Monster it is
+                data.Name += " " + EngineSettings.MonsterList.Count() + 1;
+
+                EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+            }
+
+            return EngineSettings.MonsterList.Count();
         }
 
         /// <summary>
