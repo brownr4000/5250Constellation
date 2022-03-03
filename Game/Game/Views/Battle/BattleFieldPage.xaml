@@ -28,8 +28,10 @@
                                 HeightRequest="250">
                     <StackLayout Grid.Column="0" Grid.Row="0" Style="{StaticResource VerticalCenterStack}">
 
+                        <Image x:Name="CharacterImage" Style="{StaticResource ImageBattleSmallStyle}"/>
+                        
                         <Label x:Name="CharacterName" 
-                               Style="{StaticResource LabelCenterStyle}"/>
+                               Style="{StaticResource BreakBattleLabelStyle}"/>
                             
                        
                           <StackLayout Style="{StaticResource HorizontalOrientationStack}">
