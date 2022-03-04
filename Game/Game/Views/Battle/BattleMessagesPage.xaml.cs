@@ -122,9 +122,5 @@ namespace Game.Views.Battle
             return PlayerStack;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }
