@@ -162,6 +162,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="BattleSettingsLabelStyle"
+                BasedOn="{StaticResource BoldLabelStyle}">
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontFamily" Value="PlatNomor" />
