@@ -215,5 +215,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterReadPageTest_ConvertClassToJob_Striker()
+        {
+            // Arrange
+
+        
+            // Act
+           var result = page.ConvertClassToJob(CharacterJobEnum.Striker);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Striker", result);
+        }
     }
 }
