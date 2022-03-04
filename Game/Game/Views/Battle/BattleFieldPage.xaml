@@ -5,6 +5,10 @@
              Title="Battle Field"
               BackgroundImageSource="battle_background.png">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Settings" Clicked="BattleSettings_Clicked" IconImageSource="icon_update_purple.png"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
 
         <StackLayout Style="{StaticResource StackWithTopPadding}">

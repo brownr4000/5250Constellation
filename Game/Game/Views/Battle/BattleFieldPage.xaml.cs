@@ -800,5 +800,15 @@ namespace Game.Views
             RangeProgressBar.Progress = CurrentCharacterData.Range / 9f;
             return true;
         }
+
+        /// <summary>
+        /// Battle Settings button clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void BattleSettings_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new BattleSettingsPage());
+        }
     }
 }
