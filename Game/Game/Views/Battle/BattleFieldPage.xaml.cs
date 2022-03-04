@@ -147,6 +147,9 @@ namespace Game.Views
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender();
 
+            // Show the outcome on the Board
+            DrawGameAttackerDefenderBoard();
+
             if (!isCharacterTheAttacker && BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character)
             {
                 ForceCharcterToTakeAction();
@@ -155,6 +158,76 @@ namespace Game.Views
             CheckAction();
         }
 
+        /// <summary>
+        /// Draw the UI for
+        ///
+        /// Attacker vs Defender Mode
+        /// 
+        /// </summary>
+        public void DrawGameAttackerDefenderBoard()
+        {
+            // Clear the current UI
+            //DrawGameBoardClear();
+
+            // Show Characters across the Top
+            //DrawPlayerBoxes();
+
+            // Draw the Map
+            _ = UpdateMapGrid();
+
+            // Show the Attacker and Defender
+            //DrawGameBoardAttackerDefenderSection();
+        }
+
+        /// <summary>
+        /// Walk the current grid
+        /// check each cell to see if it matches the engine map
+        /// Update only those that need change
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateMapGrid()
+        {
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
+            {
+                // Use the ImageButton from the dictionary because that represents the player object
+                var MapObject = GetMapGridObject(GetDictionaryImageButtonName(data));
+                if (MapObject == null)
+                {
+                    return false;
+                }
+
+                var imageObject = (ImageButton)MapObject;
+
+                // Check automation ID on the Image, That should match the Player, if not a match, the cell is now different need to update
+                if (!imageObject.AutomationId.Equals(data.Player.Guid))
+                {
+                    // The Image is different, so need to re-create the Image Object and add it to the Stack
+                    // That way the correct monster is in the box.
+                    MapObject = GetMapGridObject(GetDictionaryStackName(data));
+
+                    if (MapObject == null)
+                    {
+                        return false;
+                    }
+
+                    var stackObject = (StackLayout)MapObject;
+
+                    // Remove the ImageButton
+                    stackObject.Children.RemoveAt(0);
+
+                    var PlayerImageButton = DetermineMapImageButton(data);
+
+                    stackObject.Children.Add(PlayerImageButton);
+
+                    // Update the Image in the Datastructure
+                    _ = MapGridObjectAddImage(PlayerImageButton, data);
+
+                    stackObject.BackgroundColor = DetermineMapBackgroundColor(data);
+                }
+            }
+            return true;
+        }
+        
         /// <summary>
         /// Method to check for new round game over 
         /// </summary>
@@ -401,55 +474,6 @@ namespace Game.Views
             _ = CreateMapGridObjects();
 
             _ = UpdateMapGrid();
-        }
-
-        /// <summary>
-        /// Walk the current grid
-        /// check each cell to see if it matches the engine map
-        /// Update only those that need change
-        /// </summary>
-        /// <returns></returns>
-        public bool UpdateMapGrid()
-        {
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
-            {
-                // Use the ImageButton from the dictionary because that represents the player object
-                var MapObject = GetMapGridObject(GetDictionaryImageButtonName(data));
-                if (MapObject == null)
-                {
-                    return false;
-                }
-
-                var imageObject = (ImageButton)MapObject;
-
-                // Check automation ID on the Image, That should match the Player, if not a match, the cell is now different need to update
-                if (!imageObject.AutomationId.Equals(data.Player.Guid))
-                {
-                    // The Image is different, so need to re-create the Image Object and add it to the Stack
-                    // That way the correct monster is in the box.
-                    MapObject = GetMapGridObject(GetDictionaryStackName(data));
-                    if (MapObject == null)
-                    {
-                        return false;
-                    }
-
-                    var stackObject = (StackLayout)MapObject;
-
-                    // Remove the ImageButton
-                    stackObject.Children.RemoveAt(0);
-
-                    var PlayerImageButton = DetermineMapImageButton(data);
-
-                    stackObject.Children.Add(PlayerImageButton);
-
-                    // Update the Image in the Datastructure
-                    _ = MapGridObjectAddImage(PlayerImageButton, data);
-
-                    stackObject.BackgroundColor = DetermineMapBackgroundColor(data);
-                }
-            }
-
-            return true;
         }
 
         /// <summary>

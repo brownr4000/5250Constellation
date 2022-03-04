@@ -902,6 +902,7 @@
                    BasedOn="{StaticResource HorizontalCenterStack}">
                 <Setter Property="Spacing" Value="10" />
                 <Setter Property="Padding" Value="10" />
+                <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Orientation" Value="Vertical" />
             </Style>
 
@@ -1126,7 +1127,7 @@
             <Style TargetType="Frame"
                 x:Key="BattleFieldFrame"
                    BasedOn="{StaticResource BattleMapFrame}">
-                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="200" />
                 <Setter Property="WidthRequest" Value="400" />                
             </Style>
 
