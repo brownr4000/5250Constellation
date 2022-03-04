@@ -791,7 +791,7 @@ namespace Game.Views
             CharacterImage.Source = CurrentCharacterData.ImageURI;
 
             //CharacterName.Text = "Character: " + CurrentCharacterData.Name;
-            CharacterName.Text = "Its " + CurrentCharacterData.Name + "' turn. Pick an action";
+            CharacterName.Text = "Its " + CurrentCharacterData.Name + "'s turn. Pick an action";
             HealthValue.Text = CurrentCharacterData.CurrentHealth.ToString();
             RangeValue.Text = CurrentCharacterData.Range.ToString();
 
