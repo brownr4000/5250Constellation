@@ -31,9 +31,6 @@
     <Compile Update="Views\Battle\BattleFieldPage.xaml.cs">
       <DependentUpon>BattleFieldPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Battle\BattleHomePage.xaml.cs">
-      <DependentUpon>BattleHomePage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Battle\CharacterAgentInfo.xaml.cs">
       <DependentUpon>CharacterAgentInfo.xaml</DependentUpon>
     </Compile>
