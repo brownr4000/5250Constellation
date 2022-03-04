@@ -139,7 +139,7 @@ namespace Scenario
             // Auto Battle will add the monsters
 
             // Monsters always hit
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.CriticalHit;
 
             //Act
             var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();

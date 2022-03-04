@@ -70,6 +70,32 @@ namespace UnitTests.Views
         public void CharacterUpdatePage_Save_Clicked_Default_Should_Pass()
         {
             // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+            var desc = (Entry)page.FindByName("DescValue");
+
+            name.Text = "test";
+
+            desc.Text = "test";
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterUpdatePage_Save_Clicked_Invalid_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+            var desc = (Entry)page.FindByName("DescValue");
+
+            name.Text = null;
+
+            desc.Text = null;
 
             // Act
             page.Save_Clicked(null, null);
@@ -308,5 +334,51 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterUpdatePageTest_ConvertClassToJob_Striker_Should_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            page.ConvertClassToJob(CharacterJobEnum.Striker);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePageTest_ConvertClassToJob_Support_Should_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            page.ConvertClassToJob(CharacterJobEnum.Support);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
+        public void CharacterUpdatePageTest_ConvertClassToJob_Default_Should_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            page.ConvertClassToJob(CharacterJobEnum.Unknown);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
     }
 }

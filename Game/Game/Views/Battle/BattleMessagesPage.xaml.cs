@@ -16,8 +16,13 @@ namespace Game.Views.Battle
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>")]
+
     public partial class BattleMessagesPage : ContentPage
     {
+        // Empty Constructor for UTs
+        bool UnitTestSetting;
+        public BattleMessagesPage(bool UnitTest) { UnitTestSetting = UnitTest; }
+
         // This uses the Instance so it can be shared with other Battle Pages as needed
         public BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
 
@@ -122,9 +127,5 @@ namespace Game.Views.Battle
             return PlayerStack;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }

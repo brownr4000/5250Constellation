@@ -215,5 +215,50 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterReadPageTest_ConvertClassToJob_Striker_Should_Pass()
+        {
+            // Arrange
+
+        
+            // Act
+           var result = page.ConvertClassToJob(CharacterJobEnum.Striker);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Striker", result);
+        }
+
+        [Test]
+        public void CharacterReadPageTest_ConvertClassToJob_Support_Should_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            var result = page.ConvertClassToJob(CharacterJobEnum.Support);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Support", result);
+        }
+
+        [Test]
+        public void CharacterReadPageTest_ConvertClassToJob_Default_Should_Pass()
+        {
+            // Arrange
+
+
+            // Act
+            var result = page.ConvertClassToJob(CharacterJobEnum.Unknown);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(null, result);
+        }
     }
 }
