@@ -70,6 +70,32 @@ namespace UnitTests.Views
         public void CharacterUpdatePage_Save_Clicked_Default_Should_Pass()
         {
             // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+            var desc = (Entry)page.FindByName("DescValue");
+
+            name.Text = "test";
+
+            desc.Text = "test";
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterUpdatePage_Save_Clicked_Invalid_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+            var desc = (Entry)page.FindByName("DescValue");
+
+            name.Text = null;
+
+            desc.Text = null;
 
             // Act
             page.Save_Clicked(null, null);
