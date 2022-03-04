@@ -178,9 +178,8 @@ namespace UnitTests.Views
         public void ItemUpdatePage_Saved_Clicked_Valid_Should_Pass()
         {
             // Arrange
-            //var data = new ItemModel();
-            //var viewModel = new GenericViewModel<ItemModel>(data);
-            //page = new ItemUpdatePage(ViewModel);
+            page.ViewModel.Data.Name = null;
+            page.ViewModel.Data.Description = null;
 
 
 
