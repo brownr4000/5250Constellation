@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Game.ViewModels;
+using Game.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +10,7 @@ namespace Game.Views.Battle
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GameOverPage : ContentPage
     {
+        ScoreModel scoreList = new ScoreModel();
 
         // Empty Constructor for UTs
         bool UnitTestSetting;
@@ -20,11 +19,12 @@ namespace Game.Views.Battle
         public GameOverPage()
         {
             InitializeComponent();
+            scoreList = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore; 
         }
 
         public async void ViewResult_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ScoreIndexPage());
+            await Navigation.PushModalAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(scoreList)));
         }
     }
 }

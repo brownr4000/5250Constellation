@@ -122,17 +122,6 @@ namespace Game.Views.Battle
             return PlayerStack;
         }
 
-        /// <summary>
-        /// Cancel button clicked goes to index page without selecting  
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public async void Cancel_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new BattleHomePage()));
-            _ = await Navigation.PopAsync();
-        }
-
         private void Button_Clicked(object sender, EventArgs e)
         {
 

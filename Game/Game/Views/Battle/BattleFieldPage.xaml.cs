@@ -236,11 +236,12 @@ namespace Game.Views
         /// Show the Score
         /// Clear the Board
         /// </summary>
-        public void GameOver()
+        public async void GameOver()
         {
             // Save the Score to the Score View Model, by sending a message to it.
             var Score = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore;
             MessagingCenter.Send(this, "AddData", Score);
+            await Navigation.PushModalAsync(new GameOverPage());
         }     
 
         /// <summary>
@@ -734,9 +735,9 @@ namespace Game.Views
 
             //Setting the ViewModel with current character details
             CurrentCharacterData = new PlayerInfoModel();
-            CurrentCharacterData = data.Player;
+            CurrentCharacterData = data.Player;            
 
-            CharacterName.Text = "Character: " + data.Player.Name;
+            CharacterName.Text = "Its " + data.Player.Name + "' turn. Pick an action";
             HealthValue.Text = data.Player.CurrentHealth.ToString();
             RangeValue.Text = data.Player.Range.ToString();
 
@@ -763,7 +764,10 @@ namespace Game.Views
             CurrentCharacterData = new PlayerInfoModel();
             CurrentCharacterData = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
 
-            CharacterName.Text = "Character: " + CurrentCharacterData.Name;
+            CharacterImage.Source = CurrentCharacterData.ImageURI;
+
+            //CharacterName.Text = "Character: " + CurrentCharacterData.Name;
+            CharacterName.Text = "Its " + CurrentCharacterData.Name + "' turn. Pick an action";
             HealthValue.Text = CurrentCharacterData.CurrentHealth.ToString();
             RangeValue.Text = CurrentCharacterData.Range.ToString();
 
