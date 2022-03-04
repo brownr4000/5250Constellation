@@ -178,10 +178,13 @@ namespace UnitTests.Views
         public void ItemUpdatePage_Saved_Clicked_Valid_Should_Pass()
         {
             // Arrange
-            page.ViewModel.Data.Name = null;
-            page.ViewModel.Data.Description = null;
+            var name = (Entry)page.FindByName("NameValue");
 
+            var desc = (Entry)page.FindByName("DescriptionValue");
 
+            name.Text = "test";
+
+            desc.Text = "test";
 
             // Act
             page.Save_Clicked(null, null);
@@ -191,5 +194,27 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ItemUpdatePage_Saved_Clicked_InValid_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+
+            var desc = (Entry)page.FindByName("DescriptionValue");
+
+            name.Text = null;
+
+            desc.Text = null;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
     }
 }
