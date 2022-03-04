@@ -636,39 +636,39 @@ namespace UnitTests.Views
             Assert.AreEqual(false, result); // Got to here, so it happened...
         }
 
-        [Test]
-        public void BattlePage_UpdateMapGrid_Valid_Stack_Should_Pass()
-        {
-            // Need to build out a valid MapGrid with Engine MapGridLocation
+        //[Test]
+        //public void BattlePage_UpdateMapGrid_Valid_Stack_Should_Pass()
+        //{
+        //    // Need to build out a valid MapGrid with Engine MapGridLocation
 
-            // Make Map in Engine
+        //    // Make Map in Engine
 
-            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+        //    var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+        //    _ = BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.AutoBattle = true;
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+        //    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.AutoBattle = true;
 
-            // Make UI Map
-            _ = page.CreateMapGridObjects();
-            _ = page.UpdateMapGrid();
+        //    // Make UI Map
+        //    _ = page.CreateMapGridObjects();
+        //    _ = page.UpdateMapGrid();
 
-            // Move Character in Engine
-            var result = BattleEngineViewModel.Instance.Engine.Round.Turn.MoveAsTurn(MonsterPlayer);
+        //    // Move Character in Engine
+        //    var result = BattleEngineViewModel.Instance.Engine.Round.Turn.MoveAsTurn(MonsterPlayer);
 
-            // Act
+        //    // Act
 
-            // Call for UpateMap
-            _ = page.UpdateMapGrid();
+        //    // Call for UpateMap
+        //    _ = page.UpdateMapGrid();
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(true, result); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.AreEqual(true, result); // Got to here, so it happened...
+        //}
 
         [Test]
         public async Task BattlePage_ShowBattleSettingsPage_Default_Should_Pass()
