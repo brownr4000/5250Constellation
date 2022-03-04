@@ -56,7 +56,7 @@
 
                 </StackLayout>
             </Frame>
-            
+
 
             <StackLayout>
                 <CollectionView 
@@ -90,15 +90,9 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                
+
             </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalCenterWithSpacingStack}">
-                <Button Text="Tap to make progress" 
-                    Clicked="Button_Clicked" 
-                    Style="{StaticResource ButtonStyle}"/>
-            </StackLayout>
-           
 
         </StackLayout>
         
