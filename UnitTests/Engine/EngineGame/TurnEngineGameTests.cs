@@ -361,6 +361,7 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_SelectMonsterToAttack_Valid_Default_Should_Pass()
         {
             // Arrange 
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Act
             var result = Engine.Round.Turn.SelectMonsterToAttack();
