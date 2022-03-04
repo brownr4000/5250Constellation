@@ -173,5 +173,24 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ItemUpdatePage_Saved_Clicked_Valid_Should_Pass()
+        {
+            // Arrange
+            //var data = new ItemModel();
+            //var viewModel = new GenericViewModel<ItemModel>(data);
+            //page = new ItemUpdatePage(ViewModel);
+
+
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
