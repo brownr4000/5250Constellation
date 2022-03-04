@@ -350,6 +350,25 @@ namespace Game.GameRules
                     Job = CharacterJobEnum.Defender
                 },
 
+                  new CharacterModel {
+                    Name = "Agent Twins",
+                    Description = "Twins in black",
+                    Level = 1,
+                    MaxHealth = 10,
+                    Attack = 3,
+                    Defense = 5,
+                    Speed = 1,
+                    ImageURI = "agent_twins.png",
+                    Head = HeadString,
+                    Necklass = NecklassString,
+                    PrimaryHand = PrimaryHandString,
+                    OffHand = OffHandString,
+                    Feet = FeetString,
+                    RightFinger = RightFingerString,
+                    LeftFinger = LeftFingerString,
+                    Job = CharacterJobEnum.Striker
+                },
+
                 new CharacterModel {
                     Name = "Slim Jim",
                     Description = "He protecc, he attacc, he have bazooka on his bacc",
@@ -419,7 +438,7 @@ namespace Game.GameRules
                     Name = "Serpens",
                     Description = "A constellation of a large snake",
                     ImageURI = "Serpens_Monster.png",
-                    Difficulty = DifficultyEnum.Average,
+                    Difficulty = DifficultyEnum.Difficult,
                     Attack = 3,
                     Defense = 3,
                     Speed = 5,
@@ -439,7 +458,7 @@ namespace Game.GameRules
                     Name = "Pisces",
                     Description = "A constellation of two fish",
                     ImageURI = "Pisces_Monster.png",
-                    Difficulty = DifficultyEnum.Average,
+                    Difficulty = DifficultyEnum.Hard,
                     Attack = 4,
                     Defense = 2,
                     Speed = 5,
@@ -456,19 +475,19 @@ namespace Game.GameRules
                 },
 
                 new MonsterModel {
-                    Name = "Lepus",
+                    Name = "Musca",
                     Description = "A hare constellation being chased around the sky, or possibly the Moon Rabbit",
-                    ImageURI = "Placeholder_Monster1.png",
-                    Difficulty = DifficultyEnum.Easy,
+                    ImageURI = "Musca_Monster.png",
+                    Difficulty = DifficultyEnum.Impossible,
                     Attack = 2,
                     Speed = 8,
                     Defense = 2
                 },
 
                 new MonsterModel {
-                    Name = "Corvus",
+                    Name = "Lacerta",
                     Description = "A small crow or a raven constellation from the Southern sky",
-                    ImageURI = "Placeholder_Monster2.png",
+                    ImageURI = "Lacerta_Monster.png",
                     Attack = 3,
                     Speed = 3,
                     Defense = 2,
