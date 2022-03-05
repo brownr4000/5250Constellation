@@ -100,32 +100,40 @@ namespace Game.Models
         /// <returns></returns>
         public bool MovePlayerOnMap(MapModelLocation data, MapModelLocation target)
         {
-            if (target.Column < 0)
+            if(target != null)
+            {
+                if (target.Column < 0)
+                {
+                    return false;
+                }
+
+                if (target.Row < 0)
+                {
+                    return false;
+                }
+
+                if (target.Column >= MapXAxiesCount)
+                {
+                    return false;
+                }
+
+                if (target.Row >= MapYAxiesCount)
+                {
+                    return false;
+                }
+
+                MapGridLocation[target.Column, target.Row].Player = data.Player;
+
+                // Clear out the old location
+                MapGridLocation[data.Column, data.Row].Player = EmptySquare;
+
+                return true;
+            }
+
+            else
             {
                 return false;
             }
-
-            if (target.Row < 0)
-            {
-                return false;
-            }
-
-            if (target.Column >= MapXAxiesCount)
-            {
-                return false;
-            }
-
-            if (target.Row >= MapYAxiesCount)
-            {
-                return false;
-            }
-
-            MapGridLocation[target.Column, target.Row].Player = data.Player;
-
-            // Clear out the old location
-            MapGridLocation[data.Column, data.Row].Player = EmptySquare;
-
-            return true;
         }
 
         /// <summary>
