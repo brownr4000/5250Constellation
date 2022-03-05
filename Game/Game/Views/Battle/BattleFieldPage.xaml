@@ -92,11 +92,11 @@
                     <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                        <Image x:Name="Player1Image" Style="{StaticResource ImageLargeStyle}"/>
+                        <Image x:Name="Player1Image" IsAnimationPlaying="True" Style="{StaticResource ImageLargeStyle}"/>
 
                         <Label Text="VS" Style="{StaticResource LargeLabelStyle}"/>
 
-                        <Image x:Name="Player2Image" Style="{StaticResource ImageLargeStyle}"/>
+                        <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageLargeStyle}"/>
                     </StackLayout>
 
                     <Label x:Name="BattleGrammer" Style="{StaticResource BreakBattleLabelStyle}"/>

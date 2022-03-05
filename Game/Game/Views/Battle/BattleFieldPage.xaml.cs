@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Game.Views.Battle;
 using Game.Models;
+using Game.GameRules;
 using Game.Engine.EngineModels;
 using Game.ViewModels;
 
@@ -21,6 +22,8 @@ namespace Game.Views
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>")]
     public partial class BattleFieldPage : ContentPage
     {
+        readonly MonsterIndexViewModel MonsterViewModel = MonsterIndexViewModel.Instance;
+
         // HTML Formatting for message output box
         public HtmlWebViewSource htmlSource = new HtmlWebViewSource();
 
@@ -234,17 +237,14 @@ namespace Game.Views
         /// <returns></returns>
         public async Task CheckAction()
         {
-            // Set character and monster images
-            SetImages();
-
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
+            // Set character and monster images
+            SetImages();
+
             // Output the Message of what happened.
             GameMessage();
-
-            // Show the outcome on the Board
-            // DrawGameAttackerDefenderBoard();
 
             if (RoundCondition == RoundEnum.NewRound)
             {
@@ -284,10 +284,35 @@ namespace Game.Views
         /// <summary>
         /// Set character and monster images
         /// </summary>
-        public void SetImages()
+        public async void SetImages()
         {
             Player1Image.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker is null ?
-               null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
+             null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageGIFURI;
+
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.PlayerType == PlayerTypeEnum.Monster && !BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive)
+            {
+               var defaultMonsterData = DefaultData.LoadData(new MonsterModel());
+               foreach(var monster in defaultMonsterData)
+                {
+                   if(monster.ImageURI == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI)
+                    {
+                        Player2Image.Source = monster.ImageGIFURI;
+                        foreach (var i in new[] { 1, 3, 5 })
+                        {
+                            await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SpringIn);
+                            await Player2Image.RelScaleTo(-0.5 / i, 0, Easing.SpringOut);
+                            await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SpringIn);
+                            await Player2Image.RelScaleTo(-0.5 / i, 0, Easing.SpringOut);
+
+                            // Pause
+                            _ = Task.Delay(1800);
+                        }
+                        return;
+                    }
+                }
+                return;
+            }           
+          
             Player2Image.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender is null ?
                null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
         }
@@ -739,10 +764,10 @@ namespace Game.Views
              * For Mike's simple battle grammar there is no selection of action so I just return true
              */
 
-            data.IsSelectedTarget = true;
-            // Setting selected Monster data
-            CurrentMonsterSelectedData = new PlayerInfoModel();
-            CurrentMonsterSelectedData = data.Player;
+            //data.IsSelectedTarget = true;
+            //// Setting selected Monster data
+            //CurrentMonsterSelectedData = new PlayerInfoModel();
+            //CurrentMonsterSelectedData = data.Player;
             return true;
         }
 
@@ -753,21 +778,21 @@ namespace Game.Views
         /// <returns></returns>
         public bool SetSelectedCharacter(MapModelLocation data)
         {
-            NextMoveFrame.IsVisible = true;
-            BattleSequenceFrame.IsVisible = false;
-            BreakBattleSequenceFrame.IsVisible = false;
+            //NextMoveFrame.IsVisible = true;
+            //BattleSequenceFrame.IsVisible = false;
+            //BreakBattleSequenceFrame.IsVisible = false;
 
-            //Setting the ViewModel with current character details
-            CurrentCharacterData = new PlayerInfoModel();
-            CurrentCharacterData = data.Player;            
+            ////Setting the ViewModel with current character details
+            //CurrentCharacterData = new PlayerInfoModel();
+            //CurrentCharacterData = data.Player;            
 
-            CharacterName.Text = "Its " + data.Player.Name + "' turn. Pick an action";
-            HealthValue.Text = data.Player.CurrentHealth.ToString();
-            RangeValue.Text = data.Player.Range.ToString();
+            //CharacterName.Text = "Its " + data.Player.Name + "' turn. Pick an action";
+            //HealthValue.Text = data.Player.CurrentHealth.ToString();
+            //RangeValue.Text = data.Player.Range.ToString();
 
-            //Setting progress bars
-            HealthProgressBar.Progress = data.Player.CurrentHealth / 9f;
-            RangeProgressBar.Progress = data.Player.Range / 9f;
+            ////Setting progress bars
+            //HealthProgressBar.Progress = data.Player.CurrentHealth / 9f;
+            //RangeProgressBar.Progress = data.Player.Range / 9f;
             return true;
         }
 
