@@ -14,7 +14,7 @@
                         <FlexLayout>
                             <StackLayout Style="{StaticResource VerticalStack}">
                                 <Label 
-                                    Text="Characters"
+                                    Text="Agents"
                                     Style="{StaticResource LabelStartAndExpandStyle}"/>
 
                                 <FlexLayout x:Name="PartyListFrame"
