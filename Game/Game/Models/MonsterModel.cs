@@ -24,6 +24,7 @@ namespace Game.Models
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
             ImageURI = "Musca_Monster.png";
+            ImageGIFURI = "musca_monster_gif.gif";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
