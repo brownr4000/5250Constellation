@@ -119,9 +119,11 @@
     <Content Include="agents_button.png" />
     <Content Include="Agent_01_With_Background.png" />
     <Content Include="agent_amelix.png" />
+    <Content Include="agent_amelix_gif.gif" />
     <Content Include="agent_amelix_small.png" />
     <Content Include="Agent_A_With_Background.png" />
     <Content Include="agent_baby.png" />
+    <Content Include="agent_baby_gif.gif" />
     <Content Include="Agent_B_With_Background.png" />
     <Content Include="agent_dog.png" />
     <Content Include="agent_prof_tompkins.png" />
@@ -129,7 +131,9 @@
     <Content Include="agent_robot.png" />
     <Content Include="agent_robot_small.png" />
     <Content Include="agent_smith.png" />
+    <Content Include="agent_smith_gif.gif" />
     <Content Include="agent_twins.png" />
+    <Content Include="agent_twins_gif.gif" />
     <Content Include="aliens_button.png" />
     <Content Include="Alien_Planet.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
@@ -230,6 +234,7 @@
     <Content Include="Placeholder_Monster1.png" />
     <Content Include="Placeholder_Monster2.png" />
     <Content Include="power_ring.png" />
+    <Content Include="prof_thompson_gif.gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="psychic_baby_small.png" />
     <Content Include="right_arrow.png" />
