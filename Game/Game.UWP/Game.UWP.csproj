@@ -167,6 +167,7 @@
     <Content Include="Battle_Of_Cosmos.png" />
     <Content Include="cancel_button.png" />
     <Content Include="Cancer_Monster.png" />
+    <Content Include="cancer_monster_gif.gif" />
     <Content Include="Cancer_With_Backgrounds.png" />
     <Content Include="characters_page_icon.png" />
     <Content Include="create_button.png" />
@@ -208,6 +209,7 @@
     <Content Include="item_placeholder.png" />
     <Content Include="knight.png" />
     <Content Include="Lacerta_Monster.png" />
+    <Content Include="lacerta_monster_gif.gif" />
     <Content Include="Lactera_With_Background.png" />
     <Content Include="laser_rifle.png" />
     <Content Include="laser_sword.png" />
@@ -216,11 +218,13 @@
     <Content Include="monsters_page_icon.png" />
     <Content Include="moon_boots.png" />
     <Content Include="Musca_Monster.png" />
+    <Content Include="musca_monster_gif.gif" />
     <Content Include="Musca_With_Background.png" />
     <Content Include="neck1.png" />
     <Content Include="neck2.png" />
     <Content Include="noisy_cricket.png" />
     <Content Include="Pisces_Monster.png" />
+    <Content Include="pisces_monster_gif.gif" />
     <Content Include="Pisces_With_Background.png" />
     <Content Include="pistol_01.png" />
     <Content Include="Placeholder_Monster1.png" />
@@ -236,8 +240,10 @@
     <Content Include="scores_page_icon.png" />
     <Content Include="score_button.png" />
     <Content Include="Scorpio_Monster.png" />
+    <Content Include="scorpio_monster_gif.gif" />
     <Content Include="Scorpio_With_Background.png" />
     <Content Include="Serpens_Monster.png" />
+    <Content Include="serpens_monster_gif.gif" />
     <Content Include="Serpens_With_background.png" />
     <Content Include="shield1.png" />
     <Content Include="shield2.png" />
