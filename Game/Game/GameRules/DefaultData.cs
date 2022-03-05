@@ -321,6 +321,7 @@ namespace Game.GameRules
                     Defense = 6,
                     Speed = 1,
                     ImageURI = "agent_robot.png",
+                    ImageGIFURI = "agent_robot_gif.gif",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -340,6 +341,7 @@ namespace Game.GameRules
                     Defense = 5,
                     Speed = 1,
                     ImageURI = "agent_smith.png",
+                    ImageGIFURI = "agent_smith_gif.gif",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -359,6 +361,7 @@ namespace Game.GameRules
                     Defense = 5,
                     Speed = 1,
                     ImageURI = "agent_twins.png",
+                    ImageGIFURI = "agent_twins_gif.gif",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,
@@ -378,6 +381,7 @@ namespace Game.GameRules
                     Defense = 2,
                     Speed = 4,
                     ImageURI = "agent_dog.png",
+                    ImageGIFURI = "agent_dog_gif.gif",
                     Head = HeadString,
                     PrimaryHand = PrimaryHandString,
                     OffHand = OffHandString,
@@ -394,6 +398,7 @@ namespace Game.GameRules
                     Defense = 3,
                     Speed = 2,
                     ImageURI = "agent_prof_tompkins.png",
+                    ImageGIFURI = "agent_prof_tompkins_gif.gif",
                     Job = CharacterJobEnum.Support
                 },
 
@@ -406,6 +411,7 @@ namespace Game.GameRules
                     Defense = 2,
                     Speed = 3,
                     ImageURI = "agent_baby.png",
+                    ImageGIFURI = "agent_baby_gif.gif",
                     Job = CharacterJobEnum.Striker
                 },
 
@@ -418,6 +424,7 @@ namespace Game.GameRules
                     Defense = 1,
                     Speed = 5,
                     ImageURI = "agent_amelix.png",
+                    ImageGIFURI = "agent_amelix_gif.gif",
                     Job = CharacterJobEnum.Striker
                 }
             };

@@ -126,9 +126,11 @@
     <Content Include="agent_baby_gif.gif" />
     <Content Include="Agent_B_With_Background.png" />
     <Content Include="agent_dog.png" />
+    <Content Include="agent_dog_gif.gif" />
     <Content Include="agent_prof_tompkins.png" />
     <Content Include="agent_prof_tompkins_small.png" />
     <Content Include="agent_robot.png" />
+    <Content Include="agent_robot_gif.gif" />
     <Content Include="agent_robot_small.png" />
     <Content Include="agent_smith.png" />
     <Content Include="agent_smith_gif.gif" />
