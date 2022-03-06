@@ -191,6 +191,22 @@ namespace Game.Engine.EngineGame
             // Do the turn..
             _ = Turn.TakeTurn(EngineSettings.CurrentAttacker);
 
+            // No characters, game is over..
+            if (EngineSettings.CharacterList.Count < 1)
+            {
+                // Game Over
+                EngineSettings.RoundStateEnum = RoundEnum.GameOver;
+                return EngineSettings.RoundStateEnum;
+            }
+
+            // Check if round is over
+            if (EngineSettings.MonsterList.Count < 1)
+            {
+                // If over, New Round
+                EngineSettings.RoundStateEnum = RoundEnum.NewRound;
+                return RoundEnum.NewRound;
+            }
+
             EngineSettings.RoundStateEnum = RoundEnum.NextTurn;
 
             return EngineSettings.RoundStateEnum;
