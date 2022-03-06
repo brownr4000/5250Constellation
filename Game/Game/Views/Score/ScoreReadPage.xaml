@@ -176,6 +176,10 @@
 
             </StackLayout>
 
+            <StackLayout Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
+                <Button Text="Go to Game Page" Clicked="GoHomeButton_Clicked"  x:Name="GoHomeButton" Style="{StaticResource ButtonStyle}"/>
+            </StackLayout>
+
         </StackLayout>
 
     </ScrollView>

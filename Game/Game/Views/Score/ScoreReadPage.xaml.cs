@@ -45,7 +45,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Calls for Delete
+        /// Call for Delete
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -54,5 +54,16 @@ namespace Game.Views
             //await Navigation.PushModalAsync(new NavigationPage(new ScoreDeletePage(ViewModel)));
             _ = await Navigation.PopAsync();
         }
+
+        /// <summary>
+        /// Go home button clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void GoHomeButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new GamePage());
+        }
+        
     }
 }
