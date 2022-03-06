@@ -78,6 +78,10 @@ namespace Game.Engine.EngineGame
                     result = UseAbility(Attacker);
                     break;
 
+                case ActionEnum.Relax:
+                    result = UseRelax(Attacker);
+                    break;
+
                 case ActionEnum.Move:
                     result = MoveAsTurn(Attacker);
                     break;
@@ -186,6 +190,41 @@ namespace Game.Engine.EngineGame
                 return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
             }
 
+            if (Attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+
+                // Get X, Y for Defender
+                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+                if (locationDefender == null)
+                {
+                    return false;
+                }
+
+                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                if (locationAttacker == null)
+                {
+                    return false;
+                }
+
+                // Find Location Nearest to Defender that is Open.
+
+                // Get the Open Locations
+                var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
+
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+            }
+
             return true;
         }
 
@@ -232,6 +271,14 @@ namespace Game.Engine.EngineGame
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
             return base.UseAbility(Attacker);
+        }
+
+        /// <summary>
+        /// Take a break
+        /// </summary>
+        public override bool UseRelax(PlayerInfoModel Attacker)
+        {
+            return base.UseRelax(Attacker);
         }
 
         #endregion Action
@@ -330,13 +377,17 @@ namespace Game.Engine.EngineGame
             // Attack the Weakness (lowest HP) MonsterModel first 
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            var Defender = EngineSettings.PlayerList
-                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-                .OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
-                .ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
-                .ThenBy(m => m.Attack)
-                .ThenBy(m => m.CurrentHealth)
-                .FirstOrDefault();
+            // DONE: Changed it to picking monsters selected by user
+            //var Defender = EngineSettings.PlayerList
+            //    .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+            //    //.OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
+            //    //.ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
+            //    //.ThenBy(m => m.Attack)
+            //    //.ThenBy(m => m.CurrentHealth)
+            //    .OrderBy(m => m.Defense)
+            //    .FirstOrDefault();
+
+            var Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
 
             return Defender;
         }
