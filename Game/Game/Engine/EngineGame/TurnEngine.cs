@@ -373,22 +373,12 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            // Select first one to hit in the list for now...
-            // Attack the Weakness (lowest HP) MonsterModel first 
-
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            // DONE: Changed it to picking monsters selected by user
-            //var Defender = EngineSettings.PlayerList
-            //    .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-            //    //.OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
-            //    //.ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
-            //    //.ThenBy(m => m.Attack)
-            //    //.ThenBy(m => m.CurrentHealth)
-            //    .OrderBy(m => m.Defense)
-            //    .FirstOrDefault();
+            // DONE: Changed it to picking monsters selected by user            
 
-            var Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
+            PlayerInfoModel Defender = new PlayerInfoModel();
 
+            Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
             return Defender;
         }
 
