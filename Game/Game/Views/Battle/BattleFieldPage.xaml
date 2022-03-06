@@ -13,7 +13,6 @@
 
         <StackLayout Style="{StaticResource StackWithTopPadding}">
 
-            <!--The Battle Map Display -->
             <StackLayout x:Name="BattleMapDisplay" Style="{StaticResource BattleMapBox}"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
                 <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                                         
@@ -24,8 +23,8 @@
 
             <StackLayout Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
                 <Button Text="Start Battle" Clicked="StartBattleButton_Clicked"  x:Name="StartBattleButton" Style="{StaticResource ButtonStyle}"/>
-            </StackLayout>
-            
+            </StackLayout>           
+
             <Frame x:Name="NextMoveFrame" Style="{StaticResource BattleFieldFrame}">
                 <Grid HorizontalOptions="Center"
                                 WidthRequest="450"
@@ -75,18 +74,25 @@
                        
                     </StackLayout>
 
-                    <StackLayout Grid.Column="1" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
+                    <StackLayout Grid.Column="1" Grid.Row="0" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
 
                         <Button Text="Attack" Clicked="AttackButton_Clicked" x:Name="FightButton" Style="{StaticResource BattleFieldButtonStyle}"/>
                         <Button Text="Take a break" Clicked="RelaxButton_Clicked" x:Name="RelaxButton" Style="{StaticResource BattleFieldButtonStyle}"/>
                         <Button Text="Move" Clicked="MoveButton_Clicked" x:Name="MoveButton" Style="{StaticResource BattleFieldButtonStyle}"/>
                         <Button Text="Abilities" Clicked="AbilitiesButton_Clicked" x:Name="AbilitiesButton" Style="{StaticResource BattleFieldButtonStyle}"/>
                     
-                    </StackLayout>
-
-                </Grid>
+                    </StackLayout>                  
+                    
+                </Grid>                
             </Frame>
-                        
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">
+
+                <Label x:Name="MonsterDefenderLabel" 
+                                 Text="Please select a monster to attack" 
+                                 Style="{StaticResource AttackMonsterErrorLabelStyle}"/>
+
+            </StackLayout>
+
             <Frame x:Name="BattleSequenceFrame" Style="{StaticResource BattleSequenceFrame}">
                 <StackLayout Style="{StaticResource VerticalOnlyStack}">
                     <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
@@ -96,10 +102,8 @@
 
                         <Label Text="VS" Style="{StaticResource LargeLabelStyle}"/>
 
-                        <!--<Frame x:Name="MonsterDiesFrame" Style="{StaticResource MonsterDiesFrame}">-->
                             <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageLargeStyle}"/>
-                        <!--</Frame>-->
-                       
+                      
                     </StackLayout>
 
                     <Label x:Name="BattleGrammer" Style="{StaticResource BreakBattleLabelStyle}"/>

@@ -63,6 +63,7 @@ namespace Game.Views
             BattleSequenceFrame.IsVisible = false;
             NextMoveFrame.IsVisible = false;
             BreakBattleSequenceFrame.IsVisible = false;
+            MonsterDefenderLabel.IsVisible = false;
 
             // Set initial State to Starting
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
@@ -115,17 +116,26 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Attack clicked method called
+        /// Attack clicked method call
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-                BattleSequenceFrame.IsVisible = true;
-                NextMoveFrame.IsVisible = false;
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.IsSelectedAsTarget == false)
+            {
+                MonsterDefenderLabel.IsVisible = true;
+                return;
+            }
 
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = CurrentCharacterData;
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+            BattleSequenceFrame.IsVisible = true;
+            NextMoveFrame.IsVisible = false;
+            MonsterDefenderLabel.IsVisible = false;
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = CurrentCharacterData;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+
+            // Call next action
             NextActionForCharacter();
         }
 
@@ -279,6 +289,7 @@ namespace Game.Views
                 return;
             }
             await Task.Delay(2000);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.IsSelectedAsTarget = false;
 
             NextAction();
         }
@@ -800,18 +811,11 @@ namespace Game.Views
         /// <returns></returns>
         public bool SetSelectedMonster(MapModelLocation data)
         {
-            // TODO: Info
-
-            /*
-             * This gets called when the Monster is clicked on
-             * Usefull if you want to select the monster to attack etc.
-             * 
-             * For Mike's simple battle grammar there is no selection of action so I just return true
-             */
-
-            //data.IsSelectedTarget = true;
-            // Setting selected Monster data
+            // Set selected Monster data
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+
+            // Set selected monster as target 
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.IsSelectedAsTarget = true;
 
             return true;
         }
@@ -823,21 +827,6 @@ namespace Game.Views
         /// <returns></returns>
         public bool SetSelectedCharacter(MapModelLocation data)
         {
-            //NextMoveFrame.IsVisible = true;
-            //BattleSequenceFrame.IsVisible = false;
-            //BreakBattleSequenceFrame.IsVisible = false;
-
-            ////Setting the ViewModel with current character details
-            //CurrentCharacterData = new PlayerInfoModel();
-            //CurrentCharacterData = data.Player;            
-
-            //CharacterName.Text = "Its " + data.Player.Name + "' turn. Pick an action";
-            //HealthValue.Text = data.Player.CurrentHealth.ToString();
-            //RangeValue.Text = data.Player.Range.ToString();
-
-            ////Setting progress bars
-            //HealthProgressBar.Progress = data.Player.CurrentHealth / 9f;
-            //RangeProgressBar.Progress = data.Player.Range / 9f;
             return true;
         }
 
