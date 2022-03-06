@@ -22,7 +22,7 @@
 
         <StackLayout Style="{StaticResource VerticalCenterWithPaddingSpacingStack}">
             
-            <Image Source="Item_Placeholder.png" Style="{StaticResource ImageLargeStyle}"/>
+            <Image Source="amulet_of_vigor.png" Style="{StaticResource ImageLargeStyle}"/>
             
             <Grid RowSpacing="1" Padding="0,20,20,0"
                   ColumnSpacing="2" 
