@@ -483,6 +483,10 @@ namespace Game.Views
             BreakBattleSequenceFrame.IsVisible = true;
             CurrentBreakCharacterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
 
+            BattleSequenceFrame.IsVisible = true;
+            NextMoveFrame.IsVisible = false;
+            MonsterDefenderLabel.IsVisible = false;
+
             // Output the Message of what happened.
             GameMessage();
 
