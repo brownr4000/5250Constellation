@@ -18,15 +18,15 @@ namespace Game.GameRules
         {
             var datalist = new List<ItemModel>()
             {
-                new ItemModel  {
-                   Name = "Forged Boots",
-                   Description = "Heavily armored boots",
-                   Damage = 0,
-                   Range = 0,
-                   Location = ItemLocationEnum.Feet,
-                   Attribute = AttributeEnum.Defense,
-                   Value = 5,
-                   ImageURI = "",},
+                //new ItemModel  {
+                //   Name = "Forged Boots",
+                //   Description = "Heavily armored boots",
+                //   Damage = 0,
+                //   Range = 0,
+                //   Location = ItemLocationEnum.Feet,
+                //   Attribute = AttributeEnum.Defense,
+                //   Value = 5,
+                //   ImageURI = "",},
 
                 new ItemModel {
                     Name = "Moon Boots",
@@ -36,7 +36,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Feet,
                     Attribute = AttributeEnum.Speed,
                     Value = 1,
-                    ImageURI = "moon_boots.png",},
+                    ImageURI = "moonboots.png",},
 
                 new ItemModel {
                     Name = "Rocket Boots",
@@ -56,37 +56,37 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Finger,
                     Attribute = AttributeEnum.Attack,
                     Value = 9,
-                    ImageURI = "power_ring.png",},
+                    ImageURI = "ring.png",},
 
-                new ItemModel {
-                    Name = "Battleglove",
-                    Description = "Tactical gloves that provide protection to the knuckles",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Finger,
-                    Attribute = AttributeEnum.Defense,
-                    Value = 2,
-                    ImageURI = "",},
+                //new ItemModel {
+                //    Name = "Battleglove",
+                //    Description = "Tactical gloves that provide protection to the knuckles",
+                //    Damage = 0,
+                //    Range = 0,
+                //    Location = ItemLocationEnum.Finger,
+                //    Attribute = AttributeEnum.Defense,
+                //    Value = 2,
+                //    ImageURI = "",},
 
-                new ItemModel {
-                    Name = "Cybernetic Arm",
-                    Description = "A technological augmentation",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Finger,
-                    Attribute = AttributeEnum.Defense,
-                    Value = 8,
-                    ImageURI = "",},
+                //new ItemModel {
+                //    Name = "Cybernetic Arm",
+                //    Description = "A technological augmentation",
+                //    Damage = 0,
+                //    Range = 0,
+                //    Location = ItemLocationEnum.Finger,
+                //    Attribute = AttributeEnum.Defense,
+                //    Value = 8,
+                //    ImageURI = "",},
 
-                new ItemModel {
-                    Name = "Techno Kabuto",
-                    Description = "A kabuto style helmet with a head-mounted display",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Head,
-                    Attribute = AttributeEnum.Attack,
-                    Value = 5,
-                    ImageURI = "",},
+                //new ItemModel {
+                //    Name = "Techno Kabuto",
+                //    Description = "A kabuto style helmet with a head-mounted display",
+                //    Damage = 0,
+                //    Range = 0,
+                //    Location = ItemLocationEnum.Head,
+                //    Attribute = AttributeEnum.Attack,
+                //    Value = 5,
+                //    ImageURI = "",},
 
                 new ItemModel {
                     Name = "Sunglasses",
@@ -116,7 +116,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Defense,
                     Value = 5,
-                    ImageURI = "",},
+                    ImageURI = "ushanka.png",},
 
                 new ItemModel {
                     Name = "Amulet of Vigor",
@@ -126,27 +126,27 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Necklass,
                     Attribute = AttributeEnum.Attack,
                     Value = 5,
-                    ImageURI = "",},
+                    ImageURI = "amulet_of_vigor.png",},
 
-                new ItemModel {
-                    Name = "Amulet of Protection",
-                    Description = "An advanced amulet that provides additional protection",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Necklass,
-                    Attribute = AttributeEnum.Defense,
-                    Value = 5,
-                    ImageURI = "",},
+                //new ItemModel {
+                //    Name = "Amulet of Protection",
+                //    Description = "An advanced amulet that provides additional protection",
+                //    Damage = 0,
+                //    Range = 0,
+                //    Location = ItemLocationEnum.Necklass,
+                //    Attribute = AttributeEnum.Defense,
+                //    Value = 5,
+                //    ImageURI = "",},
 
-                new ItemModel {
-                    Name = "Life Alert",
-                    Description = "A pendant that boosts life force",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Necklass,
-                    Attribute = AttributeEnum.MaxHealth,
-                    Value = 5,
-                    ImageURI = "",},
+                //new ItemModel {
+                //    Name = "Life Alert",
+                //    Description = "A pendant that boosts life force",
+                //    Damage = 0,
+                //    Range = 0,
+                //    Location = ItemLocationEnum.Necklass,
+                //    Attribute = AttributeEnum.MaxHealth,
+                //    Value = 5,
+                //    ImageURI = "",},
 
                 new ItemModel {
                     Name = "Carbonizer",
@@ -156,7 +156,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Defense,
                     Value = 1,
-                    ImageURI = "",},
+                    ImageURI = "carbonizer.png",},
 
                 new ItemModel {
                     Name = "Riot Shield",
@@ -166,7 +166,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Defense,
                     Value = 3,
-                    ImageURI = "shield_01.png",},
+                    ImageURI = "defense_shield.png",},
 
                 new ItemModel {
                     Name = "Ballistic Shield",
@@ -176,7 +176,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Defense,
                     Value = 5,
-                    ImageURI = "",},
+                    ImageURI = "defense_shield.png",},
 
                 new ItemModel {
                     Name = "Stun Gun",
@@ -186,17 +186,17 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
                     Value = 1,
-                    ImageURI = "stun_gun.png",},
+                    ImageURI = "stungun_icon.png",},
 
-                new ItemModel {
-                    Name = "Baton",
-                    Description = "A cylindrical club for bludgeoning",
-                    Damage = 2,
-                    Range = 1,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Speed,
-                    Value = 1,
-                    ImageURI = "",},
+                //new ItemModel {
+                //    Name = "Baton",
+                //    Description = "A cylindrical club for bludgeoning",
+                //    Damage = 2,
+                //    Range = 1,
+                //    Location = ItemLocationEnum.PrimaryHand,
+                //    Attribute = AttributeEnum.Speed,
+                //    Value = 1,
+                //    ImageURI = "",},
 
                 new ItemModel {
                    Name = "Semi-auto Pistol",
@@ -206,7 +206,7 @@ namespace Game.GameRules
                    Location = ItemLocationEnum.PrimaryHand,
                    Attribute = AttributeEnum.Attack,
                    Value = 2,
-                   ImageURI = "pistol_01.png",},
+                   ImageURI = "pistol_icon.png",},
 
                 new ItemModel {
                     Name = "Crystal Sword",
@@ -246,7 +246,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Speed,
                     Value = 5,
-                    ImageURI = "noisy_cricket.png",},
+                    ImageURI = "noisey_cricket.png",},
 
                 new ItemModel {
                     Name = "Tactical Shotgun",
@@ -256,17 +256,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Defense,
                     Value = 3,
-                    ImageURI = "shotgun.png",},
-
-                new ItemModel {
-                    Name = "Proton Cannon",
-                    Description = "A two-handed portable cannon that launches proton-based projectiles",
-                    Damage = 30,
-                    Range = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack,
-                    Value = 9,
-                    ImageURI = "",},
+                    ImageURI = "shot_gun.png",}
             };
 
             return datalist;
