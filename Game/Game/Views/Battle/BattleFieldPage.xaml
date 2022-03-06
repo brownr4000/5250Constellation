@@ -96,7 +96,10 @@
 
                         <Label Text="VS" Style="{StaticResource LargeLabelStyle}"/>
 
-                        <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageLargeStyle}"/>
+                        <!--<Frame x:Name="MonsterDiesFrame" Style="{StaticResource MonsterDiesFrame}">-->
+                            <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageLargeStyle}"/>
+                        <!--</Frame>-->
+                       
                     </StackLayout>
 
                     <Label x:Name="BattleGrammer" Style="{StaticResource BreakBattleLabelStyle}"/>

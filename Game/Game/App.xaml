@@ -900,7 +900,7 @@
             <Style TargetType="StackLayout"
                 x:Key="VerticalCenterWithLessMarginStack"
                    BasedOn="{StaticResource VerticalCenterStack}">
-                <Setter Property="Margin" Value="15" />
+                <Setter Property="Margin" Value="10" />
             </Style>
 
             <Style TargetType="StackLayout"

@@ -22,7 +22,9 @@ namespace Game.Views
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "<Pending>")]
     public partial class BattleFieldPage : ContentPage
     {
-        readonly MonsterIndexViewModel MonsterViewModel = MonsterIndexViewModel.Instance;
+        public List<MonsterModel> defaultMonsterData = DefaultData.LoadData(new MonsterModel());
+
+        public List<CharacterModel> defaultCharacterData = DefaultData.LoadData(new CharacterModel());
 
         // HTML Formatting for message output box
         public HtmlWebViewSource htmlSource = new HtmlWebViewSource();
@@ -287,32 +289,48 @@ namespace Game.Views
         public async void SetImages()
         {
             Player1Image.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker is null ?
-             null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageGIFURI;
+             null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
 
-            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.PlayerType == PlayerTypeEnum.Monster && !BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive)
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Character
+                && BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker != null)
             {
-               var defaultMonsterData = DefaultData.LoadData(new MonsterModel());
+                foreach (var character in defaultCharacterData)
+                {
+                    if (character.ImageURI == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI)
+                    {
+                        Player1Image.Source = character.ImageGIFURI;
+                    }
+                }
+            }
+
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null &&
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.PlayerType == PlayerTypeEnum.Monster &&
+                !BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Alive)
+            {
                foreach(var monster in defaultMonsterData)
                 {
                    if(monster.ImageURI == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI)
                     {
                         Player2Image.Source = monster.ImageGIFURI;
-                        foreach (var i in new[] { 1, 3, 5 })
-                        {
-                            await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SpringIn);
-                            await Player2Image.RelScaleTo(-0.5 / i, 0, Easing.SpringOut);
-                            await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SpringIn);
-                            await Player2Image.RelScaleTo(-0.5 / i, 0, Easing.SpringOut);
+                       // Player2Image.BackgroundColor = Color.Black;
+                        _ = Task.Delay(2000);
 
-                            // Pause
-                            _ = Task.Delay(1800);
-                        }
+                        //foreach (var i in new[] { 1, 3, 5 })
+                        //{
+                        //    await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SinIn);
+                        //    await Player2Image.RelScaleTo(-0.5 / i, 0, Easing.SinOut);
+                        //    await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SinInOut);
+
+                        //    // Pause
+                        //    _ = Task.Delay(1900);                           
+                        //}
                         return;
                     }
                 }
                 return;
-            }           
-          
+            }
+
+         //   Player2Image.BackgroundColor = Color.Transparent;
             Player2Image.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender is null ?
                null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
         }
@@ -373,7 +391,7 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Relax;           
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = CurrentCharacterData;
 
-            Engine.Round.Turn.TakeTurn(CurrentCharacterData);
+            EngineViewModel.Engine.Round.Turn.TakeTurn(CurrentCharacterData);
 
             CurrentBreakCharacterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
 
@@ -453,9 +471,25 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void MoveButton_Clicked(object sender, EventArgs e)
+        public async void MoveButton_Clicked(object sender, EventArgs e)
         {
             // Move button code
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Move;
+
+            EngineViewModel.Engine.Round.Turn.TakeTurn(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+
+            BreakBattleSequenceFrame.IsVisible = true;
+            CurrentBreakCharacterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
+
+            // Output the Message of what happened.
+            GameMessage();
+
+            await Task.Delay(2000);
+
+            BreakBattleSequenceFrame.IsVisible = false;
+
+            // Continues the game
+            NextAction();
         }
 
         /// <summary>
@@ -466,7 +500,18 @@ namespace Game.Views
         private void AbilitiesButton_Clicked(object sender, EventArgs e)
         {
             // Show abilities
+            //switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Job)
+            //{
+            //    case CharacterJobEnum.Support:
+            //        SupportAgentAbilities();
+            //        break;
+            //}                
         }
+
+        //public void SupportAgentAbilities()
+        //{
+
+        //}
 
         /// <summary>
         /// Create the Initial Map Grid
@@ -765,9 +810,9 @@ namespace Game.Views
              */
 
             //data.IsSelectedTarget = true;
-            //// Setting selected Monster data
-            //CurrentMonsterSelectedData = new PlayerInfoModel();
-            //CurrentMonsterSelectedData = data.Player;
+            // Setting selected Monster data
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = data.Player;
+
             return true;
         }
 
