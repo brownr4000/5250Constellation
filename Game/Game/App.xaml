@@ -318,6 +318,15 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="AttackMonsterErrorLabelStyle"
+                BasedOn="{StaticResource ErrorMessageStyle}">
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="MaxLines" Value="2" />
+                <Setter Property="LineHeight" Value="1" />
+                <Setter Property="CharacterSpacing" Value="1" />
+            </Style>
+            
+            <Style TargetType="Label"
                 x:Key="MessageStyle"
                 BasedOn="{StaticResource HeaderStyle}">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
