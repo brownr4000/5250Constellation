@@ -181,17 +181,8 @@ namespace Game.Views
         /// </summary>
         public void DrawGameAttackerDefenderBoard()
         {
-            // Clear the current UI
-            //DrawGameBoardClear();
-
-            // Show Characters across the Top
-            //DrawPlayerBoxes();
-
             // Draw the Map
             _ = UpdateMapGrid();
-
-            // Show the Attacker and Defender
-            //DrawGameBoardAttackerDefenderSection();
         }
 
         /// <summary>
@@ -510,19 +501,8 @@ namespace Game.Views
         /// <param name="e"></param>
         private void AbilitiesButton_Clicked(object sender, EventArgs e)
         {
-            // Show abilities
-            //switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Job)
-            //{
-            //    case CharacterJobEnum.Support:
-            //        SupportAgentAbilities();
-            //        break;
-            //}                
+            // Show abilities                           
         }
-
-        //public void SupportAgentAbilities()
-        //{
-
-        //}
 
         /// <summary>
         /// Create the Initial Map Grid
@@ -597,10 +577,6 @@ namespace Game.Views
         /// <returns></returns>
         public bool CreateMapGridObjects()
         {
-            // Make a frame for each location on the map
-            // Populate it with a new Frame Object that is unique
-            // Then updating will be easier
-
             foreach (var location in BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.MapGridLocation)
             {
                 var data = MakeMapGridBox(location);
