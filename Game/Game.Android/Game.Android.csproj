@@ -512,7 +512,7 @@
     <AndroidResource Include="Resources\drawable\agent_twins_gif.gif" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\agent_prof_tompkins_gif" />
+    <None Include="Resources\drawable\agent_prof_tompkins_gif" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\agent_amelix_gif.gif" />

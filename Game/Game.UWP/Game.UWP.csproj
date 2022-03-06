@@ -236,7 +236,7 @@
     <Content Include="Placeholder_Monster1.png" />
     <Content Include="Placeholder_Monster2.png" />
     <Content Include="power_ring.png" />
-    <Content Include="prof_thompson_gif.gif" />
+    <None Include="agent_prof_tompkins_gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="psychic_baby_small.png" />
     <Content Include="right_arrow.png" />
