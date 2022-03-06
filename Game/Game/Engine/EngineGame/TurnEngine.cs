@@ -192,8 +192,11 @@ namespace Game.Engine.EngineGame
 
             if (Attacker.PlayerType == PlayerTypeEnum.Character)
             {
-                // For Attack, Choose Who
-                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+                // If defender is not already chosen by user, then engine will choose 
+                if (!EngineSettings.CurrentDefender.IsSelectedAsTarget)
+                {
+                    EngineSettings.CurrentDefender = AttackChoice(Attacker);
+                }                
 
                 if (EngineSettings.CurrentDefender == null)
                 {
