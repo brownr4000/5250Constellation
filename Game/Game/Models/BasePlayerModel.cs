@@ -34,6 +34,9 @@ namespace Game.Models
         [Ignore]
         public int ListOrder { get; set; } = 0;
 
+        // Is Selected as Target
+        public bool IsSelectedAsTarget { get; set; } = false;
+
         #endregion GameEngineAttributes
 
         #region Buffs
