@@ -138,6 +138,7 @@
     <Content Include="agent_twins_gif.gif" />
     <Content Include="aliens_button.png" />
     <Content Include="Alien_Planet.png" />
+    <Content Include="amulet_of_vigor.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
@@ -175,11 +176,13 @@
     <Content Include="Cancer_Monster.png" />
     <Content Include="cancer_monster_gif.gif" />
     <Content Include="Cancer_With_Backgrounds.png" />
+    <Content Include="carbonizer.png" />
     <Content Include="characters_page_icon.png" />
     <Content Include="create_button.png" />
     <Content Include="crystal_sword.png" />
     <Content Include="d10.png" />
     <Content Include="d20_2.png" />
+    <Content Include="defense_shield.png" />
     <Content Include="delete_button.png" />
     <Content Include="Doc_Witth_Background.png" />
     <Content Include="dog_agent_small.png" />
@@ -217,22 +220,26 @@
     <Content Include="Lacerta_Monster.png" />
     <Content Include="lacerta_monster_gif.gif" />
     <Content Include="Lactera_With_Background.png" />
+    <Content Include="laser_gun.png" />
     <Content Include="laser_rifle.png" />
     <Content Include="laser_sword.png" />
     <Content Include="left_arrow.png" />
     <Content Include="Logo.png" />
     <Content Include="monsters_page_icon.png" />
+    <Content Include="moonboots.png" />
     <Content Include="moon_boots.png" />
     <Content Include="Musca_Monster.png" />
     <Content Include="musca_monster_gif.gif" />
     <Content Include="Musca_With_Background.png" />
     <Content Include="neck1.png" />
     <Content Include="neck2.png" />
+    <Content Include="noisey_cricket.png" />
     <Content Include="noisy_cricket.png" />
     <Content Include="Pisces_Monster.png" />
     <Content Include="pisces_monster_gif.gif" />
     <Content Include="Pisces_With_Background.png" />
     <Content Include="pistol_01.png" />
+    <Content Include="pistol_icon.png" />
     <Content Include="Placeholder_Monster1.png" />
     <Content Include="Placeholder_Monster2.png" />
     <Content Include="power_ring.png" />
@@ -240,6 +247,7 @@
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="psychic_baby_small.png" />
     <Content Include="right_arrow.png" />
+    <Content Include="ring.png" />
     <Content Include="ring1.png" />
     <Content Include="ring2.png" />
     <Content Include="rocket_boots.png" />
@@ -258,6 +266,8 @@
     <Content Include="shield4.png" />
     <Content Include="shield_01.png" />
     <Content Include="shotgun.png" />
+    <Content Include="shot_gun.png" />
+    <Content Include="stungun_icon.png" />
     <Content Include="stun_gun.png" />
     <Content Include="sunglasses.png" />
     <Content Include="sword1.png" />
@@ -280,6 +290,7 @@
     <Content Include="troll6.png" />
     <Content Include="UFO.png" />
     <Content Include="update_button.png" />
+    <Content Include="ushanka.png" />
     <Content Include="village.png" />
   </ItemGroup>
   <ItemGroup>
