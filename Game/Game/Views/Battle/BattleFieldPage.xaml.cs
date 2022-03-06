@@ -483,7 +483,7 @@ namespace Game.Views
             BreakBattleSequenceFrame.IsVisible = true;
             CurrentBreakCharacterImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
 
-            BattleSequenceFrame.IsVisible = true;
+            BattleSequenceFrame.IsVisible = false;
             NextMoveFrame.IsVisible = false;
             MonsterDefenderLabel.IsVisible = false;
 
