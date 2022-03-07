@@ -60,6 +60,7 @@ namespace Game.Models
             Difficulty = data.Difficulty;
 
             Job = data.Job;
+            MonsterJob = data.MonsterJob;
 
             AbilityTracker = data.AbilityTracker;
         }
@@ -177,6 +178,8 @@ namespace Game.Models
             Difficulty = data.Difficulty;
 
             Job = data.Job;
+
+            MonsterJob = data.MonsterJob;
 
             // Give the copy a differet quid, so it can be used in the battles as a copy
             Guid = System.Guid.NewGuid().ToString();
