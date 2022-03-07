@@ -349,16 +349,24 @@ namespace Game.Engine.EngineGame
 
             var data = EngineSettings.CurrentAttacker;
 
-            // Select first in the list
+            // Select first in the list:
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            // DONE: Selecting characters based on MonsterJob
+            // DONE
+            // Sort list for Alive Characters,
+            // then order by Current Health,
+            // then by CharacterJob,
+            // then by Defense descending
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                .OrderBy(m => m.CurrentHealth)
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Support))
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Striker))
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Defender))
+                .ThenByDescending(m => m.Defense)
+                .FirstOrDefault();
 
-              var Defender = EngineSettings.PlayerList
-             .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-             .FirstOrDefault();
-
-            // Own logic:   
+            // Own logic, Selecting characters based on MonsterJob:   
             if (data.MonsterJob == MonsterJobEnum.Brute)
             {
                 Defender = EngineSettings.PlayerList
