@@ -276,7 +276,7 @@ namespace Game.GameRules
                 ImageURI = GetMonsterImage(),
 
                 Difficulty = GetMonsterDifficultyValue(),
-                MonsterJob = GetMonsterJobValue()
+                //MonsterJob = GetMonsterJobValue()
             };
 
             // Adjust values based on Difficulty
