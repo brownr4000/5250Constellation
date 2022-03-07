@@ -359,7 +359,7 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Job = CharacterJobEnum.Striker
+                    Job = CharacterJobEnum.Fighter
                 },
 
                 new CharacterModel {
@@ -402,7 +402,7 @@ namespace Game.GameRules
                     Speed = 3,
                     ImageURI = "agent_baby.png",
                     ImageGIFURI = "agent_baby_gif.gif",
-                    Job = CharacterJobEnum.Striker
+                    Job = CharacterJobEnum.Fighter
                 },
 
                 new CharacterModel {
@@ -437,6 +437,7 @@ namespace Game.GameRules
                     ImageURI = "Serpens_Monster.png",
                     Difficulty = DifficultyEnum.Difficult,
                     ImageGIFURI = "serpens_monster_gif.gif",
+                    MonsterJob = MonsterJobEnum.Support,
                     Attack = 3,
                     Defense = 3,
                     Speed = 5,
@@ -446,6 +447,7 @@ namespace Game.GameRules
                     Name = "Cancer",
                     Description = "A medium size constellation of a crab",
                     ImageURI = "Cancer_Monster.png",
+                     MonsterJob = MonsterJobEnum.Clever,
                     Difficulty = DifficultyEnum.Average,
                     ImageGIFURI = "cancer_monster_gif.gif",
                     Attack = 2,
@@ -457,6 +459,7 @@ namespace Game.GameRules
                     Name = "Pisces",
                     Description = "A constellation of two fish",
                     ImageURI = "Pisces_Monster.png",
+                    MonsterJob = MonsterJobEnum.Brute,
                     Difficulty = DifficultyEnum.Hard,
                     ImageGIFURI = "pisces_monster_gif.gif",
                     Attack = 4,
@@ -469,6 +472,7 @@ namespace Game.GameRules
                     Description = "A constellation of a giant scorpion",
                     ImageURI = "Scorpio_Monster.png",
                     Attack = 6,
+                     MonsterJob = MonsterJobEnum.Swift,
                     ImageGIFURI = "scorpio_monster_gif.gif",
                     Defense = 7,
                     Speed = 4,
@@ -481,6 +485,7 @@ namespace Game.GameRules
                     ImageURI = "Musca_Monster.png",
                     Difficulty = DifficultyEnum.Impossible,
                     Attack = 2,
+                    MonsterJob = MonsterJobEnum.Brute,
                     ImageGIFURI = "musca_monster_gif.gif",
                     Speed = 8,
                     Defense = 2
@@ -493,6 +498,7 @@ namespace Game.GameRules
                     Attack = 3,
                     ImageGIFURI = "lacerta_monster_gif.gif",
                     Speed = 3,
+                     MonsterJob = MonsterJobEnum.Clever,
                     Defense = 2,
                     Difficulty = DifficultyEnum.Easy,
                 },
