@@ -144,7 +144,8 @@ namespace Game.Engine.EngineGame
              * If no open spaces, return false
              * 
              */
-            // DONE: Changed the logic while moving characters. System now checks if the target monster is selected by user.
+            // DONE: Changed the logic while moving characters. System now checks if the target monster is selected
+            // by user.
             // If yes, then character moves to a square near that monster.
 
             // If the Monster the calculate the options
@@ -707,18 +708,19 @@ namespace Game.Engine.EngineGame
             // You decide how to drop monster items, level, etc.
 
             // The Number drop can be Up to the Round Count, but may be less.  
+
+            // DONE: No of items dropped will be equal to the round number
+
             // Negative results in nothing dropped
-            var NumberToDrop = DiceHelper.RollDice(1, round - 2) - 1;
+            var NumberToDrop = round;
 
             var result = new List<ItemModel>();
-
             for (var i = 0; i < NumberToDrop; i++)
             {
                 // Get a random Unique Item
                 var data = ItemIndexViewModel.Instance.GetItem(RandomPlayerHelper.GetMonsterUniqueItem());
                 result.Add(data);
             }
-
             return result;
         }
 
