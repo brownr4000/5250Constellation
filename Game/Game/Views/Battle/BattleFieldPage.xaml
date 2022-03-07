@@ -13,16 +13,21 @@
 
         <StackLayout Style="{StaticResource StackWithTopPadding}">
 
-            <StackLayout x:Name="BattleMapDisplay" Style="{StaticResource BattleMapBox}"  HorizontalOptions="CenterAndExpand" VerticalOptions="Start">
+            <StackLayout x:Name="BattleMapDisplay" Style="{StaticResource BattleMapBox}">
                 <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                        
-                    <Grid x:Name="MapGrid" HorizontalOptions="Center" VerticalOptions="Start" ColumnSpacing="0" RowSpacing="0" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
+
+                    <Grid x:Name="MapGrid" HorizontalOptions="Center"
+                          VerticalOptions="Start" 
+                          ColumnSpacing="0" RowSpacing="0" />
+                    <!--AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>-->
                 
                 </AbsoluteLayout>
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
-                <Button Text="Start Battle" Clicked="StartBattleButton_Clicked"  x:Name="StartBattleButton" Style="{StaticResource ButtonStyle}"/>
+                <Button Text="Start Battle" Clicked="StartBattleButton_Clicked" 
+                        x:Name="StartBattleButton" 
+                        Style="{StaticResource ButtonStyle}"/>
             </StackLayout>           
 
             <Frame x:Name="NextMoveFrame" Style="{StaticResource BattleFieldFrame}">
@@ -70,16 +75,30 @@
                                                x:Name="HealthValue"
                                                Style="{StaticResource CenterValueStyle}"/>
                             </Grid>
-                        </StackLayout>
-                       
+                        </StackLayout>                       
                     </StackLayout>
 
-                    <StackLayout Grid.Column="1" Grid.Row="0" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
+                    <StackLayout Grid.Column="1" Grid.Row="0" 
+                                 Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
 
-                        <Button Text="Attack" Clicked="AttackButton_Clicked" x:Name="FightButton" Style="{StaticResource BattleFieldButtonStyle}"/>
-                        <Button Text="Take a break" Clicked="RelaxButton_Clicked" x:Name="RelaxButton" Style="{StaticResource BattleFieldButtonStyle}"/>
-                        <Button Text="Move" Clicked="MoveButton_Clicked" x:Name="MoveButton" Style="{StaticResource BattleFieldButtonStyle}"/>
-                        <Button Text="Abilities" Clicked="AbilitiesButton_Clicked" x:Name="AbilitiesButton" Style="{StaticResource BattleFieldButtonStyle}"/>
+                        <Button Text="Attack" 
+                                Clicked="AttackButton_Clicked"
+                                x:Name="FightButton" 
+                                Style="{StaticResource BattleFieldButtonStyle}"/>
+                        
+                        <Button Text="Take a break"
+                                Clicked="RelaxButton_Clicked" 
+                                x:Name="RelaxButton" 
+                                Style="{StaticResource BattleFieldButtonStyle}"/>
+                        
+                        <Button Text="Move" Clicked="MoveButton_Clicked" 
+                                x:Name="MoveButton"
+                                Style="{StaticResource BattleFieldButtonStyle}"/>
+                        
+                        <Button Text="Abilities" 
+                                Clicked="AbilitiesButton_Clicked" 
+                                x:Name="AbilitiesButton" 
+                                Style="{StaticResource BattleFieldButtonStyle}"/>
                     
                     </StackLayout>                  
                     
@@ -98,11 +117,11 @@
                     <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                        <Image x:Name="Player1Image" IsAnimationPlaying="True" Style="{StaticResource ImageMediumStyle}"/>
+                        <Image x:Name="Player1Image" IsAnimationPlaying="True" Style="{StaticResource ImageMedStyle}"/>
 
                         <Label Text="VS" Style="{StaticResource LargeLabelStyle}"/>
 
-                            <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageMediumStyle}"/>
+                        <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageMedStyle}"/>
                       
                     </StackLayout>
 

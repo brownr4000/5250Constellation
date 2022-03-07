@@ -495,6 +495,13 @@
             </Style>
 
             <Style TargetType="Image"
+                x:Key="ImageMedStyle"
+                BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="WidthRequest" Value="70" />
+            </Style>
+            
+            <Style TargetType="Image"
                 x:Key="ImageMediumAspectToFitStyle"
                 BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="Aspect" Value="AspectFit" />
@@ -654,7 +661,7 @@
                    BasedOn="{StaticResource ButtonStyle}">
                 <Setter Property="Margin" Value="50,0,0,0"/>
                 <Setter Property="WidthRequest" Value="170"/>
-                <Setter Property="HeightRequest" Value="25"/>
+                <Setter Property="HeightRequest" Value="30"/>
             </Style>
 
             <!--Grid-->
@@ -773,7 +780,7 @@
             <Style TargetType="StackLayout"
                 x:Key="HorizontalCenterWithPaddingSpacingStack" 
                    BasedOn="{StaticResource HorizontalCenterStack}">
-                <Setter Property="Padding" Value="20" />
+                <Setter Property="Padding" Value="10" />
                 <Setter Property="Spacing" Value="20" />
             </Style>
 
@@ -928,7 +935,7 @@
                 x:Key="VerticalCenterWithSpacingHorizontalStack"
                    BasedOn="{StaticResource HorizontalCenterStack}">
                 <Setter Property="Spacing" Value="10" />
-                <Setter Property="Padding" Value="10" />
+                <Setter Property="Padding" Value="5" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Orientation" Value="Vertical" />
             </Style>
@@ -1055,7 +1062,7 @@
 
             <Style TargetType="StackLayout"
                 x:Key="StackWithTopPadding">
-                <Setter Property="Padding" Value="0,40,0,0" />
+                <Setter Property="Padding" Value="0,20,0,0" />
             </Style>
 
             <Style TargetType="StackLayout"
@@ -1163,8 +1170,8 @@
                 x:Key="BattleSequenceFrame"
                    BasedOn="{StaticResource BattleFieldFrame}">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="HeightRequest" Value="230" />
-                <Setter Property="Padding" Value="10" />
+                <Setter Property="HeightRequest" Value="250" />
+                <Setter Property="Padding" Value="5" />
             </Style>
 
             <!-- Grid -->
