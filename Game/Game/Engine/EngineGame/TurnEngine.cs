@@ -323,7 +323,7 @@ namespace Game.Engine.EngineGame
             switch (data.PlayerType)
             {
                 case PlayerTypeEnum.Monster:
-                    return SelectCharacterToAttack(data);
+                    return SelectCharacterToAttack();
 
                 case PlayerTypeEnum.Character:
                 default:
