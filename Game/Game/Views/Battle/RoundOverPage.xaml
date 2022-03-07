@@ -12,9 +12,7 @@
         VerticalOptions="FillAndExpand"
         >
 
-            <StackLayout Style="{StaticResource VerticalCenterWithLessMarginStack}"
-                    AbsoluteLayout.LayoutBounds="1,1,1,1" 
-                    AbsoluteLayout.LayoutFlags="All">
+            <StackLayout Style="{StaticResource VerticalCenterWithLessMarginStack}">
 
                 <ScrollView x:Name="ScrollView">
 
@@ -42,12 +40,16 @@
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
-                        <StackLayout Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
                             <Button Clicked="AutoAssignButton_Clicked" 
                                 Text="Assign Items" 
                                 Style="{StaticResource ButtonStyle}"/>
+
+                            <Button Clicked="AmazonInstantDelivery_Clicked" 
+                                Text="Amazon Instant Delivery" 
+                                Style="{StaticResource AmazonButtonStyle}"/>
                         </StackLayout>
-                        
+
                         <Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
                         <StackLayout Style="{StaticResource HorizontalStack}">
                             <Label Text="Selected : " Style="{StaticResource LabelStyle}"/>
