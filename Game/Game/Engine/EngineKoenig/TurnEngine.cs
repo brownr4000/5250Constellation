@@ -196,7 +196,7 @@ namespace Game.Engine.EngineKoenig
         /// <summary>
         /// Pick the Character to Attack
         /// </summary>
-        public override PlayerInfoModel SelectCharacterToAttack()
+        public override PlayerInfoModel SelectCharacterToAttack(PlayerInfoModel data)
         {
             if (EngineSettings.PlayerList == null)
             {
