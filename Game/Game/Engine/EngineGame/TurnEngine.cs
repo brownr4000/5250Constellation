@@ -144,9 +144,12 @@ namespace Game.Engine.EngineGame
              * If no open spaces, return false
              * 
              */
-            // DONE: Changed the logic while moving characters. System now checks if the target monster is selected
-            // by user.
-            // If yes, then character moves to a square near that monster.
+
+            /* 
+             * DONE: Changed the logic while moving characters. System now checks if the target monster is selected
+             * by user.
+             * If yes, then character moves to a square near that monster.
+             */
 
             // If the Monster the calculate the options
             if (Attacker.PlayerType == PlayerTypeEnum.Monster)
@@ -320,7 +323,7 @@ namespace Game.Engine.EngineGame
             switch (data.PlayerType)
             {
                 case PlayerTypeEnum.Monster:
-                    return SelectCharacterToAttack(data);
+                    return SelectCharacterToAttack();
 
                 case PlayerTypeEnum.Character:
                 default:
@@ -331,7 +334,7 @@ namespace Game.Engine.EngineGame
         /// <summary>
         /// Pick the Character to Attack
         /// </summary>
-        public override PlayerInfoModel SelectCharacterToAttack(PlayerInfoModel data)
+        public override PlayerInfoModel SelectCharacterToAttack()
         {
             // Check if there is less than one or no Players in the PlayerList
             if (EngineSettings.PlayerList == null)
@@ -344,16 +347,26 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            // Select first in the list
+            var data = EngineSettings.CurrentAttacker;
+
+            // Select first in the list:
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            // DONE: Selecting characters based on MonsterJob
+            // DONE
+            // Sort list for Alive Characters,
+            // then order by Current Health,
+            // then by CharacterJob,
+            // then by Defense descending
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                .OrderBy(m => m.CurrentHealth)
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Support))
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Striker))
+                .ThenBy(m => m.Job.Equals(CharacterJobEnum.Defender))
+                .ThenByDescending(m => m.Defense)
+                .FirstOrDefault();
 
-              var Defender = EngineSettings.PlayerList
-             .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-             .FirstOrDefault();
-
-            // Own logic:   
+            // Own logic, Selecting characters based on MonsterJob:   
             if (data.MonsterJob == MonsterJobEnum.Brute)
             {
                 Defender = EngineSettings.PlayerList
