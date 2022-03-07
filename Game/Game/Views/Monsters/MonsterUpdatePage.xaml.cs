@@ -59,8 +59,9 @@ namespace Game.Views
             }
                        
             // Load the values for the Class into the Picker
-            ClassPicker.Items.Add(MonsterJobEnum.Fighter.ToMessage());
-            ClassPicker.Items.Add(MonsterJobEnum.Cleric.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Brute.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Swift.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Clever.ToMessage());
             ClassPicker.Items.Add(MonsterJobEnum.Support.ToMessage());
 
             // Load the values for the Dificulty into the Picker
@@ -277,11 +278,14 @@ namespace Game.Views
         {
             switch (selectedJob)
             {
-                case "Tank":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Fighter;
+                case "Brute":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Brute;
                     break;
-                case "Damage":
-                    ViewModel.Data.MonsterJob = MonsterJobEnum.Cleric;
+                case "Swift":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Swift;
+                    break;
+                case "Clever":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Clever;
                     break;
                 case "Support":
                     ViewModel.Data.MonsterJob = MonsterJobEnum.Support;
@@ -299,11 +303,14 @@ namespace Game.Views
         {
             switch (selectedClass.ToString())
             {
-                case "Fighter":
-                    ClassPicker.SelectedItem = MonsterJobEnum.Fighter.ToMessage();
+                case "Brute":
+                    ClassPicker.SelectedItem = MonsterJobEnum.Brute.ToMessage();
                     break;
-                case "Cleric":
-                    ClassPicker.SelectedItem = MonsterJobEnum.Cleric.ToMessage();
+                case "Swift":
+                    ClassPicker.SelectedItem = MonsterJobEnum.Swift.ToMessage();
+                    break;
+                case "Clever":
+                    ClassPicker.SelectedItem = MonsterJobEnum.Clever.ToMessage();
                     break;
                 case "Support":
                     ClassPicker.SelectedItem = MonsterJobEnum.Support.ToMessage();
