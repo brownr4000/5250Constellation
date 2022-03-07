@@ -98,11 +98,11 @@
                     <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                        <Image x:Name="Player1Image" IsAnimationPlaying="True" Style="{StaticResource ImageLargeStyle}"/>
+                        <Image x:Name="Player1Image" IsAnimationPlaying="True" Style="{StaticResource ImageMediumStyle}"/>
 
                         <Label Text="VS" Style="{StaticResource LargeLabelStyle}"/>
 
-                            <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageLargeStyle}"/>
+                            <Image x:Name="Player2Image" IsAnimationPlaying="True" Style="{StaticResource ImageMediumStyle}"/>
                       
                     </StackLayout>
 
