@@ -391,13 +391,6 @@ namespace Game.Engine.EngineGame
                .FirstOrDefault();
             }
 
-            else if (data.MonsterJob == MonsterJobEnum.Support)
-            {
-                Defender = EngineSettings.PlayerList
-               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-               .Where(m => m.Job.Equals(CharacterJobEnum.Support))
-               .FirstOrDefault();
-            }
 
             if(Defender == null)
             {
