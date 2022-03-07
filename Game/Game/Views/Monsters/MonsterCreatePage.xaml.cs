@@ -56,6 +56,7 @@ namespace Game.Views
             ClassPicker.Items.Add(MonsterJobEnum.Brute.ToMessage());
             ClassPicker.Items.Add(MonsterJobEnum.Swift.ToMessage());
             ClassPicker.Items.Add(MonsterJobEnum.Clever.ToMessage());
+            ClassPicker.Items.Add(MonsterJobEnum.Support.ToMessage());
 
             // Load the values for the Dificulty into the Picker
             DifficultyPicker.Items.Add(DifficultyEnum.Easy.ToMessage());
@@ -287,6 +288,9 @@ namespace Game.Views
                     break;
                 case "Swift":
                     ViewModel.Data.MonsterJob = MonsterJobEnum.Swift;
+                    break;
+                case "Support":
+                    ViewModel.Data.MonsterJob = MonsterJobEnum.Support;
                     break;
                 case "Clever":
                     ViewModel.Data.MonsterJob = MonsterJobEnum.Clever;
