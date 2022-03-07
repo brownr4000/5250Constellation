@@ -49,6 +49,21 @@ namespace Game.GameRules
         }
 
         /// <summary>
+        /// Get A Random Difficulty
+        /// </summary>
+        /// <returns></returns>
+        public static MonsterJobEnum GetMonsterJobValue()
+        {
+            var MonsterJobList = MonsterJobEnumHelper.GetListMonster;
+
+            var RandomJob = MonsterJobList.ElementAt(DiceHelper.RollDice(1, MonsterJobList.Count()) - 1);
+
+            var result = MonsterJobEnumHelper.ConvertStringToEnum(RandomJob);
+
+            return result;
+        }
+
+        /// <summary>
         /// Get Random Image
         /// </summary>
         /// <returns></returns>
@@ -260,7 +275,8 @@ namespace Game.GameRules
 
                 ImageURI = GetMonsterImage(),
 
-                Difficulty = GetMonsterDifficultyValue()
+                Difficulty = GetMonsterDifficultyValue(),
+                MonsterJob = GetMonsterJobValue()
             };
 
             // Adjust values based on Difficulty
