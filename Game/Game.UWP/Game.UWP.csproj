@@ -128,6 +128,7 @@
     <Content Include="agent_dog.png" />
     <Content Include="agent_dog_gif.gif" />
     <Content Include="agent_prof_tompkins.png" />
+    <Content Include="agent_prof_tompkins_gif.gif" />
     <Content Include="agent_prof_tompkins_small.png" />
     <Content Include="agent_robot.png" />
     <Content Include="agent_robot_gif.gif" />
@@ -243,7 +244,6 @@
     <Content Include="Placeholder_Monster1.png" />
     <Content Include="Placeholder_Monster2.png" />
     <Content Include="power_ring.png" />
-    <None Include="agent_prof_tompkins_gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="psychic_baby_small.png" />
     <Content Include="right_arrow.png" />

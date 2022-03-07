@@ -512,9 +512,6 @@
     <AndroidResource Include="Resources\drawable\agent_twins_gif.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\drawable\agent_prof_tompkins_gif" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\agent_amelix_gif.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -561,6 +558,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\stungun_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\agent_prof_tompkins_gif.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
