@@ -19,8 +19,6 @@ namespace Game.Models
         // Swift Monsters attack quickly
         Swift = 20,
 
-        Support = 29,
-
         // Clever Monsters have access to buffs
         Clever = 30
     }
@@ -65,21 +63,10 @@ namespace Game.Models
     }
 
     /// <summary>
-    /// Helper for the Difficulty Enum Class
+    /// Helper for the Monster Job
     /// </summary>
     public static class MonsterJobEnumHelper
     {
-        /// <summary>
-        /// Returns a list of strings of the enum for MonsterJob
-        /// </summary>
-        public static List<string> GetListAll
-        {
-            get
-            {
-                var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList();
-                return myList;
-            }
-        }
 
         /// <summary>
         /// Returns a list of strings of the enum for MonsterJob
@@ -89,7 +76,10 @@ namespace Game.Models
         {
             get
             {
-                var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList().Where(m => m.ToString().Equals("Unknown") == false).ToList();
+                var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList();
+                var result = myList.Where(a => a.ToString() != MonsterJobEnum.Unknown.ToString())
+                                           .OrderBy(a => a)
+                                           .ToList();
                 return myList;
             }
         }
