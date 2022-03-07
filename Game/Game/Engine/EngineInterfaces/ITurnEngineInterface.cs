@@ -14,7 +14,7 @@ namespace Game.Engine.EngineInterfaces
         bool UseRelax(PlayerInfoModel Attacker);
         bool Attack(PlayerInfoModel Attacker);
         PlayerInfoModel AttackChoice(PlayerInfoModel data);
-        PlayerInfoModel SelectCharacterToAttack(PlayerInfoModel data);
+        PlayerInfoModel SelectCharacterToAttack();
         PlayerInfoModel SelectMonsterToAttack();
         bool TurnAsAttack(PlayerInfoModel Attacker, PlayerInfoModel Target);
         HitStatusEnum BattleSettingsOverride(PlayerInfoModel Attacker);
