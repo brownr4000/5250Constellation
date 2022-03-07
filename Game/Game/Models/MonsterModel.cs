@@ -28,8 +28,8 @@ namespace Game.Models
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
-            // Default to support
-            MonsterJob = MonsterJobEnum.Support;
+            // Default to Brute
+            MonsterJob = MonsterJobEnum.Brute;
         }
 
         /// <summary>
