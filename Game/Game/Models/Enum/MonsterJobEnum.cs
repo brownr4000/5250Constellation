@@ -1,4 +1,8 @@
-﻿namespace Game.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Game.Models
 {
     /// <summary>
     /// The Types of Jobs a monsters can have
@@ -9,23 +13,18 @@
         // Not specified
         Unknown = 0,
 
-        Fighter = 9,
-
         // Brute Monsters hit hard and are tough to beat
         Brute = 10,
-
-        Cleric = 19,
-        
+                
         // Swift Monsters attack quickly
         Swift = 20,
-
 
         Support = 29,
 
         // Clever Monsters have access to buffs
         Clever = 30
     }
-
+  
     /// <summary>
     /// Friendly strings for the Enum Class
     /// </summary>
@@ -61,6 +60,49 @@
             }
 
             return Message;
+        }
+
+    }
+
+    /// <summary>
+    /// Helper for the Difficulty Enum Class
+    /// </summary>
+    public static class MonsterJobEnumHelper
+    {
+        /// <summary>
+        /// Returns a list of strings of the enum for MonsterJob
+        /// </summary>
+        public static List<string> GetListAll
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList();
+                return myList;
+            }
+        }
+
+        /// <summary>
+        /// Returns a list of strings of the enum for MonsterJob
+        /// Removes the unknown
+        /// </summary>
+        public static List<string> GetListMonster
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList().Where(m => m.ToString().Equals("Unknown") == false).ToList();
+                return myList;
+            }
+        }
+
+        /// <summary>
+        /// Given the String for an enum, return its value. 
+        /// That allows for the enums to be numbered 2,4,6 rather than 1,2,3
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static MonsterJobEnum ConvertStringToEnum(string value)
+        {
+            return (MonsterJobEnum)Enum.Parse(typeof(MonsterJobEnum), value);
         }
     }
 }
