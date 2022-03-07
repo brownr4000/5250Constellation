@@ -116,6 +116,14 @@
                 <StackLayout Style="{StaticResource VerticalOnlyStack}">
                     <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
 
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                        
+                        <Image x:Name="TurnStatusImage"
+                               IsAnimationPlaying="True"
+                               Style="{StaticResource ImageBattleSmallStyle}" />  
+                        
+                    </StackLayout>
+                    
                     <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
                         <Image x:Name="Player1Image" IsAnimationPlaying="True" Style="{StaticResource ImageMedStyle}"/>
 

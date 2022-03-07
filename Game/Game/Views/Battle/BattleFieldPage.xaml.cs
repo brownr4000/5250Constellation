@@ -64,7 +64,7 @@ namespace Game.Views
             NextMoveFrame.IsVisible = false;
             BreakBattleSequenceFrame.IsVisible = false;
             MonsterDefenderLabel.IsVisible = false;
-
+            
             // Set initial State to Starting
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
 
@@ -159,6 +159,8 @@ namespace Game.Views
         {
             BattleSequenceFrame.IsVisible = true;
             isCharacterTheAttacker = false;
+            TurnStatusImage.IsVisible = false;
+
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender();
 
@@ -247,7 +249,7 @@ namespace Game.Views
             SetImages();
 
             // Output the Message of what happened.
-            GameMessage();
+            GameMessage(); 
 
             if (RoundCondition == RoundEnum.NewRound)
             {
@@ -290,6 +292,9 @@ namespace Game.Views
         /// </summary>
         public async void SetImages()
         {
+            PlayerInfoModel defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
+            HitStatusEnum hitStatus = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.HitStatus;
+
             Player1Image.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker is null ?
              null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
 
@@ -313,6 +318,12 @@ namespace Game.Views
                 {
                    if(monster.ImageURI == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI)
                     {
+                        if(BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Attack)
+                        {
+                            TurnStatusImage.IsVisible = true;
+                            TurnStatusImage.Source = "hit_gif.gif";
+                        }
+
                         Player2Image.Source = monster.ImageGIFURI;
 
                         // Animate monster dying
@@ -332,6 +343,14 @@ namespace Game.Views
 
             Player2Image.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender is null ?
                null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
+
+            if ((hitStatus == HitStatusEnum.Hit || hitStatus == HitStatusEnum.CriticalHit) 
+                && !TurnStatusImage.IsVisible
+                && BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction == ActionEnum.Attack)
+            {   
+                  TurnStatusImage.IsVisible = true;
+                  TurnStatusImage.Source = "hit.png";                    
+            }
         }
 
         /// <summary>
