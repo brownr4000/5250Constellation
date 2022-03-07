@@ -201,8 +201,12 @@
     <Content Include="fedora.png" />
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
+    <Content Include="guard.png" />
+    <Content Include="guard_gif.gif" />
     <Content Include="hat1.png" />
     <Content Include="hat2.png" />
+    <Content Include="hit.png" />
+    <Content Include="hit_gif.gif" />
     <Content Include="icon_add.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="icon_delete.png" />
@@ -270,6 +274,8 @@
     <Content Include="stungun_icon.png" />
     <Content Include="stun_gun.png" />
     <Content Include="sunglasses.png" />
+    <Content Include="support.png" />
+    <Content Include="support_gif.gif" />
     <Content Include="sword1.png" />
     <Content Include="sword10.png" />
     <Content Include="sword11.png" />
