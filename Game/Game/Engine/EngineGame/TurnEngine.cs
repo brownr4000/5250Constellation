@@ -144,9 +144,12 @@ namespace Game.Engine.EngineGame
              * If no open spaces, return false
              * 
              */
-            // DONE: Changed the logic while moving characters. System now checks if the target monster is selected
-            // by user.
-            // If yes, then character moves to a square near that monster.
+
+            /* 
+             * DONE: Changed the logic while moving characters. System now checks if the target monster is selected
+             * by user.
+             * If yes, then character moves to a square near that monster.
+             */
 
             // If the Monster the calculate the options
             if (Attacker.PlayerType == PlayerTypeEnum.Monster)
@@ -331,7 +334,7 @@ namespace Game.Engine.EngineGame
         /// <summary>
         /// Pick the Character to Attack
         /// </summary>
-        public override PlayerInfoModel SelectCharacterToAttack(PlayerInfoModel data)
+        public override PlayerInfoModel SelectCharacterToAttack()
         {
             // Check if there is less than one or no Players in the PlayerList
             if (EngineSettings.PlayerList == null)
@@ -343,6 +346,8 @@ namespace Game.Engine.EngineGame
             {
                 return null;
             }
+
+            var data = EngineSettings.CurrentAttacker;
 
             // Select first in the list
 
