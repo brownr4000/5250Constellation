@@ -306,7 +306,7 @@ namespace Game.Engine.EngineBase
             switch (data.PlayerType)
             {
                 case PlayerTypeEnum.Monster:
-                    return SelectCharacterToAttack();
+                    return SelectCharacterToAttack(data);
 
                 case PlayerTypeEnum.Character:
                 default:
@@ -318,7 +318,7 @@ namespace Game.Engine.EngineBase
         /// Pick the Character to Attack
         /// </summary>
         /// <returns></returns>
-        public virtual PlayerInfoModel SelectCharacterToAttack()
+        public virtual PlayerInfoModel SelectCharacterToAttack(PlayerInfoModel data)
         {
             if (EngineSettings.PlayerList == null)
             {
