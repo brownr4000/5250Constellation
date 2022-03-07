@@ -444,9 +444,6 @@ namespace Game.Engine.EngineGame
             // Do the Attack
             _ = CalculateAttackStatus(Attacker, Target);
 
-            // Hackathon
-            // ?? Hackathon Scenario ?? 
-
             // See if the Battle Settings Overrides the Roll
             EngineSettings.BattleMessagesModel.HitStatus = BattleSettingsOverride(Attacker);
 
