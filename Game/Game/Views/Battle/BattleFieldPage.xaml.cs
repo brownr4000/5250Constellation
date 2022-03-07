@@ -314,25 +314,22 @@ namespace Game.Views
                    if(monster.ImageURI == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI)
                     {
                         Player2Image.Source = monster.ImageGIFURI;
-                       // Player2Image.BackgroundColor = Color.Black;
-                        _ = Task.Delay(2000);
 
-                        //foreach (var i in new[] { 1, 3, 5 })
-                        //{
-                        //    await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SinIn);
-                        //    await Player2Image.RelScaleTo(-0.5 / i, 0, Easing.SinOut);
-                        //    await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SinInOut);
+                        // Animate monster dying
+                        foreach (var i in new[] { 1, 3, 5 })
+                        {
+                            await Player2Image.RelScaleTo(0.5 / i, 350, Easing.SinIn);
+                            await Player2Image.RelScaleTo(-0.5 / i, 0, Easing.SinOut);
 
-                        //    // Pause
-                        //    _ = Task.Delay(1900);                           
-                        //}
+                            // Pause
+                            _ = Task.Delay(2000);
+                        }
                         return;
                     }
                 }
                 return;
             }
 
-         //   Player2Image.BackgroundColor = Color.Transparent;
             Player2Image.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender is null ?
                null : BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.ImageURI;
         }
