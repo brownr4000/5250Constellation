@@ -29,7 +29,7 @@ namespace UnitTests.Engine.EngineGame
             AutoBattleEngine.Battle.Round = new RoundEngine();
             AutoBattleEngine.Battle.Round.Turn = new TurnEngine();
 
-            //AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
+            _ = AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
         }
 
         [TearDown]
@@ -151,7 +151,7 @@ namespace UnitTests.Engine.EngineGame
             //Reset
 
             //Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
         #endregion RunAutoBattle
 
