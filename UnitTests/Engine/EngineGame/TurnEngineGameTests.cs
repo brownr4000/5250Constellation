@@ -140,6 +140,8 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_AttackChoice_Valid_Default_Should_Pass()
         {
             // Arrange
+            Engine.EngineSettings.PlayerList.Clear();
+
             var character = new PlayerInfoModel(new CharacterModel());
             var monster = new PlayerInfoModel(
                 new MonsterModel
