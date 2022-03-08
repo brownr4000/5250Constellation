@@ -384,11 +384,19 @@ namespace Game.Engine.EngineGame
             }
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            // DONE: Changed it to picking monsters selected by user            
+            // DONE - Our Logic:
+            // Sort list for Alive Monsters,
+            // then order by Monster Job
+            // then by Attack
+            // theb by Current Health
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                .OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
+                .ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
+                .ThenBy(m => m.Attack)
+                .ThenBy(m => m.CurrentHealth)
+                .FirstOrDefault();
 
-            PlayerInfoModel Defender = new PlayerInfoModel();
-
-            Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
             return Defender;
         }
 
