@@ -124,13 +124,24 @@
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-
                             <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="1" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="20" />
+                                </Grid.ColumnDefinitions>
+
                                 <Image Grid.Row="0" Source="{Binding ImageURI}" 
-                                       Style="{StaticResource ImageMediumAspectToFitStyle}"/>
+                                   Style="{StaticResource ImageMediumAspectToFitStyle}"/>
+
                                 <StackLayout Grid.Row="1">
                                     <Label Text="{Binding Name}" Style="{StaticResource LabelStyle}"/>
                                 </StackLayout>
+
                             </Grid>
 
                         </DataTemplate>
@@ -138,9 +149,6 @@
                     </CollectionView.ItemTemplate>
 
                 </CollectionView>
-
-
-
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalCenterWith25SpacingStack}">
