@@ -328,10 +328,10 @@ namespace Game.GameRules
             var MonsterCount = MonsterIndexViewModel.Instance.Dataset.Count();
 
             // Random number to pick Monster
-            int MonsterNum = DiceHelper.RollDice(1, MonsterCount) - 1;
+            var MonsterNum = DiceHelper.RollDice(1, MonsterCount) - 1;
 
             //var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
-            var result = new PlayerInfoModel(MonsterIndexViewModel.Instance.Dataset[MonsterNum]);
+            var result = new MonsterModel(MonsterIndexViewModel.Instance.Dataset[MonsterNum]);
 
             // Flip a Coin
             var Coin = DiceHelper.RollDice(1, 2);
