@@ -114,12 +114,19 @@ namespace Game.Engine.EngineGame
                 //var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
                 var data = new PlayerInfoModel(MonsterIndexViewModel.Instance.Dataset[MonsterNum]);
 
+                // Flip a Coin
                 var Coin = DiceHelper.RollDice(1, 2);
 
+                // Roll a d4 to get a Bonus
                 var Bonus = DiceHelper.RollDice(1, 4);
 
                 // Help identify which Monster it is
                 data.Name += " " + Convert.ToString(i + 1);
+
+                data.Level = DiceHelper.RollDice(1, TargetLevel);
+
+                // Set inital MaxHealth
+                data.MaxHealth = DiceHelper.RollDice(data.Level, 10);
 
                 if (Coin == 1)
                 {
@@ -140,6 +147,10 @@ namespace Game.Engine.EngineGame
                         data.MonsterJob = MonsterJobEnum.Brute;
                     }
                 }
+
+                _ = data.LevelUpToValue(data.Level);
+
+                data.CurrentHealth = data.MaxHealth;
 
                 EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
             }
