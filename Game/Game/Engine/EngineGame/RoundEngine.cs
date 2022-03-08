@@ -92,9 +92,6 @@ namespace Game.Engine.EngineGame
             // Count of all Monsters in the Dataset
             var MonsterCount = MonsterIndexViewModel.Instance.Dataset.Count();
 
-            // Random number to pick Monster
-            int MonsterNum = DiceHelper.RollDice(1, MonsterCount) - 1;
-
             // Update Level based on Minimum Character Level
             if (EngineSettings.CharacterList.Count() > 0)
             {
@@ -105,6 +102,9 @@ namespace Game.Engine.EngineGame
             // Loop for number of Monsters in the Party
             for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
             {
+                // Random number to pick Monster
+                int MonsterNum = DiceHelper.RollDice(1, MonsterCount) - 1;
+
                 //var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
                 var data = new PlayerInfoModel(MonsterIndexViewModel.Instance.Dataset[MonsterNum]);
 
