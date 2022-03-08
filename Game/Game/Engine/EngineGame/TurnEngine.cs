@@ -347,12 +347,10 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            var data = EngineSettings.CurrentAttacker;
-
             // Select first in the list:
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            // DONE
+            // DONE - Our Logic:
             // Sort list for Alive Characters,
             // then order by Current Health,
             // then by CharacterJob,
@@ -365,40 +363,6 @@ namespace Game.Engine.EngineGame
                 .ThenBy(m => m.Job.Equals(CharacterJobEnum.Defender))
                 .ThenByDescending(m => m.Defense)
                 .FirstOrDefault();
-
-            //// Own logic, Selecting characters based on MonsterJob:   
-            //if (data.MonsterJob == MonsterJobEnum.Brute)
-            //{
-            //    Defender = EngineSettings.PlayerList
-            //   .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-            //   .Where(m => m.Job.Equals(CharacterJobEnum.Fighter))
-            //   .FirstOrDefault();
-            //}
-
-            //else if (data.MonsterJob == MonsterJobEnum.Swift)
-            //{
-            //    Defender = EngineSettings.PlayerList
-            //   .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-            //   .Where(m => m.Job.Equals(CharacterJobEnum.Defender))
-            //   .FirstOrDefault();
-            //}
-
-            //else if (data.MonsterJob == MonsterJobEnum.Clever)
-            //{
-            //    Defender = EngineSettings.PlayerList
-            //   .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-            //   .Where(m => m.Job.Equals(CharacterJobEnum.Striker))
-            //   .FirstOrDefault();
-            //}
-
-
-            //if(Defender == null)
-            //{
-            //  Defender = EngineSettings.PlayerList
-            // .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-            // .OrderBy(m => m.CurrentHealth)
-            // .FirstOrDefault();
-            //}
 
             return Defender;
         }
