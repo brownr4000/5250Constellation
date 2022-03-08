@@ -383,19 +383,29 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
+            var Defender = new PlayerInfoModel();
+
             // TODO: Teams, You need to implement your own Logic can not use mine.
             // DONE - Our Logic:
+            // If defender is not already selected by user
             // Sort list for Alive Monsters,
             // then order by Monster Job
             // then by Attack
             // theb by Current Health
-            var Defender = EngineSettings.PlayerList
-                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-                .OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
-                .ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
-                .ThenBy(m => m.Attack)
-                .ThenBy(m => m.CurrentHealth)
-                .FirstOrDefault();
+            if (!EngineSettings.CurrentDefender.IsSelectedAsTarget)
+            {
+              Defender = EngineSettings.PlayerList
+              .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+              .OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
+              .ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
+              .ThenBy(m => m.Attack)
+              .ThenBy(m => m.CurrentHealth)
+              .FirstOrDefault();
+            }
+            else
+            {
+                Defender = EngineSettings.CurrentDefender;
+            } 
 
             return Defender;
         }
