@@ -11,7 +11,7 @@
                 HorizontalOptions="CenterAndExpand" 
                 Style="{StaticResource CenterMessageLargeStyle}"/>
 
-            <Image Source="Alien_Planet.png" Style="{StaticResource StandardImageStyle}"/>
+            <Image Source="game_over_icon.png" Style="{StaticResource StandardImageStyle}"/>
 
             <Button Text="View Your Results" Clicked="ViewResult_Clicked" Style="{StaticResource ButtonStyle}"/>
 
