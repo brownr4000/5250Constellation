@@ -316,5 +316,81 @@ namespace Game.GameRules
 
             return result;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="MaxLevel"></param>
+        /// <returns></returns>
+        public static MonsterModel GetMonsterFromDatastore(int MaxLevel)
+        {
+            // Count of all Monsters in the Dataset
+            var MonsterCount = MonsterIndexViewModel.Instance.Dataset.Count();
+
+            // Random number to pick Monster
+            int MonsterNum = DiceHelper.RollDice(1, MonsterCount) - 1;
+
+            //var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+            var result = new PlayerInfoModel(MonsterIndexViewModel.Instance.Dataset[MonsterNum]);
+
+            // Flip a Coin
+            var Coin = DiceHelper.RollDice(1, 2);
+
+            // Roll a d4 to get a Bonus
+            var Bonus = DiceHelper.RollDice(1, 4);
+
+            // Set Level based on Max Level of Characters
+            result.Level = DiceHelper.RollDice(1, MaxLevel);
+
+            // Set Difficulty
+            result.Difficulty = GetMonsterDifficultyValue();
+
+            // Adjust values based on Difficulty
+            result.Attack = result.Difficulty.ToModifier(result.Attack);
+            result.Defense = result.Difficulty.ToModifier(result.Defense);
+            result.Speed = result.Difficulty.ToModifier(result.Speed);
+
+            // Randomly give Bonuses to Monster based on Coin Flip
+            if (Coin == 1)
+            {
+                result.Attack += Bonus;
+
+                if (result.MonsterJob == MonsterJobEnum.Brute)
+                {
+                    result.MonsterJob = MonsterJobEnum.Swift;
+                }
+            }
+
+            if (Coin == 2)
+            {
+                result.Defense += Bonus;
+
+                if (result.MonsterJob == MonsterJobEnum.Swift)
+                {
+                    result.MonsterJob = MonsterJobEnum.Brute;
+                }
+            }
+
+            // Set inital MaxHealth
+            result.MaxHealth = DiceHelper.RollDice(result.Level, 10);
+
+            // Adjust the health, If the new Max Health is above the rule for the level, use the original
+            var MaxHealthAdjusted = result.Difficulty.ToModifier(result.MaxHealth);
+            if (MaxHealthAdjusted < result.Level * 10)
+            {
+                result.MaxHealth = MaxHealthAdjusted;
+            }
+
+            // Level up to new level
+            _ = result.LevelUpToValue(result.Level);
+
+            // Set ExperienceRemaining so Monsters can both use this method
+            result.ExperienceRemaining = LevelTableHelper.LevelDetailsList[result.Level + 1].Experience;
+
+            // Start Battle at Full Health
+            result.CurrentHealth = result.MaxHealth;
+
+            return result;
+        }
     }
 }
