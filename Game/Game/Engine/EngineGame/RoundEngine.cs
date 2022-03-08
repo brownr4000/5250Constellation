@@ -6,7 +6,9 @@ using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.GameRules;
+using Game.Helpers;
 using Game.Models;
+using Game.ViewModels;
 
 namespace Game.Engine.EngineGame
 {
@@ -92,8 +94,15 @@ namespace Game.Engine.EngineGame
         {
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            var TargetLevel = 1;
+            var TargetLevel = 1;    // Value to hold Level
 
+            // Count of all Monsters in the Dataset
+            var MonsterCount = MonsterIndexViewModel.Instance.Dataset.Count();
+
+            // Random number to pick Monster
+            int MonsterNum = DiceHelper.RollDice(1, MonsterCount) - 1;
+
+            // Update Level based on Minimum Character Level
             if (EngineSettings.CharacterList.Count() > 0)
             {
                 // Get the Min Character Level (linq is soo cool....)
@@ -102,10 +111,35 @@ namespace Game.Engine.EngineGame
 
             for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
             {
-                var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+                //var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+                var data = new PlayerInfoModel(MonsterIndexViewModel.Instance.Dataset[MonsterNum]);
+
+                var Coin = DiceHelper.RollDice(1, 2);
+
+                var Bonus = DiceHelper.RollDice(1, 4);
 
                 // Help identify which Monster it is
-                data.Name += " " + EngineSettings.MonsterList.Count() + 1;
+                data.Name += " " + Convert.ToString(i + 1);
+
+                if (Coin == 1)
+                {
+                    data.Attack += Bonus;
+
+                    if (data.MonsterJob == MonsterJobEnum.Brute)
+                    {
+                        data.MonsterJob = MonsterJobEnum.Swift;
+                    }
+                }
+
+                if (Coin == 2)
+                {
+                    data.Defense += Bonus;
+
+                    if (data.MonsterJob == MonsterJobEnum.Swift)
+                    {
+                        data.MonsterJob = MonsterJobEnum.Brute;
+                    }
+                }
 
                 EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
             }
