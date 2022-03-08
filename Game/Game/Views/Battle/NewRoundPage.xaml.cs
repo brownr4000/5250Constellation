@@ -33,8 +33,12 @@ namespace Game.Views
             // Create the Map in the Game Engine
             _ = EngineViewModel.Engine.EngineSettings.MapModel.PopulateMapModel(EngineViewModel.Engine.EngineSettings.PlayerList);
 
-            // Start the Battle Engine
-            _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
+            //TODO: Set round correctly.
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount < 1)
+            {
+                // Start the Battle Engine
+                _ = BattleEngineViewModel.Instance.Engine.StartBattle(false);
+            }            
 
             // Draw the Monsters
             foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)
