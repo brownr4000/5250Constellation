@@ -366,39 +366,39 @@ namespace Game.Engine.EngineGame
                 .ThenByDescending(m => m.Defense)
                 .FirstOrDefault();
 
-            // Own logic, Selecting characters based on MonsterJob:   
-            if (data.MonsterJob == MonsterJobEnum.Brute)
-            {
-                Defender = EngineSettings.PlayerList
-               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-               .Where(m => m.Job.Equals(CharacterJobEnum.Fighter))
-               .FirstOrDefault();
-            }
+            //// Own logic, Selecting characters based on MonsterJob:   
+            //if (data.MonsterJob == MonsterJobEnum.Brute)
+            //{
+            //    Defender = EngineSettings.PlayerList
+            //   .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+            //   .Where(m => m.Job.Equals(CharacterJobEnum.Fighter))
+            //   .FirstOrDefault();
+            //}
 
-            else if (data.MonsterJob == MonsterJobEnum.Swift)
-            {
-                Defender = EngineSettings.PlayerList
-               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-               .Where(m => m.Job.Equals(CharacterJobEnum.Defender))
-               .FirstOrDefault();
-            }
+            //else if (data.MonsterJob == MonsterJobEnum.Swift)
+            //{
+            //    Defender = EngineSettings.PlayerList
+            //   .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+            //   .Where(m => m.Job.Equals(CharacterJobEnum.Defender))
+            //   .FirstOrDefault();
+            //}
 
-            else if (data.MonsterJob == MonsterJobEnum.Clever)
-            {
-                Defender = EngineSettings.PlayerList
-               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-               .Where(m => m.Job.Equals(CharacterJobEnum.Striker))
-               .FirstOrDefault();
-            }
+            //else if (data.MonsterJob == MonsterJobEnum.Clever)
+            //{
+            //    Defender = EngineSettings.PlayerList
+            //   .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+            //   .Where(m => m.Job.Equals(CharacterJobEnum.Striker))
+            //   .FirstOrDefault();
+            //}
 
 
-            if(Defender == null)
-            {
-              Defender = EngineSettings.PlayerList
-             .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-             .OrderBy(m => m.CurrentHealth)
-             .FirstOrDefault();
-            }
+            //if(Defender == null)
+            //{
+            //  Defender = EngineSettings.PlayerList
+            // .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+            // .OrderBy(m => m.CurrentHealth)
+            // .FirstOrDefault();
+            //}
 
             return Defender;
         }
@@ -715,7 +715,7 @@ namespace Game.Engine.EngineGame
             // DONE: No of items dropped will be equal to the round number
 
             // Negative results in nothing dropped
-            var NumberToDrop = round;
+            var NumberToDrop = DiceHelper.RollDice(1, round - 2) + 1;
 
             var result = new List<ItemModel>();
             for (var i = 0; i < NumberToDrop; i++)
