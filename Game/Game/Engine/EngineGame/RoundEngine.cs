@@ -89,9 +89,6 @@ namespace Game.Engine.EngineGame
         {
             var TargetLevel = 1;    // Value to hold Level
 
-            // Count of all Monsters in the Dataset
-            var MonsterCount = MonsterIndexViewModel.Instance.Dataset.Count();
-
             // Update Level based on Minimum Character Level
             if (EngineSettings.CharacterList.Count() > 0)
             {
@@ -102,71 +99,11 @@ namespace Game.Engine.EngineGame
             // Loop for number of Monsters in the Party
             for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
             {
-                // Random number to pick Monster
-                int MonsterNum = DiceHelper.RollDice(1, MonsterCount) - 1;
-
                 //var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
-                var data = new PlayerInfoModel(MonsterIndexViewModel.Instance.Dataset[MonsterNum]);
-
-                // Flip a Coin
-                var Coin = DiceHelper.RollDice(1, 2);
-
-                // Roll a d4 to get a Bonus
-                var Bonus = DiceHelper.RollDice(1, 4);
+                var data = RandomPlayerHelper.GetMonsterFromDatastore(TargetLevel);
 
                 // Help identify which Monster it is
                 data.Name += " " + Convert.ToString(i + 1);
-
-                // Set Level based on Max Level of Characters
-                data.Level = DiceHelper.RollDice(1, TargetLevel);
-
-                // Set Difficulty
-                data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
-
-                // Adjust values based on Difficulty
-                data.Attack = data.Difficulty.ToModifier(data.Attack);
-                data.Defense = data.Difficulty.ToModifier(data.Defense);
-                data.Speed = data.Difficulty.ToModifier(data.Speed);
-
-                // Randomly give Bonuses to Monster based on Coin Flip
-                if (Coin == 1)
-                {
-                    data.Attack += Bonus;
-
-                    if (data.MonsterJob == MonsterJobEnum.Brute)
-                    {
-                        data.MonsterJob = MonsterJobEnum.Swift;
-                    }
-                }
-
-                if (Coin == 2)
-                {
-                    data.Defense += Bonus;
-
-                    if (data.MonsterJob == MonsterJobEnum.Swift)
-                    {
-                        data.MonsterJob = MonsterJobEnum.Brute;
-                    }
-                }
-
-                // Set inital MaxHealth
-                data.MaxHealth = DiceHelper.RollDice(data.Level, 10);
-
-                // Adjust the health, If the new Max Health is above the rule for the level, use the original
-                var MaxHealthAdjusted = data.Difficulty.ToModifier(data.MaxHealth);
-                if (MaxHealthAdjusted < data.Level * 10)
-                {
-                    data.MaxHealth = MaxHealthAdjusted;
-                }
-
-                // Level up to new level
-                _ = data.LevelUpToValue(data.Level);
-
-                // Set ExperienceRemaining so Monsters can both use this method
-                data.ExperienceRemaining = LevelTableHelper.LevelDetailsList[data.Level + 1].Experience;
-
-                // Start Battle at Full Health
-                data.CurrentHealth = data.MaxHealth;
 
                 // Add monster to MonsterList
                 EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
