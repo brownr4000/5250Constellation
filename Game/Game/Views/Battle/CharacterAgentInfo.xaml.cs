@@ -140,11 +140,11 @@ namespace Game.Views
             AttackProgressBar.Progress = AllCharactersList[characterImageIndex].Attack;
             SpeedProgressBar.Progress = AllCharactersList[characterImageIndex].Speed;
             DefenseProgressBar.Progress = AllCharactersList[characterImageIndex].Defense;
-            HealthProgressBar.Progress = AllCharactersList[characterImageIndex].CurrentHealth;
+            HealthProgressBar.Progress = AllCharactersList[characterImageIndex].MaxHealth;
             AttackLabel.Text = AllCharactersList[characterImageIndex].Attack.ToString();
             SpeedLabel.Text = AllCharactersList[characterImageIndex].Speed.ToString();
             DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
-            HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
+            HealthLabel.Text = AllCharactersList[characterImageIndex].MaxHealth.ToString();
 
             // Update ViewModel with latest character selected to pass this to pick characters page
             this.ViewModel.Data = AllCharactersList[characterImageIndex];
@@ -174,11 +174,11 @@ namespace Game.Views
             AttackProgressBar.Progress = AllCharactersList[characterImageIndex].Attack;
             SpeedProgressBar.Progress = AllCharactersList[characterImageIndex].Speed;
             DefenseProgressBar.Progress = AllCharactersList[characterImageIndex].Defense;
-            HealthProgressBar.Progress = AllCharactersList[characterImageIndex].CurrentHealth;
+            HealthProgressBar.Progress = AllCharactersList[characterImageIndex].MaxHealth;
             AttackLabel.Text = AllCharactersList[characterImageIndex].Attack.ToString();
             SpeedLabel.Text = AllCharactersList[characterImageIndex].Speed.ToString();
             DefenseLabel.Text = AllCharactersList[characterImageIndex].Defense.ToString();
-            HealthLabel.Text = AllCharactersList[characterImageIndex].CurrentHealth.ToString();
+            HealthLabel.Text = AllCharactersList[characterImageIndex].MaxHealth.ToString();
 
             // Update ViewModel with latest character selected to pass this to pick items page
             this.ViewModel.Data = AllCharactersList[characterImageIndex];

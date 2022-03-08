@@ -122,13 +122,13 @@
                                 <ProgressBar 
                                     x:Name="HealthProgressBar"
                                     Grid.Column="1" 
-                                    Progress="{Binding Data.CurrentHealth}"
+                                    Progress="{Binding Data.MaxHealth}"
                                     Style="{StaticResource ProgressBarStyle}"/>
 
                                 <Label 
                                     x:Name="HealthLabel"
                                     Grid.Column="2" 
-                                    Text="{Binding Data.CurrentHealth}"
+                                    Text="{Binding Data.MaxHealth}"
                                     Style="{StaticResource CenterValueStyle}"/>
 
                             </Grid>
