@@ -11,6 +11,9 @@ namespace Game.GameRules
 {
     public static class RandomPlayerHelper
     {
+        public static List<string> CharacterImageList = new List<string> { "agent_amelix.png", "agent_baby.png", "agent_dog.png", "agent_prof_tompkins.png", "agent_robot.png", "agent_smith.png" };
+        public static List<string> MonsterImageList = new List<string> { "Cancer_Monster.png", "Musca_Monster.png", "Lacerta_Monster.png", "Pisces_Monster.png", "Scorpio_Monster.png", "Serpens_Monster.png" };
+
         /// <summary>
         /// Get Health
         /// </summary>
@@ -69,9 +72,7 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetMonsterImage()
         {
-            List<String> FirstNameList = new List<String> { "Cancer_Monster.png", "Musca_Monster.png", "Lacerta_Monster.png", "Pisces_Monster.png", "Scorpio_Monster.png", "Serpens_Monster.png" };
-
-            var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
+            var result = MonsterImageList.ElementAt(DiceHelper.RollDice(1, MonsterImageList.Count()) - 1);
 
             return result;
         }
@@ -82,10 +83,7 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetCharacterImage()
         {
-
-            List<String> FirstNameList = new List<String> { "agent_amelix.png", "agent_baby.png", "agent_dog.png", "agent_prof_tompkins.png", "agent_robot.png", "agent_smith.png" };
-
-            var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
+            var result = CharacterImageList.ElementAt(DiceHelper.RollDice(1, CharacterImageList.Count()) - 1);
 
             return result;
         }
@@ -99,7 +97,7 @@ namespace Game.GameRules
         public static string GetMonsterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Cancer", "Musca", "Lacerta", "Pisces", "Scorpio", "Serpens" };
+            List<string> FirstNameList = new List<string> { "Cancer", "Musca", "Lacerta", "Pisces", "Scorpio", "Serpens" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -114,7 +112,7 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetMonsterDescription()
         {
-            List<String> StringList = new List<String> { "the destroyer", "the terrible", "the hunter", "the killer", "Can't we all get along?" };
+            List<string> StringList = new List<string> { "the destroyer", "the terrible", "the hunter", "the killer", "Can't we all get along?" };
 
             var result = StringList.ElementAt(DiceHelper.RollDice(1, StringList.Count()) - 1);
 
@@ -130,7 +128,7 @@ namespace Game.GameRules
         public static string GetCharacterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Agent Kay", "Agent Jay", "Agent Mercury", "Agent Lady Bug", "Agent Buck"};
+            List<string> FirstNameList = new List<string> { "Agent Kay", "Agent Jay", "Agent Mercury", "Agent Lady Bug", "Agent Buck"};
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -145,7 +143,7 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetCharacterDescription()
         {
-            List<String> StringList = new List<String> { "the courageous", "the awesome", "the younger", "the quiet", "the clever" };
+            List<string> StringList = new List<string> { "the courageous", "the awesome", "the younger", "the quiet", "the clever" };
 
             var result = StringList.ElementAt(DiceHelper.RollDice(1, StringList.Count()) - 1);
 
@@ -275,7 +273,7 @@ namespace Game.GameRules
 
                 ImageURI = GetMonsterImage(),
 
-                Difficulty = GetMonsterDifficultyValue(),
+                Difficulty = GetMonsterDifficultyValue()
                 //MonsterJob = GetMonsterJobValue()
             };
 
