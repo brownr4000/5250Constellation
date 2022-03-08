@@ -851,7 +851,7 @@ namespace Game.Views
             RangeValue.Text = CurrentCharacterData.Range.ToString();
 
             //Setting progress bars
-            HealthProgressBar.Progress = CurrentCharacterData.CurrentHealth / 9f;
+            HealthProgressBar.Progress = CurrentCharacterData.CurrentHealth / 24f;
             RangeProgressBar.Progress = CurrentCharacterData.Range / 9f;
             return true;
         }

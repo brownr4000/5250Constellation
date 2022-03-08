@@ -451,7 +451,7 @@
             <Style TargetType="Frame"
                 x:Key="FrameWithHeightStyle"
                    BasedOn="{StaticResource FrameStyle}">
-                <Setter Property="HeightRequest" Value="300" />
+                <Setter Property="HeightRequest" Value="280" />
             </Style>
 
             <!-- Image -->
