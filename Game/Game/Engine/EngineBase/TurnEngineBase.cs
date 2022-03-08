@@ -552,6 +552,13 @@ namespace Game.Engine.EngineBase
                 {
                     EngineSettings.BattleMessagesModel.LevelUpMessage = Attacker.Name + " is now Level " + Attacker.Level + " With Health Max of " + Attacker.GetMaxHealthTotal;
                     Debug.WriteLine(EngineSettings.BattleMessagesModel.LevelUpMessage);
+                    foreach(var character in EngineSettings.CharacterList)
+                    {
+                        if(character.Guid == Attacker.Guid)
+                        {
+                            character.Level = Attacker.Level;
+                        }
+                    }
                 }
 
                 // Add Experinece to the Score
