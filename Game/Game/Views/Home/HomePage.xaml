@@ -14,7 +14,7 @@
                 <StackLayout Style="{StaticResource HorizontalCenterStack}">
                     <Image
                          Source="Battle_Of_Cosmos.png"
-                         Style="{StaticResource ImageLargeStyle}"/>
+                         Style="{StaticResource StandardImageStyle}"/>
                 
                 </StackLayout>
                 
