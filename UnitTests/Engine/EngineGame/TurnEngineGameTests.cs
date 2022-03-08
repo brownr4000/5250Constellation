@@ -436,14 +436,19 @@ namespace UnitTests.Engine.EngineGame
         {
             // Arrange
             var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+            var monster = new PlayerInfoModel(new MonsterModel());
+            Engine.EngineSettings.CurrentAttacker = PlayerInfo;
+            Engine.EngineSettings.CurrentDefender = monster;
 
             // Act
+            var action = Engine.EngineSettings.CurrentAction;
             var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(ActionEnum.Unknown, action);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
