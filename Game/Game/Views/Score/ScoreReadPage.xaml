@@ -152,7 +152,6 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalCenterWith25SpacingStack}">
-                <!--<Label Text="Total Experience" Style="{StaticResource CenterLabelStyle}"/>-->
                 <Label Text="Score" Style="{StaticResource CenterLabelStyle}"/>
                 <Label Text="{Binding ExperienceGainedTotal}" Style="{StaticResource CenterLabelStyle}"/>
             </StackLayout>
