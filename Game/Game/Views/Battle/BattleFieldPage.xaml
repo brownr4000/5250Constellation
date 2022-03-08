@@ -39,8 +39,7 @@
                         <Image x:Name="CharacterImage" Style="{StaticResource ImageBattleSmallStyle}"/>
                         
                         <Label x:Name="CharacterName" 
-                               Style="{StaticResource BreakBattleLabelStyle}"/>
-                            
+                               Style="{StaticResource BattleCharacterLabelStyle}"/>                            
                        
                           <StackLayout Style="{StaticResource HorizontalOrientationStack}">
                                 <Grid
