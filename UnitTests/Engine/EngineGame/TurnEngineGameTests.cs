@@ -583,7 +583,7 @@ namespace UnitTests.Engine.EngineGame
             var PlayerInfo = new PlayerInfoModel(player);
 
             _ = DiceHelper.EnableForcedRolls();
-            _ = DiceHelper.SetForcedRollValue(0);
+            _ = DiceHelper.SetForcedRollValue(1);
 
             // Act
             var result = Engine.Round.Turn.DropItems(PlayerInfo);
@@ -592,7 +592,7 @@ namespace UnitTests.Engine.EngineGame
             _ = DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(2, result);
         }
         #endregion DropItems
     }
