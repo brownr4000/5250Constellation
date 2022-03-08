@@ -140,6 +140,8 @@ namespace UnitTests.Engine.EngineGame
         public void TurnEngine_AttackChoice_Valid_Default_Should_Pass()
         {
             // Arrange
+            Engine.EngineSettings.PlayerList.Clear();
+
             var character = new PlayerInfoModel(new CharacterModel());
             var monster = new PlayerInfoModel(
                 new MonsterModel
@@ -546,12 +548,12 @@ namespace UnitTests.Engine.EngineGame
             // Arrange 
 
             // Act
-            var result = Engine.Round.Turn.GetRandomMonsterItemDrops(2).Count();
+            var result = Engine.Round.Turn.GetRandomMonsterItemDrops(1).Count();
 
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(1, result);
         }
         #endregion GetRandomMonsterItemDrops
 

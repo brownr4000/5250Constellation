@@ -347,12 +347,10 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            var data = EngineSettings.CurrentAttacker;
-
             // Select first in the list:
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            // DONE
+            // DONE - Our Logic:
             // Sort list for Alive Characters,
             // then order by Current Health,
             // then by CharacterJob,
@@ -365,40 +363,6 @@ namespace Game.Engine.EngineGame
                 .ThenBy(m => m.Job.Equals(CharacterJobEnum.Defender))
                 .ThenByDescending(m => m.Defense)
                 .FirstOrDefault();
-
-            // Own logic, Selecting characters based on MonsterJob:   
-            if (data.MonsterJob == MonsterJobEnum.Brute)
-            {
-                Defender = EngineSettings.PlayerList
-               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-               .Where(m => m.Job.Equals(CharacterJobEnum.Fighter))
-               .FirstOrDefault();
-            }
-
-            else if (data.MonsterJob == MonsterJobEnum.Swift)
-            {
-                Defender = EngineSettings.PlayerList
-               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-               .Where(m => m.Job.Equals(CharacterJobEnum.Defender))
-               .FirstOrDefault();
-            }
-
-            else if (data.MonsterJob == MonsterJobEnum.Clever)
-            {
-                Defender = EngineSettings.PlayerList
-               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-               .Where(m => m.Job.Equals(CharacterJobEnum.Striker))
-               .FirstOrDefault();
-            }
-
-
-            if(Defender == null)
-            {
-              Defender = EngineSettings.PlayerList
-             .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-             .OrderBy(m => m.CurrentHealth)
-             .FirstOrDefault();
-            }
 
             return Defender;
         }
@@ -420,11 +384,19 @@ namespace Game.Engine.EngineGame
             }
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            // DONE: Changed it to picking monsters selected by user            
+            // DONE - Our Logic:
+            // Sort list for Alive Monsters,
+            // then order by Monster Job
+            // then by Attack
+            // theb by Current Health
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                .OrderBy(m => m.Job.Equals(MonsterJobEnum.Brute))
+                .ThenBy(m => m.Job.Equals(MonsterJobEnum.Swift))
+                .ThenBy(m => m.Attack)
+                .ThenBy(m => m.CurrentHealth)
+                .FirstOrDefault();
 
-            PlayerInfoModel Defender = new PlayerInfoModel();
-
-            Defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
             return Defender;
         }
 
@@ -715,7 +687,7 @@ namespace Game.Engine.EngineGame
             // DONE: No of items dropped will be equal to the round number
 
             // Negative results in nothing dropped
-            var NumberToDrop = round;
+            var NumberToDrop = DiceHelper.RollDice(1, round - 2) + 1;
 
             var result = new List<ItemModel>();
             for (var i = 0; i < NumberToDrop; i++)
