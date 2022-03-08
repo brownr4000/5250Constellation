@@ -78,22 +78,15 @@ namespace Game.Engine.EngineGame
         /// <summary>
         /// Add Monsters to the Round
         /// 
-        /// Because Monsters can be duplicated, will add 1, 2, 3 to their name
-        ///   
-        /*
-            * Hint: 
-            * I don't have crudi monsters yet so will add 6 new ones..
-            * If you have crudi monsters, then pick from the list
-
-            * Consdier how you will scale the monsters up to be appropriate for the characters to fight
-            * 
-            */
+        /// Chooses a Monster from the existing Dataset at random
+        /// Creates the Maximum number of Monsters using the base Monster
+        /// Adjusts the name based on the number in the party
+        /// Applies a random Bonus based on a Coin Flip and a d4
+        /// Adds modified Monster to the Monster List
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The number of Monsters in the MonsterList</returns>
         public override int AddMonstersToRound()
         {
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-
             var TargetLevel = 1;    // Value to hold Level
 
             // Count of all Monsters in the Dataset
@@ -109,6 +102,7 @@ namespace Game.Engine.EngineGame
                 TargetLevel = Convert.ToInt32(EngineSettings.CharacterList.Min(m => m.Level));
             }
 
+            // Loop for number of Monsters in the Party
             for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
             {
                 //var data = RandomPlayerHelper.GetRandomMonster(TargetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
@@ -123,11 +117,18 @@ namespace Game.Engine.EngineGame
                 // Help identify which Monster it is
                 data.Name += " " + Convert.ToString(i + 1);
 
+                // Set Level based on Max Level of Characters
                 data.Level = DiceHelper.RollDice(1, TargetLevel);
 
-                // Set inital MaxHealth
-                data.MaxHealth = DiceHelper.RollDice(data.Level, 10);
+                // Set Difficulty
+                data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
 
+                // Adjust values based on Difficulty
+                data.Attack = data.Difficulty.ToModifier(data.Attack);
+                data.Defense = data.Difficulty.ToModifier(data.Defense);
+                data.Speed = data.Difficulty.ToModifier(data.Speed);
+
+                // Randomly give Bonuses to Monster based on Coin Flip
                 if (Coin == 1)
                 {
                     data.Attack += Bonus;
@@ -148,10 +149,26 @@ namespace Game.Engine.EngineGame
                     }
                 }
 
+                // Set inital MaxHealth
+                data.MaxHealth = DiceHelper.RollDice(data.Level, 10);
+
+                // Adjust the health, If the new Max Health is above the rule for the level, use the original
+                var MaxHealthAdjusted = data.Difficulty.ToModifier(data.MaxHealth);
+                if (MaxHealthAdjusted < data.Level * 10)
+                {
+                    data.MaxHealth = MaxHealthAdjusted;
+                }
+
+                // Level up to new level
                 _ = data.LevelUpToValue(data.Level);
 
+                // Set ExperienceRemaining so Monsters can both use this method
+                data.ExperienceRemaining = LevelTableHelper.LevelDetailsList[data.Level + 1].Experience;
+
+                // Start Battle at Full Health
                 data.CurrentHealth = data.MaxHealth;
 
+                // Add monster to MonsterList
                 EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
             }
 
