@@ -114,7 +114,7 @@
 
             <Frame x:Name="BattleSequenceFrame" Style="{StaticResource BattleSequenceFrame}">
                 <StackLayout Style="{StaticResource VerticalOnlyStack}">
-                    <Label x:Name="RoundLabel" Text="Round 1" Style="{StaticResource LabelStartStyle}"/>
+                    <Label x:Name="RoundLabel" Style="{StaticResource LabelStartStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalCenterStack}">
                         

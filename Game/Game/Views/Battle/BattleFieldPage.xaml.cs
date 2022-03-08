@@ -77,6 +77,9 @@ namespace Game.Views
             // Populate the UI Map
             DrawMapGridInitialState();
 
+            // Setting round count
+            RoundLabel.Text = "ROUND " + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
+
             // Ask the Game engine to select who goes first
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
         }
@@ -146,6 +149,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public void StartBattleButton_Clicked(object sender, EventArgs e)
         {
+            // Setting round count
+            RoundLabel.Text = "ROUND " + BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
+
             NextAction();
             BattleSequenceFrame.IsVisible = true;
             NextMoveFrame.IsVisible = false;
@@ -502,7 +508,7 @@ namespace Game.Views
             BattleSequenceFrame.IsVisible = false;
             NextMoveFrame.IsVisible = false;
             MonsterDefenderLabel.IsVisible = false;
-
+            
             // Output the Message of what happened.
             GameMessage();
 
