@@ -201,6 +201,7 @@
     <Content Include="fedora.png" />
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
+    <Content Include="game_over_icon.png" />
     <Content Include="guard.png" />
     <Content Include="guard_gif.gif" />
     <Content Include="hat1.png" />

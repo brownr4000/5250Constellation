@@ -580,5 +580,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\support_gif.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\game_over_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
