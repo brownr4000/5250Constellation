@@ -54,7 +54,7 @@
             </CollectionView>
 
             <StackLayout Style="{StaticResource HorizontalCenterStack}">
-                <StackLayout
+                <!--<StackLayout
                                 Grid.Column="0"
                                 Grid.Row="2" 
                                 Style="{StaticResource VerticalWithPaddingStack}">
@@ -66,7 +66,7 @@
                                     Text="{Binding ScoreTotal}"
                                     Style="{StaticResource ValueStyle}"/>
 
-                </StackLayout>
+                </StackLayout>-->
 
                 <StackLayout
                                 Grid.Column="1"
@@ -152,7 +152,8 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalCenterWith25SpacingStack}">
-                <Label Text="Total Experience" Style="{StaticResource CenterLabelStyle}"/>
+                <!--<Label Text="Total Experience" Style="{StaticResource CenterLabelStyle}"/>-->
+                <Label Text="Score" Style="{StaticResource CenterLabelStyle}"/>
                 <Label Text="{Binding ExperienceGainedTotal}" Style="{StaticResource CenterLabelStyle}"/>
             </StackLayout>
 
