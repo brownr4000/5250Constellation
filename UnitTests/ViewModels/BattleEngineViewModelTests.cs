@@ -74,6 +74,8 @@ namespace UnitTests.ViewModels
 
             var countBefore = result.DatabaseCharacterList.Count;
 
+            result.PartyCharacterList.Clear();
+
             // Act
             result.DatabaseCharacterList.Add(new CharacterModel());
             result.PartyCharacterList.Add(new CharacterModel());
