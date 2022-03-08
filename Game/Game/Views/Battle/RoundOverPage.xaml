@@ -21,7 +21,7 @@
 
                             <StackLayout Style="{StaticResource HorizontalStack}">
                                 <Label Text="Round : " Style="{StaticResource MessageStyle}"/>
-                                <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
+                                <Label x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
                             </StackLayout>
 
                             <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
