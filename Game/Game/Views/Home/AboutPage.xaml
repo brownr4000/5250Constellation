@@ -19,31 +19,32 @@
             <StackLayout Style="{StaticResource HorizontalOptionCenterWithSpacingStack}">
 
                 <Image Source="Logo.png" Style="{StaticResource ImageLargeStyle}"/>
-                <Label Text="Constellation" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Text="Battle of Cosmos" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                <Label Text="Development Team" Style="{StaticResource CenterMessageStyle}"/>
+                <StackLayout Style="{StaticResource VerticalStartStack}">
 
-                <StackLayout Style="{StaticResource HorizontalCenterStack}">
-                    <Label Text="Madhuri Tatineni" Style="{StaticResource MessageStyle}"/>
-                    
-                    <Label Text="Han Duong" Style="{StaticResource MessageStyle}"/>
-                    
-                    <Label Text="Bob Brown" Style="{StaticResource MessageStyle}"/>
-                
+                    <Label Text="Development Team" HorizontalOptions="Start" Style="{StaticResource MessageStartLargeStyle}"/>
+
+                    <StackLayout Style="{StaticResource HorizontalCenterStack}">
+                        <Label Text="Madhuri Tatineni," Style="{StaticResource MessageStartStyle}"/>
+
+                        <Label Text="Han Duong," Style="{StaticResource MessageStartStyle}"/>
+
+                        <Label Text="Bob Brown" Style="{StaticResource MessageStartStyle}"/>
+                    </StackLayout>
+
+                    <Label Text="Design Team" Style="{StaticResource MessageStartLargeStyle}"/>
+
+                    <StackLayout Style="{StaticResource HorizontalStartStack}">
+
+                        <Label Text="Emily Efird," Style="{StaticResource MessageStartStyle}"/>
+
+                        <Label Text="Takumi Aoyama" Style="{StaticResource MessageStartStyle}"/>
+                    </StackLayout>
+
+                    <Label x:Name="CurrentDateTime" Style="{StaticResource LabelStartSecondaryColorStyle}"/>
                 </StackLayout>
-
-                <Label Text="Design Team" Style="{StaticResource CenterMessageStyle}"/>
-
-                <StackLayout Style="{StaticResource HorizontalCenterStack}">
-
-                    <Label Text="Emily Efird" Style="{StaticResource MessageStyle}"/>
-                    
-                    <Label Text="Takumi Aoyama" Style="{StaticResource MessageStyle}"/>
-               
-                </StackLayout>
-
-                   <Label x:Name="CurrentDateTime" Style="{StaticResource CenterMessageStyle}"/>
-            
+              
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalCenterStack}">

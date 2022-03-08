@@ -187,6 +187,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="LabelStartSecondaryColorStyle"
+                BasedOn="{StaticResource LabelStartStyle}">
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LabelEndStyle"
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="HorizontalTextAlignment" Value="End" />
@@ -338,7 +344,14 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
                 <Setter Property="TextColor" Value="{StaticResource SecondaryBackgroundColor}" />
             </Style>
-            
+
+            <Style TargetType="Label"
+                x:Key="MessageStartStyle"
+                BasedOn="{StaticResource MessageStyle}">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="FontSize" Value="16"/>                
+            </Style>
+
             <Style TargetType="Label"
                 x:Key="AutoBattleMessageStyle"
                 BasedOn="{StaticResource HeaderStyle}">
@@ -374,7 +387,14 @@
             <Style TargetType="Label"
                 x:Key="CenterMessageLargeStyle"
                 BasedOn="{StaticResource CenterMessageStyle}">
-                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+
+            <Style TargetType="Label"
+                x:Key="MessageStartLargeStyle"
+                BasedOn="{StaticResource CenterMessageStyle}">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="HorizontalOptions" Value="Start" />
             </Style>
 
             <Style TargetType="Label"
@@ -764,6 +784,12 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="HorizontalStartStack">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="HorizontalCenterWith20SpacingStack"
                    BasedOn="{StaticResource HorizontalCenterStack}">
                 <Setter Property="Spacing" Value="20" />
@@ -913,6 +939,13 @@
                 <Setter Property="Orientation" Value="Vertical" />
             </Style>
 
+            <Style TargetType="StackLayout"
+                x:Key="VerticalStartStack" 
+                   BasedOn="{StaticResource CenterStack}">
+                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="Spacing" Value="20" />
+            </Style>
+            
             <Style TargetType="StackLayout"
                 x:Key="VerticalCenterWithWidthStack">
                 <Setter Property="VerticalOptions" Value="Center"/>
