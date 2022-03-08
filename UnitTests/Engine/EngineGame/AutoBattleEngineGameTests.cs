@@ -105,50 +105,27 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
 
+        /// <summary>
+        /// Unit Test for Checking if a New Round starts
+        /// </summary>
+        /// <returns></returns>
         [Test]
-        public async Task AutoBattleEngine_RunAutoBattle_Valid_NewRound_Should_Return_True()
+        public void AutoBattleEngine_RunAutoBattle_Valid_NewRound_Should_Return_True()
         {
             //Arrange
 
-            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
-            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+            _ = DiceHelper.EnableForcedRolls();
 
-            var CharacterPlayerMike = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = 100,
-                                Attack = 100,
-                                Defense = 100,
-                                Level = 1,
-                                CurrentHealth = 111,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
-                                Name = "Mike",
-                                ListOrder = 1,
-                            });
+            var data = new CharacterModel { Level = 1, MaxHealth = 10 };
 
-            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
 
-            var MonsterPlayerSue = new PlayerInfoModel(
-                new MonsterModel
-                {
-                    Speed = 1,
-                    Attack = 1,
-                    Defense = 1,
-                    Level = 1,
-                    CurrentHealth = 1,
-                    ExperienceTotal = 1,
-                    ExperienceRemaining = 1,
-                    Name = "Sue",
-                    ListOrder = 2,
-                });
-
-            AutoBattleEngine.Battle.EngineSettings.MonsterList.Add(MonsterPlayerSue);
 
             //Act
-            var result = await AutoBattleEngine.RunAutoBattle();
+            var result = AutoBattleEngine.Battle.Round.NewRound();
 
             //Reset
+            _ = DiceHelper.DisableForcedRolls();
 
             //Assert
             Assert.AreEqual(true, result);
