@@ -392,7 +392,7 @@ namespace Game.Engine.EngineGame
             // then order by Monster Job
             // then by Attack
             // theb by Current Health
-            if (!EngineSettings.CurrentDefender.IsSelectedAsTarget)
+            if (EngineSettings.BattleScore.AutoBattle || !EngineSettings.CurrentDefender.IsSelectedAsTarget)
             {
               Defender = EngineSettings.PlayerList
               .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
