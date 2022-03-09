@@ -216,7 +216,6 @@
                 <Setter Property="HorizontalOptions" Value="Center"/>
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}"/>
-                <!--<Setter Property="FontFamily" Value="SpaceSpeed" />-->
                 <Setter Property="FontFamily" Value="SpaceQuest" />
                 <Setter Property="FontSize" Value="18" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
