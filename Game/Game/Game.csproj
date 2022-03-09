@@ -12,11 +12,13 @@
 
   <ItemGroup>
     <None Remove="Resources\PlatNomor-WyVnn.ttf" />
+    <None Remove="Resources\SpaceQuest-Xj4o.ttf" />
     <None Remove="Resources\SpaceSpeedFont.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\PlatNomor-WyVnn.ttf" />
+    <EmbeddedResource Include="Resources\SpaceQuest-Xj4o.ttf" />
     <EmbeddedResource Include="Resources\SpaceSpeedFont.ttf" />
   </ItemGroup>
 
