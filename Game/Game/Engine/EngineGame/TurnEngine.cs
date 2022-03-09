@@ -470,6 +470,8 @@ namespace Game.Engine.EngineGame
                     // Apply the Damage
                     _ = ApplyDamage(Target);
 
+
+                    // Assigning current health to the right character on the CharacterList
                     if (Attacker.PlayerType == PlayerTypeEnum.Character)
                     {
                         foreach (var character in EngineSettings.CharacterList)
