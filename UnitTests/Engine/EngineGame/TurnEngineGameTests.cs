@@ -159,6 +159,7 @@ namespace UnitTests.Engine.EngineGame
 
             _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
             Engine.EngineSettings.CurrentAttacker = character;
+            Engine.EngineSettings.CurrentDefender = monster;
 
             // Act
             var result = Engine.Round.Turn.AttackChoice(character);
