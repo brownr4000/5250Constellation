@@ -79,6 +79,9 @@ namespace UnitTests.Engine.EngineKoenig
             _ = DiceHelper.EnableForcedRolls();
             _ = DiceHelper.SetForcedRollValue(3);
 
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 6;
+
             var data = new CharacterModel { Level = 1, MaxHealth = 10 };
 
             AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
