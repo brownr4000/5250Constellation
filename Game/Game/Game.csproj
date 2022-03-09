@@ -35,9 +35,6 @@
     <Compile Update="Views\Battle\CharacterAgentInfo.xaml.cs">
       <DependentUpon>CharacterAgentInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Battle\BattleMessagesPage.xaml.cs">
-      <DependentUpon>BattleMessagesPage.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -51,9 +48,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Battle\ItemSelectionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Battle\BattleMessagesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
