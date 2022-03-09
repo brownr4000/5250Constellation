@@ -19,7 +19,6 @@
                     <Grid x:Name="MapGrid" HorizontalOptions="Center"
                           VerticalOptions="Start" 
                           ColumnSpacing="0" RowSpacing="0" />
-                    <!--AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>-->
                 
                 </AbsoluteLayout>
             </StackLayout>
@@ -113,15 +112,14 @@
 
             <Frame x:Name="BattleSequenceFrame" Style="{StaticResource BattleSequenceFrame}">
                 <StackLayout Style="{StaticResource VerticalOnlyStack}">
-                    <Label x:Name="RoundLabel" Style="{StaticResource LabelStartStyle}"/>
-
                     <StackLayout Style="{StaticResource HorizontalCenterStack}">
-                        
-                        <Image x:Name="TurnStatusImage"
+                        <Label x:Name="RoundLabel" Style="{StaticResource LabelStartStyle}"/>
+
+                            <Image x:Name="TurnStatusImage"
                                IsAnimationPlaying="True"
-                               Style="{StaticResource ImageBattleSmallStyle}" />  
-                        
+                               Style="{StaticResource ImageHitSmallStyle}" />
                     </StackLayout>
+                   
                     
                     <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
                         <Image x:Name="Player1Image" IsAnimationPlaying="True" Style="{StaticResource ImageMedStyle}"/>

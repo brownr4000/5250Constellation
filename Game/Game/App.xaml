@@ -572,6 +572,15 @@
                 BasedOn="{StaticResource ImageStyle}">
                 <Setter Property="HeightRequest" Value="50" />
                 <Setter Property="WidthRequest" Value="50" />
+            </Style> 
+            
+            <Style TargetType="Image"
+                x:Key="ImageHitSmallStyle"
+                BasedOn="{StaticResource ImageStyle}">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
             <Style TargetType="Image"
