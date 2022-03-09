@@ -106,6 +106,8 @@ namespace UnitTests.Engine.EngineBase
         public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
         {
             //Arrange
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
+            AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
 
             // Need to set the Monster count to 1, so the battle goes to Next Round Faster
             AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
@@ -164,11 +166,9 @@ namespace UnitTests.Engine.EngineBase
             var CharacterPlayerMike = new PlayerInfoModel(
                             new CharacterModel
                             {
-                                Speed = 100,
-                                Attack = 100,
-                                Defense = 100,
-                                Level = 1,
-                                CurrentHealth = 111,
+                                Speed = -1,
+                                Level = 10,
+                                CurrentHealth = 11,
                                 ExperienceTotal = 1,
                                 ExperienceRemaining = 1,
                                 Name = "Mike",
@@ -176,6 +176,7 @@ namespace UnitTests.Engine.EngineBase
                             });
 
             AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+
 
             var MonsterPlayerSue = new PlayerInfoModel(
                 new MonsterModel
@@ -199,7 +200,7 @@ namespace UnitTests.Engine.EngineBase
             //Reset
 
             //Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
         #endregion RunAutoBattle
 

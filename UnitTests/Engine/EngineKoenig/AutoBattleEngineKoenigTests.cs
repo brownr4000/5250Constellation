@@ -79,6 +79,9 @@ namespace UnitTests.Engine.EngineKoenig
             _ = DiceHelper.EnableForcedRolls();
             _ = DiceHelper.SetForcedRollValue(3);
 
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 6;
+
             var data = new CharacterModel { Level = 1, MaxHealth = 10 };
 
             AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
@@ -102,6 +105,8 @@ namespace UnitTests.Engine.EngineKoenig
         public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
         {
             //Arrange
+            AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
 
             // Need to set the Monster count to 1, so the battle goes to Next Round Faster
             AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
