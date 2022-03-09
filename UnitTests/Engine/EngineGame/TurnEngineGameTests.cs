@@ -388,13 +388,24 @@ namespace UnitTests.Engine.EngineGame
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
+            var MonsterPlayer = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    Alive = false,
+                }) ;
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(MonsterPlayer);
+            
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Unknown, result);
+            Assert.AreEqual(ActionEnum.Move, result);
         }
         #endregion DetermineActionChoice
 
