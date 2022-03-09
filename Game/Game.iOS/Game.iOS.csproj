@@ -434,4 +434,25 @@
   <ItemGroup>
     <BundleResource Include="Resources\sunglasses.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent_twins_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent_amelix_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent_baby_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent_dog_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent_prof_tompkins_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent_robot_gif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\agent_smith_gif.gif" />
+  </ItemGroup>
 </Project>
