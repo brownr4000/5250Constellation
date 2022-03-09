@@ -470,6 +470,17 @@ namespace Game.Engine.EngineGame
                     // Apply the Damage
                     _ = ApplyDamage(Target);
 
+                    if (Attacker.PlayerType == PlayerTypeEnum.Character)
+                    {
+                        foreach (var character in EngineSettings.CharacterList)
+                        {
+                            if (character.Guid == Attacker.Guid)
+                            {
+                                character.CurrentHealth = Attacker.CurrentHealth;
+                            }
+                        }
+                    }
+
                     EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
 
                     // Check if Dead and Remove
