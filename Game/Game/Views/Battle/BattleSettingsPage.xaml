@@ -92,6 +92,18 @@
                     VerticalOptions="Center"
                     x:Name="AllowMonsterItemsSwitch"
                     Toggled="AllowMonsterItems_Toggled"/>
+
+                    <Label 
+                    Grid.Row="5" Grid.Column="0"
+                    Text="Kill All Characters" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                    <Switch 
+                    Grid.Row="5" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    x:Name="KillAllCharactersSwitch"
+                    Toggled="KillAllCharacters_Toggled"/>
                 </Grid>
             </StackLayout>
 

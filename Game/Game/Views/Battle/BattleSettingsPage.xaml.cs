@@ -46,6 +46,8 @@ namespace Game.Views
             #region MonsterToggles
             AllowMonsterItemsSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems;
             #endregion
+
+            KillAllCharactersSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.KillAllCharacters;
         }
 
         /// <summary>
@@ -141,6 +143,23 @@ namespace Game.Views
             }
 
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems = false;
+        }
+
+        /// <summary>
+        /// Toggle Kill all characters
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void KillAllCharacters_Toggled(object sender, EventArgs e)
+        {
+            // Flip the settings
+            if (KillAllCharactersSwitch.IsToggled == true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.KillAllCharacters = true;
+                return;
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.KillAllCharacters = false;
         }
 
     }
