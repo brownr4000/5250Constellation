@@ -508,6 +508,7 @@ namespace UnitTests.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(MonsterPlayer);
 
             // Act
             page.SetAttackerAndDefender();
