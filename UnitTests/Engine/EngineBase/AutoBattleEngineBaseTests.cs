@@ -106,6 +106,8 @@ namespace UnitTests.Engine.EngineBase
         public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
         {
             //Arrange
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
+            AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
 
             // Need to set the Monster count to 1, so the battle goes to Next Round Faster
             AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
