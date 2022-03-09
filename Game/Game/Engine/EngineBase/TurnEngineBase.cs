@@ -557,6 +557,8 @@ namespace Game.Engine.EngineBase
                         if(character.Guid == Attacker.Guid)
                         {
                             character.Level = Attacker.Level;
+                            character.MaxHealth = Attacker.MaxHealth;
+                            character.CurrentHealth = Attacker.CurrentHealth;
                         }
                     }
                 }
