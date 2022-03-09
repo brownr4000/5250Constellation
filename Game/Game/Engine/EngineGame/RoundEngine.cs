@@ -330,6 +330,13 @@ namespace Game.Engine.EngineGame
                 return EngineSettings.PlayerList.FirstOrDefault();
             }
 
+            // If KillAllCharacters switch is on
+            if (EngineSettings.CurrentAttacker.PlayerType != PlayerTypeEnum.Character && EngineSettings.BattleSettingsModel.KillAllCharacters)
+            {
+                EngineSettings.CurrentAttacker = EngineSettings.MonsterList.FirstOrDefault();
+                return EngineSettings.CurrentAttacker;
+            }
+
             // Find current player in the list
             var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
 
