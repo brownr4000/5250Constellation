@@ -189,52 +189,9 @@ namespace UnitTests.Views
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
 
-        [Test]
-        public void BattleSettingsPage_BattleModePicker_Default_Should_Pass()
-        {
-            // Arrange
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.Unknown;
-
-            var control = (Picker)page.FindByName("BattleModePicker");
-            var currentIndex = control.SelectedIndex;
-            var currentItem = control.SelectedItem;
-
-            var args = new SelectedItemChangedEventArgs(currentItem, currentIndex);
-
-            // Act
-            page.BattleModePicker_Changed(null, args);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(BattleModeEnum.SimpleNext, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum);
-        }
-
-        [Test]
-        public void BattleSettingsPage_BattleModePicker_InValid_Should_Fail()
-        {
-            // Arrange
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.Unknown;
-
-            var control = (Picker)page.FindByName("BattleModePicker");
-            var currentIndex = control.SelectedIndex;
-            var currentItem = control.SelectedItem;
-
-            var args = new SelectedItemChangedEventArgs(currentItem, currentIndex);
-            page.BattleModePicker_Changed(null, args);
-
-            // Change it to to a bad one
-            control.SelectedItem = null;
-
-            // Act
-            page.BattleModePicker_Changed(null, args);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(BattleModeEnum.SimpleNext, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum);
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
         [Test]
         public void BattleSettingsPage_MonsterHitPicker_Valid_Should_Pass()
         {
