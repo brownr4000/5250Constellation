@@ -50,6 +50,8 @@ namespace Scenario
         public async Task AutoBattleEngine_RunAutoBattle_Monsters_1_Should_Pass()
         {
             //Arrange
+            AutoBattle.Battle.EngineSettings.MonsterList.Clear();
+            AutoBattle.Battle.EngineSettings.CharacterList.Clear();
 
             // Add Characters
 
