@@ -389,9 +389,9 @@ namespace UnitTests.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(MonsterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
 
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(MonsterPlayer);
 
             // Act
             page.SetAttackerAndDefender();
@@ -449,7 +449,8 @@ namespace UnitTests.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
             BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(MonsterPlayer);
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(CharacterPlayer);
 
             // Act
             page.SetAttackerAndDefender();
