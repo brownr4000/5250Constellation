@@ -18,16 +18,6 @@ namespace Game.GameRules
         {
             var datalist = new List<ItemModel>()
             {
-                new ItemModel  {
-                   Name = "Forged Boots",
-                   Description = "Heavily armored boots",
-                   Damage = 0,
-                   Range = 0,
-                   Location = ItemLocationEnum.Feet,
-                   Attribute = AttributeEnum.Defense,
-                   Value = 5,
-                   ImageURI = "",},
-
                 new ItemModel {
                     Name = "Moon Boots",
                     Description = "Bouncy boots that boost movement and agility",
@@ -136,17 +126,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Necklass,
                     Attribute = AttributeEnum.Defense,
                     Value = 5,
-                    ImageURI = "",},
-
-                new ItemModel {
-                    Name = "Life Alert",
-                    Description = "A pendant that boosts life force",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Necklass,
-                    Attribute = AttributeEnum.MaxHealth,
-                    Value = 5,
-                    ImageURI = "",},
+                    ImageURI = "amulet_of_vigor.png",},
 
                 new ItemModel {
                     Name = "Carbonizer",
@@ -266,7 +246,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack,
                     Value = 9,
-                    ImageURI = "",},
+                    ImageURI = "laser_rifle.png",},
             };
 
             return datalist;
