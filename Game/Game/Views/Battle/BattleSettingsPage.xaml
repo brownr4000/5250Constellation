@@ -6,40 +6,8 @@
 
     <ContentPage.Content>
 
-        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
-
-            <Label Text ="Battle Mode" Style="{StaticResource BattleSettingsLabelStyle}" />
-            <StackLayout Style="{StaticResource HorizontalCenterWith20SpacingStack}">
-                <Grid 
-                HorizontalOptions="StartAndExpand" 
-                Padding="10"
-                RowSpacing="1"
-                ColumnSpacing="2"
-                VerticalOptions="Center">
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label 
-                    Grid.Row="0" Grid.Column="0"
-                    Text="Battle Mode" 
-                    Style="{DynamicResource LabelStyle}"/>
-
-                    <Picker 
-                    Grid.Row="0" Grid.Column="1"
-                    HorizontalOptions="Start" 
-                    VerticalOptions="Center"
-                    FontSize="Micro"
-                    x:Name="BattleModePicker"
-                    SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
-                    SelectedIndexChanged="BattleModePicker_Changed"/>
-                </Grid>
-            </StackLayout>
+        <StackLayout Style="{StaticResource VerticalWithTopPaddingSpacingStack}">
+        <!--<StackLayout sty>-->
 
             <Label Text ="Control Hit Actions" Style="{StaticResource BattleSettingsLabelStyle}" />
 

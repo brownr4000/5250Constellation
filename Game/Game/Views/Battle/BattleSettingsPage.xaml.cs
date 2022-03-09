@@ -22,18 +22,6 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            #region BattleMode
-            // Load the values for the Diffculty into the Picker
-            foreach (var item in BattleModeEnumHelper.GetListMessageAll)
-            {
-                BattleModePicker.Items.Add(item);
-            }
-
-            // Set Values to current State
-            BattleModePicker.SelectedItem = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum.ToMessage();
-            BattleModePicker.SelectedIndex = BattleModePicker.Items.IndexOf(BattleModePicker.SelectedItem.ToString());
-            #endregion BattleMode
-
             #region HitPickers
             // Load the values for the Diffculty into the Picker
             foreach (var item in HitStatusEnumHelper.GetListAll)
@@ -58,23 +46,6 @@ namespace Game.Views
             #region MonsterToggles
             AllowMonsterItemsSwitch.IsToggled = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.AllowMonsterItems;
             #endregion
-        }
-
-        /// <summary>
-        /// Set the Character Hit Enum
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void BattleModePicker_Changed(object sender, EventArgs args)
-        {
-            // Check for null, SelectedItem is not set when the control is created
-            if (BattleModePicker.SelectedItem == null)
-            {
-                return;
-            }
-
-            // Change the Difficulty
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnumHelper.ConvertMessageStringToEnum(BattleModePicker.SelectedItem.ToString());
         }
 
         /// <summary>

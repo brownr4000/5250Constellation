@@ -879,6 +879,14 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="VerticalWithTopPaddingSpacingStack"
+                   BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="Padding" Value="0,20,0,0" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Spacing" Value="10" />
+            </Style>
+            
+            <Style TargetType="StackLayout"
                 x:Key="VerticalItemPopStack"
                    BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
