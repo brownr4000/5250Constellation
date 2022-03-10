@@ -77,14 +77,18 @@
                         </StackLayout>                       
                     </StackLayout>
 
-                    <StackLayout x:Name="AbilitiesList">
-                        
-                        <Button x:Name="abilitySelection1" Text="Hello" IsVisible="false"/>
-                        <Button x:Name="abilitySelection2" Text="Hello"  IsVisible="false"/>
-                        <Button x:Name="abilitySelection3" Text="Hello" IsVisible="false"/>
-                        <Button x:Name="abilitySelection4" Text="Hello" IsVisible="false"/>
-    
+
+
+                    <Label x:Name="AbilitySelectLabel"  Grid.Column="0" Text="Select an ability to proceed" IsVisible="false" Style="{StaticResource CenterLabelWithPaddingStyle}"/>
+
+
+                    <StackLayout x:Name="AbilitiesList" Grid.Column="1" Grid.Row="0" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
+                            <Button x:Name="abilitySelection1" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
+                            <Button x:Name="abilitySelection2" Text=""  IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
+                            <Button x:Name="abilitySelection3" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
+                            <Button x:Name="abilitySelection4" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
                     </StackLayout>
+
 
                     <StackLayout x:Name="Buttons" Grid.Column="1" Grid.Row="0" 
                                  Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">

@@ -546,6 +546,7 @@ namespace Game.Views
                 AbilityList.Add(ability.Key);
             }
 
+            AbilitySelectLabel.IsVisible = true;
             abilitySelection1.Text = AbilityList.ElementAt(0).ToString();
             abilitySelection1.IsVisible = true;
 
