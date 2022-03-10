@@ -328,14 +328,23 @@ namespace Game.Engine.EngineGame
 
                     case AbilityEnum.BoostAttack:
                         EngineSettings.CurrentActionAbility = AbilityEnum.BoostAttack;
+
+                        BoostAttack(Attacker);
+
                         break;
 
                     case AbilityEnum.BoostDefense:
                         EngineSettings.CurrentActionAbility = AbilityEnum.BoostDefense;
+
+                        BoostDefense(Attacker);
+
                         break;
 
                     case AbilityEnum.BoostSpeed:
                         EngineSettings.CurrentActionAbility = AbilityEnum.BoostSpeed;
+
+                        BoostSpeed(Attacker);
+
                         break;
                 }
             }
@@ -822,6 +831,75 @@ namespace Game.Engine.EngineGame
                         character.ApplyHeal();
 
                         EngineSettings.BattleMessagesModel.TurnMessage = character.Name + " restores 5 health";
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool BoostAttack(PlayerInfoModel Attacker)
+        {
+            foreach (var character in EngineSettings.CharacterList)
+            {
+                if (character.Alive == true)
+                {
+                    if (character != Attacker)
+                    {
+                        character.BuffAttack();
+
+                        EngineSettings.BattleMessagesModel.TurnMessage = character.Name + " has Attack boosted";
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool BoostDefense(PlayerInfoModel Attacker)
+        {
+            foreach (var character in EngineSettings.CharacterList)
+            {
+                if (character.Alive == true)
+                {
+                    if (character != Attacker)
+                    {
+                        character.BuffDefense();
+
+                        EngineSettings.BattleMessagesModel.TurnMessage = character.Name + " has Defense boosted";
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool BoostSpeed(PlayerInfoModel Attacker)
+        {
+            foreach (var character in EngineSettings.CharacterList)
+            {
+                if (character.Alive == true)
+                {
+                    if (character != Attacker)
+                    {
+                        character.BuffSpeed();
+
+                        EngineSettings.BattleMessagesModel.TurnMessage = character.Name + " has Speed boosted";
                     }
                 }
             }
