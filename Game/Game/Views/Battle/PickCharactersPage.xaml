@@ -25,7 +25,7 @@
 
                 <CollectionView x:Name="CharactersListView" 
                             ItemsSource="{Binding Dataset}"
-                            SelectionMode="Multiple"
+                            SelectionMode="Single"
                             SelectionChanged="CharacterListView_SelectionChanged">
 
                     <CollectionView.ItemTemplate>
