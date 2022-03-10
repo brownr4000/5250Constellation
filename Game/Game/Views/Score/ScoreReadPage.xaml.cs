@@ -62,7 +62,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void GoHomeButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new GamePage());
+            await Navigation.PushModalAsync(new HomePage());
         }
         
     }

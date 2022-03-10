@@ -53,20 +53,7 @@
 
             </CollectionView>
 
-            <StackLayout Style="{StaticResource HorizontalCenterStack}">
-                <!--<StackLayout
-                                Grid.Column="0"
-                                Grid.Row="2" 
-                                Style="{StaticResource VerticalWithPaddingStack}">
-                    <Label 
-                                    Text="Score"
-                                    Style="{StaticResource ValueStyleMicro}"/>
-
-                    <Label
-                                    Text="{Binding ScoreTotal}"
-                                    Style="{StaticResource ValueStyle}"/>
-
-                </StackLayout>-->
+            <StackLayout Style="{StaticResource HorizontalCenterStack}">              
 
                 <StackLayout
                                 Grid.Column="1"
@@ -185,7 +172,7 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
-                <Button Text="Go to Game Page" Clicked="GoHomeButton_Clicked"  x:Name="GoHomeButton" Style="{StaticResource ButtonStyle}"/>
+                <Button Text="Go to Home" Clicked="GoHomeButton_Clicked"  x:Name="GoHomeButton" Style="{StaticResource ButtonStyle}"/>
             </StackLayout>
 
         </StackLayout>
