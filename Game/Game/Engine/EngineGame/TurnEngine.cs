@@ -894,6 +894,7 @@ namespace Game.Engine.EngineGame
                         character.ApplyHeal();
 
                         EngineSettings.BattleMessagesModel.TurnMessage = character.Name + " restores 5 health";
+                        Debug.WriteLine(character.Name + " current health is " + character.CurrentHealth);
                     }
                 }
             }
