@@ -536,6 +536,7 @@ namespace Game.Views
             BattleSequenceFrame.IsVisible = false;
             NextMoveFrame.IsVisible = true;
             MonsterDefenderLabel.IsVisible = false;
+            AbilitiesList.IsVisible = true;
 
             List<AbilityEnum> AbilityList = new List<AbilityEnum>();
 
@@ -545,7 +546,13 @@ namespace Game.Views
                 AbilityList.Add(ability.Key);
             }
 
+            foreach( var ability in AbilityList)
+            {
+                abilitySelection.Text = ability.ToString();
+            }
+
             
+
 
             // Output the Message of what happened.
             //GameMessage();
