@@ -572,26 +572,71 @@ namespace Game.Views
 
         public void Ability1_Clicked(object sender, EventArgs e)
         {
-            
+            List<AbilityEnum> AbilityList = new List<AbilityEnum>();
+
+            foreach (var ability in BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.AbilityTracker)
+            {
+                AbilityList.Add(ability.Key);
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentActionAbility = AbilityList.ElementAt(0);
+
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+
+            // Call next action
+            NextActionForCharacter();
         }
 
         public void Ability2_Clicked(object sender, EventArgs e)
         {
+            List<AbilityEnum> AbilityList = new List<AbilityEnum>();
+
+            foreach (var ability in BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.AbilityTracker)
+            {
+                AbilityList.Add(ability.Key);
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentActionAbility = AbilityList.ElementAt(1);
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+
+            // Call next action
+            NextActionForCharacter();
         }
 
         public void Ability3_Clicked(object sender, EventArgs e)
         {
+            List<AbilityEnum> AbilityList = new List<AbilityEnum>();
+
+            foreach (var ability in BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.AbilityTracker)
+            {
+                AbilityList.Add(ability.Key);
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentActionAbility = AbilityList.ElementAt(2);
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+
+            // Call next action
+            NextActionForCharacter();
         }
 
         public void Ability4_Clicked(object sender, EventArgs e)
         {
 
+            List<AbilityEnum> AbilityList = new List<AbilityEnum>();
+
+            foreach (var ability in BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.AbilityTracker)
+            {
+                AbilityList.Add(ability.Key);
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentActionAbility = AbilityList.ElementAt(3);
+
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+
+            // Call next action
+            NextActionForCharacter();
         }
 
         /// <summary>
