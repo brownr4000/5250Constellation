@@ -295,8 +295,11 @@ namespace Game.Engine.EngineGame
 
                         break;
 
-                    case AbilityEnum.Toughness:
-                        EngineSettings.CurrentActionAbility = AbilityEnum.Toughness;
+                    case AbilityEnum.Block:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.Block;
+
+                        UseBlock(Attacker);
+
                         break;
                 }
             }
@@ -307,10 +310,16 @@ namespace Game.Engine.EngineGame
                 {
                     case AbilityEnum.Dodge:
                         EngineSettings.CurrentActionAbility = AbilityEnum.Dodge;
+
+                        UseDodge(Attacker);
+
                         break;
 
                     case AbilityEnum.DoubleStrike:
                         EngineSettings.CurrentActionAbility = AbilityEnum.DoubleStrike;
+
+                        UseDoubleStrike(Attacker);
+
                         break;
                 }
             }
@@ -813,6 +822,60 @@ namespace Game.Engine.EngineGame
             Attacker.BuffDefense();
 
             return true;
+        }
+
+        /// <summary>
+        /// UserBlock method gives the Player the ability to boost their defense
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns>True</returns>
+        public bool UseBlock(PlayerInfoModel Attacker)
+        {
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " takes a denfensive stance";
+
+            Attacker.BuffDefense();
+
+            return true;
+        }
+
+        /// <summary>
+        /// UserDodge method gives the Player the a boost to defense as a way to avoid attacks
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns>True</returns>
+        public bool UseDodge(PlayerInfoModel Attacker)
+        {
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " nimbly avoids incoming attacks";
+
+            Attacker.BuffDefense();
+
+            return true;
+        }
+
+        /// <summary>
+        /// UserDoubleStrike method lets the Player attack twice on the current turn
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns>True</returns>
+        public bool UseDoubleStrike(PlayerInfoModel Attacker)
+        {
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " uses Double Strike";
+
+            if (EngineSettings.BattleScore.AutoBattle != true)
+            {
+                EngineSettings.BattleScore.AutoBattle = true;
+
+                for (int i = 0; i < 2; i++)
+                {
+                    SelectMonsterToAttack();
+                }
+
+                EngineSettings.BattleScore.AutoBattle = false;
+
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
