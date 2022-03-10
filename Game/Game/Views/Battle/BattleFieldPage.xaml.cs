@@ -583,8 +583,9 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            // Call next action
-            NextActionForCharacter();
+
+            // Continues the game
+            NextAction();
         }
 
         public void Ability2_Clicked(object sender, EventArgs e)
@@ -600,8 +601,8 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            // Call next action
-            NextActionForCharacter();
+            /// Continues the game
+            NextAction();
         }
 
         public void Ability3_Clicked(object sender, EventArgs e)
@@ -617,8 +618,8 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            // Call next action
-            NextActionForCharacter();
+            // Continues the game
+            NextAction();
         }
 
         public void Ability4_Clicked(object sender, EventArgs e)
@@ -635,8 +636,8 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            // Call next action
-            NextActionForCharacter();
+            // Continues the game
+            NextAction();
         }
 
         /// <summary>
