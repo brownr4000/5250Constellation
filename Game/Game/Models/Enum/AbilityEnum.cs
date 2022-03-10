@@ -39,6 +39,9 @@ namespace Game.Models
         // Buff Defense
         Barrier = 52,
 
+        // Block Attacks
+        Block = 110,
+
         // Buff Attack
         Curse = 53,
 
@@ -61,7 +64,10 @@ namespace Game.Models
         BoostDefense = 41,
 
         // Buff +2 Speed for adjacent character
-        BoostSpeed = 42
+        BoostSpeed = 42,
+
+        // Skip Turn
+        Wait = 200,
 
     }
 
@@ -106,6 +112,10 @@ namespace Game.Models
                     Message = "Barrier Defense";
                     break;
 
+                case AbilityEnum.Block:
+                    Message = "Block Attacks";
+                    break;
+
                 case AbilityEnum.Curse:
                     Message = "Shout Curse";
                     break;
@@ -136,6 +146,10 @@ namespace Game.Models
 
                 case AbilityEnum.BoostSpeed:
                     Message = "Boost adjacent character speed";
+                    break;
+
+                case AbilityEnum.Wait:
+                    Message = "Waits for the next opportunity";
                     break;
 
                 case AbilityEnum.None:
@@ -232,7 +246,7 @@ namespace Game.Models
             {
                 List<string> AbilityList = new List<string>{
                 AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Toughness.ToString(),
+                AbilityEnum.Block.ToString(),
                 };
 
                 AbilityList.AddRange(GetListOthers);
@@ -268,7 +282,7 @@ namespace Game.Models
             {
 
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Bandage.ToString(),
+                AbilityEnum.Wait.ToString(),
                 };
 
                 return AbilityList;
