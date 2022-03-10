@@ -83,10 +83,10 @@
 
 
                     <StackLayout x:Name="AbilitiesList" Grid.Column="1" Grid.Row="0" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
-                            <Button x:Name="abilitySelection1" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
-                            <Button x:Name="abilitySelection2" Text=""  IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
-                            <Button x:Name="abilitySelection3" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
-                            <Button x:Name="abilitySelection4" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}"/>
+                            <Button x:Name="abilitySelection1" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability1_Clicked"/>
+                        <Button x:Name="abilitySelection2" Text=""  IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability2_Clicked"/>
+                        <Button x:Name="abilitySelection3" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability3_Clicked"/>
+                        <Button x:Name="abilitySelection4" Text="" IsVisible="false" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability4_Clicked"/>
                     </StackLayout>
 
 

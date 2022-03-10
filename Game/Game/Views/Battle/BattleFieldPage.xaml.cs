@@ -570,6 +570,30 @@ namespace Game.Views
             }
         }
 
+        public void Ability1_Clicked(object sender, EventArgs e)
+        {
+            
+            Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+        }
+
+        public void Ability2_Clicked(object sender, EventArgs e)
+        {
+
+            Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+        }
+
+        public void Ability3_Clicked(object sender, EventArgs e)
+        {
+
+            Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+        }
+
+        public void Ability4_Clicked(object sender, EventArgs e)
+        {
+
+            Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+        }
+
         /// <summary>
         /// Create the Initial Map Grid
         /// 

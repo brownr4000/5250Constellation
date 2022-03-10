@@ -282,7 +282,7 @@ namespace Game.Engine.EngineBase
 
             if(Attacker.Job == CharacterJobEnum.Support)
             {
-                switch (EngineSettings.CurrentActionAbility)
+                switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentActionAbility)
                 {
                     case AbilityEnum.HealTeammate:
                         EngineSettings.CurrentActionAbility = AbilityEnum.HealTeammate;
