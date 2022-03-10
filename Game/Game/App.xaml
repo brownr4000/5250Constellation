@@ -389,7 +389,7 @@
                 BasedOn="{StaticResource CenterMessageStyle}">
                 <Setter Property="FontSize" Value="18"/>
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}"/>
-                <Setter Property="FontFamily" Value="SpaceSpeed" />
+                <Setter Property="FontFamily" Value="SpaceQuest" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
