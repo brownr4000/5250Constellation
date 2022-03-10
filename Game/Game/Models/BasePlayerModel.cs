@@ -146,6 +146,24 @@ namespace Game.Models
 
         #endregion Attributes
 
+        #region Ability
+
+        /// <summary>
+        /// The ApplyHeal method adds to the CurrentHealth of the Player
+        /// </summary>
+        /// <returns>True</returns>
+        public int ApplyHeal()
+        {
+            if (Alive == true)
+            {
+                CurrentHealth += 5;
+            }
+
+            return CurrentHealth;
+        }
+
+        #endregion Ability
+
         #region Items
         // ItemModel is a string referencing the database table
         public string Head { get; set; } = null;
