@@ -79,27 +79,27 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Add to Health
+        /// Buff Attack Attribute
         /// </summary>
         public int BuffAttack()
         {
-            return BuffAttackValue += 5;
+            return BuffAttackValue += 2;
         }
 
         /// <summary>
-        /// Add to Health
+        /// Buff Defense Attribute
         /// </summary>
         public int BuffDefense()
         {
-            return BuffDefenseValue += 5;
+            return BuffDefenseValue += 2;
         }
 
         /// <summary>
-        /// Add to Health
+        /// Buff Speed Attribute
         /// </summary>
         public int BuffSpeed()
         {
-            return BuffSpeedValue += 5;
+            return BuffSpeedValue += 2;
         }
 
         #endregion Buffs
