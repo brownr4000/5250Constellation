@@ -476,4 +476,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\agent_smith.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cybernetic_arm.png" />
+  </ItemGroup>
 </Project>
