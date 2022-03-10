@@ -279,7 +279,66 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            return base.UseAbility(Attacker);
+            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                return false;
+            }
+
+            if (Attacker.Job == CharacterJobEnum.Defender)
+            {
+                switch (EngineSettings.CurrentActionAbility)
+                {
+                    case AbilityEnum.Barrier:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.Barrier;
+
+                        UseBarrier(Attacker);
+
+                        break;
+
+                    case AbilityEnum.Toughness:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.Toughness;
+                        break;
+                }
+            }
+
+            if (Attacker.Job == CharacterJobEnum.Striker)
+            {
+                switch (EngineSettings.CurrentActionAbility)
+                {
+                    case AbilityEnum.Dodge:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.Dodge;
+                        break;
+
+                    case AbilityEnum.DoubleStrike:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.DoubleStrike;
+                        break;
+                }
+            }
+
+            if (Attacker.Job == CharacterJobEnum.Support)
+            {
+                switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentActionAbility)
+                {
+                    case AbilityEnum.HealTeammate:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.HealTeammate;
+                        break;
+
+                    case AbilityEnum.BoostAttack:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.BoostAttack;
+                        break;
+
+                    case AbilityEnum.BoostDefense:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.BoostDefense;
+                        break;
+
+                    case AbilityEnum.BoostSpeed:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.BoostSpeed;
+                        break;
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
+            return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
         }
 
         /// <summary>
@@ -728,6 +787,43 @@ namespace Game.Engine.EngineGame
         public override bool DetermineCriticalMissProblem(PlayerInfoModel attacker)
         {
             return base.DetermineCriticalMissProblem(attacker);
+        }
+
+        /// <summary>
+        /// UserBarrier method gives the Player the ability to boost their defense
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns>True</returns>
+        public bool UseBarrier(PlayerInfoModel Attacker)
+        {
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " boots up a force sheild";
+
+            Attacker.BuffDefense();
+
+            return true;
+        }
+
+        /// <summary>
+        /// The HealTeam method heals all Characters that are Alive in the current Round
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns>True</returns>
+        public bool HealTeam(PlayerInfoModel Attacker)
+        {
+            foreach (var character in EngineSettings.CharacterList)
+            {
+                if (character.Alive == true)
+                {
+                    if (character.CurrentHealth != character.MaxHealth)
+                    {
+                        character.BuffHealth();
+
+                        EngineSettings.BattleMessagesModel.TurnMessage = character.Name + " restores 5 health";
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }
