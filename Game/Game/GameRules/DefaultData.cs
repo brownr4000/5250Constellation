@@ -305,8 +305,8 @@ namespace Game.GameRules
                 },
 
                   new CharacterModel {
-                    Name = "Agent Twins",
-                    Description = "Twins in black",
+                    Name = "The Twins",
+                    Description = "Mystical twins who work with the Agents",
                     Level = 1,
                     MaxHealth = 10,
                     Attack = 3,
@@ -322,7 +322,7 @@ namespace Game.GameRules
                     Feet = FeetString,
                     RightFinger = RightFingerString,
                     LeftFinger = LeftFingerString,
-                    Job = CharacterJobEnum.Fighter
+                    Job = CharacterJobEnum.Support
                 },
 
                 new CharacterModel {
@@ -368,7 +368,7 @@ namespace Game.GameRules
                     Range = 7,
                     ImageURI = "agent_baby.png",
                     ImageGIFURI = "agent_baby_gif.gif",
-                    Job = CharacterJobEnum.Fighter
+                    Job = CharacterJobEnum.Striker
                 },
 
                 new CharacterModel {
