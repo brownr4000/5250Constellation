@@ -231,7 +231,6 @@ namespace Game.Models
                 AbilityEnum.DoubleStrike.ToString(),
                 };
 
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -249,7 +248,6 @@ namespace Game.Models
                 AbilityEnum.Block.ToString(),
                 };
 
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -268,7 +266,6 @@ namespace Game.Models
                 AbilityEnum.HealTeammate.ToString(),
                 };
 
-                AbilityList.AddRange(GetListOthers);
                 return AbilityList;
             }
         }
@@ -280,7 +277,6 @@ namespace Game.Models
         {
             get
             {
-
                 List<string> AbilityList = new List<string>{
                 AbilityEnum.Wait.ToString(),
                 };
