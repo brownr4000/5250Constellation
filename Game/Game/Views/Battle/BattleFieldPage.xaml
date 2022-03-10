@@ -33,7 +33,8 @@
                 <Grid HorizontalOptions="Center"
                                 WidthRequest="450"
                                 HeightRequest="250">
-                    <StackLayout Grid.Column="0" Grid.Row="0" Style="{StaticResource VerticalCenterStack}">
+                    
+                    <StackLayout x:Name="AttackerInfo" Grid.Column="0" Grid.Row="0" Style="{StaticResource VerticalCenterStack}">
 
                         <Image x:Name="CharacterImage" Style="{StaticResource ImageBattleSmallStyle}"/>
                         
@@ -76,7 +77,17 @@
                         </StackLayout>                       
                     </StackLayout>
 
-                    <StackLayout Grid.Column="1" Grid.Row="0" 
+                    <ListView x:Name="AbilitiesList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <StackLayout x:Name="Buttons" Grid.Column="1" Grid.Row="0" 
                                  Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">
 
                         <Button Text="Attack" 
@@ -139,11 +150,11 @@
                 <StackLayout Style="{StaticResource VerticalOnlyStack}">
 
                     <StackLayout Style="{StaticResource HorizontalCenterWithPaddingSpacingStack}">
-                        <Image x:Name="CurrentBreakCharacterImage" Style="{StaticResource ImageLargeStyle}"/>                       
+                        <Image x:Name="CurrentBreakCharacterImage" Style="{StaticResource ImageLargeStyle}"/>
                     </StackLayout>
 
                     <Label x:Name="BreakBattleGrammer" Style="{StaticResource BreakBattleLabelStyle}"/>
-                    
+
                 </StackLayout>
             </Frame>
 

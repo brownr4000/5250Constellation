@@ -525,9 +525,35 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AbilitiesButton_Clicked(object sender, EventArgs e)
+        public void AbilitiesButton_Clicked(object sender, EventArgs e)
         {
-            // Show abilities                           
+            
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+
+            EngineViewModel.Engine.Round.Turn.TakeTurn(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
+            AttackerInfo.IsVisible = false;
+            Buttons.IsVisible = false;
+            BattleSequenceFrame.IsVisible = false;
+            NextMoveFrame.IsVisible = true;
+            MonsterDefenderLabel.IsVisible = false;
+
+            List<AbilityEnum> AbilityList = new List<AbilityEnum>();
+
+            // Show abilities
+            foreach(var ability in BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.AbilityTracker)
+            {
+                AbilityList.Add(ability.Key);
+            }
+
+            
+
+            // Output the Message of what happened.
+            //GameMessage();
+
+            //BreakBattleSequenceFrame.IsVisible = false;
+
+            // Continues the game
+            //NextAction();
         }
 
         /// <summary>
