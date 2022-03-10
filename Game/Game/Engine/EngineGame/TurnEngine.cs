@@ -321,6 +321,9 @@ namespace Game.Engine.EngineGame
                 {
                     case AbilityEnum.HealTeammate:
                         EngineSettings.CurrentActionAbility = AbilityEnum.HealTeammate;
+
+                        HealTeam(Attacker);
+
                         break;
 
                     case AbilityEnum.BoostAttack:
@@ -816,7 +819,7 @@ namespace Game.Engine.EngineGame
                 {
                     if (character.CurrentHealth != character.MaxHealth)
                     {
-                        character.BuffHealth();
+                        character.ApplyHeal();
 
                         EngineSettings.BattleMessagesModel.TurnMessage = character.Name + " restores 5 health";
                     }
