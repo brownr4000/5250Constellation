@@ -568,18 +568,6 @@ namespace Game.Views
                     }
                 }
             }
-               
-
-            
-
-
-            // Output the Message of what happened.
-            //GameMessage();
-
-            //BreakBattleSequenceFrame.IsVisible = false;
-
-            // Continues the game
-            //NextAction();
         }
 
         /// <summary>
