@@ -64,7 +64,8 @@ namespace Game.Views
             NextMoveFrame.IsVisible = false;
             BreakBattleSequenceFrame.IsVisible = false;
             MonsterDefenderLabel.IsVisible = false;
-            
+            AbilitiesFrame.IsVisible = false;
+
             // Set initial State to Starting
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
 
@@ -531,12 +532,10 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
 
             EngineViewModel.Engine.Round.Turn.TakeTurn(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
-            AttackerInfo.IsVisible = false;
-            Buttons.IsVisible = false;
+            AbilitiesFrame.IsVisible = true;
             BattleSequenceFrame.IsVisible = false;
-            NextMoveFrame.IsVisible = true;
+            NextMoveFrame.IsVisible = false;
             MonsterDefenderLabel.IsVisible = false;
-            AbilitiesList.IsVisible = true;
 
             List<AbilityEnum> AbilityList = new List<AbilityEnum>();
 
@@ -583,18 +582,12 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            BattleSequenceFrame.IsVisible = false;
+            BattleSequenceFrame.IsVisible = true;
             NextMoveFrame.IsVisible = false;
-            MonsterDefenderLabel.IsVisible = false;
-            AbilitiesList.IsVisible = false;
-            AbilitySelectLabel.IsVisible = false;
+            AbilitiesFrame.IsVisible = false;
 
             // Continues the game
             NextAction();
-
-            AttackerInfo.IsVisible = true;
-            Buttons.IsVisible = true;
-
         }
 
         public void Ability2_Clicked(object sender, EventArgs e)
@@ -610,17 +603,12 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            BattleSequenceFrame.IsVisible = false;
+            BattleSequenceFrame.IsVisible = true;
             NextMoveFrame.IsVisible = false;
-            MonsterDefenderLabel.IsVisible = false;
-            AbilitiesList.IsVisible = false;
-            AbilitySelectLabel.IsVisible = false;
+            AbilitiesFrame.IsVisible = false;
 
             // Continues the game
             NextAction();
-
-            AttackerInfo.IsVisible = true;
-            Buttons.IsVisible = true;
         }
 
         public void Ability3_Clicked(object sender, EventArgs e)
@@ -636,17 +624,13 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            BattleSequenceFrame.IsVisible = false;
+            BattleSequenceFrame.IsVisible = true;
             NextMoveFrame.IsVisible = false;
-            MonsterDefenderLabel.IsVisible = false;
-            AbilitiesList.IsVisible = false;
-            AbilitySelectLabel.IsVisible = false;
+            AbilitiesFrame.IsVisible = false;
 
             // Continues the game
             NextAction();
 
-            AttackerInfo.IsVisible = true;
-            Buttons.IsVisible = true;
         }
 
         public void Ability4_Clicked(object sender, EventArgs e)
@@ -663,17 +647,12 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            BattleSequenceFrame.IsVisible = false;
+            BattleSequenceFrame.IsVisible = true;
             NextMoveFrame.IsVisible = false;
-            MonsterDefenderLabel.IsVisible = false;
-            AbilitiesList.IsVisible = false;
-            AbilitySelectLabel.IsVisible = false;
+            AbilitiesFrame.IsVisible = false;
 
             // Continues the game
             NextAction();
-
-            AttackerInfo.IsVisible = true;
-            Buttons.IsVisible = true;
         }
 
         /// <summary>
@@ -990,6 +969,7 @@ namespace Game.Views
             NextMoveFrame.IsVisible = true;
             BattleSequenceFrame.IsVisible = false;
             BreakBattleSequenceFrame.IsVisible = false;
+            AbilitiesFrame.IsVisible = false;
 
             //Setting the ViewModel with current character details
             CurrentCharacterData = new PlayerInfoModel();
