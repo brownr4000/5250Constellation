@@ -79,7 +79,10 @@
 
                     <StackLayout x:Name="AbilitiesList">
                         
-                        <Label x:Name="abilitySelection" Text="Hello" />
+                        <Button x:Name="abilitySelection1" Text="Hello" IsVisible="false"/>
+                        <Button x:Name="abilitySelection2" Text="Hello"  IsVisible="false"/>
+                        <Button x:Name="abilitySelection3" Text="Hello" IsVisible="false"/>
+                        <Button x:Name="abilitySelection4" Text="Hello" IsVisible="false"/>
     
                     </StackLayout>
 

@@ -546,10 +546,28 @@ namespace Game.Views
                 AbilityList.Add(ability.Key);
             }
 
-            foreach( var ability in AbilityList)
+            abilitySelection1.Text = AbilityList.ElementAt(0).ToString();
+            abilitySelection1.IsVisible = true;
+
+            if (AbilityList.Count() >= 2)
             {
-                abilitySelection.Text = ability.ToString();
+                abilitySelection2.Text = AbilityList.ElementAt(1).ToString();
+                abilitySelection2.IsVisible = true;
+
+                if (AbilityList.Count()  >= 3)
+                {
+                    abilitySelection3.Text = AbilityList.ElementAt(2).ToString();
+                    abilitySelection3.IsVisible = true;
+
+
+                    if (AbilityList.Count() >= 4)
+                    {
+                        abilitySelection4.Text = AbilityList.ElementAt(3).ToString();
+                        abilitySelection4.IsVisible = true;
+                    }
+                }
             }
+               
 
             
 

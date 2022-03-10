@@ -128,6 +128,27 @@ namespace Game.Models
                     }
                     break;
 
+                case CharacterJobEnum.Defender:
+                    foreach (var item in AbilityEnumHelper.GetListDefender)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Striker:
+                    foreach (var item in AbilityEnumHelper.GetListStriker)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Support:
+                    foreach (var item in AbilityEnumHelper.GetListSupporter)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
                 default:
                     foreach (var item in AbilityEnumHelper.GetListOthers)
                     {

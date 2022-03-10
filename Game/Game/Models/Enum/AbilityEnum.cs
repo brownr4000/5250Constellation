@@ -248,8 +248,10 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Barrier.ToString(),
-                AbilityEnum.Toughness.ToString(),
+                AbilityEnum.BoostAttack.ToString(),
+                AbilityEnum.BoostDefense.ToString(),
+                AbilityEnum.BoostSpeed.ToString(),
+                AbilityEnum.HealTeammate.ToString(),
                 };
 
                 AbilityList.AddRange(GetListOthers);
