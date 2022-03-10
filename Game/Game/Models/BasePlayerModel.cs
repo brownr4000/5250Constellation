@@ -95,6 +95,14 @@ namespace Game.Models
         }
 
         /// <summary>
+        /// Buff Defense Attribute by a very large value
+        /// </summary>
+        public int MaxBuffDefense()
+        {
+            return BuffDefenseValue += 20;
+        }
+
+        /// <summary>
         /// Buff Speed Attribute
         /// </summary>
         public int BuffSpeed()
