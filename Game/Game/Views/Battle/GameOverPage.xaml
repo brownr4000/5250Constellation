@@ -9,7 +9,7 @@
         <StackLayout Style="{StaticResource CenterWithSpacingStack}">
             <Label Text="Game Over"
                 HorizontalOptions="CenterAndExpand" 
-                Style="{StaticResource CenterMessageLargeStyle}"/>
+                Style="{StaticResource GameOverLabelStyle}"/>
 
             <Image Source="game_over_icon.png" Style="{StaticResource StandardImageStyle}"/>
 
