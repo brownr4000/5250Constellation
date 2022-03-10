@@ -583,9 +583,18 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
+            BattleSequenceFrame.IsVisible = false;
+            NextMoveFrame.IsVisible = false;
+            MonsterDefenderLabel.IsVisible = false;
+            AbilitiesList.IsVisible = false;
+            AbilitySelectLabel.IsVisible = false;
 
             // Continues the game
             NextAction();
+
+            AttackerInfo.IsVisible = true;
+            Buttons.IsVisible = true;
+
         }
 
         public void Ability2_Clicked(object sender, EventArgs e)
@@ -601,8 +610,17 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
-            /// Continues the game
+            BattleSequenceFrame.IsVisible = false;
+            NextMoveFrame.IsVisible = false;
+            MonsterDefenderLabel.IsVisible = false;
+            AbilitiesList.IsVisible = false;
+            AbilitySelectLabel.IsVisible = false;
+
+            // Continues the game
             NextAction();
+
+            AttackerInfo.IsVisible = true;
+            Buttons.IsVisible = true;
         }
 
         public void Ability3_Clicked(object sender, EventArgs e)
@@ -618,8 +636,17 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
+            BattleSequenceFrame.IsVisible = false;
+            NextMoveFrame.IsVisible = false;
+            MonsterDefenderLabel.IsVisible = false;
+            AbilitiesList.IsVisible = false;
+            AbilitySelectLabel.IsVisible = false;
+
             // Continues the game
             NextAction();
+
+            AttackerInfo.IsVisible = true;
+            Buttons.IsVisible = true;
         }
 
         public void Ability4_Clicked(object sender, EventArgs e)
@@ -636,8 +663,17 @@ namespace Game.Views
 
             Engine.Round.Turn.UseAbility(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker);
 
+            BattleSequenceFrame.IsVisible = false;
+            NextMoveFrame.IsVisible = false;
+            MonsterDefenderLabel.IsVisible = false;
+            AbilitiesList.IsVisible = false;
+            AbilitySelectLabel.IsVisible = false;
+
             // Continues the game
             NextAction();
+
+            AttackerInfo.IsVisible = true;
+            Buttons.IsVisible = true;
         }
 
         /// <summary>
