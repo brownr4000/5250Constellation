@@ -46,17 +46,7 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Finger,
                     Attribute = AttributeEnum.Attack,
                     Value = 9,
-                    ImageURI = "ring.png",},
-
-                new ItemModel {
-                    Name = "Battleglove",
-                    Description = "Tactical gloves that provide protection to the knuckles",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Finger,
-                    Attribute = AttributeEnum.Defense,
-                    Value = 2,
-                    ImageURI = "",},
+                    ImageURI = "power_ring.png",},
 
                 new ItemModel {
                     Name = "Cybernetic Arm",
@@ -65,18 +55,8 @@ namespace Game.GameRules
                     Range = 0,
                     Location = ItemLocationEnum.Finger,
                     Attribute = AttributeEnum.Defense,
-                    Value = 8,
-                    ImageURI = "",},
-
-                new ItemModel {
-                    Name = "Techno Kabuto",
-                    Description = "A kabuto style helmet with a head-mounted display",
-                    Damage = 0,
-                    Range = 0,
-                    Location = ItemLocationEnum.Head,
-                    Attribute = AttributeEnum.Attack,
-                    Value = 5,
-                    ImageURI = "",},
+                    Value = 4,
+                    ImageURI = "cybernetic_arm.png",},
 
                 new ItemModel {
                     Name = "Sunglasses",
@@ -167,16 +147,6 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack,
                     Value = 1,
                     ImageURI = "stungun_icon.png",},
-
-                new ItemModel {
-                    Name = "Baton",
-                    Description = "A cylindrical club for bludgeoning",
-                    Damage = 2,
-                    Range = 1,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Speed,
-                    Value = 1,
-                    ImageURI = "",},
 
                 new ItemModel {
                     Name = "Semi-auto Pistol",
@@ -429,75 +399,75 @@ namespace Game.GameRules
             var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "Serpens",
-                    Description = "A constellation of a large snake",
-                    ImageURI = "Serpens_Monster.png",
-                    Difficulty = DifficultyEnum.Difficult,
-                    ImageGIFURI = "serpens_monster_gif.gif",
-                    MonsterJob = MonsterJobEnum.Swift,
-                    Attack = 3,
-                    Defense = 3,
-                    Speed = 5,
-                },
-
-                new MonsterModel {
                     Name = "Cancer",
                     Description = "A medium size constellation of a crab",
                     ImageURI = "Cancer_Monster.png",
-                     MonsterJob = MonsterJobEnum.Brute,
-                    Difficulty = DifficultyEnum.Average,
                     ImageGIFURI = "cancer_monster_gif.gif",
                     Attack = 2,
                     Defense = 8,
                     Speed = 2,
+                    Difficulty = DifficultyEnum.Average,
+                    MonsterJob = MonsterJobEnum.Brute,
+                },
+
+                new MonsterModel {
+                    Name = "Lacerta",
+                    Description = "A sky lizard constellation",
+                    ImageURI = "Lacerta_Monster.png",
+                    ImageGIFURI = "lacerta_monster_gif.gif",
+                    Attack = 3,
+                    Defense = 2,
+                    Speed = 3,
+                    Difficulty = DifficultyEnum.Easy,
+                    MonsterJob = MonsterJobEnum.Brute,
+                },
+
+                new MonsterModel {
+                    Name = "Musca",
+                    Description = "A fly constellation from the Dark Doodad Nebula",
+                    ImageURI = "Musca_Monster.png",
+                    ImageGIFURI = "musca_monster_gif.gif",
+                    Attack = 2,
+                    Defense = 2,
+                    Speed = 8,
+                    Difficulty = DifficultyEnum.Easy,
+                    MonsterJob = MonsterJobEnum.Swift,
                 },
 
                 new MonsterModel {
                     Name = "Pisces",
                     Description = "A constellation of two fish",
                     ImageURI = "Pisces_Monster.png",
-                    MonsterJob = MonsterJobEnum.Brute,
-                    Difficulty = DifficultyEnum.Hard,
                     ImageGIFURI = "pisces_monster_gif.gif",
                     Attack = 4,
                     Defense = 2,
                     Speed = 5,
+                    Difficulty = DifficultyEnum.Difficult,
+                    MonsterJob = MonsterJobEnum.Swift,
                 },
 
                 new MonsterModel {
                     Name = "Scorpio",
                     Description = "A constellation of a giant scorpion",
                     ImageURI = "Scorpio_Monster.png",
-                    Attack = 6,
-                     MonsterJob = MonsterJobEnum.Swift,
                     ImageGIFURI = "scorpio_monster_gif.gif",
+                    Attack = 6,
                     Defense = 7,
                     Speed = 4,
-                    Difficulty = DifficultyEnum.Average
-                },
-
-                new MonsterModel {
-                    Name = "Musca",
-                    Description = "A hare constellation being chased around the sky, or possibly the Moon Rabbit",
-                    ImageURI = "Musca_Monster.png",
-                    Difficulty = DifficultyEnum.Impossible,
-                    Attack = 2,
+                    Difficulty = DifficultyEnum.Hard,
                     MonsterJob = MonsterJobEnum.Brute,
-                    ImageGIFURI = "musca_monster_gif.gif",
-                    Speed = 8,
-                    Defense = 2
                 },
 
                 new MonsterModel {
-                    Name = "Lacerta",
-                    Description = "A small crow or a raven constellation from the Southern sky",
-                    ImageURI = "Lacerta_Monster.png",
+                    Name = "Serpens",
+                    Description = "A constellation of a large snake",
+                    ImageURI = "Serpens_Monster.png",
+                    ImageGIFURI = "serpens_monster_gif.gif",
                     Attack = 3,
-                    ImageGIFURI = "lacerta_monster_gif.gif",
-                    Speed = 3,
-                     MonsterJob = MonsterJobEnum.Clever,
-                    Defense = 2,
-                    Difficulty = DifficultyEnum.Easy,
+                    Defense = 3,
+                    Speed = 5,
+                    Difficulty = DifficultyEnum.Average,
+                    MonsterJob = MonsterJobEnum.Swift,
                 },
             };
 
