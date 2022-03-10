@@ -247,8 +247,64 @@ namespace Game.Engine.EngineBase
         /// <returns></returns>
         public virtual bool UseAbility(PlayerInfoModel Attacker)
         {
+            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                return false;
+            }
+            
+            if (Attacker.Job == CharacterJobEnum.Defender)
+            {
+                switch (EngineSettings.CurrentActionAbility)
+                {
+                    case AbilityEnum.Barrier:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.Barrier;
+                        break;
+
+                    case AbilityEnum.Toughness:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.Toughness;
+                        break;
+                }
+            }
+
+            if (Attacker.Job == CharacterJobEnum.Striker) 
+            { 
+                switch(EngineSettings.CurrentActionAbility)
+                {
+                    case AbilityEnum.Dodge:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.Dodge;
+                        break;
+
+                    case AbilityEnum.DoubleStrike:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.DoubleStrike;
+                        break;
+                }
+            }
+
+            if(Attacker.Job == CharacterJobEnum.Support)
+            {
+                switch (EngineSettings.CurrentActionAbility)
+                {
+                    case AbilityEnum.HealTeammate:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.HealTeammate;
+                        break;
+
+                    case AbilityEnum.BoostAttack:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.BoostAttack;
+                        break;
+
+                    case AbilityEnum.BoostDefense:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.BoostDefense;
+                        break;
+
+                    case AbilityEnum.BoostSpeed:
+                        EngineSettings.CurrentActionAbility = AbilityEnum.BoostSpeed;
+                        break;
+                }
+            }
+
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
             return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
+
         }
 
         /// <summary>

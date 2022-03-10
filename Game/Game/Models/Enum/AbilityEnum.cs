@@ -44,6 +44,25 @@ namespace Game.Models
 
         // Heal Self
         Heal = 54,
+
+        // Doge attack
+        Dodge = 99,
+
+        // Double strike
+        DoubleStrike = 25,
+
+        // Heal adjacent character
+        HealTeammate = 100,
+
+        // Buff +2 Attack for adjacent character
+        BoostAttack = 40,
+
+        // Buff +2 Defense for adjacent character
+        BoostDefense = 41,
+
+        // Buff +2 Speed for adjacent character
+        BoostSpeed = 42
+
     }
 
     /// <summary>
@@ -93,6 +112,30 @@ namespace Game.Models
 
                 case AbilityEnum.Heal:
                     Message = "Heal Self";
+                    break;
+
+                case AbilityEnum.Dodge:
+                    Message = "Dodge Attack";
+                    break;
+
+                case AbilityEnum.DoubleStrike:
+                    Message = "Double Strike";
+                    break;
+
+                case AbilityEnum.HealTeammate:
+                    Message = "Heal adjacent character";
+                    break;
+
+                case AbilityEnum.BoostAttack:
+                    Message = "Boost adjacent character attack";
+                    break;
+
+                case AbilityEnum.BoostDefense:
+                    Message = "Boost adjacent character defense";
+                    break;
+
+                case AbilityEnum.BoostSpeed:
+                    Message = "Boost adjacent character speed";
                     break;
 
                 case AbilityEnum.None:
@@ -154,6 +197,59 @@ namespace Game.Models
                 AbilityEnum.Barrier.ToString(),
                 AbilityEnum.Curse.ToString(),
                 AbilityEnum.Heal.ToString()
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Striker
+        /// </summary>
+        public static List<string> GetListStriker
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Dodge.ToString(),
+                AbilityEnum.DoubleStrike.ToString(),
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Defender
+        /// </summary>
+        public static List<string> GetListDefender
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Toughness.ToString(),
+                };
+
+                AbilityList.AddRange(GetListOthers);
+                return AbilityList;
+            }
+        }
+
+        /// <summary>
+        /// Returns a list of strings of the enum for Supporter
+        /// </summary>
+        public static List<string> GetListSupporter
+        {
+            get
+            {
+                List<string> AbilityList = new List<string>{
+                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Toughness.ToString(),
                 };
 
                 AbilityList.AddRange(GetListOthers);
