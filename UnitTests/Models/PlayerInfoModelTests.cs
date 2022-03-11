@@ -248,7 +248,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(AbilityEnum.Unknown, result);
+            Assert.AreEqual(AbilityEnum.Wait, result);
         }
 
         [Test]
@@ -266,7 +266,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(AbilityEnum.Unknown, result);
+            Assert.AreEqual(AbilityEnum.Wait, result);
         }
     }
 }
