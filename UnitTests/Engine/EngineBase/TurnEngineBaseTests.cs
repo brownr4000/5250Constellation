@@ -1377,6 +1377,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
             Assert.AreEqual(ActionEnum.Attack, result);
