@@ -125,7 +125,22 @@ namespace UnitTests.Engine.EngineBase
                                 ListOrder = 1,
                             });
 
+            var monster = new PlayerInfoModel(
+                     new MonsterModel
+                     {
+                         Speed = 1,
+                         Level = 10,
+                         CurrentHealth = 11,
+                         ExperienceTotal = 1,
+                         ExperienceRemaining = 1,
+                         Name = "Maximilium",
+                         ListOrder = 1,
+                     });
+
             AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            AutoBattleEngine.Battle.EngineSettings.MonsterList.Add(monster);
+            AutoBattleEngine.Battle.EngineSettings.CurrentAttacker = CharacterPlayerMike;
+            AutoBattleEngine.Battle.EngineSettings.CurrentDefender = monster;
 
             //Act
             var result = await AutoBattleEngine.RunAutoBattle();

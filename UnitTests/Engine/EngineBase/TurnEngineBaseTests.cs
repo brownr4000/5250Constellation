@@ -1330,7 +1330,7 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Move, result);
         }
 
         [Test]
