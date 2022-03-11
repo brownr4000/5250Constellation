@@ -1408,6 +1408,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
             Assert.AreEqual(false, result);
