@@ -144,5 +144,24 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterIndexPage_CollectionView_OnItemSelected_Valid_Should_Pass()
+        {
+            // Arrange
+            var selectedCharacter = new CharacterModel();
+
+            CollectionView CharactersListView = (CollectionView)page.FindByName("CharactersListView");
+
+            // Act
+
+            // Triggers the OnCollectionViewSelectionChanged
+            CharactersListView.SelectedItem = selectedCharacter;
+
+            // Reset
+
+            // Arrange
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
