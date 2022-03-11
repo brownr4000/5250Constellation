@@ -93,6 +93,8 @@ namespace Scenario
             var result = await AutoBattle.RunAutoBattle();
 
             //Reset
+            AutoBattle.Battle.EngineSettings.MonsterList.Clear();
+            AutoBattle.Battle.EngineSettings.CharacterList.Clear();
 
             //Assert
             Assert.AreEqual(true, result);
