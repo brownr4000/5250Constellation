@@ -146,5 +146,22 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ScoreIndexPage_CollectionView_OnItemSelected_Valid_Default_Should_Pass()
+        {
+            // Arrange
+            var ScoreSelected = new ScoreModel();
+            CollectionView ScoresList = (CollectionView)page.FindByName("ScoresListView");
+
+            // Act
+            //Trigget Collection View Selected Monster
+            ScoresList.SelectedItem = ScoreSelected;
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
