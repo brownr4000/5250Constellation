@@ -574,6 +574,7 @@ namespace UnitTests.Engine.EngineKoenig
             Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Bandage;
 
             var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+            
 
             // Act
             var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
@@ -581,7 +582,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
