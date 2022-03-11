@@ -1321,14 +1321,16 @@ namespace UnitTests.Engine.EngineBase
             MonsterPlayer.MaxHealth = 1000;
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
 
             // Reset
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Assert
-            Assert.AreEqual(ActionEnum.Move, result);
+            Assert.AreEqual(ActionEnum.Ability, result);
         }
 
         [Test]
@@ -1347,6 +1349,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Assert
             Assert.AreEqual(ActionEnum.Move, result);
@@ -1389,7 +1392,7 @@ namespace UnitTests.Engine.EngineBase
         public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_true()
         {
             // Arrange
-
+            Engine.EngineSettings.PlayerList.Clear();
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
             // Get the longest range weapon in stock.
