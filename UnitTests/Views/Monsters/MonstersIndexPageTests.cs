@@ -145,5 +145,22 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void MonstersIndexPage_CollectionView_OnItemSelected_Valid_Default_Should_Pass()
+        {
+            // Arrange
+            var MonsterSelected = new MonsterModel();
+            CollectionView MonstersList = (CollectionView)page.FindByName("MonstersListView");
+
+            // Act
+            //Trigget Collection View Selected Monster
+            MonstersList.SelectedItem = MonsterSelected;
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
