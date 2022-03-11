@@ -1385,7 +1385,7 @@ namespace UnitTests.Engine.EngineBase
 
         #region ChooseToUseAbility
         [Test]
-        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
+        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_false()
         {
             // Arrange
 
@@ -1410,7 +1410,7 @@ namespace UnitTests.Engine.EngineBase
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
