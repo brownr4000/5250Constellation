@@ -460,7 +460,7 @@ namespace UnitTests.Engine.EngineGame
 
             // Assert
             Assert.AreEqual(ActionEnum.Unknown, action);
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
@@ -479,7 +479,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
