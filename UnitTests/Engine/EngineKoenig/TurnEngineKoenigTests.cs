@@ -1383,6 +1383,7 @@ namespace UnitTests.Engine.EngineKoenig
             var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
             Assert.AreEqual(true, result);
