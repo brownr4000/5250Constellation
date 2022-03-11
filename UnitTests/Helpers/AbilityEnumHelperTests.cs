@@ -19,7 +19,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetFullList;
 
             // Assert
-            Assert.AreEqual(16, result.Count);
+            Assert.AreEqual(18, result.Count);
 
             // Assert
         }
