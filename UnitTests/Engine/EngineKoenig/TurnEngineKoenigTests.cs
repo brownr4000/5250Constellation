@@ -1323,7 +1323,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Ability, result);
+            Assert.AreEqual(ActionEnum.Move, result);
         }
 
         [Test]
