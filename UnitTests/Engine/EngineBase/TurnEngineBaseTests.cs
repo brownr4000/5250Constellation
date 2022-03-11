@@ -1386,7 +1386,7 @@ namespace UnitTests.Engine.EngineBase
 
         #region ChooseToUseAbility
         [Test]
-        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_false()
+        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_true()
         {
             // Arrange
 
@@ -1412,7 +1412,7 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]

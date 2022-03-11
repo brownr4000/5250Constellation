@@ -131,6 +131,8 @@ namespace UnitTests.Engine.EngineBase
             var result = await AutoBattleEngine.RunAutoBattle();
 
             //Reset
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
+            AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
 
             //Assert
             Assert.AreEqual(true, result);
