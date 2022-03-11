@@ -1360,7 +1360,7 @@ namespace UnitTests.Engine.EngineKoenig
 
         #region ChooseToUseAbility
         [Test]
-        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
+        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_false()
         {
             // Arrange
 
@@ -1386,7 +1386,7 @@ namespace UnitTests.Engine.EngineKoenig
             Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
         }
 
         [Test]
