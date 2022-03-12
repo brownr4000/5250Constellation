@@ -179,7 +179,7 @@ namespace Game.Views
                 ForceCharcterToTakeAction();
                 return;
             }
-            CheckAction();
+            _ = CheckAction();
         }
 
         /// <summary>
@@ -289,7 +289,11 @@ namespace Game.Views
                 return;
             }
             await Task.Delay(2000);
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.IsSelectedAsTarget = false;
+
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender != null)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.IsSelectedAsTarget = false;
+            }
 
             NextAction();
         }
