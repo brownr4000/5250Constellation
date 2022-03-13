@@ -19,6 +19,14 @@ namespace Game.Views.Battle
         public GameOverPage()
         {
             InitializeComponent();
+
+            // Start from a clean list of players
+            BattleEngineViewModel.Instance.PartyCharacterList.Clear();
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Clear();
+
+            // Rest RoundCount
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount = 0;
+
             scoreList = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore; 
         }
 
