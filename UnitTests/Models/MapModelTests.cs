@@ -280,6 +280,36 @@ namespace UnitTests.Models
             Assert.AreEqual(true, result);
         }
 
+       [ Test]
+        public void MapModel_MovePlayerOnMap_No_Target_Should_Fail()
+        {
+            // Arrange
+
+            var map = new MapModel();
+
+            map.MapXAxiesCount = 3;
+            map.MapYAxiesCount = 3;
+            map.MapGridLocation = new MapModelLocation[map.MapXAxiesCount, map.MapYAxiesCount];
+
+            var PlayerList = new List<PlayerInfoModel>();
+
+            var Character = new CharacterModel();
+
+            PlayerList.Add(new PlayerInfoModel(Character));
+
+            _ = map.PopulateMapModel(PlayerList);
+
+            var MapLocationData = map.MapGridLocation[0, 0];
+
+            // Act
+            var result = map.MovePlayerOnMap(MapLocationData, null);
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(false, result);
+        }
+
         [Test]
         public void MapModel_GetEmptyLocations_InValid_Should_Return_Empty()
         {
