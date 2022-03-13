@@ -1343,5 +1343,21 @@ namespace UnitTests.Models
             Assert.AreEqual(0, bonus);
 
         }
+
+        [Test]
+        public void BasePlayerModel_GetAttackJobBonus_Clever_Default_Should_Pass()
+        {
+            // Arrange
+            var monster = new MonsterModel { MonsterJob = MonsterJobEnum.Clever };
+
+            // Action
+            int bonus = monster.GetAttackJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, bonus);
+
+        }
     }
 }
