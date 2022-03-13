@@ -33,7 +33,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListFighter;
 
             // Assert
-            Assert.AreEqual(5, result.Count);
+            Assert.AreEqual(4, result.Count);
         }
 
         [Test]
