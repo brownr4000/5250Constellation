@@ -248,7 +248,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(AbilityEnum.Wait, result);
+            Assert.AreEqual(AbilityEnum.Focus, result);
         }
 
         [Test]
