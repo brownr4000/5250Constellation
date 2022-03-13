@@ -77,6 +77,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Double Strike", result);
         }
 
+        [Test]
+        public void AbilityEnumExtensionsTests_BoostAttack_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnum.BoostAttack.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Boost adjacent character attack", result);
+        }
+
 
         [Test]
         public void AbilityEnumExtensionsTests_Barrier_Default_Should_Pass()
