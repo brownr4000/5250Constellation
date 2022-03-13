@@ -212,7 +212,7 @@ namespace Game.Models
         public int GetAttackItemBonus { get { return GetItemBonus(AttributeEnum.Attack); } }
 
         [Ignore]
-        // Return the Attack with Item Bonus
+        // Returns Attack Bonus based on Player Job Enum
         public int GetAttackJobBonus
         {
             get
@@ -263,9 +263,7 @@ namespace Game.Models
                     }
                 }
 
-
                 return result;
-
             }
         }
 
@@ -289,25 +287,57 @@ namespace Game.Models
 
 
         [Ignore]
-        // Return the Attack with Item Bonus
+        // Returns Defense Bonus based on Player Job Enum
         public int GetDefenseJobBonus
         {
             get
             {
                 var result = 0;
 
-                switch (Job)
+                if (PlayerType == PlayerTypeEnum.Character)
                 {
-                    case CharacterJobEnum.Cleric:
-                        result = +2;
-                        break;
-                    case CharacterJobEnum.Fighter:
-                        result = -1;
-                        break;
-                    case CharacterJobEnum.Unknown:
-                    default:
-                        break;
+                    switch (Job)
+                    {
+                        case CharacterJobEnum.Cleric:
+                            result = +2;
+                            break;
+                        case CharacterJobEnum.Defender:
+                            result = +4;
+                            break;
+                        case CharacterJobEnum.Fighter:
+                            result = -1;
+                            break;
+                        case CharacterJobEnum.Striker:
+                            result = -2;
+                            break;
+                        case CharacterJobEnum.Support:
+                            result = 0;
+                            break;
+                        case CharacterJobEnum.Unknown:
+                        default:
+                            break;
+                    }
                 }
+
+                if (PlayerType == PlayerTypeEnum.Monster)
+                {
+                    switch (MonsterJob)
+                    {
+                        case MonsterJobEnum.Brute:
+                            result = 0;
+                            break;
+                        case MonsterJobEnum.Clever:
+                            result = 0;
+                            break;
+                        case MonsterJobEnum.Swift:
+                            result = -2;
+                            break;
+                        case MonsterJobEnum.Unknown:
+                        default:
+                            break;
+                    }
+                }
+
                 return result;
             }
         }
