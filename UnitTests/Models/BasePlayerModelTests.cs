@@ -1279,5 +1279,21 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual(8, player.CurrentHealth);
         }
+
+        [Test]
+        public void BasePlayerModel_MaxBuffDefense_Default_Should_Pass()
+        {
+            // Arrange
+            var player = new CharacterModel { BuffDefenseValue = 5};
+
+            // Action
+            player.MaxBuffDefense();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(25,player.BuffDefenseValue);
+
+        }
     }
 }
