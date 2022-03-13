@@ -1405,7 +1405,7 @@ namespace UnitTests.Engine.EngineBase
 
             _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
 
             // Act
