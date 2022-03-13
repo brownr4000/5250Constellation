@@ -45,7 +45,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListCleric;
 
             // Assert
-            Assert.AreEqual(5, result.Count);
+            Assert.AreEqual(6, result.Count);
         }
 
         [Test]
