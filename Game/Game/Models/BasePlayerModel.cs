@@ -219,19 +219,53 @@ namespace Game.Models
             {
                 var result = 0;
 
-                switch (Job)
+                if (PlayerType == PlayerTypeEnum.Character)
                 {
-                    case CharacterJobEnum.Cleric:
-                        result = -1;
-                        break;
-                    case CharacterJobEnum.Fighter:
-                        result = +2;
-                        break;
-                    case CharacterJobEnum.Unknown:
-                    default:
-                        break;
+                    switch (Job)
+                    {
+                        case CharacterJobEnum.Cleric:
+                            result = -1;
+                            break;
+                        case CharacterJobEnum.Defender:
+                            result = 0;
+                            break;
+                        case CharacterJobEnum.Fighter:
+                            result = +2;
+                            break;
+                        case CharacterJobEnum.Striker:
+                            result = +2;
+                            break;
+                        case CharacterJobEnum.Support:
+                            result = 0;
+                            break;
+                        case CharacterJobEnum.Unknown:
+                        default:
+                            break;
+                    }
                 }
+
+                if (PlayerType == PlayerTypeEnum.Monster)
+                {
+                    switch (MonsterJob)
+                    {
+                        case MonsterJobEnum.Brute:
+                            result = +2;
+                            break;
+                        case MonsterJobEnum.Clever:
+                            result = 0;
+                            break;
+                        case MonsterJobEnum.Swift:
+                            result = +1;
+                            break;
+                        case MonsterJobEnum.Unknown:
+                        default:
+                            break;
+                    }
+                }
+
+
                 return result;
+
             }
         }
 
