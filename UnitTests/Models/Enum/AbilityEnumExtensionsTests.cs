@@ -120,6 +120,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void AbilityEnumExtensionsTests_Wait_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnum.Wait.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Waits for the next opportunity", result);
+        }
+
+        [Test]
         public void AbilityEnumExtensionsTests_HealTeammate_Default_Should_Pass()
         {
             // Arrange
