@@ -36,6 +36,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void AbilityEnumExtensionsTests_Block_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnum.Block.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Block Attacks", result);
+        }
+
+        [Test]
         public void AbilityEnumExtensionsTests_Barrier_Default_Should_Pass()
         {
             // Arrange
