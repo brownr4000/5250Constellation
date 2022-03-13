@@ -42,6 +42,9 @@ namespace Game.Models
         // Block Attacks
         Block = 110,
 
+        // Guard
+        Guard = 111,
+
         // Buff Attack
         Curse = 53,
 
@@ -114,6 +117,10 @@ namespace Game.Models
 
                 case AbilityEnum.Block:
                     Message = "Block Attacks";
+                    break;
+
+                case AbilityEnum.Guard:
+                    Message = "Guard Attacks";
                     break;
 
                 case AbilityEnum.Curse:
@@ -246,7 +253,7 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
-                AbilityEnum.Barrier.ToString(),
+                AbilityEnum.Guard.ToString(),
                 AbilityEnum.Block.ToString(),
                 };
 
