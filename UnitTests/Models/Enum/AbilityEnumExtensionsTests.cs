@@ -48,6 +48,21 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Block Attacks", result);
         }
+        
+        [Test]
+        public void AbilityEnumExtensionsTests_Dodge_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnum.Dodge.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Dodge Attack", result);
+        }
+
 
         [Test]
         public void AbilityEnumExtensionsTests_Barrier_Default_Should_Pass()
