@@ -1464,7 +1464,7 @@ namespace UnitTests.Models
             var player = new CharacterModel { Job = CharacterJobEnum.Unknown };
 
             // Action
-            int bonus = player.GetSpeedJobBonus;
+            int bonus = player.GetDefenseJobBonus;
 
             // Reset
 
@@ -1480,12 +1480,28 @@ namespace UnitTests.Models
             var player = new CharacterModel { Job = CharacterJobEnum.Support };
 
             // Action
-            int bonus = player.GetSpeedJobBonus;
+            int bonus = player.GetDefenseJobBonus;
 
             // Reset
 
             // Assert
             Assert.AreEqual(0, bonus);
+
+        }
+
+        [Test]
+        public void BasePlayerModel_GetDefenseJobBonus_Striker_Default_Should_Pass()
+        {
+            // Arrange
+            var player = new CharacterModel { Job = CharacterJobEnum.Striker };
+
+            // Action
+            int bonus = player.GetDefenseJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(-2, bonus);
 
         }
     }
