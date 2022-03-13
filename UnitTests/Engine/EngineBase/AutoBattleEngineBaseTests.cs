@@ -102,56 +102,56 @@ namespace UnitTests.Engine.EngineBase
             Assert.AreEqual(true, result);
         }
 
-        [Test]
-        public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
-        {
-            //Arrange
-            AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
-            AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
+        //[Test]
+        //public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
+        //{
+        //    //Arrange
+        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
+        //    AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
 
-            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
-            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
-            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+        //    // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
+        //    AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
 
-            var CharacterPlayerMike = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = -1,
-                                Level = 10,
-                                CurrentHealth = 11,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
-                                Name = "Mike",
-                                ListOrder = 1,
-                            });
+        //    var CharacterPlayerMike = new PlayerInfoModel(
+        //                    new CharacterModel
+        //                    {
+        //                        Speed = -1,
+        //                        Level = 10,
+        //                        CurrentHealth = 11,
+        //                        ExperienceTotal = 1,
+        //                        ExperienceRemaining = 1,
+        //                        Name = "Mike",
+        //                        ListOrder = 1,
+        //                    });
 
-            var monster = new PlayerInfoModel(
-                     new MonsterModel
-                     {
-                         Speed = 1,
-                         Level = 10,
-                         CurrentHealth = 11,
-                         ExperienceTotal = 1,
-                         ExperienceRemaining = 1,
-                         Name = "Maximilium",
-                         ListOrder = 1,
-                     });
+        //    var monster = new PlayerInfoModel(
+        //             new MonsterModel
+        //             {
+        //                 Speed = 1,
+        //                 Level = 10,
+        //                 CurrentHealth = 11,
+        //                 ExperienceTotal = 1,
+        //                 ExperienceRemaining = 1,
+        //                 Name = "Maximilium",
+        //                 ListOrder = 1,
+        //             });
 
-            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
-            AutoBattleEngine.Battle.EngineSettings.MonsterList.Add(monster);
-            AutoBattleEngine.Battle.EngineSettings.CurrentAttacker = CharacterPlayerMike;
-            AutoBattleEngine.Battle.EngineSettings.CurrentDefender = monster;
+        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+        //    AutoBattleEngine.Battle.EngineSettings.MonsterList.Add(monster);
+        //    AutoBattleEngine.Battle.EngineSettings.CurrentAttacker = CharacterPlayerMike;
+        //    AutoBattleEngine.Battle.EngineSettings.CurrentDefender = monster;
 
-            //Act
-            var result = await AutoBattleEngine.RunAutoBattle();
+        //    //Act
+        //    var result = await AutoBattleEngine.RunAutoBattle();
 
-            //Reset
-            AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
-            AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
+        //    //Reset
+        //    AutoBattleEngine.Battle.EngineSettings.CharacterList.Clear();
+        //    AutoBattleEngine.Battle.EngineSettings.MonsterList.Clear();
 
-            //Assert
-            Assert.AreEqual(true, result);
-        }
+        //    //Assert
+        //    Assert.AreEqual(true, result);
+        //}
 
         [Test]
         public async Task AutoBattleEngine_RunAutoBattle_InValid_DetectInfinateLoop_Should_Return_False()
