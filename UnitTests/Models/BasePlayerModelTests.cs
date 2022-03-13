@@ -1324,7 +1324,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(6, bonus);
+            Assert.AreEqual(0, bonus);
 
         }
 
