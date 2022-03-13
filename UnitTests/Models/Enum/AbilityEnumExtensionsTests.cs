@@ -91,6 +91,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Boost adjacent character attack", result);
         }
 
+        [Test]
+        public void AbilityEnumExtensionsTests_HealTeammate_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnum.HealTeammate.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Heal adjacent character", result);
+        }
+
 
         [Test]
         public void AbilityEnumExtensionsTests_Barrier_Default_Should_Pass()
