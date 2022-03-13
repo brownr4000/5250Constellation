@@ -1327,5 +1327,21 @@ namespace UnitTests.Models
             Assert.AreEqual(6, bonus);
 
         }
+
+        [Test]
+        public void BasePlayerModel_GetAttackJobBonus_Unknonw_Default_Should_Pass()
+        {
+            // Arrange
+            var player = new CharacterModel { Job = CharacterJobEnum.Unknown };
+
+            // Action
+            int bonus = player.GetAttackJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, bonus);
+
+        }
     }
 }
