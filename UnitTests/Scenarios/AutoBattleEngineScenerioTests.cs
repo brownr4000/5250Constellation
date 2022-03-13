@@ -88,6 +88,8 @@ namespace Scenario
                             });
 
             AutoBattle.Battle.EngineSettings.MonsterList.Add(monster);
+            AutoBattle.Battle.EngineSettings.CurrentDefender = monster;
+            AutoBattle.Battle.EngineSettings.CurrentAttacker = CharacterPlayerMike;
 
             //Act
             var result = await AutoBattle.RunAutoBattle();
