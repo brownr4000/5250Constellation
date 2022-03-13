@@ -106,6 +106,20 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void AbilityEnumExtensionsTests_BoostSpeed_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnum.BoostSpeed.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Boost adjacent character speed", result);
+        }
+
+        [Test]
         public void AbilityEnumExtensionsTests_HealTeammate_Default_Should_Pass()
         {
             // Arrange
