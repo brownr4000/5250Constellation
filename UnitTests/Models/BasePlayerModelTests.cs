@@ -1311,5 +1311,21 @@ namespace UnitTests.Models
             Assert.AreEqual(2, bonus);
 
         }
+
+        [Test]
+        public void BasePlayerModel_GetAttackJobBonus_Support_Default_Should_Pass()
+        {
+            // Arrange
+            var player = new CharacterModel { Job = CharacterJobEnum.Support };
+
+            // Action
+            int bonus = player.GetAttackJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(6, bonus);
+
+        }
     }
 }
