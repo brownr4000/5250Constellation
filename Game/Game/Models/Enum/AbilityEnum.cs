@@ -101,7 +101,7 @@ namespace Game.Models
                     break;
 
                 case AbilityEnum.Focus:
-                    Message = "Mental Focus";
+                    Message = "Focuses their Energy";
                     break;
 
                 case AbilityEnum.Quick:
@@ -231,6 +231,8 @@ namespace Game.Models
                 AbilityEnum.DoubleStrike.ToString(),
                 };
 
+                AbilityList.AddRange(GetListOthers);
+
                 return AbilityList;
             }
         }
@@ -247,6 +249,8 @@ namespace Game.Models
                 AbilityEnum.Barrier.ToString(),
                 AbilityEnum.Block.ToString(),
                 };
+
+                AbilityList.AddRange(GetListOthers);
 
                 return AbilityList;
             }
@@ -278,6 +282,7 @@ namespace Game.Models
             get
             {
                 List<string> AbilityList = new List<string>{
+                AbilityEnum.Focus.ToString(),
                 AbilityEnum.Wait.ToString(),
                 };
 
