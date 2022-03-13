@@ -616,7 +616,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MapModel_IsTargetInSpeed_Valid_Should_Return_True()
+        public void MapModel_IsTargetInSpeed_Valid_Should_Return_true()
         {
             // Arrange
             var map = new MapModel();
@@ -627,12 +627,12 @@ namespace UnitTests.Models
 
             var PlayerList = new List<PlayerInfoModel>();
 
-            var Character = new CharacterModel();
+            var Character = new CharacterModel { Speed = 10};
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Character));
             PlayerList.Add(new PlayerInfoModel(Character));
 
-            var Monster = new MonsterModel();
+            var Monster = new MonsterModel ();
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
             PlayerList.Add(new PlayerInfoModel(Monster));
