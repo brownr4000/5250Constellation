@@ -1295,5 +1295,21 @@ namespace UnitTests.Models
             Assert.AreEqual(25,player.BuffDefenseValue);
 
         }
+
+        [Test]
+        public void BasePlayerModel_GetAttackJobBonus_Striker_Default_Should_Pass()
+        {
+            // Arrange
+            var player = new CharacterModel { Job = CharacterJobEnum.Striker};
+
+            // Action
+            int bonus = player.GetAttackJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(2, bonus);
+
+        }
     }
 }
