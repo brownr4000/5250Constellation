@@ -83,6 +83,21 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void PlayerInfoModel_Constructor_Character_Striker_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel { Job = CharacterJobEnum.Striker };
+
+            // Act
+            var result = new PlayerInfoModel(data);
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+        [Test]
         public void PlayerInfoModel_Constructor_Character_Unknown_Default_Should_Pass()
         {
             // Arrange
