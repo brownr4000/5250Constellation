@@ -1264,5 +1264,20 @@ namespace UnitTests.Models
 
             Assert.AreEqual(2, Result);
         }
+
+        [Test]
+        public void BasePlayerModel_ApplyHeal_Default_Should_Pass ()
+        {
+            // Arrange
+            var player = new CharacterModel { Alive = true, CurrentHealth = 3 };
+
+            // Action
+            player.ApplyHeal();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(8, player.CurrentHealth);
+        }
     }
 }
