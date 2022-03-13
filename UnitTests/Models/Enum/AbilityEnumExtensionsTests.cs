@@ -63,6 +63,20 @@ namespace UnitTests.Models
             Assert.AreEqual("Dodge Attack", result);
         }
 
+        [Test]
+        public void AbilityEnumExtensionsTests_DoubleStrike_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnum.DoubleStrike.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Double Strike", result);
+        }
+
 
         [Test]
         public void AbilityEnumExtensionsTests_Barrier_Default_Should_Pass()
