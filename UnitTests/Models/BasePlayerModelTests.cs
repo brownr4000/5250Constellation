@@ -1375,5 +1375,21 @@ namespace UnitTests.Models
             Assert.AreEqual(0, bonus);
 
         }
+
+        [Test]
+        public void BasePlayerModel_GetSpeedJobBonus_Monster_Unknown_Default_Should_Pass()
+        {
+            // Arrange
+            var monster = new MonsterModel { MonsterJob = MonsterJobEnum.Unknown };
+
+            // Action
+            int bonus = monster.GetSpeedJobBonus;
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, bonus);
+
+        }
     }
 }
