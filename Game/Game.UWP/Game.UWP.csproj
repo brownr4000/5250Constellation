@@ -140,6 +140,9 @@
     <Content Include="aliens_button.png" />
     <Content Include="Alien_Planet.png" />
     <Content Include="amulet_of_vigor.png" />
+    <Content Include="Assets\GameSplashScreen.scale-100.png" />
+    <Content Include="Assets\GameSplashScreen.scale-200.png" />
+    <Content Include="Assets\GameSplashScreen.scale-400.png" />
     <Content Include="Assets\Game_Logo.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
