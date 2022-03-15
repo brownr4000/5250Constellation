@@ -292,5 +292,27 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void MonstersCreatePage_SaveClicked_Valid_Should_Pass()
+        {
+            // Arrange
+            var name = (Entry)page.FindByName("NameValue");
+            name.Text = "name";
+            var desc = (Entry)page.FindByName("DescValue");
+            desc.Text = "desc";
+            var Class = (Picker)page.FindByName("ClassPicker");
+            Class.SelectedItem = MonsterJobEnum.Clever;
+            var difficulty = (Picker)page.FindByName("DifficultyPicker");
+            difficulty.SelectedItem = DifficultyEnum.Difficult;
+
+            // Act
+            page.Save_Clicked(null,null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
