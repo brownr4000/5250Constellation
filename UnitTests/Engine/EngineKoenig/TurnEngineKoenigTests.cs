@@ -1363,6 +1363,10 @@ namespace UnitTests.Engine.EngineKoenig
         public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_false()
         {
             // Arrange
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(10);
+
+            Engine.EngineSettings.PlayerList.Clear();
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
@@ -1383,6 +1387,7 @@ namespace UnitTests.Engine.EngineKoenig
             var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
+            _ = DiceHelper.DisableForcedRolls();
             Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
