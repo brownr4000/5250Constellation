@@ -16,6 +16,9 @@ namespace Game.Views.Battle
         bool UnitTestSetting;
         public GameOverPage(bool UnitTest) { UnitTestSetting = UnitTest; }
 
+        /// <summary>
+        /// Constructor for GameOverPage
+        /// </summary>
         public GameOverPage()
         {
             InitializeComponent();
@@ -30,6 +33,11 @@ namespace Game.Views.Battle
             scoreList = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore; 
         }
 
+        /// <summary>
+        /// View Result button clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public async void ViewResult_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new ScoreReadPage(new GenericViewModel<ScoreModel>(scoreList)));
