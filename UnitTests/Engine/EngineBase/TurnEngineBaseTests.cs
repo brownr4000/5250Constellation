@@ -1317,12 +1317,12 @@ namespace UnitTests.Engine.EngineBase
             // Arrange
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
 
-            MonsterPlayer.CurrentHealth = 1;
-            MonsterPlayer.MaxHealth = 1000;
+            MonsterPlayer.MaxHealth = 10;
 
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
             Engine.EngineSettings.CurrentAttacker = MonsterPlayer;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Move;
+
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
@@ -1338,6 +1338,11 @@ namespace UnitTests.Engine.EngineBase
         public void TurnEngine_DetermineActionChoice_Valid_Character_Should_Return_CurrentAction()
         {
             // Arrange
+            Engine.EngineSettings.PlayerList.Clear();
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(10);
+
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
             CharacterPlayer.CurrentHealth = 1;
@@ -1351,7 +1356,9 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
             Engine.EngineSettings.BattleScore.AutoBattle = false;
+            _ = DiceHelper.DisableForcedRolls();
 
             // Assert
             Assert.AreEqual(ActionEnum.Move, result);
