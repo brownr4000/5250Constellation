@@ -1317,11 +1317,13 @@ namespace UnitTests.Engine.EngineKoenig
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAttacker = CharacterPlayer;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Assert
             Assert.AreEqual(ActionEnum.Move, result);
