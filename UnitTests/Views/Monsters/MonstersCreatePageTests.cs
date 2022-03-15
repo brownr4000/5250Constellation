@@ -314,5 +314,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void MonstersCreatePageTests_RandomizeCharacter()
+        {
+            // Arrange
+
+            // Act
+            page.RandomizeCharacter();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
     }
 }
