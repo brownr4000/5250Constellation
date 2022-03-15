@@ -1296,11 +1296,14 @@ namespace UnitTests.Engine.EngineKoenig
             MonsterPlayer.MaxHealth = 1000;
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAttacker = MonsterPlayer;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
 
             // Reset
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Assert
             Assert.AreEqual(ActionEnum.Move, result);
