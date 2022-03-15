@@ -168,7 +168,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void NameValue_TextChanged(object sender, TextChangedEventArgs e)
+        public void NameValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             NameErrorMessage.IsVisible = false;
             if (string.IsNullOrEmpty(NameValue.Text))

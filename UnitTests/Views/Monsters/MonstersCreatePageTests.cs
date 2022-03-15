@@ -273,5 +273,24 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void MonsterCreatePage_NameValue_TextChanged_Invalid_Should_Pass()
+        {
+
+            // Arrange
+            var entry = (Entry)page.FindByName("NameValue");
+            entry.Text = null;
+
+            var textChanged = new TextChangedEventArgs(entry.Text,null);
+
+            // Act
+            page.NameValue_TextChanged(null,textChanged);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
