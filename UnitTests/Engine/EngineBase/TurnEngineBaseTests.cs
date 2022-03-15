@@ -1322,6 +1322,7 @@ namespace UnitTests.Engine.EngineBase
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
+            Engine.EngineSettings.CurrentAttacker = MonsterPlayer;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
