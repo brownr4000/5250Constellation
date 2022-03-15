@@ -397,8 +397,8 @@ namespace UnitTests.Engine.EngineGame
 
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(MonsterPlayer);
+            Engine.Round.SetCurrentAttacker(CharacterPlayer);
+            Engine.Round.SetCurrentDefender(MonsterPlayer);
             
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
