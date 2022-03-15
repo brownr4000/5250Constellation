@@ -1361,11 +1361,12 @@ namespace UnitTests.Engine.EngineBase
         public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
         {
             // Arrange
+            Engine.EngineSettings.PlayerList.Clear();
 
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
             // Get the longest range weapon in stock.
-            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 5).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
             CharacterPlayer.PrimaryHand = weapon.Id;
             Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
@@ -1375,6 +1376,8 @@ namespace UnitTests.Engine.EngineBase
 
             _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
             Engine.EngineSettings.CurrentAttacker = CharacterPlayer;
+
+            
 
             Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
