@@ -1295,7 +1295,7 @@ namespace UnitTests.Engine.EngineKoenig
             MonsterPlayer.MaxHealth = 10;
 
             Engine.EngineSettings.CurrentAttacker = MonsterPlayer;
-            Engine.EngineSettings.CurrentAction = ActionEnum.Move;
+            //Engine.EngineSettings.CurrentAction = ActionEnum.Move;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
@@ -1303,7 +1303,7 @@ namespace UnitTests.Engine.EngineKoenig
             // Reset
 
             // Assert
-            Assert.AreEqual(ActionEnum.Move, result);
+            Assert.AreEqual(ActionEnum.Ability, result);
         }
 
         [Test]
@@ -1351,6 +1351,7 @@ namespace UnitTests.Engine.EngineKoenig
 
             _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
+            Engine.EngineSettings.CurrentAttacker = CharacterPlayer;
             Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
 
