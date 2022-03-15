@@ -1292,18 +1292,15 @@ namespace UnitTests.Engine.EngineKoenig
             // Arrange
             var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
 
-            MonsterPlayer.CurrentHealth = 1;
-            MonsterPlayer.MaxHealth = 1000;
+            MonsterPlayer.MaxHealth = 10;
 
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
-            Engine.EngineSettings.BattleScore.AutoBattle = true;
             Engine.EngineSettings.CurrentAttacker = MonsterPlayer;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Move;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
 
             // Reset
-            Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Assert
             Assert.AreEqual(ActionEnum.Move, result);
@@ -1313,12 +1310,14 @@ namespace UnitTests.Engine.EngineKoenig
         public void TurnEngine_DetermineActionChoice_Valid_Character_Should_Return_CurrentAction()
         {
             // Arrange
+            Engine.EngineSettings.PlayerList.Clear();
+
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
 
             CharacterPlayer.CurrentHealth = 1;
             CharacterPlayer.MaxHealth = 1000;
 
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Move;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
             Engine.EngineSettings.CurrentAttacker = CharacterPlayer;
 
@@ -1326,6 +1325,7 @@ namespace UnitTests.Engine.EngineKoenig
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.PlayerList.Clear();
             Engine.EngineSettings.BattleScore.AutoBattle = false;
 
             // Assert
