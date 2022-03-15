@@ -1374,14 +1374,16 @@ namespace UnitTests.Engine.EngineBase
             Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
 
             _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+            Engine.EngineSettings.CurrentAttacker = CharacterPlayer;
 
-            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
             Engine.EngineSettings.BattleScore.AutoBattle = true;
 
             // Act
             var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
 
             // Reset
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
             Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
