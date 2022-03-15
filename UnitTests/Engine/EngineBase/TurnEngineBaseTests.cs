@@ -1315,11 +1315,20 @@ namespace UnitTests.Engine.EngineBase
         public void TurnEngine_DetermineActionChoice_Valid_Monster_Should_Return_CurrentAction()
         {
             // Arrange
-            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            Engine.EngineSettings.MonsterList.Clear();
 
-            MonsterPlayer.MaxHealth = 10;
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+            Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
 
             Engine.EngineSettings.CurrentAttacker = MonsterPlayer;
+            Engine.EngineSettings.CurrentDefender = CharacterPlayer;
             Engine.EngineSettings.CurrentAction = ActionEnum.Move;
 
 
@@ -1327,6 +1336,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
 
             // Reset
+            Engine.EngineSettings.MonsterList.Clear();
 
             // Assert
             Assert.AreEqual(ActionEnum.Move, result);
