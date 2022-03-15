@@ -106,26 +106,12 @@
                 </Grid>                
             </Frame>
 
-            <!--<Frame x:Name="AbilitiesFrame" Style="{StaticResource BattleFieldFrame}">
-               
-
-
-                --><!--<StackLayout x:Name="AbilitiesList" Grid.Column="1" Grid.Row="0" Style="{StaticResource VerticalCenterWithSpacingHorizontalStack}">--><!--
-                    <Button x:Name="abilitySelection1" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability1_Clicked"/>
-                    <Button x:Name="abilitySelection2" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability2_Clicked"/>
-                    <Button x:Name="abilitySelection3" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability3_Clicked"/>
-                    <Button x:Name="abilitySelection4" Style="{StaticResource ButtonAbilitiesStyle}" Clicked="Ability4_Clicked"/>
-                --><!--</StackLayout>--><!--
-            </Frame>-->
-
             <Frame x:Name="AbilitiesFrame" Style="{StaticResource BattleFieldFrame}">
                 <Grid HorizontalOptions="Center"
                                 WidthRequest="450"
                                 HeightRequest="250">
 
                     <StackLayout Grid.Column="0" Grid.Row="0" Style="{StaticResource VerticalCenterStack}">
-
-                        <!--<Image x:Name="CharacterImage" Style="{StaticResource ImageBattleSmallStyle}"/>-->
 
                         <Label x:Name="AbilitySelectLabel" 
                            Text="Select an ability to proceed" 
