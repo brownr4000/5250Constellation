@@ -1392,8 +1392,13 @@ namespace UnitTests.Engine.EngineBase
         public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_false()
         {
             // Arrange
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(10);
+
             Engine.EngineSettings.PlayerList.Clear();
             var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+            
 
             // Get the longest range weapon in stock.
             var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
@@ -1412,6 +1417,7 @@ namespace UnitTests.Engine.EngineBase
             var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
+            _ = DiceHelper.DisableForcedRolls();
             Engine.EngineSettings.PlayerList.Clear();
 
             // Assert
